@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _1_DAL.Models
+namespace _1_DAL.test
 {
     public partial class staff
     {

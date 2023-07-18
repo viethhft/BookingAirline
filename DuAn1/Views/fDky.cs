@@ -101,11 +101,7 @@ namespace DuAn1.Views
             customer.Phone = tbx_phone.Text;
             customer.Gender = cbx_gender.Text;
             customer.Password = tbx_pass1.Text;
-            //MessageBox.Show(_dangKyService.Create(customer));
-            if (checkPhoneNumber(customer.Phone))
-            {
-                MessageBox.Show("ok");
-            }
+            MessageBox.Show(_dangKyService.Create(customer));
         }
 
         private void btn_sign_MouseHover(object sender, EventArgs e)
