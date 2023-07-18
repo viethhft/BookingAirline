@@ -106,6 +106,7 @@
             // 
             // Date
             // 
+            this.Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Date.Location = new System.Drawing.Point(25, 215);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(200, 23);
