@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DuAn1.Views
+namespace DuAn1
 {
-    public partial class fStaff : Form
+    public partial class FHeThong : Form
     {
-        public fStaff()
+        public FHeThong()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

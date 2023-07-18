@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DuAn1.Views
+namespace DuAn1
 {
-    public partial class fStaff : Form
+    public partial class Fquanlynv : Form
     {
-        public fStaff()
+        public Fquanlynv()
         {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

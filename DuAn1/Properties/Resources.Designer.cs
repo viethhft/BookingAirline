@@ -63,6 +63,16 @@ namespace DuAn1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_vietnam_airlines_ky_niem_01_nam_mo_duong_bay_thang_viet_my {
+            get {
+                object obj = ResourceManager.GetObject("1-vietnam-airlines-ky-niem-01-nam-mo-duong-bay-thang-viet-my", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap design {
             get {
                 object obj = ResourceManager.GetObject("design", resourceCulture);

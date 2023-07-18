@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DuAn1.Views
 {
-    public partial class fStaff : Form
+    public partial class FQuanLyChuyenBay : Form
     {
-        public fStaff()
+        public FQuanLyChuyenBay()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

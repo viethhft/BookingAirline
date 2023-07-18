@@ -19,7 +19,7 @@ namespace _2_BUS.Service
 
         public int CheckType(string email, string password)
         {
-            _staff = _context.staff.ToList();
+                _staff = _context.staff.ToList();
 
             foreach (var i in _staff.Where(c => c.Email == email && c.Password == password))
             {

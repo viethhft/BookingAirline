@@ -36,8 +36,6 @@
             tbx_phone = new TextBox();
             tbx_date = new TextBox();
             cbx_gender = new ComboBox();
-            linkLabel1 = new LinkLabel();
-            label10 = new Label();
             pictureBox9 = new PictureBox();
             label9 = new Label();
             pictureBox8 = new PictureBox();
@@ -80,8 +78,6 @@
             panel1.Controls.Add(tbx_phone);
             panel1.Controls.Add(tbx_date);
             panel1.Controls.Add(cbx_gender);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(label10);
             panel1.Controls.Add(pictureBox9);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(pictureBox8);
@@ -168,29 +164,6 @@
             cbx_gender.Name = "cbx_gender";
             cbx_gender.Size = new Size(195, 23);
             cbx_gender.TabIndex = 35;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(240, 471);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(86, 19);
-            linkLabel1.TabIndex = 34;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Đăng nhập";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(117, 471);
-            label10.Name = "label10";
-            label10.Size = new Size(127, 19);
-            label10.TabIndex = 33;
-            label10.Text = "Đã có tài khoản?";
             // 
             // pictureBox9
             // 
@@ -470,8 +443,6 @@
         private PictureBox pictureBox4;
         private TextBox txb_email;
         private Label label4;
-        private LinkLabel linkLabel1;
-        private Label label10;
         private TextBox txb_name;
         private ComboBox cbx_gender;
         private TextBox tbx_pass2;
