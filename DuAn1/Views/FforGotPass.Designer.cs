@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            linkLabel1 = new LinkLabel();
+            btn_sendCode = new Button();
+            pictureBox2 = new PictureBox();
+            label2 = new Label();
             label10 = new Label();
             pictureBox8 = new PictureBox();
             tbx_pass2 = new TextBox();
@@ -43,16 +47,12 @@
             pictureBox1 = new PictureBox();
             btn_success = new Button();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
-            label2 = new Label();
-            btn_sendCode = new Button();
-            linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -81,6 +81,54 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(461, 509);
             panel1.TabIndex = 3;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(243, 471);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(86, 19);
+            linkLabel1.TabIndex = 37;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Đăng nhập";
+            // 
+            // btn_sendCode
+            // 
+            btn_sendCode.BackColor = Color.White;
+            btn_sendCode.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_sendCode.ForeColor = Color.RoyalBlue;
+            btn_sendCode.Location = new Point(250, 209);
+            btn_sendCode.Margin = new Padding(3, 2, 3, 2);
+            btn_sendCode.Name = "btn_sendCode";
+            btn_sendCode.Size = new Size(79, 31);
+            btn_sendCode.TabIndex = 36;
+            btn_sendCode.Text = "Gửi mã";
+            btn_sendCode.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = Properties.Resources.icons8_name_50;
+            pictureBox2.Image = Properties.Resources.icons8_otp_64;
+            pictureBox2.Location = new Point(126, 187);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 35;
+            pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(171, 196);
+            label2.Name = "label2";
+            label2.Size = new Size(29, 19);
+            label2.TabIndex = 34;
+            label2.Text = "Mã";
             // 
             // label10
             // 
@@ -232,54 +280,6 @@
             label1.TabIndex = 0;
             label1.Text = "QUÊN MẬT KHẨU";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox2.Image = Properties.Resources.icons8_email_50;
-            pictureBox2.Location = new Point(126, 187);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(39, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 35;
-            pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.RoyalBlue;
-            label2.Location = new Point(171, 196);
-            label2.Name = "label2";
-            label2.Size = new Size(29, 19);
-            label2.TabIndex = 34;
-            label2.Text = "Mã";
-            // 
-            // btn_sendCode
-            // 
-            btn_sendCode.BackColor = Color.White;
-            btn_sendCode.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_sendCode.ForeColor = Color.RoyalBlue;
-            btn_sendCode.Location = new Point(250, 209);
-            btn_sendCode.Margin = new Padding(3, 2, 3, 2);
-            btn_sendCode.Name = "btn_sendCode";
-            btn_sendCode.Size = new Size(79, 31);
-            btn_sendCode.TabIndex = 36;
-            btn_sendCode.Text = "Gửi mã";
-            btn_sendCode.UseVisualStyleBackColor = false;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(243, 471);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(86, 19);
-            linkLabel1.TabIndex = 37;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Đăng nhập";
-            // 
             // FforGotPass
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -291,11 +291,11 @@
             Text = "FforGotPass";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
