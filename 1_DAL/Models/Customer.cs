@@ -15,6 +15,7 @@ namespace _1_DAL.Models
         public string Email { get; set; } = null!;
         public string Password { get; set; } = null!;
         public string FirstName { get; set; } = null!;
+        public string MiddleName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public DateTime? Dob { get; set; }
         public string? Gender { get; set; }
