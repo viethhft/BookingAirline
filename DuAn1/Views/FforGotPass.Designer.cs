@@ -110,7 +110,7 @@
             // pictureBox2
             // 
             pictureBox2.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox2.Image = Properties.Resources.icons8_otp_64;
+            pictureBox2.Image = Properties.Resources.icons8_password_64;
             pictureBox2.Location = new Point(126, 187);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
