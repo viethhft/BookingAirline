@@ -17,7 +17,7 @@ namespace DuAn1
             _fst = new fStaff();
             _f = new();
             _fdky = new fDky();
-            _fForgot= new FforGotPass();
+            _fForgot = new FforGotPass();
             InitializeComponent();
         }
 
