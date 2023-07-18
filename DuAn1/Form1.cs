@@ -1,6 +1,6 @@
-using DuAn1.Controllers.Controller;
+using _1_DAL.Models;
 using DuAn1.Views;
-
+using Bus.Service;
 namespace DuAn1
 {
     public partial class Form1 : Form
@@ -11,6 +11,7 @@ namespace DuAn1
         fDky _fdky;
         FforGotPass _fForgot;
         public Form1()
+
         {
             _checkAccountType = new();
             _fst = new fStaff();
