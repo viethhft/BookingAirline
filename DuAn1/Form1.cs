@@ -9,12 +9,14 @@ namespace DuAn1
         fStaff _fst;
         form _f;
         fDky _fdky;
+        FforGotPass _fForgot;
         public Form1()
         {
             _checkAccountType = new();
             _fst = new fStaff();
             _f = new();
             _fdky = new fDky();
+            _fForgot= new FforGotPass();
             InitializeComponent();
         }
 
@@ -47,6 +49,13 @@ namespace DuAn1
         {
             this.Hide();
             _fdky.ShowDialog();
+            this.Show();
+        }
+
+        private void llb_forgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            _fForgot.ShowDialog();
             this.Show();
         }
     }
