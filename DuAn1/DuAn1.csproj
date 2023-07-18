@@ -25,7 +25,8 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\" />
+    <Folder Include="Irepo\" />
+    <Folder Include="Repo\" />
   </ItemGroup>
 
   <ItemGroup>

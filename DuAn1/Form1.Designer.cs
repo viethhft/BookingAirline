@@ -107,6 +107,7 @@
             btn_login.TabIndex = 8;
             btn_login.Text = "Đăng nhập";
             btn_login.UseVisualStyleBackColor = false;
+            btn_login.Click += btn_login_Click;
             // 
             // llb_forgot
             // 
@@ -129,6 +130,7 @@
             llb_dki.TabIndex = 6;
             llb_dki.TabStop = true;
             llb_dki.Text = "Đăng ký";
+            llb_dki.LinkClicked += llb_dki_LinkClicked;
             // 
             // cb_reme
             // 
@@ -191,6 +193,7 @@
             // 
             // Form1
             // 
+            AcceptButton = btn_login;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.design;
@@ -198,6 +201,7 @@
             ClientSize = new Size(917, 656);
             Controls.Add(panel1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
