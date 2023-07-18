@@ -92,11 +92,21 @@ namespace DuAn1
         private void llb_forgot_MouseLeave(object sender, EventArgs e)
         {
             llb_forgot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-            if (1 == 1)
-            {
-
-            }
         }
 
+        private void btn_login_MouseHover(object sender, EventArgs e)
+        {
+            btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+        }
+
+        private void btn_login_MouseLeave(object sender, EventArgs e)
+        {
+            btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
+        }
+
+        private void btn_login_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+        }
     }
 }
