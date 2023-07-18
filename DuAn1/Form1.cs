@@ -1,6 +1,6 @@
-using _1_DAL.Models;
 using DuAn1.Views;
-using Bus.Service;
+using _2_BUS.Service;
+using _2_BUS.IService;
 namespace DuAn1
 {
     public partial class Form1 : Form

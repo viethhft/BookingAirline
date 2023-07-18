@@ -1,37 +1,38 @@
-﻿using System;
+﻿using _1_DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _1_DAL.Models;
 
-namespace Bus.Service;
-
-public class CheckAccountType
+namespace _2_BUS.Service
 {
-    BookingAirlineContext _context;
-    List<staff> _staff;
-    public CheckAccountType()
+    public class CheckAccountType
     {
-        _context = new();
-        _staff = new();
-    }
-
-    public int CheckType(string email, string password)
-    {
-        _staff = _context.staff.ToList();
-
-        foreach (var i in _staff.Where(c => c.Email == email && c.Password == password))
+        BookingAirlineContext _context;
+        List<staff> _staff;
+        public CheckAccountType()
         {
-            if (i.RoleId == 0)
-            {
-                return 1;
-            }
-            else if (i.RoleId == 1)
-            {
-                return 2;
-            }
+            _context = new();
+            _staff = new();
         }
-        return 0;
+
+        public int CheckType(string email, string password)
+        {
+            _staff = _context.staff.ToList();
+
+            foreach (var i in _staff.Where(c => c.Email == email && c.Password == password))
+            {
+                if (i.RoleId == 0)
+                {
+                    return 1;
+                }
+                else if (i.RoleId == 1)
+                {
+                    return 2;
+                }
+            }
+            return 0;
+        }
     }
 }
