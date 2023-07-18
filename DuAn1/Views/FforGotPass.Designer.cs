@@ -109,8 +109,8 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox2.Image = Properties.Resources.icons8_password_64;
+            pictureBox2.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_password_64;
             pictureBox2.Location = new Point(126, 187);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
@@ -143,8 +143,8 @@
             // 
             // pictureBox8
             // 
-            pictureBox8.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox8.Image = Properties.Resources.icons8_password_50;
+            pictureBox8.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox8.Image = GUI.Properties.Resources.icons8_password_50;
             pictureBox8.Location = new Point(126, 332);
             pictureBox8.Margin = new Padding(3, 2, 3, 2);
             pictureBox8.Name = "pictureBox8";
@@ -175,8 +175,8 @@
             // 
             // pictureBox7
             // 
-            pictureBox7.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox7.Image = Properties.Resources.icons8_password_50;
+            pictureBox7.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox7.Image = GUI.Properties.Resources.icons8_password_50;
             pictureBox7.Location = new Point(126, 257);
             pictureBox7.Margin = new Padding(3, 2, 3, 2);
             pictureBox7.Name = "pictureBox7";
@@ -215,8 +215,8 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox4.Image = Properties.Resources.icons8_email_50;
+            pictureBox4.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox4.Image = GUI.Properties.Resources.icons8_email_50;
             pictureBox4.Location = new Point(126, 112);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
@@ -247,7 +247,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icons8_airline_50;
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
             pictureBox1.Location = new Point(293, 24);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
@@ -284,7 +284,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Rectangle_2;
+            BackgroundImage = GUI.Properties.Resources.Rectangle_2;
             ClientSize = new Size(1064, 681);
             Controls.Add(panel1);
             Name = "FforGotPass";

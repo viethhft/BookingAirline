@@ -221,7 +221,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.Rectangle_2;
+            pictureBox1.BackgroundImage = GUI.Properties.Resources.Rectangle_2;
             pictureBox1.Location = new Point(693, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(350, 242);

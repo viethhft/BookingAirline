@@ -167,8 +167,8 @@
             // 
             // pictureBox9
             // 
-            pictureBox9.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox9.Image = Properties.Resources.icons8_gender_50;
+            pictureBox9.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox9.Image = GUI.Properties.Resources.icons8_gender_50;
             pictureBox9.Location = new Point(22, 331);
             pictureBox9.Margin = new Padding(3, 2, 3, 2);
             pictureBox9.Name = "pictureBox9";
@@ -190,8 +190,8 @@
             // 
             // pictureBox8
             // 
-            pictureBox8.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox8.Image = Properties.Resources.icons8_password_50;
+            pictureBox8.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox8.Image = GUI.Properties.Resources.icons8_password_50;
             pictureBox8.Location = new Point(240, 331);
             pictureBox8.Margin = new Padding(3, 2, 3, 2);
             pictureBox8.Name = "pictureBox8";
@@ -213,8 +213,8 @@
             // 
             // pictureBox7
             // 
-            pictureBox7.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox7.Image = Properties.Resources.icons8_password_50;
+            pictureBox7.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox7.Image = GUI.Properties.Resources.icons8_password_50;
             pictureBox7.Location = new Point(240, 256);
             pictureBox7.Margin = new Padding(3, 2, 3, 2);
             pictureBox7.Name = "pictureBox7";
@@ -236,8 +236,8 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox6.Image = Properties.Resources.icons8_address_50;
+            pictureBox6.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox6.Image = GUI.Properties.Resources.icons8_address_50;
             pictureBox6.Location = new Point(22, 256);
             pictureBox6.Margin = new Padding(3, 2, 3, 2);
             pictureBox6.Name = "pictureBox6";
@@ -259,8 +259,8 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox5.Image = Properties.Resources.icons8_phone_50;
+            pictureBox5.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox5.Image = GUI.Properties.Resources.icons8_phone_50;
             pictureBox5.Location = new Point(240, 182);
             pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
@@ -282,8 +282,8 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox3.Image = Properties.Resources.icons8_date_50;
+            pictureBox3.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox3.Image = GUI.Properties.Resources.icons8_date_50;
             pictureBox3.Location = new Point(22, 182);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
@@ -305,8 +305,8 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox4.Image = Properties.Resources.icons8_email_50;
+            pictureBox4.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox4.Image = GUI.Properties.Resources.icons8_email_50;
             pictureBox4.Location = new Point(240, 111);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
@@ -337,8 +337,8 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.ErrorImage = Properties.Resources.icons8_name_50;
-            pictureBox2.Image = Properties.Resources.icons8_name_50;
+            pictureBox2.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_name_50;
             pictureBox2.Location = new Point(22, 111);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
@@ -349,7 +349,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icons8_airline_50;
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
             pictureBox1.Location = new Point(279, 13);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
@@ -392,7 +392,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Rectangle_2;
+            BackgroundImage = GUI.Properties.Resources.Rectangle_2;
             ClientSize = new Size(1064, 681);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);

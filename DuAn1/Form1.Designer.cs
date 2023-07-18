@@ -69,7 +69,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.icons8_password_50;
+            pictureBox3.Image = GUI.Properties.Resources.icons8_password_50;
             pictureBox3.Location = new Point(27, 221);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(45, 37);
@@ -79,7 +79,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.icons8_email_50;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_email_50;
             pictureBox2.Location = new Point(27, 120);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(45, 37);
@@ -89,7 +89,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icons8_airline_50;
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
             pictureBox1.Location = new Point(282, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(45, 37);
@@ -205,7 +205,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            BackgroundImage = Properties.Resources.design;
+            BackgroundImage = GUI.Properties.Resources.design;
             ClientSize = new Size(917, 656);
             Controls.Add(panel1);
             MaximizeBox = false;
