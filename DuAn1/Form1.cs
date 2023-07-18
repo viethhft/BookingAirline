@@ -92,6 +92,10 @@ namespace DuAn1
         private void llb_forgot_MouseLeave(object sender, EventArgs e)
         {
             llb_forgot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+            if (1 == 1)
+            {
+
+            }
         }
 
     }
