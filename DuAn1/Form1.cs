@@ -25,6 +25,10 @@ namespace DuAn1
         {
             if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 1)
             {
+                if (cb_reme.Checked == true)
+                {
+                    MessageBox.Show("ok");
+                }
                 this.Hide();
                 MessageBox.Show("Dang nhap admin thanh cong");
                 _fst.ShowDialog();
@@ -74,5 +78,21 @@ namespace DuAn1
         {
             llb_dki.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
         }
+
+        private void llb_forgot_MouseHover(object sender, EventArgs e)
+        {
+            llb_forgot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+        }
+
+        private void llb_forgot_MouseMove(object sender, MouseEventArgs e)
+        {
+            llb_forgot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+        }
+
+        private void llb_forgot_MouseLeave(object sender, EventArgs e)
+        {
+            llb_forgot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+        }
+
     }
 }

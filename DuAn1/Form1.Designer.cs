@@ -126,6 +126,9 @@
             this.llb_forgot.TabStop = true;
             this.llb_forgot.Text = "Quên mật khẩu?";
             this.llb_forgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_forgot_LinkClicked);
+            this.llb_forgot.MouseLeave += new System.EventHandler(this.llb_forgot_MouseLeave);
+            this.llb_forgot.MouseHover += new System.EventHandler(this.llb_forgot_MouseHover);
+            this.llb_forgot.MouseMove += new System.Windows.Forms.MouseEventHandler(this.llb_forgot_MouseMove);
             // 
             // llb_dki
             // 
