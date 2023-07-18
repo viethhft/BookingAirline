@@ -19,7 +19,7 @@ namespace _2_BUS.Service
         }
         public string Create(Customer customer)
         {
-            if (_repo.Create(customer))
+            if (_dangky.Create(customer))
             {
                 return "Đăng ký thành công";
             }
