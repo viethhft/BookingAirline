@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace DuAn1.Views
 {
-    public partial class fDky : Form
+    public partial class FforGotPass : Form
     {
-        public fDky()
+        public FforGotPass()
         {
             InitializeComponent();
         }
 
-        private void txb_email_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
