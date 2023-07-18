@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace _1_DAL.test
+namespace _1_DAL.Models
 {
     public partial class BookingAirlineContext : DbContext
     {
