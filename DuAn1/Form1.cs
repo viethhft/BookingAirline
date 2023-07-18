@@ -58,5 +58,20 @@ namespace DuAn1
             _fForgot.ShowDialog();
             this.Show();
         }
+
+        private void llb_dki_MouseHover(object sender, EventArgs e)
+        {
+            llb_dki.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+        }
+
+        private void llb_dki_MouseMove(object sender, MouseEventArgs e)
+        {
+            llb_dki.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+        }
+
+        private void llb_dki_MouseLeave(object sender, EventArgs e)
+        {
+            llb_dki.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+        }
     }
 }

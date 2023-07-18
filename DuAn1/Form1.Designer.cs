@@ -138,6 +138,9 @@
             this.llb_dki.TabStop = true;
             this.llb_dki.Text = "Đăng ký";
             this.llb_dki.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_dki_LinkClicked);
+            this.llb_dki.MouseLeave += new System.EventHandler(this.llb_dki_MouseLeave);
+            this.llb_dki.MouseHover += new System.EventHandler(this.llb_dki_MouseHover);
+            this.llb_dki.MouseMove += new System.Windows.Forms.MouseEventHandler(this.llb_dki_MouseMove);
             // 
             // cb_reme
             // 
