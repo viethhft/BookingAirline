@@ -12,10 +12,10 @@ namespace _2_BUS.Service
 {
     public class DangKyService : IDangKyService
     {
-       DangKyRepo _repo;
+        IDangKy _dangky;
         public DangKyService()
         {
-            _repo = new();
+            _dangky = new DangKyRepo();
         }
         public string Create(Customer customer)
         {
