@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Date = new System.Windows.Forms.DateTimePicker();
             this.btn_sign = new System.Windows.Forms.Button();
             this.tbx_pass2 = new System.Windows.Forms.TextBox();
             this.tbx_pass1 = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.txb_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -104,6 +104,13 @@
             this.panel1.Size = new System.Drawing.Size(461, 509);
             this.panel1.TabIndex = 2;
             // 
+            // Date
+            // 
+            this.Date.Location = new System.Drawing.Point(25, 215);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(200, 23);
+            this.Date.TabIndex = 42;
+            // 
             // btn_sign
             // 
             this.btn_sign.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -114,6 +121,10 @@
             this.btn_sign.TabIndex = 41;
             this.btn_sign.Text = "Đăng ký";
             this.btn_sign.UseVisualStyleBackColor = true;
+            this.btn_sign.Click += new System.EventHandler(this.btn_sign_Click);
+            this.btn_sign.MouseLeave += new System.EventHandler(this.btn_sign_MouseLeave);
+            this.btn_sign.MouseHover += new System.EventHandler(this.btn_sign_MouseHover);
+            this.btn_sign.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_sign_MouseMove);
             // 
             // tbx_pass2
             // 
@@ -378,13 +389,6 @@
             this.label1.Size = new System.Drawing.Size(102, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG KÝ";
-            // 
-            // Date
-            // 
-            this.Date.Location = new System.Drawing.Point(25, 215);
-            this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(200, 23);
-            this.Date.TabIndex = 42;
             // 
             // fDky
             // 
