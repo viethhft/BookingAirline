@@ -26,13 +26,11 @@ namespace DuAn1.Views
 
         private async void btn_sendCode_Click(object sender, EventArgs e)
         {
-            string name = "a";
-            string phone = "a";
+            
             string email = tbx_email.Text;
-            string description = "a";
-            if (SendEmail(name, phone, email, description))
+            if (SendEmail(email))
             {
-                MessageBox.Show("ok");
+                MessageBox.Show("Email Sent Successfully.");
             }
             else
             {
@@ -51,7 +49,7 @@ namespace DuAn1.Views
             }
             return code;
         }
-        public bool SendEmail(string _name, string _phone, string _email, string _description)
+        public bool SendEmail(string _email)
         {
             string senderID = "Bookingairline1@gmail.com";
             string senderPassword = "spvhixkeagfawjqc";
