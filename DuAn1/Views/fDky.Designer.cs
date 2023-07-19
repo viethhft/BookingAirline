@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_ErrorName = new System.Windows.Forms.Label();
             this.lb_ErrorPassAgain = new System.Windows.Forms.Label();
@@ -61,7 +60,6 @@
             this.txb_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.countDown = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -438,10 +436,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG KÝ";
             // 
-            // countDown
-            // 
-            this.countDown.Interval = 1000;
-            // 
             // fDky
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -510,6 +504,5 @@
         private Label lb_ErrorPhoneNumber;
         private Label lb_ErrorPassAgain;
         private Label lb_ErrorName;
-        private System.Windows.Forms.Timer countDown;
     }
 }
