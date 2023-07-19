@@ -55,38 +55,44 @@ namespace DuAn1.Views
         }
         public async Task<bool> SendEmail(string _email,string _subject,string _body)
         {
-            countDown.Interval = 100;
-            countDown.Start();
-            minutes = 5;
-            seconds = 60;
-            //string senderID = "Bookingairline1@gmail.com";
-            //string senderPassword = "spvhixkeagfawjqc";
-            //string body = _body;
-            //MailMessage mail = new MailMessage();
-            //SmtpClient smtp = new SmtpClient();
-            //body += randomCode();
-            //try
-            //{
-            //    mail.To.Add(_email);
-            //    mail.From = new MailAddress(senderID);
-            //    mail.Subject = _subject;
-            //    mail.Body = body;
-            //    mail.IsBodyHtml = true;
-            //    mail.Priority = MailPriority.High;
-            //    smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-            //    smtp.UseDefaultCredentials = false;
-            //    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
-            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //    smtp.Port = 587;
-            //    smtp.EnableSsl = true;
-            //    await smtp.SendMailAsync(mail);
-            //    return true;
-            //}
-            //catch (Exception)
-            //{
-            //    return false;
-            //}
-            return true;
+            if (tbx_email.Text!="")
+            {
+                countDown.Interval = 100;
+                countDown.Start();
+                minutes = 5;
+                seconds = 60;
+                string senderID = "Bookingairline1@gmail.com";
+                string senderPassword = "spvhixkeagfawjqc";
+                string body = _body;
+                MailMessage mail = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                body += randomCode();
+                try
+                {
+                    mail.To.Add(_email);
+                    mail.From = new MailAddress(senderID);
+                    mail.Subject = _subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = true;
+                    mail.Priority = MailPriority.High;
+                    smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    await smtp.SendMailAsync(mail);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void CountDown()
