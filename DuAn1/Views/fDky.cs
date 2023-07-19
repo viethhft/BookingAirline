@@ -89,6 +89,22 @@ namespace DuAn1.Views
             }
             return false;
         }
+
+        void reset() // clean oo nhaap
+        {
+           
+            txb_address.Text = "";
+            txb_email.Text = "";
+            txb_name.Text = "";
+            tbx_pass1.Text = "";
+            tbx_pass2.Text = "";
+            tbx_phone.Text = "";
+            cbx_gender.Text = "";
+            lb_ErrorEmail.Visible = false;
+            lb_ErrorName.Visible = false;
+            lb_ErrorPhoneNumber.Visible = false;
+            lb_ErrorPassAgain.Visible = false;
+        }
         private void btn_sign_Click(object sender, EventArgs e)
         {
             if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == ""||tbx_pass2.Text=="") _check_information = false;
@@ -106,6 +122,7 @@ namespace DuAn1.Views
                 customer.Gender = cbx_gender.Text;
                 customer.Password = tbx_pass1.Text;
                 MessageBox.Show(_dangKyService.Create(customer));
+                reset();
             }
             else
             {
