@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace _1_DAL.IRepon
 {
-    public interface IDangKy
+    public interface ICustomer
     {
-        public bool Create(Customer customer );
+        public List<Customer> GetCustomers();
+        public bool Create(Customer cus);
+        public bool Update(Customer cus);
     }
 }
