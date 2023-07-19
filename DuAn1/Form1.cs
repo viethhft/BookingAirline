@@ -7,7 +7,7 @@ namespace DuAn1
     {
         CheckAccountType _checkAccountType;
         fStaff _fst;
-        form _f;
+        QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
         public Form1()
@@ -107,6 +107,16 @@ namespace DuAn1
         private void btn_login_MouseMove(object sender, MouseEventArgs e)
         {
             btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+        }
+
+
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Bán vé máy bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
