@@ -1,6 +1,8 @@
 ﻿using DuAn1.Views;
 using _2_BUS.Service;
 using _2_BUS.IService;
+using GUI.Views;
+
 namespace DuAn1
 {
     public partial class Form1 : Form
@@ -10,6 +12,7 @@ namespace DuAn1
         QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
+        fuser _fnguoidung;
         public Form1()
 
         {
@@ -18,6 +21,7 @@ namespace DuAn1
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
+            _fnguoidung = new();
             InitializeComponent();
         }
 
@@ -41,7 +45,7 @@ namespace DuAn1
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công");
-                _f.ShowDialog();
+                _fnguoidung.ShowDialog();
                 this.Show();
             }
             else
