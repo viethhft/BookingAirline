@@ -15,7 +15,7 @@ namespace _1_DAL.Repon
         {
             _context = new();
         }
-        public bool Create(Models.Customer cus)
+        public bool Create(Customer cus)
         {
             try
             {
@@ -29,13 +29,27 @@ namespace _1_DAL.Repon
             }
         }
 
+        public Customer Get(string id)
+        {
+            return _context.Customers.Where(c => c.Email == id).FirstOrDefault();
+        }
+
         public List<Customer> GetCustomers()
         {
             return _context.Customers.ToList();
         }
         public bool Update(Customer cus)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Customers.Update(cus);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

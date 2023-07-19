@@ -12,5 +12,6 @@ namespace _1_DAL.IRepon
         public List<Customer> GetCustomers();
         public bool Create(Customer cus);
         public bool Update(Customer cus);
+        public Customer Get(string id);
     }
 }

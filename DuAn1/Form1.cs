@@ -16,7 +16,7 @@ namespace DuAn1
             _checkAccountType = new();
             _fst = new fStaff();
             _f = new();
-            _fdky = new fDky();
+            _fdky = new fDky(new CustomerServices());
             _fForgot = new FforGotPass();
             InitializeComponent();
         }

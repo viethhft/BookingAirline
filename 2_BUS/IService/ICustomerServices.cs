@@ -12,5 +12,6 @@ namespace _2_BUS.IService
         public List<Customer> GetCustomers();
         public string Create(Customer cus);
         public string Update(Customer cus);
+        public Customer Get(string id);
     }
 }

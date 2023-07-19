@@ -10,11 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading.Tasks;
-
+using _2_BUS.IService;
+using _2_BUS.Service;
+using _1_DAL.Models;
 namespace DuAn1.Views
 {
     public partial class FforGotPass : Form
     {
+        bool _check_null = false;
         public FforGotPass()
         {
             InitializeComponent();
@@ -53,6 +56,7 @@ namespace DuAn1.Views
             }
             return code;
         }
+        string code_otp="";
         public async Task<bool> SendEmail(string _email, string _subject, string _body)
         {
             if (tbx_email.Text!="")
@@ -66,7 +70,7 @@ namespace DuAn1.Views
                 string body = _body;
                 MailMessage mail = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-                body += randomCode();
+                body += code_otp;
                 try
                 {
                     mail.To.Add(_email);
@@ -93,10 +97,6 @@ namespace DuAn1.Views
             {
                 return false;
             }
-        }
-
-        private void CountDown()
-        {
         }
         int seconds = 60;
         int minutes = 5;
@@ -125,6 +125,7 @@ namespace DuAn1.Views
                         lb_Seconds.Text = "00";
                         countDown.Stop();
                         btn_sendCode.Enabled = true;
+                        code_otp=randomCode();
                     }
                     lb_Minutes.Text = "0" + minutes.ToString();
                     seconds = 60;
@@ -134,6 +135,14 @@ namespace DuAn1.Views
 
         private void btn_success_Click(object sender, EventArgs e)
         {
+            if (tbx_email.Text==""||tbx_ma.Text==""||tbx_pass2.Text==""||txb_pass1.Text=="")
+            {
+                _check_null = true;
+            }
+            else
+            {
+                
+            }
         }
 
         private void lb_Seconds_Click(object sender, EventArgs e)

@@ -18,9 +18,9 @@ namespace DuAn1.Views
     {
         bool _check_information = true;
         ICustomerServices _dangKyService;
-        public fDky()
+        public fDky(ICustomerServices customerServices)
         {
-            _dangKyService = new CustomerServices();
+            _dangKyService = customerServices;
             InitializeComponent();
             cbx_gender.Items.Add("Nam");
             cbx_gender.Items.Add("Nữ");
