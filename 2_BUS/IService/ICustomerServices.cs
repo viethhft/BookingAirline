@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace _2_BUS.IService
 {
-    public interface IDangKyService
+    public interface ICustomerServices
     {
-        public string Create(Customer customer);
-
+        public List<Customer> GetCustomers();
+        public string Create(Customer cus);
+        public string Update(Customer cus);
     }
 }

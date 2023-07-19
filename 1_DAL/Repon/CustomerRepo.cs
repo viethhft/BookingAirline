@@ -8,26 +8,34 @@ using System.Threading.Tasks;
 
 namespace _1_DAL.Repon
 {
-    public class DangKyRepo : IDangKy
+    public class Customer : ICustomer
     {
         BookingAirlineContext _context;
-
-        public DangKyRepo()
+        public Customer()
         {
             _context = new();
         }
-        public bool Create(Customer customer)
+        public bool Create(Models.Customer cus)
         {
             try
             {
-                _context.Customers.Add(customer);
+                _context.Customers.Add(cus);
                 _context.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
             }
+        }
+
+        public List<Models.Customer> GetCustomers()
+        {
+            return _context.Customers.ToList();
+        }
+        public bool Update(Models.Customer cus)
+        {
+            throw new NotImplementedException();
         }
     }
 }
