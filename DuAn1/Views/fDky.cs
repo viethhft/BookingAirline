@@ -67,10 +67,7 @@ namespace DuAn1.Views
             {
                 return true;
             }
-            else
-            {
                 return false;
-            }
         }
         private bool checkPhoneNumber(string phone)
         {
@@ -80,14 +77,21 @@ namespace DuAn1.Views
             {
                 return true;
             }
-            else
-            {
                 return false;
+        }
+        private bool checkName(string name)
+        {
+            Regex regex = new Regex(@"[a-zA-z]{2,10}((\s[a-zA-z]{2,10})){2,10}$");
+            Match match=regex.Match(name);
+            if (match!=Match.Empty)
+            {
+                return true;
             }
+            return false;
         }
         private void btn_sign_Click(object sender, EventArgs e)
         {
-            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == "") _check_information = false;
+            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == ""||tbx_pass2.Text=="") _check_information = false;
             if (_check_information)
             {
                 Customer customer = new Customer();
@@ -159,7 +163,7 @@ namespace DuAn1.Views
                 lb_ErrorPhoneNumber.ForeColor = System.Drawing.Color.Red;
             }
         }
-
+        
         private void tbx_pass2_TextChanged(object sender, EventArgs e)
         {
             string pass1 = tbx_pass1.Text;
@@ -177,6 +181,24 @@ namespace DuAn1.Views
                 lb_ErrorPassAgain.Visible = true;
                 lb_ErrorPassAgain.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorPassAgain.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void txb_name_TextChanged(object sender, EventArgs e)
+        {
+            if (checkName(txb_name.Text))
+            {
+                lb_ErrorName.Text = "";
+                lb_ErrorName.Visible = false;
+                _check_information = true;
+            }
+            else
+            {
+                _check_information = false;
+                lb_ErrorName.Text = "Không đúng định dạng tên";
+                lb_ErrorName.Visible = true;
+                lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorName.ForeColor = System.Drawing.Color.Red;
             }
         }
     }

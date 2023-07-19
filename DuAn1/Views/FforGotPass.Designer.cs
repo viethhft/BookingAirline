@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_sendCode = new System.Windows.Forms.Button();
@@ -47,12 +48,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_success = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lb_Seconds = new System.Windows.Forms.Label();
+            this.lb_Minutes = new System.Windows.Forms.Label();
+            this.countDown = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,7 +106,7 @@
             this.btn_sendCode.BackColor = System.Drawing.Color.White;
             this.btn_sendCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sendCode.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_sendCode.Location = new System.Drawing.Point(250, 209);
+            this.btn_sendCode.Location = new System.Drawing.Point(250, 213);
             this.btn_sendCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sendCode.Name = "btn_sendCode";
             this.btn_sendCode.Size = new System.Drawing.Size(79, 31);
@@ -268,6 +275,7 @@
             this.btn_success.TabIndex = 8;
             this.btn_success.Text = "Xác nhận";
             this.btn_success.UseVisualStyleBackColor = false;
+            this.btn_success.Click += new System.EventHandler(this.btn_success_Click);
             // 
             // label1
             // 
@@ -280,12 +288,54 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "QUÊN MẬT KHẨU";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lb_Seconds);
+            this.panel2.Controls.Add(this.lb_Minutes);
+            this.panel2.Location = new System.Drawing.Point(349, 203);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = ":";
+            // 
+            // lb_Seconds
+            // 
+            this.lb_Seconds.AutoSize = true;
+            this.lb_Seconds.Location = new System.Drawing.Point(53, 26);
+            this.lb_Seconds.Name = "lb_Seconds";
+            this.lb_Seconds.Size = new System.Drawing.Size(19, 15);
+            this.lb_Seconds.TabIndex = 1;
+            this.lb_Seconds.Text = "00";
+            // 
+            // lb_Minutes
+            // 
+            this.lb_Minutes.AutoSize = true;
+            this.lb_Minutes.Location = new System.Drawing.Point(12, 26);
+            this.lb_Minutes.Name = "lb_Minutes";
+            this.lb_Minutes.Size = new System.Drawing.Size(19, 15);
+            this.lb_Minutes.TabIndex = 0;
+            this.lb_Minutes.Text = "00";
+            // 
+            // countDown
+            // 
+            this.countDown.Tick += new System.EventHandler(this.countDown_Tick);
+            // 
             // FforGotPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.Rectangle_2;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FforGotPass";
             this.Text = "FforGotPass";
@@ -296,6 +346,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +373,10 @@
         private Label label1;
         private Button btn_sendCode;
         private LinkLabel linkLabel1;
+        private Panel panel2;
+        private Label label3;
+        private Label lb_Seconds;
+        private Label lb_Minutes;
+        private System.Windows.Forms.Timer countDown;
     }
 }
