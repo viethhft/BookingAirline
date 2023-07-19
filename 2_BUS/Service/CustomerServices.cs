@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2_BUS.Service
 {
-    public class CustomerServices
+    public class CustomerServices:ICustomerServices
     {
         ICustomerRepo _repo;
         public CustomerServices()
