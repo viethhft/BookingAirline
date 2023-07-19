@@ -30,7 +30,7 @@ namespace DuAn1.Views
             string email = tbx_email.Text;
             string subject = " ";
             string body = "";
-            if (await SendEmail(email,subject,body))
+            if (await SendEmail(email, subject, body))
             {
                 MessageBox.Show("Email Sent Successfully.");
                 btn_sendCode.Enabled = false;
@@ -53,46 +53,40 @@ namespace DuAn1.Views
             }
             return code;
         }
-        public async Task<bool> SendEmail(string _email,string _subject,string _body)
+        public async Task<bool> SendEmail(string _email, string _subject, string _body)
         {
-            if (tbx_email.Text!="")
-            {
-                countDown.Interval = 100;
-                countDown.Start();
-                minutes = 5;
-                seconds = 60;
-                string senderID = "Bookingairline1@gmail.com";
-                string senderPassword = "spvhixkeagfawjqc";
-                string body = _body;
-                MailMessage mail = new MailMessage();
-                SmtpClient smtp = new SmtpClient();
-                body += randomCode();
-                try
-                {
-                    mail.To.Add(_email);
-                    mail.From = new MailAddress(senderID);
-                    mail.Subject = _subject;
-                    mail.Body = body;
-                    mail.IsBodyHtml = true;
-                    mail.Priority = MailPriority.High;
-                    smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Port = 587;
-                    smtp.EnableSsl = true;
-                    await smtp.SendMailAsync(mail);
-                    return true;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            countDown.Interval = 100;
+            countDown.Start();
+            minutes = 5;
+            seconds = 60;
+            //string senderID = "Bookingairline1@gmail.com";
+            //string senderPassword = "spvhixkeagfawjqc";
+            //string body = _body;
+            //MailMessage mail = new MailMessage();
+            //SmtpClient smtp = new SmtpClient();
+            //body += randomCode();
+            //try
+            //{
+            //    mail.To.Add(_email);
+            //    mail.From = new MailAddress(senderID);
+            //    mail.Subject = _subject;
+            //    mail.Body = body;
+            //    mail.IsBodyHtml = true;
+            //    mail.Priority = MailPriority.High;
+            //    smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
+            //    smtp.UseDefaultCredentials = false;
+            //    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
+            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //    smtp.Port = 587;
+            //    smtp.EnableSsl = true;
+            //    await smtp.SendMailAsync(mail);
+            //    return true;
+            //}
+            //catch (Exception)
+            //{
+            //    return false;
+            //}
+            return true;
         }
 
         private void CountDown()
@@ -103,7 +97,7 @@ namespace DuAn1.Views
         private void countDown_Tick(object sender, EventArgs e)
         {
             btn_sendCode.Enabled = false;
-            if (minutes>-2)
+            if (minutes > -2)
             {
                 seconds--;
                 lb_Minutes.Text = "0" + minutes.ToString();
@@ -118,7 +112,7 @@ namespace DuAn1.Views
                     minutes--;
                     if (minutes == -1)
                     {
-                        minutes=-2; 
+                        minutes = -2;
                         minutes = 0;
                         seconds = 0;
                         lb_Minutes.Text = "00";
@@ -134,6 +128,11 @@ namespace DuAn1.Views
 
         private void btn_success_Click(object sender, EventArgs e)
         {
+        }
+
+        private void lb_Seconds_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
