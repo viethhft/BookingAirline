@@ -1,4 +1,4 @@
-using DuAn1.Views;
+﻿using DuAn1.Views;
 using _2_BUS.Service;
 using _2_BUS.IService;
 namespace DuAn1
@@ -25,26 +25,29 @@ namespace DuAn1
         {
             if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 1)
             {
-                if (cb_reme.Checked == true)
-                {
-                    MessageBox.Show("ok");
-                }
                 this.Hide();
-                MessageBox.Show("Dang nhap admin thanh cong");
+                MessageBox.Show("Đăng nhập admin thành công");
                 _fst.ShowDialog();
                 this.Show();
             }
             else if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 2)
             {
                 this.Hide();
-                MessageBox.Show("Dang nhap nhan vien thanh cong");
+                MessageBox.Show("Đăng nhập nhân viên thành công");
+                _fst.ShowDialog();
+                this.Show();
+            }
+            else if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 3)
+            {
+                this.Hide();
+                MessageBox.Show("Đăng nhập thành công");
                 _fst.ShowDialog();
                 this.Show();
             }
             else
             {
                 this.Hide();
-                MessageBox.Show("Dang nhap thanh cong");
+                MessageBox.Show("Đăng nhập thất bại");
                 _f.ShowDialog();
                 this.Show();
             }

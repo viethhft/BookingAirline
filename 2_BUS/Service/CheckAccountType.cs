@@ -11,16 +11,18 @@ namespace _2_BUS.Service
     {
         BookingAirlineContext _context;
         List<staff> _staff;
+        List<Customer> _customer;
         public CheckAccountType()
         {
             _context = new();
             _staff = new();
+            _customer = new();
         }
 
         public int CheckType(string email, string password)
         {
-                _staff = _context.staff.ToList();
-
+            _staff = _context.staff.ToList();
+            _customer = _context.Customers.ToList();
             foreach (var i in _staff.Where(c => c.Email == email && c.Password == password))
             {
                 if (i.RoleId == 0)
@@ -31,6 +33,10 @@ namespace _2_BUS.Service
                 {
                     return 2;
                 }
+            }
+            foreach (var item in _customer.Where(c => c.Email == email && c.Password == password))
+            {
+                return 3;
             }
             return 0;
         }
