@@ -41,15 +41,12 @@ namespace DuAn1
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công");
-                _fst.ShowDialog();
+                _f.ShowDialog();
                 this.Show();
             }
             else
             {
-                this.Hide();
                 MessageBox.Show("Đăng nhập thất bại");
-                _f.ShowDialog();
-                this.Show();
             }
         }
 
