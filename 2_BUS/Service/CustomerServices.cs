@@ -1,5 +1,6 @@
 ﻿using _1_DAL.Models;
 using _1_DAL.Repon;
+using _1_DAL.IRepon;
 using _2_BUS.IService;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace _2_BUS.Service
 {
     public class CustomerServices : ICustomerServices
     {
-        CustomerRepo _repo;
+        ICustomerRepo _repo;
         public CustomerServices()
         {
             _repo = new CustomerRepo();

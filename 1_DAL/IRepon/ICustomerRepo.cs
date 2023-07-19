@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL.IRepon
 {
-    public interface ICustomer
+    public interface ICustomerRepo
     {
         public List<Customer> GetCustomers();
         public bool Create(Customer cus);

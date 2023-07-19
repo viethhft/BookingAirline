@@ -34,7 +34,7 @@ namespace DuAn1.Views
             }
             else
             {
-                MessageBox.Show("đéo");
+                MessageBox.Show("Lỗi rồi");
             }
         }
         private string randomCode()

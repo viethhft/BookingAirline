@@ -17,10 +17,10 @@ namespace DuAn1.Views
     public partial class fDky : Form
     {
         bool _check_information = true;
-        IDangKyService _dangKyService;
+        ICustomerServices _dangKyService;
         public fDky()
         {
-            _dangKyService = new DangKyService();
+            _dangKyService = new CustomerServices();
             InitializeComponent();
             cbx_gender.Items.Add("Nam");
             cbx_gender.Items.Add("Nữ");

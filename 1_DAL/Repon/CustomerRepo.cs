@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace _1_DAL.Repon
 {
-    public class Customer : ICustomer
+    public class CustomerRepo : ICustomerRepo
     {
         BookingAirlineContext _context;
-        public Customer()
+        public CustomerRepo()
         {
             _context = new();
         }
@@ -29,11 +29,11 @@ namespace _1_DAL.Repon
             }
         }
 
-        public List<Models.Customer> GetCustomers()
+        public List<Customer> GetCustomers()
         {
             return _context.Customers.ToList();
         }
-        public bool Update(Models.Customer cus)
+        public bool Update(Customer cus)
         {
             throw new NotImplementedException();
         }

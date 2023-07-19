@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_ErrorPassAgain = new System.Windows.Forms.Label();
             this.lb_ErrorPhoneNumber = new System.Windows.Forms.Label();
             this.lb_ErrorEmail = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@
             this.txb_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lb_ErrorPassAgain = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -109,6 +109,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 509);
             this.panel1.TabIndex = 2;
+            // 
+            // lb_ErrorPassAgain
+            // 
+            this.lb_ErrorPassAgain.AutoSize = true;
+            this.lb_ErrorPassAgain.Location = new System.Drawing.Point(279, 393);
+            this.lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
+            this.lb_ErrorPassAgain.Size = new System.Drawing.Size(0, 15);
+            this.lb_ErrorPassAgain.TabIndex = 45;
             // 
             // lb_ErrorPhoneNumber
             // 
@@ -416,14 +424,6 @@
             this.label1.Size = new System.Drawing.Size(102, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG KÝ";
-            // 
-            // lb_ErrorPassAgain
-            // 
-            this.lb_ErrorPassAgain.AutoSize = true;
-            this.lb_ErrorPassAgain.Location = new System.Drawing.Point(279, 393);
-            this.lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
-            this.lb_ErrorPassAgain.Size = new System.Drawing.Size(0, 15);
-            this.lb_ErrorPassAgain.TabIndex = 45;
             // 
             // fDky
             // 
