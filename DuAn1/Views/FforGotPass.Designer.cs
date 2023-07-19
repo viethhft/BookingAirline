@@ -106,6 +106,7 @@
             this.btn_sendCode.TabIndex = 36;
             this.btn_sendCode.Text = "Gửi mã";
             this.btn_sendCode.UseVisualStyleBackColor = false;
+            this.btn_sendCode.Click += new System.EventHandler(this.btn_sendCode_Click);
             // 
             // pictureBox2
             // 
