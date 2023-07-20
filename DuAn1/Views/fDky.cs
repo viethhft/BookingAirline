@@ -1,6 +1,7 @@
 ﻿using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
+using _2_BUS.Validate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,81 +18,41 @@ namespace DuAn1.Views
     public partial class fDky : Form
     {
         bool _check_information = true;
-        IDangKyService _dangKyService;
+        ICustomerServices _dangKyService;
+        Validate _validate;
         public fDky()
         {
-            _dangKyService = new DangKyService();
+            _validate = new Validate();
+            _dangKyService=new CustomerServices();
             InitializeComponent();
             cbx_gender.Items.Add("Nam");
             cbx_gender.Items.Add("Nữ");
             cbx_gender.SelectedIndex = 0;
             this.MaximizeBox = false;
         }
-        private string[] cutName(string name)
+        
+        void reset() // clean oo nhaap
         {
-            string[] term = name.Split(' ');
-            int number = 0;
-            string firstname = "";
-            string middlename = "";
-            string lastname = "";
-            for (int i = 0; i < term.Length; i++)
-            {
-                if (term[i] != " ")
-                {
-                    number++;
-                    if (number == 1)
-                    {
-                        lastname = term[i].Trim();
-                    }
-                    else
-                    {
-                        middlename += term[i] + " ";
-                    }
-                }
-            }
-            string[] term1 = middlename.Trim().Split(' ');
-            middlename = "";
-            for (int i = 0; i < term1.Length - 1; i++)
-            {
-                middlename += term1[i] + " ";
-            }
-            firstname = term1[term1.Length - 1];
-            string[] name1 = { firstname, middlename, lastname };
-            return name1;
-        }
-        private bool checkEmail(string email)
-        {
-            Regex regex = new Regex(@"([a-z0-9]{5})+@[a-z]+\.([a-z]{2,3}|[a-z]{2,3}.[a-z]{2,3})$");
-            Match match = regex.Match(email);
-            if (match != Match.Empty)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        private bool checkPhoneNumber(string phone)
-        {
-            Regex regex = new Regex(@"(0|\+84)([3|9|8|7|5])(\d{8})$");
-            Match match = regex.Match(phone);
-            if (match != Match.Empty)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+           
+            txb_address.Text = "";
+            txb_email.Text = "";
+            txb_name.Text = "";
+            tbx_pass1.Text = "";
+            tbx_pass2.Text = "";
+            tbx_phone.Text = "";
+            cbx_gender.Text = "";
+            lb_ErrorEmail.Visible = false;
+            lb_ErrorName.Visible = false;
+            lb_ErrorPhoneNumber.Visible = false;
+            lb_ErrorPassAgain.Visible = false;
         }
         private void btn_sign_Click(object sender, EventArgs e)
         {
-            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == "") _check_information = false;
+            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == ""||tbx_pass2.Text=="") _check_information = false;
             if (_check_information)
             {
                 Customer customer = new Customer();
-                string[] fullname = cutName(txb_name.Text);
+                string[] fullname = _validate.cutName(txb_name.Text);
                 customer.FirstName = fullname[0].Trim();
                 customer.MiddleName = fullname[1].Trim();
                 customer.LastName = fullname[2].Trim();
@@ -102,10 +63,11 @@ namespace DuAn1.Views
                 customer.Gender = cbx_gender.Text;
                 customer.Password = tbx_pass1.Text;
                 MessageBox.Show(_dangKyService.Create(customer));
+                reset();
             }
             else
             {
-                MessageBox.Show("Thông tin điền chưa hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Thông tin điền đúng thông tin yêu cầu","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -126,7 +88,7 @@ namespace DuAn1.Views
 
         private void txb_email_TextChanged(object sender, EventArgs e)
         {
-            if (checkEmail(txb_email.Text))
+            if (_validate.checkEmail(txb_email.Text))
             {
                 lb_ErrorEmail.Text = "";
                 lb_ErrorEmail.Visible = false;
@@ -144,7 +106,7 @@ namespace DuAn1.Views
 
         private void tbx_phone_TextChanged(object sender, EventArgs e)
         {
-            if (checkPhoneNumber(tbx_phone.Text))
+            if (_validate.checkPhoneNumber(tbx_phone.Text))
             {
                 lb_ErrorPhoneNumber.Text = "";
                 lb_ErrorPhoneNumber.Visible = false;
@@ -159,7 +121,7 @@ namespace DuAn1.Views
                 lb_ErrorPhoneNumber.ForeColor = System.Drawing.Color.Red;
             }
         }
-
+        
         private void tbx_pass2_TextChanged(object sender, EventArgs e)
         {
             string pass1 = tbx_pass1.Text;
@@ -177,6 +139,24 @@ namespace DuAn1.Views
                 lb_ErrorPassAgain.Visible = true;
                 lb_ErrorPassAgain.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorPassAgain.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void txb_name_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkName(txb_name.Text))
+            {
+                lb_ErrorName.Text = "";
+                lb_ErrorName.Visible = false;
+                _check_information = true;
+            }
+            else
+            {
+                _check_information = false;
+                lb_ErrorName.Text = "Không đúng định dạng tên";
+                lb_ErrorName.Visible = true;
+                lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorName.ForeColor = System.Drawing.Color.Red;
             }
         }
     }

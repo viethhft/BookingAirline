@@ -1,3 +1,5 @@
+using DuAn1.Views;
+
 namespace DuAn1
 {
     internal static class Program

@@ -1,15 +1,18 @@
 ﻿using DuAn1.Views;
 using _2_BUS.Service;
 using _2_BUS.IService;
+using GUI.Views;
+
 namespace DuAn1
 {
     public partial class Form1 : Form
     {
         CheckAccountType _checkAccountType;
         fStaff _fst;
-        form _f;
+        QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
+        fuser _fnguoidung;
         public Form1()
 
         {
@@ -18,6 +21,7 @@ namespace DuAn1
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
+            _fnguoidung = new();
             InitializeComponent();
         }
 
@@ -41,7 +45,7 @@ namespace DuAn1
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công");
-                _f.ShowDialog();
+                _fnguoidung.ShowDialog();
                 this.Show();
             }
             else
@@ -107,6 +111,16 @@ namespace DuAn1
         private void btn_login_MouseMove(object sender, MouseEventArgs e)
         {
             btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+        }
+
+
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Bán vé máy bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

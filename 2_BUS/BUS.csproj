@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AE.Net.Mail" Version="1.7.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\1_DAL\1_DAL.csproj" />
   </ItemGroup>
 

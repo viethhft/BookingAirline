@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace DuAn1.Views
 {
-    public partial class form : Form
+    public partial class QlykhachHang : Form
     {
-        public form()
+        public QlykhachHang()
         {
             InitializeComponent();
         }
+
     }
 }

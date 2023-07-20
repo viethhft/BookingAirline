@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_ErrorName = new System.Windows.Forms.Label();
+            this.lb_ErrorPassAgain = new System.Windows.Forms.Label();
             this.lb_ErrorPhoneNumber = new System.Windows.Forms.Label();
             this.lb_ErrorEmail = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +60,6 @@
             this.txb_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lb_ErrorPassAgain = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -74,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lb_ErrorName);
             this.panel1.Controls.Add(this.lb_ErrorPassAgain);
             this.panel1.Controls.Add(this.lb_ErrorPhoneNumber);
             this.panel1.Controls.Add(this.lb_ErrorEmail);
@@ -109,6 +111,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 509);
             this.panel1.TabIndex = 2;
+            // 
+            // lb_ErrorName
+            // 
+            this.lb_ErrorName.AutoSize = true;
+            this.lb_ErrorName.Location = new System.Drawing.Point(75, 173);
+            this.lb_ErrorName.Name = "lb_ErrorName";
+            this.lb_ErrorName.Size = new System.Drawing.Size(0, 15);
+            this.lb_ErrorName.TabIndex = 46;
+            // 
+            // lb_ErrorPassAgain
+            // 
+            this.lb_ErrorPassAgain.AutoSize = true;
+            this.lb_ErrorPassAgain.Location = new System.Drawing.Point(279, 393);
+            this.lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
+            this.lb_ErrorPassAgain.Size = new System.Drawing.Size(0, 15);
+            this.lb_ErrorPassAgain.TabIndex = 45;
             // 
             // lb_ErrorPhoneNumber
             // 
@@ -394,6 +412,7 @@
             this.txb_name.Name = "txb_name";
             this.txb_name.Size = new System.Drawing.Size(193, 23);
             this.txb_name.TabIndex = 3;
+            this.txb_name.TextChanged += new System.EventHandler(this.txb_name_TextChanged);
             // 
             // label2
             // 
@@ -416,14 +435,6 @@
             this.label1.Size = new System.Drawing.Size(102, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG KÝ";
-            // 
-            // lb_ErrorPassAgain
-            // 
-            this.lb_ErrorPassAgain.AutoSize = true;
-            this.lb_ErrorPassAgain.Location = new System.Drawing.Point(279, 393);
-            this.lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
-            this.lb_ErrorPassAgain.Size = new System.Drawing.Size(0, 15);
-            this.lb_ErrorPassAgain.TabIndex = 45;
             // 
             // fDky
             // 
@@ -492,5 +503,6 @@
         private Label lb_ErrorEmail;
         private Label lb_ErrorPhoneNumber;
         private Label lb_ErrorPassAgain;
+        private Label lb_ErrorName;
     }
 }
