@@ -12,7 +12,7 @@ namespace _2_BUS.Service
 {
     public class CustomerServices:ICustomerServices
     {
-        ICustomerRepo _repo;
+        CustomerRepo _repo;
         public CustomerServices()
         {
             _repo = new CustomerRepo();

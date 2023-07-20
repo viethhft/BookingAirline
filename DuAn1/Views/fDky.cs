@@ -18,22 +18,22 @@ namespace DuAn1.Views
     public partial class fDky : Form
     {
         bool _check_information = true;
-        ICustomerServices _dangKyService;
+        CustomerServices _dangKyService;
         Validate _validate;
         public fDky()
         {
             _validate = new Validate();
-            _dangKyService=new CustomerServices();
+            _dangKyService = new CustomerServices();
             InitializeComponent();
             cbx_gender.Items.Add("Nam");
             cbx_gender.Items.Add("Nữ");
             cbx_gender.SelectedIndex = 0;
             this.MaximizeBox = false;
         }
-        
+
         void reset() // clean oo nhaap
         {
-           
+
             txb_address.Text = "";
             txb_email.Text = "";
             txb_name.Text = "";
@@ -48,7 +48,7 @@ namespace DuAn1.Views
         }
         private void btn_sign_Click(object sender, EventArgs e)
         {
-            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == ""||tbx_pass2.Text=="") _check_information = false;
+            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == "" || tbx_pass2.Text == "") _check_information = false;
             if (_check_information)
             {
                 Customer customer = new Customer();
@@ -62,12 +62,15 @@ namespace DuAn1.Views
                 customer.Phone = tbx_phone.Text;
                 customer.Gender = cbx_gender.Text;
                 customer.Password = tbx_pass1.Text;
-                MessageBox.Show(_dangKyService.Create(customer));
-                reset();
+                if (MessageBox.Show(_dangKyService.Create(customer), "Xác nhận hoàn thành đăng ký ?", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    reset();
+                    this.Close();
+                }
             }
             else
             {
-                MessageBox.Show("Thông tin điền đúng thông tin yêu cầu","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -100,7 +103,7 @@ namespace DuAn1.Views
                 lb_ErrorEmail.Text = "Không đúng định dạng email";
                 lb_ErrorEmail.Visible = true;
                 lb_ErrorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-                lb_ErrorEmail.ForeColor= System.Drawing.Color.Red;
+                lb_ErrorEmail.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -121,12 +124,12 @@ namespace DuAn1.Views
                 lb_ErrorPhoneNumber.ForeColor = System.Drawing.Color.Red;
             }
         }
-        
+
         private void tbx_pass2_TextChanged(object sender, EventArgs e)
         {
             string pass1 = tbx_pass1.Text;
             string pass2 = tbx_pass2.Text;
-            if (pass1==pass2)
+            if (pass1 == pass2)
             {
                 lb_ErrorPassAgain.Text = "";
                 lb_ErrorPassAgain.Visible = false;
