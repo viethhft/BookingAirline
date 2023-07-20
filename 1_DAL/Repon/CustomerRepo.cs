@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace _1_DAL.Repon
 {
-    public class Customer : ICustomer
+    public class CustomerRepo : ICustomerRepo
     {
         BookingAirlineContext _context;
-        public Customer()
+        public CustomerRepo()
         {
             _context = new();
         }
