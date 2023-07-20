@@ -62,7 +62,7 @@ namespace DuAn1.Views
                 customer.Phone = tbx_phone.Text;
                 customer.Gender = cbx_gender.Text;
                 customer.Password = tbx_pass1.Text;
-                if (MessageBox.Show(_dangKyService.Create(customer), "Xác nhận hoàn thành đăng ký ?", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(_dangKyService.Create(customer), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
                 {
                     reset();
                     this.Close();

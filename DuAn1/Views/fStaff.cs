@@ -16,10 +16,5 @@ namespace DuAn1.Views
         {
             InitializeComponent();
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
