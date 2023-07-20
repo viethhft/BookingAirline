@@ -14,6 +14,7 @@ using _2_BUS.IService;
 using _2_BUS.Service;
 using _1_DAL.Models;
 using _2_BUS.Validate;
+
 namespace DuAn1.Views
 {
     public partial class FforGotPass : Form
