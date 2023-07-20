@@ -2,6 +2,7 @@
 using _2_BUS.IService;
 using _2_BUS.Service;
 using _2_BUS.Validate;
+using FirebaseAdmin.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace DuAn1.Views
 {
     public partial class fDky : Form
     {
+
         bool _check_information = true;
         ICustomerServices _dangKyService;
         IStaffServices _staffServices;
@@ -32,10 +34,9 @@ namespace DuAn1.Views
             cbx_gender.SelectedIndex = 0;
             this.MaximizeBox = false;
         }
-
-        void reset() // clean oo nhaap
+       
+         void reset() // clean oo nhaap
         {
-
             txb_address.Text = "";
             txb_email.Text = "";
             txb_name.Text = "";

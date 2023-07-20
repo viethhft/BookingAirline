@@ -51,7 +51,8 @@ namespace DuAn1.Views
 
         private void btn_qlykh_Click(object sender, EventArgs e)
         {
-
+            QlykhachHang child=new QlykhachHang();
+            ChildForm(child);
         }
     }
 }
