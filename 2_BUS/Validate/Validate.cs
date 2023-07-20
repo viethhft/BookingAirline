@@ -6,11 +6,19 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using _1_DAL.Models;
+using _2_BUS.IService;
+using _2_BUS.Service;
 
 namespace _2_BUS.Validate
 {
     public class Validate
     {
+        IStaffServices _staffServices;
+        public Validate()
+        {
+            _staffServices = new StaffServices();
+        }
         public bool checkEmail(string email)
         {
             Regex regex = new Regex(@"([a-z0-9]{5})+@[a-z]+\.([a-z]{2,3}|[a-z]{2,3}.[a-z]{2,3})$");
@@ -74,14 +82,13 @@ namespace _2_BUS.Validate
             }
             return false;
         }
-        public async Task<bool> SendEmail(string _email, string _subject, string _body, string code_otp)
+        public async Task<bool> SendEmail(string _email, string _subject, string _body, string code_otp,int role)
         {
             try
             {
-
-
-                string senderID = "Bookingairline1@gmail.com";
-                string senderPassword = "spvhixkeagfawjqc";
+                staff staff = _staffServices.get(role);
+                string senderID =staff.Email;
+                string senderPassword =staff.Password;
                 string body = _body;
                 MailMessage mail = new MailMessage();
                 SmtpClient smtp = new SmtpClient();

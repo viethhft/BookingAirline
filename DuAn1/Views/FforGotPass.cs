@@ -47,8 +47,9 @@ namespace DuAn1.Views
                     string email = tbx_email.Text;
                     string subject = "Verify to Email";
                     string body = "Your code otp is : ";
+                    int role_id = 99;
                     code_otp = _validate.randomCode();
-                    if (await _validate.SendEmail(email, subject, body, code_otp))
+                    if (await _validate.SendEmail(email, subject, body, code_otp,role_id))
                     {
                         time.Visible = true;
                         MessageBox.Show("Email Sent Successfully.");

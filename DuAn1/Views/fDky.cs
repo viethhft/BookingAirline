@@ -18,10 +18,12 @@ namespace DuAn1.Views
     public partial class fDky : Form
     {
         bool _check_information = true;
-        CustomerServices _dangKyService;
+        ICustomerServices _dangKyService;
+        IStaffServices _staffServices;
         Validate _validate;
         public fDky()
         {
+            _staffServices= new StaffServices();
             _validate = new Validate();
             _dangKyService = new CustomerServices();
             InitializeComponent();
@@ -46,6 +48,23 @@ namespace DuAn1.Views
             lb_ErrorPhoneNumber.Visible = false;
             lb_ErrorPassAgain.Visible = false;
         }
+        private bool check_duplicate_mail(string email)
+        {
+            foreach (var item in _staffServices.list_staff())
+            {
+                if (item.Email==email)
+                {
+                    return true;
+                }
+            }foreach (var item in _dangKyService.GetCustomers())
+            {
+                if (item.Email==email)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         private void btn_sign_Click(object sender, EventArgs e)
         {
             if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == "" || tbx_pass2.Text == "") _check_information = false;
@@ -62,10 +81,17 @@ namespace DuAn1.Views
                 customer.Phone = tbx_phone.Text;
                 customer.Gender = cbx_gender.Text;
                 customer.Password = tbx_pass1.Text;
-                if (MessageBox.Show(_dangKyService.Create(customer), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
+                if (check_duplicate_mail(customer.Email))
                 {
-                    reset();
-                    this.Close();
+                    MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (MessageBox.Show(_dangKyService.Create(customer), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
+                    {
+                        reset();
+                        this.Close();
+                    }
                 }
             }
             else
