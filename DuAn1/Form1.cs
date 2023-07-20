@@ -2,6 +2,7 @@
 using _2_BUS.Service;
 using _2_BUS.IService;
 using GUI.Views;
+using GUI.Properties;
 
 namespace DuAn1
 {
@@ -23,8 +24,22 @@ namespace DuAn1
             _fForgot = new FforGotPass();
             _fnguoidung = new();
             InitializeComponent();
+            load();
         }
-
+        void load()
+        {
+            if (Settings.Default.isRemember)
+            {
+                tb_user.Text = Settings.Default.username;
+                tb_pass.Text = Settings.Default.password;
+            }
+            else
+            {
+                tb_user.Text = "";
+                tb_pass.Text = "";
+            }
+            cb_reme.Checked = Settings.Default.isRemember;
+        }
         private void btn_login_Click(object sender, EventArgs e)
         {
             if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 1)
@@ -51,6 +66,14 @@ namespace DuAn1
             else
             {
                 MessageBox.Show("Đăng nhập thất bại");
+            }
+            if (cb_reme.Checked)
+            {
+                cb_reme_CheckedChanged(sender, e);
+            }
+            else
+            {
+                cb_reme_CheckedChanged(sender, e);
             }
         }
 
@@ -120,6 +143,25 @@ namespace DuAn1
             if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Bán vé máy bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void cb_reme_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.isRemember = cb_reme.Checked;
+            if (cb_reme.Checked)
+            {
+                Settings.Default.username = tb_user.Text;
+                Settings.Default.password = tb_pass.Text;
+                Settings.Default.Save();
+                Settings.Default.Upgrade();
+            }
+            else
+            {
+                Settings.Default.username = "";
+                Settings.Default.password = "";
+                Settings.Default.Save();
+                Settings.Default.Upgrade();
             }
         }
     }
