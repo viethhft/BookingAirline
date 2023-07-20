@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
+
 namespace _2_BUS.Validate
 {
     public class Validate
@@ -72,6 +74,56 @@ namespace _2_BUS.Validate
             }
             return false;
         }
+        public async Task<bool> SendEmail(string _email, string _subject, string _body, string code_otp)
+        {
+            try
+            {
 
+
+                string senderID = "Bookingairline1@gmail.com";
+                string senderPassword = "spvhixkeagfawjqc";
+                string body = _body;
+                MailMessage mail = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                body += code_otp;
+                try
+                {
+                    mail.To.Add(_email);
+                    mail.From = new MailAddress(senderID);
+                    mail.Subject = _subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = true;
+                    mail.Priority = MailPriority.High;
+                    smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    await smtp.SendMailAsync(mail);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public string randomCode()
+        {
+            int ran = 0;
+            string code = "";
+            for (int i = 0; i < 6; i++)
+            {
+                Random random = new Random();
+                ran = random.Next(0, 10);
+                code += ran.ToString();
+            }
+            return code;
+        }
     }
 }

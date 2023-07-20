@@ -23,7 +23,9 @@ namespace DuAn1.Views
 
         ICustomerServices _services;
         Validate _validate;
-
+        string code_otp = "";
+        int seconds = 60;
+        int minutes = 5;
         public FforGotPass()
         {
             _validate = new Validate();
@@ -34,86 +36,43 @@ namespace DuAn1.Views
 
         private async void btn_sendCode_Click(object sender, EventArgs e)
         {
-            string email = tbx_email.Text;
-            string subject = "Verify to Email";
-            string body = "Your code otp is : ";
-            if (await SendEmail(email, subject, body))
-            {
-                time.Visible = true;
-                MessageBox.Show("Email Sent Successfully.");
-                btn_sendCode.Enabled = false;
-                btn_success.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Lỗi rồi");
-            }
-
-        }
-        private string randomCode()
-        {
-            int ran = 0;
-            string code = "";
-            for (int i = 0; i < 6; i++)
-            {
-                Random random = new Random();
-                ran = random.Next(0, 10);
-                code += ran.ToString();
-            }
-            return code;
-        }
-        string code_otp = "";
-        public async Task<bool> SendEmail(string _email, string _subject, string _body)
-        {
             try
             {
                 if (tbx_email.Text != "" && _services.Get(tbx_email.Text).Email == tbx_email.Text)
                 {
-                    countDown.Interval = 100;
+                    countDown.Interval = 1000;
                     countDown.Start();
                     minutes = 5;
                     seconds = 60;
-                    string senderID = "Bookingairline1@gmail.com";
-                    string senderPassword = "spvhixkeagfawjqc";
-                    string body = _body;
-                    MailMessage mail = new MailMessage();
-                    SmtpClient smtp = new SmtpClient();
-                    code_otp = randomCode();
-                    body += code_otp;
-                    try
+                    string email = tbx_email.Text;
+                    string subject = "Verify to Email";
+                    string body = "Your code otp is : ";
+                    code_otp = _validate.randomCode();
+                    if (await _validate.SendEmail(email, subject, body, code_otp))
                     {
-                        mail.To.Add(_email);
-                        mail.From = new MailAddress(senderID);
-                        mail.Subject = _subject;
-                        mail.Body = body;
-                        mail.IsBodyHtml = true;
-                        mail.Priority = MailPriority.High;
-                        smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-                        smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        await smtp.SendMailAsync(mail);
-                        return true;
+                        time.Visible = true;
+                        MessageBox.Show("Email Sent Successfully.");
+                        btn_sendCode.Enabled = false;
+                        btn_success.Enabled = true;
                     }
-                    catch (Exception)
+                    else
                     {
-                        return false;
+                        MessageBox.Show("");
                     }
                 }
                 else
                 {
-                    return false;
+                    MessageBox.Show("Email chưa được sử dụng để đăng ký");
                 }
             }
             catch (Exception)
             {
-                return false;
+                MessageBox.Show("Email chưa được sử dụng để đăng ký");
             }
+
         }
-        int seconds = 60;
-        int minutes = 5;
+            
+        
         private void countDown_Tick(object sender, EventArgs e)
         {
             btn_sendCode.Enabled = false;
@@ -138,7 +97,7 @@ namespace DuAn1.Views
                         lb_Minutes.Text = "00";
                         lb_Seconds.Text = "00";
                         btn_sendCode.Enabled = true;
-                        code_otp = randomCode();
+                        code_otp = _validate.randomCode();
                         countDown.Stop();
                     }
                     lb_Minutes.Text = "0" + minutes.ToString();
@@ -201,7 +160,7 @@ namespace DuAn1.Views
             else
             {
                 _check_info = false;
-                lb_errorCode.Text = "Email ko đúng định dạng";
+                lb_errorCode.Text = "Mã otp nhập chưa đúng mã được cấp";
                 lb_errorCode.Visible = true;
                 lb_errorCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_errorCode.ForeColor = System.Drawing.Color.Red;
@@ -220,7 +179,7 @@ namespace DuAn1.Views
             else
             {
                 _check_info = false;
-                lb_errorPass.Text = "Email ko đúng định dạng";
+                lb_errorPass.Text = "Mật khẩu nhập lại phải trùng khớp mật khẩu đã nhập!";
                 lb_errorPass.Visible = true;
                 lb_errorPass.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_errorPass.ForeColor = System.Drawing.Color.Red;

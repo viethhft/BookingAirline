@@ -366,6 +366,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "QUÊN MẬT KHẨU";
             // 
+            // countDown
+            // 
+            this.countDown.Tick += new System.EventHandler(this.countDown_Tick);
+            // 
             // FforGotPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
