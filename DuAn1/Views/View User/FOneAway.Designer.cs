@@ -259,7 +259,7 @@
             Controls.Add(guna2ComboBox1);
             Controls.Add(guna2HtmlLabel1);
             Name = "FOneAway";
-            Text = "FOneAway";
+            Text = "Một chiều";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

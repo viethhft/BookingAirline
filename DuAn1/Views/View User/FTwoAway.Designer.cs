@@ -285,7 +285,7 @@
             Controls.Add(guna2ComboBox1);
             Controls.Add(guna2HtmlLabel1);
             Name = "FTwoAway";
-            Text = "FTwoAway";
+            Text = "Khứ hồi";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
