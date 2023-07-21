@@ -104,7 +104,7 @@
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button2.FillColor = Color.White;
-            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.Location = new Point(345, 83);
             guna2Button2.Name = "guna2Button2";
