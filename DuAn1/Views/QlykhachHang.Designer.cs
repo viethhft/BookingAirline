@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            label10 = new Label();
+            textBox5 = new TextBox();
+            label9 = new Label();
+            textBox3 = new TextBox();
+            label6 = new Label();
             button3 = new Button();
             textBox4 = new TextBox();
             label8 = new Label();
@@ -46,14 +53,6 @@
             label1 = new Label();
             groupBox2 = new GroupBox();
             dtgv_kh = new DataGridView();
-            dataGridView1 = new DataGridView();
-            textBox3 = new TextBox();
-            label6 = new Label();
-            textBox5 = new TextBox();
-            label9 = new Label();
-            textBox6 = new TextBox();
-            label10 = new Label();
-            textBox7 = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgv_kh).BeginInit();
@@ -89,6 +88,65 @@
             groupBox1.Size = new Size(1031, 206);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(408, 28);
+            textBox7.Name = "textBox7";
+            textBox7.ReadOnly = true;
+            textBox7.Size = new Size(179, 23);
+            textBox7.TabIndex = 4;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(700, 122);
+            textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
+            textBox6.Size = new Size(179, 23);
+            textBox6.TabIndex = 11;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(623, 125);
+            label10.Name = "label10";
+            label10.Size = new Size(58, 15);
+            label10.TabIndex = 22;
+            label10.Text = "Điểm đến";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(700, 76);
+            textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
+            textBox5.Size = new Size(179, 23);
+            textBox5.TabIndex = 10;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(623, 79);
+            label9.Name = "label9";
+            label9.Size = new Size(48, 15);
+            label9.TabIndex = 20;
+            label9.Text = "Điểm đi";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(700, 28);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(179, 23);
+            textBox3.TabIndex = 9;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(623, 31);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 15);
+            label6.TabIndex = 18;
+            label6.Text = "Số vé đã đặt";
             // 
             // button3
             // 
@@ -222,7 +280,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dtgv_kh);
-            groupBox2.Location = new Point(14, 299);
+            groupBox2.Location = new Point(12, 225);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(1031, 247);
@@ -239,67 +297,8 @@
             dtgv_kh.Name = "dtgv_kh";
             dtgv_kh.RowHeadersWidth = 51;
             dtgv_kh.RowTemplate.Height = 25;
-            dtgv_kh.Size = new Size(1165, 292);
+            dtgv_kh.Size = new Size(1018, 211);
             dtgv_kh.TabIndex = 0;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(700, 28);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(179, 23);
-            textBox3.TabIndex = 9;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(623, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(71, 15);
-            label6.TabIndex = 18;
-            label6.Text = "Số vé đã đặt";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(700, 76);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(179, 23);
-            textBox5.TabIndex = 10;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(623, 79);
-            label9.Name = "label9";
-            label9.Size = new Size(48, 15);
-            label9.TabIndex = 20;
-            label9.Text = "Điểm đi";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(700, 122);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(179, 23);
-            textBox6.TabIndex = 11;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(623, 125);
-            label10.Name = "label10";
-            label10.Size = new Size(58, 15);
-            label10.TabIndex = 22;
-            label10.Text = "Điểm đến";
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(408, 28);
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(179, 23);
-            textBox7.TabIndex = 4;
             // 
             // QlykhachHang
             // 
