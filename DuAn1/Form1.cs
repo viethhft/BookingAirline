@@ -22,9 +22,9 @@ namespace DuAn1
         IStaffServices _staffServices;
         public Form1()
         {
-            _customerServices=new CustomerServices();
-            _staffServices=new StaffServices();
-            _validate=new Validate();
+            _customerServices = new CustomerServices();
+            _staffServices = new StaffServices();
+            _validate = new Validate();
             _checkAccountType = new();
             _fst = new fStaff();
             _f = new();

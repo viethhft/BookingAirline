@@ -61,7 +61,7 @@
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(0, 95, 110);
+            guna2Button1.FillColor = Color.DarkCyan;
             guna2Button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Location = new Point(12, 12);

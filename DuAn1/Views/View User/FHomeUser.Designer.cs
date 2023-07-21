@@ -42,7 +42,7 @@
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(0, 95, 110);
+            guna2Button1.FillColor = Color.DarkCyan;
             guna2Button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Image = Properties.Resources.icons8_plane_30__3_1;
@@ -51,6 +51,7 @@
             guna2Button1.Size = new Size(192, 45);
             guna2Button1.TabIndex = 0;
             guna2Button1.Text = "MUA VÉ TRỰC TUYẾN";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 
@@ -59,7 +60,7 @@
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(0, 95, 110);
+            guna2Button2.FillColor = Color.DarkCyan;
             guna2Button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Image = Properties.Resources.icons8_menu_301;
@@ -68,6 +69,7 @@
             guna2Button2.Size = new Size(193, 45);
             guna2Button2.TabIndex = 1;
             guna2Button2.Text = "QUẢN LÝ CHUYẾN BAY";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button3
             // 
@@ -76,7 +78,7 @@
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.FromArgb(0, 95, 110);
+            guna2Button3.FillColor = Color.DarkCyan;
             guna2Button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button3.ForeColor = Color.White;
             guna2Button3.Image = Properties.Resources.icons8_clock_30__1_2;
@@ -85,6 +87,7 @@
             guna2Button3.Size = new Size(211, 45);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "TÌNH TRẠNG CHUYẾN BAY";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button4
             // 
@@ -93,7 +96,7 @@
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.FromArgb(0, 95, 110);
+            guna2Button4.FillColor = Color.DarkCyan;
             guna2Button4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button4.ForeColor = Color.White;
             guna2Button4.Image = Properties.Resources.icons8_date_30__1_2;
@@ -102,6 +105,7 @@
             guna2Button4.Size = new Size(189, 45);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "LỊCH BAY";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // guna2Panel1
             // 
@@ -120,8 +124,10 @@
             Controls.Add(guna2Button3);
             Controls.Add(guna2Button2);
             Controls.Add(guna2Button1);
+            MaximizeBox = false;
             Name = "FHomeUser";
             SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Trang chủ";
             ResumeLayout(false);
         }

@@ -49,7 +49,7 @@ namespace DuAn1.Views
                     string body = "Your code otp is : ";
                     int role_id = 99;
                     code_otp = _validate.randomCode();
-                    if (await _validate.SendEmail(email, subject, body, code_otp,role_id))
+                    if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
                     {
                         time.Visible = true;
                         MessageBox.Show("Email Sent Successfully.");
@@ -72,8 +72,8 @@ namespace DuAn1.Views
             }
 
         }
-            
-        
+
+
         private void countDown_Tick(object sender, EventArgs e)
         {
             btn_sendCode.Enabled = false;
@@ -109,7 +109,7 @@ namespace DuAn1.Views
 
         private void btn_success_Click(object sender, EventArgs e)
         {
-            if (tbx_email.Text != "" && tbx_ma.Text != "" && tbx_pass2.Text != "" && txb_pass1.Text != ""&& tbx_pass2.Text!="")
+            if (tbx_email.Text != "" && tbx_ma.Text != "" && tbx_pass2.Text != "" && txb_pass1.Text != "" && tbx_pass2.Text != "")
             {
                 if (tbx_ma.Text == code_otp)
                 {

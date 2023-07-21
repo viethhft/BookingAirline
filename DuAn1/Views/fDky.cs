@@ -200,7 +200,7 @@ namespace DuAn1.Views
             bool check = true;
             foreach (var item in _dangKyService.GetCustomers())
             {
-                if (item.Email==txb_email.Text)
+                if (item.Email == txb_email.Text)
                 {
                     check = false;
                 }
@@ -276,7 +276,7 @@ namespace DuAn1.Views
 
         private void txb_Otp_TextChanged(object sender, EventArgs e)
         {
-            if (txb_Otp.Text==code_otp)
+            if (txb_Otp.Text == code_otp)
             {
                 lb_ErrorOtp.Text = "";
                 lb_ErrorOtp.Visible = false;
