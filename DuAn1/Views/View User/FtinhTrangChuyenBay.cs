@@ -20,7 +20,7 @@ namespace GUI.Views.View_User
         private void guna2Button1_Click(object sender, EventArgs e) // dđây là button hành trình
         {
             HienThiHanhTrinh();
-            richTextBox1.Hide();
+            textBox1.Hide();
             guna2HtmlLabel10.Hide();
             guna2HtmlLabel9.Hide();
             if (guna2Button1.Enabled == true)
@@ -49,14 +49,14 @@ namespace GUI.Views.View_User
         private void FtinhTrangChuyenBay_Load(object sender, EventArgs e)
         {
             guna2Button1.FillColor = Color.DarkCyan;
-            richTextBox1.Hide();
+            textBox1.Hide();
             guna2HtmlLabel10.Hide();
             guna2HtmlLabel9.Hide();
         }
 
         private void HienThiSoHieuChuyenBay() // HIỂN THỊ các nút trong số hiệu chuuyến bay
         {
-            richTextBox1.Show();
+            textBox1.Show();
             guna2HtmlLabel10.Show();
             guna2HtmlLabel9.Show();
         }
@@ -70,5 +70,6 @@ namespace GUI.Views.View_User
             guna2ComboBox1.Show();
             guna2ComboBox2.Show();
         }
+
     }
 }

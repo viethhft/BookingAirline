@@ -33,6 +33,7 @@ namespace DuAn1
             _fkhachhang = new();
             InitializeComponent();
             load();
+            timer1.Enabled = true;
         }
         void load()
         {
@@ -53,27 +54,27 @@ namespace DuAn1
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
                 this.Hide();
-                MessageBox.Show("Đăng nhập admin thành công");
+                MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
                 _fst.ShowDialog();
                 this.Show();
             }
             else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
             {
                 this.Hide();
-                MessageBox.Show("Đăng nhập nhân viên thành công");
+                MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
                 _fst.ShowDialog();
                 this.Show();
             }
             else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 3)
             {
                 this.Hide();
-                MessageBox.Show("Đăng nhập thành công");
+                MessageBox.Show("Đăng nhập thành công", "Thông báo!");
                 _fkhachhang.ShowDialog();
                 this.Show();
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại");
+                MessageBox.Show("Đăng nhập thất bại", "Thông báo!");
             }
             if (cb_reme.Checked)
             {
@@ -146,7 +147,7 @@ namespace DuAn1
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Bán vé máy bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
             }
@@ -169,6 +170,21 @@ namespace DuAn1
                 Settings.Default.Save();
                 Settings.Default.Upgrade();
             }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            int x;
+            int y;
+
+            x = 21;
+            y = 140;
+
+
+            label4.Left -= 3;// Left là chạy từ bên trái. Bạn có thể thay = right
+            label5.Top -= 2;
+            label5.Left += 3;
+
         }
     }
 }

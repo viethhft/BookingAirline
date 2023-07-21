@@ -129,6 +129,7 @@
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Trang chủ";
+            FormClosing += FHomeUser_FormClosing;
             ResumeLayout(false);
         }
 

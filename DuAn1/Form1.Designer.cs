@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -41,6 +42,9 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            label4 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -202,6 +206,30 @@
             label1.TabIndex = 0;
             label1.Text = "ĐĂNG NHẬP";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(798, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(445, 16);
+            label4.TabIndex = 2;
+            label4.Text = "Chào mừng bạn đến với hãng hàng không Quốc gia Việt Nam Airline";
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick_1;
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.Transparent;
+            label5.Image = GUI.Properties.Resources.Untitled_13;
+            label5.Location = new Point(-4, 102);
+            label5.Name = "label5";
+            label5.Size = new Size(419, 301);
+            label5.TabIndex = 1;
+            label5.Text = "label5";
+            // 
             // Form1
             // 
             AcceptButton = btn_login;
@@ -210,18 +238,22 @@
             BackColor = Color.White;
             BackgroundImage = GUI.Properties.Resources.design;
             ClientSize = new Size(802, 492);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
+            FormClosing += Form1_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -239,5 +271,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label label4;
+        private System.Windows.Forms.Timer timer1;
+        private Label label5;
     }
 }

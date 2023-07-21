@@ -89,7 +89,30 @@ namespace GUI.Views
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            FQuanLyChuyenBay child = new();
+            ChildForm(child);
+            if (guna2Button2.Enabled == true)
+            {
+                guna2Button2.FillColor = Color.DarkCyan;
 
+                guna2Button1.FillColor = Color.White;
+                guna2Button1.ForeColor = Color.Black;
+
+                guna2Button3.FillColor = Color.White;
+                guna2Button3.ForeColor = Color.Black;
+
+                guna2Button4.FillColor = Color.White;
+                guna2Button4.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void FHomeUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

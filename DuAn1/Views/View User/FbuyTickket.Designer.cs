@@ -81,7 +81,7 @@
             guna2Button2.FillColor = Color.White;
             guna2Button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Location = new Point(198, 12);
+            guna2Button2.Location = new Point(186, 12);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.Size = new Size(180, 45);
             guna2Button2.TabIndex = 1;
@@ -174,7 +174,7 @@
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
             guna2DateTimePicker1.Size = new Size(276, 36);
             guna2DateTimePicker1.TabIndex = 57;
-            guna2DateTimePicker1.Value = new DateTime(2023, 7, 21, 22, 1, 45, 674);
+            guna2DateTimePicker1.Value = new DateTime(2023, 7, 2, 22, 1, 45, 0);
             // 
             // guna2HtmlLabel5
             // 
@@ -347,6 +347,7 @@
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2Button2);
             Controls.Add(guna2Button1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FbuyTickket";
             Text = "Chọn loại vé";
             Load += FbuyTickket_Load;
