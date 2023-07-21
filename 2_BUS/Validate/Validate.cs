@@ -8,6 +8,7 @@ using System.Net.Mail;
 using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
+using System.Security.Cryptography;
 
 namespace _2_BUS.Validate
 {
@@ -42,7 +43,7 @@ namespace _2_BUS.Validate
                     number++;
                     if (number == 1)
                     {
-                        lastname = term[i].Trim();
+                        firstname = term[i].Trim();
                     }
                     else
                     {
@@ -56,7 +57,7 @@ namespace _2_BUS.Validate
             {
                 middlename += term1[i] + " ";
             }
-            firstname = term1[term1.Length - 1];
+            lastname = term1[term1.Length - 1];
             string[] name1 = { firstname, middlename, lastname };
             return name1;
         }
@@ -73,7 +74,7 @@ namespace _2_BUS.Validate
         }
         public bool checkName(string name)
         {
-            Regex regex = new Regex(@"[a-zA-z]{2,10}((\s[a-zA-z]{2,10})){2,10}$");
+            Regex regex = new Regex(@"[a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ'A-ZỲỌÁẦẢẤỜỄÀẠẰỆẾÝỘẬỐŨỨĨÕÚỮỊỖÌỀỂẨỚẶÒÙỒỢÃỤỦÍỸẮẪỰỈỎỪỶỞÓÉỬỴẲẸÈẼỔẴẺỠƠÔƯĂÊÂĐ']{2,10}((\s[a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ'A-ZỲỌÁẦẢẤỜỄÀẠẰỆẾÝỘẬỐŨỨĨÕÚỮỊỖÌỀỂẨỚẶÒÙỒỢÃỤỦÍỸẮẪỰỈỎỪỶỞÓÉỬỴẲẸÈẼỔẴẺỠƠÔƯĂÊÂĐ']{2,10})){2,10}$");
             Match match = regex.Match(name);
             if (match != Match.Empty)
             {
@@ -130,6 +131,42 @@ namespace _2_BUS.Validate
                 code += ran.ToString();
             }
             return code;
+        }
+        public string ReversePass(string password)
+        {
+            byte[] pass_byte = ASCIIEncoding.ASCII.GetBytes(password);
+            MD5 mD5 = MD5.Create();
+
+            var haspass = mD5.ComputeHash(pass_byte);
+            string savehas = "";
+
+            foreach (var item in haspass)
+            {
+                savehas += item;
+            }
+
+            char[] term = savehas.ToCharArray();
+            Array.Reverse(term);
+            string new_haspasscode = new string(term);
+
+            pass_byte = ASCIIEncoding.ASCII.GetBytes(new_haspasscode);
+            haspass = mD5.ComputeHash(pass_byte);
+            savehas = "";
+            foreach (var item in haspass)
+            {
+                savehas += item;
+            }
+
+            char[] chars = savehas.ToCharArray();
+            var char_reverse = chars.Select((value, index) => new { value, index }).ToArray();
+            var finish = char_reverse.Select(c => c.value + c.index + (char_reverse.Length > c.index + 1 ? char_reverse[c.index + 1].value % 2 : char_reverse[c.index / 2].value % 2)).Select(c => (char)c).ToArray();
+            string new_char = new string(finish);
+            foreach (var item in char_reverse)
+            {
+                new_char += item.value;
+            }
+
+            return new_char;
         }
     }
 }

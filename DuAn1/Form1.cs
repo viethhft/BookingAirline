@@ -3,21 +3,28 @@ using _2_BUS.Service;
 using _2_BUS.IService;
 using GUI.Views;
 using GUI.Properties;
+using System.Security.Cryptography;
+using System.Text;
+using _2_BUS.Validate;
 
 namespace DuAn1
 {
     public partial class Form1 : Form
     {
+        Validate _validate;
         CheckAccountType _checkAccountType;
         fStaff _fst;
         QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
         fuser _fnguoidung;
-        Fkhachhang _fkhachhang; // open form buy ticket
+        ICustomerServices _customerServices;
+        IStaffServices _staffServices;
         public Form1()
-
         {
+            _customerServices=new CustomerServices();
+            _staffServices=new StaffServices();
+            _validate=new Validate();
             _checkAccountType = new();
             _fst = new fStaff();
             _f = new();
@@ -44,21 +51,21 @@ namespace DuAn1
         }
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 1)
+            if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập admin thành công");
                 _fst.ShowDialog();
                 this.Show();
             }
-            else if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 2)
+            else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập nhân viên thành công");
                 _fst.ShowDialog();
                 this.Show();
             }
-            else if (_checkAccountType.CheckType(tb_user.Text, tb_pass.Text) == 3)
+            else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 3)
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công");
