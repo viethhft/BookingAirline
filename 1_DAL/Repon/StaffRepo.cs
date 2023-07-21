@@ -24,5 +24,19 @@ namespace _1_DAL.Repon
         {
             return _context.staff.ToList();
         }
+
+        public bool Update(staff staff)
+        {
+            try
+            {
+                _context.staff.Update(staff);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

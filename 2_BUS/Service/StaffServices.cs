@@ -26,5 +26,14 @@ namespace _2_BUS.Service
         {
             return _repo.list_staff();
         }
+
+        public string update(staff staff)
+        {
+            if (_repo.Update(staff))
+            {
+                return "Cập nhật thành công";
+            }
+            return "Cập nhật không thành công";
+        }
     }
 }

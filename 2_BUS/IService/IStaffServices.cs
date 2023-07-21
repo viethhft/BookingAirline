@@ -11,5 +11,6 @@ namespace _2_BUS.IService
     {
         public staff get(int role);
         public List<staff> list_staff();
+        public string update(staff staff);
     }
 }

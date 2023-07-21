@@ -10,5 +10,6 @@ namespace _1_DAL.IRepon
     {
         public staff get(int role);
         public List<staff> list_staff();
+        public bool Update(staff staff);
     }
 }
