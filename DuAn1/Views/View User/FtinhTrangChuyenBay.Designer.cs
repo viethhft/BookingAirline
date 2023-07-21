@@ -80,14 +80,14 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.BorderRadius = 10;
+            guna2Button1.BorderRadius = 3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button1.FillColor = Color.FromArgb(0, 95, 110);
             guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
+            guna2Button1.ForeColor = Color.Black;
             guna2Button1.Location = new Point(167, 83);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Size = new Size(180, 45);
@@ -97,18 +97,18 @@
             // 
             // guna2Button2
             // 
-            guna2Button2.BackColor = SystemColors.ButtonHighlight;
-            guna2Button2.BorderRadius = 10;
+            guna2Button2.BackColor = SystemColors.Control;
+            guna2Button2.BorderRadius = 3;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(0, 95, 110);
+            guna2Button2.FillColor = Color.White;
             guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Location = new Point(391, 83);
+            guna2Button2.Location = new Point(345, 83);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(180, 45);
+            guna2Button2.Size = new Size(188, 45);
             guna2Button2.TabIndex = 13;
             guna2Button2.Text = "SỐ HIỆU CHUYẾN BAY";
             guna2Button2.Click += guna2Button2_Click;
@@ -125,7 +125,7 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Location = new Point(33, 230);
+            guna2HtmlLabel3.Location = new Point(391, 136);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(32, 17);
             guna2HtmlLabel3.TabIndex = 15;
@@ -156,7 +156,7 @@
             guna2ComboBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox2.ItemHeight = 30;
-            guna2ComboBox2.Location = new Point(33, 255);
+            guna2ComboBox2.Location = new Point(391, 161);
             guna2ComboBox2.Name = "guna2ComboBox2";
             guna2ComboBox2.Size = new Size(314, 36);
             guna2ComboBox2.TabIndex = 17;
@@ -164,7 +164,7 @@
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(33, 332);
+            guna2HtmlLabel4.Location = new Point(33, 232);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(95, 17);
             guna2HtmlLabel4.TabIndex = 18;
@@ -175,7 +175,7 @@
             guna2DateTimePicker1.Checked = true;
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(33, 355);
+            guna2DateTimePicker1.Location = new Point(33, 255);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -195,7 +195,7 @@
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Location = new Point(33, 297);
+            guna2HtmlLabel7.Location = new Point(391, 203);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(71, 17);
             guna2HtmlLabel7.TabIndex = 21;
@@ -204,7 +204,7 @@
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
-            guna2HtmlLabel8.Location = new Point(33, 395);
+            guna2HtmlLabel8.Location = new Point(33, 295);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(71, 17);
             guna2HtmlLabel8.TabIndex = 22;
@@ -212,25 +212,25 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(391, 161);
+            richTextBox1.Location = new Point(33, 161);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(270, 36);
+            richTextBox1.Size = new Size(314, 36);
             richTextBox1.TabIndex = 23;
             richTextBox1.Text = "";
             // 
             // guna2HtmlLabel9
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Location = new Point(391, 138);
+            guna2HtmlLabel9.Location = new Point(33, 138);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(106, 17);
+            guna2HtmlLabel9.Size = new Size(111, 17);
             guna2HtmlLabel9.TabIndex = 24;
-            guna2HtmlLabel9.Text = "Số hiệu chuyến bay";
+            guna2HtmlLabel9.Text = "Số hiệu chuyến bay*";
             // 
             // guna2HtmlLabel10
             // 
             guna2HtmlLabel10.BackColor = Color.Transparent;
-            guna2HtmlLabel10.Location = new Point(391, 204);
+            guna2HtmlLabel10.Location = new Point(33, 204);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new Size(71, 17);
             guna2HtmlLabel10.TabIndex = 25;
