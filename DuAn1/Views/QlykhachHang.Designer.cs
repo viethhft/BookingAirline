@@ -45,6 +45,7 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            dtgv_kh = new DataGridView();
             dataGridView1 = new DataGridView();
             textBox3 = new TextBox();
             label6 = new Label();
@@ -55,7 +56,7 @@
             textBox7 = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgv_kh).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -220,22 +221,26 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Location = new Point(12, 224);
+            groupBox2.Controls.Add(dtgv_kh);
+            groupBox2.Location = new Point(14, 299);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(1031, 247);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             // 
-            // dataGridView1
+            // dtgv_kh
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 22);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1019, 219);
-            dataGridView1.TabIndex = 0;
+            dtgv_kh.AllowUserToAddRows = false;
+            dtgv_kh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_kh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgv_kh.Location = new Point(7, 29);
+            dtgv_kh.Margin = new Padding(3, 4, 3, 4);
+            dtgv_kh.Name = "dtgv_kh";
+            dtgv_kh.RowHeadersWidth = 51;
+            dtgv_kh.RowTemplate.Height = 25;
+            dtgv_kh.Size = new Size(1165, 292);
+            dtgv_kh.TabIndex = 0;
             // 
             // textBox3
             // 
@@ -307,10 +312,11 @@
             Name = "QlykhachHang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý khách hàng";
+            Load += QlykhachHang_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgv_kh).EndInit();
             ResumeLayout(false);
         }
 
@@ -318,7 +324,7 @@
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dtgv_kh;
         private Label label3;
         private Label label2;
         private Label label1;
