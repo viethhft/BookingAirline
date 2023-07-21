@@ -14,6 +14,7 @@ namespace DuAn1
         fDky _fdky;
         FforGotPass _fForgot;
         fuser _fnguoidung;
+        Fkhachhang _fkhachhang; // open form buy ticket
         public Form1()
 
         {
@@ -23,6 +24,7 @@ namespace DuAn1
             _fdky = new fDky();
             _fForgot = new FforGotPass();
             _fnguoidung = new();
+            _fkhachhang = new();
             InitializeComponent();
             load();
         }
@@ -60,7 +62,7 @@ namespace DuAn1
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công");
-                _fnguoidung.ShowDialog();
+                _fkhachhang.ShowDialog();
                 this.Show();
             }
             else
