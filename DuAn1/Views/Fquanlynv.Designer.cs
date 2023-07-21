@@ -157,7 +157,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(30, 113);
+            label3.Location = new Point(51, 105);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 8;
@@ -196,7 +196,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 41);
+            label1.Location = new Point(9, 38);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 3;
@@ -205,9 +205,9 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(dataGridView1);
-            groupBox4.Location = new Point(2, 260);
+            groupBox4.Location = new Point(12, 260);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1047, 221);
+            groupBox4.Size = new Size(1031, 221);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             // 
@@ -216,6 +216,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 22);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1041, 189);
             dataGridView1.TabIndex = 0;
