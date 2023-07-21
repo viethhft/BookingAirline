@@ -9,6 +9,7 @@ using System.Net.Mail;
 using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
+using System.Security.Cryptography;
 
 namespace _2_BUS.Validate
 {
@@ -131,6 +132,42 @@ namespace _2_BUS.Validate
                 code += ran.ToString();
             }
             return code;
+        }
+        public string ReversePass(string password)
+        {
+            byte[] pass_byte = ASCIIEncoding.ASCII.GetBytes(password);
+            MD5 mD5 = MD5.Create();
+
+            var haspass = mD5.ComputeHash(pass_byte);
+            string savehas = "";
+
+            foreach (var item in haspass)
+            {
+                savehas += item;
+            }
+
+            char[] term = savehas.ToCharArray();
+            Array.Reverse(term);
+            string new_haspasscode = new string(term);
+
+            pass_byte = ASCIIEncoding.ASCII.GetBytes(new_haspasscode);
+            haspass = mD5.ComputeHash(pass_byte);
+            savehas = "";
+            foreach (var item in haspass)
+            {
+                savehas += item;
+            }
+
+            char[] chars = savehas.ToCharArray();
+            var char_reverse = chars.Select((value, index) => new { value, index }).ToArray();
+            var finish = char_reverse.Select(c => c.value + c.index + (char_reverse.Length > c.index + 1 ? char_reverse[c.index + 1].value % 2 : char_reverse[c.index / 2].value % 2)).Select(c => (char)c).ToArray();
+            string new_char = new string(finish);
+            foreach (var item in char_reverse)
+            {
+                new_char += item.value;
+            }
+
+            return new_char;
         }
     }
 }
