@@ -33,6 +33,7 @@ namespace DuAn1.Views
             cbx_gender.Items.Add("Nữ");
             cbx_gender.SelectedIndex = 0;
             this.MaximizeBox = false;
+            btn_sign.Enabled = false;
         }
 
         void reset() // clean oo nhaap
@@ -48,6 +49,7 @@ namespace DuAn1.Views
             lb_ErrorName.Visible = false;
             lb_ErrorPhoneNumber.Visible = false;
             lb_ErrorPassAgain.Visible = false;
+            lb_ErrorOtp.Visible = false;
         }
         private bool check_duplicate_mail(string email)
         {
@@ -188,6 +190,105 @@ namespace DuAn1.Views
                 lb_ErrorName.Visible = true;
                 lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorName.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+        int minutes = 5;
+        int seconds = 60;
+        string code_otp = "";
+        private async void btn_SendCode_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+            foreach (var item in _dangKyService.GetCustomers())
+            {
+                if (item.Email==txb_email.Text)
+                {
+                    check = false;
+                }
+            }
+            try
+            {
+                if (txb_email.Text != "" && check)
+                {
+                    CountDown.Interval = 1000;
+                    CountDown.Start();
+                    minutes = 5;
+                    seconds = 60;
+                    string email = txb_email.Text;
+                    string subject = "Welcome to Booking Airline";
+                    string body = "OTP code to verify your account registration is: ";
+                    int role_id = 99;
+                    code_otp = _validate.randomCode();
+                    if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
+                    {
+                        time.Visible = true;
+                        MessageBox.Show("Email Sent Successfully.");
+                        btn_SendCode.Enabled = false;
+                        btn_sign.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Can't sent Email");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Email đã được sử dụng để đăng ký");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Email đã được được sử dụng để đăng ký");
+            }
+        }
+
+        private void CountDown_Tick(object sender, EventArgs e)
+        {
+            btn_SendCode.Enabled = false;
+            if (minutes > -2)
+            {
+                seconds--;
+                lb_Minutes.Text = "0" + minutes.ToString();
+                lb_Seconds.Text = seconds.ToString();
+                if (minutes == 5)
+                {
+                    minutes--;
+                    lb_Minutes.Text = "0" + minutes.ToString();
+                }
+                if (seconds == 0)
+                {
+                    minutes--;
+                    if (minutes == -1)
+                    {
+                        minutes = -2;
+                        minutes = 0;
+                        seconds = 0;
+                        lb_Minutes.Text = "00";
+                        lb_Seconds.Text = "00";
+                        btn_SendCode.Enabled = true;
+                        code_otp = _validate.randomCode();
+                        CountDown.Stop();
+                    }
+                    lb_Minutes.Text = "0" + minutes.ToString();
+                    seconds = 60;
+                }
+            }
+        }
+
+        private void txb_Otp_TextChanged(object sender, EventArgs e)
+        {
+            if (txb_Otp.Text==code_otp)
+            {
+                lb_ErrorOtp.Text = "";
+                lb_ErrorOtp.Visible = false;
+                _check_information = true;
+            }
+            else
+            {
+                _check_information = false;
+                lb_ErrorOtp.Text = "Mã bạn nhập ko trùng mã OTP được cấp";
+                lb_ErrorOtp.Visible = true;
+                lb_ErrorOtp.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorOtp.ForeColor = System.Drawing.Color.Red;
             }
         }
     }

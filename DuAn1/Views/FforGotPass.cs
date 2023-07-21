@@ -38,7 +38,7 @@ namespace DuAn1.Views
         {
             try
             {
-                if (tbx_email.Text != "" && _services.Get(tbx_email.Text).Email == tbx_email.Text)
+                if (tbx_email.Text != "" && _services.Get(tbx_email.Text).Email != tbx_email.Text)
                 {
                     countDown.Interval = 1000;
                     countDown.Start();
@@ -58,7 +58,7 @@ namespace DuAn1.Views
                     }
                     else
                     {
-                        MessageBox.Show("");
+                        MessageBox.Show("Can't sent Email");
                     }
                 }
                 else
