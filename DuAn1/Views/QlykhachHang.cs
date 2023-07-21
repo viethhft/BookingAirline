@@ -33,7 +33,7 @@ namespace DuAn1.Views
 
             foreach (var i in _cusServices.GetCustomers())
             {
-                dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.ToString(), i.Phone, i.Address, i.Gender);
+                dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.Value.Date.ToString(), i.Phone, i.Address, i.Gender);
             }
         }
     }
