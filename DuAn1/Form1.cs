@@ -136,8 +136,6 @@ namespace DuAn1
             btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
         }
 
-
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Bán vé máy bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
