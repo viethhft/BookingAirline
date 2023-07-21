@@ -18,7 +18,7 @@ namespace DuAn1
         fDky _fdky;
         FforGotPass _fForgot;
         fuser _fnguoidung;
-        FHomeUser _fkhachhang;
+        Fkhachhang _fkhachhang;
         ICustomerServices _customerServices;
         IStaffServices _staffServices;
         public Form1()

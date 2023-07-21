@@ -25,7 +25,7 @@ namespace DuAn1.Views
         Validate _validate;
         public fDky()
         {
-            _staffServices = new StaffServices();
+            _staffServices= new StaffServices();
             _validate = new Validate();
             _dangKyService = new CustomerServices();
             InitializeComponent();
@@ -34,8 +34,8 @@ namespace DuAn1.Views
             cbx_gender.SelectedIndex = 0;
             this.MaximizeBox = false;
         }
-
-        void reset() // clean oo nhaap
+       
+         void reset() // clean oo nhaap
         {
             txb_address.Text = "";
             txb_email.Text = "";
@@ -53,14 +53,13 @@ namespace DuAn1.Views
         {
             foreach (var item in _staffServices.list_staff())
             {
-                if (item.Email == email)
+                if (item.Email==email)
                 {
                     return true;
                 }
-            }
-            foreach (var item in _dangKyService.GetCustomers())
+            }foreach (var item in _dangKyService.GetCustomers())
             {
-                if (item.Email == email)
+                if (item.Email==email)
                 {
                     return true;
                 }
@@ -85,7 +84,7 @@ namespace DuAn1.Views
                 customer.Password = _validate.ReversePass(tbx_pass2.Text);
                 if (check_duplicate_mail(customer.Email))
                 {
-                    MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 else
                 {

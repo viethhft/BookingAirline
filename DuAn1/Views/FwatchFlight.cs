@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI.Views
 {
-    public partial class FoneTwoTicket : Form
+    public partial class FwatchFlight : Form
     {
-        public FoneTwoTicket()
+        public FwatchFlight()
         {
             InitializeComponent();
         }
