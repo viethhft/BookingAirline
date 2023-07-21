@@ -116,7 +116,7 @@ namespace DuAn1.Views
                     if (_check_info)
                     {
                         Customer customer = _services.Get(tbx_email.Text);
-                        customer.Password = txb_pass1.Text;
+                        customer.Password = _validate.ReversePass(tbx_pass2.Text);
                         MessageBox.Show(_services.Update(customer));
                     }
                     else

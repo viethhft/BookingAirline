@@ -38,14 +38,6 @@ namespace DuAn1
         }
         void load()
         {
-            foreach (var item in _staffServices.list_staff())
-            {
-                if (item.RoleId!=99)
-                {
-                    item.Password = _validate.ReversePass(item.Password);
-                    _staffServices.update(item);
-                }
-            }
             if (Settings.Default.isRemember)
             {
                 tb_user.Text = Settings.Default.username;
