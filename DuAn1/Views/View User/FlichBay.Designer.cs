@@ -1,6 +1,6 @@
 ﻿namespace GUI.Views.View_User
 {
-    partial class FQuanLyChuyenBay
+    partial class FlichBay
     {
         /// <summary>
         /// Required designer variable.

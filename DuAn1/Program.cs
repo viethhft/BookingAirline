@@ -1,5 +1,6 @@
 using DuAn1.Views;
 using GUI.Views;
+using GUI.Views.View_User;
 
 namespace DuAn1
 {
@@ -14,7 +15,7 @@ namespace DuAn1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new FtinhTrangChuyenBay());
         }
     }
 }
