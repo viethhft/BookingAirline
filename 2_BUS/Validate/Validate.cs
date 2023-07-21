@@ -43,7 +43,7 @@ namespace _2_BUS.Validate
                     number++;
                     if (number == 1)
                     {
-                        lastname = term[i].Trim();
+                        firstname = term[i].Trim();
                     }
                     else
                     {
@@ -57,7 +57,7 @@ namespace _2_BUS.Validate
             {
                 middlename += term1[i] + " ";
             }
-            firstname = term1[term1.Length - 1];
+            lastname = term1[term1.Length - 1];
             string[] name1 = { firstname, middlename, lastname };
             return name1;
         }
