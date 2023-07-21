@@ -1,6 +1,6 @@
 ﻿namespace GUI.Views
 {
-    partial class Fkhachhang
+    partial class FHomeUser
     {
         /// <summary>
         /// Required designer variable.

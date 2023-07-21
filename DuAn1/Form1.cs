@@ -17,8 +17,7 @@ namespace DuAn1
         QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
-        fuser _fnguoidung;
-        Fkhachhang _fkhachhang;
+        FHomeUser _fkhachhang;
         ICustomerServices _customerServices;
         IStaffServices _staffServices;
         public Form1()
@@ -31,7 +30,6 @@ namespace DuAn1
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
-            _fnguoidung = new();
             _fkhachhang = new();
             InitializeComponent();
             load();

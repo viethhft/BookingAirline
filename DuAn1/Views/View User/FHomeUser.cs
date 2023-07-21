@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.Views
 {
-    public partial class Fkhachhang : Form
+    public partial class FHomeUser : Form
     {
-        public Fkhachhang()
+        public FHomeUser()
         {
             InitializeComponent();
         }
