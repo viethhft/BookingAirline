@@ -143,6 +143,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_gift_box_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gift-box-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_gift_box_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gift-box-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_name_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-name-50", resourceCulture);
@@ -193,6 +213,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MoMo_Logo {
+            get {
+                object obj = ResourceManager.GetObject("MoMo_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap momoicon {
+            get {
+                object obj = ResourceManager.GetObject("momoicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rectangle_2 {
             get {
                 object obj = ResourceManager.GetObject("Rectangle 2", resourceCulture);
@@ -216,6 +256,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Untitled_21 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zalopyaicon {
+            get {
+                object obj = ResourceManager.GetObject("zalopyaicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
