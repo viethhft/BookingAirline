@@ -21,5 +21,15 @@ namespace GUI.Views
         {
 
         }
+
+        private void hIỂNTHỊBỘLỌCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thờiGianĐếnTăngDầnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

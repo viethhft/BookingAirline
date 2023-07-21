@@ -28,438 +28,472 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_ErrorName = new System.Windows.Forms.Label();
-            this.lb_ErrorPassAgain = new System.Windows.Forms.Label();
-            this.lb_ErrorPhoneNumber = new System.Windows.Forms.Label();
-            this.lb_ErrorEmail = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.DateTimePicker();
-            this.btn_sign = new System.Windows.Forms.Button();
-            this.tbx_pass2 = new System.Windows.Forms.TextBox();
-            this.tbx_pass1 = new System.Windows.Forms.TextBox();
-            this.txb_address = new System.Windows.Forms.TextBox();
-            this.tbx_phone = new System.Windows.Forms.TextBox();
-            this.cbx_gender = new System.Windows.Forms.ComboBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txb_email = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txb_name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            lb_ErrorName = new Label();
+            lb_ErrorPassAgain = new Label();
+            lb_ErrorPhoneNumber = new Label();
+            lb_ErrorEmail = new Label();
+            Date = new DateTimePicker();
+            btn_sign = new Button();
+            tbx_pass2 = new TextBox();
+            tbx_pass1 = new TextBox();
+            txb_address = new TextBox();
+            tbx_phone = new TextBox();
+            cbx_gender = new ComboBox();
+            pictureBox9 = new PictureBox();
+            label9 = new Label();
+            pictureBox8 = new PictureBox();
+            label8 = new Label();
+            pictureBox7 = new PictureBox();
+            label7 = new Label();
+            pictureBox6 = new PictureBox();
+            label6 = new Label();
+            pictureBox5 = new PictureBox();
+            label5 = new Label();
+            pictureBox3 = new PictureBox();
+            label3 = new Label();
+            pictureBox4 = new PictureBox();
+            txb_email = new TextBox();
+            label4 = new Label();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            txb_name = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label10 = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lb_ErrorName);
-            this.panel1.Controls.Add(this.lb_ErrorPassAgain);
-            this.panel1.Controls.Add(this.lb_ErrorPhoneNumber);
-            this.panel1.Controls.Add(this.lb_ErrorEmail);
-            this.panel1.Controls.Add(this.Date);
-            this.panel1.Controls.Add(this.btn_sign);
-            this.panel1.Controls.Add(this.tbx_pass2);
-            this.panel1.Controls.Add(this.tbx_pass1);
-            this.panel1.Controls.Add(this.txb_address);
-            this.panel1.Controls.Add(this.tbx_phone);
-            this.panel1.Controls.Add(this.cbx_gender);
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.txb_email);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.txb_name);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(562, 129);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 509);
-            this.panel1.TabIndex = 2;
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(lb_ErrorName);
+            panel1.Controls.Add(lb_ErrorPassAgain);
+            panel1.Controls.Add(lb_ErrorPhoneNumber);
+            panel1.Controls.Add(lb_ErrorEmail);
+            panel1.Controls.Add(Date);
+            panel1.Controls.Add(btn_sign);
+            panel1.Controls.Add(tbx_pass2);
+            panel1.Controls.Add(tbx_pass1);
+            panel1.Controls.Add(txb_address);
+            panel1.Controls.Add(tbx_phone);
+            panel1.Controls.Add(cbx_gender);
+            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(pictureBox6);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(txb_email);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(txb_name);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(562, 129);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(461, 509);
+            panel1.TabIndex = 2;
             // 
             // lb_ErrorName
             // 
-            this.lb_ErrorName.AutoSize = true;
-            this.lb_ErrorName.Location = new System.Drawing.Point(75, 173);
-            this.lb_ErrorName.Name = "lb_ErrorName";
-            this.lb_ErrorName.Size = new System.Drawing.Size(0, 15);
-            this.lb_ErrorName.TabIndex = 46;
+            lb_ErrorName.AutoSize = true;
+            lb_ErrorName.Location = new Point(75, 173);
+            lb_ErrorName.Name = "lb_ErrorName";
+            lb_ErrorName.Size = new Size(0, 15);
+            lb_ErrorName.TabIndex = 46;
             // 
             // lb_ErrorPassAgain
             // 
-            this.lb_ErrorPassAgain.AutoSize = true;
-            this.lb_ErrorPassAgain.Location = new System.Drawing.Point(279, 393);
-            this.lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
-            this.lb_ErrorPassAgain.Size = new System.Drawing.Size(0, 15);
-            this.lb_ErrorPassAgain.TabIndex = 45;
+            lb_ErrorPassAgain.AutoSize = true;
+            lb_ErrorPassAgain.Location = new Point(279, 393);
+            lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
+            lb_ErrorPassAgain.Size = new Size(0, 15);
+            lb_ErrorPassAgain.TabIndex = 45;
             // 
             // lb_ErrorPhoneNumber
             // 
-            this.lb_ErrorPhoneNumber.AutoSize = true;
-            this.lb_ErrorPhoneNumber.Location = new System.Drawing.Point(281, 238);
-            this.lb_ErrorPhoneNumber.Name = "lb_ErrorPhoneNumber";
-            this.lb_ErrorPhoneNumber.Size = new System.Drawing.Size(0, 15);
-            this.lb_ErrorPhoneNumber.TabIndex = 44;
+            lb_ErrorPhoneNumber.AutoSize = true;
+            lb_ErrorPhoneNumber.Location = new Point(281, 238);
+            lb_ErrorPhoneNumber.Name = "lb_ErrorPhoneNumber";
+            lb_ErrorPhoneNumber.Size = new Size(0, 15);
+            lb_ErrorPhoneNumber.TabIndex = 44;
             // 
             // lb_ErrorEmail
             // 
-            this.lb_ErrorEmail.AutoSize = true;
-            this.lb_ErrorEmail.Location = new System.Drawing.Point(285, 172);
-            this.lb_ErrorEmail.Name = "lb_ErrorEmail";
-            this.lb_ErrorEmail.Size = new System.Drawing.Size(0, 15);
-            this.lb_ErrorEmail.TabIndex = 43;
-            this.lb_ErrorEmail.Visible = false;
+            lb_ErrorEmail.AutoSize = true;
+            lb_ErrorEmail.Location = new Point(285, 172);
+            lb_ErrorEmail.Name = "lb_ErrorEmail";
+            lb_ErrorEmail.Size = new Size(0, 15);
+            lb_ErrorEmail.TabIndex = 43;
+            lb_ErrorEmail.Visible = false;
             // 
             // Date
             // 
-            this.Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Date.Location = new System.Drawing.Point(25, 215);
-            this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(200, 23);
-            this.Date.TabIndex = 42;
+            Date.Format = DateTimePickerFormat.Short;
+            Date.Location = new Point(25, 215);
+            Date.Name = "Date";
+            Date.Size = new Size(200, 23);
+            Date.TabIndex = 42;
             // 
             // btn_sign
             // 
-            this.btn_sign.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sign.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_sign.Location = new System.Drawing.Point(177, 418);
-            this.btn_sign.Name = "btn_sign";
-            this.btn_sign.Size = new System.Drawing.Size(102, 30);
-            this.btn_sign.TabIndex = 41;
-            this.btn_sign.Text = "Đăng ký";
-            this.btn_sign.UseVisualStyleBackColor = true;
-            this.btn_sign.Click += new System.EventHandler(this.btn_sign_Click);
-            this.btn_sign.MouseLeave += new System.EventHandler(this.btn_sign_MouseLeave);
-            this.btn_sign.MouseHover += new System.EventHandler(this.btn_sign_MouseHover);
-            this.btn_sign.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_sign_MouseMove);
+            btn_sign.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_sign.ForeColor = Color.RoyalBlue;
+            btn_sign.Location = new Point(177, 466);
+            btn_sign.Name = "btn_sign";
+            btn_sign.Size = new Size(102, 30);
+            btn_sign.TabIndex = 41;
+            btn_sign.Text = "Đăng ký";
+            btn_sign.UseVisualStyleBackColor = true;
+            btn_sign.Click += btn_sign_Click;
+            btn_sign.MouseLeave += btn_sign_MouseLeave;
+            btn_sign.MouseHover += btn_sign_MouseHover;
+            btn_sign.MouseMove += btn_sign_MouseMove;
             // 
             // tbx_pass2
             // 
-            this.tbx_pass2.Location = new System.Drawing.Point(240, 368);
-            this.tbx_pass2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbx_pass2.Name = "tbx_pass2";
-            this.tbx_pass2.Size = new System.Drawing.Size(193, 23);
-            this.tbx_pass2.TabIndex = 40;
-            this.tbx_pass2.UseSystemPasswordChar = true;
-            this.tbx_pass2.TextChanged += new System.EventHandler(this.tbx_pass2_TextChanged);
+            tbx_pass2.Location = new Point(240, 368);
+            tbx_pass2.Margin = new Padding(3, 2, 3, 2);
+            tbx_pass2.Name = "tbx_pass2";
+            tbx_pass2.Size = new Size(193, 23);
+            tbx_pass2.TabIndex = 40;
+            tbx_pass2.UseSystemPasswordChar = true;
+            tbx_pass2.TextChanged += tbx_pass2_TextChanged;
             // 
             // tbx_pass1
             // 
-            this.tbx_pass1.Location = new System.Drawing.Point(240, 286);
-            this.tbx_pass1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbx_pass1.Name = "tbx_pass1";
-            this.tbx_pass1.Size = new System.Drawing.Size(193, 23);
-            this.tbx_pass1.TabIndex = 39;
-            this.tbx_pass1.UseSystemPasswordChar = true;
+            tbx_pass1.Location = new Point(240, 286);
+            tbx_pass1.Margin = new Padding(3, 2, 3, 2);
+            tbx_pass1.Name = "tbx_pass1";
+            tbx_pass1.Size = new Size(193, 23);
+            tbx_pass1.TabIndex = 39;
+            tbx_pass1.UseSystemPasswordChar = true;
             // 
             // txb_address
             // 
-            this.txb_address.Location = new System.Drawing.Point(22, 288);
-            this.txb_address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_address.Name = "txb_address";
-            this.txb_address.Size = new System.Drawing.Size(193, 23);
-            this.txb_address.TabIndex = 38;
+            txb_address.Location = new Point(22, 288);
+            txb_address.Margin = new Padding(3, 2, 3, 2);
+            txb_address.Name = "txb_address";
+            txb_address.Size = new Size(193, 23);
+            txb_address.TabIndex = 38;
             // 
             // tbx_phone
             // 
-            this.tbx_phone.Location = new System.Drawing.Point(240, 214);
-            this.tbx_phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbx_phone.Name = "tbx_phone";
-            this.tbx_phone.Size = new System.Drawing.Size(193, 23);
-            this.tbx_phone.TabIndex = 37;
-            this.tbx_phone.TextChanged += new System.EventHandler(this.tbx_phone_TextChanged);
+            tbx_phone.Location = new Point(240, 214);
+            tbx_phone.Margin = new Padding(3, 2, 3, 2);
+            tbx_phone.Name = "tbx_phone";
+            tbx_phone.Size = new Size(193, 23);
+            tbx_phone.TabIndex = 37;
+            tbx_phone.TextChanged += tbx_phone_TextChanged;
             // 
             // cbx_gender
             // 
-            this.cbx_gender.FormattingEnabled = true;
-            this.cbx_gender.Location = new System.Drawing.Point(23, 368);
-            this.cbx_gender.Name = "cbx_gender";
-            this.cbx_gender.Size = new System.Drawing.Size(195, 23);
-            this.cbx_gender.TabIndex = 35;
+            cbx_gender.FormattingEnabled = true;
+            cbx_gender.Location = new Point(23, 368);
+            cbx_gender.Name = "cbx_gender";
+            cbx_gender.Size = new Size(195, 23);
+            cbx_gender.TabIndex = 35;
             // 
             // pictureBox9
             // 
-            this.pictureBox9.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox9.Image = global::GUI.Properties.Resources.icons8_gender_50;
-            this.pictureBox9.Location = new System.Drawing.Point(22, 331);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 32;
-            this.pictureBox9.TabStop = false;
+            pictureBox9.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox9.Image = GUI.Properties.Resources.icons8_gender_50;
+            pictureBox9.Location = new Point(22, 331);
+            pictureBox9.Margin = new Padding(3, 2, 3, 2);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(39, 28);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 32;
+            pictureBox9.TabStop = false;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Location = new System.Drawing.Point(67, 336);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 19);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Giới tính";
+            label9.AutoSize = true;
+            label9.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.RoyalBlue;
+            label9.Location = new Point(67, 336);
+            label9.Name = "label9";
+            label9.Size = new Size(69, 19);
+            label9.TabIndex = 30;
+            label9.Text = "Giới tính";
             // 
             // pictureBox8
             // 
-            this.pictureBox8.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox8.Image = global::GUI.Properties.Resources.icons8_password_50;
-            this.pictureBox8.Location = new System.Drawing.Point(240, 331);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 29;
-            this.pictureBox8.TabStop = false;
+            pictureBox8.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox8.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox8.Location = new Point(240, 331);
+            pictureBox8.Margin = new Padding(3, 2, 3, 2);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(39, 28);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 29;
+            pictureBox8.TabStop = false;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label8.Location = new System.Drawing.Point(285, 336);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 19);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Nhập lại mật khẩu";
+            label8.AutoSize = true;
+            label8.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.RoyalBlue;
+            label8.Location = new Point(285, 336);
+            label8.Name = "label8";
+            label8.Size = new Size(138, 19);
+            label8.TabIndex = 27;
+            label8.Text = "Nhập lại mật khẩu";
             // 
             // pictureBox7
             // 
-            this.pictureBox7.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox7.Image = global::GUI.Properties.Resources.icons8_password_50;
-            this.pictureBox7.Location = new System.Drawing.Point(240, 256);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 26;
-            this.pictureBox7.TabStop = false;
+            pictureBox7.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox7.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox7.Location = new Point(240, 256);
+            pictureBox7.Margin = new Padding(3, 2, 3, 2);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(39, 28);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 26;
+            pictureBox7.TabStop = false;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(285, 261);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 19);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Mật khẩu";
+            label7.AutoSize = true;
+            label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.RoyalBlue;
+            label7.Location = new Point(285, 261);
+            label7.Name = "label7";
+            label7.Size = new Size(73, 19);
+            label7.TabIndex = 24;
+            label7.Text = "Mật khẩu";
             // 
             // pictureBox6
             // 
-            this.pictureBox6.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox6.Image = global::GUI.Properties.Resources.icons8_address_50;
-            this.pictureBox6.Location = new System.Drawing.Point(22, 256);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 23;
-            this.pictureBox6.TabStop = false;
+            pictureBox6.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox6.Image = GUI.Properties.Resources.icons8_address_50;
+            pictureBox6.Location = new Point(22, 256);
+            pictureBox6.Margin = new Padding(3, 2, 3, 2);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(39, 28);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label6.Location = new System.Drawing.Point(67, 261);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 19);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Địa chỉ";
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.RoyalBlue;
+            label6.Location = new Point(67, 261);
+            label6.Name = "label6";
+            label6.Size = new Size(57, 19);
+            label6.TabIndex = 21;
+            label6.Text = "Địa chỉ";
             // 
             // pictureBox5
             // 
-            this.pictureBox5.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox5.Image = global::GUI.Properties.Resources.icons8_phone_50;
-            this.pictureBox5.Location = new System.Drawing.Point(240, 182);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
+            pictureBox5.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox5.Image = GUI.Properties.Resources.icons8_phone_50;
+            pictureBox5.Location = new Point(240, 182);
+            pictureBox5.Margin = new Padding(3, 2, 3, 2);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(39, 28);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 20;
+            pictureBox5.TabStop = false;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(285, 187);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 19);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Số điện thoại";
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.RoyalBlue;
+            label5.Location = new Point(285, 187);
+            label5.Name = "label5";
+            label5.Size = new Size(102, 19);
+            label5.TabIndex = 18;
+            label5.Text = "Số điện thoại";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_date_50;
-            this.pictureBox3.Location = new System.Drawing.Point(22, 182);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox3.Image = GUI.Properties.Resources.icons8_date_50;
+            pictureBox3.Location = new Point(22, 182);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(39, 28);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 17;
+            pictureBox3.TabStop = false;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(67, 187);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Ngày sinh";
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.RoyalBlue;
+            label3.Location = new Point(67, 187);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 19);
+            label3.TabIndex = 15;
+            label3.Text = "Ngày sinh";
             // 
             // pictureBox4
             // 
-            this.pictureBox4.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox4.Image = global::GUI.Properties.Resources.icons8_email_50;
-            this.pictureBox4.Location = new System.Drawing.Point(240, 111);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
+            pictureBox4.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox4.Image = GUI.Properties.Resources.icons8_email_50;
+            pictureBox4.Location = new Point(240, 111);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(39, 28);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 14;
+            pictureBox4.TabStop = false;
             // 
             // txb_email
             // 
-            this.txb_email.Location = new System.Drawing.Point(240, 148);
-            this.txb_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_email.Name = "txb_email";
-            this.txb_email.Size = new System.Drawing.Size(193, 23);
-            this.txb_email.TabIndex = 13;
-            this.txb_email.TextChanged += new System.EventHandler(this.txb_email_TextChanged);
+            txb_email.Location = new Point(240, 148);
+            txb_email.Margin = new Padding(3, 2, 3, 2);
+            txb_email.Name = "txb_email";
+            txb_email.Size = new Size(193, 23);
+            txb_email.TabIndex = 13;
+            txb_email.TextChanged += txb_email_TextChanged;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(285, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 19);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Email";
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.RoyalBlue;
+            label4.Location = new Point(285, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(48, 19);
+            label4.TabIndex = 12;
+            label4.Text = "Email";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox2.Location = new System.Drawing.Point(22, 111);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Location = new Point(22, 111);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_airline_50;
-            this.pictureBox1.Location = new System.Drawing.Point(279, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
+            pictureBox1.Location = new Point(279, 13);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // txb_name
             // 
-            this.txb_name.Location = new System.Drawing.Point(25, 148);
-            this.txb_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_name.Name = "txb_name";
-            this.txb_name.Size = new System.Drawing.Size(193, 23);
-            this.txb_name.TabIndex = 3;
-            this.txb_name.TextChanged += new System.EventHandler(this.txb_name_TextChanged);
+            txb_name.Location = new Point(25, 148);
+            txb_name.Margin = new Padding(3, 2, 3, 2);
+            txb_name.Name = "txb_name";
+            txb_name.Size = new Size(193, 23);
+            txb_name.TabIndex = 3;
+            txb_name.TextChanged += txb_name_TextChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(67, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Họ và tên";
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(67, 116);
+            label2.Name = "label2";
+            label2.Size = new Size(77, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Họ và tên";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(171, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ĐĂNG KÝ";
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Location = new Point(171, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(102, 24);
+            label1.TabIndex = 0;
+            label1.Text = "ĐĂNG KÝ";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(25, 412);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(99, 23);
+            textBox1.TabIndex = 47;
+            textBox1.UseSystemPasswordChar = true;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.RoyalBlue;
+            button1.Location = new Point(130, 403);
+            button1.Name = "button1";
+            button1.Size = new Size(88, 34);
+            button1.TabIndex = 48;
+            button1.Text = "Gửi mã";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(28, 447);
+            label10.Name = "label10";
+            label10.Size = new Size(44, 15);
+            label10.TabIndex = 49;
+            label10.Text = "label10";
             // 
             // fDky
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GUI.Properties.Resources.Rectangle_2;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "fDky";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fDky";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = GUI.Properties.Resources.Rectangle_2;
+            ClientSize = new Size(1064, 681);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "fDky";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "fDky";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -504,5 +538,8 @@
         private Label lb_ErrorPhoneNumber;
         private Label lb_ErrorPassAgain;
         private Label lb_ErrorName;
+        private Label label10;
+        private Button button1;
+        private TextBox textBox1;
     }
 }
