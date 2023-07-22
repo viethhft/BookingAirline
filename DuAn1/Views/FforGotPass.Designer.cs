@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FforGotPass));
             panel1 = new Panel();
             lb_errorCode = new Label();
             lb_errorPass = new Label();
@@ -131,16 +132,16 @@
             time.Controls.Add(label3);
             time.Controls.Add(lb_Seconds);
             time.Controls.Add(lb_Minutes);
-            time.Location = new Point(335, 217);
+            time.Location = new Point(251, 215);
             time.Name = "time";
-            time.Size = new Size(63, 23);
+            time.Size = new Size(87, 31);
             time.TabIndex = 4;
             time.Visible = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(28, 4);
+            label3.Location = new Point(28, 8);
             label3.Name = "label3";
             label3.Size = new Size(10, 15);
             label3.TabIndex = 2;
@@ -149,7 +150,7 @@
             // lb_Seconds
             // 
             lb_Seconds.AutoSize = true;
-            lb_Seconds.Location = new Point(44, 4);
+            lb_Seconds.Location = new Point(44, 9);
             lb_Seconds.Name = "lb_Seconds";
             lb_Seconds.Size = new Size(19, 15);
             lb_Seconds.TabIndex = 1;
@@ -158,7 +159,7 @@
             // lb_Minutes
             // 
             lb_Minutes.AutoSize = true;
-            lb_Minutes.Location = new Point(3, 4);
+            lb_Minutes.Location = new Point(3, 9);
             lb_Minutes.Name = "lb_Minutes";
             lb_Minutes.Size = new Size(19, 15);
             lb_Minutes.TabIndex = 0;
@@ -377,9 +378,10 @@
             BackgroundImage = GUI.Properties.Resources.Rectangle_2;
             ClientSize = new Size(1064, 681);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FforGotPass";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FforGotPass";
+            Text = "Quên mật khẩu";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             time.ResumeLayout(false);

@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap businessregistration_signpen_negocio_inscripcio_2358 {
+            get {
+                object obj = ResourceManager.GetObject("businessregistration_signpen_negocio_inscripcio_2358", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chair {
             get {
                 object obj = ResourceManager.GetObject("chair", resourceCulture);

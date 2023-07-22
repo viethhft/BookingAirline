@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -229,6 +230,7 @@
             ClientSize = new Size(802, 492);
             Controls.Add(label4);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form1";
