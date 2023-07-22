@@ -84,7 +84,7 @@ namespace DuAn1
             {
                 cb_reme_CheckedChanged(sender, e);
             }
-            fStaff _fs = new fStaff(tb_user.Text,tb_pass.Text);
+            
         }
 
         private void llb_dki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
