@@ -36,10 +36,8 @@
             label9 = new Label();
             textBox3 = new TextBox();
             label6 = new Label();
-            button3 = new Button();
             textBox4 = new TextBox();
             label8 = new Label();
-            button2 = new Button();
             comboBox2 = new ComboBox();
             label7 = new Label();
             textBox2 = new TextBox();
@@ -53,6 +51,8 @@
             label1 = new Label();
             groupBox2 = new GroupBox();
             dtgv_kh = new DataGridView();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgv_kh).BeginInit();
@@ -60,7 +60,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(guna2Button2);
+            groupBox1.Controls.Add(guna2Button1);
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(textBox6);
             groupBox1.Controls.Add(label10);
@@ -68,10 +70,8 @@
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(comboBox2);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(textBox2);
@@ -151,16 +151,6 @@
             label6.TabIndex = 18;
             label6.Text = "Số vé đã đặt";
             // 
-            // button3
-            // 
-            button3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(593, 177);
-            button3.Name = "button3";
-            button3.Size = new Size(96, 23);
-            button3.TabIndex = 8;
-            button3.Text = "Tìm";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // textBox4
             // 
             textBox4.Location = new Point(408, 177);
@@ -177,16 +167,6 @@
             label8.Size = new Size(71, 18);
             label8.TabIndex = 16;
             label8.Text = "Tìm kiếm";
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(776, 154);
-            button2.Name = "button2";
-            button2.Size = new Size(128, 39);
-            button2.TabIndex = 12;
-            button2.Text = "Cập nhật";
-            button2.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
@@ -304,13 +284,45 @@
             dtgv_kh.AllowUserToAddRows = false;
             dtgv_kh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_kh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgv_kh.Location = new Point(7, 29);
+            dtgv_kh.Location = new Point(7, 14);
             dtgv_kh.Margin = new Padding(3, 4, 3, 4);
             dtgv_kh.Name = "dtgv_kh";
             dtgv_kh.RowHeadersWidth = 51;
             dtgv_kh.RowTemplate.Height = 25;
-            dtgv_kh.Size = new Size(1018, 211);
+            dtgv_kh.Size = new Size(1018, 226);
             dtgv_kh.TabIndex = 0;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(724, 155);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(180, 45);
+            guna2Button1.TabIndex = 23;
+            guna2Button1.Text = "Cập nhật";
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.DarkCyan;
+            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(593, 173);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.Size = new Size(76, 29);
+            guna2Button2.TabIndex = 24;
+            guna2Button2.Text = "Tìm";
             // 
             // QlykhachHang
             // 
@@ -339,10 +351,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button button3;
         private TextBox textBox4;
         private Label label8;
-        private Button button2;
         private ComboBox comboBox2;
         private Label label7;
         private TextBox textBox2;
@@ -358,5 +368,7 @@
         private Label label9;
         private TextBox textBox3;
         private Label label6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

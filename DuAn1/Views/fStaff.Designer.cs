@@ -121,6 +121,7 @@
             // btn_qlynv
             // 
             btn_qlynv.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_qlynv.ForeColor = SystemColors.ControlText;
             btn_qlynv.Location = new Point(3, 58);
             btn_qlynv.Name = "btn_qlynv";
             btn_qlynv.Size = new Size(194, 48);
@@ -193,6 +194,7 @@
             đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
             đăngXuấtToolStripMenuItem1.Size = new Size(180, 22);
             đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click;
             // 
             // fStaff
             // 
