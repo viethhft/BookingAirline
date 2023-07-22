@@ -29,7 +29,6 @@ namespace DuAn1.Views
         }
         private void EnableButton()
         {
-            MessageBox.Show(_role.ToString());
             if(_role == 1)
             {
                 btn_qlynv.Enabled = false;
