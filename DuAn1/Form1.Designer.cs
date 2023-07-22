@@ -212,12 +212,13 @@
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(798, 9);
             label4.Name = "label4";
-            label4.Size = new Size(445, 16);
+            label4.Size = new Size(495, 16);
             label4.TabIndex = 2;
-            label4.Text = "Chào mừng bạn đến với hãng hàng không Quốc gia Việt Nam Airline";
+            label4.Text = "Chào mừng bạn đến với ứng dụng bán vé máy bay Booking Airline Việt Nam";
             // 
             // timer1
             // 
+            timer1.Interval = 50;
             timer1.Tick += timer1_Tick_1;
             // 
             // Form1

@@ -29,266 +29,321 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            textBox4 = new TextBox();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            textBox3 = new TextBox();
+            label9 = new Label();
+            textBox2 = new TextBox();
+            guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            dataGridView1 = new DataGridView();
+            textBox1 = new TextBox();
             label8 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
             label7 = new Label();
             label6 = new Label();
-            textBox3 = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
             label3 = new Label();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            comboBox2 = new ComboBox();
             label2 = new Label();
             label1 = new Label();
-            comboBox1 = new ComboBox();
-            groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(guna2Button2);
+            groupBox1.Controls.Add(guna2Button1);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(guna2DateTimePicker2);
+            groupBox1.Controls.Add(guna2DateTimePicker1);
+            groupBox1.Controls.Add(guna2ComboBox4);
+            groupBox1.Controls.Add(guna2ComboBox3);
+            groupBox1.Controls.Add(guna2ComboBox2);
+            groupBox1.Controls.Add(guna2ComboBox1);
+            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(comboBox2);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Location = new Point(14, 16);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(10, 9);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(1178, 293);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(1030, 461);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // textBox4
+            // guna2Button2
             // 
-            textBox4.Location = new Point(115, 147);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(153, 27);
-            textBox4.TabIndex = 19;
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.DarkCyan;
+            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(896, 96);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.Size = new Size(128, 45);
+            guna2Button2.TabIndex = 29;
+            guna2Button2.Text = "Sửa";
             // 
-            // label8
+            // guna2Button1
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(7, 151);
-            label8.Name = "label8";
-            label8.Size = new Size(60, 20);
-            label8.TabIndex = 18;
-            label8.Text = "Giá tiền";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(434, 255);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(241, 27);
-            dateTimePicker2.TabIndex = 17;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(115, 255);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(244, 27);
-            dateTimePicker1.TabIndex = 16;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(365, 257);
-            label7.Name = "label7";
-            label7.Size = new Size(63, 20);
-            label7.TabIndex = 15;
-            label7.Text = "Ngày về";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(7, 263);
-            label6.Name = "label6";
-            label6.Size = new Size(61, 20);
-            label6.TabIndex = 13;
-            label6.Text = "Ngày đi";
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(896, 40);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(128, 45);
+            guna2Button1.TabIndex = 28;
+            guna2Button1.Text = "Thêm";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(434, 207);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Location = new Point(619, 152);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(228, 27);
-            textBox3.TabIndex = 12;
+            textBox3.Size = new Size(210, 37);
+            textBox3.TabIndex = 27;
             // 
-            // label5
+            // label9
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(355, 211);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 20);
-            label5.TabIndex = 11;
-            label5.Text = "Điểm đến";
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(619, 133);
+            label9.Name = "label9";
+            label9.Size = new Size(71, 18);
+            label9.TabIndex = 26;
+            label9.Text = "Tìm kiếm";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(115, 207);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Location = new Point(619, 95);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(228, 27);
-            textBox2.TabIndex = 10;
+            textBox2.Size = new Size(210, 37);
+            textBox2.TabIndex = 25;
             // 
-            // label4
+            // guna2DateTimePicker2
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(7, 211);
-            label4.Name = "label4";
-            label4.Size = new Size(62, 20);
-            label4.TabIndex = 9;
-            label4.Text = "Điểm đi";
+            guna2DateTimePicker2.Checked = true;
+            guna2DateTimePicker2.FillColor = Color.FromArgb(224, 224, 224);
+            guna2DateTimePicker2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2DateTimePicker2.Format = DateTimePickerFormat.Long;
+            guna2DateTimePicker2.Location = new Point(325, 96);
+            guna2DateTimePicker2.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker2.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker2.Name = "guna2DateTimePicker2";
+            guna2DateTimePicker2.Size = new Size(242, 36);
+            guna2DateTimePicker2.TabIndex = 24;
+            guna2DateTimePicker2.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
-            // textBox1
+            // guna2DateTimePicker1
             // 
-            textBox1.Location = new Point(434, 29);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(153, 27);
-            textBox1.TabIndex = 8;
+            guna2DateTimePicker1.Checked = true;
+            guna2DateTimePicker1.FillColor = Color.FromArgb(224, 224, 224);
+            guna2DateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
+            guna2DateTimePicker1.Location = new Point(325, 30);
+            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            guna2DateTimePicker1.Size = new Size(242, 36);
+            guna2DateTimePicker1.TabIndex = 23;
+            guna2DateTimePicker1.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
-            // label3
+            // guna2ComboBox4
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(327, 33);
-            label3.Name = "label3";
-            label3.Size = new Size(108, 20);
-            label3.TabIndex = 7;
-            label3.Text = "Mã chuyến bay";
+            guna2ComboBox4.BackColor = Color.Transparent;
+            guna2ComboBox4.DrawMode = DrawMode.OwnerDrawFixed;
+            guna2ComboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            guna2ComboBox4.FocusedColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2ComboBox4.ForeColor = Color.FromArgb(68, 88, 112);
+            guna2ComboBox4.ItemHeight = 30;
+            guna2ComboBox4.Location = new Point(27, 94);
+            guna2ComboBox4.Name = "guna2ComboBox4";
+            guna2ComboBox4.Size = new Size(241, 36);
+            guna2ComboBox4.TabIndex = 22;
             // 
-            // button3
+            // guna2ComboBox3
             // 
-            button3.Location = new Point(991, 207);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(159, 49);
-            button3.TabIndex = 6;
-            button3.Text = "Xóa";
-            button3.UseVisualStyleBackColor = true;
+            guna2ComboBox3.BackColor = Color.Transparent;
+            guna2ComboBox3.DrawMode = DrawMode.OwnerDrawFixed;
+            guna2ComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            guna2ComboBox3.FocusedColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2ComboBox3.ForeColor = Color.FromArgb(68, 88, 112);
+            guna2ComboBox3.ItemHeight = 30;
+            guna2ComboBox3.Location = new Point(27, 31);
+            guna2ComboBox3.Name = "guna2ComboBox3";
+            guna2ComboBox3.Size = new Size(241, 36);
+            guna2ComboBox3.TabIndex = 21;
             // 
-            // button2
+            // guna2ComboBox2
             // 
-            button2.Location = new Point(991, 132);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(159, 49);
-            button2.TabIndex = 5;
-            button2.Text = "Sửa";
-            button2.UseVisualStyleBackColor = true;
+            guna2ComboBox2.BackColor = Color.Transparent;
+            guna2ComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
+            guna2ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            guna2ComboBox2.FocusedColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
+            guna2ComboBox2.ItemHeight = 30;
+            guna2ComboBox2.Location = new Point(325, 153);
+            guna2ComboBox2.Name = "guna2ComboBox2";
+            guna2ComboBox2.Size = new Size(242, 36);
+            guna2ComboBox2.TabIndex = 20;
             // 
-            // button1
+            // guna2ComboBox1
             // 
-            button1.Location = new Point(991, 57);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 49);
-            button1.TabIndex = 4;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(115, 83);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(138, 28);
-            comboBox2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(7, 87);
-            label2.Name = "label2";
-            label2.Size = new Size(70, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Địa điểm";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(7, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(97, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Loại máy bay";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(115, 29);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(138, 28);
-            comboBox1.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Location = new Point(14, 317);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(1178, 311);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
+            guna2ComboBox1.BackColor = Color.Transparent;
+            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
+            guna2ComboBox1.ItemHeight = 30;
+            guna2ComboBox1.Location = new Point(27, 151);
+            guna2ComboBox1.Name = "guna2ComboBox1";
+            guna2ComboBox1.Size = new Size(241, 36);
+            guna2ComboBox1.TabIndex = 19;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(7, 29);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(4, 195);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1165, 273);
+            dataGridView1.Size = new Size(1020, 262);
             dataGridView1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(619, 30);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(210, 37);
+            textBox1.TabIndex = 8;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(619, 76);
+            label8.Name = "label8";
+            label8.Size = new Size(62, 18);
+            label8.TabIndex = 18;
+            label8.Text = "Giá tiền";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(323, 75);
+            label7.Name = "label7";
+            label7.Size = new Size(64, 18);
+            label7.TabIndex = 15;
+            label7.Text = "Ngày về";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(325, 11);
+            label6.Name = "label6";
+            label6.Size = new Size(61, 18);
+            label6.TabIndex = 13;
+            label6.Text = "Ngày đi";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(325, 135);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 18);
+            label5.TabIndex = 11;
+            label5.Text = "Điểm đến";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(26, 133);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 18);
+            label4.TabIndex = 9;
+            label4.Text = "Điểm đi";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(619, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 18);
+            label3.TabIndex = 7;
+            label3.Text = "Mã chuyến bay";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(27, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(111, 18);
+            label2.TabIndex = 2;
+            label2.Text = "Địa điểm(Tỉnh)";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(27, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(101, 18);
+            label1.TabIndex = 1;
+            label1.Text = "Loại máy bay";
             // 
             // FQuanLyChuyenBay
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1206, 644);
-            Controls.Add(groupBox2);
+            ClientSize = new Size(1052, 481);
             Controls.Add(groupBox1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FQuanLyChuyenBay";
             Text = "FQuanLyChuyenBay";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -296,26 +351,27 @@
         #endregion
 
         private GroupBox groupBox1;
-        private DateTimePicker dateTimePicker1;
         private Label label7;
         private Label label6;
-        private TextBox textBox3;
         private Label label5;
-        private TextBox textBox2;
         private Label label4;
-        private TextBox textBox1;
         private Label label3;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private ComboBox comboBox2;
         private Label label2;
         private Label label1;
-        private ComboBox comboBox1;
-        private GroupBox groupBox2;
         private DataGridView dataGridView1;
-        private TextBox textBox4;
         private Label label8;
-        private DateTimePicker dateTimePicker2;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
+        private Label label9;
+        private TextBox textBox3;
+        private TextBox textBox2;
     }
 }

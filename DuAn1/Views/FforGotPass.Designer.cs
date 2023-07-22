@@ -168,11 +168,11 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.LinkColor = Color.White;
             linkLabel1.Location = new Point(243, 471);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(86, 19);
+            linkLabel1.Size = new Size(84, 18);
             linkLabel1.TabIndex = 37;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Đăng nhập";
@@ -206,22 +206,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.RoyalBlue;
             label2.Location = new Point(174, 192);
             label2.Name = "label2";
-            label2.Size = new Size(29, 19);
+            label2.Size = new Size(30, 18);
             label2.TabIndex = 34;
             label2.Text = "Mã";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
             label10.Location = new Point(117, 471);
             label10.Name = "label10";
-            label10.Size = new Size(127, 19);
+            label10.Size = new Size(126, 18);
             label10.TabIndex = 33;
             label10.Text = "Đã có tài khoản?";
             // 
@@ -250,11 +250,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.RoyalBlue;
             label8.Location = new Point(174, 342);
             label8.Name = "label8";
-            label8.Size = new Size(138, 19);
+            label8.Size = new Size(132, 18);
             label8.TabIndex = 27;
             label8.Text = "Nhập lại mật khẩu";
             // 
@@ -282,11 +282,11 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.RoyalBlue;
             label7.Location = new Point(171, 271);
             label7.Name = "label7";
-            label7.Size = new Size(105, 19);
+            label7.Size = new Size(103, 18);
             label7.TabIndex = 24;
             label7.Text = "Mật khẩu mới";
             // 
@@ -323,11 +323,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.RoyalBlue;
             label4.Location = new Point(174, 110);
             label4.Name = "label4";
-            label4.Size = new Size(48, 19);
+            label4.Size = new Size(48, 18);
             label4.TabIndex = 12;
             label4.Text = "Email";
             // 

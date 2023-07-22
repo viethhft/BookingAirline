@@ -89,7 +89,7 @@ namespace GUI.Views
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            FQuanLyChuyenBay child = new();
+            FQuanLyChuyenBayUser child = new();
             ChildForm(child);
             if (guna2Button2.Enabled == true)
             {
