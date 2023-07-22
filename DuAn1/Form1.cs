@@ -176,6 +176,9 @@ namespace DuAn1
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             label4.Left -= 3;// Left là chạy từ bên trái. Bạn có thể thay = right
+            label5.Top -= 2;
+            label5.Left += 3;
+
         }
     }
 }

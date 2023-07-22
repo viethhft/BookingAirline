@@ -124,11 +124,13 @@ create table Recommend
 
 insert Roles values
 (0,N'Admin'),
-(1,N'Nhân viên')
+(1,N'Nhân viên'),
+(99,N'Mail')
 
 insert Staff(role_id,display_name,password,email,phone) values
-(1,N'Lê Văn Luyện','123','luyenlv@gmail.com','0129283738'),
-(0,N'Lê Văn Hà','123','halv@gmail.com','0918877228')
+(1,N'Lê Văn Luyện','spvhixkeagfawjqc','luyenlv@gmail.com','0129283738'),
+(0,N'Lê Văn Hà','spvhixkeagfawjqc','halv@gmail.com','0918877228'),
+(99,N'Email send','spvhixkeagfawjqc','bookingairline1@gmail.com','0918877228')
 
 insert Customer (email,password,first_name,last_name,middle_name,Dob,address,phone,gender) values
 ('cus1@gmail.com','123',N'Phan',N'Trung',N'Nam','2001-1-15','none','0191771271',N'Nam')

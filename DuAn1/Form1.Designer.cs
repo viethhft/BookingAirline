@@ -240,33 +240,18 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            timer1.Tick += timer1_Tick_1;
             // 
-            // Form1
+            // label5
             // 
-            this.AcceptButton = this.btn_login;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::GUI.Properties.Resources.design;
-            this.ClientSize = new System.Drawing.Size(802, 492);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đăng nhập";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-=======
+            label5.BackColor = Color.Transparent;
+            label5.Image = GUI.Properties.Resources.Untitled_13;
+            label5.Location = new Point(-4, 102);
+            label5.Name = "label5";
+            label5.Size = new Size(419, 301);
+            label5.TabIndex = 1;
+            label5.Text = "label5";
+            // 
             // Form1
             // 
             AcceptButton = btn_login;

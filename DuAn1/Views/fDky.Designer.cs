@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDky));
             panel1 = new Panel();
             time = new Panel();
             label10 = new Label();
@@ -131,16 +132,16 @@
             time.Controls.Add(label10);
             time.Controls.Add(lb_Seconds);
             time.Controls.Add(lb_Minutes);
-            time.Location = new Point(353, 213);
+            time.Location = new Point(334, 209);
             time.Name = "time";
-            time.Size = new Size(63, 23);
+            time.Size = new Size(111, 30);
             time.TabIndex = 5;
             time.Visible = false;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(28, 4);
+            label10.Location = new Point(28, 8);
             label10.Name = "label10";
             label10.Size = new Size(10, 15);
             label10.TabIndex = 2;
@@ -149,7 +150,7 @@
             // lb_Seconds
             // 
             lb_Seconds.AutoSize = true;
-            lb_Seconds.Location = new Point(44, 4);
+            lb_Seconds.Location = new Point(44, 8);
             lb_Seconds.Name = "lb_Seconds";
             lb_Seconds.Size = new Size(19, 15);
             lb_Seconds.TabIndex = 1;
@@ -158,7 +159,7 @@
             // lb_Minutes
             // 
             lb_Minutes.AutoSize = true;
-            lb_Minutes.Location = new Point(3, 4);
+            lb_Minutes.Location = new Point(3, 8);
             lb_Minutes.Name = "lb_Minutes";
             lb_Minutes.Size = new Size(19, 15);
             lb_Minutes.TabIndex = 0;
@@ -525,10 +526,11 @@
             BackgroundImage = GUI.Properties.Resources.Rectangle_2;
             ClientSize = new Size(1064, 681);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "fDky";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "fDky";
+            Text = "Đăng ký";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             time.ResumeLayout(false);

@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap businessregistration_signpen_negocio_inscripcio_2358 {
+            get {
+                object obj = ResourceManager.GetObject("businessregistration_signpen_negocio_inscripcio_2358", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chair {
             get {
                 object obj = ResourceManager.GetObject("chair", resourceCulture);
@@ -353,6 +363,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_plane_30__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plane-30 (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_plane_30__3_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-plane-30 (3)", resourceCulture);
@@ -366,6 +386,36 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap icons8_plane_30__3_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plane-30 (3)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plane_30__3_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plane-30 (3)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maybaform_preview_rev_1 {
+            get {
+                object obj = ResourceManager.GetObject("maybaform_preview_rev_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maybaform_preview_rev_11 {
+            get {
+                object obj = ResourceManager.GetObject("maybaform_preview_rev_11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
