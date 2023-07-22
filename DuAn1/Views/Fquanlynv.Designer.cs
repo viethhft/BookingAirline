@@ -192,7 +192,7 @@
             txt_Email.Location = new Point(133, 140);
             txt_Email.Margin = new Padding(3, 4, 3, 4);
             txt_Email.Name = "txt_Email";
-            txt_Email.Size = new Size(201, 27);
+            txt_Email.Size = new Size(238, 27);
             txt_Email.TabIndex = 7;
             // 
             // txt_Sdt
@@ -217,7 +217,7 @@
             txt_Ten.Location = new Point(133, 44);
             txt_Ten.Margin = new Padding(3, 4, 3, 4);
             txt_Ten.Name = "txt_Ten";
-            txt_Ten.Size = new Size(201, 27);
+            txt_Ten.Size = new Size(238, 27);
             txt_Ten.TabIndex = 4;
             // 
             // label1
@@ -242,6 +242,8 @@
             // 
             // dgrid_NhanVien
             // 
+            dgrid_NhanVien.AllowUserToAddRows = false;
+            dgrid_NhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgrid_NhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgrid_NhanVien.Location = new Point(0, 29);
             dgrid_NhanVien.Margin = new Padding(3, 4, 3, 4);
