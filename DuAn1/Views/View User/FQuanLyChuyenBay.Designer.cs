@@ -68,10 +68,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2HtmlLabel1.Location = new Point(21, 12);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(232, 18);
+            guna2HtmlLabel1.Size = new Size(287, 21);
             guna2HtmlLabel1.TabIndex = 69;
             guna2HtmlLabel1.Text = "TÌM KIẾM THEO CHI TIẾT CHUYẾN ĐI";
             // 

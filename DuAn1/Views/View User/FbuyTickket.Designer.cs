@@ -62,7 +62,7 @@
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button1.FillColor = Color.DarkCyan;
-            guna2Button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Location = new Point(12, 12);
             guna2Button1.Name = "guna2Button1";
@@ -79,7 +79,7 @@
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button2.FillColor = Color.White;
-            guna2Button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.Location = new Point(186, 12);
             guna2Button2.Name = "guna2Button2";
@@ -114,9 +114,10 @@
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
+            guna2HtmlLabel8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel8.Location = new Point(407, 267);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            guna2HtmlLabel8.Size = new Size(46, 17);
+            guna2HtmlLabel8.Size = new Size(59, 20);
             guna2HtmlLabel8.TabIndex = 62;
             guna2HtmlLabel8.Text = "Ngày về";
             // 
@@ -130,18 +131,20 @@
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
+            guna2HtmlLabel7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel7.Location = new Point(407, 173);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(85, 17);
+            guna2HtmlLabel7.Size = new Size(106, 20);
             guna2HtmlLabel7.TabIndex = 59;
             guna2HtmlLabel7.Text = "không để trống";
             // 
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
+            guna2HtmlLabel6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel6.Location = new Point(58, 170);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(85, 17);
+            guna2HtmlLabel6.Size = new Size(106, 20);
             guna2HtmlLabel6.TabIndex = 58;
             guna2HtmlLabel6.Text = "không để trống";
             // 
@@ -155,7 +158,7 @@
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button3.FillColor = Color.Empty;
-            guna2Button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button3.ForeColor = Color.FromArgb(123, 90, 4);
             guna2Button3.Location = new Point(503, 359);
             guna2Button3.Name = "guna2Button3";
@@ -179,9 +182,10 @@
             // guna2HtmlLabel5
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel5.Location = new Point(58, 267);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(44, 17);
+            guna2HtmlLabel5.Size = new Size(56, 20);
             guna2HtmlLabel5.TabIndex = 56;
             guna2HtmlLabel5.Text = "Ngày đi";
             // 
@@ -203,9 +207,10 @@
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel4.Location = new Point(407, 196);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(32, 17);
+            guna2HtmlLabel4.Size = new Size(40, 20);
             guna2HtmlLabel4.TabIndex = 54;
             guna2HtmlLabel4.Text = "Hạng";
             // 
@@ -227,9 +232,10 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel3.Location = new Point(58, 196);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(67, 17);
+            guna2HtmlLabel3.Size = new Size(84, 20);
             guna2HtmlLabel3.TabIndex = 52;
             guna2HtmlLabel3.Text = "Hành khách";
             // 
@@ -251,9 +257,10 @@
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel2.Location = new Point(407, 105);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(32, 17);
+            guna2HtmlLabel2.Size = new Size(42, 20);
             guna2HtmlLabel2.TabIndex = 49;
             guna2HtmlLabel2.Text = "Đến *";
             // 
@@ -275,18 +282,20 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel1.Location = new Point(58, 105);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(24, 17);
+            guna2HtmlLabel1.Size = new Size(33, 20);
             guna2HtmlLabel1.TabIndex = 47;
             guna2HtmlLabel1.Text = "Từ *";
             // 
             // guna2HtmlLabel9
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
+            guna2HtmlLabel9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel9.Location = new Point(58, 73);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(213, 17);
+            guna2HtmlLabel9.Size = new Size(273, 20);
             guna2HtmlLabel9.TabIndex = 66;
             guna2HtmlLabel9.Text = "Lưu ý: *Trường bắt buộc nhập thông tin";
             // 
@@ -310,7 +319,7 @@
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button5.FillColor = Color.Empty;
-            guna2Button5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button5.ForeColor = Color.FromArgb(0, 95, 110);
             guna2Button5.Image = Properties.Resources.icons8_gift_box_401;
             guna2Button5.Location = new Point(58, 368);
