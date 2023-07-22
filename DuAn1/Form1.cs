@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using _2_BUS.Validate;
 using Guna.UI2.WinForms;
+using _1_DAL.Models;
 
 namespace DuAn1
 {
@@ -14,20 +15,19 @@ namespace DuAn1
     {
         Validate _validate;
         CheckAccountType _checkAccountType;
-        fStaff _fst;
         QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
         FHomeUser _fkhachhang;
         ICustomerServices _customerServices;
         IStaffServices _staffServices;
+        int _role;
         public Form1()
         {
             _customerServices = new CustomerServices();
             _staffServices = new StaffServices();
             _validate = new Validate();
             _checkAccountType = new();
-            _fst = new fStaff();
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
@@ -54,6 +54,9 @@ namespace DuAn1
         {
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
+                _role = 0;
+                fStaff _fst = new fStaff(_role);
+
                 this.Hide();
                 MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
                 _fst.ShowDialog();
@@ -61,6 +64,8 @@ namespace DuAn1
             }
             else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
             {
+                _role = 1;
+                fStaff _fst = new fStaff(_role);
                 this.Hide();
                 MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
                 _fst.ShowDialog();
@@ -85,7 +90,6 @@ namespace DuAn1
             {
                 cb_reme_CheckedChanged(sender, e);
             }
-            fStaff _fs = new fStaff(tb_user.Text,tb_pass.Text);
         }
 
         private void llb_dki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

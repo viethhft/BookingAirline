@@ -15,22 +15,22 @@ namespace DuAn1.Views
     {
         CheckAccountType _check;
         StaffServices _serv;
-        string _username;
-        string _password;
+        public int _role;
         public fStaff()
         {
             _check = new CheckAccountType();
             _serv = new StaffServices();
             InitializeComponent();
         }
-        public fStaff(string username, string password)
+        public fStaff(int role):this()
         {
-            _username = username;
-            _password = password;
+            _role = role;
+            EnableButton();
         }
         private void EnableButton()
         {
-            if(_check.CheckType(_username,_password) == 1)
+            MessageBox.Show(_role.ToString());
+            if(_role == 1)
             {
                 btn_qlynv.Enabled = false;
             }
