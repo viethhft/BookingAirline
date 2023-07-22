@@ -195,7 +195,7 @@
             // 
             txt_Email.Location = new Point(116, 105);
             txt_Email.Name = "txt_Email";
-            txt_Email.Size = new Size(176, 23);
+            txt_Email.Size = new Size(201, 27);
             txt_Email.TabIndex = 7;
             // 
             // txt_Sdt
@@ -219,7 +219,7 @@
             // 
             txt_Ten.Location = new Point(116, 33);
             txt_Ten.Name = "txt_Ten";
-            txt_Ten.Size = new Size(176, 23);
+            txt_Ten.Size = new Size(201, 27);
             txt_Ten.TabIndex = 4;
             // 
             // label1
