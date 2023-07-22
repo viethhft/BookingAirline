@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,30 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-=======
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            panel1 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            btn_login = new Button();
-            llb_forgot = new LinkLabel();
-            llb_dki = new LinkLabel();
-            cb_reme = new CheckBox();
-            tb_pass = new TextBox();
-            tb_user = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            label4 = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
->>>>>>> 2d2ccbdac20cd473b8bb6cd2e6ce91ab599d507f
             // 
             // panel1
             // 
@@ -95,8 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(369, 393);
             this.panel1.TabIndex = 1;
-            // 
-<<<<<<< HEAD
             // 
             // pictureBox3
             // 
@@ -143,6 +115,7 @@
             this.btn_login.TabIndex = 8;
             this.btn_login.Text = "Đăng nhập";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // llb_forgot
             // 
@@ -154,6 +127,7 @@
             this.llb_forgot.TabIndex = 7;
             this.llb_forgot.TabStop = true;
             this.llb_forgot.Text = "Quên mật khẩu?";
+            this.llb_forgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_forgot_LinkClicked);
             // 
             // llb_dki
             // 
@@ -165,6 +139,7 @@
             this.llb_dki.TabIndex = 6;
             this.llb_dki.TabStop = true;
             this.llb_dki.Text = "Đăng ký";
+            this.llb_dki.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_dki_LinkClicked);
             // 
             // cb_reme
             // 
@@ -177,6 +152,7 @@
             this.cb_reme.TabIndex = 5;
             this.cb_reme.Text = "Ghi nhớ đăng nhập";
             this.cb_reme.UseVisualStyleBackColor = true;
+            this.cb_reme.CheckedChanged += new System.EventHandler(this.cb_reme_CheckedChanged);
             // 
             // tb_pass
             // 
@@ -240,43 +216,31 @@
             // 
             // timer1
             // 
-            timer1.Tick += timer1_Tick_1;
-            // 
-            // label5
-            // 
-            label5.BackColor = Color.Transparent;
-            label5.Image = GUI.Properties.Resources.Untitled_13;
-            label5.Location = new Point(-4, 102);
-            label5.Name = "label5";
-            label5.Size = new Size(419, 301);
-            label5.TabIndex = 1;
-            label5.Text = "label5";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // Form1
             // 
-            AcceptButton = btn_login;
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            BackgroundImage = GUI.Properties.Resources.design;
-            ClientSize = new Size(802, 492);
-            Controls.Add(label4);
-            Controls.Add(panel1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
-            MaximizeBox = false;
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Đăng nhập";
-            FormClosing += Form1_FormClosing;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
->>>>>>> 2d2ccbdac20cd473b8bb6cd2e6ce91ab599d507f
+            this.AcceptButton = this.btn_login;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::GUI.Properties.Resources.design;
+            this.ClientSize = new System.Drawing.Size(802, 492);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng nhập";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -297,4 +261,6 @@
         private Label label4;
         private System.Windows.Forms.Timer timer1;
     }
+//<<<<<<< HEAD
+
 }
