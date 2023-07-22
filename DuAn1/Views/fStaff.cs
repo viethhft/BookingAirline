@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2_BUS.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,33 @@ namespace DuAn1.Views
 {
     public partial class fStaff : Form
     {
+        CheckAccountType _check;
+        StaffServices _serv;
+        string _username;
+        string _password;
         public fStaff()
         {
+            _check = new CheckAccountType();
+            _serv = new StaffServices();
             InitializeComponent();
         }
+        public fStaff(string username, string password)
+        {
+            _username = username;
+            _password = password;
+        }
+        private void EnableButton()
+        {
+            if(_check.CheckType(_username,_password) == 1)
+            {
+                btn_qlynv.Enabled = false;
+            }
+            else
+            {
+                btn_qlynv.Enabled = true;
+            }
+        }
+        
         private void ChildForm(Form child)
         {
             pn_chil.Controls.Clear();
