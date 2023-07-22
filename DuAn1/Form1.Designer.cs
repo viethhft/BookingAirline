@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,11 +51,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+=======
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            panel1 = new Panel();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            btn_login = new Button();
+            llb_forgot = new LinkLabel();
+            llb_dki = new LinkLabel();
+            cb_reme = new CheckBox();
+            tb_pass = new TextBox();
+            tb_user = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label4 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+>>>>>>> 2d2ccbdac20cd473b8bb6cd2e6ce91ab599d507f
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -72,17 +96,7 @@
             this.panel1.Size = new System.Drawing.Size(369, 393);
             this.panel1.TabIndex = 1;
             // 
-            // label5
-            // 
-            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(99, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 24);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "ĐĂNG NHẬP";
+<<<<<<< HEAD
             // 
             // pictureBox3
             // 
@@ -252,6 +266,32 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+=======
+            // Form1
+            // 
+            AcceptButton = btn_login;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            BackgroundImage = GUI.Properties.Resources.design;
+            ClientSize = new Size(802, 492);
+            Controls.Add(label4);
+            Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Đăng nhập";
+            FormClosing += Form1_FormClosing;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+>>>>>>> 2d2ccbdac20cd473b8bb6cd2e6ce91ab599d507f
         }
 
         #endregion
@@ -271,6 +311,5 @@
         private Label label1;
         private Label label4;
         private System.Windows.Forms.Timer timer1;
-        private Label label5;
     }
 }
