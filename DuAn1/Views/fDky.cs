@@ -214,20 +214,20 @@ namespace DuAn1.Views
                     minutes = 5;
                     seconds = 60;
                     string email = txb_email.Text;
-                    string subject = "Welcome to Booking Airline";
-                    string body = "OTP code to verify your account registration is: ";
+                    string subject = "Chào mừng bạn đến với bán vé máy bay";
+                    string body = "Mã OTP để xác minh tài khoản đăng ký của bạn là: ";
                     int role_id = 99;
                     code_otp = _validate.randomCode();
                     if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
                     {
                         time.Visible = true;
-                        MessageBox.Show("Email Sent Successfully.");
+                        MessageBox.Show("Đã gửi mã!");
                         btn_SendCode.Enabled = false;
                         btn_sign.Enabled = true;
                     }
                     else
                     {
-                        MessageBox.Show("Can't sent Email");
+                        MessageBox.Show("Không thể gửi mã đến email!");
                     }
                 }
                 else
