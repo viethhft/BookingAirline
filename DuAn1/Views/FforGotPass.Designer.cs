@@ -38,11 +38,9 @@
             label3 = new Label();
             lb_Seconds = new Label();
             lb_Minutes = new Label();
-            linkLabel1 = new LinkLabel();
             btn_sendCode = new Button();
             pictureBox2 = new PictureBox();
             label2 = new Label();
-            label10 = new Label();
             pictureBox8 = new PictureBox();
             tbx_pass2 = new TextBox();
             label8 = new Label();
@@ -73,11 +71,9 @@
             panel1.Controls.Add(lb_errorPass);
             panel1.Controls.Add(lb_errorEmail);
             panel1.Controls.Add(time);
-            panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(btn_sendCode);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label10);
             panel1.Controls.Add(pictureBox8);
             panel1.Controls.Add(tbx_pass2);
             panel1.Controls.Add(label8);
@@ -165,18 +161,6 @@
             lb_Minutes.TabIndex = 0;
             lb_Minutes.Text = "00";
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(243, 471);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(84, 18);
-            linkLabel1.TabIndex = 37;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Đăng nhập";
-            // 
             // btn_sendCode
             // 
             btn_sendCode.BackColor = Color.White;
@@ -213,17 +197,6 @@
             label2.Size = new Size(30, 18);
             label2.TabIndex = 34;
             label2.Text = "Mã";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(117, 471);
-            label10.Name = "label10";
-            label10.Size = new Size(126, 18);
-            label10.TabIndex = 33;
-            label10.Text = "Đã có tài khoản?";
             // 
             // pictureBox8
             // 
@@ -399,7 +372,6 @@
         private Panel panel1;
         private PictureBox pictureBox2;
         private Label label2;
-        private Label label10;
         private PictureBox pictureBox8;
         private TextBox tbx_pass2;
         private Label label8;
@@ -414,7 +386,6 @@
         private Button btn_success;
         private Label label1;
         private Button btn_sendCode;
-        private LinkLabel linkLabel1;
         private Panel time;
         private Label label3;
         private Label lb_Seconds;
