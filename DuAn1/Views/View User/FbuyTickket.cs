@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,7 +58,7 @@ namespace GUI.Views.View_User
             guna2HtmlLabel8.Hide();
             if (guna2Button1.Enabled == true)
             {
-                guna2Button1.FillColor = Color.DarkCyan;
+                guna2Button1.FillColor = Color.FromArgb(222, 180, 135);
                 guna2Button2.FillColor = Color.White;
             }
         }
