@@ -44,7 +44,6 @@
             label1 = new Label();
             label4 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -220,16 +219,6 @@
             // 
             timer1.Tick += timer1_Tick_1;
             // 
-            // label5
-            // 
-            label5.BackColor = Color.Transparent;
-            label5.Image = GUI.Properties.Resources.Untitled_13;
-            label5.Location = new Point(-4, 102);
-            label5.Name = "label5";
-            label5.Size = new Size(419, 301);
-            label5.TabIndex = 1;
-            label5.Text = "label5";
-            // 
             // Form1
             // 
             AcceptButton = btn_login;
@@ -238,7 +227,6 @@
             BackColor = Color.White;
             BackgroundImage = GUI.Properties.Resources.design;
             ClientSize = new Size(802, 492);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
@@ -273,6 +261,5 @@
         private Label label1;
         private Label label4;
         private System.Windows.Forms.Timer timer1;
-        private Label label5;
     }
 }
