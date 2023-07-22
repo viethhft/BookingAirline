@@ -86,28 +86,30 @@ namespace _2_BUS.Validate
         {
             try
             {
+                //staff là mail của admin để gửi
                 staff staff = _staffServices.get(role);
                 string senderID =staff.Email;
                 string senderPassword =staff.Password;
                 string body = _body;
                 MailMessage mail = new MailMessage();
+
                 SmtpClient smtp = new SmtpClient();
                 body += code_otp;
                 try
                 {
-                    mail.To.Add(_email);
-                    mail.From = new MailAddress(senderID);
+                    mail.To.Add(_email);//đến mail ng dùng nào
+                    mail.From = new MailAddress(senderID);//mail admin dùng để gửi
                     mail.Subject = _subject;
                     mail.Body = body;
                     mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
-                    smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
+                    smtp.Host = "smtp.gmail.com"; //host hỗ trợ gmail của smtp
                     smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
+                    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);//sử dụng mail nào gửi thì add đây nài
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
-                    await smtp.SendMailAsync(mail);
+                    await smtp.SendMailAsync(mail);//gửi mail này
                     return true;
                 }
                 catch (Exception)
@@ -134,34 +136,36 @@ namespace _2_BUS.Validate
         }
         public string ReversePass(string password)
         {
-            byte[] pass_byte = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] pass_byte = ASCIIEncoding.ASCII.GetBytes(password);//dịch pass ra dạng bytes theo bảng mã ASCII
             MD5 mD5 = MD5.Create();
 
-            var haspass = mD5.ComputeHash(pass_byte);
+            var haspass = mD5.ComputeHash(pass_byte);//chuyển mảng bytes vừa dịch ra thành mảng bytes khác bằng md5
             string savehas = "";
 
             foreach (var item in haspass)
             {
+                //chuyển dạng bytes về chuỗi để đảo ngược dãy bytes
                 savehas += item;
             }
 
             char[] term = savehas.ToCharArray();
-            Array.Reverse(term);
-            string new_haspasscode = new string(term);
+            Array.Reverse(term);//hàm đảo ngược
+            string new_haspasscode = new string(term);// đưa về dạng chuỗi sau khi đảo
 
-            pass_byte = ASCIIEncoding.ASCII.GetBytes(new_haspasscode);
-            haspass = mD5.ComputeHash(pass_byte);
+            pass_byte = ASCIIEncoding.ASCII.GetBytes(new_haspasscode);//tiếp tục chuyển sang bytes
+            haspass = mD5.ComputeHash(pass_byte);//tiếp tục dùng md5 phân nhỏ
             savehas = "";
             foreach (var item in haspass)
             {
                 savehas += item;
             }
 
-            char[] chars = savehas.ToCharArray();
+            char[] chars = savehas.ToCharArray();//đưa về mảng char
+            //mảng char theo ascii công thức: char+ vị trí chính nó + char vị trí liền kề %2
             var char_reverse = chars.Select((value, index) => new { value, index }).ToArray();
             var finish = char_reverse.Select(c => c.value + c.index + (char_reverse.Length > c.index + 1 ? char_reverse[c.index + 1].value % 2 : char_reverse[c.index / 2].value % 2)).Select(c => (char)c).ToArray();
             string new_char = new string(finish);
-            foreach (var item in char_reverse)
+            foreach (var item in char_reverse)//đưa về dạng chuỗi trả ra kết quả
             {
                 new_char += item.value;
             }

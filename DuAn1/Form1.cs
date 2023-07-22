@@ -6,6 +6,7 @@ using GUI.Properties;
 using System.Security.Cryptography;
 using System.Text;
 using _2_BUS.Validate;
+using Guna.UI2.WinForms;
 
 namespace DuAn1
 {
@@ -174,17 +175,10 @@ namespace DuAn1
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            int x;
-            int y;
-
-            x = 21;
-            y = 140;
-
-
             label4.Left -= 3;// Left là chạy từ bên trái. Bạn có thể thay = right
-            label5.Top -= 2;
-            label5.Left += 3;
-
+            label1.Top -= 1;
+            label1.Left += 3;
         }
+
     }
 }
