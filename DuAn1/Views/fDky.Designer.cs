@@ -85,6 +85,46 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(time);
+            panel1.Controls.Add(lb_ErrorOtp);
+            panel1.Controls.Add(btn_SendCode);
+            panel1.Controls.Add(txb_Otp);
+            panel1.Controls.Add(lb_ErrorName);
+            panel1.Controls.Add(lb_ErrorPassAgain);
+            panel1.Controls.Add(lb_ErrorPhoneNumber);
+            panel1.Controls.Add(lb_ErrorEmail);
+            panel1.Controls.Add(Date);
+            panel1.Controls.Add(btn_sign);
+            panel1.Controls.Add(tbx_pass2);
+            panel1.Controls.Add(tbx_pass1);
+            panel1.Controls.Add(txb_address);
+            panel1.Controls.Add(tbx_phone);
+            panel1.Controls.Add(cbx_gender);
+            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(pictureBox6);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(txb_email);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(txb_name);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(642, 172);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(527, 721);
+            panel1.TabIndex = 2;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.time);
             this.panel1.Controls.Add(this.lb_ErrorOtp);
@@ -129,6 +169,15 @@
             // 
             // time
             // 
+            time.Controls.Add(label10);
+            time.Controls.Add(lb_Seconds);
+            time.Controls.Add(lb_Minutes);
+            time.Location = new Point(382, 279);
+            time.Margin = new Padding(3, 4, 3, 4);
+            time.Name = "time";
+            time.Size = new Size(127, 40);
+            time.TabIndex = 5;
+            time.Visible = false;
             this.time.Controls.Add(this.label10);
             this.time.Controls.Add(this.lb_Seconds);
             this.time.Controls.Add(this.lb_Minutes);
@@ -140,6 +189,12 @@
             // 
             // label10
             // 
+            label10.AutoSize = true;
+            label10.Location = new Point(32, 11);
+            label10.Name = "label10";
+            label10.Size = new Size(12, 20);
+            label10.TabIndex = 2;
+            label10.Text = ":";
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(28, 8);
             this.label10.Name = "label10";
@@ -149,6 +204,12 @@
             // 
             // lb_Seconds
             // 
+            lb_Seconds.AutoSize = true;
+            lb_Seconds.Location = new Point(50, 11);
+            lb_Seconds.Name = "lb_Seconds";
+            lb_Seconds.Size = new Size(25, 20);
+            lb_Seconds.TabIndex = 1;
+            lb_Seconds.Text = "00";
             this.lb_Seconds.AutoSize = true;
             this.lb_Seconds.Location = new System.Drawing.Point(44, 8);
             this.lb_Seconds.Name = "lb_Seconds";
@@ -158,6 +219,12 @@
             // 
             // lb_Minutes
             // 
+            lb_Minutes.AutoSize = true;
+            lb_Minutes.Location = new Point(3, 11);
+            lb_Minutes.Name = "lb_Minutes";
+            lb_Minutes.Size = new Size(25, 20);
+            lb_Minutes.TabIndex = 0;
+            lb_Minutes.Text = "00";
             this.lb_Minutes.AutoSize = true;
             this.lb_Minutes.Location = new System.Drawing.Point(3, 8);
             this.lb_Minutes.Name = "lb_Minutes";
@@ -167,6 +234,11 @@
             // 
             // lb_ErrorOtp
             // 
+            lb_ErrorOtp.AutoSize = true;
+            lb_ErrorOtp.Location = new Point(29, 620);
+            lb_ErrorOtp.Name = "lb_ErrorOtp";
+            lb_ErrorOtp.Size = new Size(0, 20);
+            lb_ErrorOtp.TabIndex = 49;
             this.lb_ErrorOtp.AutoSize = true;
             this.lb_ErrorOtp.Location = new System.Drawing.Point(25, 465);
             this.lb_ErrorOtp.Name = "lb_ErrorOtp";
@@ -175,6 +247,16 @@
             // 
             // btn_SendCode
             // 
+            btn_SendCode.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_SendCode.ForeColor = Color.RoyalBlue;
+            btn_SendCode.Location = new Point(381, 279);
+            btn_SendCode.Margin = new Padding(3, 4, 3, 4);
+            btn_SendCode.Name = "btn_SendCode";
+            btn_SendCode.Size = new Size(117, 40);
+            btn_SendCode.TabIndex = 48;
+            btn_SendCode.Text = "Gửi mã";
+            btn_SendCode.UseVisualStyleBackColor = true;
+            btn_SendCode.Click += btn_SendCode_Click;
             this.btn_SendCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_SendCode.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btn_SendCode.Location = new System.Drawing.Point(333, 209);
@@ -186,6 +268,11 @@
             // 
             // txb_Otp
             // 
+            txb_Otp.Location = new Point(274, 285);
+            txb_Otp.Name = "txb_Otp";
+            txb_Otp.Size = new Size(100, 27);
+            txb_Otp.TabIndex = 47;
+            txb_Otp.TextChanged += txb_Otp_TextChanged;
             this.txb_Otp.Location = new System.Drawing.Point(240, 214);
             this.txb_Otp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_Otp.Name = "txb_Otp";
@@ -194,6 +281,11 @@
             // 
             // lb_ErrorName
             // 
+            lb_ErrorName.AutoSize = true;
+            lb_ErrorName.Location = new Point(86, 231);
+            lb_ErrorName.Name = "lb_ErrorName";
+            lb_ErrorName.Size = new Size(0, 20);
+            lb_ErrorName.TabIndex = 46;
             this.lb_ErrorName.AutoSize = true;
             this.lb_ErrorName.Location = new System.Drawing.Point(75, 173);
             this.lb_ErrorName.Name = "lb_ErrorName";
@@ -202,6 +294,11 @@
             // 
             // lb_ErrorPassAgain
             // 
+            lb_ErrorPassAgain.AutoSize = true;
+            lb_ErrorPassAgain.Location = new Point(277, 620);
+            lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
+            lb_ErrorPassAgain.Size = new Size(0, 20);
+            lb_ErrorPassAgain.TabIndex = 45;
             this.lb_ErrorPassAgain.AutoSize = true;
             this.lb_ErrorPassAgain.Location = new System.Drawing.Point(242, 465);
             this.lb_ErrorPassAgain.Name = "lb_ErrorPassAgain";
@@ -210,6 +307,11 @@
             // 
             // lb_ErrorPhoneNumber
             // 
+            lb_ErrorPhoneNumber.AutoSize = true;
+            lb_ErrorPhoneNumber.Location = new Point(277, 417);
+            lb_ErrorPhoneNumber.Name = "lb_ErrorPhoneNumber";
+            lb_ErrorPhoneNumber.Size = new Size(0, 20);
+            lb_ErrorPhoneNumber.TabIndex = 44;
             this.lb_ErrorPhoneNumber.AutoSize = true;
             this.lb_ErrorPhoneNumber.Location = new System.Drawing.Point(242, 313);
             this.lb_ErrorPhoneNumber.Name = "lb_ErrorPhoneNumber";
@@ -218,6 +320,12 @@
             // 
             // lb_ErrorEmail
             // 
+            lb_ErrorEmail.AutoSize = true;
+            lb_ErrorEmail.Location = new Point(277, 231);
+            lb_ErrorEmail.Name = "lb_ErrorEmail";
+            lb_ErrorEmail.Size = new Size(0, 20);
+            lb_ErrorEmail.TabIndex = 43;
+            lb_ErrorEmail.Visible = false;
             this.lb_ErrorEmail.AutoSize = true;
             this.lb_ErrorEmail.Location = new System.Drawing.Point(242, 173);
             this.lb_ErrorEmail.Name = "lb_ErrorEmail";
@@ -227,6 +335,12 @@
             // 
             // Date
             // 
+            Date.Format = DateTimePickerFormat.Short;
+            Date.Location = new Point(29, 287);
+            Date.Margin = new Padding(3, 4, 3, 4);
+            Date.Name = "Date";
+            Date.Size = new Size(220, 27);
+            Date.TabIndex = 42;
             this.Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Date.Location = new System.Drawing.Point(25, 215);
             this.Date.Name = "Date";
@@ -235,6 +349,16 @@
             // 
             // btn_sign
             // 
+            btn_sign.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_sign.ForeColor = Color.RoyalBlue;
+            btn_sign.Location = new Point(77, 580);
+            btn_sign.Margin = new Padding(3, 4, 3, 4);
+            btn_sign.Name = "btn_sign";
+            btn_sign.Size = new Size(117, 40);
+            btn_sign.TabIndex = 41;
+            btn_sign.Text = "Đăng ký";
+            btn_sign.UseVisualStyleBackColor = true;
+            btn_sign.Click += btn_sign_Click;
             this.btn_sign.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sign.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btn_sign.Location = new System.Drawing.Point(67, 435);
@@ -246,6 +370,12 @@
             // 
             // tbx_pass2
             // 
+            tbx_pass2.Location = new Point(277, 589);
+            tbx_pass2.Name = "tbx_pass2";
+            tbx_pass2.Size = new Size(220, 27);
+            tbx_pass2.TabIndex = 40;
+            tbx_pass2.UseSystemPasswordChar = true;
+            tbx_pass2.TextChanged += tbx_pass2_TextChanged;
             this.tbx_pass2.Location = new System.Drawing.Point(242, 442);
             this.tbx_pass2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbx_pass2.Name = "tbx_pass2";
@@ -255,6 +385,11 @@
             // 
             // tbx_pass1
             // 
+            tbx_pass1.Location = new Point(274, 492);
+            tbx_pass1.Name = "tbx_pass1";
+            tbx_pass1.Size = new Size(220, 27);
+            tbx_pass1.TabIndex = 39;
+            tbx_pass1.UseSystemPasswordChar = true;
             this.tbx_pass1.Location = new System.Drawing.Point(242, 360);
             this.tbx_pass1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbx_pass1.Name = "tbx_pass1";
@@ -264,6 +399,10 @@
             // 
             // txb_address
             // 
+            txb_address.Location = new Point(25, 384);
+            txb_address.Name = "txb_address";
+            txb_address.Size = new Size(223, 27);
+            txb_address.TabIndex = 38;
             this.txb_address.Location = new System.Drawing.Point(22, 288);
             this.txb_address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_address.Name = "txb_address";
@@ -272,6 +411,11 @@
             // 
             // tbx_phone
             // 
+            tbx_phone.Location = new Point(277, 384);
+            tbx_phone.Name = "tbx_phone";
+            tbx_phone.Size = new Size(220, 27);
+            tbx_phone.TabIndex = 37;
+            tbx_phone.TextChanged += tbx_phone_TextChanged;
             this.tbx_phone.Location = new System.Drawing.Point(242, 288);
             this.tbx_phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbx_phone.Name = "tbx_phone";
@@ -280,6 +424,12 @@
             // 
             // cbx_gender
             // 
+            cbx_gender.FormattingEnabled = true;
+            cbx_gender.Location = new Point(26, 491);
+            cbx_gender.Margin = new Padding(3, 4, 3, 4);
+            cbx_gender.Name = "cbx_gender";
+            cbx_gender.Size = new Size(222, 28);
+            cbx_gender.TabIndex = 35;
             this.cbx_gender.FormattingEnabled = true;
             this.cbx_gender.Location = new System.Drawing.Point(23, 368);
             this.cbx_gender.Name = "cbx_gender";
@@ -288,6 +438,14 @@
             // 
             // pictureBox9
             // 
+            pictureBox9.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox9.Image = GUI.Properties.Resources.icons8_gender_50;
+            pictureBox9.Location = new Point(25, 441);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(45, 37);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 32;
+            pictureBox9.TabStop = false;
             this.pictureBox9.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox9.Image = global::GUI.Properties.Resources.icons8_gender_50;
             this.pictureBox9.Location = new System.Drawing.Point(22, 331);
@@ -300,6 +458,14 @@
             // 
             // label9
             // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.RoyalBlue;
+            label9.Location = new Point(77, 448);
+            label9.Name = "label9";
+            label9.Size = new Size(84, 24);
+            label9.TabIndex = 30;
+            label9.Text = "Giới tính";
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -311,6 +477,14 @@
             // 
             // pictureBox8
             // 
+            pictureBox8.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox8.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox8.Location = new Point(277, 540);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(45, 37);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 29;
+            pictureBox8.TabStop = false;
             this.pictureBox8.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox8.Image = global::GUI.Properties.Resources.icons8_password_50;
             this.pictureBox8.Location = new System.Drawing.Point(242, 405);
@@ -323,6 +497,14 @@
             // 
             // label8
             // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.RoyalBlue;
+            label8.Location = new Point(328, 547);
+            label8.Name = "label8";
+            label8.Size = new Size(173, 24);
+            label8.TabIndex = 27;
+            label8.Text = "Nhập lại mật khẩu";
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -334,6 +516,14 @@
             // 
             // pictureBox7
             // 
+            pictureBox7.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox7.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox7.Location = new Point(277, 440);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(45, 37);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 26;
+            pictureBox7.TabStop = false;
             this.pictureBox7.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox7.Image = global::GUI.Properties.Resources.icons8_password_50;
             this.pictureBox7.Location = new System.Drawing.Point(242, 330);
@@ -346,6 +536,14 @@
             // 
             // label7
             // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.RoyalBlue;
+            label7.Location = new Point(328, 447);
+            label7.Name = "label7";
+            label7.Size = new Size(92, 24);
+            label7.TabIndex = 24;
+            label7.Text = "Mật khẩu";
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -357,6 +555,14 @@
             // 
             // pictureBox6
             // 
+            pictureBox6.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox6.Image = GUI.Properties.Resources.icons8_address_50;
+            pictureBox6.Location = new Point(25, 341);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(45, 37);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
             this.pictureBox6.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox6.Image = global::GUI.Properties.Resources.icons8_address_50;
             this.pictureBox6.Location = new System.Drawing.Point(22, 256);
@@ -369,6 +575,14 @@
             // 
             // label6
             // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.RoyalBlue;
+            label6.Location = new Point(77, 348);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 24);
+            label6.TabIndex = 21;
+            label6.Text = "Địa chỉ";
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -380,6 +594,14 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox5.Image = GUI.Properties.Resources.icons8_phone_50;
+            pictureBox5.Location = new Point(277, 341);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(45, 37);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 20;
+            pictureBox5.TabStop = false;
             this.pictureBox5.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox5.Image = global::GUI.Properties.Resources.icons8_phone_50;
             this.pictureBox5.Location = new System.Drawing.Point(242, 256);
@@ -392,6 +614,14 @@
             // 
             // label5
             // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.RoyalBlue;
+            label5.Location = new Point(328, 348);
+            label5.Name = "label5";
+            label5.Size = new Size(127, 24);
+            label5.TabIndex = 18;
+            label5.Text = "Số điện thoại";
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -403,6 +633,14 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox3.Image = GUI.Properties.Resources.icons8_date_50;
+            pictureBox3.Location = new Point(25, 243);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(45, 37);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 17;
+            pictureBox3.TabStop = false;
             this.pictureBox3.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_date_50;
             this.pictureBox3.Location = new System.Drawing.Point(22, 182);
@@ -415,6 +653,14 @@
             // 
             // label3
             // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.RoyalBlue;
+            label3.Location = new Point(77, 249);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 24);
+            label3.TabIndex = 15;
+            label3.Text = "Ngày sinh";
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -426,6 +672,14 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox4.Image = GUI.Properties.Resources.icons8_email_50;
+            pictureBox4.Location = new Point(274, 148);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(45, 37);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 14;
+            pictureBox4.TabStop = false;
             this.pictureBox4.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox4.Image = global::GUI.Properties.Resources.icons8_email_50;
             this.pictureBox4.Location = new System.Drawing.Point(240, 111);
@@ -438,6 +692,11 @@
             // 
             // txb_email
             // 
+            txb_email.Location = new Point(274, 197);
+            txb_email.Name = "txb_email";
+            txb_email.Size = new Size(220, 27);
+            txb_email.TabIndex = 13;
+            txb_email.TextChanged += txb_email_TextChanged;
             this.txb_email.Location = new System.Drawing.Point(240, 148);
             this.txb_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_email.Name = "txb_email";
@@ -446,6 +705,14 @@
             // 
             // label4
             // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.RoyalBlue;
+            label4.Location = new Point(326, 155);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 24);
+            label4.TabIndex = 12;
+            label4.Text = "Email";
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -457,6 +724,14 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Location = new Point(25, 148);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(45, 37);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             this.pictureBox2.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_name_50;
             this.pictureBox2.Location = new System.Drawing.Point(22, 111);
@@ -469,6 +744,13 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
+            pictureBox1.Location = new Point(319, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(57, 67);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_airline_50;
             this.pictureBox1.Location = new System.Drawing.Point(279, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -480,6 +762,11 @@
             // 
             // txb_name
             // 
+            txb_name.Location = new Point(29, 197);
+            txb_name.Name = "txb_name";
+            txb_name.Size = new Size(220, 27);
+            txb_name.TabIndex = 3;
+            txb_name.TextChanged += txb_name_TextChanged;
             this.txb_name.Location = new System.Drawing.Point(25, 148);
             this.txb_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_name.Name = "txb_name";
@@ -488,6 +775,14 @@
             // 
             // label2
             // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(77, 155);
+            label2.Name = "label2";
+            label2.Size = new Size(97, 24);
+            label2.TabIndex = 1;
+            label2.Text = "Họ và tên";
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -499,6 +794,18 @@
             // 
             // label1
             // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Location = new Point(195, 40);
+            label1.Name = "label1";
+            label1.Size = new Size(128, 30);
+            label1.TabIndex = 0;
+            label1.Text = "ĐĂNG KÝ";
+            // 
+            // CountDown
+            // 
+            CountDown.Tick += CountDown_Tick;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -510,6 +817,29 @@
             // 
             // fDky
             // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = GUI.Properties.Resources.Rectangle_2;
+            ClientSize = new Size(1216, 908);
+            Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "fDky";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Đăng ký";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            time.ResumeLayout(false);
+            time.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.Rectangle_2;

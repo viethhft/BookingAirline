@@ -76,7 +76,7 @@
             // 
             // btn_qlykh
             // 
-            btn_qlykh.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_qlykh.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_qlykh.Location = new Point(3, 416);
             btn_qlykh.Name = "btn_qlykh";
             btn_qlykh.Size = new Size(194, 48);
@@ -87,7 +87,7 @@
             // 
             // btn_qlyflight
             // 
-            btn_qlyflight.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_qlyflight.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_qlyflight.Location = new Point(3, 328);
             btn_qlyflight.Name = "btn_qlyflight";
             btn_qlyflight.Size = new Size(194, 48);
@@ -98,7 +98,7 @@
             // 
             // btn_qlyve
             // 
-            btn_qlyve.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_qlyve.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_qlyve.Location = new Point(3, 232);
             btn_qlyve.Name = "btn_qlyve";
             btn_qlyve.Size = new Size(194, 48);
@@ -109,7 +109,7 @@
             // 
             // btn_dthu
             // 
-            btn_dthu.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_dthu.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_dthu.Location = new Point(3, 146);
             btn_dthu.Name = "btn_dthu";
             btn_dthu.Size = new Size(194, 48);
@@ -120,7 +120,8 @@
             // 
             // btn_qlynv
             // 
-            btn_qlynv.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_qlynv.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_qlynv.ForeColor = SystemColors.ControlText;
             btn_qlynv.Location = new Point(3, 58);
             btn_qlynv.Name = "btn_qlynv";
             btn_qlynv.Size = new Size(194, 48);
@@ -170,15 +171,16 @@
             menuStrip2.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem1 });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(1284, 24);
+            menuStrip2.Size = new Size(1284, 26);
             menuStrip2.TabIndex = 4;
             menuStrip2.Text = "menuStrip2";
             // 
             // hệThốngToolStripMenuItem1
             // 
             hệThốngToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem1, đăngXuấtToolStripMenuItem1 });
+            hệThốngToolStripMenuItem1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             hệThốngToolStripMenuItem1.Name = "hệThốngToolStripMenuItem1";
-            hệThốngToolStripMenuItem1.Size = new Size(69, 20);
+            hệThốngToolStripMenuItem1.Size = new Size(82, 22);
             hệThốngToolStripMenuItem1.Text = "Hệ thống";
             // 
             // đổiMậtKhẩuToolStripMenuItem1
@@ -192,6 +194,7 @@
             đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
             đăngXuấtToolStripMenuItem1.Size = new Size(180, 22);
             đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click;
             // 
             // fStaff
             // 

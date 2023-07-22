@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class FQuanLyChuyenBay : Form
+    public partial class FQuanLyChuyenBayUser : Form
     {
-        public FQuanLyChuyenBay()
+        public FQuanLyChuyenBayUser()
         {
             InitializeComponent();
         }
