@@ -135,7 +135,7 @@
             // 
             llb_dki.AutoSize = true;
             llb_dki.Font = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            llb_dki.Location = new Point(194, 256);
+            llb_dki.Location = new Point(200, 256);
             llb_dki.Name = "llb_dki";
             llb_dki.Size = new Size(47, 13);
             llb_dki.TabIndex = 6;
