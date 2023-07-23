@@ -14,13 +14,11 @@ namespace GUI.Views
 {
     public partial class FHomeUser : Form
     {
-        private string _message;
-        FDoimk _fDoimk;
+        private string _message="";
         FthongTinNguoiDung _fTinNguoiDung;
         public FHomeUser()
         {
             InitializeComponent();
-            _fDoimk = new FDoimk();
             _fTinNguoiDung = new FthongTinNguoiDung();
         }
 
@@ -140,6 +138,7 @@ namespace GUI.Views
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FDoimk _fDoimk = new FDoimk(_message);
             _fDoimk.ShowDialog();
         }
 

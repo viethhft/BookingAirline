@@ -19,7 +19,7 @@ namespace GUI.Views.View_User
     public partial class FDoimk : Form
     {
 
-        private string _message;
+        private string _message="";
         public FDoimk()
         {
             InitializeComponent();
@@ -27,12 +27,12 @@ namespace GUI.Views.View_User
         }
         public FDoimk(string Messege) : this()
         {
-
+            _message= Messege;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(_message);
         }
     }
 }

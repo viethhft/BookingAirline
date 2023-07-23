@@ -12,6 +12,7 @@ namespace _1_DAL.Models
         public int TwoWay { get; set; }
         public int TotalTicket { get; set; }
         public int TotalPrice { get; set; }
+        public int SeatCode { get; set; }
 
         public virtual Customer Customer { get; set; } = null!;
         public virtual Flight Flight { get; set; } = null!;
