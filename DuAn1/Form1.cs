@@ -11,6 +11,7 @@ namespace DuAn1
 {
     public partial class Form1 : Form
     {
+
         Validate _validate;
         CheckAccountType _checkAccountType;
         QlykhachHang _f;
@@ -40,6 +41,7 @@ namespace DuAn1
             load();
             timer1.Enabled = true;
         }
+
         void load()
         {
             if (Settings.Default.isRemember)
