@@ -41,55 +41,7 @@ namespace DuAn1
         }
         void load()
         {
-            int a = 0;
-            foreach (var item in _PlaneType.get_list())
-            {
-                for (int i = 0; i < item.TotalSeat; i++)
-                {
-                    if (item.TotalSeat == 30)
-                    {
-                        if (i < 20)
-                        {
-                            SeatDetail seat = new SeatDetail();
-                            seat.ClassId = 2;
-                            seat.PlaneTypeId = item.Id;
-                            seat.SeatCode = "PT" + (i + 1);
-                            _seatDetailServices.Create(seat);
-                        }
-                        else
-                        {
-                            SeatDetail seat = new SeatDetail();
-                            seat.ClassId = 1;
-                            seat.PlaneTypeId = item.Id;
-                            seat.SeatCode = "TG" + (a + 1);
-                            _seatDetailServices.Create(seat);
-                            a++;
-                        }
-                    }
-                    else
-                    {
-                        if (i < 35)
-                        {
-                            SeatDetail seat = new SeatDetail();
-                            seat.ClassId = 2;
-                            seat.PlaneTypeId = item.Id;
-                            seat.SeatCode = "PT" + (i + 1);
-                            _seatDetailServices.Create(seat);
-                        }
-                        else
-                        {
-                            SeatDetail seat = new SeatDetail();
-                            seat.ClassId = 1;
-                            seat.PlaneTypeId = item.Id;
-                            seat.SeatCode = "TG" + (a + 1);
-                            _seatDetailServices.Create(seat);
-                            a++;
-                        }
-                    }
-                }
-                a = 0;
-            }
-
+           
             if (Settings.Default.isRemember)
             {
                 tb_user.Text = Settings.Default.username;
