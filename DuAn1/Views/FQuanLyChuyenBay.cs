@@ -63,6 +63,18 @@ namespace DuAn1.Views
             cmb_To.DisplayMember = "displayName";
             cmb_To.ValueMember = "locaCode";
 
+            loaddata();
+
+            plancode = cmb_PlaneType.SelectedValue.ToString();
+            locacode = cmb_Location.SelectedValue.ToString();
+            codefrom = cmb_From.SelectedValue.ToString();
+            codeto = cmb_To.SelectedValue.ToString();
+            ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
+            ngayve = dateTo.Value.ToString("dd-MM-yyyy");
+            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+        }
+        void loaddata()
+        {
             dgv_chuyenbay.Rows.Clear();
             dgv_chuyenbay.ColumnCount = 8;
             dgv_chuyenbay.Columns[0].Name = "Tên máy bay";
@@ -79,14 +91,14 @@ namespace DuAn1.Views
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
                 dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price);
             }
-
-            plancode = cmb_PlaneType.SelectedValue.ToString();
-            locacode = cmb_Location.SelectedValue.ToString();
-            codefrom = cmb_From.SelectedValue.ToString();
-            codeto = cmb_To.SelectedValue.ToString();
-            ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
-            ngayve = dateTo.Value.ToString("dd-MM-yyyy");
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
+            nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[7].Value.ToString());
+            cmb_PlaneType.Text = dgv_chuyenbay.Rows[0].Cells[0].Value.ToString();
+            cmb_To.Text = dgv_chuyenbay.Rows[0].Cells[3].Value.ToString();
+            cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
+            DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
+            dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
+            cmb_Location.Text = dgv_chuyenbay.Rows[0].Cells[1].Value.ToString();
         }
         void ReverseCodePlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
         {
