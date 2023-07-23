@@ -20,6 +20,7 @@ namespace GUI.Views
         {
             InitializeComponent();
             _fTinNguoiDung = new FthongTinNguoiDung();
+            label1.Visible = false;
         }
 
         public FHomeUser(string Message):this()

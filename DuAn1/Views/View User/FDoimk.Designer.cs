@@ -87,11 +87,12 @@
             // 
             // tbx_passOld
             // 
-            this.tbx_passOld.Location = new System.Drawing.Point(200, 117);
-            this.tbx_passOld.Multiline = true;
-            this.tbx_passOld.Name = "tbx_passOld";
-            this.tbx_passOld.Size = new System.Drawing.Size(222, 37);
-            this.tbx_passOld.TabIndex = 6;
+            tbx_passOld.Location = new Point(200, 117);
+            tbx_passOld.Multiline = true;
+            tbx_passOld.Name = "tbx_passOld";
+            tbx_passOld.Size = new Size(222, 37);
+            tbx_passOld.TabIndex = 6;
+            tbx_passOld.TextChanged += tbx_passOld_TextChanged;
             // 
             // tbx_passNew
             // 
@@ -103,11 +104,12 @@
             // 
             // tbx_passReNew
             // 
-            this.tbx_passReNew.Location = new System.Drawing.Point(200, 255);
-            this.tbx_passReNew.Multiline = true;
-            this.tbx_passReNew.Name = "tbx_passReNew";
-            this.tbx_passReNew.Size = new System.Drawing.Size(222, 37);
-            this.tbx_passReNew.TabIndex = 8;
+            tbx_passReNew.Location = new Point(200, 255);
+            tbx_passReNew.Multiline = true;
+            tbx_passReNew.Name = "tbx_passReNew";
+            tbx_passReNew.Size = new Size(222, 37);
+            tbx_passReNew.TabIndex = 8;
+            tbx_passReNew.TextChanged += tbx_passReNew_TextChanged;
             // 
             // guna2Button1
             // 
@@ -180,12 +182,13 @@
             // 
             // lblWell
             // 
-            this.lblWell.BackColor = System.Drawing.Color.Transparent;
-            this.lblWell.Location = new System.Drawing.Point(17, 12);
-            this.lblWell.Name = "lblWell";
-            this.lblWell.Size = new System.Drawing.Size(21, 17);
-            this.lblWell.TabIndex = 15;
-            this.lblWell.Text = "123";
+            lblWell.BackColor = Color.Transparent;
+            lblWell.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblWell.Location = new Point(17, 12);
+            lblWell.Name = "lblWell";
+            lblWell.Size = new Size(30, 20);
+            lblWell.TabIndex = 15;
+            lblWell.Text = "123";
             // 
             // FDoimk
             // 
