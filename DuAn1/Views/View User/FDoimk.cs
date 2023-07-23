@@ -18,8 +18,6 @@ namespace GUI.Views.View_User
 
     public partial class FDoimk : Form
     {
-        public string _message;
-
         private string _message="";
         bool _check_info = true;
 
@@ -34,7 +32,6 @@ namespace GUI.Views.View_User
         }
         public FDoimk(string messege) : this()
         {
-            _message= Messege;
             _message = messege;
             lblWell.Text = "Chào mừng thượng đế: " + _message;
         }
