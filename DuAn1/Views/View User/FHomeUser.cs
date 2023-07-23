@@ -14,14 +14,13 @@ namespace GUI.Views
 {
     public partial class FHomeUser : Form
     {
-        private string _message;
-        FDoimk _fDoimk;
+        public string _message;
         FthongTinNguoiDung _fTinNguoiDung;
         public FHomeUser()
         {
             InitializeComponent();
-            _fDoimk = new FDoimk();
             _fTinNguoiDung = new FthongTinNguoiDung();
+            label1.Visible = false;
         }
 
         public FHomeUser(string Message):this()
@@ -140,7 +139,8 @@ namespace GUI.Views
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _fDoimk.ShowDialog();
+           FDoimk fdk = new FDoimk(label1.Text);
+            fdk.ShowDialog();
         }
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)

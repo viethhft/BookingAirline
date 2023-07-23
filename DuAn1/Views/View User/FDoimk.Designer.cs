@@ -92,6 +92,7 @@
             tbx_passOld.Name = "tbx_passOld";
             tbx_passOld.Size = new Size(222, 37);
             tbx_passOld.TabIndex = 6;
+            tbx_passOld.TextChanged += tbx_passOld_TextChanged;
             // 
             // tbx_passNew
             // 
@@ -108,6 +109,7 @@
             tbx_passReNew.Name = "tbx_passReNew";
             tbx_passReNew.Size = new Size(222, 37);
             tbx_passReNew.TabIndex = 8;
+            tbx_passReNew.TextChanged += tbx_passReNew_TextChanged;
             // 
             // guna2Button1
             // 
@@ -181,9 +183,10 @@
             // lblWell
             // 
             lblWell.BackColor = Color.Transparent;
+            lblWell.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblWell.Location = new Point(17, 12);
             lblWell.Name = "lblWell";
-            lblWell.Size = new Size(21, 17);
+            lblWell.Size = new Size(30, 20);
             lblWell.TabIndex = 15;
             lblWell.Text = "123";
             // 
