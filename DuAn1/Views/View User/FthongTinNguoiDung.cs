@@ -16,7 +16,7 @@ namespace GUI.Views.View_User
 {
     public partial class FthongTinNguoiDung : Form
     {
-        private string _message;
+        private string _message = "";
 
         ICustomerServices _service;
         Validate _validate;
@@ -37,6 +37,11 @@ namespace GUI.Views.View_User
         public FthongTinNguoiDung(string message) : this()
         {
             _message = message;
+            cbx_gt.Items.Add("Nam");
+            cbx_gt.Items.Add("Nữ");
+            _service = new CustomerServices();
+            load();
+           
         }
 
         public void load()

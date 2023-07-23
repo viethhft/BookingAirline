@@ -31,13 +31,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_Search = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_GiaVe = new System.Windows.Forms.TextBox();
+            this.txt_KhuyenMai = new System.Windows.Forms.TextBox();
             this.date_NgayVe = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbb_DiemDen = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbb_DiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
             this.date_NgayTao = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txt_TongTien = new System.Windows.Forms.TextBox();
             this.txt_TenVe = new System.Windows.Forms.TextBox();
@@ -54,23 +54,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_data = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.guna2Button2);
             this.groupBox1.Controls.Add(this.guna2Button1);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txt_Search);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txt_GiaVe);
+            this.groupBox1.Controls.Add(this.txt_KhuyenMai);
             this.groupBox1.Controls.Add(this.date_NgayVe);
-            this.groupBox1.Controls.Add(this.guna2ComboBox3);
-            this.groupBox1.Controls.Add(this.guna2ComboBox2);
+            this.groupBox1.Controls.Add(this.cbb_DiemDen);
+            this.groupBox1.Controls.Add(this.cbb_DiemDi);
             this.groupBox1.Controls.Add(this.date_NgayTao);
             this.groupBox1.Controls.Add(this.txt_TongTien);
             this.groupBox1.Controls.Add(this.txt_TenVe);
@@ -124,13 +124,13 @@
             this.guna2Button1.TabIndex = 35;
             this.guna2Button1.Text = "Xóa";
             // 
-            // textBox5
+            // txt_Search
             // 
-            this.textBox5.Location = new System.Drawing.Point(776, 95);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 36);
-            this.textBox5.TabIndex = 34;
+            this.txt_Search.Location = new System.Drawing.Point(776, 95);
+            this.txt_Search.Multiline = true;
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.Size = new System.Drawing.Size(200, 36);
+            this.txt_Search.TabIndex = 34;
             // 
             // label11
             // 
@@ -142,21 +142,21 @@
             this.label11.TabIndex = 33;
             this.label11.Text = "Tìm kiếm";
             // 
-            // textBox4
+            // txt_GiaVe
             // 
-            this.textBox4.Location = new System.Drawing.Point(776, 33);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 36);
-            this.textBox4.TabIndex = 32;
+            this.txt_GiaVe.Location = new System.Drawing.Point(776, 33);
+            this.txt_GiaVe.Multiline = true;
+            this.txt_GiaVe.Name = "txt_GiaVe";
+            this.txt_GiaVe.Size = new System.Drawing.Size(200, 36);
+            this.txt_GiaVe.TabIndex = 32;
             // 
-            // textBox2
+            // txt_KhuyenMai
             // 
-            this.textBox2.Location = new System.Drawing.Point(536, 33);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 36);
-            this.textBox2.TabIndex = 31;
+            this.txt_KhuyenMai.Location = new System.Drawing.Point(536, 33);
+            this.txt_KhuyenMai.Multiline = true;
+            this.txt_KhuyenMai.Name = "txt_KhuyenMai";
+            this.txt_KhuyenMai.Size = new System.Drawing.Size(200, 36);
+            this.txt_KhuyenMai.TabIndex = 31;
             // 
             // date_NgayVe
             // 
@@ -172,35 +172,35 @@
             this.date_NgayVe.TabIndex = 30;
             this.date_NgayVe.Value = new System.DateTime(2023, 7, 22, 21, 44, 51, 655);
             // 
-            // guna2ComboBox3
+            // cbb_DiemDen
             // 
-            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox3.ItemHeight = 30;
-            this.guna2ComboBox3.Location = new System.Drawing.Point(536, 97);
-            this.guna2ComboBox3.Name = "guna2ComboBox3";
-            this.guna2ComboBox3.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox3.TabIndex = 29;
+            this.cbb_DiemDen.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_DiemDen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_DiemDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_DiemDen.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_DiemDen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_DiemDen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_DiemDen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbb_DiemDen.ItemHeight = 30;
+            this.cbb_DiemDen.Location = new System.Drawing.Point(536, 97);
+            this.cbb_DiemDen.Name = "cbb_DiemDen";
+            this.cbb_DiemDen.Size = new System.Drawing.Size(200, 36);
+            this.cbb_DiemDen.TabIndex = 29;
             // 
-            // guna2ComboBox2
+            // cbb_DiemDi
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(536, 169);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox2.TabIndex = 28;
+            this.cbb_DiemDi.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_DiemDi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_DiemDi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_DiemDi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_DiemDi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_DiemDi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_DiemDi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbb_DiemDi.ItemHeight = 30;
+            this.cbb_DiemDi.Location = new System.Drawing.Point(536, 169);
+            this.cbb_DiemDi.Name = "cbb_DiemDi";
+            this.cbb_DiemDi.Size = new System.Drawing.Size(200, 36);
+            this.cbb_DiemDi.TabIndex = 28;
             // 
             // date_NgayTao
             // 
@@ -363,23 +363,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgv_data);
             this.groupBox2.Location = new System.Drawing.Point(12, 223);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1031, 248);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // dataGridView1
+            // dgv_data
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1019, 220);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_data.AllowUserToAddRows = false;
+            this.dgv_data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_data.Location = new System.Drawing.Point(6, 22);
+            this.dgv_data.Name = "dgv_data";
+            this.dgv_data.RowTemplate.Height = 25;
+            this.dgv_data.Size = new System.Drawing.Size(1019, 220);
+            this.dgv_data.TabIndex = 0;
             // 
             // FquanlyVe
             // 
@@ -393,7 +393,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,12 +412,12 @@
         private Label label4;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
-        private TextBox textBox4;
-        private TextBox textBox2;
+        private DataGridView dgv_data;
+        private TextBox txt_GiaVe;
+        private TextBox txt_KhuyenMai;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayVe;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDen;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDi;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayTao;
         private TextBox txt_TongTien;
         private TextBox txt_TenVe;
@@ -425,7 +425,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayDi;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private TextBox textBox5;
+        private TextBox txt_Search;
         private Label label11;
     }
 }
