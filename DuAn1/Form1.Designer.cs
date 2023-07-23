@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,68 +54,68 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btn_login);
-            this.panel1.Controls.Add(this.llb_forgot);
-            this.panel1.Controls.Add(this.llb_dki);
-            this.panel1.Controls.Add(this.cb_reme);
-            this.panel1.Controls.Add(this.tb_pass);
-            this.panel1.Controls.Add(this.tb_user);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(433, 56);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 393);
-            this.panel1.TabIndex = 1;
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btn_login);
+            panel1.Controls.Add(llb_forgot);
+            panel1.Controls.Add(llb_dki);
+            panel1.Controls.Add(cb_reme);
+            panel1.Controls.Add(tb_pass);
+            panel1.Controls.Add(tb_user);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(433, 56);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(369, 393);
+            panel1.TabIndex = 1;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(109, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 24);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "ĐĂNG NHẬP";
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.RoyalBlue;
+            label5.Location = new Point(109, 25);
+            label5.Name = "label5";
+            label5.Size = new Size(132, 24);
+            label5.TabIndex = 12;
+            label5.Text = "ĐĂNG NHẬP";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_password_50;
-            this.pictureBox3.Location = new System.Drawing.Point(24, 166);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox3.Location = new Point(24, 166);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(39, 28);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 11;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_email_50;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 90);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_email_50;
+            pictureBox2.Location = new Point(24, 90);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_airline_50;
-            this.pictureBox1.Location = new System.Drawing.Point(247, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
+            pictureBox1.Location = new Point(247, 21);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(39, 28);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // btn_login
             // 
@@ -133,87 +133,90 @@
             // 
             // llb_forgot
             // 
-            this.llb_forgot.AutoSize = true;
-            this.llb_forgot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.llb_forgot.Location = new System.Drawing.Point(247, 256);
-            this.llb_forgot.Name = "llb_forgot";
-            this.llb_forgot.Size = new System.Drawing.Size(85, 13);
-            this.llb_forgot.TabIndex = 7;
-            this.llb_forgot.TabStop = true;
-            this.llb_forgot.Text = "Quên mật khẩu?";
+            llb_forgot.AutoSize = true;
+            llb_forgot.Font = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            llb_forgot.Location = new Point(247, 256);
+            llb_forgot.Name = "llb_forgot";
+            llb_forgot.Size = new Size(85, 13);
+            llb_forgot.TabIndex = 7;
+            llb_forgot.TabStop = true;
+            llb_forgot.Text = "Quên mật khẩu?";
+            llb_forgot.LinkClicked += llb_forgot_LinkClicked;
             // 
             // llb_dki
             // 
-            this.llb_dki.AutoSize = true;
-            this.llb_dki.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.llb_dki.Location = new System.Drawing.Point(200, 256);
-            this.llb_dki.Name = "llb_dki";
-            this.llb_dki.Size = new System.Drawing.Size(47, 13);
-            this.llb_dki.TabIndex = 6;
-            this.llb_dki.TabStop = true;
-            this.llb_dki.Text = "Đăng ký";
+            llb_dki.AutoSize = true;
+            llb_dki.Font = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            llb_dki.Location = new Point(200, 256);
+            llb_dki.Name = "llb_dki";
+            llb_dki.Size = new Size(47, 13);
+            llb_dki.TabIndex = 6;
+            llb_dki.TabStop = true;
+            llb_dki.Text = "Đăng ký";
+            llb_dki.LinkClicked += llb_dki_LinkClicked;
             // 
             // cb_reme
             // 
-            this.cb_reme.AutoSize = true;
-            this.cb_reme.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_reme.Location = new System.Drawing.Point(24, 253);
-            this.cb_reme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cb_reme.Name = "cb_reme";
-            this.cb_reme.Size = new System.Drawing.Size(133, 20);
-            this.cb_reme.TabIndex = 5;
-            this.cb_reme.Text = "Ghi nhớ đăng nhập";
-            this.cb_reme.UseVisualStyleBackColor = true;
+            cb_reme.AutoSize = true;
+            cb_reme.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            cb_reme.Location = new Point(24, 253);
+            cb_reme.Margin = new Padding(3, 2, 3, 2);
+            cb_reme.Name = "cb_reme";
+            cb_reme.Size = new Size(133, 20);
+            cb_reme.TabIndex = 5;
+            cb_reme.Text = "Ghi nhớ đăng nhập";
+            cb_reme.UseVisualStyleBackColor = true;
+            cb_reme.CheckedChanged += cb_reme_CheckedChanged;
             // 
             // tb_pass
             // 
-            this.tb_pass.Location = new System.Drawing.Point(24, 207);
-            this.tb_pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_pass.Name = "tb_pass";
-            this.tb_pass.Size = new System.Drawing.Size(308, 23);
-            this.tb_pass.TabIndex = 4;
-            this.tb_pass.UseSystemPasswordChar = true;
+            tb_pass.Location = new Point(24, 207);
+            tb_pass.Margin = new Padding(3, 2, 3, 2);
+            tb_pass.Name = "tb_pass";
+            tb_pass.Size = new Size(308, 23);
+            tb_pass.TabIndex = 4;
+            tb_pass.UseSystemPasswordChar = true;
             // 
             // tb_user
             // 
-            this.tb_user.Location = new System.Drawing.Point(24, 130);
-            this.tb_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_user.Name = "tb_user";
-            this.tb_user.Size = new System.Drawing.Size(308, 23);
-            this.tb_user.TabIndex = 3;
+            tb_user.Location = new Point(24, 130);
+            tb_user.Margin = new Padding(3, 2, 3, 2);
+            tb_user.Name = "tb_user";
+            tb_user.Size = new Size(308, 23);
+            tb_user.TabIndex = 3;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(66, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mật khẩu";
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.RoyalBlue;
+            label3.Location = new Point(66, 167);
+            label3.Name = "label3";
+            label3.Size = new Size(92, 24);
+            label3.TabIndex = 2;
+            label3.Text = "Mật khẩu";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(66, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Email";
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(66, 91);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 24);
+            label2.TabIndex = 1;
+            label2.Text = "Email";
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Image = global::GUI.Properties.Resources.Untitled_13;
-            this.label1.Location = new System.Drawing.Point(14, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 145);
-            this.label1.TabIndex = 3;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Image = GUI.Properties.Resources.Untitled_13;
+            label1.Location = new Point(14, 179);
+            label1.Name = "label1";
+            label1.Size = new Size(379, 145);
+            label1.TabIndex = 3;
             // 
             // label4
             // 

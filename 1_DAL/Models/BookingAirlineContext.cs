@@ -45,9 +45,9 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.BankAccountNum).HasColumnName("bank_account_num");
+                entity.Property(e => e.BankAccountNum).HasColumnName("bankAccountNum");
 
-                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+                entity.Property(e => e.CustomerId).HasColumnName("customerId");
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(100)
@@ -129,24 +129,24 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DateFlight)
                     .HasColumnType("datetime")
-                    .HasColumnName("date_flight");
+                    .HasColumnName("dateFlight");
 
                 entity.Property(e => e.FlightCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
-                    .HasColumnName("flight_code");
+                    .HasColumnName("flightCode");
 
                 entity.Property(e => e.GoFrom)
                     .HasMaxLength(100)
-                    .HasColumnName("go_from");
+                    .HasColumnName("goFrom");
 
                 entity.Property(e => e.GoTo)
                     .HasMaxLength(100)
-                    .HasColumnName("go_to");
+                    .HasColumnName("goTom");
 
-                entity.Property(e => e.LocationId).HasColumnName("location_id");
+                entity.Property(e => e.LocationId).HasColumnName("locationId");
 
-                entity.Property(e => e.PlaneTypeId).HasColumnName("plane_type_id");
+                entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");
 
                 entity.Property(e => e.Price).HasColumnName("price");
 
@@ -175,7 +175,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.LocaCode)
                     .HasMaxLength(50)
-                    .HasColumnName("loca_code");
+                    .HasColumnName("locaCode");
             });
 
             modelBuilder.Entity<PlaneType>(entity =>
@@ -190,9 +190,9 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.PlaneCode)
                     .HasMaxLength(50)
-                    .HasColumnName("plane_code");
+                    .HasColumnName("planeCode");
 
-                entity.Property(e => e.TotalSeat).HasColumnName("total_seat");
+                entity.Property(e => e.TotalSeat).HasColumnName("totalSeat");
             });
 
             modelBuilder.Entity<Recommend>(entity =>
@@ -205,7 +205,7 @@ namespace _1_DAL.Models
                     .HasMaxLength(200)
                     .HasColumnName("content");
 
-                entity.Property(e => e.IdFlight).HasColumnName("id_flight");
+                entity.Property(e => e.IdFlight).HasColumnName("idFlight");
 
                 entity.HasOne(d => d.IdFlightNavigation)
                     .WithMany(p => p.Recommends)
@@ -231,14 +231,14 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.ClassId).HasColumnName("class_id");
+                entity.Property(e => e.ClassId).HasColumnName("classId");
 
-                entity.Property(e => e.PlaneTypeId).HasColumnName("plane_type_id");
+                entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");
 
                 entity.Property(e => e.SeatCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
-                    .HasColumnName("seat_code");
+                    .HasColumnName("seatCode");
 
                 entity.Property(e => e.Status)
                     .HasColumnName("status")
@@ -265,17 +265,17 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.CreateDate)
                     .HasColumnType("datetime")
-                    .HasColumnName("create_date");
+                    .HasColumnName("createDate");
 
-                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+                entity.Property(e => e.CustomerId).HasColumnName("customerId");
 
-                entity.Property(e => e.FlightId).HasColumnName("flight_id");
+                entity.Property(e => e.FlightId).HasColumnName("flightId");
 
-                entity.Property(e => e.TotalPrice).HasColumnName("total_price");
+                entity.Property(e => e.TotalPrice).HasColumnName("totalPrice");
 
-                entity.Property(e => e.TotalTicket).HasColumnName("total_ticket");
+                entity.Property(e => e.TotalTicket).HasColumnName("totalTicket");
 
-                entity.Property(e => e.TwoWay).HasColumnName("two_way");
+                entity.Property(e => e.TwoWay).HasColumnName("twoWay");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Tickets)
@@ -315,7 +315,7 @@ namespace _1_DAL.Models
                     .HasColumnName("phone");
 
                 entity.Property(e => e.RoleId)
-                    .HasColumnName("role_id")
+                    .HasColumnName("roleId")
                     .HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.Status)

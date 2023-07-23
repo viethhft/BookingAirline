@@ -10,19 +10,19 @@ go
 create table Roles
 (
 	id int primary key,
-	display_name nvarchar(10)
+	displayName nvarchar(10)
 )
 
 create table Staff
 (
 	id int primary key identity,
-	role_id int default 1, --1: nhan vien 0: admin
-	display_name nvarchar(50) not null, -- 
+	roleId int default 1, --1: nhan vien 0: admin
+	displayName nvarchar(50) not null, -- 
 	password nvarchar(100) not null, -- mat khau
 	email varchar(100) not null, -- email
 	phone varchar(11) not null, --sdt
 	status int default 1 -- 1: active 0: unactive
-	foreign key(role_id) references Roles(id)
+	foreign key(roleId) references Roles(id)
 )
 
 create table Customer
@@ -43,83 +43,83 @@ create table Customer
 create table Bank
 (
 	id int primary key identity,
-	customer_id bigint not null,
-	display_name nvarchar(100) not null,
-	bank_account_num bigint not null
+	customerId bigint not null,
+	displayName nvarchar(100) not null,
+	bankAccountNum bigint not null
 
-	foreign key(customer_id) references Customer(id)
+	foreign key(customerId) references Customer(id)
 )
 
 create table Location
 (
 	id int primary key identity,
-	loca_code nvarchar(50) not null,
-	display_name nvarchar(50) not null
+	locaCode nvarchar(50) not null,
+	displayName nvarchar(50) not null
 )
 
 create table Plane_type
 (
 	id bigint primary key identity,
-	plane_code nvarchar(50) not null,
-	display_name nvarchar(50) not null,
-	total_seat int not null
+	planeCode nvarchar(50) not null,
+	displayName nvarchar(50) not null,
+	totalSeat int not null
 )
 
 create table Flight
 (
 	id bigint primary key identity,
-	plane_type_id bigint not null,
-	location_id int not null,
-	flight_code varchar(50) not null,
-	go_from nvarchar(100) not null,
-	go_to nvarchar(100) not null,
+	planeTypeId bigint not null,
+	locationId int not null,
+	flightCode varchar(50) not null,
+	goFrom nvarchar(100) not null,
+	goTom nvarchar(100) not null, -- điểm đến
 	price int not null,
-	date_flight datetime not null
+	dateFlight datetime not null
 
-	foreign key(plane_type_id) references Plane_type(id),
-	foreign key(location_id) references Location(id)
+	foreign key(planeTypeId) references Plane_type(id),
+	foreign key(locationId) references Location(id)
 )
 
 create table Ticket
 (
 	id bigint primary key identity,
-	customer_id bigint not null,
-	flight_id bigint not null,
-	create_date datetime not null,
-	two_way int not null,
-	total_ticket int not null,
-	total_price int not null,
+	customerId bigint not null,
+	flightId bigint not null,
+	createDate datetime not null,
+	twoWay int not null,
+	totalTicket int not null,
+	totalPrice int not null,
 
-	foreign key(customer_id) references Customer(id),
-	foreign key(flight_id) references Flight(id)
+	foreign key(customerId) references Customer(id),
+	foreign key(flightId) references Flight(id)
 )
 
 create table Class
 (
 	id int primary key identity,
-	display_name nvarchar(50) not null,
+	displayName nvarchar(50) not null,
 	price int not null
 )
 
 create table Seat_detail
 (
 	id int identity primary key,
-	class_id int not null,
-	plane_type_id bigint not null,
-	seat_code varchar(50) not null,
+	classId int not null,
+	planeTypeId bigint not null,
+	seatCode varchar(50) not null,
 	status int default 1 --0: da dat 1: trong
 
-	foreign key(class_id) references Class(id),
-	foreign key(plane_type_id) references Plane_type(id)
+	foreign key(classId) references Class(id),
+	foreign key(planeTypeId) references Plane_type(id)
 )
 
 create table Recommend
 (
 	id int primary key identity,
-	id_flight bigint not null,
+	idFlight bigint not null,
 	content nvarchar(200) not null
 
-	foreign key(id_flight) references Flight(id)
+	foreign key(idFlight) references Flight(id)
 )
 
 insert Roles values
@@ -127,7 +127,7 @@ insert Roles values
 (1,N'Nhân viên'),
 (99,N'Mail')
 
-insert Staff(role_id,display_name,password,email,phone) values
+insert Staff(roleId,displayName,password,email,phone) values
 (1,N'Lê Văn Luyện','7:3597@:?=<>A??FCBDMFOKILLTQMPXQT[SSXV78124193631341163019195242951291391040','luyenlv@gmail.com','0129283738'),
 (0,N'Lê Văn Hà','7:3597@:?=<>A??FCBDMFOKILLTQMPXQT[SSXV78124193631341163019195242951291391040','halv@gmail.com','0918877228'),
 (99,N'Email send','spvhixkeagfawjqc','bookingairline1@gmail.com','0918877228')
@@ -135,11 +135,11 @@ insert Staff(role_id,display_name,password,email,phone) values
 insert Customer (email,password,first_name,last_name,middle_name,Dob,address,phone,gender) values
 ('cus1@gmail.com','7:3597@:?=<>A??FCBDMFOKILLTQMPXQT[SSXV78124193631341163019195242951291391040',N'Phan',N'Trung',N'Nam','2001-1-15','none','0191771271',N'Nam')
 
-insert Class(display_name,price) values
+insert Class(displayName,price) values
 (N'Thương Gia',1000000),
 (N'Phổ Thông',500000)
 
-insert Plane_type(plane_code,display_name,total_seat) values
+insert Plane_type(planeCode,displayName,totalSeat) values
 ('Plane_1',N'Máy bay số 1',30),
 ('Plane_2',N'Máy bay số 2',50),
 ('Plane_3',N'Máy bay số 3',30),
@@ -147,7 +147,7 @@ insert Plane_type(plane_code,display_name,total_seat) values
 ('Plane_5',N'Máy bay số 5',50),
 ('Plane_6',N'Máy bay số 6',30)
 
-insert Location(loca_code,display_name) values
+insert Location(locaCode,displayName) values
 ('TB',N'Thái Bình'),
 ('SL',N'Sơn La'),
 ('HT',N'Hà Tĩnh'),
