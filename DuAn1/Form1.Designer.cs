@@ -119,17 +119,17 @@
             // 
             // btn_login
             // 
-            btn_login.BackColor = Color.RoyalBlue;
-            btn_login.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_login.ForeColor = Color.White;
-            btn_login.Location = new Point(118, 302);
-            btn_login.Margin = new Padding(3, 2, 3, 2);
-            btn_login.Name = "btn_login";
-            btn_login.Size = new Size(116, 30);
-            btn_login.TabIndex = 8;
-            btn_login.Text = "Đăng nhập";
-            btn_login.UseVisualStyleBackColor = false;
-            btn_login.Click += btn_login_Click;
+            this.btn_login.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_login.ForeColor = System.Drawing.Color.White;
+            this.btn_login.Location = new System.Drawing.Point(118, 302);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(116, 30);
+            this.btn_login.TabIndex = 8;
+            this.btn_login.Text = "Đăng nhập";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // llb_forgot
             // 
