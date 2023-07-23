@@ -14,14 +14,20 @@ namespace GUI.Views
 {
     public partial class FHomeUser : Form
     {
-        
+        private string _message;
         FDoimk _fDoimk;
         FthongTinNguoiDung _fTinNguoiDung;
         public FHomeUser()
         {
             InitializeComponent();
             _fDoimk = new FDoimk();
-            _fTinNguoiDung= new FthongTinNguoiDung();
+            _fTinNguoiDung = new FthongTinNguoiDung();
+        }
+
+        public FHomeUser(string Message):this()
+        {
+            _message = Message;
+            label1.Text = _message;
         }
 
         private void ChildForm(Form child)

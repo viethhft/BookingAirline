@@ -9,15 +9,15 @@ using GUI.Views.View_User;
 
 namespace DuAn1
 {
+
     public partial class Form1 : Form
     {
-
+    
         Validate _validate;
         CheckAccountType _checkAccountType;
         QlykhachHang _f;
         fDky _fdky;
         FforGotPass _fForgot;
-        FHomeUser _fkhachhang;
         ICustomerServices _customerServices;
         IStaffServices _staffServices;
         ISeatDetailServices _seatDetailServices;
@@ -36,11 +36,11 @@ namespace DuAn1
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
-            _fkhachhang = new();
             InitializeComponent();
             load();
             timer1.Enabled = true;
         }
+
 
         void load()
         {
@@ -81,7 +81,8 @@ namespace DuAn1
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công", "Thông báo!");
-                _fkhachhang.ShowDialog();
+                FHomeUser fHomeUser = new FHomeUser(tb_user.Text);
+                fHomeUser.ShowDialog();
                 this.Show();
             }
             else

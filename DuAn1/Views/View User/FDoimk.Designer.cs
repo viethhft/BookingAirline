@@ -124,6 +124,7 @@
             guna2Button1.Size = new Size(108, 38);
             guna2Button1.TabIndex = 9;
             guna2Button1.Text = "Đổi mật khẩu";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 

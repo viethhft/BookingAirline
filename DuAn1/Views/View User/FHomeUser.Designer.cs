@@ -41,6 +41,7 @@
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             trợGiúpToolStripMenuItem = new ToolStripMenuItem();
             hướngDẫnSửDụngToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,21 +143,21 @@
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(180, 22);
+            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(177, 22);
             thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             thôngTinTàiKhoảnToolStripMenuItem.Click += thôngTinTàiKhoảnToolStripMenuItem_Click;
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(180, 22);
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(177, 22);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(180, 22);
+            đăngXuấtToolStripMenuItem.Size = new Size(177, 22);
             đăngXuấtToolStripMenuItem.Text = "Thoát";
             đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
@@ -173,11 +174,21 @@
             hướngDẫnSửDụngToolStripMenuItem.Size = new Size(180, 22);
             hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(10, 126);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 6;
+            label1.Text = "label1";
+            // 
             // FHomeUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(824, 562);
+            Controls.Add(label1);
             Controls.Add(guna2Panel1);
             Controls.Add(guna2Button4);
             Controls.Add(guna2Button3);
@@ -212,5 +223,6 @@
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private ToolStripMenuItem trợGiúpToolStripMenuItem;
         private ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
+        private Label label1;
     }
 }

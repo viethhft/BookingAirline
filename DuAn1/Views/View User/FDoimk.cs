@@ -18,11 +18,15 @@ namespace GUI.Views.View_User
 
     public partial class FDoimk : Form
     {
-
         public FDoimk()
         {
             InitializeComponent();
+
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
