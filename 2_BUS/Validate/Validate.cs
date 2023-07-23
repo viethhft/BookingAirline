@@ -58,7 +58,7 @@ namespace _2_BUS.Validate
                 middlename += term1[i] + " ";
             }
             lastname = term1[term1.Length - 1];
-            string[] name1 = { firstname, middlename, lastname };
+            string[] name1 = { firstname.Trim(), middlename.Trim(), lastname.Trim() };
             return name1;
         }
 

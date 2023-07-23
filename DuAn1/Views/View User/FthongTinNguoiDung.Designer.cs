@@ -41,9 +41,12 @@
             tbx_sdt = new TextBox();
             tbx_diaChi = new TextBox();
             date_bird = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            btn_update = new Guna.UI2.WinForms.Guna2Button();
+            btn_sua = new Guna.UI2.WinForms.Guna2Button();
             cbx_gt = new Guna.UI2.WinForms.Guna2ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -70,7 +73,7 @@
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel3.Location = new Point(33, 173);
+            guna2HtmlLabel3.Location = new Point(33, 194);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(95, 20);
             guna2HtmlLabel3.TabIndex = 2;
@@ -80,7 +83,7 @@
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel4.Location = new Point(610, 173);
+            guna2HtmlLabel4.Location = new Point(610, 194);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(52, 20);
             guna2HtmlLabel4.TabIndex = 3;
@@ -90,7 +93,7 @@
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel5.Location = new Point(309, 173);
+            guna2HtmlLabel5.Location = new Point(309, 194);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(71, 20);
             guna2HtmlLabel5.TabIndex = 4;
@@ -131,22 +134,25 @@
             tbx_hoTen.Name = "tbx_hoTen";
             tbx_hoTen.Size = new Size(199, 36);
             tbx_hoTen.TabIndex = 8;
+            tbx_hoTen.TextChanged += tbx_hoTen_TextChanged;
             // 
             // tbx_sdt
             // 
-            tbx_sdt.Location = new Point(33, 199);
+            tbx_sdt.Location = new Point(33, 220);
             tbx_sdt.Multiline = true;
             tbx_sdt.Name = "tbx_sdt";
             tbx_sdt.Size = new Size(198, 36);
             tbx_sdt.TabIndex = 10;
+            tbx_sdt.TextChanged += tbx_sdt_TextChanged;
             // 
             // tbx_diaChi
             // 
-            tbx_diaChi.Location = new Point(610, 199);
+            tbx_diaChi.Location = new Point(610, 220);
             tbx_diaChi.Multiline = true;
             tbx_diaChi.Name = "tbx_diaChi";
             tbx_diaChi.Size = new Size(187, 109);
             tbx_diaChi.TabIndex = 11;
+            tbx_diaChi.TextChanged += tbx_diaChi_TextChanged;
             // 
             // date_bird
             // 
@@ -154,7 +160,7 @@
             date_bird.FillColor = Color.FromArgb(224, 224, 224);
             date_bird.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             date_bird.Format = DateTimePickerFormat.Long;
-            date_bird.Location = new Point(309, 199);
+            date_bird.Location = new Point(309, 220);
             date_bird.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             date_bird.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             date_bird.Name = "date_bird";
@@ -162,37 +168,39 @@
             date_bird.TabIndex = 12;
             date_bird.Value = new DateTime(2023, 7, 24, 0, 4, 15, 406);
             // 
-            // guna2Button1
+            // btn_update
             // 
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.DarkCyan;
-            guna2Button1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(309, 263);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.Size = new Size(165, 45);
-            guna2Button1.TabIndex = 13;
-            guna2Button1.Text = "Cập nhật";
+            btn_update.BorderRadius = 10;
+            btn_update.DisabledState.BorderColor = Color.DarkGray;
+            btn_update.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_update.FillColor = Color.DarkCyan;
+            btn_update.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_update.ForeColor = Color.White;
+            btn_update.Location = new Point(309, 284);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(165, 45);
+            btn_update.TabIndex = 13;
+            btn_update.Text = "Cập nhật";
+            btn_update.Click += btn_update_Click;
             // 
-            // guna2Button2
+            // btn_sua
             // 
-            guna2Button2.BorderRadius = 10;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.DarkCyan;
-            guna2Button2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(33, 263);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(159, 45);
-            guna2Button2.TabIndex = 14;
-            guna2Button2.Text = "Sửa";
+            btn_sua.BorderRadius = 10;
+            btn_sua.DisabledState.BorderColor = Color.DarkGray;
+            btn_sua.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_sua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_sua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_sua.FillColor = Color.DarkCyan;
+            btn_sua.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_sua.ForeColor = Color.White;
+            btn_sua.Location = new Point(33, 284);
+            btn_sua.Name = "btn_sua";
+            btn_sua.Size = new Size(159, 45);
+            btn_sua.TabIndex = 14;
+            btn_sua.Text = "Sửa";
+            btn_sua.Click += btn_sua_Click;
             // 
             // cbx_gt
             // 
@@ -209,14 +217,43 @@
             cbx_gt.Size = new Size(187, 36);
             cbx_gt.TabIndex = 15;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(309, 161);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 16;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(610, 161);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 15);
+            label2.TabIndex = 17;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(33, 259);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 18;
+            label3.Text = "label3";
+            // 
             // FthongTinNguoiDung
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 390);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(cbx_gt);
-            Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
+            Controls.Add(btn_sua);
+            Controls.Add(btn_update);
             Controls.Add(date_bird);
             Controls.Add(tbx_diaChi);
             Controls.Add(tbx_sdt);
@@ -251,8 +288,11 @@
         private TextBox tbx_sdt;
         private TextBox tbx_diaChi;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_bird;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btn_update;
+        private Guna.UI2.WinForms.Guna2Button btn_sua;
         private Guna.UI2.WinForms.Guna2ComboBox cbx_gt;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
