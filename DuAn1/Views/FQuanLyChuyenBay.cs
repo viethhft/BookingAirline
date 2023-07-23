@@ -93,14 +93,18 @@ namespace DuAn1.Views
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
                 dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
             }
-            txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
-            nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[7].Value.ToString());
-            cmb_PlaneType.Text = dgv_chuyenbay.Rows[0].Cells[0].Value.ToString();
-            cmb_To.Text = dgv_chuyenbay.Rows[0].Cells[3].Value.ToString();
-            cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
-            DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
-            dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
-            cmb_Location.Text = dgv_chuyenbay.Rows[0].Cells[1].Value.ToString();
+            if (dgv_chuyenbay.RowCount>0)
+            {
+                txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
+                nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[7].Value.ToString());
+                cmb_PlaneType.Text = dgv_chuyenbay.Rows[0].Cells[0].Value.ToString();
+                cmb_To.Text = dgv_chuyenbay.Rows[0].Cells[3].Value.ToString();
+                cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
+                DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
+                dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
+                cmb_Location.Text = dgv_chuyenbay.Rows[0].Cells[1].Value.ToString();
+            }
+           
         }
         void ReverseCodePlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
         {
@@ -147,80 +151,130 @@ namespace DuAn1.Views
         private void btn_Add_Click(object sender, EventArgs e)
         {
             check();
+            foreach (var item in _flight.get_list())
+            {
+                if (item.FlightCode==txb_codeflight.Text)
+                {
+                    checkInfo = false;
+                    break;
+                }
+            }
             if (checkInfo)
             {
-                Flight flight = new Flight();
-                flight.FlightCode = txb_codeflight.Text;
-                foreach (var item in _plantype.get_list())
+                if (checkInfo)
                 {
-                    if (item.DisplayName == cmb_PlaneType.Text)
+                    Flight flight = new Flight();
+                    flight.FlightCode = txb_codeflight.Text;
+                    foreach (var item in _plantype.get_list())
                     {
-                        flight.PlaneTypeId = item.Id;
-                        break;
+                        if (item.DisplayName == cmb_PlaneType.Text)
+                        {
+                            flight.PlaneTypeId = item.Id;
+                            break;
+                        }
                     }
+                    flight.GoFrom = cmb_From.Text;
+                    flight.GoTo = cmb_To.Text;
+                    foreach (var item in _location.get_list())
+                    {
+                        if (item.DisplayName == cmb_Location.Text)
+                        {
+                            flight.LocationId = item.Id;
+                            break;
+                        }
+                    }
+                    flight.DateFlight = DateFrom.Value;
+                    flight.DateTo = dateTo.Value;
+                    flight.Price = Convert.ToInt32(nbr_Price.Value);
+                    MessageBox.Show(_flight.create(flight));
+                    load();
                 }
-                flight.GoFrom = cmb_From.Text;
-                flight.GoTo = cmb_To.Text;
-                foreach (var item in _location.get_list())
+                else
                 {
-                    if (item.DisplayName == cmb_Location.Text)
-                    {
-                        flight.LocationId = item.Id;
-                        break;
-                    }
+                    MessageBox.Show("Hãy nhập đúng giá!");
                 }
-                flight.DateFlight = DateFrom.Value;
-                flight.DateTo = dateTo.Value;
-                flight.Price = Convert.ToInt32(nbr_Price.Value);
-                MessageBox.Show(_flight.create(flight));
-                load();
             }
             else
             {
-                MessageBox.Show("Hãy nhập đúng giá!");
+                MessageBox.Show("Mã chuyến bay đã có hãy thử đổi ngày bay hoặc máy bay khác!");
             }
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
             check();
+            foreach (var item in _flight.get_list())
+            {
+                if (item.FlightCode == txb_codeflight.Text)
+                {
+                    checkInfo = false;
+                    break;
+                }
+            }
             if (checkInfo)
             {
-                Flight flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
-                foreach (var item in _plantype.get_list())
+                if (checkInfo)
                 {
-                    if (item.DisplayName == cmb_PlaneType.Text)
+                    Flight flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
+                    foreach (var item in _plantype.get_list())
                     {
-                        flight.PlaneTypeId = item.Id;
-                        break;
+                        if (item.DisplayName == cmb_PlaneType.Text)
+                        {
+                            flight.PlaneTypeId = item.Id;
+                            break;
+                        }
                     }
+                    flight.FlightCode = txb_codeflight.Text;
+                    flight.GoFrom = cmb_From.Text;
+                    flight.GoTo = cmb_To.Text;
+                    foreach (var item in _location.get_list())
+                    {
+                        if (item.DisplayName == cmb_Location.Text)
+                        {
+                            flight.LocationId = item.Id;
+                            break;
+                        }
+                    }
+                    flight.DateFlight = DateFrom.Value;
+                    flight.DateTo = dateTo.Value;
+                    flight.Price = Convert.ToInt32(nbr_Price.Value);
+                    MessageBox.Show(_flight.update(flight));
+                    load();
                 }
-                flight.FlightCode = txb_codeflight.Text;
-                flight.GoFrom = cmb_From.Text;
-                flight.GoTo = cmb_To.Text;
-                foreach (var item in _location.get_list())
+                else
                 {
-                    if (item.DisplayName == cmb_Location.Text)
-                    {
-                        flight.LocationId = item.Id;
-                        break;
-                    }
+                    MessageBox.Show("Hãy nhập đúng giá!");
                 }
-                flight.DateFlight = DateFrom.Value;
-                flight.DateTo = dateTo.Value;
-                flight.Price = Convert.ToInt32(nbr_Price.Value);
-                MessageBox.Show(_flight.update(flight));
-                load();
             }
             else
             {
-                MessageBox.Show("Hãy nhập đúng giá!");
+                MessageBox.Show("Mã chuyến bay đã có hãy thử đổi ngày bay hoặc máy bay khác!");
             }
         }
 
         private void txb_Search_TextChanged(object sender, EventArgs e)
         {
-
+            if (txb_Search.Text!="")
+            {
+                dgv_chuyenbay.Rows.Clear();
+                int a=_location.get_list().Where(c=>c.DisplayName.Contains(txb_Search.Text)).FirstOrDefault().Id;
+                foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTo.Contains(txb_Search.Text)).Where(c=>c.LocationId==a))
+                {
+                    string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
+                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                }
+            }
+            else
+            {
+                dgv_chuyenbay.Rows.Clear();
+                foreach (var item in _flight.get_list())
+                {
+                    string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
+                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                }
+            }
         }
 
         private void dgv_chuyenbay_CellClick(object sender, DataGridViewCellEventArgs e)
