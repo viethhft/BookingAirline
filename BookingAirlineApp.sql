@@ -136,8 +136,8 @@ insert Customer (email,password,first_name,last_name,middle_name,Dob,address,pho
 ('cus1@gmail.com','123',N'Phan',N'Trung',N'Nam','2001-1-15','none','0191771271',N'Nam')
 
 insert Class(display_name,price) values
-(N'Phổ Thông',500000),
-(N'Thương Gia',1000000)
+(N'Thương Gia',1000000),
+(N'Phổ Thông',500000)
 
 insert Plane_type(plane_code,display_name,total_seat) values
 ('Plane_1',N'Máy bay số 1',30),
