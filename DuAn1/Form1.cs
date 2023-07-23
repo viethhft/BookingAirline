@@ -21,9 +21,15 @@ namespace DuAn1
         FHomeUser _fkhachhang;
         ICustomerServices _customerServices;
         IStaffServices _staffServices;
+        ISeatDetailServices _seatDetailServices;
+        IPlaneTypeServices _PlaneType;
+        IClassServices _classServices;
         int _role;
         public Form1()
         {
+            _classServices=new ClassServices();
+            _PlaneType= new PlantypeServices();
+            _seatDetailServices = new SeatDetailServices();
             _customerServices = new CustomerServices();
             _staffServices = new StaffServices();
             _validate = new Validate();
@@ -38,6 +44,55 @@ namespace DuAn1
         }
         void load()
         {
+            dataGridView1.DataSource = _PlaneType.get_list();
+            dataGridView2.DataSource = _classServices.get_list();
+            SeatDetail seat = new SeatDetail();
+            int a = 0;
+            foreach (var item in _PlaneType.get_list())
+            {
+                for (int i = 0; i < item.TotalSeat; i++)
+                {
+                    if (item.TotalSeat==30)
+                    {
+                        if (i<20)
+                        {
+                            seat.ClassId = 2;
+                            seat.PlaneTypeId = item.Id;
+                            seat.SeatCode = "PT" + (i + 1);
+                            _seatDetailServices.Create(seat);
+                        }
+                        else
+                        {
+
+                            seat.ClassId = 1;
+                            seat.PlaneTypeId = item.Id;
+                            seat.SeatCode = "TG" + (a + 1);
+                            _seatDetailServices.Create(seat);
+                            a++;
+                        }
+                    }
+                    else
+                    {
+                        if (i < 35)
+                        {
+                            seat.ClassId = 2;
+                            seat.PlaneTypeId = item.Id;
+                            seat.SeatCode = "PT" + (i + 1);
+                            _seatDetailServices.Create(seat);
+                        }
+                        else
+                        {
+
+                            seat.ClassId = 1;
+                            seat.PlaneTypeId = item.Id;
+                            seat.SeatCode = "TG" + (a + 1);
+                            _seatDetailServices.Create(seat);
+                            a++;
+                        }
+                    }
+                }
+                a = 0;
+            }
             if (Settings.Default.isRemember)
             {
                 tb_user.Text = Settings.Default.username;
@@ -52,44 +107,44 @@ namespace DuAn1
         }
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
-            {
-                _role = 0;
-                fStaff _fst = new fStaff(_role);
+            //if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
+            //{
+            //    _role = 0;
+            //    fStaff _fst = new fStaff(_role);
 
-                this.Hide();
-                MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
-                _fst.ShowDialog();
-                this.Show();
-            }
-            else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
-            {
-                _role = 1;
-                fStaff _fst = new fStaff(_role);
-                this.Hide();
-                MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
-                _fst.ShowDialog();
-                this.Show();
-            }
-            else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 3)
-            {
-                this.Hide();
-                MessageBox.Show("Đăng nhập thành công", "Thông báo!");
-                _fkhachhang.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Đăng nhập thất bại", "Thông báo!");
-            }
-            if (cb_reme.Checked)
-            {
-                cb_reme_CheckedChanged(sender, e);
-            }
-            else
-            {
-                cb_reme_CheckedChanged(sender, e);
-            }
+            //    this.Hide();
+            //    MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
+            //    _fst.ShowDialog();
+            //    this.Show();
+            //}
+            //else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
+            //{
+            //    _role = 1;
+            //    fStaff _fst = new fStaff(_role);
+            //    this.Hide();
+            //    MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
+            //    _fst.ShowDialog();
+            //    this.Show();
+            //}
+            //else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 3)
+            //{
+            //    this.Hide();
+            //    MessageBox.Show("Đăng nhập thành công", "Thông báo!");
+            //    _fkhachhang.ShowDialog();
+            //    this.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Đăng nhập thất bại", "Thông báo!");
+            //}
+            //if (cb_reme.Checked)
+            //{
+            //    cb_reme_CheckedChanged(sender, e);
+            //}
+            //else
+            //{
+            //    cb_reme_CheckedChanged(sender, e);
+            //}
         }
 
         private void llb_dki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
