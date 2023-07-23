@@ -18,9 +18,15 @@ namespace GUI.Views.View_User
 
     public partial class FDoimk : Form
     {
+
+        private string _message;
         public FDoimk()
         {
             InitializeComponent();
+
+        }
+        public FDoimk(string Messege) : this()
+        {
 
         }
 
