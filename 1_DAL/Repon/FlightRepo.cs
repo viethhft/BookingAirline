@@ -17,14 +17,35 @@ namespace _1_DAL.Repon
         }
         public bool create(Flight flight)
         {
-            _context.Add(flight);
-            _context.SaveChanges();
-            return true;
+            try
+            {
+                _context.Add(flight);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public List<Flight> get_list()
         {
             return _context.Flights.ToList();
+        }
+
+        public bool update(Flight flight)
+        {
+            try
+            {
+                _context.Update(flight);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

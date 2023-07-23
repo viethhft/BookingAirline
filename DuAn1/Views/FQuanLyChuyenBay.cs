@@ -181,7 +181,39 @@ namespace DuAn1.Views
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-
+            check();
+            if (checkInfo)
+            {
+                Flight flight = _flight.get_list().Where(c=>c.FlightCode==txb_codeflight.Text).FirstOrDefault();
+                foreach (var item in _plantype.get_list())
+                {
+                    if (item.DisplayName == cmb_PlaneType.Text)
+                    {
+                        flight.PlaneTypeId = item.Id;
+                        break;
+                    }
+                }
+                flight.FlightCode = txb_codeflight.Text;
+                flight.GoFrom = cmb_From.Text;
+                flight.GoTo = cmb_To.Text;
+                foreach (var item in _location.get_list())
+                {
+                    if (item.DisplayName == cmb_Location.Text)
+                    {
+                        flight.LocationId = item.Id;
+                        break;
+                    }
+                }
+                flight.DateFlight = DateFrom.Value;
+                flight.DateTo = dateTo.Value;
+                flight.Price = Convert.ToInt32(nbr_Price.Value);
+                MessageBox.Show(_flight.update(flight));
+                load();
+            }
+            else
+            {
+                MessageBox.Show("Hãy nhập đúng giá!");
+            }
         }
 
         private void txb_Search_TextChanged(object sender, EventArgs e)
