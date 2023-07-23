@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            label10 = new Label();
-            textBox5 = new TextBox();
-            label9 = new Label();
             textBox3 = new TextBox();
             label6 = new Label();
             textBox4 = new TextBox();
@@ -51,8 +49,6 @@
             label1 = new Label();
             groupBox2 = new GroupBox();
             dtgv_kh = new DataGridView();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgv_kh).BeginInit();
@@ -64,10 +60,6 @@
             groupBox1.Controls.Add(guna2Button2);
             groupBox1.Controls.Add(guna2Button1);
             groupBox1.Controls.Add(textBox7);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(textBox4);
@@ -89,6 +81,38 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
+            // guna2Button2
+            // 
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.DarkCyan;
+            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(593, 173);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.Size = new Size(76, 29);
+            guna2Button2.TabIndex = 24;
+            guna2Button2.Text = "Tìm";
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(724, 155);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(180, 45);
+            guna2Button1.TabIndex = 23;
+            guna2Button1.Text = "Cập nhật";
+            // 
             // textBox7
             // 
             textBox7.Location = new Point(408, 28);
@@ -96,42 +120,6 @@
             textBox7.ReadOnly = true;
             textBox7.Size = new Size(179, 23);
             textBox7.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(725, 125);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(179, 23);
-            textBox6.TabIndex = 11;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(623, 125);
-            label10.Name = "label10";
-            label10.Size = new Size(76, 18);
-            label10.TabIndex = 22;
-            label10.Text = "Điểm đến";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(725, 79);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(179, 23);
-            textBox5.TabIndex = 10;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(623, 79);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 18);
-            label9.TabIndex = 20;
-            label9.Text = "Điểm đi";
             // 
             // textBox3
             // 
@@ -292,38 +280,6 @@
             dtgv_kh.Size = new Size(1018, 226);
             dtgv_kh.TabIndex = 0;
             // 
-            // guna2Button1
-            // 
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.DarkCyan;
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(724, 155);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.Size = new Size(180, 45);
-            guna2Button1.TabIndex = 23;
-            guna2Button1.Text = "Cập nhật";
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.BorderRadius = 10;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.DarkCyan;
-            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(593, 173);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(76, 29);
-            guna2Button2.TabIndex = 24;
-            guna2Button2.Text = "Tìm";
-            // 
             // QlykhachHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -362,10 +318,6 @@
         private TextBox textBox1;
         private Label label4;
         private TextBox textBox7;
-        private TextBox textBox6;
-        private Label label10;
-        private TextBox textBox5;
-        private Label label9;
         private TextBox textBox3;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;

@@ -19,8 +19,8 @@ namespace DuAn1.Views
         IFlightServices _flight;
         public FQuanLyChuyenBay()
         {
-            _flight=new FlightServices();
-            _location= new LocationService();
+            _flight = new FlightServices();
+            _location = new LocationService();
             _plantype = new PlantypeServices();
             InitializeComponent();
             load();
@@ -31,12 +31,15 @@ namespace DuAn1.Views
             cmb_PlaneType.DisplayMember = "displayName";
             cmb_PlaneType.ValueMember = "id";
             cmb_Location.DataSource = _location.get_list();
-            cmb_Location.DisplayMember= "displayName";
+            cmb_Location.DisplayMember = "displayName";
             cmb_From.DataSource = _location.get_list();
             cmb_From.DisplayMember = "displayName";
             cmb_To.DataSource = _location.get_list();
             cmb_To.DisplayMember = "displayName";
             dgv_chuyenbay.DataSource = _flight.get_list();
+
+
         }
+
     }
 }
