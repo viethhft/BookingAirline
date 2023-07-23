@@ -18,7 +18,7 @@ namespace DuAn1.Views
         ILocationServices _location;
         public FQuanLyChuyenBay()
         {
-            _location= new LocationService();
+            _location = new LocationService();
             _plantype = new PlantypeServices();
             InitializeComponent();
             load();
@@ -26,10 +26,15 @@ namespace DuAn1.Views
         void load()
         {
             cmb_PlaneType.DataSource = _plantype.get_list();
-            cmb_PlaneType.DisplayMember= "displayName";
+            cmb_PlaneType.DisplayMember = "displayName";
             cmb_PlaneType.ValueMember = "id";
             cmb_Location.DataSource = _location.get_list();
-            cmb_Location.DisplayMember= "displayName";
+            cmb_Location.DisplayMember = "displayName";
+        }
+
+        private void cmb_Location_MouseLeave(object sender, EventArgs e)
+        {
+
         }
     }
 }
