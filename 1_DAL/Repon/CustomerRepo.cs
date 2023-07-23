@@ -42,7 +42,9 @@ namespace _1_DAL.Repon
         {
             try
             {
-                _context.Customers.Update(cus);
+                var cus1 = _context.Customers.ToList().FirstOrDefault(c => c.Id == cus.Id);
+                cus1.Status = cus.Status;
+                _context.Customers.Update(cus1);
                 _context.SaveChanges();
                 return true;
             }
