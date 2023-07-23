@@ -16,5 +16,9 @@ namespace DuAn1.Views
         {
             InitializeComponent();
         }
+        void load()
+        {
+
+        }
     }
 }
