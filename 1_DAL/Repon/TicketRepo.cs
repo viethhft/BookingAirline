@@ -36,6 +36,16 @@ namespace _1_DAL.Repon
 
         public bool UpdateTicket(Ticket ticket)
         {
+            try
+            {
+                _context.Tickets.Update(ticket);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
