@@ -1,4 +1,5 @@
-﻿using _2_BUS.IService;
+﻿using _1_DAL.Models;
+using _2_BUS.IService;
 using _2_BUS.Service;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +16,7 @@ namespace DuAn1.Views
 {
     public partial class FQuanLyChuyenBay : Form
     {
+        bool checkInfo = true;
         IPlaneTypeServices _plantype;
         ILocationServices _location;
         IFlightServices _flight;
@@ -30,6 +33,17 @@ namespace DuAn1.Views
             _plantype = new PlantypeServices();
             InitializeComponent();
             load();
+        }
+        void check()
+        {
+            if (nbr_Price.Value < 500000)
+            {
+                checkInfo = false;
+            }
+            else
+            {
+                checkInfo = true;
+            }
         }
         void load()
         {
@@ -49,7 +63,7 @@ namespace DuAn1.Views
             cmb_To.DisplayMember = "displayName";
             cmb_To.ValueMember = "locaCode";
 
-            dgv_chuyenbay.DataSource = _flight.get_list();
+            loaddata();
 
             plancode = cmb_PlaneType.SelectedValue.ToString();
             locacode = cmb_Location.SelectedValue.ToString();
@@ -58,6 +72,33 @@ namespace DuAn1.Views
             ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
             ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+        }
+        void loaddata()
+        {
+            dgv_chuyenbay.Rows.Clear();
+            dgv_chuyenbay.ColumnCount = 8;
+            dgv_chuyenbay.Columns[0].Name = "Tên máy bay";
+            dgv_chuyenbay.Columns[1].Name = "Địa điểm bay";
+            dgv_chuyenbay.Columns[2].Name = "Mã chuyến bay";
+            dgv_chuyenbay.Columns[3].Name = "Điểm đến";
+            dgv_chuyenbay.Columns[4].Name = "Điểm đi";
+            dgv_chuyenbay.Columns[5].Name = "Thời gian đi";
+            dgv_chuyenbay.Columns[6].Name = "Thời gian về";
+            dgv_chuyenbay.Columns[7].Name = "Giá";
+            foreach (var item in _flight.get_list())
+            {
+                string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
+                string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price);
+            }
+            txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
+            nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[7].Value.ToString());
+            cmb_PlaneType.Text = dgv_chuyenbay.Rows[0].Cells[0].Value.ToString();
+            cmb_To.Text = dgv_chuyenbay.Rows[0].Cells[3].Value.ToString();
+            cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
+            DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
+            dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
+            cmb_Location.Text = dgv_chuyenbay.Rows[0].Cells[1].Value.ToString();
         }
         void ReverseCodePlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
         {
@@ -79,38 +120,117 @@ namespace DuAn1.Views
 
         private void cmb_From_SelectedValueChanged(object sender, EventArgs e)
         {
-             codefrom = cmb_From.SelectedValue.ToString();
+            codefrom = cmb_From.SelectedValue.ToString();
             ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void cmb_To_SelectedValueChanged(object sender, EventArgs e)
         {
-             codeto = cmb_To.SelectedValue.ToString();
+            codeto = cmb_To.SelectedValue.ToString();
             ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void DateFrom_ValueChanged(object sender, EventArgs e)
         {
-             ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
+            ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
             ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void dateTo_ValueChanged(object sender, EventArgs e)
         {
-             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
+            ngayve = dateTo.Value.ToString("dd-MM-yyyy");
             ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-
+            check();
+            if (checkInfo)
+            {
+                Flight flight = new Flight();
+                flight.FlightCode = txb_codeflight.Text;
+                foreach (var item in _plantype.get_list())
+                {
+                    if (item.DisplayName == cmb_PlaneType.Text)
+                    {
+                        flight.PlaneTypeId = item.Id;
+                        break;
+                    }
+                }
+                flight.GoFrom = cmb_From.Text;
+                flight.GoTo = cmb_To.Text;
+                foreach (var item in _location.get_list())
+                {
+                    if (item.DisplayName == cmb_Location.Text)
+                    {
+                        flight.LocationId = item.Id;
+                        break;
+                    }
+                }
+                flight.DateFlight = DateFrom.Value;
+                flight.DateTo = dateTo.Value;
+                flight.Price = Convert.ToInt32(nbr_Price.Value);
+                MessageBox.Show(_flight.create(flight));
+                load();
+            }
+            else
+            {
+                MessageBox.Show("Hãy nhập đúng giá!");
+            }
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            check();
+            if (checkInfo)
+            {
+                Flight flight = _flight.get_list().Where(c=>c.FlightCode==txb_codeflight.Text).FirstOrDefault();
+                foreach (var item in _plantype.get_list())
+                {
+                    if (item.DisplayName == cmb_PlaneType.Text)
+                    {
+                        flight.PlaneTypeId = item.Id;
+                        break;
+                    }
+                }
+                flight.FlightCode = txb_codeflight.Text;
+                flight.GoFrom = cmb_From.Text;
+                flight.GoTo = cmb_To.Text;
+                foreach (var item in _location.get_list())
+                {
+                    if (item.DisplayName == cmb_Location.Text)
+                    {
+                        flight.LocationId = item.Id;
+                        break;
+                    }
+                }
+                flight.DateFlight = DateFrom.Value;
+                flight.DateTo = dateTo.Value;
+                flight.Price = Convert.ToInt32(nbr_Price.Value);
+                MessageBox.Show(_flight.update(flight));
+                load();
+            }
+            else
+            {
+                MessageBox.Show("Hãy nhập đúng giá!");
+            }
+        }
+
+        private void txb_Search_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-       
+        private void dgv_chuyenbay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txb_codeflight.Text = dgv_chuyenbay.CurrentRow.Cells[2].Value.ToString();
+            nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[7].Value.ToString());
+            cmb_PlaneType.Text = dgv_chuyenbay.CurrentRow.Cells[0].Value.ToString();
+            cmb_To.Text = dgv_chuyenbay.CurrentRow.Cells[3].Value.ToString();
+            cmb_From.Text = dgv_chuyenbay.CurrentRow.Cells[4].Value.ToString();
+            DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
+            dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
+            cmb_Location.Text = dgv_chuyenbay.CurrentRow.Cells[1].Value.ToString();
+        }
     }
 }

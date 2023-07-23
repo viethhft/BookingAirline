@@ -30,5 +30,14 @@ namespace _2_BUS.Service
         {
            return _repo.get_list();
         }
+
+        public string update(Flight flight)
+        {
+            if (_repo.update(flight))
+            {
+                return "Sửa thành công";
+            }
+            return "Sửa không thành công";
+        }
     }
 }

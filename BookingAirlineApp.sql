@@ -74,7 +74,8 @@ create table Flight
 	goFrom nvarchar(100) not null,
 	goTom nvarchar(100) not null, -- điểm đến
 	price int not null,
-	dateFlight datetime not null
+	dateFlight datetime not null,
+	dateTo datetime
 
 	foreign key(planeTypeId) references Plane_type(id),
 	foreign key(locationId) references Location(id)

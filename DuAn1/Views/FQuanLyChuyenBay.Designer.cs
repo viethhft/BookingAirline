@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nbr_Price = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btn_Update = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Add = new Guna.UI2.WinForms.Guna2Button();
             this.txb_Search = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txb_Price = new System.Windows.Forms.TextBox();
             this.dateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmb_Location = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -51,16 +51,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nbr_Price);
             this.groupBox1.Controls.Add(this.btn_Update);
             this.groupBox1.Controls.Add(this.btn_Add);
             this.groupBox1.Controls.Add(this.txb_Search);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txb_Price);
             this.groupBox1.Controls.Add(this.dateTo);
             this.groupBox1.Controls.Add(this.DateFrom);
             this.groupBox1.Controls.Add(this.cmb_Location);
@@ -84,6 +85,20 @@
             this.groupBox1.Size = new System.Drawing.Size(1030, 461);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // nbr_Price
+            // 
+            this.nbr_Price.BackColor = System.Drawing.Color.Transparent;
+            this.nbr_Price.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nbr_Price.Location = new System.Drawing.Point(619, 97);
+            this.nbr_Price.Maximum = new decimal(new int[] {
+            -1981284353,
+            -1966660860,
+            0,
+            0});
+            this.nbr_Price.Name = "nbr_Price";
+            this.nbr_Price.Size = new System.Drawing.Size(210, 36);
+            this.nbr_Price.TabIndex = 30;
             // 
             // btn_Update
             // 
@@ -127,6 +142,7 @@
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.Size = new System.Drawing.Size(210, 37);
             this.txb_Search.TabIndex = 27;
+            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
             // 
             // label9
             // 
@@ -137,15 +153,6 @@
             this.label9.Size = new System.Drawing.Size(71, 18);
             this.label9.TabIndex = 26;
             this.label9.Text = "Tìm kiếm";
-            // 
-            // txb_Price
-            // 
-            this.txb_Price.Location = new System.Drawing.Point(619, 95);
-            this.txb_Price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_Price.Multiline = true;
-            this.txb_Price.Name = "txb_Price";
-            this.txb_Price.Size = new System.Drawing.Size(210, 37);
-            this.txb_Price.TabIndex = 25;
             // 
             // dateTo
             // 
@@ -259,6 +266,7 @@
             this.dgv_chuyenbay.RowTemplate.Height = 25;
             this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
             this.dgv_chuyenbay.TabIndex = 0;
+            this.dgv_chuyenbay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chuyenbay_CellClick);
             // 
             // txb_codeflight
             // 
@@ -359,6 +367,7 @@
             this.Text = "FQuanLyChuyenBay";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
             this.ResumeLayout(false);
 
@@ -388,6 +397,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmb_PlaneType;
         private Label label9;
         private TextBox txb_Search;
-        private TextBox txb_Price;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nbr_Price;
     }
 }

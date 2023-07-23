@@ -176,8 +176,6 @@ namespace DuAn1
             }
         }
 
-
-
         private void txt_Ten_TextChanged(object sender, EventArgs e)
         {
             if (_validate.checkName(txt_Ten.Text))

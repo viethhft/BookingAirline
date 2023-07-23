@@ -11,5 +11,6 @@ namespace _2_BUS.IService
     {
         public List<Flight> get_list();
         public string create(Flight flight);
+        public string update(Flight flight);
     }
 }
