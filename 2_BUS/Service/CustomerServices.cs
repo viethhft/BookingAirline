@@ -40,7 +40,7 @@ namespace _2_BUS.Service
         {
             if (_repo.Update(cus))
             {
-                return "Cập nhật thành công";
+                return "Cập nhật mật khẩu thành công!";
             }
             return "Cập nhật thất bại";
         }

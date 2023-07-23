@@ -1,4 +1,5 @@
 ﻿using GUI.Views.View_User;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,14 @@ namespace GUI.Views
 {
     public partial class FHomeUser : Form
     {
+        
+        FDoimk _fDoimk;
+        FthongTinNguoiDung _fTinNguoiDung;
         public FHomeUser()
         {
             InitializeComponent();
+            _fDoimk = new FDoimk();
+            _fTinNguoiDung= new FthongTinNguoiDung();
         }
 
         private void ChildForm(Form child)
@@ -113,6 +119,27 @@ namespace GUI.Views
             {
                 e.Cancel = true;
             }
+        }
+
+        private void đổiMặtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _fDoimk.ShowDialog();
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _fTinNguoiDung.ShowDialog();
         }
     }
 }

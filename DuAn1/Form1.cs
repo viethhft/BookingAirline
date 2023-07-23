@@ -5,6 +5,7 @@ using _2_BUS.Validate;
 using DuAn1.Views;
 using GUI.Properties;
 using GUI.Views;
+using GUI.Views.View_User;
 
 namespace DuAn1
 {
