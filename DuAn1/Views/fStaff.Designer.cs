@@ -186,13 +186,13 @@
             // đổiMậtKhẩuToolStripMenuItem1
             // 
             đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(180, 22);
+            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(168, 22);
             đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            đăngXuấtToolStripMenuItem1.Size = new Size(180, 22);
+            đăngXuấtToolStripMenuItem1.Size = new Size(168, 22);
             đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
             đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click;
             // 
@@ -210,7 +210,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "fStaff";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "fStaff";
+            Text = "Giao diện các chức năng";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
