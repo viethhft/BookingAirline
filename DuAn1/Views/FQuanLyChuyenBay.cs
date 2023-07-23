@@ -19,8 +19,8 @@ namespace DuAn1.Views
         IFlightServices _flight;
         public FQuanLyChuyenBay()
         {
-            _flight=new FlightServices();
-            _location= new LocationService();
+            _flight = new FlightServices();
+            _location = new LocationService();
             _plantype = new PlantypeServices();
             InitializeComponent();
             load();
@@ -44,6 +44,8 @@ namespace DuAn1.Views
             cmb_To.ValueMember = "locaCode";
 
             dgv_chuyenbay.DataSource = _flight.get_list();
+
+
         }
         void ReverseCodePlight()
         {

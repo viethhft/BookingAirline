@@ -13,13 +13,9 @@ namespace DuAn1.Views
 {
     public partial class fStaff : Form
     {
-        CheckAccountType _check;
-        StaffServices _serv;
-        public int _role;
+        int _role;
         public fStaff()
         {
-            _check = new CheckAccountType();
-            _serv = new StaffServices();
             InitializeComponent();
         }
         public fStaff(int role) : this()
