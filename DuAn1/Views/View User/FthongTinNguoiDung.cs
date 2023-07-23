@@ -14,7 +14,7 @@ namespace GUI.Views.View_User
 {
     public partial class FthongTinNguoiDung : Form
     {
-        private string _message="";
+        private string _message;
 
         ICustomerServices _service;
 
@@ -41,15 +41,15 @@ namespace GUI.Views.View_User
                 
                     tbx_email.Text = item.Email;
                     tbx_diaChi.Text = item.Address;
-                    tbx_hoTen.Text = item.FirstName+ item.MiddleName+ item.LastName;
-                    if (item.Gender == "Nam")
-                    {
-                        cbx_gt.Text = "Nam";
-                    }
-                    else
-                    {
-                        cbx_gt.Text = "Nữ";
-                    }
+                    tbx_hoTen.Text = item.FirstName+ " " + item.MiddleName + " " + item.LastName;
+                if (item.Gender =="Nam")
+                {
+                    cbx_gt.Text = "Nam";
+                }
+                else
+                {
+                    cbx_gt.Text = "Nữ";
+                }
                     date_bird.Value = (DateTime)(item.Dob);
                     tbx_sdt.Text = item.Phone;
             }

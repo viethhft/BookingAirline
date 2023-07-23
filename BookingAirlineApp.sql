@@ -36,7 +36,7 @@ create table Customer
 	Dob datetime, -- ngay sinh
 	phone varchar(11) not null,
 	address nvarchar(50) not null,
-	gender nchar(10) not null,
+	gender nvarchar(10) not null,
 	status int default 1 -- 1:active 0: unactive
 )
 
