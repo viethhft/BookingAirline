@@ -43,11 +43,15 @@ namespace GUI.Views.View_User
             {
                 try
                 {
-                    if (tbx_passOld.Text == _services.GetCustomers().Where(c => c.Email == _message).FirstOrDefault().Password)
+                    if (_validate.ReversePass(tbx_passOld.Text) == _services.GetCustomers().Where(c => c.Email == _message).FirstOrDefault().Password)
                     {
-                        Customer customer = _services.Get(lblWell.Text);
+                        Customer customer = _services.Get(_message);
                         customer.Password = _validate.ReversePass(tbx_passReNew.Text);
-                        MessageBox.Show(_services.Update(customer));
+                        if (MessageBox.Show(_services.Update(customer),"Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Warning)==DialogResult.OK)
+                        {
+                            this.Close();
+                        }
+
                     }
                     else
                     {

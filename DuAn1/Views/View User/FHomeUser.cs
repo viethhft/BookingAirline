@@ -15,15 +15,13 @@ namespace GUI.Views
     public partial class FHomeUser : Form
     {
         public string _message;
-        FthongTinNguoiDung _fTinNguoiDung;
         public FHomeUser()
         {
             InitializeComponent();
-            _fTinNguoiDung = new FthongTinNguoiDung();
             label1.Visible = false;
         }
 
-        public FHomeUser(string Message):this()
+        public FHomeUser(string Message) : this()
         {
             _message = Message;
             label1.Text = _message;
@@ -118,19 +116,6 @@ namespace GUI.Views
             }
         }
 
-        private void FHomeUser_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void đổiMặtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -139,13 +124,16 @@ namespace GUI.Views
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           FDoimk fdk = new FDoimk(label1.Text);
+
+            FDoimk fdk = new FDoimk(label1.Text);
             fdk.ShowDialog();
+            this.Close();
         }
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _fTinNguoiDung.ShowDialog();
+            FthongTinNguoiDung fthongTinNguoiDung = new FthongTinNguoiDung(label1.Text);
+            fthongTinNguoiDung.ShowDialog();
         }
     }
 }

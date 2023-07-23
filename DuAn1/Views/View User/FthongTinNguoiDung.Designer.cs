@@ -36,14 +36,14 @@
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            tbx_email = new TextBox();
+            tbx_hoTen = new TextBox();
+            tbx_sdt = new TextBox();
+            tbx_diaChi = new TextBox();
+            date_bird = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbx_gt = new Guna.UI2.WinForms.Guna2ComboBox();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -116,51 +116,51 @@
             guna2HtmlLabel7.TabIndex = 6;
             guna2HtmlLabel7.Text = "Họ và tên";
             // 
-            // textBox1
+            // tbx_email
             // 
-            textBox1.Location = new Point(33, 122);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(198, 36);
-            textBox1.TabIndex = 7;
+            tbx_email.Location = new Point(33, 122);
+            tbx_email.Multiline = true;
+            tbx_email.Name = "tbx_email";
+            tbx_email.Size = new Size(198, 36);
+            tbx_email.TabIndex = 7;
             // 
-            // textBox2
+            // tbx_hoTen
             // 
-            textBox2.Location = new Point(309, 122);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(199, 36);
-            textBox2.TabIndex = 8;
+            tbx_hoTen.Location = new Point(309, 122);
+            tbx_hoTen.Multiline = true;
+            tbx_hoTen.Name = "tbx_hoTen";
+            tbx_hoTen.Size = new Size(199, 36);
+            tbx_hoTen.TabIndex = 8;
             // 
-            // textBox4
+            // tbx_sdt
             // 
-            textBox4.Location = new Point(33, 199);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(198, 36);
-            textBox4.TabIndex = 10;
+            tbx_sdt.Location = new Point(33, 199);
+            tbx_sdt.Multiline = true;
+            tbx_sdt.Name = "tbx_sdt";
+            tbx_sdt.Size = new Size(198, 36);
+            tbx_sdt.TabIndex = 10;
             // 
-            // textBox5
+            // tbx_diaChi
             // 
-            textBox5.Location = new Point(610, 199);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(187, 109);
-            textBox5.TabIndex = 11;
+            tbx_diaChi.Location = new Point(610, 199);
+            tbx_diaChi.Multiline = true;
+            tbx_diaChi.Name = "tbx_diaChi";
+            tbx_diaChi.Size = new Size(187, 109);
+            tbx_diaChi.TabIndex = 11;
             // 
-            // guna2DateTimePicker1
+            // date_bird
             // 
-            guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.FillColor = Color.FromArgb(224, 224, 224);
-            guna2DateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(309, 199);
-            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.Size = new Size(199, 36);
-            guna2DateTimePicker1.TabIndex = 12;
-            guna2DateTimePicker1.Value = new DateTime(2023, 7, 24, 0, 4, 15, 406);
+            date_bird.Checked = true;
+            date_bird.FillColor = Color.FromArgb(224, 224, 224);
+            date_bird.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            date_bird.Format = DateTimePickerFormat.Long;
+            date_bird.Location = new Point(309, 199);
+            date_bird.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            date_bird.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            date_bird.Name = "date_bird";
+            date_bird.Size = new Size(199, 36);
+            date_bird.TabIndex = 12;
+            date_bird.Value = new DateTime(2023, 7, 24, 0, 4, 15, 406);
             // 
             // guna2Button1
             // 
@@ -194,34 +194,34 @@
             guna2Button2.TabIndex = 14;
             guna2Button2.Text = "Sửa";
             // 
-            // guna2ComboBox1
+            // cbx_gt
             // 
-            guna2ComboBox1.BackColor = Color.Transparent;
-            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
-            guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Location = new Point(610, 122);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.Size = new Size(187, 36);
-            guna2ComboBox1.TabIndex = 15;
+            cbx_gt.BackColor = Color.Transparent;
+            cbx_gt.DrawMode = DrawMode.OwnerDrawFixed;
+            cbx_gt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbx_gt.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbx_gt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbx_gt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbx_gt.ForeColor = Color.FromArgb(68, 88, 112);
+            cbx_gt.ItemHeight = 30;
+            cbx_gt.Location = new Point(610, 122);
+            cbx_gt.Name = "cbx_gt";
+            cbx_gt.Size = new Size(187, 36);
+            cbx_gt.TabIndex = 15;
             // 
             // FthongTinNguoiDung
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 390);
-            Controls.Add(guna2ComboBox1);
+            Controls.Add(cbx_gt);
             Controls.Add(guna2Button2);
             Controls.Add(guna2Button1);
-            Controls.Add(guna2DateTimePicker1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(date_bird);
+            Controls.Add(tbx_diaChi);
+            Controls.Add(tbx_sdt);
+            Controls.Add(tbx_hoTen);
+            Controls.Add(tbx_email);
             Controls.Add(guna2HtmlLabel7);
             Controls.Add(guna2HtmlLabel6);
             Controls.Add(guna2HtmlLabel5);
@@ -246,13 +246,13 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private TextBox tbx_email;
+        private TextBox tbx_hoTen;
+        private TextBox tbx_sdt;
+        private TextBox tbx_diaChi;
+        private Guna.UI2.WinForms.Guna2DateTimePicker date_bird;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbx_gt;
     }
 }
