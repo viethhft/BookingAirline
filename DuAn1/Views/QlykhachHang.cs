@@ -1,4 +1,5 @@
-﻿using _2_BUS.Service;
+﻿using _1_DAL.Models;
+using _2_BUS.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace DuAn1.Views
     public partial class QlykhachHang : Form
     {
         CustomerServices _cusServices;
+        int id;
+        int? sta;
         public QlykhachHang()
         {
             _cusServices = new CustomerServices();
@@ -37,11 +40,13 @@ namespace DuAn1.Views
             {
                 dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.Value.Date.ToString(), i.Phone, i.Address, i.Gender,
                     i.Status == 1 ? "Hoạt động" : "Vô hiệu hóa");
+                sta = i.Status;
             }
         }
 
         private void dtgv_kh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            id = int.Parse(dtgv_kh.CurrentRow.Cells[0].Value.ToString());
             tb_name.Text = dtgv_kh.CurrentRow.Cells[1].Value.ToString();
             tb_gender.Text = dtgv_kh.CurrentRow.Cells[6].Value.ToString();
             tb_phone.Text = dtgv_kh.CurrentRow.Cells[4].Value.ToString();
@@ -87,7 +92,34 @@ namespace DuAn1.Views
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-
+            if(sta == 1)
+            {
+                sta = 0;
+            }
+            else
+            {
+                sta = 1;
+            }
+            Customer cus = new Customer()
+            {
+                Id = id,
+                Status = sta
+            };
+            if(MessageBox.Show("Xác nhận cập nhật trạng thái của tài khoản này?","Xác nhận",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                MessageBox.Show(_cusServices.Update(cus));
+                Clear();
+                QlykhachHang_Load(null, null);
+            }
+        }
+        private void Clear()
+        {
+            tb_name.Clear();
+            tb_status.Clear();
+            tb_phone.Clear();
+            rtb_addr.Clear();
+            tb_gender.Clear();
+            dtp_dob.Value = DateTime.Now;
         }
     }
 }
