@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            textBox3 = new TextBox();
-            label9 = new Label();
-            textBox2 = new TextBox();
-            guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            cmb_Location = new Guna.UI2.WinForms.Guna2ComboBox();
-            cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
-            cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
-            cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
-            dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cmb_Location = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(guna2Button2);
-            groupBox1.Controls.Add(guna2Button1);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(guna2DateTimePicker2);
-            groupBox1.Controls.Add(guna2DateTimePicker1);
-            groupBox1.Controls.Add(cmb_Location);
-            groupBox1.Controls.Add(cmb_PlaneType);
-            groupBox1.Controls.Add(cmb_To);
-            groupBox1.Controls.Add(cmb_From);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(1030, 461);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.guna2Button2);
+            this.groupBox1.Controls.Add(this.guna2Button1);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.guna2DateTimePicker2);
+            this.groupBox1.Controls.Add(this.guna2DateTimePicker1);
+            this.groupBox1.Controls.Add(this.cmb_Location);
+            this.groupBox1.Controls.Add(this.cmb_PlaneType);
+            this.groupBox1.Controls.Add(this.cmb_To);
+            this.groupBox1.Controls.Add(this.cmb_From);
+            this.groupBox1.Controls.Add(this.dgv_chuyenbay);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(10, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 461);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -175,23 +175,19 @@
             // 
             // cmb_Location
             // 
-            cmb_Location.BackColor = Color.Transparent;
-            cmb_Location.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_Location.DropDownHeight = 170;
-            cmb_Location.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_Location.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_Location.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_Location.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_Location.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_Location.ImeMode = ImeMode.NoControl;
-            cmb_Location.IntegralHeight = false;
-            cmb_Location.ItemHeight = 30;
-            cmb_Location.Location = new Point(27, 94);
-            cmb_Location.MaxDropDownItems = 1;
-            cmb_Location.Name = "cmb_Location";
-            cmb_Location.Size = new Size(241, 36);
-            cmb_Location.TabIndex = 22;
-            cmb_Location.MouseLeave += cmb_Location_MouseLeave;
+            this.cmb_Location.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_Location.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_Location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Location.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_Location.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_Location.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Location.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_Location.ItemHeight = 30;
+            this.cmb_Location.Location = new System.Drawing.Point(27, 94);
+            this.cmb_Location.MaxDropDownItems = 10;
+            this.cmb_Location.Name = "cmb_Location";
+            this.cmb_Location.Size = new System.Drawing.Size(241, 36);
+            this.cmb_Location.TabIndex = 22;
             // 
             // cmb_PlaneType
             // 
@@ -238,17 +234,17 @@
             cmb_From.Size = new Size(241, 36);
             cmb_From.TabIndex = 19;
             // 
-            // dataGridView1
+            // dgv_chuyenbay
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(4, 195);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1020, 262);
-            dataGridView1.TabIndex = 0;
+            this.dgv_chuyenbay.AllowUserToAddRows = false;
+            this.dgv_chuyenbay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_chuyenbay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_chuyenbay.Location = new System.Drawing.Point(4, 195);
+            this.dgv_chuyenbay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_chuyenbay.Name = "dgv_chuyenbay";
+            this.dgv_chuyenbay.RowTemplate.Height = 25;
+            this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
+            this.dgv_chuyenbay.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -341,16 +337,17 @@
             // 
             // FQuanLyChuyenBay
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1052, 481);
-            Controls.Add(groupBox1);
-            Name = "FQuanLyChuyenBay";
-            Text = "FQuanLyChuyenBay";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1052, 481);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FQuanLyChuyenBay";
+            this.Text = "FQuanLyChuyenBay";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -363,7 +360,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_chuyenbay;
         private Label label8;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_To;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_From;
