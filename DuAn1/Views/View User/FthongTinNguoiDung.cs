@@ -41,7 +41,7 @@ namespace GUI.Views.View_User
                 
                     tbx_email.Text = item.Email;
                     tbx_diaChi.Text = item.Address;
-                    tbx_hoTen.Text = item.FirstName+ item.MiddleName+ item.LastName;
+                    tbx_hoTen.Text = item.FirstName+" "+ item.MiddleName+" "+ item.LastName;
                     if (item.Gender == "Nam")
                     {
                         cbx_gt.Text = "Nam";
