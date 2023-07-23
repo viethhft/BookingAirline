@@ -177,11 +177,13 @@
             // 
             this.cmb_Location.BackColor = System.Drawing.Color.Transparent;
             this.cmb_Location.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_Location.DropDownHeight = 175;
             this.cmb_Location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Location.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_Location.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_Location.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_Location.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_Location.IntegralHeight = false;
             this.cmb_Location.ItemHeight = 30;
             this.cmb_Location.Location = new System.Drawing.Point(27, 94);
             this.cmb_Location.MaxDropDownItems = 10;
@@ -208,11 +210,13 @@
             // 
             this.cmb_To.BackColor = System.Drawing.Color.Transparent;
             this.cmb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_To.DropDownHeight = 175;
             this.cmb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_To.IntegralHeight = false;
             this.cmb_To.ItemHeight = 30;
             this.cmb_To.Location = new System.Drawing.Point(325, 153);
             this.cmb_To.Name = "cmb_To";
@@ -223,11 +227,13 @@
             // 
             this.cmb_From.BackColor = System.Drawing.Color.Transparent;
             this.cmb_From.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_From.DropDownHeight = 175;
             this.cmb_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_From.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_From.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_From.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_From.IntegralHeight = false;
             this.cmb_From.ItemHeight = 30;
             this.cmb_From.Location = new System.Drawing.Point(27, 151);
             this.cmb_From.Name = "cmb_From";

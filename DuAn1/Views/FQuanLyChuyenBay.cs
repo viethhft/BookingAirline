@@ -38,5 +38,6 @@ namespace DuAn1.Views
             cmb_To.DisplayMember = "displayName";
             dgv_chuyenbay.DataSource = _flight.get_list();
         }
+
     }
 }
