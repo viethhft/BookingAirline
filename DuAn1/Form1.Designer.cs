@@ -129,6 +129,7 @@
             this.btn_login.TabIndex = 8;
             this.btn_login.Text = "Đăng nhập";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // llb_forgot
             // 
