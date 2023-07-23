@@ -24,7 +24,7 @@ namespace DuAn1.Views
         void load()
         {
             cmb_PlaneType.DataSource = _plantype.get_list();
-            cmb_PlaneType.DisplayMember= "display_name";
+            cmb_PlaneType.DisplayMember= "displayName";
         }
     }
 }
