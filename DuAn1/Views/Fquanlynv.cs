@@ -112,6 +112,7 @@ namespace DuAn1
                         staff.Phone = txt_Sdt.Text;
                         staff.Password = _validate.ReversePass(txt_Pass.Text);
                         MessageBox.Show(_inhanVienServices.addNhanVien(staff));
+                        loadData();
                     }
                     else
                     {
@@ -224,7 +225,7 @@ namespace DuAn1
             else
             {
                 checkInfo = false;
-                lb_ErrorPhone.Text = "Không đúng định dạng Email";
+                lb_ErrorPhone.Text = "Không đúng định dạng số điện thoại";
                 lb_ErrorPhone.Visible = true;
                 lb_ErrorPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorPhone.ForeColor = System.Drawing.Color.Red;
