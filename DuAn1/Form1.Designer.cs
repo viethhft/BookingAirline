@@ -30,27 +30,27 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            panel1 = new Panel();
-            label5 = new Label();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            btn_login = new Button();
-            llb_forgot = new LinkLabel();
-            llb_dki = new LinkLabel();
-            cb_reme = new CheckBox();
-            tb_pass = new TextBox();
-            tb_user = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            label4 = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.llb_forgot = new System.Windows.Forms.LinkLabel();
+            this.llb_dki = new System.Windows.Forms.LinkLabel();
+            this.cb_reme = new System.Windows.Forms.CheckBox();
+            this.tb_pass = new System.Windows.Forms.TextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
@@ -220,38 +220,38 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(798, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(445, 16);
-            label4.TabIndex = 2;
-            label4.Text = "Chào mừng bạn đến với hãng hàng không Quốc gia Việt Nam Airline";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(798, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(445, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Chào mừng bạn đến với hãng hàng không Quốc gia Việt Nam Airline";
             // 
             // Form1
             // 
-            AcceptButton = btn_login;
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            BackgroundImage = GUI.Properties.Resources.design;
-            ClientSize = new Size(802, 492);
-            Controls.Add(label4);
-            Controls.Add(panel1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
-            MaximizeBox = false;
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Đăng nhập";
-            FormClosing += Form1_FormClosing;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AcceptButton = this.btn_login;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::GUI.Properties.Resources.design;
+            this.ClientSize = new System.Drawing.Size(802, 452);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng nhập";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

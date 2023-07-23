@@ -1,13 +1,10 @@
-﻿using DuAn1.Views;
-using _2_BUS.Service;
+﻿using _1_DAL.Models;
 using _2_BUS.IService;
-using GUI.Views;
-using GUI.Properties;
-using System.Security.Cryptography;
-using System.Text;
+using _2_BUS.Service;
 using _2_BUS.Validate;
-using Guna.UI2.WinForms;
-using _1_DAL.Models;
+using DuAn1.Views;
+using GUI.Properties;
+using GUI.Views;
 
 namespace DuAn1
 {
@@ -44,7 +41,6 @@ namespace DuAn1
         }
         void load()
         {
-            SeatDetail seat = new SeatDetail();
             int a = 0;
             foreach (var item in _PlaneType.get_list())
             {
@@ -54,15 +50,16 @@ namespace DuAn1
                     {
                         if (i < 20)
                         {
-                            seat.ClassId = 1;
+                            SeatDetail seat = new SeatDetail();
+                            seat.ClassId = 2;
                             seat.PlaneTypeId = item.Id;
                             seat.SeatCode = "PT" + (i + 1);
                             _seatDetailServices.Create(seat);
                         }
                         else
                         {
-
-                            seat.ClassId = 2;
+                            SeatDetail seat = new SeatDetail();
+                            seat.ClassId = 1;
                             seat.PlaneTypeId = item.Id;
                             seat.SeatCode = "TG" + (a + 1);
                             _seatDetailServices.Create(seat);
@@ -73,15 +70,16 @@ namespace DuAn1
                     {
                         if (i < 35)
                         {
-                            seat.ClassId = 1;
+                            SeatDetail seat = new SeatDetail();
+                            seat.ClassId = 2;
                             seat.PlaneTypeId = item.Id;
                             seat.SeatCode = "PT" + (i + 1);
                             _seatDetailServices.Create(seat);
                         }
                         else
                         {
-
-                            seat.ClassId = 2;
+                            SeatDetail seat = new SeatDetail();
+                            seat.ClassId = 1;
                             seat.PlaneTypeId = item.Id;
                             seat.SeatCode = "TG" + (a + 1);
                             _seatDetailServices.Create(seat);
