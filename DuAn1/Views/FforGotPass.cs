@@ -38,27 +38,27 @@ namespace DuAn1.Views
         {
             try
             {
-                if (tbx_email.Text != "" && _services.Get(tbx_email.Text).Email != tbx_email.Text)
+                if (tbx_email.Text != "" && _services.Get(tbx_email.Text).Email == tbx_email.Text)
                 {
                     countDown.Interval = 1000;
                     countDown.Start();
                     minutes = 5;
                     seconds = 60;
                     string email = tbx_email.Text;
-                    string subject = "Verify to Email";
-                    string body = "Your code otp is : ";
+                    string subject = "Mã xác thực để lấy lại mật khẩu của bạn là:";
+                    string body = "Mã xác thực của bạn là: ";
                     int role_id = 99;
                     code_otp = _validate.randomCode();
                     if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
                     {
                         time.Visible = true;
-                        MessageBox.Show("Email Sent Successfully.");
+                        MessageBox.Show("Mã xác thực đã được gửi đến email của bạn");
                         btn_sendCode.Enabled = false;
                         btn_success.Enabled = true;
                     }
                     else
                     {
-                        MessageBox.Show("Can't sent Email");
+                        MessageBox.Show("Không thể gửi mã xác thực đến email");
                     }
                 }
                 else
@@ -118,6 +118,7 @@ namespace DuAn1.Views
                         Customer customer = _services.Get(tbx_email.Text);
                         customer.Password = _validate.ReversePass(tbx_pass2.Text);
                         MessageBox.Show(_services.Update(customer));
+                        this.Close();
                     }
                     else
                     {

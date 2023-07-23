@@ -215,13 +215,13 @@ namespace DuAn1.Views
                     seconds = 60;
                     string email = txb_email.Text;
                     string subject = "Chào mừng bạn đến với bán vé máy bay";
-                    string body = "Mã OTP để xác minh tài khoản đăng ký của bạn là: ";
+                    string body = "Mã xác thực để xác minh tài khoản đăng ký của bạn là: ";
                     int role_id = 99;
                     code_otp = _validate.randomCode();
                     if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
                     {
                         time.Visible = true;
-                        MessageBox.Show("Đã gửi mã!");
+                        MessageBox.Show("Mã xác thực đã được gửi đến email của bạn!");
                         btn_SendCode.Enabled = false;
                         btn_sign.Enabled = true;
                     }
@@ -285,7 +285,7 @@ namespace DuAn1.Views
             else
             {
                 _check_information = false;
-                lb_ErrorOtp.Text = "Mã bạn nhập ko trùng mã OTP được cấp";
+                lb_ErrorOtp.Text = "Mã bạn nhập ko trùng mã xác thực được cấp";
                 lb_ErrorOtp.Visible = true;
                 lb_ErrorOtp.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorOtp.ForeColor = System.Drawing.Color.Red;
