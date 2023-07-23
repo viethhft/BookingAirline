@@ -131,11 +131,14 @@ namespace _1_DAL.Models
                     .HasColumnType("datetime")
                     .HasColumnName("dateFlight");
 
+                entity.Property(e => e.DateTo)
+                    .HasColumnType("datetime")
+                    .HasColumnName("dateTo");
                 entity.Property(e => e.FlightCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("flightCode");
-
+                
                 entity.Property(e => e.GoFrom)
                     .HasMaxLength(100)
                     .HasColumnName("goFrom");
