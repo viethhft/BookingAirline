@@ -76,7 +76,7 @@ namespace DuAn1.Views
         void loaddata()
         {
             dgv_chuyenbay.Rows.Clear();
-            dgv_chuyenbay.ColumnCount = 8;
+            dgv_chuyenbay.ColumnCount = 9;
             dgv_chuyenbay.Columns[0].Name = "Tên máy bay";
             dgv_chuyenbay.Columns[1].Name = "Địa điểm bay";
             dgv_chuyenbay.Columns[2].Name = "Mã chuyến bay";
@@ -85,11 +85,13 @@ namespace DuAn1.Views
             dgv_chuyenbay.Columns[5].Name = "Thời gian đi";
             dgv_chuyenbay.Columns[6].Name = "Thời gian về";
             dgv_chuyenbay.Columns[7].Name = "Giá";
+            dgv_chuyenbay.Columns[8].Name = "id";
+            dgv_chuyenbay.Columns[8].Visible = false;
             foreach (var item in _flight.get_list())
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price);
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
             }
             txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
             nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[7].Value.ToString());
@@ -184,7 +186,7 @@ namespace DuAn1.Views
             check();
             if (checkInfo)
             {
-                Flight flight = _flight.get_list().Where(c=>c.FlightCode==txb_codeflight.Text).FirstOrDefault();
+                Flight flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
                 foreach (var item in _plantype.get_list())
                 {
                     if (item.DisplayName == cmb_PlaneType.Text)
