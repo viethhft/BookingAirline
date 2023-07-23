@@ -51,7 +51,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(100)
-                    .HasColumnName("display_name");
+                    .HasColumnName("displayName");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Banks)
@@ -68,7 +68,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(50)
-                    .HasColumnName("display_name");
+                    .HasColumnName("displayName");
 
                 entity.Property(e => e.Price).HasColumnName("price");
             });
@@ -171,7 +171,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(50)
-                    .HasColumnName("display_name");
+                    .HasColumnName("displayName");
 
                 entity.Property(e => e.LocaCode)
                     .HasMaxLength(50)
@@ -186,7 +186,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(50)
-                    .HasColumnName("display_name");
+                    .HasColumnName("displayName");
 
                 entity.Property(e => e.PlaneCode)
                     .HasMaxLength(50)
@@ -222,7 +222,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(10)
-                    .HasColumnName("display_name");
+                    .HasColumnName("displayName");
             });
 
             modelBuilder.Entity<SeatDetail>(entity =>
@@ -298,7 +298,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.DisplayName)
                     .HasMaxLength(50)
-                    .HasColumnName("display_name");
+                    .HasColumnName("displayName");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(100)
