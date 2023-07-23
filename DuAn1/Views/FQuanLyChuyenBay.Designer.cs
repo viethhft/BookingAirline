@@ -40,7 +40,7 @@
             this.cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.cmb_PlaneType);
             this.groupBox1.Controls.Add(this.cmb_To);
             this.groupBox1.Controls.Add(this.cmb_From);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgv_chuyenbay);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -184,6 +184,7 @@
             this.cmb_Location.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmb_Location.ItemHeight = 30;
             this.cmb_Location.Location = new System.Drawing.Point(27, 94);
+            this.cmb_Location.MaxDropDownItems = 10;
             this.cmb_Location.Name = "cmb_Location";
             this.cmb_Location.Size = new System.Drawing.Size(241, 36);
             this.cmb_Location.TabIndex = 22;
@@ -233,17 +234,17 @@
             this.cmb_From.Size = new System.Drawing.Size(241, 36);
             this.cmb_From.TabIndex = 19;
             // 
-            // dataGridView1
+            // dgv_chuyenbay
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 195);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1020, 262);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_chuyenbay.AllowUserToAddRows = false;
+            this.dgv_chuyenbay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_chuyenbay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_chuyenbay.Location = new System.Drawing.Point(4, 195);
+            this.dgv_chuyenbay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_chuyenbay.Name = "dgv_chuyenbay";
+            this.dgv_chuyenbay.RowTemplate.Height = 25;
+            this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
+            this.dgv_chuyenbay.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -344,7 +345,7 @@
             this.Text = "FQuanLyChuyenBay";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,7 +360,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_chuyenbay;
         private Label label8;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_To;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_From;
