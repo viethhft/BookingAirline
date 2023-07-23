@@ -41,7 +41,6 @@ namespace DuAn1
         }
         void load()
         {
-           
             if (Settings.Default.isRemember)
             {
                 tb_user.Text = Settings.Default.username;
