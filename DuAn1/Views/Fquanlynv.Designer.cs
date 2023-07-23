@@ -175,11 +175,11 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(374, 113);
+            label4.Location = new Point(374, 105);
             label4.Name = "label4";
-            label4.Size = new Size(78, 18);
+            label4.Size = new Size(71, 18);
             label4.TabIndex = 9;
-            label4.Text = "Password";
+            label4.Text = "Mật khẩu";
             // 
             // label3
             // 
@@ -195,7 +195,7 @@
             // 
             txt_Email.Location = new Point(116, 105);
             txt_Email.Name = "txt_Email";
-            txt_Email.Size = new Size(201, 27);
+            txt_Email.Size = new Size(201, 23);
             txt_Email.TabIndex = 7;
             // 
             // txt_Sdt
@@ -219,7 +219,7 @@
             // 
             txt_Ten.Location = new Point(116, 33);
             txt_Ten.Name = "txt_Ten";
-            txt_Ten.Size = new Size(201, 27);
+            txt_Ten.Size = new Size(201, 23);
             txt_Ten.TabIndex = 4;
             // 
             // label1

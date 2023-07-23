@@ -36,11 +36,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmb_Location = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,11 +63,11 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.guna2DateTimePicker2);
             this.groupBox1.Controls.Add(this.guna2DateTimePicker1);
-            this.groupBox1.Controls.Add(this.guna2ComboBox4);
-            this.groupBox1.Controls.Add(this.guna2ComboBox3);
-            this.groupBox1.Controls.Add(this.guna2ComboBox2);
-            this.groupBox1.Controls.Add(this.guna2ComboBox1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.cmb_Location);
+            this.groupBox1.Controls.Add(this.cmb_PlaneType);
+            this.groupBox1.Controls.Add(this.cmb_To);
+            this.groupBox1.Controls.Add(this.cmb_From);
+            this.groupBox1.Controls.Add(this.dgv_chuyenbay);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -173,77 +173,78 @@
             this.guna2DateTimePicker1.TabIndex = 23;
             this.guna2DateTimePicker1.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
-            // guna2ComboBox4
+            // cmb_Location
             // 
-            this.guna2ComboBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox4.ItemHeight = 30;
-            this.guna2ComboBox4.Location = new System.Drawing.Point(27, 94);
-            this.guna2ComboBox4.Name = "guna2ComboBox4";
-            this.guna2ComboBox4.Size = new System.Drawing.Size(241, 36);
-            this.guna2ComboBox4.TabIndex = 22;
+            this.cmb_Location.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_Location.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_Location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Location.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_Location.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_Location.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Location.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_Location.ItemHeight = 30;
+            this.cmb_Location.Location = new System.Drawing.Point(27, 94);
+            this.cmb_Location.MaxDropDownItems = 10;
+            this.cmb_Location.Name = "cmb_Location";
+            this.cmb_Location.Size = new System.Drawing.Size(241, 36);
+            this.cmb_Location.TabIndex = 22;
             // 
-            // guna2ComboBox3
+            // cmb_PlaneType
             // 
-            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox3.ItemHeight = 30;
-            this.guna2ComboBox3.Location = new System.Drawing.Point(27, 31);
-            this.guna2ComboBox3.Name = "guna2ComboBox3";
-            this.guna2ComboBox3.Size = new System.Drawing.Size(241, 36);
-            this.guna2ComboBox3.TabIndex = 21;
+            this.cmb_PlaneType.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_PlaneType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_PlaneType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_PlaneType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_PlaneType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_PlaneType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_PlaneType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_PlaneType.ItemHeight = 30;
+            this.cmb_PlaneType.Location = new System.Drawing.Point(27, 31);
+            this.cmb_PlaneType.Name = "cmb_PlaneType";
+            this.cmb_PlaneType.Size = new System.Drawing.Size(241, 36);
+            this.cmb_PlaneType.TabIndex = 21;
             // 
-            // guna2ComboBox2
+            // cmb_To
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(325, 153);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(242, 36);
-            this.guna2ComboBox2.TabIndex = 20;
+            this.cmb_To.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_To.ItemHeight = 30;
+            this.cmb_To.Location = new System.Drawing.Point(325, 153);
+            this.cmb_To.Name = "cmb_To";
+            this.cmb_To.Size = new System.Drawing.Size(242, 36);
+            this.cmb_To.TabIndex = 20;
             // 
-            // guna2ComboBox1
+            // cmb_From
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(27, 151);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(241, 36);
-            this.guna2ComboBox1.TabIndex = 19;
+            this.cmb_From.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_From.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_From.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_From.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_From.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_From.ItemHeight = 30;
+            this.cmb_From.Location = new System.Drawing.Point(27, 151);
+            this.cmb_From.Name = "cmb_From";
+            this.cmb_From.Size = new System.Drawing.Size(241, 36);
+            this.cmb_From.TabIndex = 19;
             // 
-            // dataGridView1
+            // dgv_chuyenbay
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 195);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1020, 262);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_chuyenbay.AllowUserToAddRows = false;
+            this.dgv_chuyenbay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_chuyenbay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_chuyenbay.Location = new System.Drawing.Point(4, 195);
+            this.dgv_chuyenbay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_chuyenbay.Name = "dgv_chuyenbay";
+            this.dgv_chuyenbay.RowTemplate.Height = 25;
+            this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
+            this.dgv_chuyenbay.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -344,7 +345,7 @@
             this.Text = "FQuanLyChuyenBay";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,18 +360,18 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_chuyenbay;
         private Label label8;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_To;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_From;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private TextBox textBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_Location;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_PlaneType;
         private Label label9;
         private TextBox textBox3;
         private TextBox textBox2;

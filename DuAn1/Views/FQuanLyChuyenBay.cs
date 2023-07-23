@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _2_BUS.IService;
+using _2_BUS.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,29 @@ namespace DuAn1.Views
 {
     public partial class FQuanLyChuyenBay : Form
     {
+        IPlaneTypeServices _plantype;
+        ILocationServices _location;
+        IFlightServices _flight;
         public FQuanLyChuyenBay()
         {
+            _flight=new FlightServices();
+            _location= new LocationService();
+            _plantype = new PlantypeServices();
             InitializeComponent();
+            load();
         }
-
+        void load()
+        {
+            cmb_PlaneType.DataSource = _plantype.get_list();
+            cmb_PlaneType.DisplayMember= "displayName";
+            cmb_PlaneType.ValueMember = "id";
+            cmb_Location.DataSource = _location.get_list();
+            cmb_Location.DisplayMember= "displayName";
+            cmb_From.DataSource = _location.get_list();
+            cmb_From.DisplayMember = "displayName";
+            cmb_To.DataSource = _location.get_list();
+            cmb_To.DisplayMember = "displayName";
+            dgv_chuyenbay.DataSource = _flight.get_list();
+        }
     }
 }

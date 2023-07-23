@@ -1,13 +1,10 @@
-﻿using DuAn1.Views;
-using _2_BUS.Service;
+﻿using _1_DAL.Models;
 using _2_BUS.IService;
-using GUI.Views;
-using GUI.Properties;
-using System.Security.Cryptography;
-using System.Text;
+using _2_BUS.Service;
 using _2_BUS.Validate;
-using Guna.UI2.WinForms;
-using _1_DAL.Models;
+using DuAn1.Views;
+using GUI.Properties;
+using GUI.Views;
 
 namespace DuAn1
 {
@@ -21,9 +18,15 @@ namespace DuAn1
         FHomeUser _fkhachhang;
         ICustomerServices _customerServices;
         IStaffServices _staffServices;
+        ISeatDetailServices _seatDetailServices;
+        IPlaneTypeServices _PlaneType;
+        IClassServices _classServices;
         int _role;
         public Form1()
         {
+            _classServices = new ClassServices();
+            _PlaneType = new PlantypeServices();
+            _seatDetailServices = new SeatDetailServices();
             _customerServices = new CustomerServices();
             _staffServices = new StaffServices();
             _validate = new Validate();
