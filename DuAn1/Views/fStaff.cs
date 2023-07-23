@@ -13,6 +13,7 @@ namespace DuAn1.Views
 {
     public partial class fStaff : Form
     {
+        int _role;
         public fStaff()
         {
             InitializeComponent();
