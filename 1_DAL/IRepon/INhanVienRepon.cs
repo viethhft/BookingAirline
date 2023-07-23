@@ -10,7 +10,6 @@ namespace _1_DAL.IRepon
     public interface INhanVienRepon
     {
         public bool addNhanVien(staff sta);
-        public bool deleteNhanVien(staff sta);
         public bool updateNhanVien(staff sta);
         List<staff> getNhanVien();
     }

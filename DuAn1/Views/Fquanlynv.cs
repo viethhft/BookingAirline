@@ -1,7 +1,7 @@
 ﻿using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
-using _2_BUS.ViewModel;
+using _2_BUS.Validate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,42 +17,59 @@ namespace DuAn1
 {
     public partial class Fquanlynv : Form
     {
-        private INhanVienServices _inhanVienServices;
-
-        private staff _nv;
-        private List<ViewNhanVien> _lstviewNhanViens;
-        private int _id;
+        Validate _validate;
+        INhanVienServices _inhanVienServices;
+        bool checkInfo = true;
         public Fquanlynv()
         {
+            _validate = new Validate();
             InitializeComponent();
             _inhanVienServices = new NhanVienServices();
-            _nv = new staff();
-            _lstviewNhanViens = new List<ViewNhanVien>();
             loadData();
         }
         private void loadData()
         {
             dgrid_NhanVien.Rows.Clear();
-            dgrid_NhanVien.ColumnCount = 7;
-            dgrid_NhanVien.Columns[0].Name = "Id";
-            dgrid_NhanVien.Columns[1].Name = "RoleId";
-            dgrid_NhanVien.Columns[2].Name = "Displayname";
-            dgrid_NhanVien.Columns[3].Name = "Password";
-            dgrid_NhanVien.Columns[4].Name = "Email";
-            dgrid_NhanVien.Columns[5].Name = "Phone";
-            dgrid_NhanVien.Columns[6].Name = "Status";
-            _lstviewNhanViens = _inhanVienServices.GetAllViewNhanVien();
+            dgrid_NhanVien.ColumnCount = 5;
+            dgrid_NhanVien.Columns[0].Name = "Họ và tên";
+            dgrid_NhanVien.Columns[1].Name = "Mật khẩu";
+            dgrid_NhanVien.Columns[2].Name = "Email";
+            dgrid_NhanVien.Columns[3].Name = "Số điện thoại";
+            dgrid_NhanVien.Columns[4].Name = "Trạng thái";
+            txt_Ten.Enabled = false;
+            txt_Email.Enabled = false;
+            txt_Pass.Enabled = false;
+            txt_Sdt.Enabled = false;
             if (txt_timkiem.Text != "")
             {
-                _lstviewNhanViens = _lstviewNhanViens.Where(c => c.DisplayName.Contains(txt_timkiem.Text) || c.Phone.StartsWith(txt_timkiem.Text)).ToList();
+                dgrid_NhanVien.DataSource = _inhanVienServices.getAllNhanVien().Where(c => c.DisplayName.Contains(txt_timkiem.Text) || c.Phone.StartsWith(txt_timkiem.Text)).ToList();
             }
-            foreach (var item in _lstviewNhanViens)
+            foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.RoleId != 99))
             {
-                dgrid_NhanVien.Rows.Add(item.Id, item.RoleId, item.DisplayName, item.Password, item.Email, item.Phone, item.Status);
+                if (item.Status == 1)
+                {
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Đang hoạt động");
+                }
+                else
+                {
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Ngừng hoạt động");
+                }
             }
-
-
-
+            txt_Ten.Text = dgrid_NhanVien.Rows[1].Cells[0].Value.ToString();
+            txt_Pass.Text = dgrid_NhanVien.Rows[1].Cells[1].Value.ToString();
+            txt_Sdt.Text = dgrid_NhanVien.Rows[1].Cells[3].Value.ToString();
+            txt_Email.Text = dgrid_NhanVien.Rows[1].Cells[2].Value.ToString();
+            if (dgrid_NhanVien.Rows[1].Cells[4].Value.ToString() == "Đang hoạt động")
+            {
+                rbtn_onl.Checked = true;
+            }
+            else
+            {
+                rbtn_off.Checked = true;
+            }
+            lb_ErrorEmail.Visible = false;
+            lb_ErrorName.Visible = false;
+            lb_ErrorPhone.Visible = false;
         }
         public void reset()
         {
@@ -64,100 +81,91 @@ namespace DuAn1
             rbtn_onl.Checked = false;
             rbtn_off.Checked = false;
         }
-        public bool checknhap()
+        public void checknhap()
         {
-            if (txt_Pass.Text == "" || txt_Email.Text == "" || txt_Ten.Text == "" /*|| txt_user.Text == "" */|| txt_Sdt.Text == "") return false;
-            return true;
+            if (txt_Pass.Text == "" || txt_Email.Text == "" || txt_Ten.Text == "" /*|| txt_user.Text == "" */|| txt_Sdt.Text == "")
+                checkInfo = false;
+            checkInfo = true;
         }
-
+        bool check = true;
         private void button1_Click(object sender, EventArgs e)
         {
-            var p = _inhanVienServices.GetAllViewNhanVien().FirstOrDefault(p => p.DisplayName == txt_Ten.Text);
-            if (checknhap() == false)
+            checknhap();
+            if (checkInfo)
             {
-                MessageBox.Show("Không được để trống các trường", "Chú ý");
-
-            }
-            else if (p != null)
-            {
-                MessageBox.Show("Tên nhân viên đã tồn tại", "Chú ý");
+                staff staff = new staff();
+                check = !check;
+                if (check)
+                {
+                    bool checkDuplicate = false;
+                    foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.RoleId != 99))
+                    {
+                        if (txt_Email.Text == item.Email || txt_Sdt.Text == item.Phone)
+                        {
+                            checkDuplicate = true;
+                        }
+                    }
+                    if (!checkDuplicate)
+                    {
+                        staff.DisplayName = txt_Ten.Text;
+                        staff.Email = txt_Email.Text;
+                        staff.Phone = txt_Sdt.Text;
+                        staff.Password = _validate.ReversePass(txt_Pass.Text);
+                        MessageBox.Show(_inhanVienServices.addNhanVien(staff));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email hoặc số điện thoại đã được sử dụng để đăng kí!");
+                    }
+                }
+                else
+                {
+                    txt_Ten.Enabled = true;
+                    txt_Email.Enabled = true;
+                    txt_Pass.Enabled = true;
+                    txt_Sdt.Enabled = true;
+                    txt_Email.Text = "";
+                    txt_Pass.Text = "";
+                    txt_Ten.Text = "";
+                    txt_Sdt.Text = "";
+                    lb_ErrorPhone.Visible = false;
+                    lb_ErrorName.Visible = false;
+                    lb_ErrorEmail.Visible = false;
+                }
             }
             else
             {
-                OpenFileDialog op = new OpenFileDialog();
-                DialogResult dialog = MessageBox.Show("Bạn có muốn thêm Nhân viên không?", "Thêm", MessageBoxButtons.YesNo);
-                if (dialog == DialogResult.Yes)
-                {
-                    ViewNhanVien nv = new ViewNhanVien()
-                    {
-
-
-                        DisplayName = txt_Ten.Text,
-                        Password = txt_Pass.Text,
-                        Email = txt_Email.Text,
-                        Phone = txt_Sdt.Text,
-                        Status = rbtn_onl.Checked ? 1 : 0,
-
-                    };
-                    _inhanVienServices.addNhanVien(nv);
-                    MessageBox.Show($"Thêm thành công");
-                    reset();
-                }
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            var p = _inhanVienServices.GetAllViewNhanVien().FirstOrDefault(c => c.DisplayName == txt_Ten.Text);
-            if (p == null)
+            staff staff = _inhanVienServices.getAllNhanVien().Where(c => c.Email == txt_Email.Text).FirstOrDefault();
+            if (rbtn_onl.Checked)
             {
-                MessageBox.Show("Không tìm thấy tên nhân viên");
+                staff.Status = 1;
+                _inhanVienServices.updateNhanVien(staff);
             }
             else
             {
-                if (checknhap() == false)
-                {
-                    MessageBox.Show("Không được để trống các trường");
-                }
-                else
-                {
-                    OpenFileDialog op = new OpenFileDialog();
-                    DialogResult dialog = MessageBox.Show("Bạn có muốn cập nhật lại không?", "Cập nhật", MessageBoxButtons.YesNo);
-                    if (dialog == DialogResult.Yes)
-                    {
-                        ViewNhanVien nv = new ViewNhanVien()
-                        {
-                            Id = _id,
-                            DisplayName = txt_Ten.Text,
-                            Password = txt_Pass.Text,
-                            Email = txt_Email.Text,
-                            Phone = txt_Sdt.Text,
-                            Status = rbtn_onl.Checked ? 1 : 0,
-
-                        };
-                        _inhanVienServices.updateNhanVien(nv);
-                        MessageBox.Show("Sửa thành công");
-                        reset();
-                    }
-                }
+                staff.Status = 0;
+                _inhanVienServices.updateNhanVien(staff);
             }
         }
 
-        private void dgrid_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow r = dgrid_NhanVien.Rows[e.RowIndex];
-                _nv = _inhanVienServices.getAllNhanVien().FirstOrDefault(c => c.Id == _id);
-                _id = int.Parse(dgrid_NhanVien.Rows[e.RowIndex].Cells[0].Value.ToString());
-                txt_Ten.Text = _nv.DisplayName;
-                txt_Pass.Text = _nv.Password;
-                txt_Email.Text = _nv.Email;
-                txt_Sdt.Text = _nv.Phone;
-
-
-            }
-            if (_nv.Status == 1)
+            check = true;
+            txt_Ten.Enabled = false;
+            txt_Email.Enabled = false;
+            txt_Pass.Enabled = false;
+            txt_Sdt.Enabled = false;
+            txt_Ten.Text = dgrid_NhanVien.CurrentRow.Cells[0].Value.ToString();
+            txt_Pass.Text = dgrid_NhanVien.CurrentRow.Cells[1].Value.ToString();
+            txt_Sdt.Text = dgrid_NhanVien.CurrentRow.Cells[3].Value.ToString();
+            txt_Email.Text = dgrid_NhanVien.CurrentRow.Cells[2].Value.ToString();
+            if (dgrid_NhanVien.CurrentRow.Cells[4].Value.ToString() == "Đang hoạt động")
             {
                 rbtn_onl.Checked = true;
             }
@@ -165,6 +173,112 @@ namespace DuAn1
             {
                 rbtn_off.Checked = true;
             }
+        }
+
+
+
+        private void txt_Ten_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkName(txt_Ten.Text))
+            {
+                lb_ErrorName.Text = "";
+                lb_ErrorName.Visible = false;
+                checkInfo = true;
+            }
+            else
+            {
+                checkInfo = false;
+                lb_ErrorName.Text = "Không đúng định dạng tên";
+                lb_ErrorName.Visible = true;
+                lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorName.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void txt_Email_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkEmail(txt_Email.Text))
+            {
+                lb_ErrorEmail.Text = "";
+                lb_ErrorEmail.Visible = false;
+                checkInfo = true;
+            }
+            else
+            {
+                checkInfo = false;
+                lb_ErrorEmail.Text = "Không đúng định dạng Email";
+                lb_ErrorEmail.Visible = true;
+                lb_ErrorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorEmail.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void txt_Sdt_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkPhoneNumber(txt_Sdt.Text))
+            {
+                lb_ErrorPhone.Text = "";
+                lb_ErrorPhone.Visible = false;
+                checkInfo = true;
+            }
+            else
+            {
+                checkInfo = false;
+                lb_ErrorPhone.Text = "Không đúng định dạng Email";
+                lb_ErrorPhone.Visible = true;
+                lb_ErrorPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorPhone.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            dgrid_NhanVien.Rows.Clear();
+            dgrid_NhanVien.ColumnCount = 5;
+            dgrid_NhanVien.Columns[0].Name = "Họ và tên";
+            dgrid_NhanVien.Columns[1].Name = "Mật khẩu";
+            dgrid_NhanVien.Columns[2].Name = "Email";
+            dgrid_NhanVien.Columns[3].Name = "Số điện thoại";
+            dgrid_NhanVien.Columns[4].Name = "Trạng thái";
+            txt_Ten.Enabled = false;
+            txt_Email.Enabled = false;
+            txt_Pass.Enabled = false;
+            txt_Sdt.Enabled = false;
+            
+            foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.DisplayName.Contains(txt_timkiem.Text) || c.Phone.StartsWith(txt_timkiem.Text)).Where(c=>c.RoleId!=99))
+            {
+                if (item.Status == 1)
+                {
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Đang hoạt động");
+                }
+                else
+                {
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Ngừng hoạt động");
+                }
+            }
+            if (dgrid_NhanVien.RowCount>0)
+            {
+                txt_Ten.Text = dgrid_NhanVien.Rows[0].Cells[0].Value.ToString();
+                txt_Pass.Text = dgrid_NhanVien.Rows[0].Cells[1].Value.ToString();
+                txt_Sdt.Text = dgrid_NhanVien.Rows[0].Cells[3].Value.ToString();
+                txt_Email.Text = dgrid_NhanVien.Rows[0].Cells[2].Value.ToString();
+                if (dgrid_NhanVien.Rows[0].Cells[4].Value.ToString() == "Đang hoạt động")
+                {
+                    rbtn_onl.Checked = true;
+                }
+                else
+                {
+                    rbtn_off.Checked = true;
+                }
+                lb_ErrorEmail.Visible = false;
+                lb_ErrorName.Visible = false;
+                lb_ErrorPhone.Visible = false;
+            }
+        }
+
+        private void txt_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            btn_Search_Click(sender, e);
         }
     }
 }

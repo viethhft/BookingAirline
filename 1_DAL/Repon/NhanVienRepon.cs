@@ -24,13 +24,6 @@ namespace _1_DAL.Repon
             return true;
         }
 
-        public bool deleteNhanVien(staff sta)
-        {
-            _dbContext.staff.Remove(sta);
-            _dbContext.SaveChanges();
-            return true;
-        }
-
         public List<staff> getNhanVien()
         {
             _lststaff = _dbContext.staff.ToList();
