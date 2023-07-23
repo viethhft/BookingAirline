@@ -31,17 +31,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txb_Search = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.txb_Price = new System.Windows.Forms.TextBox();
+            this.dateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmb_Location = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txb_codeflight = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,17 +58,17 @@
             // 
             this.groupBox1.Controls.Add(this.guna2Button2);
             this.groupBox1.Controls.Add(this.guna2Button1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txb_Search);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.guna2DateTimePicker2);
-            this.groupBox1.Controls.Add(this.guna2DateTimePicker1);
+            this.groupBox1.Controls.Add(this.txb_Price);
+            this.groupBox1.Controls.Add(this.dateTo);
+            this.groupBox1.Controls.Add(this.DateFrom);
             this.groupBox1.Controls.Add(this.cmb_Location);
             this.groupBox1.Controls.Add(this.cmb_PlaneType);
             this.groupBox1.Controls.Add(this.cmb_To);
             this.groupBox1.Controls.Add(this.cmb_From);
             this.groupBox1.Controls.Add(this.dgv_chuyenbay);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txb_codeflight);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -117,14 +117,14 @@
             this.guna2Button1.TabIndex = 28;
             this.guna2Button1.Text = "Thêm";
             // 
-            // textBox3
+            // txb_Search
             // 
-            this.textBox3.Location = new System.Drawing.Point(619, 152);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 37);
-            this.textBox3.TabIndex = 27;
+            this.txb_Search.Location = new System.Drawing.Point(619, 152);
+            this.txb_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_Search.Multiline = true;
+            this.txb_Search.Name = "txb_Search";
+            this.txb_Search.Size = new System.Drawing.Size(210, 37);
+            this.txb_Search.TabIndex = 27;
             // 
             // label9
             // 
@@ -136,42 +136,42 @@
             this.label9.TabIndex = 26;
             this.label9.Text = "Tìm kiếm";
             // 
-            // textBox2
+            // txb_Price
             // 
-            this.textBox2.Location = new System.Drawing.Point(619, 95);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 37);
-            this.textBox2.TabIndex = 25;
+            this.txb_Price.Location = new System.Drawing.Point(619, 95);
+            this.txb_Price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_Price.Multiline = true;
+            this.txb_Price.Name = "txb_Price";
+            this.txb_Price.Size = new System.Drawing.Size(210, 37);
+            this.txb_Price.TabIndex = 25;
             // 
-            // guna2DateTimePicker2
+            // dateTo
             // 
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(325, 96);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(242, 36);
-            this.guna2DateTimePicker2.TabIndex = 24;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.Checked = true;
+            this.dateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dateTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTo.Location = new System.Drawing.Point(325, 96);
+            this.dateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(242, 36);
+            this.dateTo.TabIndex = 24;
+            this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
-            // guna2DateTimePicker1
+            // DateFrom
             // 
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(325, 30);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(242, 36);
-            this.guna2DateTimePicker1.TabIndex = 23;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.Checked = true;
+            this.DateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DateFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateFrom.Location = new System.Drawing.Point(325, 30);
+            this.DateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.Size = new System.Drawing.Size(242, 36);
+            this.DateFrom.TabIndex = 23;
+            this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
             // cmb_Location
             // 
@@ -252,14 +252,14 @@
             this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
             this.dgv_chuyenbay.TabIndex = 0;
             // 
-            // textBox1
+            // txb_codeflight
             // 
-            this.textBox1.Location = new System.Drawing.Point(619, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 37);
-            this.textBox1.TabIndex = 8;
+            this.txb_codeflight.Location = new System.Drawing.Point(619, 30);
+            this.txb_codeflight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_codeflight.Multiline = true;
+            this.txb_codeflight.Name = "txb_codeflight";
+            this.txb_codeflight.Size = new System.Drawing.Size(210, 37);
+            this.txb_codeflight.TabIndex = 8;
             // 
             // label8
             // 
@@ -373,13 +373,13 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTo;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DateFrom;
+        private TextBox txb_codeflight;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_Location;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_PlaneType;
         private Label label9;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox txb_Search;
+        private TextBox txb_Price;
     }
 }

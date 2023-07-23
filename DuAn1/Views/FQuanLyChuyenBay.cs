@@ -29,15 +29,26 @@ namespace DuAn1.Views
         {
             cmb_PlaneType.DataSource = _plantype.get_list();
             cmb_PlaneType.DisplayMember= "displayName";
-            cmb_PlaneType.ValueMember = "id";
+            cmb_PlaneType.ValueMember = "planeCode";
+
             cmb_Location.DataSource = _location.get_list();
             cmb_Location.DisplayMember= "displayName";
+            cmb_Location.ValueMember = "locaCode";
+
             cmb_From.DataSource = _location.get_list();
             cmb_From.DisplayMember = "displayName";
+            cmb_From.ValueMember = "locaCode";
+
             cmb_To.DataSource = _location.get_list();
             cmb_To.DisplayMember = "displayName";
+            cmb_To.ValueMember = "locaCode";
+
             dgv_chuyenbay.DataSource = _flight.get_list();
         }
-
+        void ReverseCodePlight()
+        {
+            //code plight = codeplane+codeloca+codeFrom+codeTo+NgayDi+ngayVe
+            
+        }
     }
 }
