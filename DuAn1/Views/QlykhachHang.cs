@@ -22,7 +22,8 @@ namespace DuAn1.Views
 
         private void QlykhachHang_Load(object sender, EventArgs e)
         {
-            dtgv_kh.ColumnCount = 7;
+            dtgv_kh.Rows.Clear();
+            dtgv_kh.ColumnCount = 8;
             dtgv_kh.Columns[0].Name = "STT";
             dtgv_kh.Columns[1].Name = "Tên khách hàng";
             dtgv_kh.Columns[2].Name = "Email";
@@ -30,11 +31,63 @@ namespace DuAn1.Views
             dtgv_kh.Columns[4].Name = "SĐT";
             dtgv_kh.Columns[5].Name = "Địa chỉ";
             dtgv_kh.Columns[6].Name = "Giới tính";
+            dtgv_kh.Columns[7].Name = "Trạng thái";
 
             foreach (var i in _cusServices.GetCustomers())
             {
-                dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.Value.Date.ToString(), i.Phone, i.Address, i.Gender);
+                dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.Value.Date.ToString(), i.Phone, i.Address, i.Gender,
+                    i.Status == 1 ? "Hoạt động" : "Vô hiệu hóa");
             }
+        }
+
+        private void dtgv_kh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tb_name.Text = dtgv_kh.CurrentRow.Cells[1].Value.ToString();
+            tb_gender.Text = dtgv_kh.CurrentRow.Cells[6].Value.ToString();
+            tb_phone.Text = dtgv_kh.CurrentRow.Cells[4].Value.ToString();
+            rtb_addr.Text = dtgv_kh.CurrentRow.Cells[5].Value.ToString();
+            dtp_dob.Value = Convert.ToDateTime(dtgv_kh.CurrentRow.Cells[3].Value.ToString());
+            tb_status.Text = dtgv_kh.CurrentRow.Cells[7].Value.ToString();
+        }
+
+        private void btn_find_Click(object sender, EventArgs e)
+        {
+            if (tb_find.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên người cần tìm kiếm", "Thông báo");
+            }
+            else
+            {
+                dtgv_kh.Rows.Clear();
+                dtgv_kh.ColumnCount = 8;
+                dtgv_kh.Columns[0].Name = "STT";
+                dtgv_kh.Columns[1].Name = "Tên khách hàng";
+                dtgv_kh.Columns[2].Name = "Email";
+                dtgv_kh.Columns[3].Name = "Ngày sinh";
+                dtgv_kh.Columns[4].Name = "SĐT";
+                dtgv_kh.Columns[5].Name = "Địa chỉ";
+                dtgv_kh.Columns[6].Name = "Giới tính";
+                dtgv_kh.Columns[7].Name = "Trạng thái";
+
+                foreach (var i in _cusServices.GetCustomers().Where(c => c.LastName.ToLower() == tb_find.Text))
+                {
+                    dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.Value.Date.ToString(), i.Phone, i.Address, i.Gender,
+                        i.Status == 1 ? "Hoạt động" : "Vô hiệu hóa");
+                }
+            }
+        }
+
+        private void tb_find_TextChanged(object sender, EventArgs e)
+        {
+            if (tb_find.Text == "")
+            {
+                QlykhachHang_Load(null, null);
+            }
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
