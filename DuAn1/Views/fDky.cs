@@ -19,7 +19,11 @@ namespace DuAn1.Views
     public partial class fDky : Form
     {
 
-        bool _check_information = true;
+        bool _check_name = true;
+        bool _check_mail = true;
+        bool _check_ma = true;
+        bool _check_sdt = true;
+        bool _check_matkhau = true;
         ICustomerServices _dangKyService;
         IStaffServices _staffServices;
         Validate _validate;
@@ -71,37 +75,47 @@ namespace DuAn1.Views
         }
         private void btn_sign_Click(object sender, EventArgs e)
         {
-            if (txb_name.Text == "" || txb_address.Text == "" || txb_email.Text == "" || tbx_phone.Text == "" || tbx_pass1.Text == "" || tbx_pass2.Text == "") _check_information = false;
-            if (_check_information)
+            if (txb_name.Text != "" || txb_address.Text != "" || txb_email.Text != "" || tbx_phone.Text != "" || tbx_pass1.Text != "" || tbx_pass2.Text != "")
             {
-                Customer customer = new Customer();
-                string[] fullname = _validate.cutName(txb_name.Text);
-                customer.FirstName = fullname[0].Trim();
-                customer.MiddleName = fullname[1].Trim();
-                customer.LastName = fullname[2].Trim();
-                customer.Email = txb_email.Text;
-                customer.Address = txb_address.Text;
-                customer.Dob = Date.Value;
-                customer.Phone = tbx_phone.Text;
-                customer.Gender = cbx_gender.Text;
-                customer.Password = _validate.ReversePass(tbx_pass2.Text);
-                if (check_duplicate_mail(customer.Email))
+                if (_check_ma&&_check_mail&&_check_matkhau&&_check_name&&_check_sdt)
                 {
-                    MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (tbx_pass1.Text==tbx_pass2.Text)
+                    {
+                        Customer customer = new Customer();
+                        string[] fullname = _validate.cutName(txb_name.Text);
+                        customer.FirstName = fullname[0].Trim();
+                        customer.MiddleName = fullname[1].Trim();
+                        customer.LastName = fullname[2].Trim();
+                        customer.Email = txb_email.Text;
+                        customer.Address = txb_address.Text;
+                        customer.Dob = Date.Value;
+                        customer.Phone = tbx_phone.Text;
+                        customer.Gender = cbx_gender.Text;
+                        customer.Password = _validate.ReversePass(tbx_pass2.Text);
+                        if (check_duplicate_mail(customer.Email))
+                        {
+                            MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (MessageBox.Show(_dangKyService.Create(customer), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
+                            {
+                                reset();
+                                this.Close();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mật khẩu hai trường chưa trùng nhau");
+                    }
                 }
                 else
                 {
-                    if (MessageBox.Show(_dangKyService.Create(customer), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
-                    {
-                        reset();
-                        this.Close();
-                    }
+                    MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btn_sign_MouseHover(object sender, EventArgs e)
@@ -125,11 +139,11 @@ namespace DuAn1.Views
             {
                 lb_ErrorEmail.Text = "";
                 lb_ErrorEmail.Visible = false;
-                _check_information = true;
+                _check_mail = true;
             }
             else
             {
-                _check_information = false;
+                _check_mail = false;
                 lb_ErrorEmail.Text = "Không đúng định dạng email";
                 lb_ErrorEmail.Visible = true;
                 lb_ErrorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
@@ -143,11 +157,11 @@ namespace DuAn1.Views
             {
                 lb_ErrorPhoneNumber.Text = "";
                 lb_ErrorPhoneNumber.Visible = false;
-                _check_information = true;
+                _check_sdt = true;
             }
             else
             {
-                _check_information = false;
+                _check_sdt = false;
                 lb_ErrorPhoneNumber.Text = "Không đúng định dạng số điện thoại";
                 lb_ErrorPhoneNumber.Visible = true;
                 lb_ErrorPhoneNumber.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
@@ -163,11 +177,11 @@ namespace DuAn1.Views
             {
                 lb_ErrorPassAgain.Text = "";
                 lb_ErrorPassAgain.Visible = false;
-                _check_information = true;
+                _check_matkhau = true;
             }
             else
             {
-                _check_information = false;
+                _check_matkhau = false;
                 lb_ErrorPassAgain.Text = "Mật khẩu phải trùng mật khẩu đã nhập";
                 lb_ErrorPassAgain.Visible = true;
                 lb_ErrorPassAgain.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
@@ -181,11 +195,11 @@ namespace DuAn1.Views
             {
                 lb_ErrorName.Text = "";
                 lb_ErrorName.Visible = false;
-                _check_information = true;
+                _check_name = true;
             }
             else
             {
-                _check_information = false;
+                _check_name = false;
                 lb_ErrorName.Text = "Không đúng định dạng tên";
                 lb_ErrorName.Visible = true;
                 lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
@@ -280,11 +294,11 @@ namespace DuAn1.Views
             {
                 lb_ErrorOtp.Text = "";
                 lb_ErrorOtp.Visible = false;
-                _check_information = true;
+                _check_ma = true;
             }
             else
             {
-                _check_information = false;
+                _check_ma = false;
                 lb_ErrorOtp.Text = "Mã bạn nhập ko trùng mã xác thực được cấp";
                 lb_ErrorOtp.Visible = true;
                 lb_ErrorOtp.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);

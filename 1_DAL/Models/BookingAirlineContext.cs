@@ -276,7 +276,9 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.TotalPrice).HasColumnName("totalPrice");
 
-                entity.Property(e => e.SeatCode).HasColumnName("seatCode");
+                entity.Property(e => e.SeatCode).HasMaxLength(50).HasColumnName("seatCode");
+
+                entity.Property(e => e.NameTicket).HasMaxLength(100).HasColumnName("nameTicket");
 
                 entity.Property(e => e.TotalTicket).HasColumnName("totalTicket");
 
