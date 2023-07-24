@@ -305,5 +305,6 @@ namespace DuAn1.Views
                 lb_ErrorOtp.ForeColor = System.Drawing.Color.Red;
             }
         }
+
     }
 }
