@@ -19,7 +19,9 @@ namespace DuAn1.Views
 {
     public partial class FforGotPass : Form
     {
-        bool _check_info = true;
+        bool _check_email = true;
+        bool _check_ma = true;
+        bool _check_pass = true;
 
         ICustomerServices _services;
         Validate _validate;
@@ -113,17 +115,24 @@ namespace DuAn1.Views
             {
                 if (tbx_ma.Text == code_otp)
                 {
-                    if (_check_info)
+                    if (txb_pass1.Text==tbx_pass2.Text)
                     {
-                        Customer customer = _services.Get(tbx_email.Text);
-                        customer.Password = _validate.ReversePass(tbx_pass2.Text);
-                        MessageBox.Show(_services.Update(customer));
-                        this.Close();
+                        if (_check_pass && _check_email && _check_ma)
+                        {
+                            Customer customer = _services.Get(tbx_email.Text);
+                            customer.Password = _validate.ReversePass(tbx_pass2.Text);
+                            MessageBox.Show(_services.Update(customer));
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        MessageBox.Show("Mật khẩu đã nhập không trùng nhau");
                     }
                 }
             }
@@ -139,11 +148,11 @@ namespace DuAn1.Views
             {
                 lb_errorEmail.Text = "";
                 lb_errorEmail.Visible = false;
-                _check_info = true;
+                _check_email = true;
             }
             else
             {
-                _check_info = false;
+                _check_email = false;
                 lb_errorEmail.Text = "Email ko đúng định dạng";
                 lb_errorEmail.Visible = true;
                 lb_errorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
@@ -157,11 +166,11 @@ namespace DuAn1.Views
             {
                 lb_errorCode.Text = "";
                 lb_errorCode.Visible = false;
-                _check_info = true;
+                _check_ma = true;
             }
             else
             {
-                _check_info = false;
+                _check_ma = false;
                 lb_errorCode.Text = "Mã otp nhập chưa đúng mã được cấp";
                 lb_errorCode.Visible = true;
                 lb_errorCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
@@ -176,11 +185,11 @@ namespace DuAn1.Views
             {
                 lb_errorPass.Text = "";
                 lb_errorPass.Visible = false;
-                _check_info = true;
+                _check_pass = true;
             }
             else
             {
-                _check_info = false;
+                _check_pass = false;
                 lb_errorPass.Text = "Mật khẩu nhập lại phải trùng khớp mật khẩu đã nhập!";
                 lb_errorPass.Visible = true;
                 lb_errorPass.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
