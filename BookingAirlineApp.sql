@@ -50,12 +50,12 @@ create table Bank
 	foreign key(customerId) references Customer(id)
 )
 
-create table Location
-(
-	id int primary key identity,
-	locaCode nvarchar(50) not null,
-	displayName nvarchar(50) not null
-)
+--create table Location
+--(
+--	id int primary key identity,
+--	locaCode nvarchar(50) not null,
+--	displayName nvarchar(50) not null
+--)
 
 create table Plane_type
 (
@@ -64,7 +64,12 @@ create table Plane_type
 	displayName nvarchar(50) not null,
 	totalSeat int not null
 )
-
+create table airport (
+	id int primary key identity,
+	airportCode varchar(20) not null,
+	airportName nvarchar(50) not null,
+	locationFly nvarchar(50) not null,
+)
 create table Flight
 (
 	id bigint primary key identity,
@@ -78,8 +83,10 @@ create table Flight
 	dateTo datetime
 
 	foreign key(planeTypeId) references Plane_type(id),
-	foreign key(locationId) references Location(id)
+	foreign key(locationId) references airport(id)
 )
+
+
 
 create table Ticket
 (
@@ -150,70 +157,86 @@ insert Plane_type(planeCode,displayName,totalSeat) values
 ('Plane_5',N'Máy bay số 5',50),
 ('Plane_6',N'Máy bay số 6',30)
 
-insert Location(locaCode,displayName) values
-('TB',N'Thái Bình'),
-('SL',N'Sơn La'),
-('HT',N'Hà Tĩnh'),
-('HA',N'Hà Giang'),
-('CB',N'Cao Bằng'),
-('LC',N'Lào Cai'),
-('LCH',N'Lai Châu'),
-('BK',N'Bắc Kạn'),
-('LS',N'Lạng Sơn'),
-('TQ',N'Tuyên Quang'),
-('YB',N'Yên Bái'),
-('TN',N'Thái Nguyên'),
-('ĐB',N'Điện Biên'),
-('PT',N'Phú Thọ'),
-('VP',N'Vĩnh Phúc'),
-('BG',N'Bắc Giang'),
-('BN',N'Bắc Ninh'),
-('HN',N'Hà Nội'),
-('QN',N'Quảng Ninh'),
-('HD',N'Hải Dương'),
-('HP',N'Hải Phòng'),
-('HB',N'Hòa Bình'),
-('HY',N'Hưng Yên'),
-('HNM',N'Hà Nam'),
-('NĐ',N'Nam Định'),
-('NB',N'Ninh Bình'),
-('TH',N'Thanh Hóa'),
-('NA',N'Nghệ An'),
-('QB',N'Quảng Bình'),
-('QT',N'Quảng Trị'),
-('TTH',N'Thừa Thiên Huế'),
-('ĐN',N'Đà Nẵng'),
-('QN',N'Quảng Nam'),
-('QNI',N'Quảng Ngãi'),
-('KT',N'Kon Tum'),
-('GL',N'Gia Lai'),
-('BĐ',N'Bình Định'),
-('PY',N'Phú Yên'),
-('ĐL',N'Đắk Lắk'),
-('KH',N'Khánh Hòa'),
-('ĐN',N'Đắk Nông'),
-('LĐ',N'Lâm Đồng'),
-('NT',N'Ninh Thuận'),
-('BP',N'Bình Phước'),
-('TN',N'Tây Ninh'),
-('BD',N'Bình Dương'),
-('ĐN',N'Đồng Nai'),
-('BT',N'Bình Thuận'),
-('TPHCM',N'Thành phố Hồ Chí Minh'),
-('LA',N'Long An'),
-('BR-VT',N'Bà Rịa - Vũng Tàu'),
-('ĐT',N'Đồng Tháp'),
-('AG',N'An Giang'),
-('TG',N'Tiền Giang'),
-('VL',N'Vĩnh Long'),
-('BT',N'Bến Tren'),
-('CT',N'Cần Thơ'),
-('KG',N'Kiên Giang'),
-('TV',N'Trà Vinh'),
-('HG',N'Hậu Giang'),
-('ST',N'Sóc Trăng'),
-('BL',N'Bạc Liêu'),
-('CM',N'Cà Mau')
+--insert Location(locaCode,displayName) values
+--('TB',N'Thái Bình'),
+--('SL',N'Sơn La'),
+--('HT',N'Hà Tĩnh'),
+--('HA',N'Hà Giang'),
+--('CB',N'Cao Bằng'),
+--('LC',N'Lào Cai'),
+--('LCH',N'Lai Châu'),
+--('BK',N'Bắc Kạn'),
+--('LS',N'Lạng Sơn'),
+--('TQ',N'Tuyên Quang'),
+--('YB',N'Yên Bái'),
+--('TN',N'Thái Nguyên'),
+--('ĐB',N'Điện Biên'),
+--('PT',N'Phú Thọ'),
+--('VP',N'Vĩnh Phúc'),
+--('BG',N'Bắc Giang'),
+--('BN',N'Bắc Ninh'),
+--('HN',N'Hà Nội'),
+--('QN',N'Quảng Ninh'),
+--('HD',N'Hải Dương'),
+--('HP',N'Hải Phòng'),
+--('HB',N'Hòa Bình'),
+--('HY',N'Hưng Yên'),
+--('HNM',N'Hà Nam'),
+--('NĐ',N'Nam Định'),
+--('NB',N'Ninh Bình'),
+--('TH',N'Thanh Hóa'),
+--('NA',N'Nghệ An'),
+--('QB',N'Quảng Bình'),
+--('QT',N'Quảng Trị'),
+--('TTH',N'Thừa Thiên Huế'),
+--('ĐN',N'Đà Nẵng'),
+--('QN',N'Quảng Nam'),
+--('QNI',N'Quảng Ngãi'),
+--('KT',N'Kon Tum'),
+--('GL',N'Gia Lai'),
+--('BĐ',N'Bình Định'),
+--('PY',N'Phú Yên'),
+--('ĐL',N'Đắk Lắk'),
+--('KH',N'Khánh Hòa'),
+--('ĐN',N'Đắk Nông'),
+--('LĐ',N'Lâm Đồng'),
+--('NT',N'Ninh Thuận'),
+--('BP',N'Bình Phước'),
+--('TN',N'Tây Ninh'),
+--('BD',N'Bình Dương'),
+--('ĐN',N'Đồng Nai'),
+--('BT',N'Bình Thuận'),
+--('TPHCM',N'Thành phố Hồ Chí Minh'),
+--('LA',N'Long An'),
+--('BR-VT',N'Bà Rịa - Vũng Tàu'),
+--('ĐT',N'Đồng Tháp'),
+--('AG',N'An Giang'),
+--('TG',N'Tiền Giang'),
+--('VL',N'Vĩnh Long'),
+--('BT',N'Bến Tren'),
+--('CT',N'Cần Thơ'),
+--('KG',N'Kiên Giang'),
+--('TV',N'Trà Vinh'),
+--('HG',N'Hậu Giang'),
+--('ST',N'Sóc Trăng'),
+--('BL',N'Bạc Liêu'),
+--('CM',N'Cà Mau')
+
+insert airport(airportCode,airportName,locationFly) values
+(N'SGN',N'Sân bay quốc tế Tân Sơn Nhất',N'Tp.Hồ Chí Minh'),
+(N'HAN',N'Sân bay quốc tế Nội Bài',N'Hà Nội'),
+(N'DAD',N'Sân bay quốc tế Đà Nẵng',N'Đà Nẵng'),
+(N'VDO',N'Sân bay quốc tế Vân Đồn, Hạ Long',N'Quảng Ninh'),
+(N'PQC',N'Sân bay quốc tế Phú Quốc',N'Kiên Giang'),
+(N'HPH',N'Sân bay Quốc tế Cát Bi',N'Hải Phòng'),
+(N'VII',N'Sân bay Quốc tế Vinh',N'Nghệ An'),
+(N'HUI',N'Sân bay Quốc tế Phú Bài',N'Huế'),
+(N'CXR',N'Sân bay Quốc tế Cam Ranh',N'Khánh Hòa'),
+(N'DLI',N'Sân bay Quốc tế Liên Khương',N'Lâm Đồng'),
+(N'UIH',N'Sân bay Quốc tế Phù Cát',N'Bình Định'),
+(N'VCA',N'Sân bay Quốc tế Cần Thơ',N'Cần Thơ')
+
+
 
 go
 
