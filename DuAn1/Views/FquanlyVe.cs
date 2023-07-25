@@ -31,8 +31,6 @@ namespace DuAn1.Views
             _flightServices = new FlightServices();
             _locationServices = new LocationService();
             InitializeComponent();
-            btn_Delete.Enabled = false;
-            btn_Update.Enabled = false;
             txt_GiaVe.Enabled = false;
             txt_KhuyenMai.Enabled = false;
             txt_MaGhe.Enabled = false;
