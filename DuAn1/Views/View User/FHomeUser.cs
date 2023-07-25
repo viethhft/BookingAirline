@@ -16,12 +16,30 @@ namespace GUI.Views
     {
         private string _message="";
         FthongTinNguoiDung _fTinNguoiDung;
+        FbuyTickket _buyticket;
         public FHomeUser()
         {
+            _buyticket = new FbuyTickket();
             InitializeComponent();
             label1.Visible = false;
+            load();
         }
+        void load()
+        {
+            guna2Button1.FillColor = Color.DarkCyan;
 
+            guna2Button2.FillColor = Color.White;//màu background button
+            guna2Button2.ForeColor = Color.Black;//thay màu chữ
+
+            guna2Button3.FillColor = Color.White;
+            guna2Button3.ForeColor = Color.Black;
+
+            guna2Button4.FillColor = Color.White;
+            guna2Button4.ForeColor = Color.Black;
+
+            ChildForm(_buyticket);
+
+        }
         public FHomeUser(string Message) : this()
         {
             _message = Message;
@@ -133,6 +151,11 @@ namespace GUI.Views
         {
             FthongTinNguoiDung fthongTinNguoiDung = new FthongTinNguoiDung(label1.Text);
             fthongTinNguoiDung.ShowDialog();
+        }
+
+        private void FHomeUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
