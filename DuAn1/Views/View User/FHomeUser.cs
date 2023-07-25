@@ -14,7 +14,7 @@ namespace GUI.Views
 {
     public partial class FHomeUser : Form
     {
-        private string _message="";
+        private string _message = "";
         FthongTinNguoiDung _fTinNguoiDung;
         FbuyTickket _buyticket;
         public FHomeUser()
