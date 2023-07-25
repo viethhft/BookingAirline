@@ -173,6 +173,7 @@ namespace DuAn1.Views
                     flight.DateFlight = DateFrom.Value;
                     flight.DateTo = dateTo.Value;
                     flight.Price = Convert.ToInt32(nbr_Price.Value);
+
                     MessageBox.Show(_flight.create(flight));
                     load();
                 }
