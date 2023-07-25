@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lb_ErrorPhone = new System.Windows.Forms.Label();
-            this.lb_ErrorEmail = new System.Windows.Forms.Label();
-            this.lb_ErrorName = new System.Windows.Forms.Label();
             this.rbtn_off = new System.Windows.Forms.RadioButton();
             this.rbtn_onl = new System.Windows.Forms.RadioButton();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -59,9 +56,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lb_ErrorPhone);
-            this.groupBox1.Controls.Add(this.lb_ErrorEmail);
-            this.groupBox1.Controls.Add(this.lb_ErrorName);
             this.groupBox1.Controls.Add(this.rbtn_off);
             this.groupBox1.Controls.Add(this.rbtn_onl);
             this.groupBox1.Controls.Add(this.btn_Search);
@@ -83,33 +77,6 @@
             this.groupBox1.Size = new System.Drawing.Size(675, 251);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            // 
-            // lb_ErrorPhone
-            // 
-            this.lb_ErrorPhone.AutoSize = true;
-            this.lb_ErrorPhone.Location = new System.Drawing.Point(480, 66);
-            this.lb_ErrorPhone.Name = "lb_ErrorPhone";
-            this.lb_ErrorPhone.Size = new System.Drawing.Size(38, 15);
-            this.lb_ErrorPhone.TabIndex = 20;
-            this.lb_ErrorPhone.Text = "label9";
-            // 
-            // lb_ErrorEmail
-            // 
-            this.lb_ErrorEmail.AutoSize = true;
-            this.lb_ErrorEmail.Location = new System.Drawing.Point(116, 138);
-            this.lb_ErrorEmail.Name = "lb_ErrorEmail";
-            this.lb_ErrorEmail.Size = new System.Drawing.Size(38, 15);
-            this.lb_ErrorEmail.TabIndex = 19;
-            this.lb_ErrorEmail.Text = "label8";
-            // 
-            // lb_ErrorName
-            // 
-            this.lb_ErrorName.AutoSize = true;
-            this.lb_ErrorName.Location = new System.Drawing.Point(117, 66);
-            this.lb_ErrorName.Name = "lb_ErrorName";
-            this.lb_ErrorName.Size = new System.Drawing.Size(38, 15);
-            this.lb_ErrorName.TabIndex = 18;
-            this.lb_ErrorName.Text = "label7";
             // 
             // rbtn_off
             // 
@@ -176,6 +143,7 @@
             this.btn_Sua.TabIndex = 1;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Them
             // 
@@ -231,7 +199,6 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(201, 23);
             this.txt_Email.TabIndex = 7;
-            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
             // 
             // txt_Sdt
             // 
@@ -239,7 +206,6 @@
             this.txt_Sdt.Name = "txt_Sdt";
             this.txt_Sdt.Size = new System.Drawing.Size(176, 23);
             this.txt_Sdt.TabIndex = 6;
-            this.txt_Sdt.TextChanged += new System.EventHandler(this.txt_Sdt_TextChanged);
             // 
             // label2
             // 
@@ -257,7 +223,6 @@
             this.txt_Ten.Name = "txt_Ten";
             this.txt_Ten.Size = new System.Drawing.Size(201, 23);
             this.txt_Ten.TabIndex = 4;
-            this.txt_Ten.TextChanged += new System.EventHandler(this.txt_Ten_TextChanged);
             // 
             // label1
             // 
@@ -341,8 +306,5 @@
         private PictureBox pictureBox1;
         private RadioButton rbtn_off;
         private RadioButton rbtn_onl;
-        private Label lb_ErrorPhone;
-        private Label lb_ErrorEmail;
-        private Label lb_ErrorName;
     }
 }

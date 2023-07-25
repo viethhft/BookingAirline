@@ -67,9 +67,6 @@ namespace DuAn1
             {
                 rbtn_off.Checked = true;
             }
-            lb_ErrorEmail.Visible = false;
-            lb_ErrorName.Visible = false;
-            lb_ErrorPhone.Visible = false;
         }
         public void reset()
         {
@@ -129,9 +126,6 @@ namespace DuAn1
                     txt_Pass.Text = "";
                     txt_Ten.Text = "";
                     txt_Sdt.Text = "";
-                    lb_ErrorPhone.Visible = false;
-                    lb_ErrorName.Visible = false;
-                    lb_ErrorEmail.Visible = false;
                 }
             }
             else
@@ -145,14 +139,15 @@ namespace DuAn1
             staff staff = _inhanVienServices.getAllNhanVien().Where(c => c.Email == txt_Email.Text).FirstOrDefault();
             if (rbtn_onl.Checked)
             {
-                staff.Status = 1;
-                _inhanVienServices.updateNhanVien(staff);
+                staff.Status = 0;
+                MessageBox.Show(_inhanVienServices.updateNhanVien(staff));
             }
             else
             {
-                staff.Status = 0;
-                _inhanVienServices.updateNhanVien(staff);
+                staff.Status = 1;
+                MessageBox.Show(_inhanVienServices.updateNhanVien(staff));
             }
+            loadData();
         }
 
         private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,60 +168,6 @@ namespace DuAn1
             else
             {
                 rbtn_off.Checked = true;
-            }
-        }
-
-        private void txt_Ten_TextChanged(object sender, EventArgs e)
-        {
-            if (_validate.checkName(txt_Ten.Text))
-            {
-                lb_ErrorName.Text = "";
-                lb_ErrorName.Visible = false;
-                checkInfo = true;
-            }
-            else
-            {
-                checkInfo = false;
-                lb_ErrorName.Text = "Không đúng định dạng tên";
-                lb_ErrorName.Visible = true;
-                lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-                lb_ErrorName.ForeColor = System.Drawing.Color.Red;
-            }
-        }
-
-        private void txt_Email_TextChanged(object sender, EventArgs e)
-        {
-            if (_validate.checkEmail(txt_Email.Text))
-            {
-                lb_ErrorEmail.Text = "";
-                lb_ErrorEmail.Visible = false;
-                checkInfo = true;
-            }
-            else
-            {
-                checkInfo = false;
-                lb_ErrorEmail.Text = "Không đúng định dạng Email";
-                lb_ErrorEmail.Visible = true;
-                lb_ErrorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-                lb_ErrorEmail.ForeColor = System.Drawing.Color.Red;
-            }
-        }
-
-        private void txt_Sdt_TextChanged(object sender, EventArgs e)
-        {
-            if (_validate.checkPhoneNumber(txt_Sdt.Text))
-            {
-                lb_ErrorPhone.Text = "";
-                lb_ErrorPhone.Visible = false;
-                checkInfo = true;
-            }
-            else
-            {
-                checkInfo = false;
-                lb_ErrorPhone.Text = "Không đúng định dạng số điện thoại";
-                lb_ErrorPhone.Visible = true;
-                lb_ErrorPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-                lb_ErrorPhone.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -269,9 +210,6 @@ namespace DuAn1
                 {
                     rbtn_off.Checked = true;
                 }
-                lb_ErrorEmail.Visible = false;
-                lb_ErrorName.Visible = false;
-                lb_ErrorPhone.Visible = false;
             }
         }
 
