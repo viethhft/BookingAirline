@@ -91,7 +91,7 @@ namespace DuAn1.Views
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price+"VNĐ", item.Id);
             }
             if (dgv_chuyenbay.RowCount>0)
             {

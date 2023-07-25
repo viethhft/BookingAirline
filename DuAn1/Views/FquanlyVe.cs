@@ -164,5 +164,10 @@ namespace DuAn1.Views
                 load();
             }
         }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
