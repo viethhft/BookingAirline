@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            btn_Update = new Guna.UI2.WinForms.Guna2Button();
-            btn_Delete = new Guna.UI2.WinForms.Guna2Button();
             txt_Search = new TextBox();
             label11 = new Label();
             txt_MaGhe = new TextBox();
@@ -62,8 +60,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btn_Update);
-            groupBox1.Controls.Add(btn_Delete);
             groupBox1.Controls.Add(txt_Search);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(txt_MaGhe);
@@ -91,38 +87,6 @@
             groupBox1.Size = new Size(1031, 219);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            // 
-            // btn_Update
-            // 
-            btn_Update.BorderRadius = 10;
-            btn_Update.DisabledState.BorderColor = Color.DarkGray;
-            btn_Update.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Update.FillColor = Color.DarkCyan;
-            btn_Update.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(776, 155);
-            btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(92, 45);
-            btn_Update.TabIndex = 36;
-            btn_Update.Text = "Sửa";
-            // 
-            // btn_Delete
-            // 
-            btn_Delete.BorderRadius = 10;
-            btn_Delete.DisabledState.BorderColor = Color.DarkGray;
-            btn_Delete.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Delete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Delete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Delete.FillColor = Color.DarkCyan;
-            btn_Delete.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Delete.ForeColor = Color.White;
-            btn_Delete.Location = new Point(886, 155);
-            btn_Delete.Name = "btn_Delete";
-            btn_Delete.Size = new Size(90, 45);
-            btn_Delete.TabIndex = 35;
-            btn_Delete.Text = "Xóa";
             // 
             // txt_Search
             // 
@@ -428,8 +392,6 @@
         private TextBox txt_TenVe;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_LoaiVe;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayDi;
-        private Guna.UI2.WinForms.Guna2Button btn_Update;
-        private Guna.UI2.WinForms.Guna2Button btn_Delete;
         private TextBox txt_Search;
         private Label label11;
     }

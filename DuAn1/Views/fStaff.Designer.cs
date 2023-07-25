@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fStaff));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             btn_qlykh = new Button();
@@ -53,7 +52,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImage = GUI.Properties.Resources.mb3_HCZW;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(3, 27);
             pictureBox1.Name = "pictureBox1";

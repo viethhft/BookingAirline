@@ -92,7 +92,7 @@ namespace DuAn1.Views
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            if(sta == 1)
+            if (sta == 1)
             {
                 sta = 0;
             }
@@ -105,7 +105,7 @@ namespace DuAn1.Views
                 Id = id,
                 Status = sta
             };
-            if(MessageBox.Show("Xác nhận cập nhật trạng thái của tài khoản này?","Xác nhận",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Xác nhận cập nhật trạng thái của tài khoản này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 MessageBox.Show(_cusServices.Update(cus));
                 Clear();

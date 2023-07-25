@@ -73,6 +73,36 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _123 {
+            get {
+                object obj = ResourceManager.GetObject("123", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _12312312 {
+            get {
+                object obj = ResourceManager.GetObject("12312312", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _87818B7C_7D92_4EEB_9D36_9B80DE0_1641385520780 {
+            get {
+                object obj = ResourceManager.GetObject("87818B7C_7D92_4EEB_9D36_9B80DE0-1641385520780", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap businessregistration_signpen_negocio_inscripcio_2358 {
             get {
                 object obj = ResourceManager.GetObject("businessregistration_signpen_negocio_inscripcio_2358", resourceCulture);
@@ -433,6 +463,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mb3_HCZW {
+            get {
+                object obj = ResourceManager.GetObject("mb3_HCZW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap meo_len_ke_hoach_cho_chuyen_di {
             get {
                 object obj = ResourceManager.GetObject("meo-len-ke-hoach-cho-chuyen-di", resourceCulture);
@@ -466,6 +506,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Rectangle_2 {
             get {
                 object obj = ResourceManager.GetObject("Rectangle 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tranh_ve_chua_to_mau_may_bay_cho_be_tap_to_7 {
+            get {
+                object obj = ResourceManager.GetObject("tranh-ve-chua-to-mau-may-bay-cho-be-tap-to-7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
