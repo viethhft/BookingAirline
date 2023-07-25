@@ -215,7 +215,7 @@ namespace DuAn1.Views
                 flight.DateFlight = DateFrom.Value;
                 flight.DateTo = dateTo.Value;
                 flight.Price = Convert.ToInt32(nbr_Price.Value);
-                int hours = Convert.ToInt32(guna2NumericUpDown1.Value);
+                int hours = Convert.ToInt32(timeStart_hour.Value);
                 TimeSpan time = new TimeSpan(hours, 0, 0);
                 MessageBox.Show(time.ToString());
                 load();
@@ -260,5 +260,10 @@ namespace DuAn1.Views
         DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
         dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
     }
-}
+
+        private void dgv_chuyenbay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

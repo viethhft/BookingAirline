@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.timeStart_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -51,15 +51,38 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.timeStart_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.timeStart_second = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.timeEnd_second = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.timeEnd_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.timeEnd_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_hour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_second)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_second)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_hour)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.guna2NumericUpDown1);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.timeEnd_second);
+            this.groupBox1.Controls.Add(this.timeEnd_minute);
+            this.groupBox1.Controls.Add(this.timeEnd_hour);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.timeStart_second);
+            this.groupBox1.Controls.Add(this.timeStart_minute);
+            this.groupBox1.Controls.Add(this.timeStart_hour);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmb_To);
@@ -89,19 +112,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // guna2NumericUpDown1
+            // timeStart_hour
             // 
-            this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(579, 34);
-            this.guna2NumericUpDown1.Maximum = new decimal(new int[] {
+            this.timeStart_hour.BackColor = System.Drawing.Color.Transparent;
+            this.timeStart_hour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeStart_hour.Location = new System.Drawing.Point(579, 34);
+            this.timeStart_hour.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
-            this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(41, 25);
-            this.guna2NumericUpDown1.TabIndex = 36;
+            this.timeStart_hour.Name = "timeStart_hour";
+            this.timeStart_hour.Size = new System.Drawing.Size(41, 25);
+            this.timeStart_hour.TabIndex = 36;
             // 
             // label10
             // 
@@ -179,7 +202,7 @@
             this.btn_Update.FillColor = System.Drawing.Color.DarkCyan;
             this.btn_Update.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Update.ForeColor = System.Drawing.Color.White;
-            this.btn_Update.Location = new System.Drawing.Point(865, 96);
+            this.btn_Update.Location = new System.Drawing.Point(852, 84);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(128, 45);
             this.btn_Update.TabIndex = 29;
@@ -195,7 +218,7 @@
             this.btn_Add.FillColor = System.Drawing.Color.DarkCyan;
             this.btn_Add.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(865, 147);
+            this.btn_Add.Location = new System.Drawing.Point(852, 135);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(128, 45);
             this.btn_Add.TabIndex = 28;
@@ -291,6 +314,7 @@
             this.dgv_chuyenbay.RowTemplate.Height = 25;
             this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
             this.dgv_chuyenbay.TabIndex = 0;
+            this.dgv_chuyenbay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chuyenbay_CellContentClick);
             // 
             // txb_codeflight
             // 
@@ -361,6 +385,116 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Loại máy bay";
             // 
+            // timeStart_minute
+            // 
+            this.timeStart_minute.BackColor = System.Drawing.Color.Transparent;
+            this.timeStart_minute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeStart_minute.Location = new System.Drawing.Point(642, 34);
+            this.timeStart_minute.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeStart_minute.Name = "timeStart_minute";
+            this.timeStart_minute.Size = new System.Drawing.Size(41, 25);
+            this.timeStart_minute.TabIndex = 37;
+            // 
+            // timeStart_second
+            // 
+            this.timeStart_second.BackColor = System.Drawing.Color.Transparent;
+            this.timeStart_second.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeStart_second.Location = new System.Drawing.Point(703, 34);
+            this.timeStart_second.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeStart_second.Name = "timeStart_second";
+            this.timeStart_second.Size = new System.Drawing.Size(41, 25);
+            this.timeStart_second.TabIndex = 38;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(624, 32);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 25);
+            this.label11.TabIndex = 42;
+            this.label11.Text = ":";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(685, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(16, 25);
+            this.label12.TabIndex = 43;
+            this.label12.Text = ":";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(913, 32);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(16, 25);
+            this.label13.TabIndex = 48;
+            this.label13.Text = ":";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(852, 32);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 25);
+            this.label14.TabIndex = 47;
+            this.label14.Text = ":";
+            // 
+            // timeEnd_second
+            // 
+            this.timeEnd_second.BackColor = System.Drawing.Color.Transparent;
+            this.timeEnd_second.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeEnd_second.Location = new System.Drawing.Point(931, 34);
+            this.timeEnd_second.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeEnd_second.Name = "timeEnd_second";
+            this.timeEnd_second.Size = new System.Drawing.Size(41, 25);
+            this.timeEnd_second.TabIndex = 46;
+            // 
+            // timeEnd_minute
+            // 
+            this.timeEnd_minute.BackColor = System.Drawing.Color.Transparent;
+            this.timeEnd_minute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeEnd_minute.Location = new System.Drawing.Point(870, 34);
+            this.timeEnd_minute.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeEnd_minute.Name = "timeEnd_minute";
+            this.timeEnd_minute.Size = new System.Drawing.Size(41, 25);
+            this.timeEnd_minute.TabIndex = 45;
+            // 
+            // timeEnd_hour
+            // 
+            this.timeEnd_hour.BackColor = System.Drawing.Color.Transparent;
+            this.timeEnd_hour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeEnd_hour.Location = new System.Drawing.Point(807, 34);
+            this.timeEnd_hour.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeEnd_hour.Name = "timeEnd_hour";
+            this.timeEnd_hour.Size = new System.Drawing.Size(41, 25);
+            this.timeEnd_hour.TabIndex = 44;
+            // 
             // FQuanLyChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -371,9 +505,14 @@
             this.Text = "FQuanLyChuyenBay";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_hour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_second)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_second)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_hour)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,6 +542,15 @@
         private Label label5;
         private Label label10;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_hour;
+        private Label label13;
+        private Label label14;
+        private Guna.UI2.WinForms.Guna2NumericUpDown timeEnd_second;
+        private Guna.UI2.WinForms.Guna2NumericUpDown timeEnd_minute;
+        private Guna.UI2.WinForms.Guna2NumericUpDown timeEnd_hour;
+        private Label label12;
+        private Label label11;
+        private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_second;
+        private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_minute;
     }
 }
