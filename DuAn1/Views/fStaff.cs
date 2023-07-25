@@ -28,6 +28,7 @@ namespace DuAn1.Views
             if (_role == 1)
             {
                 btn_qlynv.Enabled = false;
+                btn_dthu.Enabled = false;
             }
             else
             {
