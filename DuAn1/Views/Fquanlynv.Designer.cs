@@ -80,59 +80,59 @@
             // 
             // rbtn_off
             // 
-            this.rbtn_off.AutoSize = true;
-            this.rbtn_off.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbtn_off.Location = new System.Drawing.Point(244, 164);
-            this.rbtn_off.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtn_off.Name = "rbtn_off";
-            this.rbtn_off.Size = new System.Drawing.Size(90, 22);
-            this.rbtn_off.TabIndex = 17;
-            this.rbtn_off.TabStop = true;
-            this.rbtn_off.Text = "Nghỉ việc";
-            this.rbtn_off.UseVisualStyleBackColor = true;
+            rbtn_off.AutoSize = true;
+            rbtn_off.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtn_off.Location = new Point(244, 164);
+            rbtn_off.Margin = new Padding(3, 2, 3, 2);
+            rbtn_off.Name = "rbtn_off";
+            rbtn_off.Size = new Size(90, 22);
+            rbtn_off.TabIndex = 17;
+            rbtn_off.TabStop = true;
+            rbtn_off.Text = "Nghỉ việc";
+            rbtn_off.UseVisualStyleBackColor = true;
             // 
             // rbtn_onl
             // 
-            this.rbtn_onl.AutoSize = true;
-            this.rbtn_onl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbtn_onl.Location = new System.Drawing.Point(116, 163);
-            this.rbtn_onl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtn_onl.Name = "rbtn_onl";
-            this.rbtn_onl.Size = new System.Drawing.Size(93, 22);
-            this.rbtn_onl.TabIndex = 16;
-            this.rbtn_onl.TabStop = true;
-            this.rbtn_onl.Text = "Đang làm";
-            this.rbtn_onl.UseVisualStyleBackColor = true;
+            rbtn_onl.AutoSize = true;
+            rbtn_onl.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtn_onl.Location = new Point(116, 163);
+            rbtn_onl.Margin = new Padding(3, 2, 3, 2);
+            rbtn_onl.Name = "rbtn_onl";
+            rbtn_onl.Size = new Size(93, 22);
+            rbtn_onl.TabIndex = 16;
+            rbtn_onl.TabStop = true;
+            rbtn_onl.Text = "Đang làm";
+            rbtn_onl.UseVisualStyleBackColor = true;
             // 
             // btn_Search
             // 
-            this.btn_Search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Search.Location = new System.Drawing.Point(538, 216);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(118, 29);
-            this.btn_Search.TabIndex = 15;
-            this.btn_Search.Text = "Tìm kiếm";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            btn_Search.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Search.Location = new Point(538, 216);
+            btn_Search.Name = "btn_Search";
+            btn_Search.Size = new Size(118, 29);
+            btn_Search.TabIndex = 15;
+            btn_Search.Text = "Tìm kiếm";
+            btn_Search.UseVisualStyleBackColor = true;
+            btn_Search.Click += btn_Search_Click;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(30, 225);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 18);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Tìm kiếm";
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(30, 225);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 18);
+            label6.TabIndex = 14;
+            label6.Text = "Tìm kiếm";
             // 
             // txt_timkiem
             // 
-            this.txt_timkiem.AccessibleDescription = "";
-            this.txt_timkiem.Location = new System.Drawing.Point(116, 222);
-            this.txt_timkiem.Name = "txt_timkiem";
-            this.txt_timkiem.Size = new System.Drawing.Size(416, 23);
-            this.txt_timkiem.TabIndex = 13;
-            this.txt_timkiem.TextChanged += new System.EventHandler(this.txt_timkiem_TextChanged);
+            txt_timkiem.AccessibleDescription = "";
+            txt_timkiem.Location = new Point(116, 222);
+            txt_timkiem.Name = "txt_timkiem";
+            txt_timkiem.Size = new Size(416, 23);
+            txt_timkiem.TabIndex = 13;
+            txt_timkiem.TextChanged += txt_timkiem_TextChanged;
             // 
             // btn_Sua
             // 
@@ -147,51 +147,51 @@
             // 
             // btn_Them
             // 
-            this.btn_Them.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Them.Location = new System.Drawing.Point(538, 163);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(118, 33);
-            this.btn_Them.TabIndex = 0;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
-            this.btn_Them.Click += new System.EventHandler(this.button1_Click);
+            btn_Them.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Them.Location = new Point(538, 163);
+            btn_Them.Name = "btn_Them";
+            btn_Them.Size = new Size(118, 33);
+            btn_Them.TabIndex = 0;
+            btn_Them.Text = "Thêm";
+            btn_Them.UseVisualStyleBackColor = true;
+            btn_Them.Click += button1_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(30, 166);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 18);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Trạng thái";
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(30, 166);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 18);
+            label5.TabIndex = 11;
+            label5.Text = "Trạng thái";
             // 
             // txt_Pass
             // 
-            this.txt_Pass.Location = new System.Drawing.Point(480, 105);
-            this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(176, 23);
-            this.txt_Pass.TabIndex = 10;
+            txt_Pass.Location = new Point(480, 105);
+            txt_Pass.Name = "txt_Pass";
+            txt_Pass.Size = new Size(176, 23);
+            txt_Pass.TabIndex = 10;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(374, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Mật khẩu";
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(374, 105);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 18);
+            label4.TabIndex = 9;
+            label4.Text = "Mật khẩu";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(51, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 18);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Email";
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(51, 105);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 18);
+            label3.TabIndex = 8;
+            label3.Text = "Email";
             // 
             // txt_Email
             // 
@@ -209,13 +209,13 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(374, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Số điện thoại";
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(374, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 18);
+            label2.TabIndex = 5;
+            label2.Text = "Số điện thoại";
             // 
             // txt_Ten
             // 
@@ -226,62 +226,61 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(9, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tên nhân viên";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(9, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(103, 18);
+            label1.TabIndex = 3;
+            label1.Text = "Tên nhân viên";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dgrid_NhanVien);
-            this.groupBox4.Location = new System.Drawing.Point(12, 260);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1031, 221);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
+            groupBox4.Controls.Add(dgrid_NhanVien);
+            groupBox4.Location = new Point(12, 260);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(1031, 221);
+            groupBox4.TabIndex = 3;
+            groupBox4.TabStop = false;
             // 
             // dgrid_NhanVien
             // 
-            this.dgrid_NhanVien.AllowUserToAddRows = false;
-            this.dgrid_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgrid_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_NhanVien.Location = new System.Drawing.Point(0, 22);
-            this.dgrid_NhanVien.Name = "dgrid_NhanVien";
-            this.dgrid_NhanVien.RowHeadersWidth = 51;
-            this.dgrid_NhanVien.RowTemplate.Height = 25;
-            this.dgrid_NhanVien.Size = new System.Drawing.Size(1041, 189);
-            this.dgrid_NhanVien.TabIndex = 0;
-            this.dgrid_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_NhanVien_CellClick);
+            dgrid_NhanVien.AllowUserToAddRows = false;
+            dgrid_NhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgrid_NhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgrid_NhanVien.Location = new Point(0, 22);
+            dgrid_NhanVien.Name = "dgrid_NhanVien";
+            dgrid_NhanVien.RowHeadersWidth = 51;
+            dgrid_NhanVien.RowTemplate.Height = 25;
+            dgrid_NhanVien.Size = new Size(1041, 189);
+            dgrid_NhanVien.TabIndex = 0;
+            dgrid_NhanVien.CellClick += dgrid_NhanVien_CellClick;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.Rectangle_2;
-            this.pictureBox1.Location = new System.Drawing.Point(693, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(350, 242);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackgroundImage = GUI.Properties.Resources.Rectangle_2;
+            pictureBox1.Location = new Point(693, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(350, 242);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // Fquanlynv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 483);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "Fquanlynv";
-            this.Text = "Fquanlynv";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1055, 483);
+            Controls.Add(pictureBox1);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox1);
+            Name = "Fquanlynv";
+            Text = "Fquanlynv";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgrid_NhanVien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

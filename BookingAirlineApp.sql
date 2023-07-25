@@ -90,7 +90,9 @@ create table Ticket
 	twoWay int not null,
 	totalTicket int not null,
 	totalPrice int not null,
-	seatCode varchar(50) not null
+	seatCode varchar(50) not null,
+	nameTicket nvarchar(100) not null,
+	status int not null,
 	foreign key(customerId) references Customer(id),
 	foreign key(flightId) references Flight(id)
 )
