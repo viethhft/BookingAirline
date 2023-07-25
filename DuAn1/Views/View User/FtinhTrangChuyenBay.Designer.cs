@@ -40,10 +40,10 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.date_Start = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lb_ErrorNum = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_ErrorTo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_ErrorTo1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lb_ErrorDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_ErrorFrom = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_ErrorFrom1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_Search = new Guna.UI2.WinForms.Guna2Button();
             this.txt_CodeFlight = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -163,7 +163,6 @@
             this.cbb_To.Name = "cbb_To";
             this.cbb_To.Size = new System.Drawing.Size(314, 36);
             this.cbb_To.TabIndex = 17;
-            this.cbb_To.SelectedIndexChanged += new System.EventHandler(this.cbb_To_SelectedIndexChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -188,6 +187,7 @@
             this.date_Start.Size = new System.Drawing.Size(314, 34);
             this.date_Start.TabIndex = 19;
             this.date_Start.Value = new System.DateTime(2023, 7, 21, 22, 43, 43, 189);
+            this.date_Start.ValueChanged += new System.EventHandler(this.date_Start_ValueChanged);
             // 
             // lb_ErrorNum
             // 
@@ -198,15 +198,15 @@
             this.lb_ErrorNum.TabIndex = 20;
             this.lb_ErrorNum.Text = "THÔNG BÁO";
             // 
-            // lb_ErrorTo
+            // lb_ErrorTo1
             // 
-            this.lb_ErrorTo.BackColor = System.Drawing.Color.Transparent;
-            this.lb_ErrorTo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_ErrorTo.Location = new System.Drawing.Point(391, 203);
-            this.lb_ErrorTo.Name = "lb_ErrorTo";
-            this.lb_ErrorTo.Size = new System.Drawing.Size(73, 17);
-            this.lb_ErrorTo.TabIndex = 21;
-            this.lb_ErrorTo.Text = "THÔNG BÁO";
+            this.lb_ErrorTo1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_ErrorTo1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_ErrorTo1.Location = new System.Drawing.Point(391, 203);
+            this.lb_ErrorTo1.Name = "lb_ErrorTo1";
+            this.lb_ErrorTo1.Size = new System.Drawing.Size(73, 17);
+            this.lb_ErrorTo1.TabIndex = 21;
+            this.lb_ErrorTo1.Text = "THÔNG BÁO";
             // 
             // lb_ErrorDate
             // 
@@ -228,15 +228,15 @@
             this.guna2HtmlLabel9.TabIndex = 24;
             this.guna2HtmlLabel9.Text = "Số hiệu chuyến bay*";
             // 
-            // lb_ErrorFrom
+            // lb_ErrorFrom1
             // 
-            this.lb_ErrorFrom.BackColor = System.Drawing.Color.Transparent;
-            this.lb_ErrorFrom.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_ErrorFrom.Location = new System.Drawing.Point(33, 203);
-            this.lb_ErrorFrom.Name = "lb_ErrorFrom";
-            this.lb_ErrorFrom.Size = new System.Drawing.Size(73, 17);
-            this.lb_ErrorFrom.TabIndex = 25;
-            this.lb_ErrorFrom.Text = "THÔNG BÁO";
+            this.lb_ErrorFrom1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_ErrorFrom1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_ErrorFrom1.Location = new System.Drawing.Point(110, 204);
+            this.lb_ErrorFrom1.Name = "lb_ErrorFrom1";
+            this.lb_ErrorFrom1.Size = new System.Drawing.Size(73, 17);
+            this.lb_ErrorFrom1.TabIndex = 25;
+            this.lb_ErrorFrom1.Text = "THÔNG BÁO";
             // 
             // btn_Search
             // 
@@ -260,7 +260,7 @@
             // 
             // txt_CodeFlight
             // 
-            this.txt_CodeFlight.Location = new System.Drawing.Point(33, 162);
+            this.txt_CodeFlight.Location = new System.Drawing.Point(391, 255);
             this.txt_CodeFlight.Multiline = true;
             this.txt_CodeFlight.Name = "txt_CodeFlight";
             this.txt_CodeFlight.Size = new System.Drawing.Size(314, 36);
@@ -273,10 +273,10 @@
             this.ClientSize = new System.Drawing.Size(784, 421);
             this.Controls.Add(this.txt_CodeFlight);
             this.Controls.Add(this.btn_Search);
-            this.Controls.Add(this.lb_ErrorFrom);
+            this.Controls.Add(this.lb_ErrorFrom1);
             this.Controls.Add(this.guna2HtmlLabel9);
             this.Controls.Add(this.lb_ErrorDate);
-            this.Controls.Add(this.lb_ErrorTo);
+            this.Controls.Add(this.lb_ErrorTo1);
             this.Controls.Add(this.lb_ErrorNum);
             this.Controls.Add(this.date_Start);
             this.Controls.Add(this.guna2HtmlLabel4);
@@ -311,10 +311,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_Start;
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorNum;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorTo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorTo1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorDate;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorFrom;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorFrom1;
         private Guna.UI2.WinForms.Guna2Button btn_Search;
         private TextBox txt_CodeFlight;
     }
