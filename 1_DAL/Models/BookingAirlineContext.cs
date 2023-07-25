@@ -20,7 +20,7 @@ namespace _1_DAL.Models
         public virtual DbSet<Class> Classes { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Flight> Flights { get; set; } = null!;
-        public virtual DbSet<Airport> Locations { get; set; } = null!;
+        public virtual DbSet<Airport> Airports { get; set; } = null!;
         public virtual DbSet<PlaneType> PlaneTypes { get; set; } = null!;
         public virtual DbSet<Recommend> Recommends { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
