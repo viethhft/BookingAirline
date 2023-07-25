@@ -31,7 +31,6 @@
             groupBox1 = new GroupBox();
             tb_status = new TextBox();
             btn_find = new Guna.UI2.WinForms.Guna2Button();
-            btn_sua = new Guna.UI2.WinForms.Guna2Button();
             tb_gender = new TextBox();
             textBox3 = new TextBox();
             label6 = new Label();
@@ -59,7 +58,6 @@
             groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(tb_status);
             groupBox1.Controls.Add(btn_find);
-            groupBox1.Controls.Add(btn_sua);
             groupBox1.Controls.Add(tb_gender);
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label6);
@@ -105,23 +103,6 @@
             btn_find.TabIndex = 24;
             btn_find.Text = "Tìm";
             btn_find.Click += btn_find_Click;
-            // 
-            // btn_sua
-            // 
-            btn_sua.BorderRadius = 10;
-            btn_sua.DisabledState.BorderColor = Color.DarkGray;
-            btn_sua.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_sua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_sua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_sua.FillColor = Color.DarkCyan;
-            btn_sua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_sua.ForeColor = Color.White;
-            btn_sua.Location = new Point(774, 155);
-            btn_sua.Name = "btn_sua";
-            btn_sua.Size = new Size(180, 45);
-            btn_sua.TabIndex = 23;
-            btn_sua.Text = "Cập nhật";
-            btn_sua.Click += btn_sua_Click;
             // 
             // tb_gender
             // 
@@ -326,7 +307,6 @@
         private TextBox textBox3;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button btn_find;
-        private Guna.UI2.WinForms.Guna2Button btn_sua;
         private TextBox tb_status;
     }
 }
