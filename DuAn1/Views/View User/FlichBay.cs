@@ -36,11 +36,11 @@ namespace GUI.Views.View_User
         }
         bool check()
         {
-            if (cbb_From.Text!=cbb_To.Text)
+            if (cbb_From.Text==cbb_To.Text)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
         private void btn_Search_Click(object sender, EventArgs e)
         {

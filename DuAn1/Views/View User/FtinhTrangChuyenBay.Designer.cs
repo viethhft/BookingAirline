@@ -163,6 +163,7 @@
             this.cbb_To.Name = "cbb_To";
             this.cbb_To.Size = new System.Drawing.Size(314, 36);
             this.cbb_To.TabIndex = 17;
+            this.cbb_To.SelectedIndexChanged += new System.EventHandler(this.cbb_To_SelectedIndexChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -232,7 +233,7 @@
             // 
             this.lb_ErrorFrom1.BackColor = System.Drawing.Color.Transparent;
             this.lb_ErrorFrom1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_ErrorFrom1.Location = new System.Drawing.Point(110, 204);
+            this.lb_ErrorFrom1.Location = new System.Drawing.Point(33, 203);
             this.lb_ErrorFrom1.Name = "lb_ErrorFrom1";
             this.lb_ErrorFrom1.Size = new System.Drawing.Size(73, 17);
             this.lb_ErrorFrom1.TabIndex = 25;
@@ -260,7 +261,7 @@
             // 
             // txt_CodeFlight
             // 
-            this.txt_CodeFlight.Location = new System.Drawing.Point(391, 255);
+            this.txt_CodeFlight.Location = new System.Drawing.Point(33, 162);
             this.txt_CodeFlight.Multiline = true;
             this.txt_CodeFlight.Name = "txt_CodeFlight";
             this.txt_CodeFlight.Size = new System.Drawing.Size(314, 36);

@@ -16,13 +16,19 @@ namespace GUI.Views.View_User
     {
         IFlightServices _flightServices;
         ILocationServices _locationServices;
-        bool check_date = false;
+        bool check_date = true;
+        bool check_button=true;
+        bool check_code=true;
         public FtinhTrangChuyenBay()
         {
             _locationServices = new LocationService();
             _flightServices = new FlightServices();
             InitializeComponent();
             load();
+            lb_ErrorDate.Visible = false;
+            lb_ErrorFrom1.Visible = false;
+            lb_ErrorTo1.Visible = false;
+            lb_ErrorNum.Visible = false;
         }
         void load()
         {
@@ -48,30 +54,47 @@ namespace GUI.Views.View_User
             }
             return false;
         }
+        bool checkcode()
+        {
+            if (txt_CodeFlight.Text=="")
+            {
+                return false;
+            }
+            return true;
+        }
         private void guna2Button1_Click(object sender, EventArgs e) // dđây là button hành trình
         {
+            check_button = true;
             guna2Button2.FillColor = Color.White;
             guna2Button1.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = false;
-           
+            HienThiHanhTrinh();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)//đây là button số hiệu chuyến bay
         {
+            check_button = false;
             guna2Button1.FillColor = Color.White;
             guna2Button2.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = true;
+            HienThiSoHieuChuyenBay();
         }
 
         private void HienThiSoHieuChuyenBay() // HIỂN THỊ các nút trong số hiệu chuuyến bay
         {
-            
+            guna2HtmlLabel3.Visible = false;
+            guna2HtmlLabel9.Visible = false;
+            cbb_From.Visible = false;
+            cbb_To.Visible = false;
         }
 
         private void HienThiHanhTrinh() //Hiển thị các nút trong hành trình
         {
-            
-
+            guna2HtmlLabel3.Visible = true;
+            guna2HtmlLabel9.Visible = true;
+            txt_CodeFlight.Visible = false;
+            cbb_From.Visible = true;
+            cbb_To.Visible = true;
         }
 
         private void cbb_From_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +106,6 @@ namespace GUI.Views.View_User
             }
             else
             {
-
                 lb_ErrorTo1.Visible = true;
                 lb_ErrorTo1.Text = "Vui lòng thay đổi điểm đến khác!!!";
                 lb_ErrorTo1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
@@ -127,22 +149,56 @@ namespace GUI.Views.View_User
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if (check())
+            if (check_button)
             {
-                if (check_date)
+                if (check())
                 {
-                    try
+                    if (check_date)
                     {
-                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight >= date_Start.Value).ToList();
+                        try
+                        {
+                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight >= date_Start.Value).ToList();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                    catch (Exception)
+                    else
                     {
-                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                    MessageBox.Show("Vui lòng thay đổi điểm đi hoặc điểm đến!");
+                }
+            }
+            else
+            {
+                if (checkcode())
+                {
+                    if (check_date)
+                    {
+                        try
+                        {
+                            var list_search = _flightServices.get_list().Where(c => c.FlightCode==txt_CodeFlight.Text).ToList();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng thay đổi điểm đi hoặc điểm đến!");
                 }
             }
         }
