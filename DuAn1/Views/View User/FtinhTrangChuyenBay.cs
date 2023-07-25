@@ -19,7 +19,7 @@ namespace GUI.Views.View_User
         bool check_date = true;
         public FtinhTrangChuyenBay()
         {
-            _locationServices=new LocationService();
+            _locationServices = new LocationService();
             _flightServices = new FlightServices();
             InitializeComponent();
             load();
@@ -28,15 +28,15 @@ namespace GUI.Views.View_User
         {
             guna2Button1.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = false;
-            lb_ErrorDate.Visible=false;
+            lb_ErrorDate.Visible = false;
             lb_ErrorFrom.Visible = false;
             lb_ErrorTo.Visible = false;
             lb_ErrorNum.Visible = false;
-
-            cbb_From.DataSource= _locationServices.get_list();
+            guna2HtmlLabel9.Visible = false;
+            cbb_From.DataSource = _locationServices.get_list();
             cbb_From.DisplayMember = "locationFly";
 
-            cbb_To.DataSource=_locationServices.get_list();
+            cbb_To.DataSource = _locationServices.get_list();
             cbb_To.DisplayMember = "locationFly";
 
         }
@@ -79,19 +79,19 @@ namespace GUI.Views.View_User
 
         private void HienThiSoHieuChuyenBay() // HIỂN THỊ các nút trong số hiệu chuuyến bay
         {
-            txt_CodeFlight.Show();
-            lb_ErrorFrom.Show();
-            guna2HtmlLabel9.Show();
+            txt_CodeFlight.Visible = true;
+            lb_ErrorFrom.Visible = true;
+            guna2HtmlLabel9.Visible = true;
         }
 
         private void HienThiHanhTrinh() //Hiển thị các nút trong hành trình
         {
-            guna2HtmlLabel2.Show();
-            lb_ErrorNum.Show();
-            guna2HtmlLabel3.Show();
-            lb_ErrorTo.Show();
-            cbb_From.Show();
-            cbb_To.Show();
+            guna2HtmlLabel2.Visible = true;
+            lb_ErrorNum.Visible = true;
+            guna2HtmlLabel3.Visible = true;
+            lb_ErrorTo.Visible = true;
+            cbb_From.Visible = true;
+            cbb_To.Visible = true;
         }
         private void btn_Search_Click(object sender, EventArgs e)
         {
@@ -146,7 +146,7 @@ namespace GUI.Views.View_User
             else
             {
                 lb_ErrorFrom.Visible = true;
-                lb_ErrorFrom.Text = "Vui lòng thay đổi điểm đến khác1!!!";
+                lb_ErrorFrom.Text = "Vui lòng thay đổi điểm đến khác!!!";
                 lb_ErrorFrom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
                 lb_ErrorFrom.ForeColor = System.Drawing.Color.Red;
             }
