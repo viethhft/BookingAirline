@@ -37,17 +37,17 @@
             this.dateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
             this.txb_codeflight = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
@@ -55,6 +55,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_To);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.nbr_Price);
             this.groupBox1.Controls.Add(this.btn_Update);
             this.groupBox1.Controls.Add(this.btn_Add);
@@ -63,14 +65,12 @@
             this.groupBox1.Controls.Add(this.dateTo);
             this.groupBox1.Controls.Add(this.DateFrom);
             this.groupBox1.Controls.Add(this.cmb_PlaneType);
-            this.groupBox1.Controls.Add(this.cmb_To);
             this.groupBox1.Controls.Add(this.cmb_From);
             this.groupBox1.Controls.Add(this.dgv_chuyenbay);
             this.groupBox1.Controls.Add(this.txb_codeflight);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
@@ -161,7 +161,7 @@
             this.dateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dateTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateTo.Location = new System.Drawing.Point(325, 96);
+            this.dateTo.Location = new System.Drawing.Point(324, 152);
             this.dateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTo.Name = "dateTo";
@@ -175,7 +175,7 @@
             this.DateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.DateFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateFrom.Location = new System.Drawing.Point(325, 30);
+            this.DateFrom.Location = new System.Drawing.Point(26, 154);
             this.DateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateFrom.Name = "DateFrom";
@@ -198,24 +198,6 @@
             this.cmb_PlaneType.Size = new System.Drawing.Size(241, 36);
             this.cmb_PlaneType.TabIndex = 21;
             // 
-            // cmb_To
-            // 
-            this.cmb_To.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_To.DropDownHeight = 175;
-            this.cmb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmb_To.IntegralHeight = false;
-            this.cmb_To.ItemHeight = 30;
-            this.cmb_To.Location = new System.Drawing.Point(325, 153);
-            this.cmb_To.Name = "cmb_To";
-            this.cmb_To.Size = new System.Drawing.Size(242, 36);
-            this.cmb_To.TabIndex = 20;
-            this.cmb_To.SelectedValueChanged += new System.EventHandler(this.cmb_To_SelectedValueChanged);
-            // 
             // cmb_From
             // 
             this.cmb_From.BackColor = System.Drawing.Color.Transparent;
@@ -228,7 +210,7 @@
             this.cmb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmb_From.IntegralHeight = false;
             this.cmb_From.ItemHeight = 30;
-            this.cmb_From.Location = new System.Drawing.Point(27, 151);
+            this.cmb_From.Location = new System.Drawing.Point(27, 96);
             this.cmb_From.Name = "cmb_From";
             this.cmb_From.Size = new System.Drawing.Size(241, 36);
             this.cmb_From.TabIndex = 19;
@@ -248,11 +230,11 @@
             // 
             // txb_codeflight
             // 
-            this.txb_codeflight.Location = new System.Drawing.Point(619, 30);
+            this.txb_codeflight.Location = new System.Drawing.Point(324, 30);
             this.txb_codeflight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_codeflight.Multiline = true;
             this.txb_codeflight.Name = "txb_codeflight";
-            this.txb_codeflight.Size = new System.Drawing.Size(210, 37);
+            this.txb_codeflight.Size = new System.Drawing.Size(240, 37);
             this.txb_codeflight.TabIndex = 8;
             // 
             // label8
@@ -269,7 +251,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(323, 75);
+            this.label7.Location = new System.Drawing.Point(322, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 18);
             this.label7.TabIndex = 15;
@@ -279,27 +261,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(325, 11);
+            this.label6.Location = new System.Drawing.Point(26, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 13;
             this.label6.Text = "Ngày đi";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(325, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 18);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Điểm đến";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(26, 133);
+            this.label4.Location = new System.Drawing.Point(26, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 18);
             this.label4.TabIndex = 9;
@@ -309,7 +281,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(619, 12);
+            this.label3.Location = new System.Drawing.Point(324, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 18);
             this.label3.TabIndex = 7;
@@ -324,6 +296,33 @@
             this.label1.Size = new System.Drawing.Size(101, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Loại máy bay";
+            // 
+            // cmb_To
+            // 
+            this.cmb_To.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_To.DropDownHeight = 175;
+            this.cmb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_To.IntegralHeight = false;
+            this.cmb_To.ItemHeight = 30;
+            this.cmb_To.Location = new System.Drawing.Point(322, 96);
+            this.cmb_To.Name = "cmb_To";
+            this.cmb_To.Size = new System.Drawing.Size(242, 36);
+            this.cmb_To.TabIndex = 32;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(322, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 18);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Điểm đến";
             // 
             // FQuanLyChuyenBay
             // 
@@ -346,13 +345,11 @@
         private GroupBox groupBox1;
         private Label label7;
         private Label label6;
-        private Label label5;
         private Label label4;
         private Label label3;
         private Label label1;
         private DataGridView dgv_chuyenbay;
         private Label label8;
-        private Guna.UI2.WinForms.Guna2ComboBox cmb_To;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_From;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button btn_Update;
@@ -364,5 +361,7 @@
         private Label label9;
         private TextBox txb_Search;
         private Guna.UI2.WinForms.Guna2NumericUpDown nbr_Price;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_To;
+        private Label label5;
     }
 }

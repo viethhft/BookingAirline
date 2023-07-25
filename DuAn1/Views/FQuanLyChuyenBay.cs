@@ -98,7 +98,6 @@ namespace DuAn1.Views
                 DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
                 dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
             }
-           
         }
         void ReverseCodeFlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
         {

@@ -20,6 +20,8 @@ namespace _1_DAL.Models
         public int Price { get; set; }
         public DateTime DateFlight { get; set; }
         public DateTime? DateTo { get; set; }
+        public DateTime TimeStart { get; set; }
+        public DateTime TimeEnd { get; set; }
 
         public virtual Airport Airport { get; set; } = null!;
         public virtual PlaneType PlaneType { get; set; } = null!;

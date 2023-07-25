@@ -134,6 +134,15 @@ namespace _1_DAL.Models
                 entity.Property(e => e.DateTo)
                     .HasColumnType("datetime")
                     .HasColumnName("dateTo");
+
+                entity.Property(e => e.TimeStart)
+                    .HasColumnType("time")
+                    .HasColumnName("timeStart");
+
+                entity.Property(e => e.TimeEnd)
+                    .HasColumnType("time")
+                    .HasColumnName("timeEnd");
+
                 entity.Property(e => e.FlightCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
