@@ -227,39 +227,39 @@ namespace DuAn1.Views
             }
         }
 
-    private void txb_Search_TextChanged(object sender, EventArgs e)
-    {
-        if (txb_Search.Text != "")
+        private void txb_Search_TextChanged(object sender, EventArgs e)
         {
-            dgv_chuyenbay.Rows.Clear();
-            foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTo.Contains(txb_Search.Text)))
+            if (txb_Search.Text != "")
             {
-                string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
-                string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                dgv_chuyenbay.Rows.Clear();
+                foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTo.Contains(txb_Search.Text)))
+                {
+                    string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
+                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                }
+            }
+            else
+            {
+                dgv_chuyenbay.Rows.Clear();
+                foreach (var item in _flight.get_list())
+                {
+                    string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
+                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                }
             }
         }
-        else
-        {
-            dgv_chuyenbay.Rows.Clear();
-            foreach (var item in _flight.get_list())
-            {
-                string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
-                string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
-            }
-        }
-    }
 
-    private void dgv_chuyenbay_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-        txb_codeflight.Text = dgv_chuyenbay.CurrentRow.Cells[2].Value.ToString();
-        nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[7].Value.ToString());
-        cmb_PlaneType.Text = dgv_chuyenbay.CurrentRow.Cells[0].Value.ToString();
-        cmb_To.Text = dgv_chuyenbay.CurrentRow.Cells[3].Value.ToString();
-        cmb_From.Text = dgv_chuyenbay.CurrentRow.Cells[4].Value.ToString();
-        DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
-        dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
+        private void dgv_chuyenbay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txb_codeflight.Text = dgv_chuyenbay.CurrentRow.Cells[2].Value.ToString();
+            nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[7].Value.ToString());
+            cmb_PlaneType.Text = dgv_chuyenbay.CurrentRow.Cells[0].Value.ToString();
+            cmb_To.Text = dgv_chuyenbay.CurrentRow.Cells[3].Value.ToString();
+            cmb_From.Text = dgv_chuyenbay.CurrentRow.Cells[4].Value.ToString();
+            DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
+            dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
+        }
     }
-}
 }
