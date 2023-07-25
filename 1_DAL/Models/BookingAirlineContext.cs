@@ -136,11 +136,11 @@ namespace _1_DAL.Models
                     .HasColumnName("dateTo");
 
                 entity.Property(e => e.TimeStart)
-                    .HasColumnType("datetime")
+                    .HasColumnType("timespan")
                     .HasColumnName("timeStart");
 
                 entity.Property(e => e.TimeEnd)
-                    .HasColumnType("datetime")
+                    .HasColumnType("timespan")
                     .HasColumnName("timeEnd");
 
                 entity.Property(e => e.FlightCode)
