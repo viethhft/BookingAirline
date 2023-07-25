@@ -9,6 +9,6 @@ namespace _1_DAL.IRepon
 {
     public interface ILocationRepo
     {
-        public List<Location> list_loca();
+        public List<Airport> list_loca();
     }
 }

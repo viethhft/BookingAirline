@@ -51,27 +51,22 @@ namespace DuAn1.Views
             cmb_PlaneType.DisplayMember = "displayName";
             cmb_PlaneType.ValueMember = "planeCode";
 
-            cmb_Location.DataSource = _location.get_list();
-            cmb_Location.DisplayMember = "displayName";
-            cmb_Location.ValueMember = "locaCode";
-
             cmb_From.DataSource = _location.get_list();
-            cmb_From.DisplayMember = "displayName";
-            cmb_From.ValueMember = "locaCode";
+            cmb_From.DisplayMember = "locationFly";
+            cmb_From.ValueMember = "airportCode";
 
             cmb_To.DataSource = _location.get_list();
-            cmb_To.DisplayMember = "displayName";
-            cmb_To.ValueMember = "locaCode";
+            cmb_To.DisplayMember = "locationFly";
+            cmb_To.ValueMember = "airportCode";
 
             loaddata();
 
             plancode = cmb_PlaneType.SelectedValue.ToString();
-            locacode = cmb_Location.SelectedValue.ToString();
             codefrom = cmb_From.SelectedValue.ToString();
             codeto = cmb_To.SelectedValue.ToString();
             ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
         void loaddata()
         {
@@ -90,8 +85,8 @@ namespace DuAn1.Views
             foreach (var item in _flight.get_list())
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
-                string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price+"VNĐ", item.Id);
+                string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
             }
             if (dgv_chuyenbay.RowCount>0)
             {
@@ -102,11 +97,10 @@ namespace DuAn1.Views
                 cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
                 DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
                 dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
-                cmb_Location.Text = dgv_chuyenbay.Rows[0].Cells[1].Value.ToString();
             }
            
         }
-        void ReverseCodePlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
+        void ReverseCodeFlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
         {
             //code plight = codeplane+codeloca+codeFrom+codeTo+NgayDi+ngayVe
             txb_codeflight.Text = planeCode + "_" + locaCode + "_" + codeFrom + "_" + codeTo + "_" + ngaydi + "_" + ngayve;
@@ -115,37 +109,31 @@ namespace DuAn1.Views
         private void cmb_PlaneType_SelectedValueChanged(object sender, EventArgs e)
         {
             plancode = cmb_PlaneType.SelectedValue.ToString();
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
-        }
-
-        private void cmb_Location_SelectedValueChanged(object sender, EventArgs e)
-        {
-            locacode = cmb_Location.SelectedValue.ToString();
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void cmb_From_SelectedValueChanged(object sender, EventArgs e)
         {
             codefrom = cmb_From.SelectedValue.ToString();
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void cmb_To_SelectedValueChanged(object sender, EventArgs e)
         {
             codeto = cmb_To.SelectedValue.ToString();
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void DateFrom_ValueChanged(object sender, EventArgs e)
         {
             ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void dateTo_ValueChanged(object sender, EventArgs e)
         {
             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
-            ReverseCodePlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -177,7 +165,7 @@ namespace DuAn1.Views
                     flight.GoTo = cmb_To.Text;
                     foreach (var item in _location.get_list())
                     {
-                        if (item.DisplayName == cmb_Location.Text)
+                        if (item.LocationFly == cmb_From.Text)
                         {
                             flight.LocationId = item.Id;
                             break;
@@ -229,7 +217,7 @@ namespace DuAn1.Views
                     flight.GoTo = cmb_To.Text;
                     foreach (var item in _location.get_list())
                     {
-                        if (item.DisplayName == cmb_Location.Text)
+                        if (item.LocationFly == cmb_From.Text)
                         {
                             flight.LocationId = item.Id;
                             break;
@@ -260,7 +248,7 @@ namespace DuAn1.Views
                 foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTo.Contains(txb_Search.Text)))
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
-                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
+                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
                     dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
                 }
             }
@@ -270,7 +258,7 @@ namespace DuAn1.Views
                 foreach (var item in _flight.get_list())
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
-                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().DisplayName;
+                    string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
                     dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
                 }
             }
@@ -285,7 +273,6 @@ namespace DuAn1.Views
             cmb_From.Text = dgv_chuyenbay.CurrentRow.Cells[4].Value.ToString();
             DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
             dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
-            cmb_Location.Text = dgv_chuyenbay.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }

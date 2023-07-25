@@ -27,9 +27,9 @@ namespace GUI.Views.View_User
         void load()
         {
             cbb_From.DataSource = _locationServices.get_list();
-            cbb_From.DisplayMember = "displayName";
+            cbb_From.DisplayMember = "locationFly";
             cbb_To.DataSource = _locationServices.get_list();
-            cbb_To.DisplayMember = "displayName";
+            cbb_To.DisplayMember = "locationFly";
             lb_ErrorFrom.Visible = false;
             lb_ErrorTo.Visible = false;
         }

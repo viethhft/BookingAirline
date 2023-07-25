@@ -16,7 +16,7 @@ namespace _1_DAL.Repon
             _context=new BookingAirlineContext();
         }
 
-        public List<Location> list_loca()
+        public List<Airport> list_loca()
         {
             return _context.Locations.ToList();
         }

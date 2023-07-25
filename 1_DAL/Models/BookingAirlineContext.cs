@@ -20,7 +20,7 @@ namespace _1_DAL.Models
         public virtual DbSet<Class> Classes { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Flight> Flights { get; set; } = null!;
-        public virtual DbSet<Location> Locations { get; set; } = null!;
+        public virtual DbSet<Airport> Locations { get; set; } = null!;
         public virtual DbSet<PlaneType> PlaneTypes { get; set; } = null!;
         public virtual DbSet<Recommend> Recommends { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
@@ -139,10 +139,6 @@ namespace _1_DAL.Models
                     .IsUnicode(false)
                     .HasColumnName("flightCode");
 
-                entity.Property(e => e.GoFrom)
-                    .HasMaxLength(100)
-                    .HasColumnName("goFrom");
-
                 entity.Property(e => e.GoTo)
                     .HasMaxLength(100)
                     .HasColumnName("goTom");
@@ -153,7 +149,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.Price).HasColumnName("price");
 
-                entity.HasOne(d => d.Location)
+                entity.HasOne(d => d.Airport)
                     .WithMany(p => p.Flights)
                     .HasForeignKey(d => d.LocationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -166,7 +162,7 @@ namespace _1_DAL.Models
                     .HasConstraintName("FK__Flight__date_fli__34C8D9D1");
             });
 
-            modelBuilder.Entity<Location>(entity =>
+            modelBuilder.Entity<Airport>(entity =>
             {
                 entity.ToTable("airport");
 
@@ -175,6 +171,10 @@ namespace _1_DAL.Models
                 entity.Property(e => e.AirportName)
                     .HasMaxLength(50)
                     .HasColumnName("airportName");
+                
+                entity.Property(e => e.AirportCode)
+                    .HasMaxLength(50)
+                    .HasColumnName("airportCode");
 
                 entity.Property(e => e.LocationFly)
                     .HasMaxLength(50)

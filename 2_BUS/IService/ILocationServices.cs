@@ -9,6 +9,6 @@ namespace _2_BUS.IService
 {
     public interface ILocationServices
     {
-        public List<Location> get_list();
+        public List<Airport> get_list();
     }
 }

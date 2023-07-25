@@ -17,7 +17,7 @@ namespace _2_BUS.Service
         {
             _repo = new LocationRepo();
         }
-        public List<Location> get_list()
+        public List<Airport> get_list()
         {
             return _repo.list_loca();
         }
