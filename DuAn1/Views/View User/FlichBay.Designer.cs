@@ -40,6 +40,7 @@
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lb_ErrorTo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lb_ErrorFrom = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_ErrorDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +132,7 @@
             this.date_nkh.Size = new System.Drawing.Size(238, 36);
             this.date_nkh.TabIndex = 6;
             this.date_nkh.Value = new System.DateTime(2023, 7, 21, 22, 25, 38, 738);
+            this.date_nkh.ValueChanged += new System.EventHandler(this.date_nkh_ValueChanged);
             // 
             // btn_Search
             // 
@@ -191,11 +193,22 @@
             this.lb_ErrorFrom.TabIndex = 10;
             this.lb_ErrorFrom.Text = "thông báo lỗi";
             // 
+            // lb_ErrorDate
+            // 
+            this.lb_ErrorDate.BackColor = System.Drawing.Color.Transparent;
+            this.lb_ErrorDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_ErrorDate.Location = new System.Drawing.Point(49, 306);
+            this.lb_ErrorDate.Name = "lb_ErrorDate";
+            this.lb_ErrorDate.Size = new System.Drawing.Size(92, 20);
+            this.lb_ErrorDate.TabIndex = 12;
+            this.lb_ErrorDate.Text = "thông báo lỗi";
+            // 
             // FlichBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 429);
+            this.Controls.Add(this.lb_ErrorDate);
             this.Controls.Add(this.lb_ErrorTo);
             this.Controls.Add(this.lb_ErrorFrom);
             this.Controls.Add(this.guna2HtmlLabel5);
@@ -230,5 +243,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorTo;
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorFrom;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorDate;
     }
 }

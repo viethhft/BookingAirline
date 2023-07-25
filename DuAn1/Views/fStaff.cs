@@ -27,12 +27,13 @@ namespace DuAn1.Views
         {
             if (_role == 1)
             {
-                btn_qlynv.Enabled = false;
-                btn_dthu.Enabled = false;
+                btn_qlynv.Visible = false;
+                btn_dthu.Visible= false;
             }
             else
             {
-                btn_qlynv.Enabled = true;
+                btn_qlynv.Visible = true;
+                btn_dthu.Visible = true;
             }
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _2_BUS.IService;
+using _2_BUS.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +14,45 @@ namespace GUI.Views.View_User
 {
     public partial class FtinhTrangChuyenBay : Form
     {
+        IFlightServices _flightServices;
+        ILocationServices _locationServices;
+        bool check_date = true;
         public FtinhTrangChuyenBay()
         {
+            _locationServices=new LocationService();
+            _flightServices = new FlightServices();
             InitializeComponent();
+            load();
         }
+        void load()
+        {
+            guna2Button1.FillColor = Color.DarkCyan;
+            txt_CodeFlight.Visible = false;
+            lb_ErrorDate.Visible=false;
+            lb_ErrorFrom.Visible = false;
+            lb_ErrorTo.Visible = false;
+            lb_ErrorNum.Visible = false;
 
+            cbb_From.DataSource= _locationServices.get_list();
+            cbb_From.DisplayMember = "locationFly";
+
+            cbb_To.DataSource=_locationServices.get_list();
+            cbb_To.DisplayMember = "locationFly";
+
+        }
+        bool check()
+        {
+            if (cbb_From.Text != cbb_To.Text)
+            {
+                return true;
+            }
+            return false;
+        }
         private void guna2Button1_Click(object sender, EventArgs e) // dđây là button hành trình
         {
             HienThiHanhTrinh();
-            textBox1.Hide();
-            guna2HtmlLabel10.Hide();
+            txt_CodeFlight.Hide();
+            lb_ErrorFrom.Hide();
             guna2HtmlLabel9.Hide();
             if (guna2Button1.Enabled == true)
             {
@@ -33,11 +64,11 @@ namespace GUI.Views.View_User
         private void guna2Button2_Click(object sender, EventArgs e)//đây là button số hiệu chuyến bay
         {
             guna2HtmlLabel2.Hide();
-            guna2HtmlLabel6.Hide();
+            lb_ErrorNum.Hide();
             guna2HtmlLabel3.Hide();
-            guna2HtmlLabel7.Hide();
-            guna2ComboBox1.Hide();
-            guna2ComboBox2.Hide();
+            lb_ErrorTo.Hide();
+            cbb_From.Hide();
+            cbb_To.Hide();
             HienThiSoHieuChuyenBay();
             if (guna2Button2.Enabled == true)
             {
@@ -46,30 +77,97 @@ namespace GUI.Views.View_User
             }
         }
 
-        private void FtinhTrangChuyenBay_Load(object sender, EventArgs e)
-        {
-            guna2Button1.FillColor = Color.DarkCyan;
-            textBox1.Hide();
-            guna2HtmlLabel10.Hide();
-            guna2HtmlLabel9.Hide();
-        }
-
         private void HienThiSoHieuChuyenBay() // HIỂN THỊ các nút trong số hiệu chuuyến bay
         {
-            textBox1.Show();
-            guna2HtmlLabel10.Show();
+            txt_CodeFlight.Show();
+            lb_ErrorFrom.Show();
             guna2HtmlLabel9.Show();
         }
 
         private void HienThiHanhTrinh() //Hiển thị các nút trong hành trình
         {
             guna2HtmlLabel2.Show();
-            guna2HtmlLabel6.Show();
+            lb_ErrorNum.Show();
             guna2HtmlLabel3.Show();
-            guna2HtmlLabel7.Show();
-            guna2ComboBox1.Show();
-            guna2ComboBox2.Show();
+            lb_ErrorTo.Show();
+            cbb_From.Show();
+            cbb_To.Show();
+        }
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            if (check())
+            {
+                if (check_date)
+                {
+                    try
+                    {
+                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight >= date_Start.Value).ToList().Take(7);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Điểm đến điểm đi chọn không phù hợp yêu cầu!");
+            }
         }
 
+        private void cbb_From_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (check())
+            {
+                lb_ErrorTo.Visible = false;
+                lb_ErrorFrom.Visible = false;
+            }
+            else
+            {
+
+                lb_ErrorTo.Visible = true;
+                lb_ErrorTo.Text = "Vui lòng thay đổi điểm đến khác!!!";
+                lb_ErrorTo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+                lb_ErrorTo.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void cbb_To_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (check())
+            {
+                lb_ErrorTo.Visible = false;
+                lb_ErrorFrom.Visible = false;
+            }
+            else
+            {
+                lb_ErrorFrom.Visible = true;
+                lb_ErrorFrom.Text = "Vui lòng thay đổi điểm đến khác1!!!";
+                lb_ErrorFrom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+                lb_ErrorFrom.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void date_nkh_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = DateTime.Now;
+            if (date_Start.Value <= date)
+            {
+                check_date = false;
+                lb_ErrorDate.Visible = true;
+                lb_ErrorDate.Text = "Vui lòng chọn ngày bay lớn hơn ngày hiện tại!!";
+                lb_ErrorDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+                lb_ErrorDate.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                check_date = true;
+                lb_ErrorDate.Visible = false;
+            }
+        }
     }
 }
