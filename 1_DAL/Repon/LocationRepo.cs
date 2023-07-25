@@ -18,7 +18,7 @@ namespace _1_DAL.Repon
 
         public List<Airport> list_loca()
         {
-            return _context.Locations.ToList();
+            return _context.Airports.ToList();
         }
     }
 }

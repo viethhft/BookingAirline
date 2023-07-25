@@ -22,7 +22,6 @@ namespace _1_DAL.Models
         public DateTime? DateTo { get; set; }
         public DateTime TimeStart { get; set; }
         public DateTime TimeEnd { get; set; }
-
         public DateTime timeStart { get;set; }
         public DateTime timeEnd { get;set; }
 
