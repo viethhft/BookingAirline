@@ -202,7 +202,7 @@
             // 
             lb_ErrorTo.BackColor = Color.Transparent;
             lb_ErrorTo.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_ErrorTo.Location = new Point(391, 203);
+            lb_ErrorTo.Location = new Point(391, 204);
             lb_ErrorTo.Name = "lb_ErrorTo";
             lb_ErrorTo.Size = new Size(73, 17);
             lb_ErrorTo.TabIndex = 21;
