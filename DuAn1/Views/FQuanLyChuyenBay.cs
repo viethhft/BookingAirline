@@ -87,7 +87,7 @@ namespace DuAn1.Views
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
                 dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
             }
-            if (dgv_chuyenbay.RowCount>0)
+            if (dgv_chuyenbay.RowCount > 0)
             {
                 txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
                 nbr_Price.Value = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[7].Value.ToString());
@@ -139,7 +139,7 @@ namespace DuAn1.Views
             check();
             foreach (var item in _flight.get_list())
             {
-                if (item.FlightCode==txb_codeflight.Text)
+                if (item.FlightCode == txb_codeflight.Text)
                 {
                     checkInfo = false;
                     break;
@@ -240,7 +240,7 @@ namespace DuAn1.Views
 
         private void txb_Search_TextChanged(object sender, EventArgs e)
         {
-            if (txb_Search.Text!="")
+            if (txb_Search.Text != "")
             {
                 dgv_chuyenbay.Rows.Clear();
                 foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTo.Contains(txb_Search.Text)))
