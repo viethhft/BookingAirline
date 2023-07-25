@@ -71,7 +71,7 @@ namespace DuAn1.Views
         void loaddata()
         {
             dgv_chuyenbay.Rows.Clear();
-            dgv_chuyenbay.ColumnCount = 9;
+            dgv_chuyenbay.ColumnCount = 11;
             dgv_chuyenbay.Columns[0].Name = "Tên máy bay";
             dgv_chuyenbay.Columns[1].Name = "Địa điểm bay";
             dgv_chuyenbay.Columns[2].Name = "Mã chuyến bay";
@@ -81,12 +81,14 @@ namespace DuAn1.Views
             dgv_chuyenbay.Columns[6].Name = "Thời gian về";
             dgv_chuyenbay.Columns[7].Name = "Giá";
             dgv_chuyenbay.Columns[8].Name = "id";
+            dgv_chuyenbay.Columns[9].Name = "Giờ khởi hành";
+            dgv_chuyenbay.Columns[10].Name = "Giờ kết thúc";
             dgv_chuyenbay.Columns[8].Visible = false;
             foreach (var item in _flight.get_list())
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id,item.TimeStart,item.TimeEnd);
             }
             if (dgv_chuyenbay.RowCount > 0)
             {
@@ -134,10 +136,9 @@ namespace DuAn1.Views
             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
             ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
-
-        private void btn_Add_Click(object sender, EventArgs e)
+        void checkName()
         {
-            check();
+            checkDuplicate = true;
             foreach (var item in _flight.get_list())
             {
                 if (item.FlightCode == txb_codeflight.Text)
@@ -146,12 +147,84 @@ namespace DuAn1.Views
                     break;
                 }
             }
+        }
+        bool checklocation()
+        {
+            if (cmb_From.Text==cmb_To.Text)
+            {
+                return false;
+            }
+            return true;
+        }
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            check();
+            checkName();
             if (checkDuplicate)
+            {
+                if (checklocation())
+                {
+                    if (checkInfo)
+                    {
+                        Flight flight = new Flight();
+                        foreach (var item in _plantype.get_list())
+                        {
+                            if (item.DisplayName == cmb_PlaneType.Text)
+                            {
+                                flight.PlaneTypeId = item.Id;
+                                break;
+                            }
+                        }
+                        flight.FlightCode = txb_codeflight.Text;
+                        flight.GoFrom = cmb_From.Text;
+                        flight.GoTo = cmb_To.Text;
+                        foreach (var item in _location.get_list())
+                        {
+                            if (item.LocationFly == cmb_From.Text)
+                            {
+                                flight.LocationId = item.Id;
+                                break;
+                            }
+                        }
+                        flight.DateFlight = DateFrom.Value;
+                        flight.DateTo = dateTo.Value;
+                        flight.Price = Convert.ToInt32(nbr_Price.Value);
+
+                        int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
+                        int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
+
+                        int hours_e = Convert.ToInt32(timeEnd_hour.Value);
+                        int minute_e = Convert.ToInt32(timeEnd_minute.Value);
+                        TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
+                        TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
+                        flight.TimeStart = timestart;
+                        flight.TimeEnd = timeend;
+                        MessageBox.Show(_flight.create(flight));
+                        load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hãy nhập đúng giá!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã chuyến bay đã có hãy thử đổi ngày bay hoặc máy bay khác!");
+            }
+        }
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            check();
+            if (checklocation())
             {
                 if (checkInfo)
                 {
-                    Flight flight = new Flight();
-                    flight.FlightCode = txb_codeflight.Text;
+                    Flight flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
                     foreach (var item in _plantype.get_list())
                     {
                         if (item.DisplayName == cmb_PlaneType.Text)
@@ -160,6 +233,7 @@ namespace DuAn1.Views
                             break;
                         }
                     }
+                    flight.FlightCode = txb_codeflight.Text;
                     flight.GoFrom = cmb_From.Text;
                     flight.GoTo = cmb_To.Text;
                     foreach (var item in _location.get_list())
@@ -173,8 +247,15 @@ namespace DuAn1.Views
                     flight.DateFlight = DateFrom.Value;
                     flight.DateTo = dateTo.Value;
                     flight.Price = Convert.ToInt32(nbr_Price.Value);
-
-                    MessageBox.Show(_flight.create(flight));
+                    int hours_st = Convert.ToInt32(timeStart_hour.Value);
+                    int minute_st = Convert.ToInt32(timeStart_hour.Value);
+                    int hours_e = Convert.ToInt32(timeEnd_hour.Value);
+                    int minute_e = Convert.ToInt32(timeEnd_hour.Value);
+                    TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
+                    TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
+                    flight.TimeStart = timestart;
+                    flight.TimeEnd = timeend;
+                    MessageBox.Show(_flight.update(flight));
                     load();
                 }
                 else
@@ -184,46 +265,7 @@ namespace DuAn1.Views
             }
             else
             {
-                MessageBox.Show("Mã chuyến bay đã có hãy thử đổi ngày bay hoặc máy bay khác!");
-            }
-        }
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            check();
-            if (checkInfo)
-            {
-                Flight flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
-                foreach (var item in _plantype.get_list())
-                {
-                    if (item.DisplayName == cmb_PlaneType.Text)
-                    {
-                        flight.PlaneTypeId = item.Id;
-                        break;
-                    }
-                }
-                flight.FlightCode = txb_codeflight.Text;
-                flight.GoFrom = cmb_From.Text;
-                flight.GoTo = cmb_To.Text;
-                foreach (var item in _location.get_list())
-                {
-                    if (item.LocationFly == cmb_From.Text)
-                    {
-                        flight.LocationId = item.Id;
-                        break;
-                    }
-                }
-                flight.DateFlight = DateFrom.Value;
-                flight.DateTo = dateTo.Value;
-                flight.Price = Convert.ToInt32(nbr_Price.Value);
-                int hours = Convert.ToInt32(timeStart_hour.Value);
-                TimeSpan time = new TimeSpan(hours, 0, 0);
-                MessageBox.Show(time.ToString());
-                load();
-            }
-            else
-            {
-                MessageBox.Show("Hãy nhập đúng giá!");
+                MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
             }
         }
 
@@ -246,7 +288,7 @@ namespace DuAn1.Views
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                     string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id);
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id,item.TimeStart,item.TimeEnd);
                 }
             }
         }
