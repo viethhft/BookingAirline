@@ -21,7 +21,6 @@ namespace DuAn1.Views
         ILocationServices _location;
         IFlightServices _flight;
         string plancode = "";
-        string locacode = "";
         string codefrom = "";
         string codeto = "";
         string ngaydi = "";
@@ -66,7 +65,7 @@ namespace DuAn1.Views
             codeto = cmb_To.SelectedValue.ToString();
             ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
-            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
         void loaddata()
         {
@@ -99,40 +98,40 @@ namespace DuAn1.Views
                 dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
             }
         }
-        void ReverseCodeFlight(string planeCode, string locaCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
+        void ReverseCodeFlight(string planeCode, string codeFrom, string codeTo, string ngaydi, string ngayve)
         {
             //code plight = codeplane+codeloca+codeFrom+codeTo+NgayDi+ngayVe
-            txb_codeflight.Text = planeCode + "_" + locaCode + "_" + codeFrom + "_" + codeTo + "_" + ngaydi + "_" + ngayve;
+            txb_codeflight.Text = planeCode + "_" + codeFrom + "_" + codeTo + "_" + ngaydi + "_" + ngayve;
         }
 
         private void cmb_PlaneType_SelectedValueChanged(object sender, EventArgs e)
         {
             plancode = cmb_PlaneType.SelectedValue.ToString();
-            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void cmb_From_SelectedValueChanged(object sender, EventArgs e)
         {
             codefrom = cmb_From.SelectedValue.ToString();
-            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void cmb_To_SelectedValueChanged(object sender, EventArgs e)
         {
             codeto = cmb_To.SelectedValue.ToString();
-            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void DateFrom_ValueChanged(object sender, EventArgs e)
         {
             ngaydi = DateFrom.Value.ToString("dd-MM-yyyy");
-            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void dateTo_ValueChanged(object sender, EventArgs e)
         {
             ngayve = dateTo.Value.ToString("dd-MM-yyyy");
-            ReverseCodeFlight(plancode, locacode, codefrom, codeto, ngaydi, ngayve);
+            ReverseCodeFlight(plancode, codefrom, codeto, ngaydi, ngayve);
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
