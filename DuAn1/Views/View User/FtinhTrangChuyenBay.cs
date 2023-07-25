@@ -198,7 +198,7 @@ namespace GUI.Views.View_User
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng thay đổi điểm đi hoặc điểm đến!");
+                    MessageBox.Show("Vui lòng nhập số hiệu chuyến bay!");
                 }
             }
         }
