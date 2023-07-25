@@ -9,5 +9,6 @@ namespace _2_BUS.IService
     public interface ISeatDetailServices
     {
         public string Create(SeatDetail seatDetail);
+        public List<SeatDetail> list();
     }
 }

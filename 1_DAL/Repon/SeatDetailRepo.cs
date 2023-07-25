@@ -27,5 +27,10 @@ namespace _1_DAL.Repon
 				return false;
 			}
         }
+
+        public List<SeatDetail> get_list()
+        {
+			return _context.SeatDetails.ToList();
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace _1_DAL.IRepon
     public interface ISeatDetailRepo
     {
         public bool Create(SeatDetail seatDetail);
+        public List<SeatDetail> get_list();
     }
 }

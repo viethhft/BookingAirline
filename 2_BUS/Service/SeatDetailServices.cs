@@ -27,5 +27,10 @@ namespace _2_BUS.Service
                 return "Thêm không thành công";
             }    
         }
+
+        public List<SeatDetail> list()
+        {
+            return _repo.get_list();
+        }
     }
 }

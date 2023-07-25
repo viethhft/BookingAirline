@@ -280,8 +280,6 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.NameTicket).HasMaxLength(100).HasColumnName("nameTicket");
 
-                entity.Property(e => e.TotalTicket).HasColumnName("totalTicket");
-
                 entity.Property(e => e.TwoWay).HasColumnName("twoWay");
 
                 entity.HasOne(d => d.Customer)

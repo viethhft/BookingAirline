@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Update = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Delete = new Guna.UI2.WinForms.Guna2Button();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_GiaVe = new System.Windows.Forms.TextBox();
+            this.txt_MaGhe = new System.Windows.Forms.TextBox();
             this.txt_KhuyenMai = new System.Windows.Forms.TextBox();
             this.date_NgayVe = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbb_DiemDen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbb_DiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
             this.date_NgayTao = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txt_TongTien = new System.Windows.Forms.TextBox();
+            this.txt_GiaVe = new System.Windows.Forms.TextBox();
             this.txt_TenVe = new System.Windows.Forms.TextBox();
             this.cbb_LoaiVe = new Guna.UI2.WinForms.Guna2ComboBox();
             this.date_NgayDi = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -62,17 +62,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.guna2Button2);
-            this.groupBox1.Controls.Add(this.guna2Button1);
+            this.groupBox1.Controls.Add(this.btn_Update);
+            this.groupBox1.Controls.Add(this.btn_Delete);
             this.groupBox1.Controls.Add(this.txt_Search);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txt_GiaVe);
+            this.groupBox1.Controls.Add(this.txt_MaGhe);
             this.groupBox1.Controls.Add(this.txt_KhuyenMai);
             this.groupBox1.Controls.Add(this.date_NgayVe);
             this.groupBox1.Controls.Add(this.cbb_DiemDen);
             this.groupBox1.Controls.Add(this.cbb_DiemDi);
             this.groupBox1.Controls.Add(this.date_NgayTao);
-            this.groupBox1.Controls.Add(this.txt_TongTien);
+            this.groupBox1.Controls.Add(this.txt_GiaVe);
             this.groupBox1.Controls.Add(this.txt_TenVe);
             this.groupBox1.Controls.Add(this.cbb_LoaiVe);
             this.groupBox1.Controls.Add(this.date_NgayDi);
@@ -92,37 +92,37 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // guna2Button2
+            // btn_Update
             // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(776, 155);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(92, 45);
-            this.guna2Button2.TabIndex = 36;
-            this.guna2Button2.Text = "Sửa";
+            this.btn_Update.BorderRadius = 10;
+            this.btn_Update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Update.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Update.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Update.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Update.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Location = new System.Drawing.Point(776, 155);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(92, 45);
+            this.btn_Update.TabIndex = 36;
+            this.btn_Update.Text = "Sửa";
             // 
-            // guna2Button1
+            // btn_Delete
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(886, 155);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(90, 45);
-            this.guna2Button1.TabIndex = 35;
-            this.guna2Button1.Text = "Xóa";
+            this.btn_Delete.BorderRadius = 10;
+            this.btn_Delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Delete.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Delete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Delete.Location = new System.Drawing.Point(886, 155);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(90, 45);
+            this.btn_Delete.TabIndex = 35;
+            this.btn_Delete.Text = "Xóa";
             // 
             // txt_Search
             // 
@@ -131,6 +131,7 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(200, 36);
             this.txt_Search.TabIndex = 34;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
             // label11
             // 
@@ -142,13 +143,13 @@
             this.label11.TabIndex = 33;
             this.label11.Text = "Tìm kiếm";
             // 
-            // txt_GiaVe
+            // txt_MaGhe
             // 
-            this.txt_GiaVe.Location = new System.Drawing.Point(776, 33);
-            this.txt_GiaVe.Multiline = true;
-            this.txt_GiaVe.Name = "txt_GiaVe";
-            this.txt_GiaVe.Size = new System.Drawing.Size(200, 36);
-            this.txt_GiaVe.TabIndex = 32;
+            this.txt_MaGhe.Location = new System.Drawing.Point(776, 33);
+            this.txt_MaGhe.Multiline = true;
+            this.txt_MaGhe.Name = "txt_MaGhe";
+            this.txt_MaGhe.Size = new System.Drawing.Size(200, 36);
+            this.txt_MaGhe.TabIndex = 32;
             // 
             // txt_KhuyenMai
             // 
@@ -216,13 +217,13 @@
             this.date_NgayTao.TabIndex = 27;
             this.date_NgayTao.Value = new System.DateTime(2023, 7, 22, 21, 44, 51, 655);
             // 
-            // txt_TongTien
+            // txt_GiaVe
             // 
-            this.txt_TongTien.Location = new System.Drawing.Point(286, 33);
-            this.txt_TongTien.Multiline = true;
-            this.txt_TongTien.Name = "txt_TongTien";
-            this.txt_TongTien.Size = new System.Drawing.Size(200, 36);
-            this.txt_TongTien.TabIndex = 26;
+            this.txt_GiaVe.Location = new System.Drawing.Point(286, 33);
+            this.txt_GiaVe.Multiline = true;
+            this.txt_GiaVe.Name = "txt_GiaVe";
+            this.txt_GiaVe.Size = new System.Drawing.Size(200, 36);
+            this.txt_GiaVe.TabIndex = 26;
             // 
             // txt_TenVe
             // 
@@ -327,9 +328,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(286, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 18);
+            this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Tổng tiền";
+            this.label4.Text = "Giá vé";
             // 
             // label3
             // 
@@ -347,9 +348,9 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(776, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 18);
+            this.label2.Size = new System.Drawing.Size(60, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Giá vé";
+            this.label2.Text = "Mã ghế";
             // 
             // label1
             // 
@@ -380,6 +381,7 @@
             this.dgv_data.RowTemplate.Height = 25;
             this.dgv_data.Size = new System.Drawing.Size(1019, 220);
             this.dgv_data.TabIndex = 0;
+            this.dgv_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellClick);
             // 
             // FquanlyVe
             // 
@@ -413,18 +415,18 @@
         private Label label2;
         private Label label1;
         private DataGridView dgv_data;
-        private TextBox txt_GiaVe;
+        private TextBox txt_MaGhe;
         private TextBox txt_KhuyenMai;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayVe;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDen;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDi;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayTao;
-        private TextBox txt_TongTien;
+        private TextBox txt_GiaVe;
         private TextBox txt_TenVe;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_LoaiVe;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayDi;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_Update;
+        private Guna.UI2.WinForms.Guna2Button btn_Delete;
         private TextBox txt_Search;
         private Label label11;
     }
