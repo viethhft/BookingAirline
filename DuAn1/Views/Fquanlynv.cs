@@ -243,8 +243,8 @@ namespace DuAn1
             txt_Email.Enabled = false;
             txt_Pass.Enabled = false;
             txt_Sdt.Enabled = false;
-            
-            foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.DisplayName.Contains(txt_timkiem.Text) || c.Phone.StartsWith(txt_timkiem.Text)).Where(c=>c.RoleId!=99))
+
+            foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.DisplayName.Contains(txt_timkiem.Text) || c.Phone.StartsWith(txt_timkiem.Text)).Where(c => c.RoleId != 99))
             {
                 if (item.Status == 1)
                 {
@@ -255,7 +255,7 @@ namespace DuAn1
                     dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Ngừng hoạt động");
                 }
             }
-            if (dgrid_NhanVien.RowCount>0)
+            if (dgrid_NhanVien.RowCount > 0)
             {
                 txt_Ten.Text = dgrid_NhanVien.Rows[0].Cells[0].Value.ToString();
                 txt_Pass.Text = dgrid_NhanVien.Rows[0].Cells[1].Value.ToString();
@@ -279,5 +279,6 @@ namespace DuAn1
         {
             btn_Search_Click(sender, e);
         }
+
     }
 }

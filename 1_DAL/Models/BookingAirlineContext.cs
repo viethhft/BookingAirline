@@ -138,7 +138,7 @@ namespace _1_DAL.Models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("flightCode");
-                
+
                 entity.Property(e => e.GoFrom)
                     .HasMaxLength(100)
                     .HasColumnName("goFrom");
@@ -281,6 +281,8 @@ namespace _1_DAL.Models
                 entity.Property(e => e.NameTicket).HasMaxLength(100).HasColumnName("nameTicket");
 
                 entity.Property(e => e.TwoWay).HasColumnName("twoWay");
+
+                entity.Property(e => e.status).HasColumnName("status");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Tickets)
