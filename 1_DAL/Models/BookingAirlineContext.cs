@@ -168,17 +168,17 @@ namespace _1_DAL.Models
 
             modelBuilder.Entity<Location>(entity =>
             {
-                entity.ToTable("Location");
+                entity.ToTable("airport");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.DisplayName)
+                entity.Property(e => e.AirportName)
                     .HasMaxLength(50)
-                    .HasColumnName("displayName");
+                    .HasColumnName("airportName");
 
-                entity.Property(e => e.LocaCode)
+                entity.Property(e => e.LocationFly)
                     .HasMaxLength(50)
-                    .HasColumnName("locaCode");
+                    .HasColumnName("locationFly");
             });
 
             modelBuilder.Entity<PlaneType>(entity =>

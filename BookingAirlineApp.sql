@@ -94,7 +94,7 @@ create table Ticket
 	customerId bigint not null,
 	flightId bigint not null,
 	createDate datetime not null,
-	twoWay int not null,
+	twoWay int not null,--0:Một chiều+ Phổ Thông,1:Một chiều + Thương Gia,2: Khứ hồi+Phổ thông,3:Khứ hồi + Thương Gia
 	totalTicket int not null,
 	totalPrice int not null,
 	seatCode varchar(50) not null,
