@@ -31,16 +31,6 @@ namespace DuAn1.Views
             _flightServices = new FlightServices();
             _locationServices = new LocationService();
             InitializeComponent();
-            txt_GiaVe.Enabled = false;
-            txt_KhuyenMai.Enabled = false;
-            txt_MaGhe.Enabled = false;
-            txt_TenVe.Enabled = false;
-            date_NgayTao.Enabled = false;
-            date_NgayDi.Enabled = false;
-            date_NgayVe.Enabled = false;
-            cbb_DiemDen.Enabled = false;
-            cbb_LoaiVe.Enabled = false;
-            cbb_DiemDi.Enabled = false;
 
             load();
         }
@@ -54,12 +44,10 @@ namespace DuAn1.Views
             cbb_LoaiVe.SelectedIndex = 0;
 
             cbb_DiemDen.DataSource = _locationServices.get_list();
-            cbb_DiemDen.DisplayMember = "displayName";
-            cbb_DiemDen.ValueMember = "id";
+            cbb_DiemDen.DisplayMember = "locationFly";
 
             cbb_DiemDi.DataSource = _locationServices.get_list();
-            cbb_DiemDi.DisplayMember = "displayName";
-            cbb_DiemDi.ValueMember = "id";
+            cbb_DiemDi.DisplayMember = "locationFly";
 
             dgv_data.Rows.Clear();
             dgv_data.ColumnCount = 11;
