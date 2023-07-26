@@ -22,6 +22,7 @@ namespace _1_DAL.Models
         public string Address { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public int? Status { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         public virtual ICollection<Bank> Banks { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
