@@ -92,6 +92,7 @@ namespace DuAn1.Views
                         customer.Phone = tbx_phone.Text;
                         customer.Gender = cbx_gender.Text;
                         customer.Password = _validate.ReversePass(tbx_pass2.Text);
+                        customer.CreateDate = DateTime.Now;
                         if (check_duplicate_mail(customer.Email))
                         {
                             MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
