@@ -281,6 +281,7 @@ namespace DuAn1.Views
                         btn_SendCode.Enabled = true;
                         code_otp = _validate.randomCode();
                         CountDown.Stop();
+                        time.Visible = false;
                     }
                     lb_Minutes.Text = "0" + minutes.ToString();
                     seconds = 60;

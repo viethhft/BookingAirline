@@ -102,6 +102,7 @@ namespace DuAn1.Views
                         btn_sendCode.Enabled = true;
                         code_otp = _validate.randomCode();
                         countDown.Stop();
+                        time.Visible = false;
                     }
                     lb_Minutes.Text = "0" + minutes.ToString();
                     seconds = 60;
