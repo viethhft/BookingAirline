@@ -114,7 +114,7 @@ namespace DuAn1.Views
                 }
                 else
                 {
-                    MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Điền đúng thông tin được yêu cầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
