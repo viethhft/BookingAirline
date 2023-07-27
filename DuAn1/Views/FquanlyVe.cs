@@ -36,12 +36,6 @@ namespace DuAn1.Views
         }
         void load()
         {
-            //Loại vé + hạng vé
-            cbb_LoaiVe.Items.Add("Một chiều + Phổ Thông");
-            cbb_LoaiVe.Items.Add("Một chiều + Thương Gia");
-            cbb_LoaiVe.Items.Add("Khứ hồi + Phổ Thông");
-            cbb_LoaiVe.Items.Add("Khứ hồi + Thương Gia");
-            cbb_LoaiVe.SelectedIndex = 0;
 
             cbb_DiemDen.DataSource = _locationServices.get_list();
             cbb_DiemDen.DisplayMember = "locationFly";
@@ -70,42 +64,15 @@ namespace DuAn1.Views
 
                 var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
 
-                int id;
-                int tienloai = 0;
-                if (cbb_LoaiVe.SelectedIndex == 0)
-                {
-                    id = 2;
-                    tienloai = 200000;
-                }
-                else if (cbb_LoaiVe.SelectedIndex == 1)
-                {
-                    id = 2;
-                    tienloai = 400000;
-                }
-                else if (cbb_LoaiVe.SelectedIndex == 2)
-                {
-                    id = 1;
-                    tienloai = 600000;
-                }
-                else
-                {
-                    id = 1;
-                    tienloai = 1200000;
-                }
-
-                var cla = _classServices.get_list().Where(c => c.Id == id).FirstOrDefault();
 
 
-                var seat = _seatDetailServices.list().Where(c => c.ClassId == id && c.PlaneTypeId == plane.Id && c.SeatCode == "").FirstOrDefault();
-                int tong = item.TotalPrice + flight.Price + cla.Price + tienloai;
-                dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate, cbb_LoaiVe.SelectedIndex, flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTo, tong, item.SeatCode);
+
+                var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == "").FirstOrDefault();
+                int tong = item.TotalPrice + flight.Price;
+                dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate, flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTo, tong, item.SeatCode);
             }
             if (dgv_data.RowCount > 0)
             {
-                txt_TenVe.Text = dgv_data.Rows[0].Cells[0].Value.ToString();
-                txt_MaGhe.Text = dgv_data.Rows[0].Cells[10].Value.ToString();
-                txt_GiaVe.Text = dgv_data.Rows[0].Cells[9].Value.ToString();
-                date_NgayTao.Value = (DateTime)(dgv_data.Rows[0].Cells[3].Value);
                 date_NgayDi.Value = (DateTime)(dgv_data.Rows[0].Cells[5].Value);
                 date_NgayVe.Value = (DateTime)(dgv_data.Rows[0].Cells[6].Value);
                 cbb_DiemDen.Text = dgv_data.Rows[0].Cells[8].Value.ToString();
@@ -115,55 +82,14 @@ namespace DuAn1.Views
 
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_TenVe.Text = dgv_data.CurrentRow.Cells[0].Value.ToString();
-            txt_MaGhe.Text = dgv_data.CurrentRow.Cells[10].Value.ToString();
-            txt_GiaVe.Text = dgv_data.CurrentRow.Cells[9].Value.ToString();
-            date_NgayTao.Value = (DateTime)(dgv_data.CurrentRow.Cells[3].Value);
             date_NgayDi.Value = (DateTime)(dgv_data.CurrentRow.Cells[5].Value);
             date_NgayVe.Value = (DateTime)(dgv_data.CurrentRow.Cells[6].Value);
             cbb_DiemDen.Text = dgv_data.CurrentRow.Cells[8].Value.ToString();
             cbb_DiemDi.Text = dgv_data.CurrentRow.Cells[7].Value.ToString();
         }
 
-        private void txt_Search_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_Search.Text != "")
-            {
-                dgv_data.Rows.Clear();
-                foreach (var item in _ticketServices.list_Ticket())
-                {
+      
 
-                    var cus = _customerServices.GetCustomers().Where(c => c.Id == item.CustomerId).FirstOrDefault();
 
-                    var flight = _flightServices.get_list().Where(c => c.Id == item.FlightId).FirstOrDefault();
-
-                    var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
-
-                    int id;
-                    if (cbb_LoaiVe.SelectedIndex == 0 || cbb_LoaiVe.SelectedIndex == 1)
-                    {
-                        id = 2;
-                    }
-                    else
-                    {
-                        id = 1;
-                    }
-                    var seat = _seatDetailServices.list().Where(c => c.ClassId == id && c.PlaneTypeId == plane.Id && c.SeatCode == "").FirstOrDefault();
-                    if (flight.GoFrom.Contains(txt_Search.Text) || flight.GoTo.Contains(txt_Search.Text))
-                    {
-                        dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate, cbb_LoaiVe.SelectedIndex, flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTo, item.TotalPrice, item.SeatCode);
-                    }
-                }
-            }
-            else
-            {
-                load();
-            }
-        }
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
