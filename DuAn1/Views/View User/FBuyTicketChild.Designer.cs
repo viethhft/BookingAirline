@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             groupBox6 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            menuStrip1 = new MenuStrip();
+            lọcToolStripMenuItem = new ToolStripMenuItem();
+            hIỂNTHỊBỘLỌCToolStripMenuItem = new ToolStripMenuItem();
             groupBox2 = new GroupBox();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -71,8 +74,11 @@
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
+            label29 = new Label();
+            label30 = new Label();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
+            menuStrip1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -80,6 +86,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label30);
+            groupBox1.Controls.Add(label29);
             groupBox1.Controls.Add(guna2Button4);
             groupBox1.Controls.Add(guna2Button3);
             groupBox1.Controls.Add(label7);
@@ -94,6 +102,106 @@
             groupBox1.Size = new Size(1059, 111);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.BorderColor = Color.Goldenrod;
+            guna2Button4.BorderRadius = 10;
+            guna2Button4.BorderThickness = 1;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.White;
+            guna2Button4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button4.ForeColor = Color.Goldenrod;
+            guna2Button4.Location = new Point(836, 22);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.Size = new Size(217, 76);
+            guna2Button4.TabIndex = 5;
+            guna2Button4.Text = "GIÁ";
+            guna2Button4.Click += guna2Button4_Click;
+            // 
+            // guna2Button3
+            // 
+            guna2Button3.BorderColor = Color.DarkCyan;
+            guna2Button3.BorderRadius = 10;
+            guna2Button3.BorderThickness = 1;
+            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button3.FillColor = Color.White;
+            guna2Button3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button3.ForeColor = Color.DarkCyan;
+            guna2Button3.Location = new Point(613, 22);
+            guna2Button3.Name = "guna2Button3";
+            guna2Button3.Size = new Size(217, 76);
+            guna2Button3.TabIndex = 5;
+            guna2Button3.Text = "GIÁ";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(269, 30);
+            label7.Name = "label7";
+            label7.Size = new Size(94, 15);
+            label7.TabIndex = 6;
+            label7.Text = "Số hiệu máy bay";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(382, 30);
+            label6.Name = "label6";
+            label6.Size = new Size(73, 15);
+            label6.TabIndex = 5;
+            label6.Text = "Tên máy bay";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(18, 83);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 15);
+            label5.TabIndex = 4;
+            label5.Text = "tổng thời gian";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(149, 55);
+            label4.Name = "label4";
+            label4.Size = new Size(77, 15);
+            label4.TabIndex = 3;
+            label4.Text = "thời gian đến";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(18, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(67, 15);
+            label3.TabIndex = 2;
+            label3.Text = "thời gian đi";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(149, 30);
+            label2.Name = "label2";
+            label2.Size = new Size(77, 15);
+            label2.TabIndex = 1;
+            label2.Text = "thời gian đến";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(18, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 15);
+            label1.TabIndex = 0;
+            label1.Text = "thời gian đi";
             // 
             // guna2Button1
             // 
@@ -131,111 +239,34 @@
             // 
             groupBox6.Controls.Add(guna2Button2);
             groupBox6.Controls.Add(guna2Button1);
+            groupBox6.Controls.Add(menuStrip1);
             groupBox6.Location = new Point(12, 12);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(1059, 90);
             groupBox6.TabIndex = 1;
             groupBox6.TabStop = false;
             // 
-            // label1
+            // menuStrip1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(18, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(67, 15);
-            label1.TabIndex = 0;
-            label1.Text = "thời gian đi";
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { lọcToolStripMenuItem, hIỂNTHỊBỘLỌCToolStripMenuItem });
+            menuStrip1.Location = new Point(18, 43);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(216, 24);
+            menuStrip1.TabIndex = 5;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // label2
+            // lọcToolStripMenuItem
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(149, 30);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 15);
-            label2.TabIndex = 1;
-            label2.Text = "thời gian đến";
+            lọcToolStripMenuItem.Name = "lọcToolStripMenuItem";
+            lọcToolStripMenuItem.Size = new Size(96, 20);
+            lọcToolStripMenuItem.Text = "SẮP XẾP THEO";
             // 
-            // label3
+            // hIỂNTHỊBỘLỌCToolStripMenuItem
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(18, 55);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 15);
-            label3.TabIndex = 2;
-            label3.Text = "thời gian đi";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(149, 55);
-            label4.Name = "label4";
-            label4.Size = new Size(77, 15);
-            label4.TabIndex = 3;
-            label4.Text = "thời gian đến";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(18, 83);
-            label5.Name = "label5";
-            label5.Size = new Size(82, 15);
-            label5.TabIndex = 4;
-            label5.Text = "tổng thời gian";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(382, 30);
-            label6.Name = "label6";
-            label6.Size = new Size(73, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Tên máy bay";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(269, 30);
-            label7.Name = "label7";
-            label7.Size = new Size(94, 15);
-            label7.TabIndex = 6;
-            label7.Text = "Số hiệu máy bay";
-            // 
-            // guna2Button3
-            // 
-            guna2Button3.BorderColor = Color.DarkCyan;
-            guna2Button3.BorderRadius = 10;
-            guna2Button3.BorderThickness = 1;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.White;
-            guna2Button3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button3.ForeColor = Color.DarkCyan;
-            guna2Button3.Location = new Point(613, 22);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.Size = new Size(217, 76);
-            guna2Button3.TabIndex = 5;
-            guna2Button3.Text = "GIÁ";
-            // 
-            // guna2Button4
-            // 
-            guna2Button4.BorderColor = Color.Goldenrod;
-            guna2Button4.BorderRadius = 10;
-            guna2Button4.BorderThickness = 1;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.White;
-            guna2Button4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button4.ForeColor = Color.Goldenrod;
-            guna2Button4.Location = new Point(836, 22);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.Size = new Size(217, 76);
-            guna2Button4.TabIndex = 5;
-            guna2Button4.Text = "GIÁ";
-            guna2Button4.Click += guna2Button4_Click;
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Name = "hIỂNTHỊBỘLỌCToolStripMenuItem";
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Size = new Size(112, 20);
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Text = "HIỂN THỊ BỘ LỌC";
             // 
             // groupBox2
             // 
@@ -585,6 +616,24 @@
             label28.TabIndex = 0;
             label28.Text = "thời gian đi";
             // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(698, 78);
+            label29.Name = "label29";
+            label29.Size = new Size(43, 15);
+            label29.TabIndex = 7;
+            label29.Text = "Số ghế";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(921, 78);
+            label30.Name = "label30";
+            label30.Size = new Size(43, 15);
+            label30.TabIndex = 8;
+            label30.Text = "Số ghế";
+            // 
             // FBuyTicketChild
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -595,11 +644,15 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox6);
             Controls.Add(groupBox1);
+            MainMenuStrip = menuStrip1;
             Name = "FBuyTicketChild";
             Text = "FBuyTicketChild";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -654,5 +707,10 @@
         private Label label26;
         private Label label27;
         private Label label28;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem lọcToolStripMenuItem;
+        private ToolStripMenuItem hIỂNTHỊBỘLỌCToolStripMenuItem;
+        private Label label30;
+        private Label label29;
     }
 }
