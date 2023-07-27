@@ -94,6 +94,9 @@ namespace _1_DAL.Models
                     .HasMaxLength(50)
                     .HasColumnName("first_name");
 
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime");
+
                 entity.Property(e => e.Gender)
                     .HasMaxLength(10)
                     .HasColumnName("gender")

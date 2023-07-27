@@ -77,9 +77,9 @@ namespace DuAn1.Views
         {
             if (txb_name.Text != "" || txb_address.Text != "" || txb_email.Text != "" || tbx_phone.Text != "" || tbx_pass1.Text != "" || tbx_pass2.Text != "")
             {
-                if (_check_ma&&_check_mail&&_check_matkhau&&_check_name&&_check_sdt)
+                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt)
                 {
-                    if (tbx_pass1.Text==tbx_pass2.Text)
+                    if (tbx_pass1.Text == tbx_pass2.Text)
                     {
                         Customer customer = new Customer();
                         string[] fullname = _validate.cutName(txb_name.Text);
@@ -92,6 +92,7 @@ namespace DuAn1.Views
                         customer.Phone = tbx_phone.Text;
                         customer.Gender = cbx_gender.Text;
                         customer.Password = _validate.ReversePass(tbx_pass2.Text);
+                        customer.CreateDate = DateTime.Now;
                         if (check_duplicate_mail(customer.Email))
                         {
                             MessageBox.Show("Email bạn nhập đã được sử dụng đăng ký cho tài khoản khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -100,6 +101,7 @@ namespace DuAn1.Views
                         {
                             if (MessageBox.Show(_dangKyService.Create(customer), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
                             {
+                                code_otp = _validate.randomCode();
                                 reset();
                                 this.Close();
                             }
@@ -115,7 +117,7 @@ namespace DuAn1.Views
                     MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
 
         private void btn_sign_MouseHover(object sender, EventArgs e)
@@ -219,39 +221,37 @@ namespace DuAn1.Views
                     check = false;
                 }
             }
-            try
+
+            if (txb_email.Text != "" && check)
             {
-                if (txb_email.Text != "" && check)
+                CountDown.Interval = 1000;
+                CountDown.Start();
+                minutes = 5;
+                seconds = 60;
+                string email = txb_email.Text;
+                string subject = "Chào mừng bạn đến với bán vé máy bay";
+                string body = "Mã xác thực để xác minh tài khoản đăng ký của bạn là: ";
+                int role_id = 99;
+                code_otp = _validate.randomCode();
+                if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
                 {
-                    CountDown.Interval = 1000;
-                    CountDown.Start();
-                    minutes = 5;
-                    seconds = 60;
-                    string email = txb_email.Text;
-                    string subject = "Chào mừng bạn đến với bán vé máy bay";
-                    string body = "Mã xác thực để xác minh tài khoản đăng ký của bạn là: ";
-                    int role_id = 99;
-                    code_otp = _validate.randomCode();
-                    if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
-                    {
-                        time.Visible = true;
-                        MessageBox.Show("Mã xác thực đã được gửi đến email của bạn!");
-                        btn_SendCode.Enabled = false;
-                        btn_sign.Enabled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể gửi mã đến email!");
-                    }
+                    time.Visible = true;
+                    MessageBox.Show("Mã xác thực đã được gửi đến email của bạn!");
+                    btn_SendCode.Enabled = false;
+                    btn_sign.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("Email đã được sử dụng để đăng ký");
+                    MessageBox.Show("Không thể gửi mã đến email!");
                 }
             }
-            catch (Exception)
+            else if (txb_email.Text == "")
             {
-                MessageBox.Show("Email đã được được sử dụng để đăng ký");
+                MessageBox.Show("Vui lòng nhập email");
+            }
+            else
+            {
+                MessageBox.Show("Email đã được sử dụng để đăng ký");
             }
         }
 

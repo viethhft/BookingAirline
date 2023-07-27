@@ -151,18 +151,19 @@
             // 
             // cbb_To
             // 
-            cbb_To.BackColor = Color.Transparent;
-            cbb_To.DrawMode = DrawMode.OwnerDrawFixed;
-            cbb_To.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbb_To.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbb_To.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbb_To.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cbb_To.ForeColor = Color.FromArgb(68, 88, 112);
-            cbb_To.ItemHeight = 30;
-            cbb_To.Location = new Point(391, 161);
-            cbb_To.Name = "cbb_To";
-            cbb_To.Size = new Size(314, 36);
-            cbb_To.TabIndex = 17;
+            this.cbb_To.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbb_To.ItemHeight = 30;
+            this.cbb_To.Location = new System.Drawing.Point(391, 161);
+            this.cbb_To.Name = "cbb_To";
+            this.cbb_To.Size = new System.Drawing.Size(314, 36);
+            this.cbb_To.TabIndex = 17;
+            this.cbb_To.SelectedIndexChanged += new System.EventHandler(this.cbb_To_SelectedIndexChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -230,13 +231,13 @@
             // 
             // lb_ErrorFrom1
             // 
-            lb_ErrorFrom1.BackColor = Color.Transparent;
-            lb_ErrorFrom1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_ErrorFrom1.Location = new Point(110, 204);
-            lb_ErrorFrom1.Name = "lb_ErrorFrom1";
-            lb_ErrorFrom1.Size = new Size(73, 17);
-            lb_ErrorFrom1.TabIndex = 25;
-            lb_ErrorFrom1.Text = "THÔNG BÁO";
+            this.lb_ErrorFrom1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_ErrorFrom1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_ErrorFrom1.Location = new System.Drawing.Point(33, 203);
+            this.lb_ErrorFrom1.Name = "lb_ErrorFrom1";
+            this.lb_ErrorFrom1.Size = new System.Drawing.Size(73, 17);
+            this.lb_ErrorFrom1.TabIndex = 25;
+            this.lb_ErrorFrom1.Text = "THÔNG BÁO";
             // 
             // btn_Search
             // 
@@ -260,11 +261,11 @@
             // 
             // txt_CodeFlight
             // 
-            txt_CodeFlight.Location = new Point(33, 161);
-            txt_CodeFlight.Multiline = true;
-            txt_CodeFlight.Name = "txt_CodeFlight";
-            txt_CodeFlight.Size = new Size(314, 36);
-            txt_CodeFlight.TabIndex = 27;
+            this.txt_CodeFlight.Location = new System.Drawing.Point(33, 162);
+            this.txt_CodeFlight.Multiline = true;
+            this.txt_CodeFlight.Name = "txt_CodeFlight";
+            this.txt_CodeFlight.Size = new System.Drawing.Size(314, 36);
+            this.txt_CodeFlight.TabIndex = 27;
             // 
             // FtinhTrangChuyenBay
             // 
