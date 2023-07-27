@@ -137,11 +137,13 @@
             // 
             this.cbb_From.BackColor = System.Drawing.Color.Transparent;
             this.cbb_From.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_From.DropDownHeight = 150;
             this.cbb_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_From.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_From.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_From.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbb_From.IntegralHeight = false;
             this.cbb_From.ItemHeight = 30;
             this.cbb_From.Location = new System.Drawing.Point(33, 161);
             this.cbb_From.Name = "cbb_From";
@@ -153,11 +155,13 @@
             // 
             this.cbb_To.BackColor = System.Drawing.Color.Transparent;
             this.cbb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_To.DropDownHeight = 150;
             this.cbb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbb_To.IntegralHeight = false;
             this.cbb_To.ItemHeight = 30;
             this.cbb_To.Location = new System.Drawing.Point(391, 161);
             this.cbb_To.Name = "cbb_To";
