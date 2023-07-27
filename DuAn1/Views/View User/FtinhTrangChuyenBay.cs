@@ -32,6 +32,7 @@ namespace GUI.Views.View_User
             lb_ErrorFrom1.Visible = false;
             lb_ErrorTo1.Visible = false;
             lb_ErrorNum.Visible = false;
+            guna2HtmlLabel9.Visible = false;
 
             cbb_From.DataSource = _locationServices.get_list();
             cbb_From.DisplayMember = "locationFly";
@@ -53,7 +54,11 @@ namespace GUI.Views.View_User
             guna2Button2.FillColor = Color.White;
             guna2Button1.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = false;
-           
+            cbb_From.Visible = true;
+            cbb_To.Visible = true;
+            guna2HtmlLabel3.Visible = true;
+            guna2HtmlLabel2.Visible = true;
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)//đây là button số hiệu chuyến bay
@@ -61,16 +66,19 @@ namespace GUI.Views.View_User
             guna2Button1.FillColor = Color.White;
             guna2Button2.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = true;
+            guna2HtmlLabel3.Visible = false;
+            cbb_To.Visible = false;
+            cbb_From.Visible = false;
         }
 
         private void HienThiSoHieuChuyenBay() // HIỂN THỊ các nút trong số hiệu chuuyến bay
         {
-            
+
         }
 
         private void HienThiHanhTrinh() //Hiển thị các nút trong hành trình
         {
-            
+
 
         }
 
