@@ -39,6 +39,7 @@
             label5 = new Label();
             groupBox2 = new GroupBox();
             dgv_data = new DataGridView();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_data).BeginInit();
@@ -46,6 +47,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(guna2Button1);
             groupBox1.Controls.Add(date_NgayVe);
             groupBox1.Controls.Add(cbb_DiemDen);
             groupBox1.Controls.Add(cbb_DiemDi);
@@ -66,7 +68,7 @@
             date_NgayVe.FillColor = Color.FromArgb(224, 224, 224);
             date_NgayVe.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             date_NgayVe.Format = DateTimePickerFormat.Long;
-            date_NgayVe.Location = new Point(269, 41);
+            date_NgayVe.Location = new Point(223, 41);
             date_NgayVe.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             date_NgayVe.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             date_NgayVe.Name = "date_NgayVe";
@@ -86,7 +88,7 @@
             cbb_DiemDen.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_DiemDen.IntegralHeight = false;
             cbb_DiemDen.ItemHeight = 30;
-            cbb_DiemDen.Location = new Point(549, 41);
+            cbb_DiemDen.Location = new Point(444, 41);
             cbb_DiemDen.Name = "cbb_DiemDen";
             cbb_DiemDen.Size = new Size(200, 36);
             cbb_DiemDen.TabIndex = 29;
@@ -103,7 +105,7 @@
             cbb_DiemDi.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_DiemDi.IntegralHeight = false;
             cbb_DiemDi.ItemHeight = 30;
-            cbb_DiemDi.Location = new Point(818, 41);
+            cbb_DiemDi.Location = new Point(669, 41);
             cbb_DiemDi.Name = "cbb_DiemDi";
             cbb_DiemDi.Size = new Size(200, 36);
             cbb_DiemDi.TabIndex = 28;
@@ -126,7 +128,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(818, 18);
+            label9.Location = new Point(669, 18);
             label9.Name = "label9";
             label9.Size = new Size(76, 18);
             label9.TabIndex = 19;
@@ -136,7 +138,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(269, 18);
+            label8.Location = new Point(223, 18);
             label8.Name = "label8";
             label8.Size = new Size(64, 18);
             label8.TabIndex = 17;
@@ -156,7 +158,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(549, 18);
+            label5.Location = new Point(444, 18);
             label5.Name = "label5";
             label5.Size = new Size(63, 18);
             label5.TabIndex = 11;
@@ -181,6 +183,22 @@
             dgv_data.RowTemplate.Height = 25;
             dgv_data.Size = new Size(1019, 332);
             dgv_data.TabIndex = 0;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(894, 41);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(112, 33);
+            guna2Button1.TabIndex = 31;
+            guna2Button1.Text = "Tìm";
             // 
             // FquanlyVe
             // 
@@ -211,5 +229,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDen;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDi;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayDi;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
