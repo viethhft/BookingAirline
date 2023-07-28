@@ -15,18 +15,12 @@ namespace GUI.Views.View_User
     {
         public FBuyTicketChild()
         {
+            list_search = new List<Flight>();
             InitializeComponent();
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
-            flowLayoutPanel1.Controls.Clear();
-            Panel a = new Panel();
-            foreach (var item in list)
-            {
-                a = panel1;
-                flowLayoutPanel1.Controls.Add(a);
-                MessageBox.Show("a");
-            }
+            list_search = list;
         }
         
     }
