@@ -30,7 +30,6 @@
         {
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,13 +66,6 @@
             this.groupBox6.Size = new System.Drawing.Size(1059, 90);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1073, 122);
-            this.panel1.TabIndex = 7;
             // 
             // guna2Button2
             // 
@@ -128,7 +120,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 590);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox6);
             this.MainMenuStrip = this.menuStrip1;
@@ -150,6 +141,5 @@
         private ToolStripMenuItem hIỂNTHỊBỘLỌCToolStripMenuItem;
         private FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Panel panel1;
     }
 }
