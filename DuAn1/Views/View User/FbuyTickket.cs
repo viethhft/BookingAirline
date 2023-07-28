@@ -28,9 +28,6 @@ namespace GUI.Views.View_User
             _locationServices = new LocationService();
             InitializeComponent();
             load();
-            cbb_HanhKhach.Items.Add("Người lớn");
-            cbb_HanhKhach.Items.Add("Trẻ em");
-            cbb_HanhKhach.SelectedIndex = 0;
             lb_ErrorFrom.Visible = false;
             lb_ErrorTo.Visible = false;
             lb_dateTo.Visible = false;
@@ -45,8 +42,6 @@ namespace GUI.Views.View_User
             cbb_To.DataSource = _locationServices.get_list();
             cbb_To.DisplayMember = "locationFly";
 
-            cbb_LoaiVe.DataSource = _classServices.get_list();
-            cbb_LoaiVe.DisplayMember = "displayName";
             txt_Discount.Visible = false;
             date_To.Visible = false;
             guna2HtmlLabel8.Visible = false;
