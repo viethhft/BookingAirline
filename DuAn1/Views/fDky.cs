@@ -114,7 +114,7 @@ namespace DuAn1.Views
                 }
                 else
                 {
-                    MessageBox.Show("Thông tin điền đúng thông tin yêu cầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Điền đúng thông tin được yêu cầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -281,6 +281,7 @@ namespace DuAn1.Views
                         btn_SendCode.Enabled = true;
                         code_otp = _validate.randomCode();
                         CountDown.Stop();
+                        time.Visible = false;
                     }
                     lb_Minutes.Text = "0" + minutes.ToString();
                     seconds = 60;

@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(907, 533);
+            ClientSize = new Size(1173, 606);
             Name = "FsearchTicket";
             Text = "FsearchTicket";
             ResumeLayout(false);

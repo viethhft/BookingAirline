@@ -71,7 +71,7 @@ namespace GUI.Views.View_User
 
         private void tbx_passOld_TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(_message);
+            
         }
 
         private void tbx_passReNew_TextChanged(object sender, EventArgs e)

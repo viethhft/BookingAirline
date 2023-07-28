@@ -21,7 +21,8 @@ create table Staff
 	password nvarchar(100) not null, -- mat khau
 	email varchar(100) not null, -- email
 	phone varchar(11) not null, --sdt
-	status int default 1 -- 1: active 0: unactive
+	status int default 1, -- 1: active 0: unactive
+	createDate datetime not null,
 	foreign key(roleId) references Roles(id)
 )
 
@@ -94,7 +95,7 @@ create table Ticket
 	customerId bigint not null,
 	flightId bigint not null,
 	createDate datetime not null,
-	twoWay int not null,--0:Một chiều+ Phổ Thông,1:Một chiều + Thương Gia,2: Khứ hồi+Phổ thông,3:Khứ hồi + Thương Gia
+	twoWay int not null,
 	totalTicket int not null,
 	totalPrice int not null,
 	seatCode varchar(50) not null,
