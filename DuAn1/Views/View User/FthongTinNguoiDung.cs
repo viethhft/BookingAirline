@@ -39,8 +39,6 @@ namespace GUI.Views.View_User
         public FthongTinNguoiDung(string message) : this()
         {
             _message = message;
-            cbx_gt.Items.Add("Nam");
-            cbx_gt.Items.Add("Nữ");
             _service = new CustomerServices();
             load();
            
