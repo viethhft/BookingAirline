@@ -152,7 +152,6 @@
             tbx_diaChi.Name = "tbx_diaChi";
             tbx_diaChi.Size = new Size(187, 109);
             tbx_diaChi.TabIndex = 11;
-            tbx_diaChi.TextChanged += tbx_diaChi_TextChanged;
             // 
             // date_bird
             // 

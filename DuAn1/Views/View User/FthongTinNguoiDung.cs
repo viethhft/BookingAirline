@@ -19,7 +19,9 @@ namespace GUI.Views.View_User
         private string _message = "";
 
         ICustomerServices _service;
+
         Validate _validate;
+
         bool _check_information = true;
         public FthongTinNguoiDung()
         {
@@ -159,9 +161,5 @@ namespace GUI.Views.View_User
             }
         }
 
-        private void tbx_diaChi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
