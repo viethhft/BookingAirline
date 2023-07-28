@@ -19,10 +19,13 @@ namespace GUI.Views.View_User
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
+            flowLayoutPanel1.Controls.Clear();
+            Panel a = new Panel();
             foreach (var item in list)
             {
-                Button a = new Button();
+                a = panel1;
                 flowLayoutPanel1.Controls.Add(a);
+                MessageBox.Show("a");
             }
         }
         
