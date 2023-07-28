@@ -15,12 +15,10 @@ namespace GUI.Views.View_User
     {
         public FBuyTicketChild()
         {
-            list_search = new List<Flight>();
             InitializeComponent();
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
-            list_search = list;
         }
         
     }
