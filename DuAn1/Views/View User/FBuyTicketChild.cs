@@ -66,9 +66,6 @@ namespace GUI.Views.View_User
                 form.Controls.Add(tg);
                 flowLayoutPanel1.Controls.Add(form);
             }
-            int a=flowLayoutPanel1.Controls.Count;
-            MessageBox.Show(a.ToString());
-
         }
         
     }
