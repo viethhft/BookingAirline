@@ -28,7 +28,7 @@ namespace DuAn1.Views
             if (_role == 1)
             {
                 btn_qlynv.Visible = false;
-                btn_dthu.Visible= false;
+                btn_dthu.Visible = false;
             }
             else
             {
@@ -166,7 +166,7 @@ namespace DuAn1.Views
             }
         }
 
-        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void đăngXuấtToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
