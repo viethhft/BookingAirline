@@ -110,7 +110,7 @@ namespace GUI.Views.View_User
                     {
                         DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
                         var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
-                        if (search.Count>0)
+                        if (search.Count > 0)
                         {
                             FBuyTicketChild a = new FBuyTicketChild(search);
                             this.Hide();
