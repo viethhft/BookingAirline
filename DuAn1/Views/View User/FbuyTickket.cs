@@ -33,6 +33,8 @@ namespace GUI.Views.View_User
             cbb_HanhKhach.SelectedIndex = 0;
             lb_ErrorFrom.Visible = false;
             lb_ErrorTo.Visible = false;
+            lb_dateTo.Visible = false;
+            lb_dateFrom.Visible = false;
 
         }
         void load()
@@ -57,22 +59,40 @@ namespace GUI.Views.View_User
             }
             return false;
         }
-        bool check_date()
+        int check_date()
         {
-            if (date_From.Value < date_To.Value)
+            DateTime date1 = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+            DateTime date2 = new DateTime(date_To.Value.Year, date_To.Value.Month, date_To.Value.Day);
+            if (DateTime.Compare(date1, date2) == -1)
             {
-                return true;
+                return 1;
             }
-            return false;
+            else if (DateTime.Compare(date1, date2) == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
         }
-        bool check_dateFrom()
+        int check_dateFrom()
         {
             DateTime date = DateTime.Now;
-            if (date_From.Value >= date)
+            DateTime date1 = new DateTime(date.Year, date.Month, date.Day);
+            DateTime date2 = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+            if (DateTime.Compare(date1, date2) == -1)
             {
-                return true;
+                return 1;
             }
-            return false;
+            else if (DateTime.Compare(date1, date2) == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
         }
         private void btn_Discount_Click(object sender, EventArgs e)
         {
@@ -86,9 +106,21 @@ namespace GUI.Views.View_User
             {
                 if (check_place())
                 {
-                    if (check_dateFrom())
+                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     {
-                        var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date_From.Value);
+                        DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+                        var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
+                        if (search.Count>0)
+                        {
+                            FBuyTicketChild a = new FBuyTicketChild(search);
+                            this.Hide();
+                            a.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                        }
                     }
                     else
                     {
@@ -104,11 +136,24 @@ namespace GUI.Views.View_User
             {
                 if (check_place())
                 {
-                    if (check_date())
+                    if (check_date() == 1 || check_date() == 0)
                     {
-                        if (check_dateFrom())
+                        if (check_dateFrom() == 1)
                         {
-                            var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date_From.Value && c.DateTo == date_To.Value);
+                            DateTime date1 = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+                            DateTime date2 = new DateTime(date_To.Value.Year, date_To.Value.Month, date_To.Value.Day);
+                            var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
+                            if (search.Count > 0)
+                            {
+                                FBuyTicketChild a = new FBuyTicketChild(search);
+                                this.Hide();
+                                a.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                            }
                         }
                         else
                         {
@@ -183,7 +228,7 @@ namespace GUI.Views.View_User
 
         private void date_From_ValueChanged(object sender, EventArgs e)
         {
-            if (check_dateFrom())
+            if (check_dateFrom() == 1 || check_dateFrom() == 0)
             {
                 lb_dateFrom.Visible = false;
             }
@@ -198,7 +243,7 @@ namespace GUI.Views.View_User
 
         private void date_To_ValueChanged(object sender, EventArgs e)
         {
-            if (check_date())
+            if (check_date() == 0 || check_date() == 1)
             {
                 lb_dateTo.Visible = false;
             }

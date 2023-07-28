@@ -212,11 +212,5 @@ namespace DuAn1
                 }
             }
         }
-
-        private void txt_timkiem_TextChanged(object sender, EventArgs e)
-        {
-            btn_Search_Click(sender, e);
-        }
-
     }
 }

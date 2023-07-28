@@ -132,9 +132,7 @@
             txt_timkiem.Name = "txt_timkiem";
             txt_timkiem.Size = new Size(416, 23);
             txt_timkiem.TabIndex = 13;
-            txt_timkiem.TextChanged += txt_timkiem_TextChanged;
             // 
-            // btn_Sua
             // 
             this.btn_Sua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Sua.Location = new System.Drawing.Point(374, 163);

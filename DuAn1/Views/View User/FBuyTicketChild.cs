@@ -19,7 +19,11 @@ namespace GUI.Views.View_User
             list_search=new List<Flight>();
             InitializeComponent();
         }
-            //public FBuyTicketChild(List<Flight> aa):base()
+        public FBuyTicketChild(List<Flight> list) : this()
+        {
+            list_search=list;
+            dataGridView1.DataSource = list;
+        }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {

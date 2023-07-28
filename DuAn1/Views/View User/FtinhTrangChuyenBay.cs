@@ -16,7 +16,6 @@ namespace GUI.Views.View_User
     {
         IFlightServices _flightServices;
         ILocationServices _locationServices;
-        bool check_date = true;
         bool check_button=true;
         bool check_code=true;
         public FtinhTrangChuyenBay()
@@ -129,13 +128,29 @@ namespace GUI.Views.View_User
                 lb_ErrorFrom1.ForeColor = System.Drawing.Color.Red;
             }
         }
-
-        private void date_Start_ValueChanged(object sender, EventArgs e)
+        int check_dateFrom()
         {
             DateTime date = DateTime.Now;
-            if (date_Start.Value <= date)
+            DateTime date1 = new DateTime(date.Year, date.Month, date.Day);
+            DateTime date2 = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day);
+            if (DateTime.Compare(date1, date2) == -1)
             {
-                check_date = false;
+                return 1;
+            }
+            else if (DateTime.Compare(date1, date2) == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        private void date_Start_ValueChanged(object sender, EventArgs e)
+        {
+            
+            if (check_dateFrom() == -1)
+            {
                 lb_ErrorDate.Visible = true;
                 lb_ErrorDate.Text = "Vui lòng chọn ngày bay lớn hơn ngày hiện tại!!";
                 lb_ErrorDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
@@ -143,7 +158,6 @@ namespace GUI.Views.View_User
             }
             else
             {
-                check_date = true;
                 lb_ErrorDate.Visible = false;
             }
         }
@@ -154,11 +168,12 @@ namespace GUI.Views.View_User
             {
                 if (check())
                 {
-                    if (check_date)
+                    if (check_dateFrom()==1||check_dateFrom()==0)
                     {
                         try
                         {
-                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight >= date_Start.Value).ToList();
+                            DateTime date = new DateTime(date_Start.Value.Year,date_Start.Value.Month,date_Start.Value.Day+6);
+                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text&& c.DateFlight==date&&c.DateFlight<date).ToList();
                         }
                         catch (Exception)
                         {
@@ -180,7 +195,7 @@ namespace GUI.Views.View_User
             {
                 if (checkcode())
                 {
-                    if (check_date)
+                    if (check_dateFrom()==1||check_dateFrom()==0)
                     {
                         try
                         {

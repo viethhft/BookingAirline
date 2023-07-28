@@ -36,21 +36,40 @@ namespace GUI.Views.View_User
         }
         bool check()
         {
-            if (cbb_From.Text==cbb_To.Text)
+            if (cbb_From.Text == cbb_To.Text)
             {
                 return false;
             }
             return true;
         }
+        int check_dateFrom()
+        {
+            DateTime date = DateTime.Now;
+            DateTime date1 = new DateTime(date.Year, date.Month, date.Day);
+            DateTime date2 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day);
+            if (DateTime.Compare(date1, date2) == -1)
+            {
+                return 1;
+            }
+            else if (DateTime.Compare(date1, date2) == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
         private void btn_Search_Click(object sender, EventArgs e)
         {
             if (check())
             {
-                if (check_date)
+                if (check_dateFrom() == 1 || check_dateFrom() == 0)
                 {
                     try
                     {
-                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight >= date_nkh.Value).ToList().Take(7);
+                        DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day + 6);
+                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date && c.DateFlight < date).ToList();
                     }
                     catch (Exception)
                     {
@@ -77,7 +96,7 @@ namespace GUI.Views.View_User
             }
             else
             {
-                
+
                 lb_ErrorTo.Visible = true;
                 lb_ErrorTo.Text = "Vui lòng thay đổi điểm đến khác!!!";
                 lb_ErrorTo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
@@ -103,10 +122,8 @@ namespace GUI.Views.View_User
 
         private void date_nkh_ValueChanged(object sender, EventArgs e)
         {
-            DateTime date = DateTime.Now;
-            if (date_nkh.Value<=date)
+            if (check_dateFrom() == -1)
             {
-                check_date = false;
                 lb_ErrorDate.Visible = true;
                 lb_ErrorDate.Text = "Vui lòng chọn ngày bay lớn hơn ngày hiện tại!!";
                 lb_ErrorDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
@@ -114,7 +131,6 @@ namespace GUI.Views.View_User
             }
             else
             {
-                check_date = true;
                 lb_ErrorDate.Visible = false;
             }
         }
