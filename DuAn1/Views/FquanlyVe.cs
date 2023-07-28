@@ -87,9 +87,5 @@ namespace DuAn1.Views
             cbb_DiemDen.Text = dgv_data.CurrentRow.Cells[8].Value.ToString();
             cbb_DiemDi.Text = dgv_data.CurrentRow.Cells[7].Value.ToString();
         }
-
-      
-
-
     }
 }

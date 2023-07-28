@@ -13,20 +13,18 @@ namespace GUI.Views.View_User
 {
     public partial class FBuyTicketChild : Form
     {
-        List<Flight> list_search;
         public FBuyTicketChild()
         {
-            list_search=new List<Flight>();
             InitializeComponent();
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
-            list_search=list;
+            foreach (var item in list)
+            {
+                Button a = new Button();
+                flowLayoutPanel1.Controls.Add(a);
+            }
         }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
