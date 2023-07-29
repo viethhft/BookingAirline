@@ -34,6 +34,8 @@ namespace _2_BUS.Service
                     return 2;
                 }
             }
+
+            //khách hàng
             foreach (var item in _customer.Where(c => c.Email == email && c.Password == password))
             {
                 return 3;
