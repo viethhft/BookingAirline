@@ -27,7 +27,7 @@ namespace DuAn1
         public Form1()
         {
             _classServices = new ClassServices();
-            _PlaneType = new PlantypeServices();
+            _PlaneType = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             _customerServices = new CustomerServices();
             _staffServices = new StaffServices();

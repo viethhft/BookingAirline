@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace _2_BUS.Service
 {
-    public class PlantypeServices : IPlaneTypeServices
+    public class PlaneTypeServices : IPlaneTypeServices
     {
         IPlaneTypeRepo _repo;
-        public PlantypeServices()
+        public PlaneTypeServices()
         {
             _repo= new PlaneTypeRepo();
         }

@@ -16,17 +16,24 @@ namespace GUI.Views.View_User
 {
     public partial class FBuyTicketChild : Form
     {
-        IPlaneTypeServices _PlaneTypeServices;
+        IFlightServices _flightServices;
+        IPlaneTypeServices _planeTypeServices;
+        ISeatDetailServices _seatDetailServices;
+        List<Flight> _test;
         public FBuyTicketChild()
         {
             InitializeComponent();
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
-            _PlaneTypeServices = new PlantypeServices();
+            _test = list;
+            _flightServices = new FlightServices();
+            _planeTypeServices = new PlaneTypeServices();
+            _seatDetailServices = new SeatDetailServices();
             foreach (var item in list)
             {
                 Panel form = new Panel();
+                form.Name = item.FlightCode;
                 form.Width = 1059;
                 form.Height = 111;
                 form.BorderStyle = BorderStyle.FixedSingle;
@@ -40,7 +47,7 @@ namespace GUI.Views.View_User
                 code.Text = item.FlightCode;
                 code.Location = new Point(18, 62);
                 Label name = new Label();
-                var plane = _PlaneTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault();
+                var plane = _planeTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault();
                 name.Text = plane.DisplayName;
                 name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
@@ -53,8 +60,8 @@ namespace GUI.Views.View_User
                 pt.Width = 217;
                 pt.Height = 76;
                 pt.Location = new Point(613, 22);
-                pt.Tag= item;
                 pt.Name = item.FlightCode;
+                pt.Tag = "PT";
                 pt.Click += Pt_Click;
                 Guna2Button tg = new Guna2Button();
                 tg.Text = "GIÁ";
@@ -65,9 +72,9 @@ namespace GUI.Views.View_User
                 tg.BorderColor = Color.Goldenrod;
                 tg.Width = 217;
                 tg.Height = 76;
+                tg.Name = item.FlightCode;
                 tg.Click += Tg_Click;
-                tg.Tag= item;
-                pt.Name = item.FlightCode;
+                tg.Tag = "TG";
                 tg.Location = new Point(836, 22);
                 form.Controls.Add(time1);
                 form.Controls.Add(time2);
@@ -79,14 +86,49 @@ namespace GUI.Views.View_User
             }
         }
 
-        private void Pt_Click(object? sender, EventArgs e)
-        {
-
-        }
-
         private void Tg_Click(object? sender, EventArgs e)
         {
+            Guna2Button btn_current= (Guna2Button)sender;
+            var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
+            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
+            var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
+            if (seatdetail.Count()==50)
+            {
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
+            
+        }
 
+        private void Pt_Click(object? sender, EventArgs e)
+        {
+            Guna2Button btn_current = (Guna2Button)sender;
+            var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
+            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
+            var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
+            if (seatdetail.Count() == 50)
+            {
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
         }
     }
 }
