@@ -16,7 +16,9 @@ namespace GUI.Views.View_User
 {
     public partial class FBuyTicketChild : Form
     {
-        IPlaneTypeServices _PlaneTypeServices;
+        IFlightServices _flightServices;
+        IPlaneTypeServices _planeTypeServices;
+        ISeatDetailServices _seatDetailServices;
         List<Flight> _test;
         public FBuyTicketChild()
         {
@@ -25,7 +27,9 @@ namespace GUI.Views.View_User
         public FBuyTicketChild(List<Flight> list) : this()
         {
             _test = list;
-            _PlaneTypeServices = new PlaneTypeServices();
+            _flightServices = new FlightServices();
+            _planeTypeServices = new PlaneTypeServices();
+            _seatDetailServices = new SeatDetailServices();
             foreach (var item in list)
             {
                 Panel form = new Panel();
@@ -43,7 +47,7 @@ namespace GUI.Views.View_User
                 code.Text = item.FlightCode;
                 code.Location = new Point(18, 62);
                 Label name = new Label();
-                var plane = _PlaneTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault();
+                var plane = _planeTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault();
                 name.Text = plane.DisplayName;
                 name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
@@ -85,19 +89,46 @@ namespace GUI.Views.View_User
         private void Tg_Click(object? sender, EventArgs e)
         {
             Guna2Button btn_current= (Guna2Button)sender;
-            FChonGhe fChonGhe = new FChonGhe(btn_current.Name, btn_current.Tag.ToString());
-            this.Hide();
-            fChonGhe.ShowDialog();
-            this.Show();
+            var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
+            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
+            var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
+            if (seatdetail.Count()==50)
+            {
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
+            
         }
 
         private void Pt_Click(object? sender, EventArgs e)
         {
             Guna2Button btn_current = (Guna2Button)sender;
-            FChonGhe fChonGhe = new FChonGhe(btn_current.Name, btn_current.Tag.ToString());
-            this.Hide();
-            fChonGhe.ShowDialog();
-            this.Show();
+            var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
+            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
+            var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
+            if (seatdetail.Count() == 50)
+            {
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                this.Hide();
+                fChonGhe.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

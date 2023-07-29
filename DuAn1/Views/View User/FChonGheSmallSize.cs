@@ -13,39 +13,39 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class FChonGhe : Form
+    public partial class FChonGheSmallSize : Form
     {
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
-        public FChonGhe()
+        public FChonGheSmallSize()
         {
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             InitializeComponent();
         }
-        public FChonGhe(string code, string loaighe) : this()
+        public FChonGheSmallSize(string code, string loaighe) : this()
         {
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             int so = 1;
             int tt = 0;
-            Point locaChair = new Point(730, 17);
-            Point locaName = new Point(766, 23);
-            Point locaSTT = new Point(738, 95);
+            Point locaChair = new Point(540, 10);
+            Point locaName = new Point(576, 16);
+            Point locaSTT = new Point(548, 88);
             string[] hang = { "A", "B", "C", "D" };
             foreach (var item in seatdetail)
             {
                 if (tt == 4)
                 {
-                    locaChair.X -= 60;
-                    locaName.X -= 60;
-                    locaSTT.X -= 60;
-                    locaChair.Y = 17;
-                    locaName.Y = 23;
-                    locaSTT.Y = 95;
+                    locaChair.X -=75;
+                    locaName.X -= 75;
+                    locaSTT.X -= 75;
+                    locaChair.Y = 10;
+                    locaName.Y = 16;
+                    locaSTT.Y = 88;
                     tt = 0;
                     so++;
                 }
@@ -56,7 +56,7 @@ namespace GUI.Views.View_User
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    chair.BackColor= Color.FromArgb(94,148,255);
+                    chair.BackColor = Color.FromArgb(94, 148, 255);
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
                     lb.Location = locaName;

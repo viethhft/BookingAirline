@@ -1,6 +1,6 @@
 ﻿namespace GUI.Views.View_User
 {
-    partial class FChonGhe
+    partial class FChonGheBigSize
     {
         /// <summary>
         /// Required designer variable.
