@@ -100,7 +100,8 @@ namespace GUI.Views.View_User
 
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
+            MessageBox.Show(a.Name);
         }
 
         public FChonGheSmallSize(string code) : this()
@@ -132,7 +133,7 @@ namespace GUI.Views.View_User
                 if (tt >= 0 && tt < 4)
                 {
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
-                    Image image = Image.FromFile("D:\\DA\\DuAn1\\Resources\\chair.png");
+                    Image image = Image.FromFile(@"..//..//..//Resources//chair.png");
                     chair.Image = image;
                     chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
