@@ -40,7 +40,7 @@ namespace GUI.Views.View_User
                 code.Text = item.FlightCode;
                 code.Location = new Point(18, 62);
                 Label name = new Label();
-                var plane = _PlaneTypeServices.get_list().Where(c=>c.Id==item.PlaneTypeId).FirstOrDefault();
+                var plane = _PlaneTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault();
                 name.Text = plane.DisplayName;
                 name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
@@ -53,6 +53,8 @@ namespace GUI.Views.View_User
                 pt.Width = 217;
                 pt.Height = 76;
                 pt.Location = new Point(613, 22);
+                pt.Tag= item;
+                pt.Name = item.FlightCode;
                 pt.Click += Pt_Click;
                 Guna2Button tg = new Guna2Button();
                 tg.Text = "GIÁ";
@@ -64,6 +66,8 @@ namespace GUI.Views.View_User
                 tg.Width = 217;
                 tg.Height = 76;
                 tg.Click += Tg_Click;
+                tg.Tag= item;
+                pt.Name = item.FlightCode;
                 tg.Location = new Point(836, 22);
                 form.Controls.Add(time1);
                 form.Controls.Add(time2);

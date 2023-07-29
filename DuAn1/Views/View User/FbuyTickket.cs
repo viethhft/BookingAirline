@@ -101,8 +101,8 @@ namespace GUI.Views.View_User
             {
                 if (check_place())
                 {
-                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
-                    {
+                    //if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                    //{
                         DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
                         var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
                         if (search.Count > 0)
@@ -116,11 +116,11 @@ namespace GUI.Views.View_User
                         {
                             MessageBox.Show("Không tìm được chuyến bay phù hợp");
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
-                    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
+                    //}
                 }
                 else
                 {
