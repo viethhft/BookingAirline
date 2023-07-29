@@ -312,6 +312,7 @@
             this.dateTo.Size = new System.Drawing.Size(242, 36);
             this.dateTo.TabIndex = 24;
             this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // DateFrom
             // 
@@ -326,6 +327,7 @@
             this.DateFrom.Size = new System.Drawing.Size(242, 36);
             this.DateFrom.TabIndex = 23;
             this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.ValueChanged += new System.EventHandler(this.DateFrom_ValueChanged);
             // 
             // cmb_PlaneType
             // 
