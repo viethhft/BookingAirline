@@ -56,7 +56,7 @@ namespace GUI.Views.View_User
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    chair.BackColor= Color.FromArgb(94,148,255);
+                    chair.BackColor = Color.FromArgb(94, 148, 255);
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
                     lb.Location = locaName;

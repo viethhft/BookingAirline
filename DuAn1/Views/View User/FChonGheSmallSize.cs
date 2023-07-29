@@ -40,7 +40,7 @@ namespace GUI.Views.View_User
             {
                 if (tt == 4)
                 {
-                    locaChair.X -=75;
+                    locaChair.X -= 75;
                     locaName.X -= 75;
                     locaSTT.X -= 75;
                     locaChair.Y = 10;
@@ -52,7 +52,7 @@ namespace GUI.Views.View_User
                 if (tt >= 0 && tt < 4)
                 {
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
-                    Image image = Image.FromFile("D:\\DA\\DuAn1\\Resources\\chair.png");
+                    Image image = Image.FromFile("C:\\Users\\GAMING\\Desktop\\DuAn1\\DuAn1\\Resources\\chair.png");
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
