@@ -103,7 +103,6 @@
             tbx_passNew.PasswordChar = '*';
             tbx_passNew.Size = new Size(222, 37);
             tbx_passNew.TabIndex = 2;
-            tbx_passNew.UseSystemPasswordChar = true;
             // 
             // tbx_passReNew
             // 
@@ -113,7 +112,6 @@
             tbx_passReNew.PasswordChar = '*';
             tbx_passReNew.Size = new Size(222, 37);
             tbx_passReNew.TabIndex = 3;
-            tbx_passReNew.UseSystemPasswordChar = true;
             tbx_passReNew.TextChanged += tbx_passReNew_TextChanged;
             // 
             // guna2Button1

@@ -170,18 +170,20 @@ namespace DuAn1.Views
             }
         }
 
-        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
 
         private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FDoimk f = new FDoimk(_messe);
             f.ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
