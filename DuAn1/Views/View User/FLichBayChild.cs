@@ -67,7 +67,7 @@ namespace GUI.Views.View_User
                             group.Controls.Add(lb_code);
                             group.Controls.Add(lb_stopPoint);
                             PictureBox pic = new PictureBox();
-                            Image image = Image.FromFile("D:\\DA\\DuAn1\\Resources\\icons8-plane-30 (2).png");
+                            Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
                             pic.Image = image;
                             pic.Size = new Size(64, 47);
                             pic.Location = loca_pic;
@@ -88,7 +88,7 @@ namespace GUI.Views.View_User
                         else
                         {
                             PictureBox pic = new PictureBox();
-                            Image image = Image.FromFile("D:\\DA\\DuAn1\\Resources\\icons8-plane-30 (2).png");
+                            Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
                             pic.Image = image;
                             pic.Size = new Size(64, 47);
                             pic.Location = loca_pic;
