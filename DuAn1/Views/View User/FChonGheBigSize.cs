@@ -59,10 +59,18 @@ namespace GUI.Views.View_User
                     chair.Location = locaChair;
                     if (dem < 35)
                     {
-                        chair.BackColor = Color.FromArgb(94, 148, 255);
+                        if (loaighe == "TG")
+                        {
+                            chair.Enabled = false;
+                        }
+                        chair.BackColor = Color.DarkCyan;
                     }
                     else
                     {
+                        if (loaighe=="PT")
+                        {
+                            chair.Enabled = false;
+                        }
                         chair.BackColor = Color.Goldenrod;
                     }
                     Label lb = new Label();
@@ -123,7 +131,7 @@ namespace GUI.Views.View_User
                     chair.Location = locaChair;
                     if (dem < 35)
                     {
-                        chair.BackColor = Color.FromArgb(94, 148, 255);
+                        chair.BackColor = Color.DarkCyan;
                     }
                     else
                     {

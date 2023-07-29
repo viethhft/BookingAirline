@@ -49,7 +49,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
             this.guna2Button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(633, 22);
+            this.guna2Button1.Location = new System.Drawing.Point(617, 22);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(217, 45);
             this.guna2Button1.TabIndex = 3;
@@ -65,7 +65,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Goldenrod;
             this.guna2Button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(853, 22);
+            this.guna2Button2.Location = new System.Drawing.Point(837, 22);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(217, 45);
             this.guna2Button2.TabIndex = 4;
