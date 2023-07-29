@@ -23,7 +23,7 @@ namespace GUI.Views.View_User
             foreach (var item in list)
             {
                 Panel form = new Panel();
-                form.Width = 1059;
+                form.Width = 1235;
                 form.Height = 111;
                 form.BorderStyle = BorderStyle.FixedSingle;
                 Label time1 = new Label();
@@ -47,7 +47,7 @@ namespace GUI.Views.View_User
                 pt.BorderColor = Color.DarkCyan;
                 pt.Width = 217;
                 pt.Height = 76;
-                pt.Location = new Point(613, 22);
+                pt.Location = new Point(750, 22);
                 Guna2Button tg = new Guna2Button();
                 tg.Text = "GIÁ";
                 tg.BorderRadius = 10;
@@ -57,7 +57,7 @@ namespace GUI.Views.View_User
                 tg.BorderColor = Color.Goldenrod;
                 tg.Width = 217;
                 tg.Height = 76;
-                tg.Location = new Point(836, 22);
+                tg.Location = new Point(1000, 22);
                 form.Controls.Add(time1);
                 form.Controls.Add(time2);
                 form.Controls.Add(code);
@@ -66,10 +66,10 @@ namespace GUI.Views.View_User
                 form.Controls.Add(tg);
                 flowLayoutPanel1.Controls.Add(form);
             }
-            int a=flowLayoutPanel1.Controls.Count;
+            int a = flowLayoutPanel1.Controls.Count;
             MessageBox.Show(a.ToString());
 
         }
-        
+
     }
 }
