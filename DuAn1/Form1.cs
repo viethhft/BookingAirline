@@ -26,6 +26,13 @@ namespace DuAn1
         int _role;
         public Form1()
         {
+            
+            InitializeComponent();
+            load();
+            timer1.Enabled = true;
+        }
+        void load()
+        {
             _classServices = new ClassServices();
             _PlaneType = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
@@ -36,13 +43,6 @@ namespace DuAn1
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
-            InitializeComponent();
-            load();
-            timer1.Enabled = true;
-        }
-
-        void load()
-        {
             if (Settings.Default.isRemember)
             {
                 tb_user.Text = Settings.Default.username;
@@ -60,6 +60,7 @@ namespace DuAn1
         {
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
+
                 _role = 0;
                 fStaff _fst = new fStaff(_role);
 
@@ -97,7 +98,7 @@ namespace DuAn1
             {
                 cb_reme_CheckedChanged(sender, e);
             }
-            
+            load();
         }
 
         private void llb_dki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

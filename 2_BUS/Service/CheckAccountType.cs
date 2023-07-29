@@ -23,7 +23,7 @@ namespace _2_BUS.Service
         {
             _staff = _context.staff.ToList();
             _customer = _context.Customers.ToList();
-            foreach (var i in _staff.Where(c => c.Email == email && c.Password == password&& c.Status==1))
+            foreach (var i in _staff.Where(c => c.Email == email && c.Password == password && c.Status == 1))
             {
                 if (i.RoleId == 0)
                 {
