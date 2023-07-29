@@ -268,7 +268,7 @@
             Controls.Add(guna2HtmlLabel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FthongTinNguoiDung";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Thông tin cá nhân";
             ResumeLayout(false);
             PerformLayout();

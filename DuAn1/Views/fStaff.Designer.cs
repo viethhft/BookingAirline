@@ -186,14 +186,14 @@
             // đổiMậtKhẩuToolStripMenuItem1
             // 
             đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(180, 22);
+            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(168, 22);
             đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem1.Click += đổiMậtKhẩuToolStripMenuItem1_Click;
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            đăngXuấtToolStripMenuItem1.Size = new Size(180, 22);
+            đăngXuấtToolStripMenuItem1.Size = new Size(168, 22);
             đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
             // 
             // fStaff

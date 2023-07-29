@@ -14,13 +14,15 @@ namespace DuAn1.Views
 {
     public partial class fStaff : Form
     {
+        private string _messe;
         int _role;
         public fStaff()
         {
             InitializeComponent();
         }
-        public fStaff(int role) : this()
+        public fStaff(int role, string messege) : this()
         {
+            _messe = messege;
             _role = role;
             EnableButton();
         }
@@ -178,8 +180,8 @@ namespace DuAn1.Views
 
         private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
-
+            FDoimk f = new FDoimk(_messe);
+            f.ShowDialog();
         }
     }
 }

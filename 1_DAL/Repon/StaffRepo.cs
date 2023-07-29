@@ -20,6 +20,11 @@ namespace _1_DAL.Repon
             return _context.staff.Where(c => c.RoleId==role).FirstOrDefault();
         }
 
+        public staff getEmail(string id)
+        {
+            return _context.staff.Where(c=> c.Email == id).FirstOrDefault();
+        }
+
         public List<staff> list_staff()
         {
             return _context.staff.ToList();

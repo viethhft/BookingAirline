@@ -28,109 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hIỂNTHỊBỘLỌCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox6.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            groupBox6 = new GroupBox();
+            menuStrip1 = new MenuStrip();
+            lọcToolStripMenuItem = new ToolStripMenuItem();
+            hIỂNTHỊBỘLỌCToolStripMenuItem = new ToolStripMenuItem();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            groupBox6.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // guna2Button1
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(633, 22);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(217, 45);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "PHỔ THÔNG";
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(633, 22);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(217, 45);
+            guna2Button1.TabIndex = 3;
+            guna2Button1.Text = "PHỔ THÔNG";
             // 
             // guna2Button2
             // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Goldenrod;
-            this.guna2Button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(853, 22);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(217, 45);
-            this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Text = "THƯƠNG GIA";
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Goldenrod;
+            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(853, 22);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.Size = new Size(217, 45);
+            guna2Button2.TabIndex = 4;
+            guna2Button2.Text = "THƯƠNG GIA";
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.guna2Button2);
-            this.groupBox6.Controls.Add(this.guna2Button1);
-            this.groupBox6.Controls.Add(this.menuStrip1);
-            this.groupBox6.Location = new System.Drawing.Point(21, 12);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1088, 90);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
+            groupBox6.Controls.Add(guna2Button2);
+            groupBox6.Controls.Add(guna2Button1);
+            groupBox6.Controls.Add(menuStrip1);
+            groupBox6.Location = new Point(21, 12);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(1088, 90);
+            groupBox6.TabIndex = 1;
+            groupBox6.TabStop = false;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lọcToolStripMenuItem,
-            this.hIỂNTHỊBỘLỌCToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(18, 35);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(216, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { lọcToolStripMenuItem, hIỂNTHỊBỘLỌCToolStripMenuItem });
+            menuStrip1.Location = new Point(18, 35);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(216, 24);
+            menuStrip1.TabIndex = 5;
+            menuStrip1.Text = "menuStrip1";
             // 
             // lọcToolStripMenuItem
             // 
-            this.lọcToolStripMenuItem.Name = "lọcToolStripMenuItem";
-            this.lọcToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.lọcToolStripMenuItem.Text = "SẮP XẾP THEO";
+            lọcToolStripMenuItem.Name = "lọcToolStripMenuItem";
+            lọcToolStripMenuItem.Size = new Size(96, 20);
+            lọcToolStripMenuItem.Text = "SẮP XẾP THEO";
             // 
             // hIỂNTHỊBỘLỌCToolStripMenuItem
             // 
-            this.hIỂNTHỊBỘLỌCToolStripMenuItem.Name = "hIỂNTHỊBỘLỌCToolStripMenuItem";
-            this.hIỂNTHỊBỘLỌCToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
-            this.hIỂNTHỊBỘLỌCToolStripMenuItem.Text = "HIỂN THỊ BỘ LỌC";
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Name = "hIỂNTHỊBỘLỌCToolStripMenuItem";
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Size = new Size(112, 20);
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Text = "HIỂN THỊ BỘ LỌC";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 108);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1088, 470);
-            this.flowLayoutPanel1.TabIndex = 9;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(21, 108);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1088, 470);
+            flowLayoutPanel1.TabIndex = 9;
             // 
             // FBuyTicketChild
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 590);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.groupBox6);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FBuyTicketChild";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FBuyTicketChild";
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1131, 590);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(groupBox6);
+            MainMenuStrip = menuStrip1;
+            Name = "FBuyTicketChild";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FBuyTicketChild";
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -132,7 +132,7 @@
             time.Controls.Add(label10);
             time.Controls.Add(lb_Seconds);
             time.Controls.Add(lb_Minutes);
-            time.Location = new Point(334, 209);
+            time.Location = new Point(333, 208);
             time.Margin = new Padding(3, 4, 3, 4);
             time.Name = "time";
             time.Size = new Size(101, 30);
@@ -193,7 +193,7 @@
             txb_Otp.Margin = new Padding(3, 2, 3, 2);
             txb_Otp.Name = "txb_Otp";
             txb_Otp.Size = new Size(88, 23);
-            txb_Otp.TabIndex = 47;
+            txb_Otp.TabIndex = 4;
             txb_Otp.TextChanged += txb_Otp_TextChanged;
             // 
             // lb_ErrorName
@@ -235,8 +235,8 @@
             Date.Location = new Point(25, 215);
             Date.Margin = new Padding(3, 4, 3, 4);
             Date.Name = "Date";
-            Date.Size = new Size(193, 23);
-            Date.TabIndex = 42;
+            Date.Size = new Size(195, 23);
+            Date.TabIndex = 3;
             // 
             // btn_sign
             // 
@@ -246,7 +246,7 @@
             btn_sign.Margin = new Padding(3, 4, 3, 4);
             btn_sign.Name = "btn_sign";
             btn_sign.Size = new Size(102, 30);
-            btn_sign.TabIndex = 41;
+            btn_sign.TabIndex = 10;
             btn_sign.Text = "Đăng ký";
             btn_sign.UseVisualStyleBackColor = true;
             btn_sign.Click += btn_sign_Click;
@@ -256,8 +256,8 @@
             tbx_pass2.Location = new Point(242, 442);
             tbx_pass2.Margin = new Padding(3, 2, 3, 2);
             tbx_pass2.Name = "tbx_pass2";
-            tbx_pass2.Size = new Size(193, 23);
-            tbx_pass2.TabIndex = 40;
+            tbx_pass2.Size = new Size(195, 23);
+            tbx_pass2.TabIndex = 9;
             tbx_pass2.UseSystemPasswordChar = true;
             tbx_pass2.TextChanged += tbx_pass2_TextChanged;
             // 
@@ -266,8 +266,8 @@
             tbx_pass1.Location = new Point(242, 360);
             tbx_pass1.Margin = new Padding(3, 2, 3, 2);
             tbx_pass1.Name = "tbx_pass1";
-            tbx_pass1.Size = new Size(193, 23);
-            tbx_pass1.TabIndex = 39;
+            tbx_pass1.Size = new Size(195, 23);
+            tbx_pass1.TabIndex = 8;
             tbx_pass1.UseSystemPasswordChar = true;
             // 
             // txb_address
@@ -275,16 +275,16 @@
             txb_address.Location = new Point(22, 288);
             txb_address.Margin = new Padding(3, 2, 3, 2);
             txb_address.Name = "txb_address";
-            txb_address.Size = new Size(196, 23);
-            txb_address.TabIndex = 38;
+            txb_address.Size = new Size(195, 23);
+            txb_address.TabIndex = 5;
             // 
             // tbx_phone
             // 
             tbx_phone.Location = new Point(242, 288);
             tbx_phone.Margin = new Padding(3, 2, 3, 2);
             tbx_phone.Name = "tbx_phone";
-            tbx_phone.Size = new Size(193, 23);
-            tbx_phone.TabIndex = 37;
+            tbx_phone.Size = new Size(195, 23);
+            tbx_phone.TabIndex = 6;
             tbx_phone.TextChanged += tbx_phone_TextChanged;
             // 
             // cbx_gender
@@ -294,7 +294,7 @@
             cbx_gender.Margin = new Padding(3, 4, 3, 4);
             cbx_gender.Name = "cbx_gender";
             cbx_gender.Size = new Size(195, 23);
-            cbx_gender.TabIndex = 35;
+            cbx_gender.TabIndex = 7;
             // 
             // pictureBox9
             // 
@@ -451,8 +451,8 @@
             txb_email.Location = new Point(240, 148);
             txb_email.Margin = new Padding(3, 2, 3, 2);
             txb_email.Name = "txb_email";
-            txb_email.Size = new Size(193, 23);
-            txb_email.TabIndex = 13;
+            txb_email.Size = new Size(195, 23);
+            txb_email.TabIndex = 2;
             txb_email.TextChanged += txb_email_TextChanged;
             // 
             // label4
@@ -494,8 +494,8 @@
             txb_name.Location = new Point(25, 148);
             txb_name.Margin = new Padding(3, 2, 3, 2);
             txb_name.Name = "txb_name";
-            txb_name.Size = new Size(193, 23);
-            txb_name.TabIndex = 3;
+            txb_name.Size = new Size(195, 23);
+            txb_name.TabIndex = 1;
             txb_name.TextChanged += txb_name_TextChanged;
             // 
             // label2

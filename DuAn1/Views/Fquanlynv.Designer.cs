@@ -28,55 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtn_off = new System.Windows.Forms.RadioButton();
-            this.rbtn_onl = new System.Windows.Forms.RadioButton();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_timkiem = new System.Windows.Forms.TextBox();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_Pass = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_Email = new System.Windows.Forms.TextBox();
-            this.txt_Sdt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_Ten = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgrid_NhanVien = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            rbtn_off = new RadioButton();
+            rbtn_onl = new RadioButton();
+            btn_Search = new Button();
+            label6 = new Label();
+            txt_timkiem = new TextBox();
+            btn_Sua = new Button();
+            btn_Them = new Button();
+            label5 = new Label();
+            txt_Pass = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            txt_Email = new TextBox();
+            txt_Sdt = new TextBox();
+            label2 = new Label();
+            txt_Ten = new TextBox();
+            label1 = new Label();
+            groupBox4 = new GroupBox();
+            dgrid_NhanVien = new DataGridView();
+            pictureBox1 = new PictureBox();
+            groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgrid_NhanVien).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbtn_off);
-            this.groupBox1.Controls.Add(this.rbtn_onl);
-            this.groupBox1.Controls.Add(this.btn_Search);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txt_timkiem);
-            this.groupBox1.Controls.Add(this.btn_Sua);
-            this.groupBox1.Controls.Add(this.btn_Them);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txt_Pass);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_Email);
-            this.groupBox1.Controls.Add(this.txt_Sdt);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_Ten);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(675, 251);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(rbtn_off);
+            groupBox1.Controls.Add(rbtn_onl);
+            groupBox1.Controls.Add(btn_Search);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(txt_timkiem);
+            groupBox1.Controls.Add(btn_Sua);
+            groupBox1.Controls.Add(btn_Them);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(txt_Pass);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txt_Email);
+            groupBox1.Controls.Add(txt_Sdt);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txt_Ten);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(12, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(675, 251);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
             // 
             // rbtn_off
             // 
@@ -109,7 +109,7 @@
             btn_Search.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Search.Location = new Point(538, 216);
             btn_Search.Name = "btn_Search";
-            btn_Search.Size = new Size(118, 29);
+            btn_Search.Size = new Size(118, 33);
             btn_Search.TabIndex = 15;
             btn_Search.Text = "Tìm kiếm";
             btn_Search.UseVisualStyleBackColor = true;
@@ -133,15 +133,16 @@
             txt_timkiem.Size = new Size(416, 23);
             txt_timkiem.TabIndex = 13;
             // 
+            // btn_Sua
             // 
-            this.btn_Sua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Sua.Location = new System.Drawing.Point(374, 163);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(118, 33);
-            this.btn_Sua.TabIndex = 1;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            btn_Sua.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Sua.Location = new Point(374, 163);
+            btn_Sua.Name = "btn_Sua";
+            btn_Sua.Size = new Size(118, 33);
+            btn_Sua.TabIndex = 1;
+            btn_Sua.Text = "Sửa";
+            btn_Sua.UseVisualStyleBackColor = true;
+            btn_Sua.Click += btn_Sua_Click;
             // 
             // btn_Them
             // 
@@ -193,17 +194,17 @@
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(116, 105);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(201, 23);
-            this.txt_Email.TabIndex = 7;
+            txt_Email.Location = new Point(116, 105);
+            txt_Email.Name = "txt_Email";
+            txt_Email.Size = new Size(201, 23);
+            txt_Email.TabIndex = 7;
             // 
             // txt_Sdt
             // 
-            this.txt_Sdt.Location = new System.Drawing.Point(480, 33);
-            this.txt_Sdt.Name = "txt_Sdt";
-            this.txt_Sdt.Size = new System.Drawing.Size(176, 23);
-            this.txt_Sdt.TabIndex = 6;
+            txt_Sdt.Location = new Point(480, 33);
+            txt_Sdt.Name = "txt_Sdt";
+            txt_Sdt.Size = new Size(176, 23);
+            txt_Sdt.TabIndex = 6;
             // 
             // label2
             // 
@@ -217,10 +218,10 @@
             // 
             // txt_Ten
             // 
-            this.txt_Ten.Location = new System.Drawing.Point(116, 33);
-            this.txt_Ten.Name = "txt_Ten";
-            this.txt_Ten.Size = new System.Drawing.Size(201, 23);
-            this.txt_Ten.TabIndex = 4;
+            txt_Ten.Location = new Point(116, 33);
+            txt_Ten.Name = "txt_Ten";
+            txt_Ten.Size = new Size(201, 23);
+            txt_Ten.TabIndex = 4;
             // 
             // label1
             // 

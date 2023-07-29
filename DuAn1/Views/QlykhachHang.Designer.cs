@@ -81,10 +81,11 @@
             // 
             // tb_status
             // 
+            tb_status.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tb_status.Location = new Point(440, 122);
             tb_status.Name = "tb_status";
             tb_status.ReadOnly = true;
-            tb_status.Size = new Size(179, 23);
+            tb_status.Size = new Size(179, 21);
             tb_status.TabIndex = 25;
             // 
             // btn_find
@@ -95,7 +96,7 @@
             btn_find.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_find.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_find.FillColor = Color.DarkCyan;
-            btn_find.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_find.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btn_find.ForeColor = Color.White;
             btn_find.Location = new Point(648, 171);
             btn_find.Name = "btn_find";
@@ -106,18 +107,20 @@
             // 
             // tb_gender
             // 
+            tb_gender.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tb_gender.Location = new Point(440, 31);
             tb_gender.Name = "tb_gender";
             tb_gender.ReadOnly = true;
-            tb_gender.Size = new Size(179, 23);
+            tb_gender.Size = new Size(179, 21);
             tb_gender.TabIndex = 4;
             // 
             // textBox3
             // 
+            textBox3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.Location = new Point(776, 31);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
-            textBox3.Size = new Size(179, 23);
+            textBox3.Size = new Size(179, 21);
             textBox3.TabIndex = 9;
             // 
             // label6
@@ -132,9 +135,10 @@
             // 
             // tb_find
             // 
+            tb_find.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tb_find.Location = new Point(440, 177);
             tb_find.Name = "tb_find";
-            tb_find.Size = new Size(179, 23);
+            tb_find.Size = new Size(179, 21);
             tb_find.TabIndex = 7;
             tb_find.TextChanged += tb_find_TextChanged;
             // 
@@ -160,10 +164,11 @@
             // 
             // tb_phone
             // 
+            tb_phone.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tb_phone.Location = new Point(440, 76);
             tb_phone.Name = "tb_phone";
             tb_phone.ReadOnly = true;
-            tb_phone.Size = new Size(179, 23);
+            tb_phone.Size = new Size(179, 21);
             tb_phone.TabIndex = 5;
             // 
             // label5
@@ -178,6 +183,7 @@
             // 
             // rtb_addr
             // 
+            rtb_addr.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             rtb_addr.Location = new Point(104, 126);
             rtb_addr.Name = "rtb_addr";
             rtb_addr.ReadOnly = true;
@@ -195,10 +201,11 @@
             // 
             // tb_name
             // 
+            tb_name.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tb_name.Location = new Point(104, 31);
             tb_name.Name = "tb_name";
             tb_name.ReadOnly = true;
-            tb_name.Size = new Size(210, 23);
+            tb_name.Size = new Size(210, 21);
             tb_name.TabIndex = 1;
             // 
             // label4
