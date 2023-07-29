@@ -41,7 +41,6 @@ namespace DuAn1
             timer1.Enabled = true;
         }
 
-
         void load()
         {
             if (Settings.Default.isRemember)
@@ -56,6 +55,7 @@ namespace DuAn1
             }
             cb_reme.Checked = Settings.Default.isRemember;
         }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
