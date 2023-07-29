@@ -17,16 +17,19 @@ namespace GUI.Views.View_User
     public partial class FBuyTicketChild : Form
     {
         IPlaneTypeServices _PlaneTypeServices;
+        List<Flight> _test;
         public FBuyTicketChild()
         {
             InitializeComponent();
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
+            _test = list;
             _PlaneTypeServices = new PlantypeServices();
             foreach (var item in list)
             {
                 Panel form = new Panel();
+                form.Name = item.FlightCode;
                 form.Width = 1059;
                 form.Height = 111;
                 form.BorderStyle = BorderStyle.FixedSingle;
@@ -53,8 +56,8 @@ namespace GUI.Views.View_User
                 pt.Width = 217;
                 pt.Height = 76;
                 pt.Location = new Point(613, 22);
-                pt.Tag= item;
                 pt.Name = item.FlightCode;
+                pt.Tag = "PT";
                 pt.Click += Pt_Click;
                 Guna2Button tg = new Guna2Button();
                 tg.Text = "GIÁ";
@@ -65,9 +68,9 @@ namespace GUI.Views.View_User
                 tg.BorderColor = Color.Goldenrod;
                 tg.Width = 217;
                 tg.Height = 76;
+                tg.Name = item.FlightCode;
                 tg.Click += Tg_Click;
-                tg.Tag= item;
-                pt.Name = item.FlightCode;
+                tg.Tag = "TG";
                 tg.Location = new Point(836, 22);
                 form.Controls.Add(time1);
                 form.Controls.Add(time2);
@@ -79,14 +82,17 @@ namespace GUI.Views.View_User
             }
         }
 
-        private void Pt_Click(object? sender, EventArgs e)
-        {
-
-        }
-
         private void Tg_Click(object? sender, EventArgs e)
         {
+            Guna2Button thu= (Guna2Button)sender;
+            MessageBox.Show(thu.Name+ thu.Tag);
+            
+        }
 
+        private void Pt_Click(object? sender, EventArgs e)
+        {
+            Guna2Button thu = (Guna2Button)sender;
+            MessageBox.Show(thu.Name);
         }
     }
 }
