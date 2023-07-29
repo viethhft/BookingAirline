@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class FChonGhe : Form
+    public partial class FTinhTrangChuyenBayChil : Form
     {
-        public FChonGhe()
+        public FTinhTrangChuyenBayChil()
         {
             InitializeComponent();
-        }
-
-        private void FChonGhe_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
