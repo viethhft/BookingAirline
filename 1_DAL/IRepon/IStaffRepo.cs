@@ -9,6 +9,8 @@ namespace _1_DAL.IRepon
     public interface IStaffRepo
     {
         public staff get(int role);
+
+        public staff getEmail(string id);
         public List<staff> list_staff();
         public bool Update(staff staff);
     }

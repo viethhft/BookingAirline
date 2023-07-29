@@ -88,11 +88,11 @@ namespace GUI.Views.View_User
 
         private void Tg_Click(object? sender, EventArgs e)
         {
-            Guna2Button btn_current= (Guna2Button)sender;
+            Guna2Button btn_current = (Guna2Button)sender;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
-            if (seatdetail.Count()==50)
+            if (seatdetail.Count() == 50)
             {
                 FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
                 this.Hide();
@@ -106,7 +106,7 @@ namespace GUI.Views.View_User
                 fChonGhe.ShowDialog();
                 this.Show();
             }
-            
+
         }
 
         private void Pt_Click(object? sender, EventArgs e)

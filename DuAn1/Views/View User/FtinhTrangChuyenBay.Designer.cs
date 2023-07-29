@@ -109,7 +109,7 @@
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.Location = new Point(345, 83);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(188, 45);
+            guna2Button2.Size = new Size(180, 45);
             guna2Button2.TabIndex = 13;
             guna2Button2.Text = "SỐ HIỆU CHUYẾN BAY";
             guna2Button2.Click += guna2Button2_Click;
@@ -135,39 +135,39 @@
             // 
             // cbb_From
             // 
-            this.cbb_From.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_From.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_From.DropDownHeight = 150;
-            this.cbb_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_From.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_From.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_From.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbb_From.IntegralHeight = false;
-            this.cbb_From.ItemHeight = 30;
-            this.cbb_From.Location = new System.Drawing.Point(33, 161);
-            this.cbb_From.Name = "cbb_From";
-            this.cbb_From.Size = new System.Drawing.Size(314, 36);
-            this.cbb_From.TabIndex = 16;
-            this.cbb_From.SelectedIndexChanged += new System.EventHandler(this.cbb_From_SelectedIndexChanged);
+            cbb_From.BackColor = Color.Transparent;
+            cbb_From.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_From.DropDownHeight = 150;
+            cbb_From.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_From.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_From.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_From.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbb_From.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_From.IntegralHeight = false;
+            cbb_From.ItemHeight = 30;
+            cbb_From.Location = new Point(33, 161);
+            cbb_From.Name = "cbb_From";
+            cbb_From.Size = new Size(314, 36);
+            cbb_From.TabIndex = 16;
+            cbb_From.SelectedIndexChanged += cbb_From_SelectedIndexChanged;
             // 
             // cbb_To
             // 
-            this.cbb_To.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_To.DropDownHeight = 150;
-            this.cbb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbb_To.IntegralHeight = false;
-            this.cbb_To.ItemHeight = 30;
-            this.cbb_To.Location = new System.Drawing.Point(391, 161);
-            this.cbb_To.Name = "cbb_To";
-            this.cbb_To.Size = new System.Drawing.Size(314, 36);
-            this.cbb_To.TabIndex = 17;
-            this.cbb_To.SelectedIndexChanged += new System.EventHandler(this.cbb_To_SelectedIndexChanged);
+            cbb_To.BackColor = Color.Transparent;
+            cbb_To.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_To.DropDownHeight = 150;
+            cbb_To.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_To.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_To.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_To.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbb_To.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_To.IntegralHeight = false;
+            cbb_To.ItemHeight = 30;
+            cbb_To.Location = new Point(391, 161);
+            cbb_To.Name = "cbb_To";
+            cbb_To.Size = new Size(314, 36);
+            cbb_To.TabIndex = 17;
+            cbb_To.SelectedIndexChanged += cbb_To_SelectedIndexChanged;
             // 
             // guna2HtmlLabel4
             // 
@@ -235,13 +235,13 @@
             // 
             // lb_ErrorFrom1
             // 
-            this.lb_ErrorFrom1.BackColor = System.Drawing.Color.Transparent;
-            this.lb_ErrorFrom1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_ErrorFrom1.Location = new System.Drawing.Point(33, 203);
-            this.lb_ErrorFrom1.Name = "lb_ErrorFrom1";
-            this.lb_ErrorFrom1.Size = new System.Drawing.Size(73, 17);
-            this.lb_ErrorFrom1.TabIndex = 25;
-            this.lb_ErrorFrom1.Text = "THÔNG BÁO";
+            lb_ErrorFrom1.BackColor = Color.Transparent;
+            lb_ErrorFrom1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_ErrorFrom1.Location = new Point(33, 203);
+            lb_ErrorFrom1.Name = "lb_ErrorFrom1";
+            lb_ErrorFrom1.Size = new Size(73, 17);
+            lb_ErrorFrom1.TabIndex = 25;
+            lb_ErrorFrom1.Text = "THÔNG BÁO";
             // 
             // btn_Search
             // 
@@ -265,11 +265,11 @@
             // 
             // txt_CodeFlight
             // 
-            this.txt_CodeFlight.Location = new System.Drawing.Point(33, 162);
-            this.txt_CodeFlight.Multiline = true;
-            this.txt_CodeFlight.Name = "txt_CodeFlight";
-            this.txt_CodeFlight.Size = new System.Drawing.Size(314, 36);
-            this.txt_CodeFlight.TabIndex = 27;
+            txt_CodeFlight.Location = new Point(33, 162);
+            txt_CodeFlight.Multiline = true;
+            txt_CodeFlight.Name = "txt_CodeFlight";
+            txt_CodeFlight.Size = new Size(314, 36);
+            txt_CodeFlight.TabIndex = 27;
             // 
             // FtinhTrangChuyenBay
             // 

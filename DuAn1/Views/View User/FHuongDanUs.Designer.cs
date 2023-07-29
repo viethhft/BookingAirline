@@ -80,7 +80,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FHuongDanUs";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Hướng dẫn sử dụng";
             ResumeLayout(false);
             PerformLayout();

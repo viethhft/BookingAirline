@@ -39,7 +39,7 @@ namespace GUI.Views.View_User
             _message = message;
             _service = new CustomerServices();
             load();
-           
+
         }
 
         public void load()

@@ -18,15 +18,17 @@ namespace GUI.Views.View_User
 
     public partial class FDoimk : Form
     {
-        private string _message="";
+        private string _message = "";
         bool _check_info = true;
 
         ICustomerServices _services;
         Validate _validate;
+        IStaffServices _staffServices;
         public FDoimk()
         {
             InitializeComponent();
             _services = new CustomerServices();
+            _staffServices = new StaffServices();
             _validate = new Validate();
 
         }
@@ -46,7 +48,7 @@ namespace GUI.Views.View_User
                     {
                         Customer customer = _services.Get(_message);
                         customer.Password = _validate.ReversePass(tbx_passReNew.Text);
-                        if (MessageBox.Show(_services.Update(customer),"Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Warning)==DialogResult.OK)
+                        if (MessageBox.Show(_services.Update(customer), "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
                         {
                             this.Close();
                         }
@@ -59,8 +61,18 @@ namespace GUI.Views.View_User
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Vui lòng xem lại thông tin 2!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw;
+                    //MessageBox.Show("Vui lòng xem lại thông tin 2!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //throw;
+                    if (_validate.ReversePass(tbx_passOld.Text) == _staffServices.list_staff().Where(c => c.Email == _message).FirstOrDefault().Password)
+                    {
+                        staff staff = _staffServices.getEmail(_message);
+                        staff.Password = _validate.ReversePass(tbx_passReNew.Text);
+                        if (MessageBox.Show(_staffServices.update(staff), "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
+
+                    }
                 }
             }
             else
@@ -71,7 +83,7 @@ namespace GUI.Views.View_User
 
         private void tbx_passOld_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tbx_passReNew_TextChanged(object sender, EventArgs e)

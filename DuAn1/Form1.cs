@@ -64,7 +64,7 @@ namespace DuAn1
             {
 
                 _role = 0;
-                fStaff _fst = new fStaff(_role);
+                fStaff _fst = new fStaff(_role, tb_user.Text);
 
                 this.Hide();
                 MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
@@ -74,7 +74,7 @@ namespace DuAn1
             else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
             {
                 _role = 1;
-                fStaff _fst = new fStaff(_role);
+                fStaff _fst = new fStaff(_role, tb_user.Text);
                 this.Hide();
                 MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
                 _fst.ShowDialog();

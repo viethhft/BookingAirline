@@ -29,156 +29,159 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDoimk));
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbx_passOld = new System.Windows.Forms.TextBox();
-            this.tbx_passNew = new System.Windows.Forms.TextBox();
-            this.tbx_passReNew = new System.Windows.Forms.TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.lbl_email = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbl_passOld = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbl_passNew = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbl_passReNew = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblWell = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SuspendLayout();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            tbx_passOld = new TextBox();
+            tbx_passNew = new TextBox();
+            tbx_passReNew = new TextBox();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            lbl_email = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbl_passOld = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbl_passNew = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbl_passReNew = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblWell = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            SuspendLayout();
             // 
             // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(17, 50);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(120, 21);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "ĐỔI MẬT KHẨU";
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel1.Location = new Point(17, 50);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(120, 21);
+            guna2HtmlLabel1.TabIndex = 0;
+            guna2HtmlLabel1.Text = "ĐỔI MẬT KHẨU";
             // 
             // guna2HtmlLabel3
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(17, 134);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(90, 20);
-            this.guna2HtmlLabel3.TabIndex = 2;
-            this.guna2HtmlLabel3.Text = "Mật khẩu cũ:";
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel3.Location = new Point(17, 134);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(90, 20);
+            guna2HtmlLabel3.TabIndex = 2;
+            guna2HtmlLabel3.Text = "Mật khẩu cũ:";
             // 
             // guna2HtmlLabel4
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(17, 203);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(98, 20);
-            this.guna2HtmlLabel4.TabIndex = 3;
-            this.guna2HtmlLabel4.Text = "Mật khẩu mới";
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel4.Location = new Point(17, 203);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(98, 20);
+            guna2HtmlLabel4.TabIndex = 3;
+            guna2HtmlLabel4.Text = "Mật khẩu mới";
             // 
             // guna2HtmlLabel5
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(17, 272);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(159, 20);
-            this.guna2HtmlLabel5.TabIndex = 4;
-            this.guna2HtmlLabel5.Text = "Nhập lại mật khẩu mới";
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel5.Location = new Point(17, 272);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(159, 20);
+            guna2HtmlLabel5.TabIndex = 4;
+            guna2HtmlLabel5.Text = "Nhập lại mật khẩu mới";
             // 
             // tbx_passOld
             // 
             tbx_passOld.Location = new Point(200, 117);
             tbx_passOld.Multiline = true;
             tbx_passOld.Name = "tbx_passOld";
+            tbx_passOld.PasswordChar = '*';
             tbx_passOld.Size = new Size(222, 37);
-            tbx_passOld.TabIndex = 6;
+            tbx_passOld.TabIndex = 1;
             tbx_passOld.TextChanged += tbx_passOld_TextChanged;
             // 
             // tbx_passNew
             // 
-            this.tbx_passNew.Location = new System.Drawing.Point(200, 186);
-            this.tbx_passNew.Multiline = true;
-            this.tbx_passNew.Name = "tbx_passNew";
-            this.tbx_passNew.Size = new System.Drawing.Size(222, 37);
-            this.tbx_passNew.TabIndex = 7;
+            tbx_passNew.Location = new Point(200, 186);
+            tbx_passNew.Multiline = true;
+            tbx_passNew.Name = "tbx_passNew";
+            tbx_passNew.PasswordChar = '*';
+            tbx_passNew.Size = new Size(222, 37);
+            tbx_passNew.TabIndex = 2;
             // 
             // tbx_passReNew
             // 
             tbx_passReNew.Location = new Point(200, 255);
             tbx_passReNew.Multiline = true;
             tbx_passReNew.Name = "tbx_passReNew";
+            tbx_passReNew.PasswordChar = '*';
             tbx_passReNew.Size = new Size(222, 37);
-            tbx_passReNew.TabIndex = 8;
+            tbx_passReNew.TabIndex = 3;
             tbx_passReNew.TextChanged += tbx_passReNew_TextChanged;
             // 
             // guna2Button1
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(200, 337);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(108, 38);
-            this.guna2Button1.TabIndex = 9;
-            this.guna2Button1.Text = "Đổi mật khẩu";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(200, 337);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(108, 38);
+            guna2Button1.TabIndex = 9;
+            guna2Button1.Text = "Đổi mật khẩu";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(314, 337);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(108, 38);
-            this.guna2Button2.TabIndex = 10;
-            this.guna2Button2.Text = "Thoát";
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.DarkCyan;
+            guna2Button2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(314, 337);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.Size = new Size(108, 38);
+            guna2Button2.TabIndex = 10;
+            guna2Button2.Text = "Thoát";
             // 
             // lbl_email
             // 
-            this.lbl_email.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_email.Location = new System.Drawing.Point(200, 91);
-            this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(3, 2);
-            this.lbl_email.TabIndex = 11;
-            this.lbl_email.Text = null;
+            lbl_email.BackColor = Color.Transparent;
+            lbl_email.Location = new Point(200, 91);
+            lbl_email.Name = "lbl_email";
+            lbl_email.Size = new Size(3, 2);
+            lbl_email.TabIndex = 11;
+            lbl_email.Text = null;
             // 
             // lbl_passOld
             // 
-            this.lbl_passOld.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_passOld.Location = new System.Drawing.Point(200, 160);
-            this.lbl_passOld.Name = "lbl_passOld";
-            this.lbl_passOld.Size = new System.Drawing.Size(3, 2);
-            this.lbl_passOld.TabIndex = 12;
-            this.lbl_passOld.Text = null;
+            lbl_passOld.BackColor = Color.Transparent;
+            lbl_passOld.Location = new Point(200, 160);
+            lbl_passOld.Name = "lbl_passOld";
+            lbl_passOld.Size = new Size(3, 2);
+            lbl_passOld.TabIndex = 12;
+            lbl_passOld.Text = null;
             // 
             // lbl_passNew
             // 
-            this.lbl_passNew.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_passNew.Location = new System.Drawing.Point(200, 229);
-            this.lbl_passNew.Name = "lbl_passNew";
-            this.lbl_passNew.Size = new System.Drawing.Size(3, 2);
-            this.lbl_passNew.TabIndex = 13;
-            this.lbl_passNew.Text = null;
+            lbl_passNew.BackColor = Color.Transparent;
+            lbl_passNew.Location = new Point(200, 229);
+            lbl_passNew.Name = "lbl_passNew";
+            lbl_passNew.Size = new Size(3, 2);
+            lbl_passNew.TabIndex = 13;
+            lbl_passNew.Text = null;
             // 
             // lbl_passReNew
             // 
-            this.lbl_passReNew.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_passReNew.Location = new System.Drawing.Point(200, 298);
-            this.lbl_passReNew.Name = "lbl_passReNew";
-            this.lbl_passReNew.Size = new System.Drawing.Size(3, 2);
-            this.lbl_passReNew.TabIndex = 14;
-            this.lbl_passReNew.Text = null;
+            lbl_passReNew.BackColor = Color.Transparent;
+            lbl_passReNew.Location = new Point(200, 298);
+            lbl_passReNew.Name = "lbl_passReNew";
+            lbl_passReNew.Size = new Size(3, 2);
+            lbl_passReNew.TabIndex = 14;
+            lbl_passReNew.Text = null;
             // 
             // lblWell
             // 
@@ -189,34 +192,34 @@
             lblWell.Size = new Size(30, 20);
             lblWell.TabIndex = 15;
             lblWell.Text = "123";
+            lblWell.Visible = false;
             // 
             // FDoimk
             // 
-            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Sound;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 411);
-            this.Controls.Add(this.lblWell);
-            this.Controls.Add(this.lbl_passReNew);
-            this.Controls.Add(this.lbl_passNew);
-            this.Controls.Add(this.lbl_passOld);
-            this.Controls.Add(this.lbl_email);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.tbx_passReNew);
-            this.Controls.Add(this.tbx_passNew);
-            this.Controls.Add(this.tbx_passOld);
-            this.Controls.Add(this.guna2HtmlLabel5);
-            this.Controls.Add(this.guna2HtmlLabel4);
-            this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2HtmlLabel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FDoimk";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đổi mật khẩu";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AccessibleRole = AccessibleRole.Sound;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(464, 411);
+            Controls.Add(lblWell);
+            Controls.Add(lbl_passReNew);
+            Controls.Add(lbl_passNew);
+            Controls.Add(lbl_passOld);
+            Controls.Add(lbl_email);
+            Controls.Add(guna2Button2);
+            Controls.Add(guna2Button1);
+            Controls.Add(tbx_passReNew);
+            Controls.Add(tbx_passNew);
+            Controls.Add(tbx_passOld);
+            Controls.Add(guna2HtmlLabel5);
+            Controls.Add(guna2HtmlLabel4);
+            Controls.Add(guna2HtmlLabel3);
+            Controls.Add(guna2HtmlLabel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FDoimk";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Đổi mật khẩu";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

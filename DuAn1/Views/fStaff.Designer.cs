@@ -195,6 +195,7 @@
             đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
             đăngXuấtToolStripMenuItem1.Size = new Size(180, 22);
             đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click_1;
             // 
             // fStaff
             // 
