@@ -23,7 +23,7 @@ namespace DuAn1.Views
         IPlaneTypeServices _planeTypeServices;
         public FquanlyVe()
         {
-            _planeTypeServices = new PlantypeServices();
+            _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             _customerServices = new CustomerServices();
             _classServices = new ClassServices();
