@@ -58,6 +58,8 @@ namespace DuAn1
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            
+           
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
                 _role = 0;
