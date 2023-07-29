@@ -1,4 +1,6 @@
 ﻿using _1_DAL.Models;
+using _2_BUS.IService;
+using _2_BUS.Service;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -14,12 +16,14 @@ namespace GUI.Views.View_User
 {
     public partial class FBuyTicketChild : Form
     {
+        IPlaneTypeServices _PlaneTypeServices;
         public FBuyTicketChild()
         {
             InitializeComponent();
         }
         public FBuyTicketChild(List<Flight> list) : this()
         {
+            _PlaneTypeServices = new PlantypeServices();
             foreach (var item in list)
             {
                 Panel form = new Panel();
@@ -27,17 +31,18 @@ namespace GUI.Views.View_User
                 form.Height = 111;
                 form.BorderStyle = BorderStyle.FixedSingle;
                 Label time1 = new Label();
-                time1.Text = "ok";
+                time1.Text = item.TimeStart.ToString();
                 time1.Location = new Point(18, 30);
                 Label time2 = new Label();
-                time2.Text = "ok1";
+                time2.Text = item.TimeEnd.ToString();
                 time2.Location = new Point(149, 30);
                 Label code = new Label();
-                code.Text = "code";
+                code.Text = item.FlightCode;
                 code.Location = new Point(18, 62);
                 Label name = new Label();
-                code.Text = "name";
-                code.Location = new Point(149, 62);
+                var plane = _PlaneTypeServices.get_list().Where(c=>c.Id==item.PlaneTypeId).FirstOrDefault();
+                name.Text = plane.DisplayName;
+                name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
                 pt.Text = "GIÁ";
                 pt.BorderRadius = 10;
@@ -48,6 +53,7 @@ namespace GUI.Views.View_User
                 pt.Width = 217;
                 pt.Height = 76;
                 pt.Location = new Point(613, 22);
+                pt.Click += Pt_Click;
                 Guna2Button tg = new Guna2Button();
                 tg.Text = "GIÁ";
                 tg.BorderRadius = 10;
@@ -57,6 +63,7 @@ namespace GUI.Views.View_User
                 tg.BorderColor = Color.Goldenrod;
                 tg.Width = 217;
                 tg.Height = 76;
+                tg.Click += Tg_Click;
                 tg.Location = new Point(836, 22);
                 form.Controls.Add(time1);
                 form.Controls.Add(time2);
@@ -67,6 +74,15 @@ namespace GUI.Views.View_User
                 flowLayoutPanel1.Controls.Add(form);
             }
         }
-        
+
+        private void Pt_Click(object? sender, EventArgs e)
+        {
+
+        }
+
+        private void Tg_Click(object? sender, EventArgs e)
+        {
+
+        }
     }
 }
