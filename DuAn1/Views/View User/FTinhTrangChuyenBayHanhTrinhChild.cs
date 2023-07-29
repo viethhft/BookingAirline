@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class FTinhTrangChuyenBayChil : Form
+    public partial class FTinhTrangChuyenBayHanhTrinhChild : Form
     {
-        public FTinhTrangChuyenBayChil()
+        public FTinhTrangChuyenBayHanhTrinhChild()
         {
             InitializeComponent();
         }
