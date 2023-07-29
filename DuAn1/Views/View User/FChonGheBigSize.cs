@@ -36,6 +36,7 @@ namespace GUI.Views.View_User
             Point locaName = new Point(766, 23);
             Point locaSTT = new Point(738, 95);
             string[] hang = { "A", "B", "C", "D" };
+            int dem = 0;
             foreach (var item in seatdetail)
             {
                 if (tt == 4)
@@ -56,7 +57,14 @@ namespace GUI.Views.View_User
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    chair.BackColor = Color.FromArgb(94, 148, 255);
+                    if (dem < 35)
+                    {
+                        chair.BackColor = Color.FromArgb(94, 148, 255);
+                    }
+                    else
+                    {
+                        chair.BackColor = Color.Goldenrod;
+                    }
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
                     lb.Location = locaName;
@@ -76,6 +84,7 @@ namespace GUI.Views.View_User
                         panel1.Controls.Add(lb_tt);
                     }
                 }
+                dem++;
             }
         }
     }
