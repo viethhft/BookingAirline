@@ -58,7 +58,7 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-
+                    chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
                         if (loaighe == "TG")
@@ -97,6 +97,12 @@ namespace GUI.Views.View_User
                 dem++;
             }
         }
+
+        private void Chair_CheckedChanged(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         public FChonGheSmallSize(string code) : this()
         {
 
@@ -128,8 +134,10 @@ namespace GUI.Views.View_User
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
                     Image image = Image.FromFile("D:\\DA\\DuAn1\\Resources\\chair.png");
                     chair.Image = image;
+                    chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
+                    chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
                         chair.BackColor = Color.DarkCyan;
