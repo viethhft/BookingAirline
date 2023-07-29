@@ -53,8 +53,8 @@ namespace GUI.Views.View_User
                 pt.Width = 217;
                 pt.Height = 76;
                 pt.Location = new Point(613, 22);
-                pt.Tag= item;
-                pt.Name = item.FlightCode;
+                pt.Tag = item;
+                pt.Name = "btn_pt";
                 pt.Click += Pt_Click;
                 Guna2Button tg = new Guna2Button();
                 tg.Text = "GIÁ";
@@ -66,8 +66,8 @@ namespace GUI.Views.View_User
                 tg.Width = 217;
                 tg.Height = 76;
                 tg.Click += Tg_Click;
-                tg.Tag= item;
-                pt.Name = item.FlightCode;
+                tg.Tag = item;
+                pt.Name = "btn_tg";
                 tg.Location = new Point(836, 22);
                 form.Controls.Add(time1);
                 form.Controls.Add(time2);
@@ -81,7 +81,19 @@ namespace GUI.Views.View_User
 
         private void Pt_Click(object? sender, EventArgs e)
         {
-
+            Control c, d;
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                c = this.Controls[0];
+                for (int j = 0; j < c.Controls.Count; j++)
+                {
+                    d = c.Controls[j];
+                    foreach(Control item in d.Controls)
+                    {
+                        MessageBox.Show($"{item.Name}");
+                    }
+                }
+            }
         }
 
         private void Tg_Click(object? sender, EventArgs e)
