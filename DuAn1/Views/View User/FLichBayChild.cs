@@ -79,6 +79,7 @@ namespace GUI.Views.View_User
                             pic.Name = item1.FlightCode;
                             Label lb_select = new Label();
                             lb_select.Text = "Chọn";
+                            lb_select.ForeColor = Color.DarkCyan;
                             lb_select.Location = loca_textPic;
                             group.Controls.Add(pic);
                             group.Controls.Add(lb_select);
