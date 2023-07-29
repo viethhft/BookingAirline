@@ -25,7 +25,7 @@ namespace GUI.Views.View_User
         public FBuyTicketChild(List<Flight> list) : this()
         {
             _test = list;
-            _PlaneTypeServices = new PlantypeServices();
+            _PlaneTypeServices = new PlaneTypeServices();
             foreach (var item in list)
             {
                 Panel form = new Panel();
@@ -84,15 +84,20 @@ namespace GUI.Views.View_User
 
         private void Tg_Click(object? sender, EventArgs e)
         {
-            Guna2Button thu= (Guna2Button)sender;
-            MessageBox.Show(thu.Name+ thu.Tag);
-            
+            Guna2Button btn_current= (Guna2Button)sender;
+            FChonGhe fChonGhe = new FChonGhe(btn_current.Name, btn_current.Tag.ToString());
+            this.Hide();
+            fChonGhe.ShowDialog();
+            this.Show();
         }
 
         private void Pt_Click(object? sender, EventArgs e)
         {
-            Guna2Button thu = (Guna2Button)sender;
-            MessageBox.Show(thu.Name);
+            Guna2Button btn_current = (Guna2Button)sender;
+            FChonGhe fChonGhe = new FChonGhe(btn_current.Name, btn_current.Tag.ToString());
+            this.Hide();
+            fChonGhe.ShowDialog();
+            this.Show();
         }
     }
 }

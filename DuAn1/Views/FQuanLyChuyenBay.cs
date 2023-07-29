@@ -30,7 +30,7 @@ namespace DuAn1.Views
         {
             _flight = new FlightServices();
             _location = new LocationService();
-            _plantype = new PlantypeServices();
+            _plantype = new PlaneTypeServices();
             InitializeComponent();
             load();
         }
