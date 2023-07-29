@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHuongDanUs));
             label1 = new Label();
             label2 = new Label();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // label1
@@ -53,11 +54,29 @@
             label2.TabIndex = 1;
             label2.Text = resources.GetString("label2.Text");
             // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.DarkCyan;
+            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(595, 372);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(180, 45);
+            guna2Button1.TabIndex = 2;
+            guna2Button1.Text = "Tôi đã hiểu";
+            guna2Button1.Click += guna2Button1_Click;
+            // 
             // FHuongDanUs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(805, 368);
+            ClientSize = new Size(805, 429);
+            Controls.Add(guna2Button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FHuongDanUs";
@@ -71,5 +90,6 @@
 
         private Label label1;
         private Label label2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
