@@ -130,5 +130,6 @@ namespace GUI.Views.View_User
                 this.Show();
             }
         }
+
     }
 }

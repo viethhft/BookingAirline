@@ -58,13 +58,21 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-
+                    chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
-                        chair.BackColor = Color.FromArgb(94, 148, 255);
+                        if (loaighe == "TG")
+                        {
+                            chair.Enabled = false;
+                        }
+                        chair.BackColor = Color.DarkCyan;
                     }
                     else
                     {
+                        if (loaighe == "PT")
+                        {
+                            chair.Enabled = false;
+                        }
                         chair.BackColor = Color.Goldenrod;
                     }
                     Label lb = new Label();
@@ -89,6 +97,13 @@ namespace GUI.Views.View_User
                 dem++;
             }
         }
+
+        private void Chair_CheckedChanged(object? sender, EventArgs e)
+        {
+            Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
+            MessageBox.Show(a.Name);
+        }
+
         public FChonGheSmallSize(string code) : this()
         {
 
@@ -118,13 +133,15 @@ namespace GUI.Views.View_User
                 if (tt >= 0 && tt < 4)
                 {
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
-                    Image image = Image.FromFile(@"..\\..\\..\\Resources\\chair.png");
+                    Image image = Image.FromFile(@"..//..//..//Resources//chair.png");
                     chair.Image = image;
+                    chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
+                    chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
-                        chair.BackColor = Color.FromArgb(94, 148, 255);
+                        chair.BackColor = Color.DarkCyan;
                     }
                     else
                     {

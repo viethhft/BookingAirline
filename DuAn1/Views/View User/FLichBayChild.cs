@@ -28,8 +28,8 @@ namespace GUI.Views.View_User
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             int count = 0;
-            int daycount = date.Day;
-            label3.Text =$"{daycount}/{date.Month}";
+            int daycount = list.FirstOrDefault().DateFlight.Day;
+            label3.Text =$"{daycount++}/{date.Month}";
             label4.Text =$"{daycount++}/{date.Month}";
             label5.Text =$"{daycount++}/{date.Month}";
             label6.Text =$"{daycount++}/{date.Month}";
