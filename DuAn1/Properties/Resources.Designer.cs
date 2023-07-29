@@ -403,6 +403,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_plane_30__2_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plane-30 (2)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_plane_30__3_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-plane-30 (3)", resourceCulture);

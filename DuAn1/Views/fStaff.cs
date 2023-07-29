@@ -1,4 +1,5 @@
 ﻿using _2_BUS.Service;
+using GUI.Views.View_User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,12 +24,13 @@ namespace DuAn1.Views
             _role = role;
             EnableButton();
         }
+
         private void EnableButton()
         {
             if (_role == 1)
             {
                 btn_qlynv.Visible = false;
-                btn_dthu.Visible= false;
+                btn_dthu.Visible = false;
             }
             else
             {
@@ -172,6 +174,12 @@ namespace DuAn1.Views
             {
                 this.Close();
             }
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }

@@ -157,5 +157,12 @@ namespace GUI.Views
         {
 
         }
+
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FHuongDanUs fhuongdan = new FHuongDanUs();
+            fhuongdan.ShowDialog();
+
+        }
     }
 }

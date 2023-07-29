@@ -172,6 +172,7 @@
             hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
             hướngDẫnSửDụngToolStripMenuItem.Size = new Size(180, 22);
             hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
+            hướngDẫnSửDụngToolStripMenuItem.Click += hướngDẫnSửDụngToolStripMenuItem_Click;
             // 
             // label1
             // 
