@@ -12,7 +12,7 @@ namespace DuAn1
 
     public partial class Form1 : Form
     {
-    
+
         Validate _validate;
         CheckAccountType _checkAccountType;
         QlykhachHang _f;
@@ -26,7 +26,7 @@ namespace DuAn1
         int _role;
         public Form1()
         {
-            
+
             InitializeComponent();
             load();
             timer1.Enabled = true;
@@ -58,8 +58,8 @@ namespace DuAn1
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            
-           
+
+
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
 
