@@ -277,31 +277,33 @@
             // 
             // dateTo
             // 
-            dateTo.Checked = true;
-            dateTo.FillColor = Color.FromArgb(224, 224, 224);
-            dateTo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTo.Format = DateTimePickerFormat.Long;
-            dateTo.Location = new Point(298, 154);
-            dateTo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dateTo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dateTo.Name = "dateTo";
-            dateTo.Size = new Size(242, 36);
-            dateTo.TabIndex = 24;
-            dateTo.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.Checked = true;
+            this.dateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dateTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTo.Location = new System.Drawing.Point(298, 154);
+            this.dateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(242, 36);
+            this.dateTo.TabIndex = 24;
+            this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // DateFrom
             // 
-            DateFrom.Checked = true;
-            DateFrom.FillColor = Color.FromArgb(224, 224, 224);
-            DateFrom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DateFrom.Format = DateTimePickerFormat.Long;
-            DateFrom.Location = new Point(26, 154);
-            DateFrom.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateFrom.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateFrom.Name = "DateFrom";
-            DateFrom.Size = new Size(242, 36);
-            DateFrom.TabIndex = 23;
-            DateFrom.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.Checked = true;
+            this.DateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DateFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateFrom.Location = new System.Drawing.Point(26, 154);
+            this.DateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.Size = new System.Drawing.Size(242, 36);
+            this.DateFrom.TabIndex = 23;
+            this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.ValueChanged += new System.EventHandler(this.DateFrom_ValueChanged);
             // 
             // cmb_PlaneType
             // 
