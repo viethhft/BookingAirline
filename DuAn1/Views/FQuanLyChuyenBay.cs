@@ -308,7 +308,6 @@ namespace DuAn1.Views
             DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
             dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
             cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString());
-           
         }
     }
 }
