@@ -10,5 +10,7 @@ namespace _2_BUS.IService
     {
         public string Create(SeatDetail seatDetail);
         public List<SeatDetail> list();
+        public string Update(SeatDetail seatDetail);
+        public SeatDetail get(int id,string code);
     }
 }

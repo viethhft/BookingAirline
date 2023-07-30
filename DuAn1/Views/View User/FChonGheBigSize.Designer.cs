@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_pay = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.lb_amount = new System.Windows.Forms.Label();
             this.lb_price = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cb_checkacp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,21 +104,22 @@
             this.panel1.Size = new System.Drawing.Size(795, 212);
             this.panel1.TabIndex = 78;
             // 
-            // guna2Button2
+            // btn_pay
             // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(958, 385);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 101;
-            this.guna2Button2.Text = "Thanh Toán";
+            this.btn_pay.BorderRadius = 10;
+            this.btn_pay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_pay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_pay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_pay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_pay.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_pay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_pay.ForeColor = System.Drawing.Color.White;
+            this.btn_pay.Location = new System.Drawing.Point(958, 385);
+            this.btn_pay.Name = "btn_pay";
+            this.btn_pay.Size = new System.Drawing.Size(180, 45);
+            this.btn_pay.TabIndex = 101;
+            this.btn_pay.Text = "Thanh Toán";
+            this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
             // 
             // label6
             // 
@@ -252,28 +253,29 @@
             this.label11.TabIndex = 106;
             this.label11.Text = "Các ghế đã đặt";
             // 
-            // checkBox1
+            // cb_checkacp
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(645, 405);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(117, 19);
-            this.checkBox1.TabIndex = 107;
-            this.checkBox1.Text = "Xác nhận mua vé";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cb_checkacp.AutoSize = true;
+            this.cb_checkacp.Location = new System.Drawing.Point(643, 405);
+            this.cb_checkacp.Name = "cb_checkacp";
+            this.cb_checkacp.Size = new System.Drawing.Size(117, 19);
+            this.cb_checkacp.TabIndex = 107;
+            this.cb_checkacp.Text = "Xác nhận mua vé";
+            this.cb_checkacp.UseVisualStyleBackColor = true;
+            this.cb_checkacp.CheckedChanged += new System.EventHandler(this.cb_checkacp_CheckedChanged);
             // 
             // FChonGheBigSize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 446);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cb_checkacp);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lb_price);
             this.Controls.Add(this.lb_amount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btn_pay);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.label16);
@@ -304,7 +306,7 @@
         private Label label4;
         private Label label5;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btn_pay;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Label label16;
@@ -317,6 +319,6 @@
         private Label lb_amount;
         private Label lb_price;
         private Label label11;
-        private CheckBox checkBox1;
+        private CheckBox cb_checkacp;
     }
 }

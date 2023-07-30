@@ -1,4 +1,5 @@
-﻿using _2_BUS.IService;
+﻿using _1_DAL.Models;
+using _2_BUS.IService;
 using _2_BUS.Service;
 using Guna.UI2.WinForms;
 using System;
@@ -19,21 +20,28 @@ namespace GUI.Views.View_User
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
+        IClassServices _classServices;
         string _code = "";
         string _loaighe = "";
         int amount = 0;
         int price = 0;
         int priceFlight = 0;
         int priceClass = 0;
+        List<string> _listcode = new List<string>();
+
         public FChonGheSmallSize()
         {
+            _classServices = new ClassServices();
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             InitializeComponent();
+            btn_pay.Enabled = false;
         }
         public FChonGheSmallSize(string code, string loaighe) : this()
         {
+            _loaighe = loaighe;
+            _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
@@ -118,11 +126,13 @@ namespace GUI.Views.View_User
             }
             if (a.Checked)
             {
+                _listcode.Add(a.Name);
                 amount++;
                 price += priceClass;
             }
             else
             {
+                _listcode.Remove(a.Name);
                 amount--;
                 price -= priceClass;
             }
@@ -193,6 +203,38 @@ namespace GUI.Views.View_User
                     }
                 }
                 dem++;
+            }
+        }
+
+        private void cb_checkacp_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_checkacp.Checked)
+            {
+                btn_pay.Enabled = true;
+            }
+            else
+            {
+                btn_pay.Enabled = false;
+            }
+        }
+
+        private void btn_pay_Click(object sender, EventArgs e)
+        {
+            var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
+            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
+            var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id).ToList();
+            foreach (var item in seat)
+            {
+                foreach (var item1 in _listcode)
+                {
+                    if (item.SeatCode == item1)
+                    {
+                        SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
+                        seatupdate.Status = 0;
+                        _seatDetailServices.Update(seatupdate);
+                    }
+                }
+                MessageBox.Show("Đặt vé ok");
             }
         }
     }
