@@ -42,13 +42,19 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label6 = new Label();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            checkBox1 = new CheckBox();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(83, 358);
+            label16.Location = new Point(105, 358);
             label16.Name = "label16";
             label16.Size = new Size(87, 15);
             label16.TabIndex = 88;
@@ -63,7 +69,7 @@
             guna2Button5.FillColor = Color.DarkCyan;
             guna2Button5.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(29, 348);
+            guna2Button5.Location = new Point(51, 348);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.Size = new Size(34, 30);
             guna2Button5.TabIndex = 87;
@@ -72,7 +78,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(83, 302);
+            label3.Location = new Point(105, 302);
             label3.Name = "label3";
             label3.Size = new Size(89, 15);
             label3.TabIndex = 86;
@@ -87,7 +93,7 @@
             guna2Button46.FillColor = Color.Goldenrod;
             guna2Button46.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button46.ForeColor = Color.White;
-            guna2Button46.Location = new Point(29, 295);
+            guna2Button46.Location = new Point(51, 295);
             guna2Button46.Name = "guna2Button46";
             guna2Button46.Size = new Size(34, 30);
             guna2Button46.TabIndex = 85;
@@ -97,7 +103,7 @@
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.Red;
-            label15.Location = new Point(24, 264);
+            label15.Location = new Point(46, 264);
             label15.Name = "label15";
             label15.Size = new Size(48, 15);
             label15.TabIndex = 84;
@@ -165,7 +171,7 @@
             guna2Button1.FillColor = Color.Orange;
             guna2Button1.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(29, 398);
+            guna2Button1.Location = new Point(51, 398);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Size = new Size(34, 30);
             guna2Button1.TabIndex = 91;
@@ -174,7 +180,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(83, 408);
+            label6.Location = new Point(105, 408);
             label6.Name = "label6";
             label6.Size = new Size(64, 15);
             label6.TabIndex = 92;
@@ -196,11 +202,77 @@
             guna2Button2.TabIndex = 93;
             guna2Button2.Text = "Thanh Toán";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(509, 412);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(117, 19);
+            checkBox1.TabIndex = 114;
+            checkBox1.Text = "Xác nhận mua vé";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(507, 322);
+            label11.Name = "label11";
+            label11.Size = new Size(112, 21);
+            label11.TabIndex = 113;
+            label11.Text = "Các ghế đã đặt";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(648, 367);
+            label10.Name = "label10";
+            label10.Size = new Size(88, 21);
+            label10.TabIndex = 112;
+            label10.Text = "30.000.000";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(648, 278);
+            label9.Name = "label9";
+            label9.Size = new Size(28, 21);
+            label9.TabIndex = 111;
+            label9.Text = "30";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(507, 278);
+            label8.Name = "label8";
+            label8.Size = new Size(122, 21);
+            label8.TabIndex = 110;
+            label8.Text = "Tổng ghế đã đặt";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(507, 364);
+            label7.Name = "label7";
+            label7.Size = new Size(75, 21);
+            label7.TabIndex = 109;
+            label7.Text = "Tổng tiền";
+            // 
             // FChonGheSmallSize
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1015, 449);
+            Controls.Add(checkBox1);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
             Controls.Add(guna2Button2);
             Controls.Add(label6);
             Controls.Add(guna2Button1);
@@ -238,5 +310,11 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private CheckBox checkBox1;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
     }
 }
