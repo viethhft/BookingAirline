@@ -28,271 +28,272 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            panel1 = new Panel();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            label6 = new Label();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            label16 = new Label();
-            guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            label3 = new Label();
-            guna2Button46 = new Guna.UI2.WinForms.Guna2Button();
-            label15 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            checkBox1 = new CheckBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Button46 = new Guna.UI2.WinForms.Guna2Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lb_amount = new System.Windows.Forms.Label();
+            this.lb_price = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.Untitled_2;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1126, 243);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.Untitled_2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1126, 243);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1099, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(15, 15);
-            label1.TabIndex = 1;
-            label1.Text = "A";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1099, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "A";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(1099, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(14, 15);
-            label2.TabIndex = 2;
-            label2.Text = "B";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1099, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "B";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(1097, 157);
-            label4.Name = "label4";
-            label4.Size = new Size(15, 15);
-            label4.TabIndex = 4;
-            label4.Text = "C";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1097, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "C";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(1097, 199);
-            label5.Name = "label5";
-            label5.Size = new Size(15, 15);
-            label5.TabIndex = 10;
-            label5.Text = "D";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1097, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "D";
             // 
             // panel1
             // 
-            panel1.Location = new Point(143, 27);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(795, 212);
-            panel1.TabIndex = 78;
+            this.panel1.Location = new System.Drawing.Point(143, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(795, 212);
+            this.panel1.TabIndex = 78;
             // 
             // guna2Button2
             // 
-            guna2Button2.BorderRadius = 10;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.DarkCyan;
-            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(958, 385);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(180, 45);
-            guna2Button2.TabIndex = 101;
-            guna2Button2.Text = "Thanh Toán";
+            this.guna2Button2.BorderRadius = 10;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
+            this.guna2Button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(958, 385);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button2.TabIndex = 101;
+            this.guna2Button2.Text = "Thanh Toán";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(142, 415);
-            label6.Name = "label6";
-            label6.Size = new Size(64, 15);
-            label6.TabIndex = 100;
-            label6.Text = "Ghế đã đặt";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(142, 415);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 15);
+            this.label6.TabIndex = 100;
+            this.label6.Text = "Ghế đã đặt";
             // 
             // guna2Button1
             // 
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Orange;
-            guna2Button1.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(88, 405);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.Size = new Size(34, 30);
-            guna2Button1.TabIndex = 99;
-            guna2Button1.Text = "2E";
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Orange;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(88, 405);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(34, 30);
+            this.guna2Button1.TabIndex = 99;
+            this.guna2Button1.Text = "2E";
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(142, 365);
-            label16.Name = "label16";
-            label16.Size = new Size(87, 15);
-            label16.TabIndex = 98;
-            label16.Text = "Ghế phổ thông";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(142, 365);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(87, 15);
+            this.label16.TabIndex = 98;
+            this.label16.Text = "Ghế phổ thông";
             // 
             // guna2Button5
             // 
-            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button5.FillColor = Color.DarkCyan;
-            guna2Button5.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(88, 355);
-            guna2Button5.Name = "guna2Button5";
-            guna2Button5.Size = new Size(34, 30);
-            guna2Button5.TabIndex = 97;
-            guna2Button5.Text = "2E";
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.DarkCyan;
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Location = new System.Drawing.Point(88, 355);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(34, 30);
+            this.guna2Button5.TabIndex = 97;
+            this.guna2Button5.Text = "2E";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(142, 309);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 15);
-            label3.TabIndex = 96;
-            label3.Text = "Ghế thương gia";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(142, 309);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 15);
+            this.label3.TabIndex = 96;
+            this.label3.Text = "Ghế thương gia";
             // 
             // guna2Button46
             // 
-            guna2Button46.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button46.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button46.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button46.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button46.FillColor = Color.Goldenrod;
-            guna2Button46.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button46.ForeColor = Color.White;
-            guna2Button46.Location = new Point(88, 302);
-            guna2Button46.Name = "guna2Button46";
-            guna2Button46.Size = new Size(34, 30);
-            guna2Button46.TabIndex = 95;
-            guna2Button46.Text = "2E";
+            this.guna2Button46.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button46.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button46.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button46.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button46.FillColor = System.Drawing.Color.Goldenrod;
+            this.guna2Button46.Font = new System.Drawing.Font("Segoe UI", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button46.ForeColor = System.Drawing.Color.White;
+            this.guna2Button46.Location = new System.Drawing.Point(88, 302);
+            this.guna2Button46.Name = "guna2Button46";
+            this.guna2Button46.Size = new System.Drawing.Size(34, 30);
+            this.guna2Button46.TabIndex = 95;
+            this.guna2Button46.Text = "2E";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.Red;
-            label15.Location = new Point(83, 271);
-            label15.Name = "label15";
-            label15.Size = new Size(48, 15);
-            label15.TabIndex = 94;
-            label15.Text = "Ghi chú";
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(83, 271);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 15);
+            this.label15.TabIndex = 94;
+            this.label15.Text = "Ghi chú";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(643, 357);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 21);
-            label7.TabIndex = 102;
-            label7.Text = "Tổng tiền";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(643, 357);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 21);
+            this.label7.TabIndex = 102;
+            this.label7.Text = "Tổng tiền";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(643, 271);
-            label8.Name = "label8";
-            label8.Size = new Size(122, 21);
-            label8.TabIndex = 103;
-            label8.Text = "Tổng ghế đã đặt";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(643, 271);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 21);
+            this.label8.TabIndex = 103;
+            this.label8.Text = "Tổng ghế đã đặt";
             // 
-            // label9
+            // lb_amount
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(784, 271);
-            label9.Name = "label9";
-            label9.Size = new Size(28, 21);
-            label9.TabIndex = 104;
-            label9.Text = "30";
+            this.lb_amount.AutoSize = true;
+            this.lb_amount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_amount.Location = new System.Drawing.Point(784, 271);
+            this.lb_amount.Name = "lb_amount";
+            this.lb_amount.Size = new System.Drawing.Size(19, 21);
+            this.lb_amount.TabIndex = 104;
+            this.lb_amount.Text = "0";
             // 
-            // label10
+            // lb_price
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(784, 360);
-            label10.Name = "label10";
-            label10.Size = new Size(88, 21);
-            label10.TabIndex = 105;
-            label10.Text = "30.000.000";
+            this.lb_price.AutoSize = true;
+            this.lb_price.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_price.Location = new System.Drawing.Point(784, 360);
+            this.lb_price.Name = "lb_price";
+            this.lb_price.Size = new System.Drawing.Size(19, 21);
+            this.lb_price.TabIndex = 105;
+            this.lb_price.Text = "0";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(643, 315);
-            label11.Name = "label11";
-            label11.Size = new Size(112, 21);
-            label11.TabIndex = 106;
-            label11.Text = "Các ghế đã đặt";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(643, 315);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(112, 21);
+            this.label11.TabIndex = 106;
+            this.label11.Text = "Các ghế đã đặt";
             // 
             // checkBox1
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(645, 405);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(117, 19);
-            checkBox1.TabIndex = 107;
-            checkBox1.Text = "Xác nhận mua vé";
-            checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(645, 405);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(117, 19);
+            this.checkBox1.TabIndex = 107;
+            this.checkBox1.Text = "Xác nhận mua vé";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FChonGheBigSize
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1150, 446);
-            Controls.Add(checkBox1);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(guna2Button2);
-            Controls.Add(label6);
-            Controls.Add(guna2Button1);
-            Controls.Add(label16);
-            Controls.Add(guna2Button5);
-            Controls.Add(label3);
-            Controls.Add(guna2Button46);
-            Controls.Add(label15);
-            Controls.Add(panel1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Name = "FChonGheBigSize";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FChonGhe";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1150, 446);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lb_price);
+            this.Controls.Add(this.lb_amount);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.guna2Button5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.guna2Button46);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "FChonGheBigSize";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FChonGhe";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -313,8 +314,8 @@
         private Label label15;
         private Label label7;
         private Label label8;
-        private Label label9;
-        private Label label10;
+        private Label lb_amount;
+        private Label lb_price;
         private Label label11;
         private CheckBox checkBox1;
     }

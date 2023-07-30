@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,12 @@ namespace GUI.Views.View_User
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
+        string _code = "";
+        string _loaighe = "";
+        int amount = 0;
+        int price = 0;
+        int priceFlight = 0;
+        int priceClass = 0;
         public FChonGheSmallSize()
         {
             _flightServices = new FlightServices();
@@ -101,7 +108,26 @@ namespace GUI.Views.View_User
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
-            MessageBox.Show(a.Name);
+            if (_loaighe == "PT")
+            {
+                priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
+            }
+            else
+            {
+                priceClass = _classServices.get_list().Where(c => c.Id == 1).FirstOrDefault().Price;
+            }
+            if (a.Checked)
+            {
+                amount++;
+                price += priceClass;
+            }
+            else
+            {
+                amount--;
+                price -= priceClass;
+            }
+            lb_amount.Text = amount.ToString();
+            lb_price.Text = price.ToString();
         }
 
         public FChonGheSmallSize(string code) : this()

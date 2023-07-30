@@ -18,15 +18,25 @@ namespace GUI.Views.View_User
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
+        IClassServices _classServices;
         public FChonGheBigSize()
         {
+            _classServices= new ClassServices();
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             InitializeComponent();
         }
+        string _code = "";
+        string _loaighe = "";
+        int amount = 0;
+        int price = 0;
+        int priceFlight = 0;
+        int priceClass = 0;
         public FChonGheBigSize(string code, string loaighe) : this()
         {
+            _code = code;
+            _loaighe = loaighe;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
@@ -100,7 +110,7 @@ namespace GUI.Views.View_User
         }
         public FChonGheBigSize(string code) : this()
         {
-
+            _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
@@ -163,13 +173,30 @@ namespace GUI.Views.View_User
                 dem++;
             }
         }
+        
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
+            if (_loaighe=="PT")
+            {
+                priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
+            }
+            else
+            {
+                priceClass = _classServices.get_list().Where(c => c.Id == 1).FirstOrDefault().Price;
+            }
             if (a.Checked)
             {
-                MessageBox.Show(a.Name);
+                amount++;
+                price += priceClass;
             }
+            else
+            {
+                amount--;
+                price -= priceClass;
+            }
+            lb_amount.Text = amount.ToString();
+            lb_price.Text=price.ToString();
         }
 
         
