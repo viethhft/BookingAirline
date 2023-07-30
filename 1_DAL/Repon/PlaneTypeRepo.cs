@@ -15,9 +15,38 @@ namespace _1_DAL.Repon
         {
             _context=new BookingAirlineContext();
         }
+
+        public bool create(PlaneType plane)
+        {
+            try
+            {
+                _context.PlaneTypes.Add(plane);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<PlaneType> get_list()
         {
             return _context.PlaneTypes.ToList();
+        }
+
+        public bool update(PlaneType plane)
+        {
+            try
+            {
+                _context.PlaneTypes.Update(plane);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
