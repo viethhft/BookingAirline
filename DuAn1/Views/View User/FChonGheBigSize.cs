@@ -98,13 +98,6 @@ namespace GUI.Views.View_User
             }
 
         }
-
-        private void Chair_CheckedChanged(object? sender, EventArgs e)
-        {
-            Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
-            MessageBox.Show(a.Name);
-        }
-
         public FChonGheBigSize(string code) : this()
         {
 
@@ -170,5 +163,15 @@ namespace GUI.Views.View_User
                 dem++;
             }
         }
+        private void Chair_CheckedChanged(object? sender, EventArgs e)
+        {
+            Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
+            if (a.Checked)
+            {
+                MessageBox.Show(a.Name);
+            }
+        }
+
+        
     }
 }
