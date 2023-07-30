@@ -83,10 +83,11 @@ namespace DuAn1.Views
             dgv_chuyenbay.Columns[6].Name = "Thời gian về";
             dgv_chuyenbay.Columns[7].Name = "Giá";
             dgv_chuyenbay.Columns[8].Name = "id";
+            dgv_chuyenbay.Columns[8].Visible = false;
             dgv_chuyenbay.Columns[9].Name = "Giờ khởi hành";
             dgv_chuyenbay.Columns[10].Name = "Giờ kết thúc";
             dgv_chuyenbay.Columns[11].Name = "Trạng thái";
-            dgv_chuyenbay.Columns[8].Visible = false;
+
             foreach (var item in _flight.get_list())
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
@@ -196,13 +197,14 @@ namespace DuAn1.Views
 
                         int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
                         int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
-                        flight.Status = cmb_status.SelectedIndex;//trạng thái của chuyến bay
+                       
                         int hours_e = Convert.ToInt32(timeEnd_hour.Value);
                         int minute_e = Convert.ToInt32(timeEnd_minute.Value);
                         TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
                         TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
                         flight.TimeStart = timestart;
                         flight.TimeEnd = timeend;
+                        flight.Status = cmb_status.SelectedIndex;//trạng thái của chuyến bay
                         MessageBox.Show(_flight.create(flight));
                         load();
                     }
