@@ -69,7 +69,7 @@ namespace GUI.Views.View_User
                     }
                     else
                     {
-                        if (loaighe=="PT")
+                        if (loaighe == "PT")
                         {
                             chair.Enabled = false;
                         }

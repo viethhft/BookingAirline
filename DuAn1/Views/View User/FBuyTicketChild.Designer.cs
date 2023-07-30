@@ -49,7 +49,7 @@
             guna2Button1.FillColor = Color.DarkCyan;
             guna2Button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(633, 22);
+            guna2Button1.Location = new Point(616, 22);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Size = new Size(217, 45);
             guna2Button1.TabIndex = 3;
@@ -65,7 +65,7 @@
             guna2Button2.FillColor = Color.Goldenrod;
             guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(853, 22);
+            guna2Button2.Location = new Point(836, 22);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.Size = new Size(217, 45);
             guna2Button2.TabIndex = 4;
@@ -78,7 +78,7 @@
             groupBox6.Controls.Add(menuStrip1);
             groupBox6.Location = new Point(21, 12);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(1088, 90);
+            groupBox6.Size = new Size(1064, 90);
             groupBox6.TabIndex = 1;
             groupBox6.TabStop = false;
             // 

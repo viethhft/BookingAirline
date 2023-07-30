@@ -39,17 +39,20 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            label6 = new Label();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(83, 335);
+            label16.Location = new Point(83, 358);
             label16.Name = "label16";
-            label16.Size = new Size(120, 15);
+            label16.Size = new Size(87, 15);
             label16.TabIndex = 88;
-            label16.Text = "Ghế không còn trống";
+            label16.Text = "Ghế phổ thông";
             // 
             // guna2Button5
             // 
@@ -57,10 +60,10 @@
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button5.FillColor = Color.Olive;
+            guna2Button5.FillColor = Color.DarkCyan;
             guna2Button5.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(29, 328);
+            guna2Button5.Location = new Point(29, 348);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.Size = new Size(34, 30);
             guna2Button5.TabIndex = 87;
@@ -69,11 +72,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(83, 282);
+            label3.Location = new Point(83, 302);
             label3.Name = "label3";
-            label3.Size = new Size(83, 15);
+            label3.Size = new Size(89, 15);
             label3.TabIndex = 86;
-            label3.Text = "Ghế còn trống";
+            label3.Text = "Ghế thương gia";
             // 
             // guna2Button46
             // 
@@ -81,9 +84,10 @@
             guna2Button46.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button46.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button46.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button46.FillColor = Color.Goldenrod;
             guna2Button46.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button46.ForeColor = Color.White;
-            guna2Button46.Location = new Point(29, 275);
+            guna2Button46.Location = new Point(29, 295);
             guna2Button46.Name = "guna2Button46";
             guna2Button46.Size = new Size(34, 30);
             guna2Button46.TabIndex = 85;
@@ -92,7 +96,8 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(29, 257);
+            label15.BackColor = Color.Red;
+            label15.Location = new Point(24, 264);
             label15.Name = "label15";
             label15.Size = new Size(48, 15);
             label15.TabIndex = 84;
@@ -151,11 +156,54 @@
             panel1.Size = new Size(613, 190);
             panel1.TabIndex = 90;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Orange;
+            guna2Button1.Font = new Font("Segoe UI", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(29, 398);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.Size = new Size(34, 30);
+            guna2Button1.TabIndex = 91;
+            guna2Button1.Text = "2E";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(83, 408);
+            label6.Name = "label6";
+            label6.Size = new Size(64, 15);
+            label6.TabIndex = 92;
+            label6.Text = "Ghế đã đặt";
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.DarkCyan;
+            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(823, 392);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.Size = new Size(180, 45);
+            guna2Button2.TabIndex = 93;
+            guna2Button2.Text = "Thanh Toán";
+            // 
             // FChonGheSmallSize
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1015, 366);
+            ClientSize = new Size(1015, 449);
+            Controls.Add(guna2Button2);
+            Controls.Add(label6);
+            Controls.Add(guna2Button1);
             Controls.Add(panel1);
             Controls.Add(label16);
             Controls.Add(guna2Button5);
@@ -187,5 +235,8 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Label label6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

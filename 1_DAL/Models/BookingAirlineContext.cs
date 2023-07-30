@@ -155,6 +155,9 @@ namespace _1_DAL.Models
                     .HasMaxLength(100)
                     .HasColumnName("goTom");
 
+                entity.Property(e => e.Status)
+                    .HasColumnName("status");
+
                 entity.Property(e => e.LocationId).HasColumnName("locationId");
 
                 entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");

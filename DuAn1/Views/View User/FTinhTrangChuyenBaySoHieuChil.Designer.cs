@@ -33,19 +33,19 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -109,6 +109,69 @@
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(952, 182);
+            label16.Name = "label16";
+            label16.Size = new Size(34, 15);
+            label16.TabIndex = 12;
+            label16.Text = "07:15";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(642, 182);
+            label15.Name = "label15";
+            label15.Size = new Size(34, 15);
+            label15.TabIndex = 11;
+            label15.Text = "05:00";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(952, 134);
+            label14.Name = "label14";
+            label14.Size = new Size(28, 15);
+            label14.TabIndex = 10;
+            label14.Text = "Đến";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(633, 134);
+            label13.Name = "label13";
+            label13.Size = new Size(61, 15);
+            label13.TabIndex = 9;
+            label13.Text = "Khởi hành";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(940, 93);
+            label12.Name = "label12";
+            label12.Size = new Size(56, 15);
+            label12.TabIndex = 8;
+            label12.Text = "Đúng giờ";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(633, 93);
+            label11.Name = "label11";
+            label11.Size = new Size(56, 15);
+            label11.TabIndex = 7;
+            label11.Text = "Đúng giờ";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(23, 143);
+            label10.Name = "label10";
+            label10.Size = new Size(114, 15);
+            label10.TabIndex = 6;
+            label10.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
+            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -163,77 +226,14 @@
             label6.TabIndex = 0;
             label6.Text = "thời gian đi";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(23, 143);
-            label10.Name = "label10";
-            label10.Size = new Size(114, 15);
-            label10.TabIndex = 6;
-            label10.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(633, 93);
-            label11.Name = "label11";
-            label11.Size = new Size(56, 15);
-            label11.TabIndex = 7;
-            label11.Text = "Đúng giờ";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(940, 93);
-            label12.Name = "label12";
-            label12.Size = new Size(56, 15);
-            label12.TabIndex = 8;
-            label12.Text = "Đúng giờ";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(633, 134);
-            label13.Name = "label13";
-            label13.Size = new Size(61, 15);
-            label13.TabIndex = 9;
-            label13.Text = "Khởi hành";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(946, 134);
-            label14.Name = "label14";
-            label14.Size = new Size(28, 15);
-            label14.TabIndex = 10;
-            label14.Text = "Đến";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(642, 182);
-            label15.Name = "label15";
-            label15.Size = new Size(34, 15);
-            label15.TabIndex = 11;
-            label15.Text = "05:00";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(940, 182);
-            label16.Name = "label16";
-            label16.Size = new Size(34, 15);
-            label16.TabIndex = 12;
-            label16.Text = "07:15";
-            // 
-            // FTinhTrangChuyenBayChil
+            // FTinhTrangChuyenBaySoHieuChil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1076, 422);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Name = "FTinhTrangChuyenBayChil";
+            Name = "FTinhTrangChuyenBaySoHieuChil";
             Text = "FTinhTrangChuyenBayChil";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

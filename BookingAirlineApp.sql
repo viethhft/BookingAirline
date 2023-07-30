@@ -81,7 +81,8 @@ create table Flight
 	goTom nvarchar(100) not null, -- điểm đến
 	price int not null,
 	dateFlight datetime not null,
-	dateTo datetime
+	dateTo datetime,
+	status int not null --set giá trị: 1 - delay-- chuyến bay bị chậm hơn giờ khởi hành , 0 - đúng giờ 
 
 	foreign key(planeTypeId) references Plane_type(id),
 	foreign key(locationId) references airport(id)

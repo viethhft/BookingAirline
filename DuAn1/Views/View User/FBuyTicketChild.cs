@@ -37,11 +37,15 @@ namespace GUI.Views.View_User
                 form.Width = 1059;
                 form.Height = 111;
                 form.BorderStyle = BorderStyle.FixedSingle;
-                Label time1 = new Label();
+                Label time1 = new Label();// thời gian đi
                 time1.Text = item.TimeStart.ToString();
+                time1.ForeColor = Color.DarkCyan;
+                time1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
                 time1.Location = new Point(18, 30);
-                Label time2 = new Label();
+                Label time2 = new Label();// thời gian đến
                 time2.Text = item.TimeEnd.ToString();
+                time2.ForeColor = Color.DarkCyan;
+                time2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
                 time2.Location = new Point(149, 30);
                 Label code = new Label();
                 code.Text = item.FlightCode;

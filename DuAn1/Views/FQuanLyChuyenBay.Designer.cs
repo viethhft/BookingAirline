@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            cmb_status = new Guna.UI2.WinForms.Guna2ComboBox();
+            label12 = new Label();
             label14 = new Label();
             timeEnd_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
             timeEnd_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmb_status);
+            groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label14);
             groupBox1.Controls.Add(timeEnd_minute);
             groupBox1.Controls.Add(timeEnd_hour);
@@ -101,6 +105,33 @@
             groupBox1.Size = new Size(1030, 461);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // cmb_status
+            // 
+            cmb_status.BackColor = Color.Transparent;
+            cmb_status.DrawMode = DrawMode.OwnerDrawFixed;
+            cmb_status.DropDownHeight = 175;
+            cmb_status.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_status.FocusedColor = Color.FromArgb(94, 148, 255);
+            cmb_status.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cmb_status.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cmb_status.ForeColor = Color.FromArgb(68, 88, 112);
+            cmb_status.IntegralHeight = false;
+            cmb_status.ItemHeight = 30;
+            cmb_status.Location = new Point(578, 154);
+            cmb_status.Name = "cmb_status";
+            cmb_status.Size = new Size(211, 36);
+            cmb_status.TabIndex = 49;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(578, 135);
+            label12.Name = "label12";
+            label12.Size = new Size(76, 18);
+            label12.TabIndex = 48;
+            label12.Text = "Trạng thái";
             // 
             // label14
             // 
@@ -231,7 +262,7 @@
             btn_Update.FillColor = Color.DarkCyan;
             btn_Update.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(852, 108);
+            btn_Update.Location = new Point(896, 87);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(128, 45);
             btn_Update.TabIndex = 29;
@@ -248,7 +279,7 @@
             btn_Add.FillColor = Color.DarkCyan;
             btn_Add.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Add.ForeColor = Color.White;
-            btn_Add.Location = new Point(852, 34);
+            btn_Add.Location = new Point(896, 22);
             btn_Add.Name = "btn_Add";
             btn_Add.Size = new Size(128, 45);
             btn_Add.TabIndex = 28;
@@ -257,7 +288,7 @@
             // 
             // txb_Search
             // 
-            txb_Search.Location = new Point(579, 153);
+            txb_Search.Location = new Point(814, 154);
             txb_Search.Margin = new Padding(3, 2, 3, 2);
             txb_Search.Multiline = true;
             txb_Search.Name = "txb_Search";
@@ -269,7 +300,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(579, 134);
+            label9.Location = new Point(814, 135);
             label9.Name = "label9";
             label9.Size = new Size(71, 18);
             label9.TabIndex = 26;
@@ -277,33 +308,33 @@
             // 
             // dateTo
             // 
-            this.dateTo.Checked = true;
-            this.dateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dateTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateTo.Location = new System.Drawing.Point(298, 154);
-            this.dateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(242, 36);
-            this.dateTo.TabIndex = 24;
-            this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
-            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
+            dateTo.Checked = true;
+            dateTo.FillColor = Color.FromArgb(224, 224, 224);
+            dateTo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTo.Format = DateTimePickerFormat.Long;
+            dateTo.Location = new Point(298, 154);
+            dateTo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dateTo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dateTo.Name = "dateTo";
+            dateTo.Size = new Size(242, 36);
+            dateTo.TabIndex = 24;
+            dateTo.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
+            dateTo.ValueChanged += dateTo_ValueChanged;
             // 
             // DateFrom
             // 
-            this.DateFrom.Checked = true;
-            this.DateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DateFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateFrom.Location = new System.Drawing.Point(26, 154);
-            this.DateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateFrom.Name = "DateFrom";
-            this.DateFrom.Size = new System.Drawing.Size(242, 36);
-            this.DateFrom.TabIndex = 23;
-            this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
-            this.DateFrom.ValueChanged += new System.EventHandler(this.DateFrom_ValueChanged);
+            DateFrom.Checked = true;
+            DateFrom.FillColor = Color.FromArgb(224, 224, 224);
+            DateFrom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DateFrom.Format = DateTimePickerFormat.Long;
+            DateFrom.Location = new Point(26, 154);
+            DateFrom.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            DateFrom.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            DateFrom.Name = "DateFrom";
+            DateFrom.Size = new Size(242, 36);
+            DateFrom.TabIndex = 23;
+            DateFrom.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
+            DateFrom.ValueChanged += DateFrom_ValueChanged;
             // 
             // cmb_PlaneType
             // 
@@ -350,6 +381,7 @@
             dgv_chuyenbay.RowTemplate.Height = 25;
             dgv_chuyenbay.Size = new Size(1020, 262);
             dgv_chuyenbay.TabIndex = 0;
+            dgv_chuyenbay.CellClick += dgv_chuyenbay_CellClick;
             // 
             // txb_codeflight
             // 
@@ -470,5 +502,7 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown timeEnd_hour;
         private Label label11;
         private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_minute;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_status;
+        private Label label12;
     }
 }
