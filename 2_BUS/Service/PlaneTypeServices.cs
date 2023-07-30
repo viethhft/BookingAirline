@@ -17,9 +17,28 @@ namespace _2_BUS.Service
         {
             _repo= new PlaneTypeRepo();
         }
+
+        public string create(PlaneType plane)
+        {
+            if (_repo.create(plane))
+            {
+                return "Thêm thành công";
+            }
+            return "Thêm không thành công";
+        }
+
         public List<PlaneType> get_list()
         {
             return _repo.get_list();
+        }
+
+        public string update(PlaneType plane)
+        {
+            if (_repo.update(plane))
+            {
+                return "Sửa thành công";
+            }
+            return "Sửa không thành công";
         }
     }
 }

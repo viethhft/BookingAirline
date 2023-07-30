@@ -29,209 +29,217 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fStaff));
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            btn_qlykh = new Button();
-            btn_qlyflight = new Button();
-            btn_qlyve = new Button();
-            btn_dthu = new Button();
-            btn_qlynv = new Button();
-            pn_chil = new Panel();
-            menuStrip1 = new MenuStrip();
-            hệThốngToolStripMenuItem = new ToolStripMenuItem();
-            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
-            đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip2 = new MenuStrip();
-            hệThốngToolStripMenuItem1 = new ToolStripMenuItem();
-            đổiMậtKhẩuToolStripMenuItem1 = new ToolStripMenuItem();
-            đăngXuấtToolStripMenuItem1 = new ToolStripMenuItem();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            menuStrip1.SuspendLayout();
-            menuStrip2.SuspendLayout();
-            SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_addPlane = new System.Windows.Forms.Button();
+            this.btn_qlykh = new System.Windows.Forms.Button();
+            this.btn_qlyflight = new System.Windows.Forms.Button();
+            this.btn_qlyve = new System.Windows.Forms.Button();
+            this.btn_dthu = new System.Windows.Forms.Button();
+            this.btn_qlynv = new System.Windows.Forms.Button();
+            this.pn_chil = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.hệThốngToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiMậtKhẩuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(3, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1277, 153);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1277, 153);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(btn_qlykh);
-            panel1.Controls.Add(btn_qlyflight);
-            panel1.Controls.Add(btn_qlyve);
-            panel1.Controls.Add(btn_dthu);
-            panel1.Controls.Add(btn_qlynv);
-            panel1.Location = new Point(3, 186);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 522);
-            panel1.TabIndex = 1;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_addPlane);
+            this.panel1.Controls.Add(this.btn_qlykh);
+            this.panel1.Controls.Add(this.btn_qlyflight);
+            this.panel1.Controls.Add(this.btn_qlyve);
+            this.panel1.Controls.Add(this.btn_dthu);
+            this.panel1.Controls.Add(this.btn_qlynv);
+            this.panel1.Location = new System.Drawing.Point(3, 186);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 522);
+            this.panel1.TabIndex = 1;
+            // 
+            // btn_addPlane
+            // 
+            this.btn_addPlane.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_addPlane.Location = new System.Drawing.Point(-1, 397);
+            this.btn_addPlane.Name = "btn_addPlane";
+            this.btn_addPlane.Size = new System.Drawing.Size(194, 48);
+            this.btn_addPlane.TabIndex = 8;
+            this.btn_addPlane.Text = "Thêm máy bay";
+            this.btn_addPlane.UseVisualStyleBackColor = true;
+            this.btn_addPlane.Click += new System.EventHandler(this.btn_addPlane_Click);
             // 
             // btn_qlykh
             // 
-            btn_qlykh.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlykh.Location = new Point(-1, 242);
-            btn_qlykh.Name = "btn_qlykh";
-            btn_qlykh.Size = new Size(194, 48);
-            btn_qlykh.TabIndex = 7;
-            btn_qlykh.Text = "Quản lý khách hàng";
-            btn_qlykh.UseVisualStyleBackColor = true;
-            btn_qlykh.Click += btn_qlykh_Click;
+            this.btn_qlykh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_qlykh.Location = new System.Drawing.Point(-1, 242);
+            this.btn_qlykh.Name = "btn_qlykh";
+            this.btn_qlykh.Size = new System.Drawing.Size(194, 48);
+            this.btn_qlykh.TabIndex = 7;
+            this.btn_qlykh.Text = "Quản lý khách hàng";
+            this.btn_qlykh.UseVisualStyleBackColor = true;
+            this.btn_qlykh.Click += new System.EventHandler(this.btn_qlykh_Click);
             // 
             // btn_qlyflight
             // 
-            btn_qlyflight.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlyflight.Location = new Point(-1, 168);
-            btn_qlyflight.Name = "btn_qlyflight";
-            btn_qlyflight.Size = new Size(194, 48);
-            btn_qlyflight.TabIndex = 6;
-            btn_qlyflight.Text = "Quản lý chuyến bay";
-            btn_qlyflight.UseVisualStyleBackColor = true;
-            btn_qlyflight.Click += btn_qlyflight_Click;
+            this.btn_qlyflight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_qlyflight.Location = new System.Drawing.Point(-1, 168);
+            this.btn_qlyflight.Name = "btn_qlyflight";
+            this.btn_qlyflight.Size = new System.Drawing.Size(194, 48);
+            this.btn_qlyflight.TabIndex = 6;
+            this.btn_qlyflight.Text = "Quản lý chuyến bay";
+            this.btn_qlyflight.UseVisualStyleBackColor = true;
+            this.btn_qlyflight.Click += new System.EventHandler(this.btn_qlyflight_Click);
             // 
             // btn_qlyve
             // 
-            btn_qlyve.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlyve.Location = new Point(1, 93);
-            btn_qlyve.Name = "btn_qlyve";
-            btn_qlyve.Size = new Size(194, 48);
-            btn_qlyve.TabIndex = 5;
-            btn_qlyve.Text = "Quản lý vé";
-            btn_qlyve.UseVisualStyleBackColor = true;
-            btn_qlyve.Click += btn_qlyve_Click;
+            this.btn_qlyve.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_qlyve.Location = new System.Drawing.Point(1, 93);
+            this.btn_qlyve.Name = "btn_qlyve";
+            this.btn_qlyve.Size = new System.Drawing.Size(194, 48);
+            this.btn_qlyve.TabIndex = 5;
+            this.btn_qlyve.Text = "Quản lý vé";
+            this.btn_qlyve.UseVisualStyleBackColor = true;
+            this.btn_qlyve.Click += new System.EventHandler(this.btn_qlyve_Click);
             // 
             // btn_dthu
             // 
-            btn_dthu.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_dthu.Location = new Point(-1, 323);
-            btn_dthu.Name = "btn_dthu";
-            btn_dthu.Size = new Size(194, 48);
-            btn_dthu.TabIndex = 1;
-            btn_dthu.Text = "Quản lý doanh thu";
-            btn_dthu.UseVisualStyleBackColor = true;
-            btn_dthu.Click += btn_dthu_Click;
+            this.btn_dthu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_dthu.Location = new System.Drawing.Point(-1, 323);
+            this.btn_dthu.Name = "btn_dthu";
+            this.btn_dthu.Size = new System.Drawing.Size(194, 48);
+            this.btn_dthu.TabIndex = 1;
+            this.btn_dthu.Text = "Quản lý doanh thu";
+            this.btn_dthu.UseVisualStyleBackColor = true;
+            this.btn_dthu.Click += new System.EventHandler(this.btn_dthu_Click);
             // 
             // btn_qlynv
             // 
-            btn_qlynv.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlynv.ForeColor = SystemColors.ControlText;
-            btn_qlynv.Location = new Point(1, 19);
-            btn_qlynv.Name = "btn_qlynv";
-            btn_qlynv.Size = new Size(194, 48);
-            btn_qlynv.TabIndex = 0;
-            btn_qlynv.Text = "Quản lý nhân viên";
-            btn_qlynv.UseVisualStyleBackColor = true;
-            btn_qlynv.Click += btn_qlynv_Click;
+            this.btn_qlynv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_qlynv.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_qlynv.Location = new System.Drawing.Point(1, 19);
+            this.btn_qlynv.Name = "btn_qlynv";
+            this.btn_qlynv.Size = new System.Drawing.Size(194, 48);
+            this.btn_qlynv.TabIndex = 0;
+            this.btn_qlynv.Text = "Quản lý nhân viên";
+            this.btn_qlynv.UseVisualStyleBackColor = true;
+            this.btn_qlynv.Click += new System.EventHandler(this.btn_qlynv_Click);
             // 
             // pn_chil
             // 
-            pn_chil.Location = new Point(209, 186);
-            pn_chil.Name = "pn_chil";
-            pn_chil.Size = new Size(1071, 522);
-            pn_chil.TabIndex = 2;
+            this.pn_chil.Location = new System.Drawing.Point(209, 186);
+            this.pn_chil.Name = "pn_chil";
+            this.pn_chil.Size = new System.Drawing.Size(1071, 522);
+            this.pn_chil.TabIndex = 2;
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1284, 24);
-            menuStrip1.TabIndex = 3;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hệThốngToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // hệThốngToolStripMenuItem
             // 
-            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đăngXuấtToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem });
-            hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            hệThốngToolStripMenuItem.Size = new Size(69, 20);
-            hệThốngToolStripMenuItem.Text = "Hệ thống";
+            this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đăngXuấtToolStripMenuItem,
+            this.đổiMậtKhẩuToolStripMenuItem});
+            this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
             // đăngXuấtToolStripMenuItem
             // 
-            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(145, 22);
-            đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
-            đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(145, 22);
-            đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             // 
             // menuStrip2
             // 
-            menuStrip2.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem1 });
-            menuStrip2.Location = new Point(0, 0);
-            menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(1284, 26);
-            menuStrip2.TabIndex = 4;
-            menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hệThốngToolStripMenuItem1});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1284, 26);
+            this.menuStrip2.TabIndex = 4;
+            this.menuStrip2.Text = "menuStrip2";
             // 
             // hệThốngToolStripMenuItem1
             // 
-            hệThốngToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem1, đăngXuấtToolStripMenuItem1 });
-            hệThốngToolStripMenuItem1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            hệThốngToolStripMenuItem1.Name = "hệThốngToolStripMenuItem1";
-            hệThốngToolStripMenuItem1.Size = new Size(82, 22);
-            hệThốngToolStripMenuItem1.Text = "Hệ thống";
+            this.hệThốngToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đổiMậtKhẩuToolStripMenuItem1,
+            this.đăngXuấtToolStripMenuItem1});
+            this.hệThốngToolStripMenuItem1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hệThốngToolStripMenuItem1.Name = "hệThốngToolStripMenuItem1";
+            this.hệThốngToolStripMenuItem1.Size = new System.Drawing.Size(82, 22);
+            this.hệThốngToolStripMenuItem1.Text = "Hệ thống";
             // 
             // đổiMậtKhẩuToolStripMenuItem1
             // 
-            đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(168, 22);
-            đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
-            đổiMậtKhẩuToolStripMenuItem1.Click += đổiMậtKhẩuToolStripMenuItem1_Click;
+            this.đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
+            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem1.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem1_Click);
             // 
             // đăngXuấtToolStripMenuItem1
             // 
-            đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            đăngXuấtToolStripMenuItem1.Size = new Size(168, 22);
-            đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
-            đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click_1;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(-1, 397);
-            button1.Name = "button1";
-            button1.Size = new Size(194, 48);
-            button1.TabIndex = 8;
-            button1.Text = "Thêm máy bay";
-            button1.UseVisualStyleBackColor = true;
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click_1);
             // 
             // fStaff
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1284, 712);
-            Controls.Add(pn_chil);
-            Controls.Add(panel1);
-            Controls.Add(pictureBox1);
-            Controls.Add(menuStrip2);
-            IsMdiContainer = true;
-            MainMenuStrip = menuStrip2;
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "fStaff";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Giao diện các chức năng";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            menuStrip2.ResumeLayout(false);
-            menuStrip2.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1284, 712);
+            this.Controls.Add(this.pn_chil);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.menuStrip2);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip2;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "fStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Giao diện các chức năng";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -252,6 +260,6 @@
         private Button btn_qlykh;
         private Button btn_qlyflight;
         private Button btn_qlyve;
-        private Button button1;
+        private Button btn_addPlane;
     }
 }

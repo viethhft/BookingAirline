@@ -10,5 +10,7 @@ namespace _1_DAL.IRepon
     public interface IPlaneTypeRepo
     {
         public List<PlaneType> get_list();
+        public bool create(PlaneType plane);
+        public bool update(PlaneType plane);
     }
 }

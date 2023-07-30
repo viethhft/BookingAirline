@@ -10,5 +10,7 @@ namespace _2_BUS.IService
     public interface IPlaneTypeServices
     {
         public List<PlaneType> get_list();
+        public string create(PlaneType plane);
+        public string update(PlaneType plane);
     }
 }
