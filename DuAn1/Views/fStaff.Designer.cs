@@ -45,6 +45,7 @@
             hệThốngToolStripMenuItem1 = new ToolStripMenuItem();
             đổiMậtKhẩuToolStripMenuItem1 = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem1 = new ToolStripMenuItem();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -64,6 +65,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(btn_qlykh);
             panel1.Controls.Add(btn_qlyflight);
             panel1.Controls.Add(btn_qlyve);
@@ -77,7 +79,7 @@
             // btn_qlykh
             // 
             btn_qlykh.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlykh.Location = new Point(3, 332);
+            btn_qlykh.Location = new Point(-1, 242);
             btn_qlykh.Name = "btn_qlykh";
             btn_qlykh.Size = new Size(194, 48);
             btn_qlykh.TabIndex = 7;
@@ -88,7 +90,7 @@
             // btn_qlyflight
             // 
             btn_qlyflight.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlyflight.Location = new Point(1, 229);
+            btn_qlyflight.Location = new Point(-1, 168);
             btn_qlyflight.Name = "btn_qlyflight";
             btn_qlyflight.Size = new Size(194, 48);
             btn_qlyflight.TabIndex = 6;
@@ -99,7 +101,7 @@
             // btn_qlyve
             // 
             btn_qlyve.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlyve.Location = new Point(1, 133);
+            btn_qlyve.Location = new Point(1, 93);
             btn_qlyve.Name = "btn_qlyve";
             btn_qlyve.Size = new Size(194, 48);
             btn_qlyve.TabIndex = 5;
@@ -110,7 +112,7 @@
             // btn_dthu
             // 
             btn_dthu.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_dthu.Location = new Point(1, 428);
+            btn_dthu.Location = new Point(-1, 323);
             btn_dthu.Name = "btn_dthu";
             btn_dthu.Size = new Size(194, 48);
             btn_dthu.TabIndex = 1;
@@ -122,7 +124,7 @@
             // 
             btn_qlynv.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_qlynv.ForeColor = SystemColors.ControlText;
-            btn_qlynv.Location = new Point(1, 45);
+            btn_qlynv.Location = new Point(1, 19);
             btn_qlynv.Name = "btn_qlynv";
             btn_qlynv.Size = new Size(194, 48);
             btn_qlynv.TabIndex = 0;
@@ -186,16 +188,26 @@
             // đổiMậtKhẩuToolStripMenuItem1
             // 
             đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(180, 22);
+            đổiMậtKhẩuToolStripMenuItem1.Size = new Size(168, 22);
             đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem1.Click += đổiMậtKhẩuToolStripMenuItem1_Click;
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            đăngXuấtToolStripMenuItem1.Size = new Size(180, 22);
+            đăngXuấtToolStripMenuItem1.Size = new Size(168, 22);
             đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
             đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click_1;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(-1, 397);
+            button1.Name = "button1";
+            button1.Size = new Size(194, 48);
+            button1.TabIndex = 8;
+            button1.Text = "Thêm máy bay";
+            button1.UseVisualStyleBackColor = true;
             // 
             // fStaff
             // 
@@ -240,5 +252,6 @@
         private Button btn_qlykh;
         private Button btn_qlyflight;
         private Button btn_qlyve;
+        private Button button1;
     }
 }
