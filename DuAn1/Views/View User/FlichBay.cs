@@ -69,7 +69,7 @@ namespace GUI.Views.View_User
                     try
                     {
                         DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day + 6);
-                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date && c.DateFlight < date).ToList();
+                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date && c.DateFlight < date).ToList();
                     }
                     catch (Exception)
                     {

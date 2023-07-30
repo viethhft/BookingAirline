@@ -32,9 +32,9 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             int so = 1;
             int tt = 0;
-            Point locaChair = new Point(540, 10);
-            Point locaName = new Point(576, 16);
-            Point locaSTT = new Point(548, 88);
+            Point locaChair = new Point(600, 10);
+            Point locaName = new Point(586, 16);
+            Point locaSTT = new Point(550, 88);
             string[] hang = { "A", "B", "C", "D" };
             foreach (var item in seatdetail)
             {
@@ -52,7 +52,7 @@ namespace GUI.Views.View_User
                 if (tt >= 0 && tt < 4)
                 {
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
-                    Image image = Image.FromFile("D:\\DA\\DuAn1\\Resources\\chair.png");
+                    Image image = Image.FromFile("D:\\Du an 1\\App\\DuAn1\\DuAn1\\Resources\\chair.png");
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;

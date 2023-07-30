@@ -104,7 +104,7 @@ namespace GUI.Views.View_User
                     //if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     //{
                         DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
-                        var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
+                        var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
                         if (search.Count > 0)
                         {
                             FBuyTicketChild a = new FBuyTicketChild(search);
@@ -137,7 +137,7 @@ namespace GUI.Views.View_User
                         {
                             DateTime date1 = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
                             DateTime date2 = new DateTime(date_To.Value.Year, date_To.Value.Month, date_To.Value.Day);
-                            var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
+                            var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
                             if (search.Count > 0)
                             {
                                 FBuyTicketChild a = new FBuyTicketChild(search);
