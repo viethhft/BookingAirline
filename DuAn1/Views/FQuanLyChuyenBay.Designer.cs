@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_status = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.timeEnd_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.timeEnd_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_status);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.timeEnd_minute);
             this.groupBox1.Controls.Add(this.timeEnd_hour);
@@ -101,6 +105,33 @@
             this.groupBox1.Size = new System.Drawing.Size(1030, 461);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // cmb_status
+            // 
+            this.cmb_status.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_status.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_status.DropDownHeight = 175;
+            this.cmb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_status.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_status.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_status.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_status.IntegralHeight = false;
+            this.cmb_status.ItemHeight = 30;
+            this.cmb_status.Location = new System.Drawing.Point(578, 154);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(211, 36);
+            this.cmb_status.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(578, 135);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 18);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Trạng thái";
             // 
             // label14
             // 
@@ -214,7 +245,6 @@
             this.cmb_To.Name = "cmb_To";
             this.cmb_To.Size = new System.Drawing.Size(242, 36);
             this.cmb_To.TabIndex = 32;
-            this.cmb_To.SelectedIndexChanged += new System.EventHandler(this.cmb_To_SelectedValueChanged);
             // 
             // label5
             // 
@@ -255,12 +285,11 @@
             this.btn_Update.FillColor = System.Drawing.Color.DarkCyan;
             this.btn_Update.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Update.ForeColor = System.Drawing.Color.White;
-            this.btn_Update.Location = new System.Drawing.Point(852, 108);
+            this.btn_Update.Location = new System.Drawing.Point(896, 87);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(128, 45);
             this.btn_Update.TabIndex = 29;
             this.btn_Update.Text = "Sửa";
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
@@ -272,28 +301,26 @@
             this.btn_Add.FillColor = System.Drawing.Color.DarkCyan;
             this.btn_Add.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(852, 34);
+            this.btn_Add.Location = new System.Drawing.Point(896, 22);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(128, 45);
             this.btn_Add.TabIndex = 28;
             this.btn_Add.Text = "Thêm";
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txb_Search
             // 
-            this.txb_Search.Location = new System.Drawing.Point(579, 153);
+            this.txb_Search.Location = new System.Drawing.Point(814, 154);
             this.txb_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_Search.Multiline = true;
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.Size = new System.Drawing.Size(210, 37);
             this.txb_Search.TabIndex = 27;
-            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(579, 134);
+            this.label9.Location = new System.Drawing.Point(814, 135);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 18);
             this.label9.TabIndex = 26;
@@ -341,7 +368,6 @@
             this.cmb_PlaneType.Name = "cmb_PlaneType";
             this.cmb_PlaneType.Size = new System.Drawing.Size(241, 36);
             this.cmb_PlaneType.TabIndex = 21;
-            this.cmb_PlaneType.SelectedIndexChanged += new System.EventHandler(this.cmb_PlaneType_SelectedValueChanged);
             // 
             // cmb_From
             // 
@@ -359,7 +385,6 @@
             this.cmb_From.Name = "cmb_From";
             this.cmb_From.Size = new System.Drawing.Size(241, 36);
             this.cmb_From.TabIndex = 19;
-            this.cmb_From.SelectedIndexChanged += new System.EventHandler(this.cmb_From_SelectedValueChanged);
             // 
             // dgv_chuyenbay
             // 
@@ -372,6 +397,7 @@
             this.dgv_chuyenbay.RowTemplate.Height = 25;
             this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
             this.dgv_chuyenbay.TabIndex = 0;
+            this.dgv_chuyenbay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chuyenbay_CellClick);
             // 
             // txb_codeflight
             // 
@@ -493,5 +519,7 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown timeEnd_hour;
         private Label label11;
         private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_minute;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_status;
+        private Label label12;
     }
 }

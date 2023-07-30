@@ -24,7 +24,10 @@ namespace _1_DAL.Models
         public TimeSpan TimeStart { get; set; }
         public TimeSpan TimeEnd { get; set; }
 
-        public virtual Airport Location { get; set; } = null!;
+        public int Status { get; set; }
+
+
+        public virtual Airport Airport { get; set; } = null!;
         public virtual PlaneType PlaneType { get; set; } = null!;
         public virtual ICollection<Recommend> Recommends { get; set; }
         public virtual ICollection<SeatDetail> SeatDetails { get; set; }

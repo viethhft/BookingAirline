@@ -117,7 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Mua vé trực tuyến: Anh/Chị có thể chọn mua vé theo hình thức một chiều hoặc khứ hồi theo mục đích sử dụng của 
+anh chị
+
+Quản lý chuyến bay: Anh/Chị có thể xem tình trạng của chuyến bay 
+
+Tình trạng chuyến bay: Ở đây sẽ hiển thị tình trạng chuyến bay theo điểm đi và điểm đến của ngày nào để anh chị 
+có thể xem tình trạng máy bay bị deplay hay đúng giờ
+
+Lịch bay: Phần này anh chị có thể tìm kiếm lịch bay theo điểm đến điểm đi theo ngày hiện tại hoặc tương lai để 
+đặt vé
+
+----
+Trong quá trình sử dụng nếu bị quên mật khẩu thì anh/chị có thể vào phần quên mật khẩu ở ngoài form đăng nhập 
+để lấy lại mật khẩu theo email đã đăng ký tài khoản, khi nhập email 
+và ấn gửi mã thì một mã xác thực sẽ được gửi đến email của anh/chị để lấy lại mật khẩuu
+----
+CẢM ƠN QUÝ KHÁCH ĐÃ SỬ DỤNG PHẦN MỀM CỦA CHÚNG TÔI!!</value>
+  </data>
 </root>

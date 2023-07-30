@@ -16,8 +16,8 @@ namespace GUI.Views.View_User
     {
         IFlightServices _flightServices;
         ILocationServices _locationServices;
-        bool check_button=true;
-        bool check_code=true;
+        bool check_button = true;
+        bool check_code = true;
         public FtinhTrangChuyenBay()
         {
             _locationServices = new LocationService();
@@ -56,7 +56,7 @@ namespace GUI.Views.View_User
         }
         bool checkcode()
         {
-            if (txt_CodeFlight.Text=="")
+            if (txt_CodeFlight.Text == "")
             {
                 return false;
             }
@@ -148,7 +148,7 @@ namespace GUI.Views.View_User
         }
         private void date_Start_ValueChanged(object sender, EventArgs e)
         {
-            
+
             if (check_dateFrom() == -1)
             {
                 lb_ErrorDate.Visible = true;
@@ -168,12 +168,12 @@ namespace GUI.Views.View_User
             {
                 if (check())
                 {
-                    if (check_dateFrom()==1||check_dateFrom()==0)
+                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     {
                         try
                         {
-                            DateTime date = new DateTime(date_Start.Value.Year,date_Start.Value.Month,date_Start.Value.Day+6);
-                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text&& c.DateFlight==date&&c.DateFlight<date).ToList();
+                            DateTime date = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day + 6);
+                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date && c.DateFlight < date).ToList();
                         }
                         catch (Exception)
                         {
@@ -195,11 +195,11 @@ namespace GUI.Views.View_User
             {
                 if (checkcode())
                 {
-                    if (check_dateFrom()==1||check_dateFrom()==0)
+                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     {
                         try
                         {
-                            var list_search = _flightServices.get_list().Where(c => c.FlightCode==txt_CodeFlight.Text).ToList();
+                            var list_search = _flightServices.get_list().Where(c => c.FlightCode == txt_CodeFlight.Text).ToList();
                         }
                         catch (Exception)
                         {

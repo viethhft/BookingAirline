@@ -49,10 +49,9 @@
             guna2Button1.FillColor = Color.DarkCyan;
             guna2Button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(723, 29);
-            guna2Button1.Margin = new Padding(3, 4, 3, 4);
+            guna2Button1.Location = new Point(616, 22);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.Size = new Size(248, 60);
+            guna2Button1.Size = new Size(217, 45);
             guna2Button1.TabIndex = 3;
             guna2Button1.Text = "PHỔ THÔNG";
             // 
@@ -66,10 +65,9 @@
             guna2Button2.FillColor = Color.Goldenrod;
             guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(975, 29);
-            guna2Button2.Margin = new Padding(3, 4, 3, 4);
+            guna2Button2.Location = new Point(836, 22);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(248, 60);
+            guna2Button2.Size = new Size(217, 45);
             guna2Button2.TabIndex = 4;
             guna2Button2.Text = "THƯƠNG GIA";
             // 
@@ -78,56 +76,50 @@
             groupBox6.Controls.Add(guna2Button2);
             groupBox6.Controls.Add(guna2Button1);
             groupBox6.Controls.Add(menuStrip1);
-            groupBox6.Location = new Point(24, 16);
-            groupBox6.Margin = new Padding(3, 4, 3, 4);
+            groupBox6.Location = new Point(21, 12);
             groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new Padding(3, 4, 3, 4);
-            groupBox6.Size = new Size(1243, 120);
+            groupBox6.Size = new Size(1064, 90);
             groupBox6.TabIndex = 1;
             groupBox6.TabStop = false;
             // 
             // menuStrip1
             // 
             menuStrip1.Dock = DockStyle.None;
-            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { lọcToolStripMenuItem, hIỂNTHỊBỘLỌCToolStripMenuItem });
-            menuStrip1.Location = new Point(21, 47);
+            menuStrip1.Location = new Point(18, 35);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(268, 30);
+            menuStrip1.Size = new Size(216, 24);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
             // lọcToolStripMenuItem
             // 
             lọcToolStripMenuItem.Name = "lọcToolStripMenuItem";
-            lọcToolStripMenuItem.Size = new Size(120, 24);
+            lọcToolStripMenuItem.Size = new Size(96, 20);
             lọcToolStripMenuItem.Text = "SẮP XẾP THEO";
             // 
             // hIỂNTHỊBỘLỌCToolStripMenuItem
             // 
             hIỂNTHỊBỘLỌCToolStripMenuItem.Name = "hIỂNTHỊBỘLỌCToolStripMenuItem";
-            hIỂNTHỊBỘLỌCToolStripMenuItem.Size = new Size(139, 24);
+            hIỂNTHỊBỘLỌCToolStripMenuItem.Size = new Size(112, 20);
             hIỂNTHỊBỘLỌCToolStripMenuItem.Text = "HIỂN THỊ BỘ LỌC";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(24, 144);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(21, 108);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1243, 627);
+            flowLayoutPanel1.Size = new Size(1088, 470);
             flowLayoutPanel1.TabIndex = 9;
             // 
             // FBuyTicketChild
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1293, 787);
+            ClientSize = new Size(1131, 590);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(groupBox6);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FBuyTicketChild";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FBuyTicketChild";

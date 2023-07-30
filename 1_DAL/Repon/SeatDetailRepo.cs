@@ -28,9 +28,28 @@ namespace _1_DAL.Repon
 			}
         }
 
+        public SeatDetail get(int id,string code)
+        {
+            return _context.SeatDetails.Where(c => c.Id == id && c.SeatCode==code).FirstOrDefault();
+        }
+
         public List<SeatDetail> get_list()
         {
 			return _context.SeatDetails.ToList();
+        }
+
+        public bool Update(SeatDetail seatDetail)
+        {
+            try
+            {
+                _context.SeatDetails.Update(seatDetail);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

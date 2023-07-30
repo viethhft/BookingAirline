@@ -22,6 +22,11 @@ namespace _2_BUS.Service
             return _repo.get(role);
         }
 
+        public staff getEmail(string id)
+        {
+            return _repo.getEmail(id);
+        }
+
         public List<staff> list_staff()
         {
             return _repo.list_staff();

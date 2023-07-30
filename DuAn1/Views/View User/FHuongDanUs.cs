@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class FsearchTicket : Form
+    public partial class FHuongDanUs : Form
     {
-        public FsearchTicket()
+        public FHuongDanUs()
         {
             InitializeComponent();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

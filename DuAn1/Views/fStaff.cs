@@ -1,4 +1,6 @@
 ﻿using _2_BUS.Service;
+using GUI.Views;
+using GUI.Views.View_User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +15,19 @@ namespace DuAn1.Views
 {
     public partial class fStaff : Form
     {
+        private string _messe;
         int _role;
         public fStaff()
         {
             InitializeComponent();
         }
-        public fStaff(int role) : this()
+        public fStaff(int role, string messege) : this()
         {
+            _messe = messege;
             _role = role;
             EnableButton();
         }
+
         private void EnableButton()
         {
             if (_role == 1)
@@ -68,6 +73,9 @@ namespace DuAn1.Views
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
 
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
+
             }
         }
 
@@ -91,6 +99,9 @@ namespace DuAn1.Views
 
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
 
 
             }
@@ -117,6 +128,9 @@ namespace DuAn1.Views
 
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
             }
         }
 
@@ -140,6 +154,9 @@ namespace DuAn1.Views
 
                 btn_qlykh.BackColor = Color.White;
                 btn_qlykh.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
             }
         }
 
@@ -163,14 +180,52 @@ namespace DuAn1.Views
 
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
             }
+        }
+
+
+        private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FDoimk f = new FDoimk(_messe);
+            f.ShowDialog();
         }
 
         private void đăngXuấtToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void btn_addPlane_Click(object sender, EventArgs e)
+        {
+            FThemMayBay child = new FThemMayBay();
+            ChildForm(child);
+            if (btn_qlykh.Enabled == true)
+            {
+                btn_qlykh.BackColor = Color.White;
+                btn_qlykh.ForeColor = Color.Black;
+
+                btn_qlynv.BackColor = Color.White;
+                btn_qlynv.ForeColor = Color.Black;
+
+                btn_dthu.BackColor = Color.White;
+                btn_dthu.ForeColor = Color.Black;
+
+                btn_qlyve.BackColor = Color.White;
+                btn_qlyve.ForeColor = Color.Black;
+
+                btn_qlyflight.BackColor = Color.White;
+                btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.DarkCyan;
+                btn_addPlane.ForeColor = Color.White;
+                
             }
         }
     }

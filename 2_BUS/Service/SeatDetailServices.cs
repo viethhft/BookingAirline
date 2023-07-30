@@ -28,9 +28,26 @@ namespace _2_BUS.Service
             }    
         }
 
+        public SeatDetail get(int id, string code)
+        {
+            return _repo.get(id, code);
+        }
+
         public List<SeatDetail> list()
         {
             return _repo.get_list();
+        }
+
+        public string Update(SeatDetail seatDetail)
+        {
+            if (_repo.Update(seatDetail))
+            {
+                return "Sửa thành công";
+            }
+            else
+            {
+                return "Sửa không thành công";
+            }
         }
     }
 }

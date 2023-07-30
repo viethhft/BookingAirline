@@ -10,5 +10,7 @@ namespace _1_DAL.IRepon
     {
         public bool Create(SeatDetail seatDetail);
         public List<SeatDetail> get_list();
+        public bool Update(SeatDetail seatDetail);
+        public SeatDetail get(int id,string code);
     }
 }

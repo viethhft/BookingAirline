@@ -12,7 +12,7 @@ namespace DuAn1
 
     public partial class Form1 : Form
     {
-    
+
         Validate _validate;
         CheckAccountType _checkAccountType;
         QlykhachHang _f;
@@ -26,6 +26,14 @@ namespace DuAn1
         int _role;
         public Form1()
         {
+
+            InitializeComponent();
+            load();
+            timer1.Enabled = true;
+        }
+        void load()
+        {
+          
             _classServices = new ClassServices();
             _PlaneType = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
@@ -36,14 +44,6 @@ namespace DuAn1
             _f = new();
             _fdky = new fDky();
             _fForgot = new FforGotPass();
-            InitializeComponent();
-            load();
-            timer1.Enabled = true;
-        }
-
-
-        void load()
-        {
             if (Settings.Default.isRemember)
             {
                 tb_user.Text = Settings.Default.username;
@@ -55,13 +55,67 @@ namespace DuAn1
                 tb_pass.Text = "";
             }
             cb_reme.Checked = Settings.Default.isRemember;
+
+            //int a = 0;
+            //foreach (var item in _PlaneType.get_list())
+            //{
+            //    for (int i = 0; i < item.TotalSeat; i++)
+            //    {
+            //        if (item.TotalSeat == 30)
+            //        {
+            //            if (i < 20)
+            //            {
+            //                SeatDetail seat = new SeatDetail();
+            //                seat.ClassId = 2;
+            //                seat.PlaneTypeId = item.Id;
+            //                seat.SeatCode = "PT" + (i + 1);
+            //                _seatDetailServices.Create(seat);
+            //            }
+            //            else
+            //            {
+            //                SeatDetail seat = new SeatDetail();
+            //                seat.ClassId = 1;
+            //                seat.PlaneTypeId = item.Id;
+            //                seat.SeatCode = "TG" + (a + 1);
+            //                _seatDetailServices.Create(seat);
+            //                a++;
+            //            }
+            //        }
+            //        else
+            //        {
+            //            if (i < 35)
+            //            {
+            //                SeatDetail seat = new SeatDetail();
+            //                seat.ClassId = 2;
+            //                seat.PlaneTypeId = item.Id;
+            //                seat.SeatCode = "PT" + (i + 1);
+            //                _seatDetailServices.Create(seat);
+            //            }
+            //            else
+            //            {
+            //                SeatDetail seat = new SeatDetail();
+            //                seat.ClassId = 1;
+            //                seat.PlaneTypeId = item.Id;
+            //                seat.SeatCode = "TG" + (a + 1);
+            //                _seatDetailServices.Create(seat);
+            //                a++;
+            //            }
+            //        }
+            //    }
+            //    a = 0;
+            //}
+
         }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
+
+
             if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 1)
             {
+
                 _role = 0;
-                fStaff _fst = new fStaff(_role);
+                fStaff _fst = new fStaff(_role, tb_user.Text);
 
                 this.Hide();
                 MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
@@ -71,7 +125,7 @@ namespace DuAn1
             else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 2)
             {
                 _role = 1;
-                fStaff _fst = new fStaff(_role);
+                fStaff _fst = new fStaff(_role, tb_user.Text);
                 this.Hide();
                 MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
                 _fst.ShowDialog();
@@ -97,7 +151,7 @@ namespace DuAn1
             {
                 cb_reme_CheckedChanged(sender, e);
             }
-            
+            load();
         }
 
         private void llb_dki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

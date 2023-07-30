@@ -37,11 +37,15 @@ namespace GUI.Views.View_User
                 form.Width = 1059;
                 form.Height = 111;
                 form.BorderStyle = BorderStyle.FixedSingle;
-                Label time1 = new Label();
+                Label time1 = new Label();// thời gian đi
                 time1.Text = item.TimeStart.ToString();
+                time1.ForeColor = Color.DarkCyan;
+                time1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
                 time1.Location = new Point(18, 30);
-                Label time2 = new Label();
+                Label time2 = new Label();// thời gian đến
                 time2.Text = item.TimeEnd.ToString();
+                time2.ForeColor = Color.DarkCyan;
+                time2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
                 time2.Location = new Point(149, 30);
                 Label code = new Label();
                 code.Text = item.FlightCode;
@@ -88,11 +92,11 @@ namespace GUI.Views.View_User
 
         private void Tg_Click(object? sender, EventArgs e)
         {
-            Guna2Button btn_current= (Guna2Button)sender;
+            Guna2Button btn_current = (Guna2Button)sender;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
-            if (seatdetail.Count()==50)
+            if (seatdetail.Count() == 50)
             {
                 FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
                 this.Hide();
@@ -106,7 +110,7 @@ namespace GUI.Views.View_User
                 fChonGhe.ShowDialog();
                 this.Show();
             }
-            
+
         }
 
         private void Pt_Click(object? sender, EventArgs e)
@@ -130,5 +134,6 @@ namespace GUI.Views.View_User
                 this.Show();
             }
         }
+
     }
 }

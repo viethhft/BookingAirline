@@ -60,26 +60,32 @@ namespace GUI.Views.View_User
                 return -1;
             }
         }
+
         private void btn_Search_Click(object sender, EventArgs e)
         {
             if (check())
             {
-                if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                //if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                //{
+                try
                 {
-                    try
-                    {
-                        DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day + 6);
-                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date && c.DateFlight < date).ToList();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(-1);
+                    DateTime date1 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(5);
+                    var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight > date && c.DateFlight < date1).ToList();
+                    FLichBayChild fLichBayChild = new FLichBayChild(list_search, date);
+                    this.Hide();
+                    fLichBayChild.ShowDialog();
+                    this.Show();
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                    MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                //}
             }
             else
             {

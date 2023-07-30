@@ -76,7 +76,7 @@
             guna2Button2.Image = Properties.Resources.icons8_menu_301;
             guna2Button2.Location = new Point(207, 29);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(193, 45);
+            guna2Button2.Size = new Size(192, 45);
             guna2Button2.TabIndex = 1;
             guna2Button2.Text = "QUẢN LÝ CHUYẾN BAY";
             guna2Button2.Click += guna2Button2_Click;
@@ -112,7 +112,7 @@
             guna2Button4.Image = Properties.Resources.icons8_date_30__1_2;
             guna2Button4.Location = new Point(623, 29);
             guna2Button4.Name = "guna2Button4";
-            guna2Button4.Size = new Size(189, 45);
+            guna2Button4.Size = new Size(192, 45);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "LỊCH BAY";
             guna2Button4.Click += guna2Button4_Click;
@@ -172,6 +172,7 @@
             hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
             hướngDẫnSửDụngToolStripMenuItem.Size = new Size(180, 22);
             hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
+            hướngDẫnSửDụngToolStripMenuItem.Click += hướngDẫnSửDụngToolStripMenuItem_Click;
             // 
             // label1
             // 
