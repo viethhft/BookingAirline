@@ -1,4 +1,5 @@
 ﻿using _2_BUS.Service;
+using GUI.Views;
 using GUI.Views.View_User;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,9 @@ namespace DuAn1.Views
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
 
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
+
             }
         }
 
@@ -95,6 +99,9 @@ namespace DuAn1.Views
 
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
 
 
             }
@@ -121,6 +128,9 @@ namespace DuAn1.Views
 
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
             }
         }
 
@@ -144,6 +154,9 @@ namespace DuAn1.Views
 
                 btn_qlykh.BackColor = Color.White;
                 btn_qlykh.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
             }
         }
 
@@ -167,6 +180,9 @@ namespace DuAn1.Views
 
                 btn_qlyflight.BackColor = Color.White;
                 btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.White;
+                btn_addPlane.ForeColor = Color.Black;
             }
         }
 
@@ -183,6 +199,33 @@ namespace DuAn1.Views
             if (MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void btn_addPlane_Click(object sender, EventArgs e)
+        {
+            FThemMayBay child = new FThemMayBay();
+            ChildForm(child);
+            if (btn_qlykh.Enabled == true)
+            {
+                btn_qlykh.BackColor = Color.White;
+                btn_qlykh.ForeColor = Color.Black;
+
+                btn_qlynv.BackColor = Color.White;
+                btn_qlynv.ForeColor = Color.Black;
+
+                btn_dthu.BackColor = Color.White;
+                btn_dthu.ForeColor = Color.Black;
+
+                btn_qlyve.BackColor = Color.White;
+                btn_qlyve.ForeColor = Color.Black;
+
+                btn_qlyflight.BackColor = Color.White;
+                btn_qlyflight.ForeColor = Color.Black;
+
+                btn_addPlane.BackColor = Color.DarkCyan;
+                btn_addPlane.ForeColor = Color.White;
+                
             }
         }
     }

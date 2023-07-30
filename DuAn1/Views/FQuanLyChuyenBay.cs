@@ -32,9 +32,9 @@ namespace DuAn1.Views
             _location = new LocationService();
             _plantype = new PlaneTypeServices();
             InitializeComponent();
-            load();
             cmb_status.Items.Add("Delay");
             cmb_status.Items.Add("Đúng giờ");
+            load();
         }
         void check()
         {
@@ -307,12 +307,8 @@ namespace DuAn1.Views
             cmb_From.Text = dgv_chuyenbay.CurrentRow.Cells[4].Value.ToString();
             DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
             dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
-            cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString()); // trạng thái chuyến bay
-        }
-
-        private void dgv_chuyenbay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString());
+           
         }
     }
 }
