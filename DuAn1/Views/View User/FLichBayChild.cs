@@ -108,7 +108,6 @@ namespace GUI.Views.View_User
                             goto res;
                         }
                     }
-                    
                 }
 
                 if (group.Controls.Count > 0)
