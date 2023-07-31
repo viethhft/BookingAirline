@@ -49,6 +49,8 @@ namespace DuAn1.Views
             tbx_pass2.Text = "";
             tbx_phone.Text = "";
             cbx_gender.Text = "";
+            txb_Otp.Text = "";
+            time.Visible = false;
             lb_ErrorEmail.Visible = false;
             lb_ErrorName.Visible = false;
             lb_ErrorPhoneNumber.Visible = false;

@@ -56,54 +56,66 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(1055, 32);
+            label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.DarkCyan;
+            label6.Location = new Point(1050, 32);
             label6.Name = "label6";
-            label6.Size = new Size(69, 15);
+            label6.Size = new Size(90, 19);
             label6.TabIndex = 5;
             label6.Text = "Ngày tháng";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(928, 32);
+            label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.DarkCyan;
+            label5.Location = new Point(923, 32);
             label5.Name = "label5";
-            label5.Size = new Size(69, 15);
+            label5.Size = new Size(90, 19);
             label5.TabIndex = 4;
             label5.Text = "Ngày tháng";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(789, 32);
+            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.DarkCyan;
+            label4.Location = new Point(784, 32);
             label4.Name = "label4";
-            label4.Size = new Size(69, 15);
+            label4.Size = new Size(90, 19);
             label4.TabIndex = 3;
             label4.Text = "Ngày tháng";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(656, 31);
+            label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkCyan;
+            label3.Location = new Point(651, 31);
             label3.Name = "label3";
-            label3.Size = new Size(69, 15);
+            label3.Size = new Size(90, 19);
             label3.TabIndex = 2;
             label3.Text = "Ngày tháng";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(452, 32);
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkCyan;
+            label2.Location = new Point(447, 32);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(88, 19);
             label2.TabIndex = 1;
             label2.Text = "Điểm dừng";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkCyan;
             label1.Location = new Point(25, 32);
             label1.Name = "label1";
-            label1.Size = new Size(134, 15);
+            label1.Size = new Size(201, 19);
             label1.TabIndex = 0;
             label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
