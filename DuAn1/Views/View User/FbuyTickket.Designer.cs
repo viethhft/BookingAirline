@@ -122,7 +122,7 @@
             // 
             // txt_Discount
             // 
-            txt_Discount.Location = new Point(58, 345);
+            txt_Discount.Location = new Point(58, 381);
             txt_Discount.Name = "txt_Discount";
             txt_Discount.Size = new Size(276, 23);
             txt_Discount.TabIndex = 61;
@@ -279,7 +279,7 @@
             btn_discount.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_discount.ForeColor = Color.FromArgb(0, 95, 110);
             btn_discount.Image = Properties.Resources.icons8_gift_box_401;
-            btn_discount.Location = new Point(58, 332);
+            btn_discount.Location = new Point(58, 368);
             btn_discount.Name = "btn_discount";
             btn_discount.Size = new Size(157, 36);
             btn_discount.TabIndex = 67;
