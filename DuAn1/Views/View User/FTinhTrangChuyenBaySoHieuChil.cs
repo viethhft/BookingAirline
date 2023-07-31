@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace GUI.Views.View_User
         public FTinhTrangChuyenBaySoHieuChil()
         {
             InitializeComponent();
+        }
+        public FTinhTrangChuyenBaySoHieuChil(List<Flight> flights):this()
+        {
+
         }
     }
 }

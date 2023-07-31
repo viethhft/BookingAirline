@@ -228,7 +228,6 @@
             this.cbb_From.Name = "cbb_From";
             this.cbb_From.Size = new System.Drawing.Size(276, 36);
             this.cbb_From.TabIndex = 48;
-            this.cbb_From.SelectedIndexChanged += new System.EventHandler(this.cbb_From_SelectedIndexChanged_1);
             // 
             // guna2HtmlLabel1
             // 

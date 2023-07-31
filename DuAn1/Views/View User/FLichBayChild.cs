@@ -111,12 +111,11 @@ namespace GUI.Views.View_User
 
         private void Pic_MouseLeave(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+                
         }
 
         private void Pic_MouseHover(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         private void Pic_Click(object? sender, EventArgs e)
