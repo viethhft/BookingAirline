@@ -62,7 +62,7 @@ namespace GUI.Views.View_User
             }
             return true;
         }
-        
+
         private void guna2Button1_Click(object sender, EventArgs e) // dđây là button hành trình
         {
             check_button = true;
@@ -171,21 +171,21 @@ namespace GUI.Views.View_User
                 {
                     //if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     //{
-                        try
-                        {
-                            DateTime date = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day);
-                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
+                    try
+                    {
+                        DateTime date = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day);
+                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
                         MessageBox.Show(list_search.Count.ToString());
-                            FTinhTrangChuyenBayHanhTrinhChild hanhtrinh = new FTinhTrangChuyenBayHanhTrinhChild(list_search);
-                            this.Hide();
-                            hanhtrinh.ShowDialog();
-                            this.Show();
+                        FTinhTrangChuyenBayHanhTrinhChild hanhtrinh = new FTinhTrangChuyenBayHanhTrinhChild(list_search);
+                        this.Hide();
+                        hanhtrinh.ShowDialog();
+                        this.Show();
 
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     //}
                     //else
                     //{

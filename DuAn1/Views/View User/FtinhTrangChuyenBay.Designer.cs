@@ -53,7 +53,7 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel1.Location = new Point(25, 23);
+            guna2HtmlLabel1.Location = new Point(40, 23);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(251, 21);
             guna2HtmlLabel1.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel5.Location = new Point(63, 60);
+            guna2HtmlLabel5.Location = new Point(78, 60);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(216, 17);
             guna2HtmlLabel5.TabIndex = 11;
@@ -73,7 +73,7 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.icons8_exclamation_mark_30;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox1.Location = new Point(20, 50);
+            pictureBox1.Location = new Point(35, 50);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(37, 36);
             pictureBox1.TabIndex = 10;
@@ -89,7 +89,7 @@
             guna2Button1.FillColor = Color.FromArgb(0, 95, 110);
             guna2Button1.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.Black;
-            guna2Button1.Location = new Point(167, 83);
+            guna2Button1.Location = new Point(182, 83);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 12;
@@ -107,7 +107,7 @@
             guna2Button2.FillColor = Color.White;
             guna2Button2.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Location = new Point(345, 83);
+            guna2Button2.Location = new Point(360, 83);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.Size = new Size(180, 45);
             guna2Button2.TabIndex = 13;
@@ -117,7 +117,7 @@
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Location = new Point(33, 138);
+            guna2HtmlLabel2.Location = new Point(48, 138);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(24, 17);
             guna2HtmlLabel2.TabIndex = 14;
@@ -127,7 +127,7 @@
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel3.Location = new Point(391, 136);
+            guna2HtmlLabel3.Location = new Point(406, 136);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(34, 17);
             guna2HtmlLabel3.TabIndex = 15;
@@ -145,7 +145,7 @@
             cbb_From.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_From.IntegralHeight = false;
             cbb_From.ItemHeight = 30;
-            cbb_From.Location = new Point(33, 161);
+            cbb_From.Location = new Point(48, 161);
             cbb_From.Name = "cbb_From";
             cbb_From.Size = new Size(314, 36);
             cbb_From.TabIndex = 16;
@@ -163,7 +163,7 @@
             cbb_To.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_To.IntegralHeight = false;
             cbb_To.ItemHeight = 30;
-            cbb_To.Location = new Point(391, 161);
+            cbb_To.Location = new Point(406, 161);
             cbb_To.Name = "cbb_To";
             cbb_To.Size = new Size(314, 36);
             cbb_To.TabIndex = 17;
@@ -173,7 +173,7 @@
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel4.Location = new Point(33, 232);
+            guna2HtmlLabel4.Location = new Point(48, 232);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(97, 17);
             guna2HtmlLabel4.TabIndex = 18;
@@ -185,7 +185,7 @@
             date_Start.Cursor = Cursors.Hand;
             date_Start.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             date_Start.Format = DateTimePickerFormat.Custom;
-            date_Start.Location = new Point(33, 255);
+            date_Start.Location = new Point(48, 255);
             date_Start.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             date_Start.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             date_Start.Name = "date_Start";
@@ -197,7 +197,7 @@
             // lb_ErrorNum
             // 
             lb_ErrorNum.BackColor = Color.Transparent;
-            lb_ErrorNum.Location = new Point(33, 204);
+            lb_ErrorNum.Location = new Point(48, 204);
             lb_ErrorNum.Name = "lb_ErrorNum";
             lb_ErrorNum.Size = new Size(71, 17);
             lb_ErrorNum.TabIndex = 20;
@@ -207,7 +207,7 @@
             // 
             lb_ErrorTo1.BackColor = Color.Transparent;
             lb_ErrorTo1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_ErrorTo1.Location = new Point(391, 203);
+            lb_ErrorTo1.Location = new Point(406, 203);
             lb_ErrorTo1.Name = "lb_ErrorTo1";
             lb_ErrorTo1.Size = new Size(73, 17);
             lb_ErrorTo1.TabIndex = 21;
@@ -217,7 +217,7 @@
             // 
             lb_ErrorDate.BackColor = Color.Transparent;
             lb_ErrorDate.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_ErrorDate.Location = new Point(33, 295);
+            lb_ErrorDate.Location = new Point(48, 295);
             lb_ErrorDate.Name = "lb_ErrorDate";
             lb_ErrorDate.Size = new Size(73, 17);
             lb_ErrorDate.TabIndex = 22;
@@ -227,7 +227,7 @@
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
             guna2HtmlLabel9.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel9.Location = new Point(33, 136);
+            guna2HtmlLabel9.Location = new Point(48, 136);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(114, 17);
             guna2HtmlLabel9.TabIndex = 24;
@@ -237,7 +237,7 @@
             // 
             lb_ErrorFrom1.BackColor = Color.Transparent;
             lb_ErrorFrom1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_ErrorFrom1.Location = new Point(33, 203);
+            lb_ErrorFrom1.Location = new Point(48, 203);
             lb_ErrorFrom1.Name = "lb_ErrorFrom1";
             lb_ErrorFrom1.Size = new Size(73, 17);
             lb_ErrorFrom1.TabIndex = 25;
@@ -256,7 +256,7 @@
             btn_Search.FillColor = Color.Empty;
             btn_Search.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Search.ForeColor = Color.FromArgb(123, 90, 4);
-            btn_Search.Location = new Point(481, 346);
+            btn_Search.Location = new Point(496, 346);
             btn_Search.Name = "btn_Search";
             btn_Search.Size = new Size(180, 45);
             btn_Search.TabIndex = 26;
@@ -265,7 +265,7 @@
             // 
             // txt_CodeFlight
             // 
-            txt_CodeFlight.Location = new Point(33, 162);
+            txt_CodeFlight.Location = new Point(48, 162);
             txt_CodeFlight.Multiline = true;
             txt_CodeFlight.Name = "txt_CodeFlight";
             txt_CodeFlight.Size = new Size(314, 36);
