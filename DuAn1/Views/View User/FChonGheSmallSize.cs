@@ -73,6 +73,15 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
+                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
@@ -174,6 +183,15 @@ namespace GUI.Views.View_User
                     chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
+                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
@@ -220,21 +238,29 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
-            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
-            var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id).ToList();
-            foreach (var item in seat)
+            if (Convert.ToInt32(lb_amount.Text)>0)
             {
-                foreach (var item1 in _listcode)
+                var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
+                var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
+                var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id).ToList();
+                foreach (var item in seat)
                 {
-                    if (item.SeatCode == item1)
+                    foreach (var item1 in _listcode)
                     {
-                        SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
-                        seatupdate.Status = 0;
-                        _seatDetailServices.Update(seatupdate);
+                        if (item.SeatCode == item1)
+                        {
+                            SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
+                            seatupdate.Status = 0;
+                            _seatDetailServices.Update(seatupdate);
+                        }
                     }
                 }
                 MessageBox.Show("Đặt vé ok");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ghế");
             }
         }
     }

@@ -245,6 +245,7 @@
             this.cmb_To.Name = "cmb_To";
             this.cmb_To.Size = new System.Drawing.Size(242, 36);
             this.cmb_To.TabIndex = 32;
+            this.cmb_To.SelectedIndexChanged += new System.EventHandler(this.cmb_To_SelectedValueChanged);
             // 
             // label5
             // 
@@ -290,6 +291,7 @@
             this.btn_Update.Size = new System.Drawing.Size(128, 45);
             this.btn_Update.TabIndex = 29;
             this.btn_Update.Text = "Sửa";
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
@@ -306,6 +308,7 @@
             this.btn_Add.Size = new System.Drawing.Size(128, 45);
             this.btn_Add.TabIndex = 28;
             this.btn_Add.Text = "Thêm";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txb_Search
             // 
@@ -339,6 +342,7 @@
             this.dateTo.Size = new System.Drawing.Size(242, 36);
             this.dateTo.TabIndex = 24;
             this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // DateFrom
             // 
@@ -353,6 +357,7 @@
             this.DateFrom.Size = new System.Drawing.Size(242, 36);
             this.DateFrom.TabIndex = 23;
             this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.ValueChanged += new System.EventHandler(this.DateFrom_ValueChanged);
             // 
             // cmb_PlaneType
             // 
@@ -368,6 +373,7 @@
             this.cmb_PlaneType.Name = "cmb_PlaneType";
             this.cmb_PlaneType.Size = new System.Drawing.Size(241, 36);
             this.cmb_PlaneType.TabIndex = 21;
+            this.cmb_PlaneType.SelectedIndexChanged += new System.EventHandler(this.cmb_PlaneType_SelectedValueChanged);
             // 
             // cmb_From
             // 
@@ -385,6 +391,7 @@
             this.cmb_From.Name = "cmb_From";
             this.cmb_From.Size = new System.Drawing.Size(241, 36);
             this.cmb_From.TabIndex = 19;
+            this.cmb_From.SelectedIndexChanged += new System.EventHandler(this.cmb_From_SelectedValueChanged);
             // 
             // dgv_chuyenbay
             // 
