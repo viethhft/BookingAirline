@@ -98,43 +98,6 @@ namespace GUI.Views.View_User
                     loca_pic.X += 135;
                     loca_textPic.X += 135;
                 }
-                //res:
-                //foreach (var item1 in list.Where(c => c.PlaneTypeId == item.Id))
-                //{
-                //    if (date1==item1.DateFlight)
-                //    {
-                //        PictureBox pic = new PictureBox();
-                //        Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
-                //        pic.Image = image;
-                //        pic.Size = new Size(64, 47);
-                //        pic.Location = loca_pic;
-                //        pic.Click += Pic_Click;
-                //        pic.Name = item1.FlightCode;
-                //        pic.BackColor = Color.White;
-                //        pic.SizeMode = PictureBoxSizeMode.CenterImage;
-                //        Label lb_select = new Label();
-                //        lb_select.Text = "Chọn";
-                //        lb_select.ForeColor = Color.DarkCyan;
-                //        lb_select.Location = loca_textPic;
-                //        group.Controls.Add(pic);
-                //        group.Controls.Add(lb_select);
-                //        date1 = date1.AddDays(1);
-                //        loca_pic.X += 135;
-                //        loca_textPic.X += 135;
-                //    }
-                //    else
-                //    {
-                //        count++;
-                //        if (count<4)
-                //        {
-                //            date1 = date1.AddDays(1);
-                //            loca_pic.X += 135;
-                //            loca_textPic.X += 135;
-                //            goto res;
-                //        }
-                //    }
-                //}
-
                 if (group.Controls.Count > 0)
                 {
                     flowLayoutPanel1.Controls.Add(group);
