@@ -30,14 +30,18 @@ namespace GUI.Views.View_User
             Point pointPlane = new Point(24, 61);
             Point pointFlight = new Point(151, 61);
             Point pointPlace = new Point(24, 98);
-            Point pointStop = new Point(633, 46);
-            Point pointStatus = new Point(940, 64);
+            Point pointStop = new Point(640, 66);
+            Point pointStatus = new Point(945, 64);
             foreach (var item in flights)
             {
                 GroupBox group = new GroupBox();
                 group.Size = new Size(1052, 136);
                 Label timeStart = new Label();
+                timeStart.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+                timeStart.ForeColor = Color.DarkCyan;
                 Label timeEnd = new Label();
+                timeEnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+                timeEnd.ForeColor = Color.DarkCyan;
                 Label namePlane = new Label();
                 Label codeFlight = new Label();
                 Label place = new Label();
@@ -48,15 +52,16 @@ namespace GUI.Views.View_User
                 timeEnd.Text = item.TimeEnd.ToString();
                 timeEnd.Location = pointEnd;
                 namePlane.Text = _planeTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
-                namePlane.Location=pointPlane;
-                codeFlight.Text=item.FlightCode.ToString();
-                codeFlight.Location=pointFlight;
+                namePlane.Location = pointPlane;
+                codeFlight.Text = item.FlightCode.ToString();
+                codeFlight.Location = pointFlight;
                 place.Text = $"{item.GoFrom} - {item.GoTo}";
-                place.Location=pointPlace;
+                place.Location = pointPlace;
+                place.Size = new Size(300, 20);
                 stopPoint.Text = "Bay thẳng";
-                stopPoint.Location=pointStop;
-                status.Text= item.Status==1?"Delay":"Đúng giờ";
-                status.Location=pointStatus;
+                stopPoint.Location = pointStop;
+                status.Text = item.Status == 1 ? "Delay" : "Đúng giờ";
+                status.Location = pointStatus;
                 group.Controls.Add(timeStart);
                 group.Controls.Add(timeEnd);
                 group.Controls.Add(namePlane);
