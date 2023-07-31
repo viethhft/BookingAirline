@@ -19,6 +19,7 @@ namespace GUI.Views.View_User
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
+        IClassServices _classServices;
         List<Flight> _test;
         public FBuyTicketChild()
         {
@@ -27,6 +28,7 @@ namespace GUI.Views.View_User
         public FBuyTicketChild(List<Flight> list) : this()
         {
             _test = list;
+            _classServices = new ClassServices();
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
@@ -55,7 +57,7 @@ namespace GUI.Views.View_User
                 name.Text = plane.DisplayName;
                 name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
-                pt.Text = "GIÁ";
+                pt.Text = _classServices.get_list().Where(c=>c.Id==2).FirstOrDefault().Price.ToString();
                 pt.BorderRadius = 10;
                 pt.BorderThickness = 1;
                 pt.FillColor = Color.White;
@@ -68,7 +70,7 @@ namespace GUI.Views.View_User
                 pt.Tag = "PT";
                 pt.Click += Pt_Click;
                 Guna2Button tg = new Guna2Button();
-                tg.Text = "GIÁ";
+                tg.Text = _classServices.get_list().Where(c => c.Id == 1).FirstOrDefault().Price.ToString();
                 tg.BorderRadius = 10;
                 tg.BorderThickness = 1;
                 tg.FillColor = Color.White;

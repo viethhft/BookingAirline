@@ -250,5 +250,6 @@ namespace GUI.Views.View_User
                 lb_dateTo.ForeColor = System.Drawing.Color.Red;
             }
         }
+
     }
 }

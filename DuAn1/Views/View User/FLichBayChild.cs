@@ -118,7 +118,6 @@ namespace GUI.Views.View_User
         private void Pic_Click(object? sender, EventArgs e)
         {
             PictureBox pic = (PictureBox)(sender);
-            MessageBox.Show(pic.Name);
             var flight = _flightServices.get_list().Where(c => c.FlightCode == pic.Name).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
