@@ -75,7 +75,7 @@ namespace _2_BUS.Validate
         }
         public bool checkpass(string pass)
         {
-            Regex regex = new Regex(@"((^[a-z0-9A-z@!#$%^&*])(?=.*?[!@#$%^&*]).([^\s]){5,100})$");
+            Regex regex = new Regex(@"((?=.*?[!@#$%^&*])(^[a-z0-9A-Z@!#$%^&*]).([^\s]){5,100})$");
             Match match = regex.Match(pass);
             if (match!=Match.Empty)
             {
