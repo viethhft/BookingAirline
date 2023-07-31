@@ -37,9 +37,9 @@
             label5 = new Label();
             label6 = new Label();
             groupBox1 = new GroupBox();
-            label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -133,14 +133,16 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(941, 32);
-            label3.Name = "label3";
-            label3.Size = new Size(75, 15);
-            label3.TabIndex = 2;
-            label3.Text = "TÌNH TRẠNG";
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(24, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 19);
+            label1.TabIndex = 0;
+            label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
             // label2
             // 
@@ -151,15 +153,14 @@
             label2.TabIndex = 1;
             label2.Text = "ĐIỂM DỪNG";
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(24, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(189, 19);
-            label1.TabIndex = 0;
-            label1.Text = "THỜI GIAN KHỞI HÀNH";
+            label3.AutoSize = true;
+            label3.Location = new Point(941, 32);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 15);
+            label3.TabIndex = 2;
+            label3.Text = "TÌNH TRẠNG";
             // 
             // FTinhTrangChuyenBayHanhTrinhChild
             // 
@@ -188,8 +189,8 @@
         private Label label5;
         private Label label6;
         private GroupBox groupBox1;
+        private Label label1;
         private Label label3;
         private Label label2;
-        private Label label1;
     }
 }
