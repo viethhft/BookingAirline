@@ -225,7 +225,7 @@ namespace DuAn1.Views
 
                 btn_addPlane.BackColor = Color.DarkCyan;
                 btn_addPlane.ForeColor = Color.White;
-                
+
             }
         }
     }

@@ -28,13 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            groupBox2 = new GroupBox();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Location = new Point(12, 90);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1052, 136);
+            groupBox2.TabIndex = 5;
+            groupBox2.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(24, 98);
+            label10.Name = "label10";
+            label10.Size = new Size(114, 15);
+            label10.TabIndex = 6;
+            label10.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(151, 61);
+            label9.Name = "label9";
+            label9.Size = new Size(88, 15);
+            label9.TabIndex = 5;
+            label9.Text = "Mã chuyến bay";
             // 
             // groupBox1
             // 
@@ -47,14 +88,16 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(941, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "TÌNH TRẠNG";
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(24, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 19);
+            label1.TabIndex = 0;
+            label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
             // label2
             // 
@@ -65,15 +108,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "ĐIỂM DỪNG";
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THỜI GIAN KHỞI HÀNH";
+            label3.AutoSize = true;
+            label3.Location = new Point(941, 32);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 15);
+            label3.TabIndex = 2;
+            label3.Text = "TÌNH TRẠNG";
             // 
             // flowLayoutPanel1
             // 
@@ -100,9 +142,8 @@
 
         #endregion
         private GroupBox groupBox1;
+        private Label label1;
         private Label label3;
         private Label label2;
-        private Label label1;
-        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
