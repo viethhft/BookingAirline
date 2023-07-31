@@ -1,6 +1,7 @@
 ﻿using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
+using Guna.UI2.Designer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,8 +89,10 @@ namespace GUI.Views.View_User
                         pic.Size = new Size(64, 47);
                         pic.Location = loca_pic;
                         pic.Click += Pic_Click;
+                        pic.MouseHover += Pic_MouseHover;
+                        pic.MouseLeave += Pic_MouseLeave;
                         pic.Name = fl.FlightCode;
-                        pic.BackColor = Color.White;
+                        pic.BackColor = SystemColors.Control;
                         pic.SizeMode = PictureBoxSizeMode.CenterImage;
                         Label lb_select = new Label();
                         lb_select.Text = "Chọn";
@@ -111,12 +114,16 @@ namespace GUI.Views.View_User
 
         private void Pic_MouseLeave(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            PictureBox pic = (PictureBox)(sender);
+            pic.Cursor = Cursors.Default;
+            pic.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
         private void Pic_MouseHover(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            PictureBox pic = (PictureBox)(sender);
+            pic.Cursor = Cursors.Hand;
+            pic.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void Pic_Click(object? sender, EventArgs e)
