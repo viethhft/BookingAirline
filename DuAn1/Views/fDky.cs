@@ -309,5 +309,19 @@ namespace DuAn1.Views
             }
         }
 
+        private void tbx_pass1_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkpass(tbx_pass1.Text))
+            {
+                lb_ErrorPass1.Visible = false;
+            }
+            else
+            {
+                lb_ErrorPass1.Text = "Mật khẩu nhập phải từ 6 ký tự";
+                lb_ErrorPass1.Visible = true;
+                lb_ErrorPass1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorPass1.ForeColor = System.Drawing.Color.Red;
+            }
+        }
     }
 }

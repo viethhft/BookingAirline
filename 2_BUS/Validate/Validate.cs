@@ -9,6 +9,7 @@ using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
 using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace _2_BUS.Validate
 {
@@ -67,6 +68,16 @@ namespace _2_BUS.Validate
             Regex regex = new Regex(@"(0|\+84)([3|9|8|7|5])(\d{8})$");
             Match match = regex.Match(phone);
             if (match != Match.Empty)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkpass(string pass)
+        {
+            Regex regex = new Regex(@"^[a-z0-9A-z@!#$%^&*]{5,})([^\s.,])$");
+            Match match = regex.Match(pass);
+            if (match!=Match.Empty)
             {
                 return true;
             }

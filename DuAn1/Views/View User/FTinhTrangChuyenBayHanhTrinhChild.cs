@@ -55,7 +55,7 @@ namespace GUI.Views.View_User
                 place.Location=pointPlace;
                 stopPoint.Text = "Bay thẳng";
                 stopPoint.Location=pointStop;
-                status.Text= item.Status==1?"Delay":"Dúng giờ";
+                status.Text= item.Status==1?"Delay":"Đúng giờ";
                 status.Location=pointStatus;
                 group.Controls.Add(timeStart);
                 group.Controls.Add(timeEnd);
