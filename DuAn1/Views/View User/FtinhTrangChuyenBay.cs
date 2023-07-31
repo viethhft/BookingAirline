@@ -62,6 +62,7 @@ namespace GUI.Views.View_User
             }
             return true;
         }
+        
         private void guna2Button1_Click(object sender, EventArgs e) // dđây là button hành trình
         {
             check_button = true;
