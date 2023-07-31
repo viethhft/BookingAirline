@@ -93,7 +93,6 @@
             tbx_passOld.PasswordChar = '*';
             tbx_passOld.Size = new Size(222, 37);
             tbx_passOld.TabIndex = 1;
-            tbx_passOld.TextChanged += tbx_passOld_TextChanged;
             // 
             // tbx_passNew
             // 

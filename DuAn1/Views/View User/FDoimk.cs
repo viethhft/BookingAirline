@@ -44,7 +44,7 @@ namespace GUI.Views.View_User
             {
                 try
                 {
-                    if (_validate.ReversePass(tbx_passOld.Text) == _services.GetCustomers().Where(c => c.Email == _message).FirstOrDefault().Password)
+                    if (_validate.ReversePass(tbx_passOld.Text) == _services.GetCustomers().Where(c => c.Email == _message).FirstOrDefault().Password && tbx_passNew.Text == tbx_passReNew.Text)
                     {
                         Customer customer = _services.Get(_message);
                         customer.Password = _validate.ReversePass(tbx_passReNew.Text);
@@ -63,7 +63,7 @@ namespace GUI.Views.View_User
                 {
                     //MessageBox.Show("Vui lòng xem lại thông tin 2!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //throw;
-                    if (_validate.ReversePass(tbx_passOld.Text) == _staffServices.list_staff().Where(c => c.Email == _message).FirstOrDefault().Password)
+                    if (_validate.ReversePass(tbx_passOld.Text) == _staffServices.list_staff().Where(c => c.Email == _message).FirstOrDefault().Password && tbx_passNew.Text == tbx_passReNew.Text)
                     {
                         staff staff = _staffServices.getEmail(_message);
                         staff.Password = _validate.ReversePass(tbx_passReNew.Text);
@@ -73,17 +73,16 @@ namespace GUI.Views.View_User
                         }
 
                     }
+                    else
+                    {
+                        MessageBox.Show("Mật khẩu không trùng nhau vui lòng nhập lại","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Vui lòng xem lại thông tin 2!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void tbx_passOld_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void tbx_passReNew_TextChanged(object sender, EventArgs e)
