@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -75,13 +76,14 @@ namespace GUI.Views.View_User
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu không trùng nhau vui lòng nhập lại","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Mật khẩu không trùng nhau vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng xem lại thông tin 2!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -101,6 +103,11 @@ namespace GUI.Views.View_User
                 lbl_passReNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lbl_passReNew.ForeColor = System.Drawing.Color.Red;
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
