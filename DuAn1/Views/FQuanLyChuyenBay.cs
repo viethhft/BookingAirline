@@ -16,10 +16,10 @@ namespace DuAn1.Views
 {
     public partial class FQuanLyChuyenBay : Form
     {
-        bool checkInfo = true;
+        FlightServices _flightSer;
         bool checkDuplicate = true;
-        IPlaneTypeServices _plantype;
-        ILocationServices _location;
+        PlaneTypeServices _planeSer;
+        string from = "";
         IFlightServices _flight;
         string plancode = "";
         string codefrom = "";

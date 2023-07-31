@@ -184,7 +184,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.TimeStart).HasColumnName("timeStart");
 
-                entity.HasOne(d => d.Location)
+                entity.HasOne(d => d.LocationId)
                     .WithMany(p => p.Flights)
                     .HasForeignKey(d => d.LocationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
