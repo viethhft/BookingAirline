@@ -106,6 +106,18 @@ create table Ticket
 	foreign key(flightId) references Flight(id)
 )
 
+-- ghế theo máy bay
+create table Seat_flight
+(
+	id int primary key identity,
+	flightid bigint,
+	seatid int,
+	status int default 0,
+
+	foreign key(flightid) references Flight(id),
+	foreign key(seatid) references Seat_detail(id)
+)
+
 create table Class
 (
 	id int primary key identity,

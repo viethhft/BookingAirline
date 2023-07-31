@@ -59,9 +59,13 @@ namespace GUI.Views.View_User
                     Label lb_timeStart = new Label();
                     lb_timeStart.Text = info.TimeStart.ToString();
                     lb_timeStart.Location = loca_timeStart;
+                    lb_timeStart.ForeColor = Color.DarkCyan;
+                    lb_timeStart.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                     Label lb_timeEnd = new Label();
                     lb_timeEnd.Text = info.TimeEnd.ToString();
                     lb_timeEnd.Location = loca_timeEnd;
+                    lb_timeEnd.ForeColor = Color.DarkCyan;
+                    lb_timeEnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                     Label lb_code = new Label();
                     lb_code.Text = item.PlaneCode;
                     lb_code.Location = loca_code;
