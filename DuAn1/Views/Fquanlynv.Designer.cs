@@ -28,276 +28,291 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            btn_Search = new Guna.UI2.WinForms.Guna2Button();
-            btn_Them = new Guna.UI2.WinForms.Guna2Button();
-            btn_Sua = new Guna.UI2.WinForms.Guna2Button();
-            rbtn_off = new RadioButton();
-            rbtn_onl = new RadioButton();
-            label6 = new Label();
-            txt_timkiem = new TextBox();
-            label5 = new Label();
-            txt_Pass = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            txt_Email = new TextBox();
-            txt_Sdt = new TextBox();
-            label2 = new Label();
-            txt_Ten = new TextBox();
-            label1 = new Label();
-            groupBox4 = new GroupBox();
-            dgrid_NhanVien = new DataGridView();
-            pictureBox1 = new PictureBox();
-            groupBox1.SuspendLayout();
-            groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgrid_NhanVien).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_ErrorEmail = new System.Windows.Forms.Label();
+            this.lb_ErrorPhone = new System.Windows.Forms.Label();
+            this.lb_ErrorName = new System.Windows.Forms.Label();
+            this.rbtn_off = new System.Windows.Forms.RadioButton();
+            this.rbtn_onl = new System.Windows.Forms.RadioButton();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_timkiem = new System.Windows.Forms.TextBox();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_Pass = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_Sdt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_Ten = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgrid_NhanVien = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btn_Search);
-            groupBox1.Controls.Add(btn_Them);
-            groupBox1.Controls.Add(btn_Sua);
-            groupBox1.Controls.Add(rbtn_off);
-            groupBox1.Controls.Add(rbtn_onl);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(txt_timkiem);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(txt_Pass);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(txt_Email);
-            groupBox1.Controls.Add(txt_Sdt);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(txt_Ten);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(675, 251);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.lb_ErrorEmail);
+            this.groupBox1.Controls.Add(this.lb_ErrorPhone);
+            this.groupBox1.Controls.Add(this.lb_ErrorName);
+            this.groupBox1.Controls.Add(this.rbtn_off);
+            this.groupBox1.Controls.Add(this.rbtn_onl);
+            this.groupBox1.Controls.Add(this.btn_Search);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txt_timkiem);
+            this.groupBox1.Controls.Add(this.btn_Sua);
+            this.groupBox1.Controls.Add(this.btn_Them);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txt_Pass);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txt_Email);
+            this.groupBox1.Controls.Add(this.txt_Sdt);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_Ten);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(675, 251);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
             // 
-            // btn_Search
+            // lb_ErrorEmail
             // 
-            btn_Search.BorderRadius = 10;
-            btn_Search.DisabledState.BorderColor = Color.DarkGray;
-            btn_Search.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Search.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Search.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Search.FillColor = Color.DarkCyan;
-            btn_Search.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Search.ForeColor = Color.White;
-            btn_Search.Location = new Point(538, 219);
-            btn_Search.Name = "btn_Search";
-            btn_Search.Size = new Size(122, 29);
-            btn_Search.TabIndex = 20;
-            btn_Search.Text = "Tìm kiếm";
-            btn_Search.Click += btn_Search_Click;
+            this.lb_ErrorEmail.AutoSize = true;
+            this.lb_ErrorEmail.Location = new System.Drawing.Point(118, 131);
+            this.lb_ErrorEmail.Name = "lb_ErrorEmail";
+            this.lb_ErrorEmail.Size = new System.Drawing.Size(38, 15);
+            this.lb_ErrorEmail.TabIndex = 20;
+            this.lb_ErrorEmail.Text = "label9";
             // 
-            // btn_Them
+            // lb_ErrorPhone
             // 
-            btn_Them.BorderRadius = 10;
-            btn_Them.DisabledState.BorderColor = Color.DarkGray;
-            btn_Them.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Them.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Them.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Them.FillColor = Color.DarkCyan;
-            btn_Them.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Them.ForeColor = Color.White;
-            btn_Them.Location = new Point(534, 151);
-            btn_Them.Name = "btn_Them";
-            btn_Them.Size = new Size(122, 45);
-            btn_Them.TabIndex = 19;
-            btn_Them.Text = "Thêm";
-            btn_Them.Click += button1_Click;
+            this.lb_ErrorPhone.AutoSize = true;
+            this.lb_ErrorPhone.Location = new System.Drawing.Point(480, 62);
+            this.lb_ErrorPhone.Name = "lb_ErrorPhone";
+            this.lb_ErrorPhone.Size = new System.Drawing.Size(38, 15);
+            this.lb_ErrorPhone.TabIndex = 19;
+            this.lb_ErrorPhone.Text = "label8";
             // 
-            // btn_Sua
+            // lb_ErrorName
             // 
-            btn_Sua.BorderRadius = 10;
-            btn_Sua.DisabledState.BorderColor = Color.DarkGray;
-            btn_Sua.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Sua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Sua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Sua.FillColor = Color.DarkCyan;
-            btn_Sua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Sua.ForeColor = Color.White;
-            btn_Sua.Location = new Point(374, 151);
-            btn_Sua.Name = "btn_Sua";
-            btn_Sua.Size = new Size(122, 45);
-            btn_Sua.TabIndex = 18;
-            btn_Sua.Text = "Sửa";
-            btn_Sua.Click += btn_Sua_Click;
+            this.lb_ErrorName.AutoSize = true;
+            this.lb_ErrorName.Location = new System.Drawing.Point(118, 62);
+            this.lb_ErrorName.Name = "lb_ErrorName";
+            this.lb_ErrorName.Size = new System.Drawing.Size(38, 15);
+            this.lb_ErrorName.TabIndex = 18;
+            this.lb_ErrorName.Text = "label7";
             // 
             // rbtn_off
             // 
-            rbtn_off.AutoSize = true;
-            rbtn_off.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtn_off.Location = new Point(244, 164);
-            rbtn_off.Margin = new Padding(3, 2, 3, 2);
-            rbtn_off.Name = "rbtn_off";
-            rbtn_off.Size = new Size(90, 22);
-            rbtn_off.TabIndex = 17;
-            rbtn_off.TabStop = true;
-            rbtn_off.Text = "Nghỉ việc";
-            rbtn_off.UseVisualStyleBackColor = true;
+            this.rbtn_off.AutoSize = true;
+            this.rbtn_off.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbtn_off.Location = new System.Drawing.Point(244, 164);
+            this.rbtn_off.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbtn_off.Name = "rbtn_off";
+            this.rbtn_off.Size = new System.Drawing.Size(90, 22);
+            this.rbtn_off.TabIndex = 17;
+            this.rbtn_off.TabStop = true;
+            this.rbtn_off.Text = "Nghỉ việc";
+            this.rbtn_off.UseVisualStyleBackColor = true;
             // 
             // rbtn_onl
             // 
-            rbtn_onl.AutoSize = true;
-            rbtn_onl.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtn_onl.Location = new Point(116, 163);
-            rbtn_onl.Margin = new Padding(3, 2, 3, 2);
-            rbtn_onl.Name = "rbtn_onl";
-            rbtn_onl.Size = new Size(93, 22);
-            rbtn_onl.TabIndex = 16;
-            rbtn_onl.TabStop = true;
-            rbtn_onl.Text = "Đang làm";
-            rbtn_onl.UseVisualStyleBackColor = true;
+            this.rbtn_onl.AutoSize = true;
+            this.rbtn_onl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbtn_onl.Location = new System.Drawing.Point(116, 163);
+            this.rbtn_onl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbtn_onl.Name = "rbtn_onl";
+            this.rbtn_onl.Size = new System.Drawing.Size(93, 22);
+            this.rbtn_onl.TabIndex = 16;
+            this.rbtn_onl.TabStop = true;
+            this.rbtn_onl.Text = "Đang làm";
+            this.rbtn_onl.UseVisualStyleBackColor = true;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Search.Location = new System.Drawing.Point(538, 216);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(118, 33);
+            this.btn_Search.TabIndex = 15;
+            this.btn_Search.Text = "Tìm kiếm";
+            this.btn_Search.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(30, 225);
-            label6.Name = "label6";
-            label6.Size = new Size(71, 18);
-            label6.TabIndex = 14;
-            label6.Text = "Tìm kiếm";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(30, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Tìm kiếm";
             // 
             // txt_timkiem
             // 
-            txt_timkiem.AccessibleDescription = "";
-            txt_timkiem.Location = new Point(116, 222);
-            txt_timkiem.Name = "txt_timkiem";
-            txt_timkiem.Size = new Size(416, 23);
-            txt_timkiem.TabIndex = 13;
+            this.txt_timkiem.AccessibleDescription = "";
+            this.txt_timkiem.Location = new System.Drawing.Point(116, 222);
+            this.txt_timkiem.Name = "txt_timkiem";
+            this.txt_timkiem.Size = new System.Drawing.Size(416, 23);
+            this.txt_timkiem.TabIndex = 13;
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Sua.Location = new System.Drawing.Point(374, 163);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(118, 33);
+            this.btn_Sua.TabIndex = 1;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Them.Location = new System.Drawing.Point(538, 163);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(118, 33);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(30, 166);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 18);
-            label5.TabIndex = 11;
-            label5.Text = "Trạng thái";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(30, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 18);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Trạng thái";
             // 
             // txt_Pass
             // 
-            txt_Pass.Location = new Point(480, 105);
-            txt_Pass.Name = "txt_Pass";
-            txt_Pass.Size = new Size(176, 23);
-            txt_Pass.TabIndex = 10;
+            this.txt_Pass.Location = new System.Drawing.Point(480, 105);
+            this.txt_Pass.Name = "txt_Pass";
+            this.txt_Pass.Size = new System.Drawing.Size(176, 23);
+            this.txt_Pass.TabIndex = 10;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(374, 105);
-            label4.Name = "label4";
-            label4.Size = new Size(71, 18);
-            label4.TabIndex = 9;
-            label4.Text = "Mật khẩu";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(374, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Mật khẩu";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(51, 105);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 18);
-            label3.TabIndex = 8;
-            label3.Text = "Email";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(51, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 18);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Email";
             // 
             // txt_Email
             // 
-            txt_Email.Location = new Point(116, 105);
-            txt_Email.Name = "txt_Email";
-            txt_Email.Size = new Size(201, 23);
-            txt_Email.TabIndex = 7;
+            this.txt_Email.Location = new System.Drawing.Point(116, 105);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(201, 23);
+            this.txt_Email.TabIndex = 7;
+            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
             // 
             // txt_Sdt
             // 
-            txt_Sdt.Location = new Point(480, 33);
-            txt_Sdt.Name = "txt_Sdt";
-            txt_Sdt.Size = new Size(176, 23);
-            txt_Sdt.TabIndex = 6;
+            this.txt_Sdt.Location = new System.Drawing.Point(480, 33);
+            this.txt_Sdt.Name = "txt_Sdt";
+            this.txt_Sdt.Size = new System.Drawing.Size(176, 23);
+            this.txt_Sdt.TabIndex = 6;
+            this.txt_Sdt.TextChanged += new System.EventHandler(this.txt_Sdt_TextChanged);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(374, 41);
-            label2.Name = "label2";
-            label2.Size = new Size(100, 18);
-            label2.TabIndex = 5;
-            label2.Text = "Số điện thoại";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(374, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Số điện thoại";
             // 
             // txt_Ten
             // 
-            txt_Ten.Location = new Point(116, 33);
-            txt_Ten.Name = "txt_Ten";
-            txt_Ten.Size = new Size(201, 23);
-            txt_Ten.TabIndex = 4;
+            this.txt_Ten.Location = new System.Drawing.Point(116, 33);
+            this.txt_Ten.Name = "txt_Ten";
+            this.txt_Ten.Size = new System.Drawing.Size(201, 23);
+            this.txt_Ten.TabIndex = 4;
+            this.txt_Ten.TextChanged += new System.EventHandler(this.txt_Ten_TextChanged);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(9, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(103, 18);
-            label1.TabIndex = 3;
-            label1.Text = "Tên nhân viên";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(9, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 18);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tên nhân viên";
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(dgrid_NhanVien);
-            groupBox4.Location = new Point(12, 260);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1031, 221);
-            groupBox4.TabIndex = 3;
-            groupBox4.TabStop = false;
+            this.groupBox4.Controls.Add(this.dgrid_NhanVien);
+            this.groupBox4.Location = new System.Drawing.Point(12, 260);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1031, 221);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
             // 
             // dgrid_NhanVien
             // 
-            dgrid_NhanVien.AllowUserToAddRows = false;
-            dgrid_NhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgrid_NhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrid_NhanVien.Location = new Point(0, 22);
-            dgrid_NhanVien.Name = "dgrid_NhanVien";
-            dgrid_NhanVien.RowHeadersWidth = 51;
-            dgrid_NhanVien.RowTemplate.Height = 25;
-            dgrid_NhanVien.Size = new Size(1041, 189);
-            dgrid_NhanVien.TabIndex = 0;
-            dgrid_NhanVien.CellClick += dgrid_NhanVien_CellClick;
+            this.dgrid_NhanVien.AllowUserToAddRows = false;
+            this.dgrid_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrid_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_NhanVien.Location = new System.Drawing.Point(0, 22);
+            this.dgrid_NhanVien.Name = "dgrid_NhanVien";
+            this.dgrid_NhanVien.RowHeadersWidth = 51;
+            this.dgrid_NhanVien.RowTemplate.Height = 25;
+            this.dgrid_NhanVien.Size = new System.Drawing.Size(1041, 189);
+            this.dgrid_NhanVien.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = GUI.Properties.Resources.Rectangle_2;
-            pictureBox1.Location = new Point(693, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(350, 242);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.Rectangle_2;
+            this.pictureBox1.Location = new System.Drawing.Point(693, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(350, 242);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // Fquanlynv
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1055, 483);
-            Controls.Add(pictureBox1);
-            Controls.Add(groupBox4);
-            Controls.Add(groupBox1);
-            Name = "Fquanlynv";
-            Text = "Fquanlynv";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgrid_NhanVien).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1055, 483);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "Fquanlynv";
+            this.Text = "Fquanlynv";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -305,8 +320,6 @@
         private GroupBox groupBox1;
         private GroupBox groupBox4;
         private DataGridView dgrid_NhanVien;
-        private TextBox txt_Pass;
-        private Label label4;
         private Label label3;
         private TextBox txt_Email;
         private TextBox txt_Sdt;
@@ -319,8 +332,10 @@
         private PictureBox pictureBox1;
         private RadioButton rbtn_off;
         private RadioButton rbtn_onl;
-        private Guna.UI2.WinForms.Guna2Button btn_Them;
-        private Guna.UI2.WinForms.Guna2Button btn_Sua;
-        private Guna.UI2.WinForms.Guna2Button btn_Search;
+        private Label lb_ErrorEmail;
+        private Label lb_ErrorPhone;
+        private Label lb_ErrorName;
+        private TextBox txt_Pass;
+        private Label label4;
     }
 }
