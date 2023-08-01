@@ -48,7 +48,6 @@
             lb_amount = new Label();
             label8 = new Label();
             label7 = new Label();
-            lb_value = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -272,21 +271,11 @@
             label7.TabIndex = 109;
             label7.Text = "Tổng tiền";
             // 
-            // lb_value
-            // 
-            lb_value.AutoSize = true;
-            lb_value.Location = new Point(968, 378);
-            lb_value.Name = "lb_value";
-            lb_value.Size = new Size(50, 20);
-            lb_value.TabIndex = 115;
-            lb_value.Text = "label9";
-            // 
             // FChonGheSmallSize
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 599);
-            Controls.Add(lb_value);
             Controls.Add(cb_checkacp);
             Controls.Add(label11);
             Controls.Add(lb_price);
@@ -337,6 +326,5 @@
         private Label lb_amount;
         private Label label8;
         private Label label7;
-        private Label lb_value;
     }
 }

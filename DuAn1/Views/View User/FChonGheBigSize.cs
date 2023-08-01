@@ -24,6 +24,7 @@ namespace GUI.Views.View_User
         SeatFlightSer _sfServices;
         public string mabay = "";
         public List<string> maghe;
+        List<int> _lstGhe = new List<int>();
         public FChonGheBigSize()
         {
             _classServices = new ClassServices();
@@ -119,6 +120,22 @@ namespace GUI.Views.View_User
                         locaChair.Y += 36;
                         locaName.Y += 36;
                         panel1.Controls.Add(lb_tt);
+                    }
+                    long idfl = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
+                    foreach (var i in _seatDetailServices.list().Where(c => c.SeatCode == chair.Name))
+                    {
+                        _lstGhe.Add(i.Id);
+                        chair.Tag = i.Id;
+                    }
+                    foreach (var i in _sfServices.Get().Where(c => c.Flightid == idfl))
+                    {
+                        for (int j = 0; j < _lstGhe.Count; j++)
+                        {
+                            if (i.Seatid == _lstGhe[j] && (int)chair.Tag == _lstGhe[j])
+                            {
+                                chair.Enabled = false;
+                            }
+                        }
                     }
                 }
                 dem++;
