@@ -20,12 +20,15 @@ namespace GUI.Views.View_User
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
         IClassServices _classServices;
+        public string mabay = "";
+        public List<string> maghe;
         public FChonGheBigSize()
         {
             _classServices = new ClassServices();
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
+            maghe = new List<string>();
             InitializeComponent();
             btn_pay.Enabled = false;
         }
@@ -201,6 +204,10 @@ namespace GUI.Views.View_User
             }
             lb_amount.Text = amount.ToString();
             lb_price.Text = price.ToString();
+            if(a.Checked)
+            {
+                maghe.Add(a.Text);
+            }
         }
 
         private void cb_checkacp_CheckedChanged(object sender, EventArgs e)
@@ -227,11 +234,15 @@ namespace GUI.Views.View_User
                     if (item.SeatCode == item1)
                     {
                         SeatDetail seatupdate = _seatDetailServices.get(item.Id,item1);
-                        seatupdate.Status = 0;
+                        //seatupdate.Status = 0;
                         _seatDetailServices.Update(seatupdate);
                     }
                 }
-                MessageBox.Show("Đặt vé ok");  
+                MessageBox.Show("Đặt vé ok"); 
+                AfterSeat af = new AfterSeat(_code,_listcode);
+                this.Hide();
+                af.ShowDialog();
+                this.Show();
             }
         }
     }

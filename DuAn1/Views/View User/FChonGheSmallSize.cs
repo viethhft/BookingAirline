@@ -139,7 +139,7 @@ namespace GUI.Views.View_User
             lb_amount.Text = amount.ToString();
             lb_price.Text = price.ToString();
         }
-
+        
         public FChonGheSmallSize(string code) : this()
         {
 
@@ -230,12 +230,15 @@ namespace GUI.Views.View_User
                     if (item.SeatCode == item1)
                     {
                         SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
-                        seatupdate.Status = 0;
+                        //seatupdate.Status = 0;
                         _seatDetailServices.Update(seatupdate);
                     }
                 }
-                MessageBox.Show("Đặt vé ok");
             }
+            AfterSeat af = new AfterSeat(_code, _listcode);
+            this.Hide();
+            af.ShowDialog();
+            this.Show();
         }
     }
 }

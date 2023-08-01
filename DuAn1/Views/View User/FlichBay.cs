@@ -71,7 +71,7 @@ namespace GUI.Views.View_User
                 {
                     DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(-1);
                     DateTime date1 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(5);
-                    var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight > date && c.DateFlight < date1).ToList();
+                    var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight > date && c.DateFlight < date1).ToList();
                     FLichBayChild fLichBayChild = new FLichBayChild(list_search, date);
                     this.Hide();
                     fLichBayChild.ShowDialog();

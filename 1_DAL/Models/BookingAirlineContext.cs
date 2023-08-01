@@ -25,6 +25,7 @@ namespace _1_DAL.Models
         public virtual DbSet<Recommend> Recommends { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<SeatDetail> SeatDetails { get; set; } = null!;
+        public virtual DbSet<SeatFlight> SeatFlights { get; set; } = null!;
         public virtual DbSet<Ticket> Tickets { get; set; } = null!;
         public virtual DbSet<staff> staff { get; set; } = null!;
 
@@ -77,7 +78,7 @@ namespace _1_DAL.Models
                     .WithMany(p => p.Banks)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Bank__customerId__3B75D760");
+                    .HasConstraintName("FK__Bank__customerId__1EA48E88");
             });
 
             modelBuilder.Entity<Class>(entity =>
@@ -171,20 +172,21 @@ namespace _1_DAL.Models
                     .HasMaxLength(100)
                     .HasColumnName("goTom");
 
-                entity.Property(e => e.Status)
-                    .HasColumnName("status");
-
                 entity.Property(e => e.LocationId).HasColumnName("locationId");
 
                 entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");
 
                 entity.Property(e => e.Price).HasColumnName("price");
 
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.TimeEnd).HasColumnName("timeEnd");
 
                 entity.Property(e => e.TimeStart).HasColumnName("timeStart");
 
-                entity.HasOne(d => d.LocationId)
+                entity.HasOne(d => d.Location)
                     .WithMany(p => p.Flights)
                     .HasForeignKey(d => d.LocationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -252,35 +254,52 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.ClassId).HasColumnName("classId");
 
-                entity.Property(e => e.FlightId).HasColumnName("flightId");
-
                 entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");
+                //entity.Property(e => e.status)
+                //.HasColumnName("status")
+                //.HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.SeatCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("seatCode");
 
-                entity.Property(e => e.Status)
-                    .HasColumnName("status")
-                    .HasDefaultValueSql("((1))");
-
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.SeatDetails)
                     .HasForeignKey(d => d.ClassId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Seat_deta__class__403A8C7D");
-
-                entity.HasOne(d => d.Flight)
-                    .WithMany(p => p.SeatDetails)
-                    .HasForeignKey(d => d.FlightId)
-                    .HasConstraintName("FK__Seat_deta__fligh__6E01572D");
+                    .HasConstraintName("FK__Seat_deta__class__40058253");
 
                 entity.HasOne(d => d.PlaneType)
                     .WithMany(p => p.SeatDetails)
                     .HasForeignKey(d => d.PlaneTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Seat_deta__plane__3F466844");
+                    .HasConstraintName("FK__Seat_deta__plane__3F115E1A");
+            });
+
+            modelBuilder.Entity<SeatFlight>(entity =>
+            {
+                entity.ToTable("Seat_flight");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Flightid).HasColumnName("flightid");
+
+                entity.Property(e => e.Seatid).HasColumnName("seatid");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((0))");
+
+                entity.HasOne(d => d.Flight)
+                    .WithMany(p => p.SeatFlights)
+                    .HasForeignKey(d => d.Flightid)
+                    .HasConstraintName("FK__Seat_flig__statu__3D2915A8");
+
+                entity.HasOne(d => d.Seat)
+                    .WithMany(p => p.SeatFlights)
+                    .HasForeignKey(d => d.Seatid)
+                    .HasConstraintName("FK__Seat_flig__seati__3E1D39E1");
             });
 
             modelBuilder.Entity<Ticket>(entity =>
@@ -318,7 +337,7 @@ namespace _1_DAL.Models
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Ticket__customer__4222D4EF");
+                    .HasConstraintName("FK__Ticket__customer__22751F6C");
 
                 entity.HasOne(d => d.Flight)
                     .WithMany(p => p.Tickets)
@@ -362,7 +381,7 @@ namespace _1_DAL.Models
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.staff)
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__Staff__roleId__412EB0B6");
+                    .HasConstraintName("FK__Staff__roleId__2180FB33");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -20,6 +20,7 @@ namespace GUI.Views.View_User
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
         List<Flight> _test;
+        
         public FBuyTicketChild()
         {
             InitializeComponent();
@@ -110,7 +111,6 @@ namespace GUI.Views.View_User
                 fChonGhe.ShowDialog();
                 this.Show();
             }
-
         }
 
         private void Pt_Click(object? sender, EventArgs e)

@@ -8,7 +8,7 @@ namespace _1_DAL.Models
         public Flight()
         {
             Recommends = new HashSet<Recommend>();
-            SeatDetails = new HashSet<SeatDetail>();
+            SeatFlights = new HashSet<SeatFlight>();
             Tickets = new HashSet<Ticket>();
         }
 
@@ -23,14 +23,12 @@ namespace _1_DAL.Models
         public DateTime? DateTo { get; set; }
         public TimeSpan TimeStart { get; set; }
         public TimeSpan TimeEnd { get; set; }
+        public int? Status { get; set; }
 
-        public int Status { get; set; }
-
-
-        public virtual Airport Airport { get; set; } = null!;
+        public virtual Airport Location { get; set; } = null!;
         public virtual PlaneType PlaneType { get; set; } = null!;
         public virtual ICollection<Recommend> Recommends { get; set; }
-        public virtual ICollection<SeatDetail> SeatDetails { get; set; }
+        public virtual ICollection<SeatFlight> SeatFlights { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }
