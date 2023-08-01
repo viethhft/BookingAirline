@@ -21,7 +21,7 @@ namespace GUI.Views.View_User
         ISeatDetailServices _seatDetailServices;
         IClassServices _classServices;
         List<Flight> _test;
-        
+        long idmb;
         public FBuyTicketChild()
         {
             InitializeComponent();
@@ -56,6 +56,7 @@ namespace GUI.Views.View_User
                 Label name = new Label();
                 var plane = _planeTypeServices.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault();
                 name.Text = plane.DisplayName;
+                name.Tag = plane.Id;
                 name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
                 pt.Text = _classServices.get_list().Where(c=>c.Id==2).FirstOrDefault().Price.ToString();
@@ -90,6 +91,7 @@ namespace GUI.Views.View_User
                 form.Controls.Add(pt);
                 form.Controls.Add(tg);
                 flowLayoutPanel1.Controls.Add(form);
+                idmb = (long)name.Tag;
             }
         }
 
@@ -101,14 +103,14 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             if (seatdetail.Count() == 50)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(),idmb);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(),idmb);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
@@ -123,14 +125,14 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             if (seatdetail.Count() == 50)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(),idmb);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(),idmb);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();

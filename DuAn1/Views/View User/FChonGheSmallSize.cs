@@ -42,7 +42,7 @@ namespace GUI.Views.View_User
             InitializeComponent();
             btn_pay.Enabled = false;
         }
-        public FChonGheSmallSize(string code, string loaighe) : this()
+        public FChonGheSmallSize(string code, string loaighe, long idmb) : this()
         {
             _loaighe = loaighe;
             _code = code;
@@ -87,7 +87,7 @@ namespace GUI.Views.View_User
                     //    chair.Enabled = false;
                     //}
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    if (dem < 20)
+                    if (dem < 10)
                     {
                         if (loaighe == "TG")
                         {
@@ -134,6 +134,7 @@ namespace GUI.Views.View_User
                             if(i.Seatid == _lstGhe[j] && (int)chair.Tag == _lstGhe[j])
                             {
                                 chair.Enabled = false;
+                                chair.BackColor = Color.RebeccaPurple;
                             }
                         }
                     }
