@@ -19,6 +19,7 @@ namespace GUI.Views.View_User
         private string _message = "";
 
         ICustomerServices _service;
+
         Validate _validate;
         bool _check_Name = true;
         bool _check_Email = true;

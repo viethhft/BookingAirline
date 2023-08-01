@@ -30,12 +30,11 @@ namespace DuAn1
         private void loadData()
         {
             dgrid_NhanVien.Rows.Clear();
-            dgrid_NhanVien.ColumnCount = 5;
+            dgrid_NhanVien.ColumnCount = 4;
             dgrid_NhanVien.Columns[0].Name = "Họ và tên";
-            dgrid_NhanVien.Columns[1].Name = "Mật khẩu";
-            dgrid_NhanVien.Columns[2].Name = "Email";
-            dgrid_NhanVien.Columns[3].Name = "Số điện thoại";
-            dgrid_NhanVien.Columns[4].Name = "Trạng thái";
+            dgrid_NhanVien.Columns[1].Name = "Email";
+            dgrid_NhanVien.Columns[2].Name = "Số điện thoại";
+            dgrid_NhanVien.Columns[3].Name = "Trạng thái";
             txt_Ten.Enabled = false;
             txt_Email.Enabled = false;
             txt_Pass.Enabled = false;
@@ -48,18 +47,17 @@ namespace DuAn1
             {
                 if (item.Status == 1)
                 {
-                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Đang hoạt động");
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Email, item.Phone, "Đang hoạt động");
                 }
                 else
                 {
-                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Ngừng hoạt động");
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Email, item.Phone, "Ngừng hoạt động");
                 }
             }
             txt_Ten.Text = dgrid_NhanVien.Rows[1].Cells[0].Value.ToString();
-            txt_Pass.Text = dgrid_NhanVien.Rows[1].Cells[1].Value.ToString();
-            txt_Sdt.Text = dgrid_NhanVien.Rows[1].Cells[3].Value.ToString();
-            txt_Email.Text = dgrid_NhanVien.Rows[1].Cells[2].Value.ToString();
-            if (dgrid_NhanVien.Rows[1].Cells[4].Value.ToString() == "Đang hoạt động")
+            txt_Sdt.Text = dgrid_NhanVien.Rows[1].Cells[2].Value.ToString();
+            txt_Email.Text = dgrid_NhanVien.Rows[1].Cells[1].Value.ToString();
+            if (dgrid_NhanVien.Rows[1].Cells[3].Value.ToString() == "Đang hoạt động")
             {
                 rbtn_onl.Checked = true;
             }
@@ -158,10 +156,9 @@ namespace DuAn1
             txt_Pass.Enabled = false;
             txt_Sdt.Enabled = false;
             txt_Ten.Text = dgrid_NhanVien.CurrentRow.Cells[0].Value.ToString();
-            txt_Pass.Text = dgrid_NhanVien.CurrentRow.Cells[1].Value.ToString();
-            txt_Sdt.Text = dgrid_NhanVien.CurrentRow.Cells[3].Value.ToString();
-            txt_Email.Text = dgrid_NhanVien.CurrentRow.Cells[2].Value.ToString();
-            if (dgrid_NhanVien.CurrentRow.Cells[4].Value.ToString() == "Đang hoạt động")
+            txt_Sdt.Text = dgrid_NhanVien.CurrentRow.Cells[2].Value.ToString();
+            txt_Email.Text = dgrid_NhanVien.CurrentRow.Cells[1].Value.ToString();
+            if (dgrid_NhanVien.CurrentRow.Cells[3].Value.ToString() == "Đang hoạt động")
             {
                 rbtn_onl.Checked = true;
             }
@@ -174,12 +171,11 @@ namespace DuAn1
         private void btn_Search_Click(object sender, EventArgs e)
         {
             dgrid_NhanVien.Rows.Clear();
-            dgrid_NhanVien.ColumnCount = 5;
+            dgrid_NhanVien.ColumnCount = 4;
             dgrid_NhanVien.Columns[0].Name = "Họ và tên";
-            dgrid_NhanVien.Columns[1].Name = "Mật khẩu";
-            dgrid_NhanVien.Columns[2].Name = "Email";
-            dgrid_NhanVien.Columns[3].Name = "Số điện thoại";
-            dgrid_NhanVien.Columns[4].Name = "Trạng thái";
+            dgrid_NhanVien.Columns[1].Name = "Email";
+            dgrid_NhanVien.Columns[2].Name = "Số điện thoại";
+            dgrid_NhanVien.Columns[3].Name = "Trạng thái";
             txt_Ten.Enabled = false;
             txt_Email.Enabled = false;
             txt_Pass.Enabled = false;
@@ -189,20 +185,19 @@ namespace DuAn1
             {
                 if (item.Status == 1)
                 {
-                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Đang hoạt động");
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Email, item.Phone, "Đang hoạt động");
                 }
                 else
                 {
-                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Password, item.Email, item.Phone, "Ngừng hoạt động");
+                    dgrid_NhanVien.Rows.Add(item.DisplayName, item.Email, item.Phone, "Ngừng hoạt động");
                 }
             }
             if (dgrid_NhanVien.RowCount > 0)
             {
                 txt_Ten.Text = dgrid_NhanVien.Rows[0].Cells[0].Value.ToString();
-                txt_Pass.Text = dgrid_NhanVien.Rows[0].Cells[1].Value.ToString();
-                txt_Sdt.Text = dgrid_NhanVien.Rows[0].Cells[3].Value.ToString();
-                txt_Email.Text = dgrid_NhanVien.Rows[0].Cells[2].Value.ToString();
-                if (dgrid_NhanVien.Rows[0].Cells[4].Value.ToString() == "Đang hoạt động")
+                txt_Sdt.Text = dgrid_NhanVien.Rows[0].Cells[2].Value.ToString();
+                txt_Email.Text = dgrid_NhanVien.Rows[0].Cells[1].Value.ToString();
+                if (dgrid_NhanVien.Rows[0].Cells[3].Value.ToString() == "Đang hoạt động")
                 {
                     rbtn_onl.Checked = true;
                 }

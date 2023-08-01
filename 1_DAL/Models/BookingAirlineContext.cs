@@ -16,15 +16,16 @@ namespace _1_DAL.Models
         {
         }
 
+        public virtual DbSet<Airport> Airports { get; set; } = null!;
         public virtual DbSet<Bank> Banks { get; set; } = null!;
         public virtual DbSet<Class> Classes { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Flight> Flights { get; set; } = null!;
-        public virtual DbSet<Airport> Airports { get; set; } = null!;
         public virtual DbSet<PlaneType> PlaneTypes { get; set; } = null!;
         public virtual DbSet<Recommend> Recommends { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<SeatDetail> SeatDetails { get; set; } = null!;
+        public virtual DbSet<SeatFlight> SeatFlights { get; set; } = null!;
         public virtual DbSet<Ticket> Tickets { get; set; } = null!;
         public virtual DbSet<staff> staff { get; set; } = null!;
 
@@ -33,12 +34,32 @@ namespace _1_DAL.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Initial Catalog=BookingAirline;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Server=DUONGPHAM\\SQLEXPRESS;Initial Catalog=BookingAirline;Integrated Security=True;TrustServerCertificate=True");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Airport>(entity =>
+            {
+                entity.ToTable("airport");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AirportCode)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("airportCode");
+
+                entity.Property(e => e.AirportName)
+                    .HasMaxLength(50)
+                    .HasColumnName("airportName");
+
+                entity.Property(e => e.LocationFly)
+                    .HasMaxLength(50)
+                    .HasColumnName("locationFly");
+            });
+
             modelBuilder.Entity<Bank>(entity =>
             {
                 entity.ToTable("Bank");
@@ -57,7 +78,7 @@ namespace _1_DAL.Models
                     .WithMany(p => p.Banks)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Bank__bank_accou__2E1BDC42");
+                    .HasConstraintName("FK__Bank__customerId__1EA48E88");
             });
 
             modelBuilder.Entity<Class>(entity =>
@@ -83,6 +104,10 @@ namespace _1_DAL.Models
                     .HasMaxLength(50)
                     .HasColumnName("address");
 
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("createDate");
+
                 entity.Property(e => e.Dob).HasColumnType("datetime");
 
                 entity.Property(e => e.Email)
@@ -94,13 +119,9 @@ namespace _1_DAL.Models
                     .HasMaxLength(50)
                     .HasColumnName("first_name");
 
-                entity.Property(e => e.CreateDate)
-                    .HasColumnType("datetime");
-
                 entity.Property(e => e.Gender)
                     .HasMaxLength(10)
-                    .HasColumnName("gender")
-                    .IsFixedLength();
+                    .HasColumnName("gender");
 
                 entity.Property(e => e.LastName)
                     .HasMaxLength(50)
@@ -131,32 +152,25 @@ namespace _1_DAL.Models
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.DateFlight)
-                    .HasColumnType("datetime")
+                    .HasColumnType("date")
                     .HasColumnName("dateFlight");
 
                 entity.Property(e => e.DateTo)
-                    .HasColumnType("datetime")
+                    .HasColumnType("date")
                     .HasColumnName("dateTo");
-
-                entity.Property(e => e.TimeStart)
-                    .HasColumnType("timespan")
-                    .HasColumnName("timeStart");
-
-                entity.Property(e => e.TimeEnd)
-                    .HasColumnType("timespan")
-                    .HasColumnName("timeEnd");
 
                 entity.Property(e => e.FlightCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("flightCode");
 
-                entity.Property(e => e.GoTo)
+                entity.Property(e => e.GoFrom)
+                    .HasMaxLength(100)
+                    .HasColumnName("goFrom");
+
+                entity.Property(e => e.GoTom)
                     .HasMaxLength(100)
                     .HasColumnName("goTom");
-
-                entity.Property(e => e.Status)
-                    .HasColumnName("status");
 
                 entity.Property(e => e.LocationId).HasColumnName("locationId");
 
@@ -164,36 +178,25 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.Price).HasColumnName("price");
 
-                entity.HasOne(d => d.Airport)
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.TimeEnd).HasColumnName("timeEnd");
+
+                entity.Property(e => e.TimeStart).HasColumnName("timeStart");
+
+                entity.HasOne(d => d.Location)
                     .WithMany(p => p.Flights)
                     .HasForeignKey(d => d.LocationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Flight__location__35BCFE0A");
+                    .HasConstraintName("FK__Flight__location__47DBAE45");
 
                 entity.HasOne(d => d.PlaneType)
                     .WithMany(p => p.Flights)
                     .HasForeignKey(d => d.PlaneTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Flight__date_fli__34C8D9D1");
-            });
-
-            modelBuilder.Entity<Airport>(entity =>
-            {
-                entity.ToTable("airport");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.AirportName)
-                    .HasMaxLength(50)
-                    .HasColumnName("airportName");
-                
-                entity.Property(e => e.AirportCode)
-                    .HasMaxLength(50)
-                    .HasColumnName("airportCode");
-
-                entity.Property(e => e.LocationFly)
-                    .HasMaxLength(50)
-                    .HasColumnName("locationFly");
+                    .HasConstraintName("FK__Flight__dateTo__46E78A0C");
             });
 
             modelBuilder.Entity<PlaneType>(entity =>
@@ -229,7 +232,7 @@ namespace _1_DAL.Models
                     .WithMany(p => p.Recommends)
                     .HasForeignKey(d => d.IdFlight)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Recommend__conte__4316F928");
+                    .HasConstraintName("FK__Recommend__conte__5535A963");
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -252,27 +255,51 @@ namespace _1_DAL.Models
                 entity.Property(e => e.ClassId).HasColumnName("classId");
 
                 entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");
+                //entity.Property(e => e.status)
+                //.HasColumnName("status")
+                //.HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.SeatCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("seatCode");
 
-                entity.Property(e => e.Status)
-                    .HasColumnName("status")
-                    .HasDefaultValueSql("((1))");
-
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.SeatDetails)
                     .HasForeignKey(d => d.ClassId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Seat_deta__statu__3F466844");
+                    .HasConstraintName("FK__Seat_deta__class__40058253");
 
                 entity.HasOne(d => d.PlaneType)
                     .WithMany(p => p.SeatDetails)
                     .HasForeignKey(d => d.PlaneTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Seat_deta__plane__403A8C7D");
+                    .HasConstraintName("FK__Seat_deta__plane__3F115E1A");
+            });
+
+            modelBuilder.Entity<SeatFlight>(entity =>
+            {
+                entity.ToTable("Seat_flight");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Flightid).HasColumnName("flightid");
+
+                entity.Property(e => e.Seatid).HasColumnName("seatid");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((0))");
+
+                entity.HasOne(d => d.Flight)
+                    .WithMany(p => p.SeatFlights)
+                    .HasForeignKey(d => d.Flightid)
+                    .HasConstraintName("FK__Seat_flig__statu__3D2915A8");
+
+                entity.HasOne(d => d.Seat)
+                    .WithMany(p => p.SeatFlights)
+                    .HasForeignKey(d => d.Seatid)
+                    .HasConstraintName("FK__Seat_flig__seati__3E1D39E1");
             });
 
             modelBuilder.Entity<Ticket>(entity =>
@@ -289,27 +316,34 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.FlightId).HasColumnName("flightId");
 
+                entity.Property(e => e.NameTicket)
+                    .HasMaxLength(100)
+                    .HasColumnName("nameTicket");
+
+                entity.Property(e => e.SeatCode)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("seatCode");
+
+                entity.Property(e => e.Status).HasColumnName("status");
+
                 entity.Property(e => e.TotalPrice).HasColumnName("totalPrice");
 
-                entity.Property(e => e.SeatCode).HasMaxLength(50).HasColumnName("seatCode");
-
-                entity.Property(e => e.NameTicket).HasMaxLength(100).HasColumnName("nameTicket");
+                entity.Property(e => e.TotalTicket).HasColumnName("totalTicket");
 
                 entity.Property(e => e.TwoWay).HasColumnName("twoWay");
-
-                entity.Property(e => e.status).HasColumnName("status");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Ticket__customer__38996AB5");
+                    .HasConstraintName("FK__Ticket__customer__22751F6C");
 
                 entity.HasOne(d => d.Flight)
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => d.FlightId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Ticket__flight_i__398D8EEE");
+                    .HasConstraintName("FK__Ticket__flightId__4BAC3F29");
             });
 
             modelBuilder.Entity<staff>(entity =>
@@ -347,7 +381,7 @@ namespace _1_DAL.Models
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.staff)
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__Staff__status__286302EC");
+                    .HasConstraintName("FK__Staff__roleId__2180FB33");
             });
 
             OnModelCreatingPartial(modelBuilder);

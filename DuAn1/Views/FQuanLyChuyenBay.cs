@@ -16,11 +16,11 @@ namespace DuAn1.Views
 {
     public partial class FQuanLyChuyenBay : Form
     {
-        bool checkInfo = true;
         bool checkDuplicate = true;
-        IPlaneTypeServices _plantype;
-        ILocationServices _location;
+        bool checkInfo;
         IFlightServices _flight;
+        ILocationServices _location;
+        IPlaneTypeServices _plantype;
         string plancode = "";
         string codefrom = "";
         string codeto = "";
@@ -92,7 +92,7 @@ namespace DuAn1.Views
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status);
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status);
             }
             if (dgv_chuyenbay.RowCount > 0)
             {
@@ -182,7 +182,7 @@ namespace DuAn1.Views
                         }
                         flight.FlightCode = txb_codeflight.Text;
                         flight.GoFrom = cmb_From.Text;
-                        flight.GoTo = cmb_To.Text;
+                        flight.GoTom = cmb_To.Text;
                         foreach (var item in _location.get_list())
                         {
                             if (item.LocationFly == cmb_From.Text)
@@ -241,7 +241,7 @@ namespace DuAn1.Views
                     }
                     flight.FlightCode = txb_codeflight.Text;
                     flight.GoFrom = cmb_From.Text;
-                    flight.GoTo = cmb_To.Text;
+                    flight.GoTom = cmb_To.Text;
                     foreach (var item in _location.get_list())
                     {
                         if (item.LocationFly == cmb_From.Text)
@@ -281,11 +281,11 @@ namespace DuAn1.Views
             if (txb_Search.Text != "")
             {
                 dgv_chuyenbay.Rows.Clear();
-                foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTo.Contains(txb_Search.Text)))
+                foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTom.Contains(txb_Search.Text)))
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                     string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.Status);
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.Status);
                 }
             }
             else
@@ -295,7 +295,7 @@ namespace DuAn1.Views
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                     string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTo, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status);
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status);
                 }
             }
         }
