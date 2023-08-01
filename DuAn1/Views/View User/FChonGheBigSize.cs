@@ -42,7 +42,7 @@ namespace GUI.Views.View_User
         int price = 0;
         int priceFlight = 0;
         int priceClass = 0;
-        public FChonGheBigSize(string code, string loaighe,long idmb) : this()
+        public FChonGheBigSize(string code, string loaighe) : this()
         {
             _code = code;
             _loaighe = loaighe;
@@ -51,9 +51,9 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             int so = 1;
             int tt = 0;
-            Point locaChair = new Point(700, 17);
-            Point locaName = new Point(736, 23);
-            Point locaSTT = new Point(708, 95);
+            Point locaChair = new Point(730, 17);
+            Point locaName = new Point(766, 23);
+            Point locaSTT = new Point(738, 95);
             string[] hang = { "A", "B", "C", "D" };
             int dem = 0;
             foreach (var item in seatdetail)
@@ -77,31 +77,31 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
+                    chair.CheckedChanged += Chair_CheckedChanged;
                     var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
                     if (check==null)
                     {
-                        chair.Enabled = true;
+                        if (dem < 35)
+                        {
+                            if (loaighe == "TG")
+                            {
+                                chair.Enabled = false;
+                            }
+                            chair.BackColor = Color.DarkCyan;
+                        }
+                        else
+                        {
+                            if (loaighe == "PT")
+                            {
+                                chair.Enabled = false;
+                            }
+                            chair.BackColor = Color.Goldenrod;
+                        }
                     }
                     else
                     {
+                        chair.BackColor = Color.Orange;
                         chair.Enabled = false;
-                    }
-                    chair.CheckedChanged += Chair_CheckedChanged;
-                    if (dem < 20)
-                    {
-                        if (loaighe == "TG")
-                        {
-                            chair.Enabled = false;
-                        }
-                        chair.BackColor = Color.DarkCyan;
-                    }
-                    else
-                    {
-                        if (loaighe == "PT")
-                        {
-                            chair.Enabled = false;
-                        }
-                        chair.BackColor = Color.Goldenrod;
                     }
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
@@ -159,16 +159,6 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
-                    if (check == null)
-                    {
-                        chair.Enabled = true;
-                    }
-                    else
-                    {
-                        chair.Enabled = false;
-                    }
-
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 35)
                     {
@@ -177,6 +167,17 @@ namespace GUI.Views.View_User
                     else
                     {
                         chair.BackColor = Color.Goldenrod;
+                    }
+
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check == null)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.BackColor = Color.Orange;
+                        chair.Enabled = false;
                     }
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
