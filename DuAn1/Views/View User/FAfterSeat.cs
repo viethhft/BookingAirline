@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class AfterSeat : Form
+    public partial class FAfterSeat : Form
     {
         FChonGheSmallSize _fsm;
         SeatFlightSer _ser;
@@ -24,7 +24,7 @@ namespace GUI.Views.View_User
         long idmb;
         string macb;
 
-        public AfterSeat()
+        public FAfterSeat()
         {
             _fsm = new FChonGheSmallSize();
             _ser = new SeatFlightSer();
@@ -34,7 +34,7 @@ namespace GUI.Views.View_User
             InitializeComponent();
         }
 
-        public AfterSeat(string machuyenbay, List<string> maghe) : this()
+        public FAfterSeat(string machuyenbay, List<string> maghe) : this()
         {
             macb = machuyenbay;
             id = _f.get_list().FirstOrDefault(c => c.FlightCode == machuyenbay).Id;
@@ -47,9 +47,11 @@ namespace GUI.Views.View_User
             {
                 RichTextBox rich = new();
                 flowLayoutPanel1.Controls.Add(rich);
-                rich.Width = 500;
-                rich.Height = 250;
-                rich.Text = $"ma chuyen bya cua bna la {machuyenbay} va ghe ban dat la {maghe[i]}";
+                rich.Width = 150;
+                rich.Height = 100;
+                rich.ReadOnly = true;
+                rich.BackColor = Color.FromArgb(227, 145, 57);
+                rich.Text = $"Mã chuyến bay của bạn là {machuyenbay} và ghế bạn đặt là {maghe[i]}";
                 foreach (var item in _sd.list().Where(c => c.SeatCode == maghe[i] && c.PlaneTypeId == idmb))
                 {
                     lst.Add(item.Id);
@@ -71,7 +73,12 @@ namespace GUI.Views.View_User
                 };
                 _ser.Create(sf);
             }
-            MessageBox.Show("Dat ve thanh cong");
+            FthanhToan f = new FthanhToan();
+            if (MessageBox.Show("Thanh toán nhé", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)==DialogResult.OK)
+            {
+                f.ShowDialog();
+            }
+           
         }
     }
 }

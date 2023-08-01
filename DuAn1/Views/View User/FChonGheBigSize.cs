@@ -79,7 +79,7 @@ namespace GUI.Views.View_User
                     chair.Name = item.SeatCode;
                     chair.CheckedChanged += Chair_CheckedChanged;
                     var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
-                    if (check==null)
+                    if (check == null)
                     {
                         if (dem < 35)
                         {
@@ -233,7 +233,7 @@ namespace GUI.Views.View_User
             }
         }
 
-        
+
         private void cb_checkacp_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_checkacp.Checked)
@@ -262,7 +262,7 @@ namespace GUI.Views.View_User
                     }
                 }
             }
-            AfterSeat af = new AfterSeat(_code, _listcode);
+            FAfterSeat af = new FAfterSeat(_code, _listcode);
             this.Hide();
             af.ShowDialog();
             this.Show();

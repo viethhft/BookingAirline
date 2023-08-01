@@ -125,7 +125,7 @@ namespace GUI.Views.View_User
                 }
                 dem++;
             }
-            
+
         }
 
         private void Chair_CheckedChanged(object? sender, EventArgs e)
@@ -260,7 +260,7 @@ namespace GUI.Views.View_User
                     }
                 }
             }
-            AfterSeat af = new AfterSeat(_code, _listcode);
+            FAfterSeat af = new FAfterSeat(_code, _listcode);
             this.Hide();
             af.ShowDialog();
             this.Show();

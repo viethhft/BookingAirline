@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btn_Search = new Guna.UI2.WinForms.Guna2Button();
+            btn_Them = new Guna.UI2.WinForms.Guna2Button();
+            btn_Sua = new Guna.UI2.WinForms.Guna2Button();
             rbtn_off = new RadioButton();
             rbtn_onl = new RadioButton();
-            btn_Search = new Button();
             label6 = new Label();
             txt_timkiem = new TextBox();
-            btn_Sua = new Button();
-            btn_Them = new Button();
             label5 = new Label();
             txt_Pass = new TextBox();
             label4 = new Label();
@@ -56,13 +56,13 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btn_Search);
+            groupBox1.Controls.Add(btn_Them);
+            groupBox1.Controls.Add(btn_Sua);
             groupBox1.Controls.Add(rbtn_off);
             groupBox1.Controls.Add(rbtn_onl);
-            groupBox1.Controls.Add(btn_Search);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(txt_timkiem);
-            groupBox1.Controls.Add(btn_Sua);
-            groupBox1.Controls.Add(btn_Them);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(txt_Pass);
             groupBox1.Controls.Add(label4);
@@ -77,6 +77,57 @@
             groupBox1.Size = new Size(675, 251);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
+            // 
+            // btn_Search
+            // 
+            btn_Search.BorderRadius = 10;
+            btn_Search.DisabledState.BorderColor = Color.DarkGray;
+            btn_Search.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_Search.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_Search.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_Search.FillColor = Color.DarkCyan;
+            btn_Search.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Search.ForeColor = Color.White;
+            btn_Search.Location = new Point(538, 219);
+            btn_Search.Name = "btn_Search";
+            btn_Search.Size = new Size(122, 29);
+            btn_Search.TabIndex = 20;
+            btn_Search.Text = "Tìm kiếm";
+            btn_Search.Click += btn_Search_Click;
+            // 
+            // btn_Them
+            // 
+            btn_Them.BorderRadius = 10;
+            btn_Them.DisabledState.BorderColor = Color.DarkGray;
+            btn_Them.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_Them.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_Them.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_Them.FillColor = Color.DarkCyan;
+            btn_Them.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Them.ForeColor = Color.White;
+            btn_Them.Location = new Point(534, 151);
+            btn_Them.Name = "btn_Them";
+            btn_Them.Size = new Size(122, 45);
+            btn_Them.TabIndex = 19;
+            btn_Them.Text = "Thêm";
+            btn_Them.Click += button1_Click;
+            // 
+            // btn_Sua
+            // 
+            btn_Sua.BorderRadius = 10;
+            btn_Sua.DisabledState.BorderColor = Color.DarkGray;
+            btn_Sua.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_Sua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_Sua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_Sua.FillColor = Color.DarkCyan;
+            btn_Sua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Sua.ForeColor = Color.White;
+            btn_Sua.Location = new Point(374, 151);
+            btn_Sua.Name = "btn_Sua";
+            btn_Sua.Size = new Size(122, 45);
+            btn_Sua.TabIndex = 18;
+            btn_Sua.Text = "Sửa";
+            btn_Sua.Click += btn_Sua_Click;
             // 
             // rbtn_off
             // 
@@ -104,17 +155,6 @@
             rbtn_onl.Text = "Đang làm";
             rbtn_onl.UseVisualStyleBackColor = true;
             // 
-            // btn_Search
-            // 
-            btn_Search.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Search.Location = new Point(538, 216);
-            btn_Search.Name = "btn_Search";
-            btn_Search.Size = new Size(118, 33);
-            btn_Search.TabIndex = 15;
-            btn_Search.Text = "Tìm kiếm";
-            btn_Search.UseVisualStyleBackColor = true;
-            btn_Search.Click += btn_Search_Click;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -132,28 +172,6 @@
             txt_timkiem.Name = "txt_timkiem";
             txt_timkiem.Size = new Size(416, 23);
             txt_timkiem.TabIndex = 13;
-            // 
-            // btn_Sua
-            // 
-            btn_Sua.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Sua.Location = new Point(374, 163);
-            btn_Sua.Name = "btn_Sua";
-            btn_Sua.Size = new Size(118, 33);
-            btn_Sua.TabIndex = 1;
-            btn_Sua.Text = "Sửa";
-            btn_Sua.UseVisualStyleBackColor = true;
-            btn_Sua.Click += btn_Sua_Click;
-            // 
-            // btn_Them
-            // 
-            btn_Them.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Them.Location = new Point(538, 163);
-            btn_Them.Name = "btn_Them";
-            btn_Them.Size = new Size(118, 33);
-            btn_Them.TabIndex = 0;
-            btn_Them.Text = "Thêm";
-            btn_Them.UseVisualStyleBackColor = true;
-            btn_Them.Click += button1_Click;
             // 
             // label5
             // 
@@ -285,8 +303,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button btn_Sua;
-        private Button btn_Them;
         private GroupBox groupBox4;
         private DataGridView dgrid_NhanVien;
         private TextBox txt_Pass;
@@ -300,9 +316,11 @@
         private Label label6;
         private TextBox txt_timkiem;
         private Label label5;
-        private Button btn_Search;
         private PictureBox pictureBox1;
         private RadioButton rbtn_off;
         private RadioButton rbtn_onl;
+        private Guna.UI2.WinForms.Guna2Button btn_Them;
+        private Guna.UI2.WinForms.Guna2Button btn_Sua;
+        private Guna.UI2.WinForms.Guna2Button btn_Search;
     }
 }
