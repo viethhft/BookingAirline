@@ -103,7 +103,7 @@ namespace DuAn1.Views
                 DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
                 dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
                 cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[11].Value.ToString());
-                txb_codeflight.Text = ReverseCodeFlight();
+                txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
             }
             txb_codeflight.Enabled = false;
         }
@@ -313,7 +313,7 @@ namespace DuAn1.Views
                             break;
                         }
                     }
-                    flight.FlightCode = txb_codeflight.Text;
+                    flight.FlightCode = ReverseCodeFlight();
                     flight.GoFrom = cmb_From.Text;
                     flight.GoTom = cmb_To.Text;
                     foreach (var item in _location.get_list())
