@@ -65,7 +65,7 @@ namespace _2_BUS.Validate
 
         public bool checkPhoneNumber(string phone)
         {
-            Regex regex = new Regex(@"(0|\+84)([3|9|8|7|5])(\d{8})$");
+            Regex regex = new Regex(@"^(0|\+84)([3|9|8|7|5])(\d{8})$");
             Match match = regex.Match(phone);
             if (match != Match.Empty)
             {
