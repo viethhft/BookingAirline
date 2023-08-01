@@ -1,4 +1,5 @@
-﻿using _2_BUS.IService;
+﻿using _1_DAL.Models;
+using _2_BUS.IService;
 using _2_BUS.Service;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,8 +23,29 @@ namespace GUI.Views
             InitializeComponent();
             load();
         }
+        bool checkDuplicate()
+        {
+            foreach (var item in _planeTypeServices.get_list())
+            {
+                if (item.PlaneCode==txt_PlaneCode.Text)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        bool checkEmpty()
+        {
+            if (txt_NamePlane.Text==""||txt_PlaneCode.Text=="")
+            {
+                return false;
+            }
+            return true;
+        }
         void load()
         {
+            cmb_totalSeats.Items.Add(30);
+            cmb_totalSeats.Items.Add(50);
             dgv_dataPlane.Rows.Clear();
             dgv_dataPlane.ColumnCount = 3;
             dgv_dataPlane.Columns[0].Name = "Mã máy bay";
@@ -31,6 +54,64 @@ namespace GUI.Views
             foreach (var item in _planeTypeServices.get_list())
             {
                 dgv_dataPlane.Rows.Add(item.PlaneCode, item.DisplayName, item.TotalSeat);
+            }
+            btn_update.Enabled = false;
+            cmb_totalSeats.SelectedIndex = 0;
+        }
+
+        private void dgv_dataPlane_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_update.Enabled = true;
+            txt_PlaneCode.Text = dgv_dataPlane.CurrentRow.Cells[0].Value.ToString();
+            txt_NamePlane.Text = dgv_dataPlane.CurrentRow.Cells[1].Value.ToString();
+            cmb_totalSeats.Text = dgv_dataPlane.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            if (checkEmpty())
+            {
+                if (checkDuplicate())
+                {
+                    PlaneType planeType = new PlaneType();
+                    planeType.DisplayName = txt_NamePlane.Text;
+                    planeType.PlaneCode = txt_PlaneCode.Text;
+                    planeType.TotalSeat = Convert.ToInt32(cmb_totalSeats.Text);
+                    MessageBox.Show(_planeTypeServices.create(planeType));
+                    load();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập mã máy bay khác mã đã nhập trùng máy bay đã có sẵn");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (checkEmpty())
+            {
+                if (checkDuplicate())
+                {
+                    PlaneType planeType = _planeTypeServices.get_list().Where(c=>c.PlaneCode==txt_PlaneCode.Text).FirstOrDefault();
+                    planeType.DisplayName = txt_NamePlane.Text;
+                    planeType.PlaneCode = txt_PlaneCode.Text;
+                    planeType.TotalSeat = Convert.ToInt32(cmb_totalSeats.Text);
+                    MessageBox.Show(_planeTypeServices.create(planeType));
+                    load();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập mã máy bay khác mã đã nhập trùng máy bay đã có sẵn");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
         }
     }

@@ -25,6 +25,7 @@ namespace GUI.Views.View_User
         bool _check_Email = true;
         bool _check_Phone = true;
         bool _check_date = true;
+        string _mail = "";
         public FthongTinNguoiDung()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace GUI.Views.View_User
 
         public FthongTinNguoiDung(string message) : this()
         {
+            _mail = message;
             _service = new CustomerServices();
             cbx_gt.Items.Add("Nam");
             cbx_gt.Items.Add("Nữ");
@@ -50,24 +52,20 @@ namespace GUI.Views.View_User
 
         public void load()
         {
-            foreach (var item in _service.GetCustomers())
+            var item = _service.GetCustomers().Where(c => c.Email == _mail).FirstOrDefault();
+            tbx_email.Text = item.Email;
+            tbx_diaChi.Text = item.Address;
+            tbx_hoTen.Text = item.FirstName + " " + item.MiddleName + " " + item.LastName;
+            if (item.Gender == "Nam")
             {
-
-                tbx_email.Text = item.Email;
-                tbx_diaChi.Text = item.Address;
-                tbx_hoTen.Text = item.FirstName + " " + item.MiddleName + " " + item.LastName;
-                if (item.Gender == "Nam")
-                {
-                    cbx_gt.Text = "Nam";
-                }
-                else
-                {
-                    cbx_gt.Text = "Nữ";
-                }
-                date_bird.Value = (DateTime)(item.Dob);
-                tbx_sdt.Text = item.Phone;
+                cbx_gt.Text = "Nam";
             }
-
+            else
+            {
+                cbx_gt.Text = "Nữ";
+            }
+            date_bird.Value = (DateTime)(item.Dob);
+            tbx_sdt.Text = item.Phone;
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -103,10 +101,11 @@ namespace GUI.Views.View_User
                     {
                         custom.Gender = "Nữ";
                     }
-                    date_bird.Value = (DateTime)(custom.Dob);
+                    custom.Dob = date_bird.Value;
                     MessageBox.Show(_service.Update(custom));
                     Unelable();
                     load();
+                    this.Close();
                 }
                 else
                 {
