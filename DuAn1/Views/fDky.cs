@@ -53,7 +53,7 @@ namespace DuAn1.Views
             cbx_gender.Text = "";
             txb_Otp.Text = "";
             time.Visible = false;
-            btn_sign.Visible = false;
+            btn_sign.Enabled = false;
             lb_ErrorEmail.Visible = false;
             lb_ErrorName.Visible = false;
             lb_ErrorPhoneNumber.Visible = false;
@@ -84,7 +84,7 @@ namespace DuAn1.Views
         {
             if (txb_name.Text != "" || txb_address.Text != "" || txb_email.Text != "" || tbx_phone.Text != "" || tbx_pass1.Text != "" || tbx_pass2.Text != "")
             {
-                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt && _check_matkhau1&&_check_date)
+                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt && _check_matkhau1 && _check_date)
                 {
                     if (tbx_pass1.Text == tbx_pass2.Text)
                     {
