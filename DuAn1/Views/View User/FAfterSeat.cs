@@ -62,6 +62,7 @@ namespace GUI.Views.View_User
 
         private void button1_Click(object sender, EventArgs e)
         {
+            FthanhToan f = new FthanhToan();
             SeatFlight sf;
             for (int i = 0; i < lst.Count; i++)
             {
@@ -73,10 +74,10 @@ namespace GUI.Views.View_User
                 };
                 _ser.Create(sf);
             }
-            FthanhToan f = new FthanhToan();
             if (MessageBox.Show("Thanh toán nhé", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)==DialogResult.OK)
             {
                 f.ShowDialog();
+                this.Hide();
             }
            
         }
