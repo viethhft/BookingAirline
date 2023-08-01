@@ -31,7 +31,6 @@ namespace GUI.Views.View_User
         long _macb;
         List<int> _lstGhe = new();
         List<string> _listcode = new List<string>();
-        List<Guna2ImageCheckBox> _lstCb = new();
 
         public FChonGheSmallSize()
         {
@@ -42,7 +41,6 @@ namespace GUI.Views.View_User
             _sfServices = new();
             InitializeComponent();
             btn_pay.Enabled = false;
-            lb_value.Visible = true;
         }
         public FChonGheSmallSize(string code, string loaighe) : this()
         {
@@ -130,36 +128,28 @@ namespace GUI.Views.View_User
                         locaName.Y += 36;
                         panel1.Controls.Add(lb_tt);
                     }
+                    long idfl = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
+                    foreach (var i in _seatDetailServices.list().Where(c => c.SeatCode == chair.Name))
+                    {
+                        _lstGhe.Add(i.Id);
+                        chair.Tag = i.Id;
+                    }
+                    foreach (var i in _sfServices.Get().Where(c => c.Flightid == idfl))
+                    {
+                        for(int j = 0; j < _lstGhe.Count; j++)
+                        {
+                            if(i.Seatid == _lstGhe[j] && (int)chair.Tag == _lstGhe[j])
+                            {
+                                chair.Enabled = false;
+                            }
+                        }
+                    }
                 }
                 dem++;
             }
+            
         }
 
-        //private void ChangeCB(List<Guna2ImageCheckBox> lstCb)
-        //{
-        //    long idcb = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
-        //    List<int> idseat = new List<int>();
-        //    for (int i = 0; i < lstCb.Count; i++)
-        //    {
-        //        foreach (var j in _seatDetailServices.list().Where(c => c.SeatCode == lstCb[i].Name))
-        //        {
-        //            idseat.Add(j.Id);
-        //        }
-        //        foreach (var item in _sfServices.Get())
-        //        {
-        //            if (item.Flightid == idcb)
-        //            {
-        //                for (int a = 0; a < idseat.Count; a++)
-        //                {
-        //                    if (item.Seatid == idseat[i])
-        //                    {
-        //                        lstCb[i].Enabled = false;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
