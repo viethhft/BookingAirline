@@ -134,6 +134,7 @@ namespace DuAn1.Views
                             Customer customer = _services.Get(tbx_email.Text);
                             customer.Password = _validate.ReversePass(tbx_pass2.Text);
                             MessageBox.Show(_services.Update(customer));
+                            code_otp = _validate.randomCode();
                             this.Close();
                         }
                         else

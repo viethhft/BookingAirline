@@ -103,6 +103,7 @@
             this.lb_ErrorPassNew.Size = new System.Drawing.Size(38, 15);
             this.lb_ErrorPassNew.TabIndex = 41;
             this.lb_ErrorPassNew.Text = "label5";
+            this.lb_ErrorPassNew.Visible = false;
             // 
             // lb_errorCode
             // 
