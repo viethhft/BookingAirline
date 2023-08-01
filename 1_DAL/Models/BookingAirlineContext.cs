@@ -78,7 +78,7 @@ namespace _1_DAL.Models
                     .WithMany(p => p.Banks)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Bank__customerId__1EA48E88");
+                    .HasConstraintName("FK__Bank__bankAccoun__403A8C7D");
             });
 
             modelBuilder.Entity<Class>(entity =>
@@ -178,9 +178,7 @@ namespace _1_DAL.Models
 
                 entity.Property(e => e.Price).HasColumnName("price");
 
-                entity.Property(e => e.Status)
-                    .HasColumnName("status")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.Status).HasColumnName("status");
 
                 entity.Property(e => e.TimeEnd).HasColumnName("timeEnd");
 
@@ -255,9 +253,6 @@ namespace _1_DAL.Models
                 entity.Property(e => e.ClassId).HasColumnName("classId");
 
                 entity.Property(e => e.PlaneTypeId).HasColumnName("planeTypeId");
-                //entity.Property(e => e.status)
-                //.HasColumnName("status")
-                //.HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.SeatCode)
                     .HasMaxLength(50)
@@ -268,13 +263,13 @@ namespace _1_DAL.Models
                     .WithMany(p => p.SeatDetails)
                     .HasForeignKey(d => d.ClassId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Seat_deta__class__40058253");
+                    .HasConstraintName("FK__Seat_deta__statu__03F0984C");
 
                 entity.HasOne(d => d.PlaneType)
                     .WithMany(p => p.SeatDetails)
                     .HasForeignKey(d => d.PlaneTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Seat_deta__plane__3F115E1A");
+                    .HasConstraintName("FK__Seat_deta__plane__04E4BC85");
             });
 
             modelBuilder.Entity<SeatFlight>(entity =>
@@ -294,12 +289,13 @@ namespace _1_DAL.Models
                 entity.HasOne(d => d.Flight)
                     .WithMany(p => p.SeatFlights)
                     .HasForeignKey(d => d.Flightid)
-                    .HasConstraintName("FK__Seat_flig__statu__3D2915A8");
+                    .HasConstraintName("FK__Seat_flig__fligh__2A164134");
 
                 entity.HasOne(d => d.Seat)
                     .WithMany(p => p.SeatFlights)
                     .HasForeignKey(d => d.Seatid)
-                    .HasConstraintName("FK__Seat_flig__seati__3E1D39E1");
+                    .HasConstraintName("FK_Seat_SeatFl");
+
             });
 
             modelBuilder.Entity<Ticket>(entity =>
@@ -337,7 +333,7 @@ namespace _1_DAL.Models
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Ticket__customer__22751F6C");
+                    .HasConstraintName("FK__Ticket__customer__4AB81AF0");
 
                 entity.HasOne(d => d.Flight)
                     .WithMany(p => p.Tickets)
@@ -381,7 +377,7 @@ namespace _1_DAL.Models
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.staff)
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__Staff__roleId__2180FB33");
+                    .HasConstraintName("FK__Staff__status__3A81B327");
             });
 
             OnModelCreatingPartial(modelBuilder);

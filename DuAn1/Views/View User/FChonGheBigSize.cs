@@ -51,9 +51,9 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             int so = 1;
             int tt = 0;
-            Point locaChair = new Point(730, 17);
-            Point locaName = new Point(766, 23);
-            Point locaSTT = new Point(738, 95);
+            Point locaChair = new Point(700, 17);
+            Point locaName = new Point(736, 23);
+            Point locaSTT = new Point(708, 95);
             string[] hang = { "A", "B", "C", "D" };
             int dem = 0;
             foreach (var item in seatdetail)
@@ -77,9 +77,8 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-                    var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
-                    var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
-                    if (check.Status == 1)
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check==null)
                     {
                         chair.Enabled = true;
                     }
@@ -122,24 +121,8 @@ namespace GUI.Views.View_User
                         locaName.Y += 36;
                         panel1.Controls.Add(lb_tt);
                     }
-                    long idfl = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
-                    foreach (var i in _seatDetailServices.list().Where(c => c.SeatCode == chair.Name))
-                    {
-                        _lstGhe.Add(i.Id);
-                        chair.Tag = i.Id;
-                    }
-                    foreach (var i in _sfServices.Get().Where(c => c.Flightid == idfl))
-                    {
-                        for (int j = 0; j < _lstGhe.Count; j++)
-                        {
-                            if (i.Seatid == _lstGhe[j] && (int)chair.Tag == _lstGhe[j])
-                            {
-                                chair.Enabled = false;
-                            }
-                        }
-                    }
+                    dem++;
                 }
-                dem++;
             }
         }
         public FChonGheBigSize(string code) : this()
@@ -176,23 +159,16 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-                    try
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check == null)
                     {
-                        var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
-                        var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
-                        if (check.Status == 1)
-                        {
-                            chair.Enabled = true;
-                        }
-                        else
-                        {
-                            chair.Enabled = false;
-                        }
+                        chair.Enabled = true;
                     }
-                    catch (Exception)
+                    else
                     {
-                            chair.Enabled = true;
+                        chair.Enabled = false;
                     }
+
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 35)
                     {

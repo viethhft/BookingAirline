@@ -31,6 +31,7 @@ namespace _1_DAL.Repon
 
         public List<SeatFlight> Get()
         {
+            
             return _context.SeatFlights.ToList();
         }
     }

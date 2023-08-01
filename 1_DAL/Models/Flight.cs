@@ -23,7 +23,7 @@ namespace _1_DAL.Models
         public DateTime? DateTo { get; set; }
         public TimeSpan TimeStart { get; set; }
         public TimeSpan TimeEnd { get; set; }
-        public int? Status { get; set; }
+        public int Status { get; set; }
 
         public virtual Airport Location { get; set; } = null!;
         public virtual PlaneType PlaneType { get; set; } = null!;

@@ -51,9 +51,9 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             int so = 1;
             int tt = 0;
-            Point locaChair = new Point(600, 10);
+            Point locaChair = new Point(550, 10);
             Point locaName = new Point(586, 16);
-            Point locaSTT = new Point(550, 88);
+            Point locaSTT = new Point(558, 88);
             string[] hang = { "A", "B", "C", "D" };
             int dem = 0;
             foreach (var item in seatdetail)
@@ -77,9 +77,8 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-                    var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
-                    var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
-                    if (check.Status == 1)
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check == null)
                     {
                         chair.Enabled = true;
                     }
@@ -87,12 +86,7 @@ namespace GUI.Views.View_User
                     {
                         chair.Enabled = false;
                     }
-                    //chair.Enabled = true;
-                    ////}
-                    ////else
-                    ////{
-                    ////    chair.Enabled = false;
-                    ////}
+
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
@@ -127,22 +121,6 @@ namespace GUI.Views.View_User
                         locaChair.Y += 36;
                         locaName.Y += 36;
                         panel1.Controls.Add(lb_tt);
-                    }
-                    long idfl = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
-                    foreach (var i in _seatDetailServices.list().Where(c => c.SeatCode == chair.Name))
-                    {
-                        _lstGhe.Add(i.Id);
-                        chair.Tag = i.Id;
-                    }
-                    foreach (var i in _sfServices.Get().Where(c => c.Flightid == idfl))
-                    {
-                        for(int j = 0; j < _lstGhe.Count; j++)
-                        {
-                            if(i.Seatid == _lstGhe[j] && (int)chair.Tag == _lstGhe[j])
-                            {
-                                chair.Enabled = false;
-                            }
-                        }
                     }
                 }
                 dem++;
@@ -184,9 +162,9 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             int so = 1;
             int tt = 0;
-            Point locaChair = new Point(540, 10);
-            Point locaName = new Point(576, 16);
-            Point locaSTT = new Point(548, 88);
+            Point locaChair = new Point(550, 10);
+            Point locaName = new Point(586, 16);
+            Point locaSTT = new Point(558, 88);
             string[] hang = { "A", "B", "C", "D" };
             int dem = 0;
             foreach (var item in seatdetail)
@@ -210,9 +188,8 @@ namespace GUI.Views.View_User
                     chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
-                    var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
-                    if (check.Status == 1)
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check == null)
                     {
                         chair.Enabled = true;
                     }
