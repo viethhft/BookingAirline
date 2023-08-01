@@ -42,7 +42,7 @@ namespace GUI.Views.View_User
         int price = 0;
         int priceFlight = 0;
         int priceClass = 0;
-        public FChonGheBigSize(string code, string loaighe) : this()
+        public FChonGheBigSize(string code, string loaighe,long idmb) : this()
         {
             _code = code;
             _loaighe = loaighe;
@@ -87,7 +87,7 @@ namespace GUI.Views.View_User
                         chair.Enabled = false;
                     }
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    if (dem < 35)
+                    if (dem < 20)
                     {
                         if (loaighe == "TG")
                         {
@@ -261,12 +261,12 @@ namespace GUI.Views.View_User
                         _seatDetailServices.Update(seatupdate);
                     }
                 }
-                MessageBox.Show("Đặt vé ok");
-                AfterSeat af = new AfterSeat(_code, _listcode);
-                this.Hide();
-                af.ShowDialog();
-                this.Show();
             }
+            //MessageBox.Show("Đặt vé ok");
+            AfterSeat af = new AfterSeat(_code, _listcode);
+            this.Hide();
+            af.ShowDialog();
+            this.Show();
         }
     }
 }

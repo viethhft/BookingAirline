@@ -42,7 +42,7 @@ namespace GUI.Views.View_User
             InitializeComponent();
             btn_pay.Enabled = false;
         }
-        public FChonGheSmallSize(string code, string loaighe) : this()
+        public FChonGheSmallSize(string code, string loaighe, long idmb) : this()
         {
             _loaighe = loaighe;
             _code = code;
@@ -88,7 +88,7 @@ namespace GUI.Views.View_User
                     }
 
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    if (dem < 20)
+                    if (dem < 10)
                     {
                         if (loaighe == "TG")
                         {
