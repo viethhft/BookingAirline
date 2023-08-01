@@ -82,7 +82,7 @@ namespace DuAn1.Views
         {
             if (txb_name.Text != "" || txb_address.Text != "" || txb_email.Text != "" || tbx_phone.Text != "" || tbx_pass1.Text != "" || tbx_pass2.Text != "")
             {
-                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt && _check_matkhau1)
+                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt && _check_matkhau1&&_check_date)
                 {
                     if (tbx_pass1.Text == tbx_pass2.Text)
                     {
