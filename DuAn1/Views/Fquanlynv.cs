@@ -124,6 +124,24 @@ namespace DuAn1
                 else
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    txt_Ten.Enabled = false;
+                    txt_Email.Enabled = false;
+                    txt_Pass.Enabled = false;
+                    txt_Sdt.Enabled = false;
+                    txt_Ten.Text = dgrid_NhanVien.Rows[1].Cells[0].Value.ToString();
+                    txt_Sdt.Text = dgrid_NhanVien.Rows[1].Cells[2].Value.ToString();
+                    txt_Email.Text = dgrid_NhanVien.Rows[1].Cells[1].Value.ToString();
+                    if (dgrid_NhanVien.Rows[1].Cells[3].Value.ToString() == "Đang hoạt động")
+                    {
+                        rbtn_onl.Checked = true;
+                    }
+                    else
+                    {
+                        rbtn_off.Checked = true;
+                    }
+                    lb_ErrorEmail.Visible = false;
+                    lb_ErrorName.Visible = false;
+                    lb_ErrorPhone.Visible = false;
                 }
             }
             else
