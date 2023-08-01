@@ -247,19 +247,6 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
-            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
-            var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id).ToList();
-            foreach (var item in seat)
-            {
-                foreach (var item1 in _listcode)
-                {
-                    if (item.SeatCode == item1)
-                    {
-
-                    }
-                }
-            }
             FAfterSeat af = new FAfterSeat(_code, _listcode);
             this.Hide();
             af.ShowDialog();
