@@ -57,6 +57,7 @@ namespace DuAn1.Views
             lb_ErrorPhoneNumber.Visible = false;
             lb_ErrorPassAgain.Visible = false;
             lb_ErrorOtp.Visible = false;
+            lb_ErrorPass1.Visible = false;
         }
         private bool check_duplicate_mail(string email)
         {
@@ -225,7 +226,7 @@ namespace DuAn1.Views
                 }
             }
 
-            if (txb_email.Text != "" && check)
+            if (txb_email.Text != "" && check&& _check_mail)
             {
                 CountDown.Interval = 1000;
                 CountDown.Start();
