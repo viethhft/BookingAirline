@@ -204,6 +204,7 @@
             txb_Otp.Name = "txb_Otp";
             txb_Otp.Size = new Size(88, 23);
             txb_Otp.TabIndex = 4;
+            txb_Otp.TextChanged += txb_Otp_TextChanged;
             // 
             // lb_ErrorName
             // 
@@ -268,6 +269,7 @@
             tbx_pass2.Size = new Size(195, 23);
             tbx_pass2.TabIndex = 9;
             tbx_pass2.UseSystemPasswordChar = true;
+            tbx_pass2.TextChanged += tbx_pass2_TextChanged;
             // 
             // tbx_pass1
             // 
@@ -294,6 +296,7 @@
             tbx_phone.Name = "tbx_phone";
             tbx_phone.Size = new Size(195, 23);
             tbx_phone.TabIndex = 6;
+            tbx_phone.TextChanged += tbx_phone_TextChanged;
             // 
             // cbx_gender
             // 
@@ -461,6 +464,7 @@
             txb_email.Name = "txb_email";
             txb_email.Size = new Size(195, 23);
             txb_email.TabIndex = 2;
+            txb_email.TextChanged += txb_email_TextChanged;
             // 
             // label4
             // 

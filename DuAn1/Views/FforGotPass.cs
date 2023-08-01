@@ -116,7 +116,7 @@ namespace DuAn1.Views
             {
                 if (tbx_ma.Text == code_otp)
                 {
-                    if (txb_pass1.Text==tbx_pass2.Text)
+                    if (txb_pass1.Text == tbx_pass2.Text)
                     {
                         if (_check_pass && _check_email && _check_ma)
                         {

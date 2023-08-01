@@ -315,7 +315,7 @@ namespace DuAn1.Views
             if (_validate.checkpass(tbx_pass1.Text))
             {
                 lb_ErrorPass1.Visible = false;
-                _check_matkhau1= true;
+                _check_matkhau1 = true;
             }
             else
             {
