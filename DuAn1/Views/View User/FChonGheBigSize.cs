@@ -257,13 +257,11 @@ namespace GUI.Views.View_User
                 {
                     if (item.SeatCode == item1)
                     {
-                        SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
-                        //seatupdate.Status = 0;
-                        _seatDetailServices.Update(seatupdate);
+                        //SeatFlight 
+                        //_sfServices.Create()
                     }
                 }
             }
-            //MessageBox.Show("Đặt vé ok");
             AfterSeat af = new AfterSeat(_code, _listcode);
             this.Hide();
             af.ShowDialog();
