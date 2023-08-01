@@ -40,7 +40,6 @@ namespace GUI.Views.View_User
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             _sfServices = new();
-            ChangeCB(_lstCb);
             InitializeComponent();
             btn_pay.Enabled = false;
             lb_value.Visible = true;
@@ -79,18 +78,24 @@ namespace GUI.Views.View_User
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    chair.Name = item.SeatCode;
-                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
-                    //if (check.Status == 1)
-                    //{
-                    //    chair.Enabled = true;
-                    //}
-                    //else
-                    //{
-                    //    chair.Enabled = false;
-                    //}
+                    chair.Name = item.Id.ToString();
+                    var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => (int)c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
+                    //chair.Enabled = true;
+                    ////}
+                    ////else
+                    ////{
+                    ////    chair.Enabled = false;
+                    ////}
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    _lstCb.Add(chair);
                     if (dem < 20)
                     {
                         if (loaighe == "TG")
@@ -130,31 +135,31 @@ namespace GUI.Views.View_User
             }
         }
 
-        private void ChangeCB(List<Guna2ImageCheckBox> lstCb)
-        {
-            long idcb = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
-            List<int> idseat = new List<int>();
-            for(int i = 0; i < lstCb.Count; i++)
-            {
-                foreach(var j in _seatDetailServices.list().Where(c=>c.SeatCode == lstCb[i].Name))
-                {
-                    idseat.Add(j.Id);
-                }
-                foreach(var item in _sfServices.Get())
-                {
-                    if(item.Flightid == idcb)
-                    {
-                        for(int a = 0; a < idseat.Count; a++)
-                        {
-                            if(item.Seatid == idseat[i])
-                            {
-                                lstCb[i].Enabled = false;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        //private void ChangeCB(List<Guna2ImageCheckBox> lstCb)
+        //{
+        //    long idcb = _flightServices.get_list().FirstOrDefault(c => c.FlightCode == _code).Id;
+        //    List<int> idseat = new List<int>();
+        //    for (int i = 0; i < lstCb.Count; i++)
+        //    {
+        //        foreach (var j in _seatDetailServices.list().Where(c => c.SeatCode == lstCb[i].Name))
+        //        {
+        //            idseat.Add(j.Id);
+        //        }
+        //        foreach (var item in _sfServices.Get())
+        //        {
+        //            if (item.Flightid == idcb)
+        //            {
+        //                for (int a = 0; a < idseat.Count; a++)
+        //                {
+        //                    if (item.Seatid == idseat[i])
+        //                    {
+        //                        lstCb[i].Enabled = false;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
@@ -212,20 +217,20 @@ namespace GUI.Views.View_User
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
                     Image image = Image.FromFile(@"..//..//..//Resources//chair.png");
                     chair.Image = image;
-                    chair.Name = item.SeatCode;
+                    chair.Name = item.Id.ToString();
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
-                    //if (check.Status == 1)
-                    //{
-                    //    chair.Enabled = true;
-                    //}
-                    //else
-                    //{
-                    //    chair.Enabled = false;
-                    //}
+                    var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    _lstCb.Add(chair);
                     if (dem < 20)
                     {
                         chair.BackColor = Color.DarkCyan;
@@ -255,7 +260,7 @@ namespace GUI.Views.View_User
                 }
                 dem++;
             }
-            
+
         }
         private void cb_checkacp_CheckedChanged(object sender, EventArgs e)
         {
@@ -268,7 +273,7 @@ namespace GUI.Views.View_User
                 btn_pay.Enabled = false;
             }
         }
-        
+
         private void btn_pay_Click(object sender, EventArgs e)
         {
             var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
@@ -280,9 +285,7 @@ namespace GUI.Views.View_User
                 {
                     if (item.SeatCode == item1)
                     {
-                        SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
-                        //seatupdate.Status = 0;
-                        _seatDetailServices.Update(seatupdate);
+
                     }
                 }
             }

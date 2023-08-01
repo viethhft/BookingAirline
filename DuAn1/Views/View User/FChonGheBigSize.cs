@@ -76,15 +76,16 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
-                    //if (check.Status==1)
-                    //{
-                    //    chair.Enabled = true;
-                    //}
-                    //else
-                    //{
-                    //    chair.Enabled = false;
-                    //}
+                    var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 35)
                     {
@@ -158,15 +159,23 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
-                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
-                    //if (check.Status == 1)
-                    //{
-                    //    chair.Enabled = true;
-                    //}
-                    //else
-                    //{
-                    //    chair.Enabled = false;
-                    //}
+                    try
+                    {
+                        var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
+                        var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
+                        if (check.Status == 1)
+                        {
+                            chair.Enabled = true;
+                        }
+                        else
+                        {
+                            chair.Enabled = false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                            chair.Enabled = true;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 35)
                     {
