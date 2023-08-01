@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDky));
             panel1 = new Panel();
+            lb_ErrorPass1 = new Label();
             time = new Panel();
             label10 = new Label();
             lb_Seconds = new Label();
@@ -86,6 +87,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lb_ErrorPass1);
             panel1.Controls.Add(time);
             panel1.Controls.Add(lb_ErrorOtp);
             panel1.Controls.Add(btn_SendCode);
@@ -127,12 +129,20 @@
             panel1.Size = new Size(461, 541);
             panel1.TabIndex = 2;
             // 
+            // lb_ErrorPass1
+            // 
+            lb_ErrorPass1.AutoSize = true;
+            lb_ErrorPass1.Location = new Point(289, 385);
+            lb_ErrorPass1.Name = "lb_ErrorPass1";
+            lb_ErrorPass1.Size = new Size(0, 15);
+            lb_ErrorPass1.TabIndex = 50;
+            // 
             // time
             // 
             time.Controls.Add(label10);
             time.Controls.Add(lb_Seconds);
             time.Controls.Add(lb_Minutes);
-            time.Location = new Point(333, 208);
+            time.Location = new Point(334, 210);
             time.Margin = new Padding(3, 4, 3, 4);
             time.Name = "time";
             time.Size = new Size(101, 30);
@@ -194,7 +204,6 @@
             txb_Otp.Name = "txb_Otp";
             txb_Otp.Size = new Size(88, 23);
             txb_Otp.TabIndex = 4;
-            txb_Otp.TextChanged += txb_Otp_TextChanged;
             // 
             // lb_ErrorName
             // 
@@ -259,7 +268,6 @@
             tbx_pass2.Size = new Size(195, 23);
             tbx_pass2.TabIndex = 9;
             tbx_pass2.UseSystemPasswordChar = true;
-            tbx_pass2.TextChanged += tbx_pass2_TextChanged;
             // 
             // tbx_pass1
             // 
@@ -269,6 +277,7 @@
             tbx_pass1.Size = new Size(195, 23);
             tbx_pass1.TabIndex = 8;
             tbx_pass1.UseSystemPasswordChar = true;
+            tbx_pass1.TextChanged += tbx_pass1_TextChanged;
             // 
             // txb_address
             // 
@@ -285,7 +294,6 @@
             tbx_phone.Name = "tbx_phone";
             tbx_phone.Size = new Size(195, 23);
             tbx_phone.TabIndex = 6;
-            tbx_phone.TextChanged += tbx_phone_TextChanged;
             // 
             // cbx_gender
             // 
@@ -453,7 +461,6 @@
             txb_email.Name = "txb_email";
             txb_email.Size = new Size(195, 23);
             txb_email.TabIndex = 2;
-            txb_email.TextChanged += txb_email_TextChanged;
             // 
             // label4
             // 
@@ -602,5 +609,6 @@
         private Label lb_Seconds;
         private Label lb_Minutes;
         private System.Windows.Forms.Timer CountDown;
+        private Label lb_ErrorPass1;
     }
 }

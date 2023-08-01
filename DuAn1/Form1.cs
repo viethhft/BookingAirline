@@ -118,7 +118,7 @@ namespace DuAn1
                 fStaff _fst = new fStaff(_role, tb_user.Text);
 
                 this.Hide();
-                MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
+                //MessageBox.Show("Đăng nhập admin thành công", "Thông báo!");
                 _fst.ShowDialog();
                 this.Show();
             }
@@ -127,14 +127,14 @@ namespace DuAn1
                 _role = 1;
                 fStaff _fst = new fStaff(_role, tb_user.Text);
                 this.Hide();
-                MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
+                //MessageBox.Show("Đăng nhập nhân viên thành công", "Thông báo!");
                 _fst.ShowDialog();
                 this.Show();
             }
             else if (_checkAccountType.CheckType(tb_user.Text, _validate.ReversePass(tb_pass.Text)) == 3)
             {
                 this.Hide();
-                MessageBox.Show("Đăng nhập thành công", "Thông báo!");
+                //MessageBox.Show("Đăng nhập thành công", "Thông báo!");
                 FHomeUser fHomeUser = new FHomeUser(tb_user.Text);
                 fHomeUser.ShowDialog();
                 this.Show();

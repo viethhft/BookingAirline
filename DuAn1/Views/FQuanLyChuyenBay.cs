@@ -36,7 +36,7 @@ namespace DuAn1.Views
             cmb_status.Items.Add("Đúng giờ");
             load();
         }
-        void check()
+        void check_price()
         {
             if (nbr_Price.Value < 500000)
             {
@@ -163,7 +163,7 @@ namespace DuAn1.Views
         }
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            check();
+            check_price();
             checkName();
             if (checkDuplicate)
             {
@@ -225,7 +225,7 @@ namespace DuAn1.Views
         }
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            check();
+            check_price();
             if (checklocation())
             {
                 if (checkInfo)

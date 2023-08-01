@@ -49,7 +49,7 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel1.Location = new Point(17, 50);
+            guna2HtmlLabel1.Location = new Point(169, 46);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(120, 21);
             guna2HtmlLabel1.TabIndex = 0;
@@ -93,7 +93,6 @@
             tbx_passOld.PasswordChar = '*';
             tbx_passOld.Size = new Size(222, 37);
             tbx_passOld.TabIndex = 1;
-            tbx_passOld.TextChanged += tbx_passOld_TextChanged;
             // 
             // tbx_passNew
             // 
@@ -146,6 +145,7 @@
             guna2Button2.Size = new Size(108, 38);
             guna2Button2.TabIndex = 10;
             guna2Button2.Text = "Thoát";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // lbl_email
             // 

@@ -24,6 +24,7 @@ namespace DuAn1.Views
         bool _check_ma = true;
         bool _check_sdt = true;
         bool _check_matkhau = true;
+        bool _check_matkhau1 = true;
         ICustomerServices _dangKyService;
         IStaffServices _staffServices;
         Validate _validate;
@@ -49,6 +50,8 @@ namespace DuAn1.Views
             tbx_pass2.Text = "";
             tbx_phone.Text = "";
             cbx_gender.Text = "";
+            txb_Otp.Text = "";
+            time.Visible = false;
             lb_ErrorEmail.Visible = false;
             lb_ErrorName.Visible = false;
             lb_ErrorPhoneNumber.Visible = false;
@@ -77,7 +80,7 @@ namespace DuAn1.Views
         {
             if (txb_name.Text != "" || txb_address.Text != "" || txb_email.Text != "" || tbx_phone.Text != "" || tbx_pass1.Text != "" || tbx_pass2.Text != "")
             {
-                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt)
+                if (_check_ma && _check_mail && _check_matkhau && _check_name && _check_sdt && _check_matkhau1)
                 {
                     if (tbx_pass1.Text == tbx_pass2.Text)
                     {
@@ -307,5 +310,21 @@ namespace DuAn1.Views
             }
         }
 
+        private void tbx_pass1_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkpass(tbx_pass1.Text))
+            {
+                lb_ErrorPass1.Visible = false;
+                _check_matkhau1= true;
+            }
+            else
+            {
+                lb_ErrorPass1.Text = "Mật khẩu nhập phải từ 6 ký tự";
+                lb_ErrorPass1.Visible = true;
+                _check_matkhau1 = false;
+                lb_ErrorPass1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorPass1.ForeColor = System.Drawing.Color.Red;
+            }
+        }
     }
 }

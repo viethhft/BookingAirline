@@ -1,5 +1,4 @@
-﻿using _1_DAL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.Views.View_User
 {
-    public partial class FTinhTrangChuyenBaySoHieuChil : Form
+    public partial class FthanhToan : Form
     {
-        public FTinhTrangChuyenBaySoHieuChil()
+        public FthanhToan()
         {
             InitializeComponent();
-        }
-        public FTinhTrangChuyenBaySoHieuChil(List<Flight> flights):this()
-        {
-
         }
     }
 }

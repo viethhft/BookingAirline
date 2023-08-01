@@ -28,107 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1149, 76);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1149, 76);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1055, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Ngày tháng";
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.DarkCyan;
+            label6.Location = new Point(1050, 32);
+            label6.Name = "label6";
+            label6.Size = new Size(90, 19);
+            label6.TabIndex = 5;
+            label6.Text = "Ngày tháng";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(928, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ngày tháng";
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.DarkCyan;
+            label5.Location = new Point(923, 32);
+            label5.Name = "label5";
+            label5.Size = new Size(90, 19);
+            label5.TabIndex = 4;
+            label5.Text = "Ngày tháng";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(789, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ngày tháng";
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.DarkCyan;
+            label4.Location = new Point(784, 32);
+            label4.Name = "label4";
+            label4.Size = new Size(90, 19);
+            label4.TabIndex = 3;
+            label4.Text = "Ngày tháng";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(656, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày tháng";
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkCyan;
+            label3.Location = new Point(651, 31);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 19);
+            label3.TabIndex = 2;
+            label3.Text = "Ngày tháng";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(452, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Điểm dừng";
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkCyan;
+            label2.Location = new Point(447, 32);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Điểm dừng";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THỜI GIAN KHỞI HÀNH";
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(25, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 19);
+            label1.TabIndex = 0;
+            label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 94);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1149, 500);
-            this.flowLayoutPanel1.TabIndex = 7;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(12, 94);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1149, 500);
+            flowLayoutPanel1.TabIndex = 7;
             // 
             // FLichBayChild
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 606);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "FLichBayChild";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FsearchTicket";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1173, 606);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(groupBox1);
+            Name = "FLichBayChild";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Lịch Bay";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -73,6 +73,15 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
+                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
@@ -174,6 +183,15 @@ namespace GUI.Views.View_User
                     chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
+                    var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
+                    if (check.Status == 1)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.Enabled = false;
+                    }
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {

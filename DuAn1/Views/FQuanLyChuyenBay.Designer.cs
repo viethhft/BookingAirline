@@ -218,22 +218,21 @@
             // 
             // cmb_To
             // 
-            cmb_To.BackColor = Color.Transparent;
-            cmb_To.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_To.DropDownHeight = 175;
-            cmb_To.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_To.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_To.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_To.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_To.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_To.IntegralHeight = false;
-            cmb_To.ItemHeight = 30;
-            cmb_To.Location = new Point(341, 128);
-            cmb_To.Margin = new Padding(3, 4, 3, 4);
-            cmb_To.Name = "cmb_To";
-            cmb_To.Size = new Size(276, 36);
-            cmb_To.TabIndex = 32;
-            cmb_To.SelectedValueChanged += cmb_To_SelectedValueChanged;
+            this.cmb_To.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_To.DropDownHeight = 175;
+            this.cmb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_To.IntegralHeight = false;
+            this.cmb_To.ItemHeight = 30;
+            this.cmb_To.Location = new System.Drawing.Point(298, 96);
+            this.cmb_To.Name = "cmb_To";
+            this.cmb_To.Size = new System.Drawing.Size(242, 36);
+            this.cmb_To.TabIndex = 32;
+            this.cmb_To.SelectedIndexChanged += new System.EventHandler(this.cmb_To_SelectedValueChanged);
             // 
             // label5
             // 
@@ -260,39 +259,37 @@
             // 
             // btn_Update
             // 
-            btn_Update.BorderRadius = 10;
-            btn_Update.DisabledState.BorderColor = Color.DarkGray;
-            btn_Update.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Update.FillColor = Color.DarkCyan;
-            btn_Update.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(1024, 116);
-            btn_Update.Margin = new Padding(3, 4, 3, 4);
-            btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(146, 60);
-            btn_Update.TabIndex = 29;
-            btn_Update.Text = "Sửa";
-            btn_Update.Click += btn_Update_Click;
+            this.btn_Update.BorderRadius = 10;
+            this.btn_Update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Update.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Update.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Update.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Update.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Location = new System.Drawing.Point(896, 87);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(128, 45);
+            this.btn_Update.TabIndex = 29;
+            this.btn_Update.Text = "Sửa";
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
-            btn_Add.BorderRadius = 10;
-            btn_Add.DisabledState.BorderColor = Color.DarkGray;
-            btn_Add.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Add.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Add.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Add.FillColor = Color.DarkCyan;
-            btn_Add.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Add.ForeColor = Color.White;
-            btn_Add.Location = new Point(1024, 29);
-            btn_Add.Margin = new Padding(3, 4, 3, 4);
-            btn_Add.Name = "btn_Add";
-            btn_Add.Size = new Size(146, 60);
-            btn_Add.TabIndex = 28;
-            btn_Add.Text = "Thêm";
-            btn_Add.Click += btn_Add_Click;
+            this.btn_Add.BorderRadius = 10;
+            this.btn_Add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Add.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Add.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
+            this.btn_Add.Location = new System.Drawing.Point(896, 22);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(128, 45);
+            this.btn_Add.TabIndex = 28;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txb_Search
             // 
@@ -314,69 +311,67 @@
             // 
             // dateTo
             // 
-            dateTo.Checked = true;
-            dateTo.FillColor = Color.FromArgb(224, 224, 224);
-            dateTo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTo.Format = DateTimePickerFormat.Long;
-            dateTo.Location = new Point(341, 205);
-            dateTo.Margin = new Padding(3, 4, 3, 4);
-            dateTo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dateTo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dateTo.Name = "dateTo";
-            dateTo.Size = new Size(277, 48);
-            dateTo.TabIndex = 24;
-            dateTo.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.Checked = true;
+            this.dateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dateTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTo.Location = new System.Drawing.Point(298, 154);
+            this.dateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(242, 36);
+            this.dateTo.TabIndex = 24;
+            this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // DateFrom
             // 
-            DateFrom.Checked = true;
-            DateFrom.FillColor = Color.FromArgb(224, 224, 224);
-            DateFrom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DateFrom.Format = DateTimePickerFormat.Long;
-            DateFrom.Location = new Point(30, 205);
-            DateFrom.Margin = new Padding(3, 4, 3, 4);
-            DateFrom.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateFrom.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateFrom.Name = "DateFrom";
-            DateFrom.Size = new Size(277, 48);
-            DateFrom.TabIndex = 23;
-            DateFrom.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.Checked = true;
+            this.DateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DateFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateFrom.Location = new System.Drawing.Point(26, 154);
+            this.DateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.Size = new System.Drawing.Size(242, 36);
+            this.DateFrom.TabIndex = 23;
+            this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
+            this.DateFrom.ValueChanged += new System.EventHandler(this.DateFrom_ValueChanged);
             // 
             // cmb_PlaneType
             // 
-            cmb_PlaneType.BackColor = Color.Transparent;
-            cmb_PlaneType.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_PlaneType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_PlaneType.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_PlaneType.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_PlaneType.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_PlaneType.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_PlaneType.ItemHeight = 30;
-            cmb_PlaneType.Location = new Point(31, 41);
-            cmb_PlaneType.Margin = new Padding(3, 4, 3, 4);
-            cmb_PlaneType.Name = "cmb_PlaneType";
-            cmb_PlaneType.Size = new Size(275, 36);
-            cmb_PlaneType.TabIndex = 21;
-            cmb_PlaneType.SelectedValueChanged += cmb_PlaneType_SelectedValueChanged;
+            this.cmb_PlaneType.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_PlaneType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_PlaneType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_PlaneType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_PlaneType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_PlaneType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_PlaneType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_PlaneType.ItemHeight = 30;
+            this.cmb_PlaneType.Location = new System.Drawing.Point(27, 31);
+            this.cmb_PlaneType.Name = "cmb_PlaneType";
+            this.cmb_PlaneType.Size = new System.Drawing.Size(241, 36);
+            this.cmb_PlaneType.TabIndex = 21;
+            this.cmb_PlaneType.SelectedIndexChanged += new System.EventHandler(this.cmb_PlaneType_SelectedValueChanged);
             // 
             // cmb_From
             // 
-            cmb_From.BackColor = Color.Transparent;
-            cmb_From.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_From.DropDownHeight = 175;
-            cmb_From.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_From.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_From.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_From.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_From.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_From.IntegralHeight = false;
-            cmb_From.ItemHeight = 30;
-            cmb_From.Location = new Point(31, 128);
-            cmb_From.Margin = new Padding(3, 4, 3, 4);
-            cmb_From.Name = "cmb_From";
-            cmb_From.Size = new Size(275, 36);
-            cmb_From.TabIndex = 19;
-            cmb_From.SelectedValueChanged += cmb_From_SelectedValueChanged;
+            this.cmb_From.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_From.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_From.DropDownHeight = 175;
+            this.cmb_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_From.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_From.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_From.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_From.IntegralHeight = false;
+            this.cmb_From.ItemHeight = 30;
+            this.cmb_From.Location = new System.Drawing.Point(27, 96);
+            this.cmb_From.Name = "cmb_From";
+            this.cmb_From.Size = new System.Drawing.Size(241, 36);
+            this.cmb_From.TabIndex = 19;
+            this.cmb_From.SelectedIndexChanged += new System.EventHandler(this.cmb_From_SelectedValueChanged);
             // 
             // dgv_chuyenbay
             // 
