@@ -17,15 +17,20 @@ namespace DuAn1
 {
     public partial class Fquanlynv : Form
     {
+        bool _check_name = false;
+        bool _check_mail = false;
+        bool _check_sdt = false;
         Validate _validate;
         INhanVienServices _inhanVienServices;
-        bool checkInfo = true;
         public Fquanlynv()
         {
             _validate = new Validate();
             InitializeComponent();
             _inhanVienServices = new NhanVienServices();
             loadData();
+            lb_ErrorEmail.Visible = false;
+            lb_ErrorName.Visible = false;
+            lb_ErrorPhone.Visible = false;
         }
         private void loadData()
         {
@@ -76,42 +81,44 @@ namespace DuAn1
             rbtn_onl.Checked = false;
             rbtn_off.Checked = false;
         }
-        public void checknhap()
+        public bool checknhap()
         {
             if (txt_Pass.Text == "" || txt_Email.Text == "" || txt_Ten.Text == "" /*|| txt_user.Text == "" */|| txt_Sdt.Text == "")
-                checkInfo = false;
-            checkInfo = true;
+                return false;
+            return true;
         }
         bool check = true;
         private void button1_Click(object sender, EventArgs e)
         {
-            checknhap();
-            if (checkInfo)
+            if (checknhap())
             {
                 staff staff = new staff();
                 check = !check;
                 if (check)
                 {
-                    bool checkDuplicate = false;
-                    foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.RoleId != 99))
+                    if (_check_name && _check_mail && _check_sdt)
                     {
-                        if (txt_Email.Text == item.Email || txt_Sdt.Text == item.Phone)
+                        bool checkDuplicate = false;
+                        foreach (var item in _inhanVienServices.getAllNhanVien().Where(c => c.RoleId != 99))
                         {
-                            checkDuplicate = true;
+                            if (txt_Email.Text == item.Email || txt_Sdt.Text == item.Phone)
+                            {
+                                checkDuplicate = true;
+                            }
                         }
-                    }
-                    if (!checkDuplicate)
-                    {
-                        staff.DisplayName = txt_Ten.Text;
-                        staff.Email = txt_Email.Text;
-                        staff.Phone = txt_Sdt.Text;
-                        staff.Password = _validate.ReversePass(txt_Pass.Text);
-                        MessageBox.Show(_inhanVienServices.addNhanVien(staff));
-                        loadData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Email hoặc số điện thoại đã được sử dụng để đăng kí!");
+                        if (!checkDuplicate)
+                        {
+                            staff.DisplayName = txt_Ten.Text;
+                            staff.Email = txt_Email.Text;
+                            staff.Phone = txt_Sdt.Text;
+                            staff.Password = _validate.ReversePass(txt_Pass.Text);
+                            MessageBox.Show(_inhanVienServices.addNhanVien(staff));
+                            loadData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Email hoặc số điện thoại đã được sử dụng để đăng kí!");
+                        }
                     }
                 }
                 else
@@ -205,6 +212,60 @@ namespace DuAn1
                 {
                     rbtn_off.Checked = true;
                 }
+            }
+        }
+
+        private void txt_Ten_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkName(txt_Ten.Text))
+            {
+                lb_ErrorName.Text = "";
+                lb_ErrorName.Visible = false;
+                _check_name = true;
+            }
+            else
+            {
+                _check_name = false;
+                lb_ErrorName.Text = "Không đúng định dạng email";
+                lb_ErrorName.Visible = true;
+                lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorName.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void txt_Sdt_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkPhoneNumber(txt_Sdt.Text))
+            {
+                lb_ErrorPhone.Text = "";
+                lb_ErrorPhone.Visible = false;
+                _check_sdt = true;
+            }
+            else
+            {
+                _check_sdt = false;
+                lb_ErrorPhone.Text = "Không đúng định dạng sô điện thoại";
+                lb_ErrorPhone.Visible = true;
+                lb_ErrorPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorPhone.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void txt_Email_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkEmail(txt_Email.Text))
+            {
+                lb_ErrorEmail.Text = "";
+                lb_ErrorEmail.Visible = false;
+                _check_mail = true;
+            }
+            else
+            {
+                _check_mail = false;
+                lb_ErrorEmail.Text = "Không đúng định dạng email";
+                lb_ErrorEmail.Visible = true;
+                lb_ErrorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorEmail.ForeColor = System.Drawing.Color.Red;
             }
         }
     }
