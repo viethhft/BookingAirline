@@ -90,11 +90,11 @@ namespace DuAn1
         bool check = true;
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checknhap())
+            check = !check;
+            if (check)
             {
                 staff staff = new staff();
-                check = !check;
-                if (check)
+                if (checknhap())
                 {
                     if (_check_name && _check_mail && _check_sdt)
                     {
@@ -123,19 +123,23 @@ namespace DuAn1
                 }
                 else
                 {
-                    txt_Ten.Enabled = true;
-                    txt_Email.Enabled = true;
-                    txt_Pass.Enabled = true;
-                    txt_Sdt.Enabled = true;
-                    txt_Email.Text = "";
-                    txt_Pass.Text = "";
-                    txt_Ten.Text = "";
-                    txt_Sdt.Text = "";
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                txt_Ten.Enabled = true;
+                txt_Email.Enabled = true;
+                txt_Pass.Enabled = true;
+                txt_Sdt.Enabled = true;
+                txt_Email.Text = "";
+                txt_Pass.Text = "";
+                txt_Ten.Text = "";
+                txt_Sdt.Text = "";
+                lb_ErrorEmail.Visible = false;
+                lb_ErrorName.Visible = false;
+                lb_ErrorPhone.Visible = false;
+
             }
         }
 
@@ -226,7 +230,7 @@ namespace DuAn1
             else
             {
                 _check_name = false;
-                lb_ErrorName.Text = "Không đúng định dạng email";
+                lb_ErrorName.Text = "Không đúng định dạng tên";
                 lb_ErrorName.Visible = true;
                 lb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorName.ForeColor = System.Drawing.Color.Red;
