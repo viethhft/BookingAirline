@@ -28,224 +28,235 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            groupBox2 = new GroupBox();
-            label16 = new Label();
-            label15 = new Label();
-            label14 = new Label();
-            label13 = new Label();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1052, 72);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1052, 72);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.DarkCyan;
-            label3.Location = new Point(941, 32);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 14);
-            label3.TabIndex = 2;
-            label3.Text = "TÌNH TRẠNG";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.Location = new System.Drawing.Point(941, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 14);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "TÌNH TRẠNG";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(633, 32);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 14);
-            label2.TabIndex = 1;
-            label2.Text = "ĐIỂM DỪNG";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(633, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ĐIỂM DỪNG";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.DarkCyan;
-            label1.Location = new Point(24, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(201, 19);
-            label1.TabIndex = 0;
-            label1.Text = "THỜI GIAN KHỞI HÀNH";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.Location = new System.Drawing.Point(24, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(label16);
-            groupBox2.Controls.Add(label15);
-            groupBox2.Controls.Add(label14);
-            groupBox2.Controls.Add(label13);
-            groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(label11);
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(13, 123);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1052, 254);
-            groupBox2.TabIndex = 3;
-            groupBox2.TabStop = false;
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(13, 123);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1052, 254);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(952, 182);
-            label16.Name = "label16";
-            label16.Size = new Size(34, 15);
-            label16.TabIndex = 12;
-            label16.Text = "07:15";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(952, 182);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(34, 15);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "07:15";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(642, 182);
-            label15.Name = "label15";
-            label15.Size = new Size(34, 15);
-            label15.TabIndex = 11;
-            label15.Text = "05:00";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(642, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(34, 15);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "05:00";
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(952, 134);
-            label14.Name = "label14";
-            label14.Size = new Size(28, 15);
-            label14.TabIndex = 10;
-            label14.Text = "Đến";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(952, 134);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 15);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Đến";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(633, 134);
-            label13.Name = "label13";
-            label13.Size = new Size(61, 15);
-            label13.TabIndex = 9;
-            label13.Text = "Khởi hành";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(633, 134);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 15);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Khởi hành";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(940, 93);
-            label12.Name = "label12";
-            label12.Size = new Size(56, 15);
-            label12.TabIndex = 8;
-            label12.Text = "Đúng giờ";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(940, 93);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 15);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Đúng giờ";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(633, 93);
-            label11.Name = "label11";
-            label11.Size = new Size(56, 15);
-            label11.TabIndex = 7;
-            label11.Text = "Đúng giờ";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(633, 93);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 15);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Đúng giờ";
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(23, 143);
-            label10.Name = "label10";
-            label10.Size = new Size(114, 15);
-            label10.TabIndex = 6;
-            label10.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 143);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 15);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(24, 93);
-            label9.Name = "label9";
-            label9.Size = new Size(88, 15);
-            label9.TabIndex = 5;
-            label9.Text = "Mã chuyến bay";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 15);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Mã chuyến bay";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(24, 61);
-            label8.Name = "label8";
-            label8.Size = new Size(72, 15);
-            label8.TabIndex = 4;
-            label8.Text = "tên máy bay";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 61);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 15);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "tên máy bay";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(151, 32);
-            label7.Name = "label7";
-            label7.Size = new Size(77, 15);
-            label7.TabIndex = 3;
-            label7.Text = "thời gian đến";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(151, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 15);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "thời gian đến";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(940, 46);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 2;
-            label4.Text = "đúng giờ";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(940, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "đúng giờ";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(633, 46);
-            label5.Name = "label5";
-            label5.Size = new Size(71, 15);
-            label5.TabIndex = 1;
-            label5.Text = "BAY THẲNG";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(633, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "BAY THẲNG";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(24, 32);
-            label6.Name = "label6";
-            label6.Size = new Size(67, 15);
-            label6.TabIndex = 0;
-            label6.Text = "thời gian đi";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "thời gian đi";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 514);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1069, 42);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // FTinhTrangChuyenBaySoHieuChil
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1076, 422);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Name = "FTinhTrangChuyenBaySoHieuChil";
-            Text = "Tình trạng chuyến bay theo số hiệu";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1076, 597);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FTinhTrangChuyenBaySoHieuChil";
+            this.Text = "Tình trạng chuyến bay theo số hiệu";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -268,5 +279,6 @@
         private Label label10;
         private Label label16;
         private Label label15;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
