@@ -19,12 +19,12 @@ namespace DuAn1.Views
     public partial class fDky : Form
     {
 
-        bool _check_name = true;
-        bool _check_mail = true;
-        bool _check_ma = true;
-        bool _check_sdt = true;
-        bool _check_matkhau = true;
-        bool _check_matkhau1 = true;
+        bool _check_name = false;
+        bool _check_mail = false;
+        bool _check_ma = false;
+        bool _check_sdt = false;
+        bool _check_matkhau = false;
+        bool _check_matkhau1 = false;
         ICustomerServices _dangKyService;
         IStaffServices _staffServices;
         Validate _validate;

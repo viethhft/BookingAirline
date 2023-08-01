@@ -42,7 +42,7 @@ namespace GUI.Views.View_User
             InitializeComponent();
             btn_pay.Enabled = false;
         }
-        public FChonGheSmallSize(string code, string loaighe, long idmb) : this()
+        public FChonGheSmallSize(string code, string loaighe) : this()
         {
             _loaighe = loaighe;
             _code = code;
@@ -77,33 +77,33 @@ namespace GUI.Views.View_User
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
+                    chair.CheckedChanged += Chair_CheckedChanged;
                     var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
                     if (check == null)
                     {
-                        chair.Enabled = true;
+                        if (dem < 20)
+                        {
+                            if (loaighe == "TG")
+                            {
+                                chair.Enabled = false;
+                            }
+                            chair.BackColor = Color.DarkCyan;
+                        }
+                        else
+                        {
+                            if (loaighe == "PT")
+                            {
+                                chair.Enabled = false;
+                            }
+                            chair.BackColor = Color.Goldenrod;
+                        }
                     }
                     else
                     {
+                        chair.BackColor = Color.Orange;
                         chair.Enabled = false;
                     }
 
-                    chair.CheckedChanged += Chair_CheckedChanged;
-                    if (dem < 10)
-                    {
-                        if (loaighe == "TG")
-                        {
-                            chair.Enabled = false;
-                        }
-                        chair.BackColor = Color.DarkCyan;
-                    }
-                    else
-                    {
-                        if (loaighe == "PT")
-                        {
-                            chair.Enabled = false;
-                        }
-                        chair.BackColor = Color.Goldenrod;
-                    }
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
                     lb.Location = locaName;
@@ -157,6 +157,7 @@ namespace GUI.Views.View_User
 
         public FChonGheSmallSize(string code) : this()
         {
+            _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
@@ -185,18 +186,9 @@ namespace GUI.Views.View_User
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
                     Image image = Image.FromFile(@"..//..//..//Resources//chair.png");
                     chair.Image = image;
-                    chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
-                    if (check == null)
-                    {
-                        chair.Enabled = true;
-                    }
-                    else
-                    {
-                        chair.Enabled = false;
-                    }
+                    chair.Name = item.SeatCode;
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
@@ -206,6 +198,17 @@ namespace GUI.Views.View_User
                     {
                         chair.BackColor = Color.Goldenrod;
                     }
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    if (check == null)
+                    {
+                        chair.Enabled = true;
+                    }
+                    else
+                    {
+                        chair.BackColor = Color.Orange;
+                        chair.Enabled = false;
+                    }
+
                     Label lb = new Label();
                     lb.Text = $"{so}{hang[tt]}";
                     lb.Location = locaName;
@@ -227,6 +230,7 @@ namespace GUI.Views.View_User
                 }
                 dem++;
             }
+
 
         }
         private void cb_checkacp_CheckedChanged(object sender, EventArgs e)

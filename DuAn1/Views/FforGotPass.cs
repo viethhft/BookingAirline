@@ -19,10 +19,10 @@ namespace DuAn1.Views
 {
     public partial class FforGotPass : Form
     {
-        bool _check_email = true;
-        bool _check_ma = true;
-        bool _check_pass = true;
-        bool _check_passNew = true;
+        bool _check_email = false;
+        bool _check_ma = false;
+        bool _check_pass = false;
+        bool _check_passNew = false;
         ICustomerServices _services;
         Validate _validate;
         string code_otp = "";
