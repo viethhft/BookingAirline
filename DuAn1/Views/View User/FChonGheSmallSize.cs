@@ -78,9 +78,9 @@ namespace GUI.Views.View_User
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
-                    chair.Name = item.Id.ToString();
+                    chair.Name = item.SeatCode;
                     var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
-                    var check = _sfServices.Get().Where(c => (int)c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == fl.Id && c.Seatid == item.Id).FirstOrDefault();
                     if (check.Status == 1)
                     {
                         chair.Enabled = true;
@@ -217,7 +217,7 @@ namespace GUI.Views.View_User
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
                     Image image = Image.FromFile(@"..//..//..//Resources//chair.png");
                     chair.Image = image;
-                    chair.Name = item.Id.ToString();
+                    chair.Name = item.SeatCode;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
                     var fl = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
