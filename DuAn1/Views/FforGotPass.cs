@@ -35,7 +35,18 @@ namespace DuAn1.Views
             InitializeComponent();
             btn_success.Enabled = false;
         }
-
+        void reset()
+        {
+            tbx_email.Text = "";
+            tbx_ma.Text = "";
+            tbx_pass2.Text = "";
+            txb_pass1.Text = "";
+            lb_errorCode.Visible = false;
+            lb_errorEmail.Visible = false;
+            lb_errorPass.Visible = false;
+            lb_ErrorPassNew.Visible = false;
+            time.Visible = false;
+        }
         private async void btn_sendCode_Click(object sender, EventArgs e)
         {
             try
@@ -214,6 +225,11 @@ namespace DuAn1.Views
                 lb_ErrorPassNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorPassNew.ForeColor = System.Drawing.Color.Red;
             }
+        }
+
+        private void FforGotPass_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            reset();
         }
     }
 }

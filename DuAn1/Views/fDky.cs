@@ -53,12 +53,14 @@ namespace DuAn1.Views
             cbx_gender.Text = "";
             txb_Otp.Text = "";
             time.Visible = false;
+            btn_sign.Visible = false;
             lb_ErrorEmail.Visible = false;
             lb_ErrorName.Visible = false;
             lb_ErrorPhoneNumber.Visible = false;
             lb_ErrorPassAgain.Visible = false;
             lb_ErrorOtp.Visible = false;
             lb_ErrorPass1.Visible = false;
+            lb_ErrorDate.Visible = false;
         }
         private bool check_duplicate_mail(string email)
         {
