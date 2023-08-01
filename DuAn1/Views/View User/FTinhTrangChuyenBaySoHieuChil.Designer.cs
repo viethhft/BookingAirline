@@ -240,7 +240,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "FTinhTrangChuyenBaySoHieuChil";
-            Text = "FTinhTrangChuyenBayChil";
+            Text = "Tình trạng chuyến bay theo số hiệu";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

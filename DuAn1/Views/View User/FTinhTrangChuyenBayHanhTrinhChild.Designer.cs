@@ -97,7 +97,7 @@
             Controls.Add(groupBox1);
             Name = "FTinhTrangChuyenBayHanhTrinhChild";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "FTinhTrangChuyenBayHanhTrinhChild";
+            Text = "Tình trạng chuyến bay theo hành trình";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
