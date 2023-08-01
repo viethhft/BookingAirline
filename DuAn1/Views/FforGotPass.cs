@@ -136,6 +136,7 @@ namespace DuAn1.Views
                             MessageBox.Show(_services.Update(customer));
                             code_otp = _validate.randomCode();
                             reset();
+                            btn_success.Enabled = false;
                             this.Close();
                         }
                         else
