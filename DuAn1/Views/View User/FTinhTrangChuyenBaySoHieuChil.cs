@@ -17,7 +17,7 @@ namespace GUI.Views.View_User
         {
             InitializeComponent();
         }
-        public FTinhTrangChuyenBaySoHieuChil(List<Flight> flights):this()
+        public FTinhTrangChuyenBaySoHieuChil(List<Flight> flights) : this()
         {
 
         }

@@ -109,7 +109,7 @@ namespace DuAn1.Views
         }
         string ReverseCodeFlight()
         {
-            string code="";
+            string code = "";
             int count = 0;
             foreach (var item in _flight.get_list())
             {
@@ -117,7 +117,7 @@ namespace DuAn1.Views
                 {
                     if (count < 9)
                     {
-                        if (item.FlightCode==$"VN00{count+1}")
+                        if (item.FlightCode == $"VN00{count + 1}")
                         {
                             count++;
                         }
@@ -152,7 +152,7 @@ namespace DuAn1.Views
                     }
                 }
             }
-            
+
             return code;
         }
         bool check_timeDup()

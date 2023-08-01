@@ -64,27 +64,33 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkCyan;
             label3.Location = new Point(941, 32);
             label3.Name = "label3";
-            label3.Size = new Size(75, 15);
+            label3.Size = new Size(78, 14);
             label3.TabIndex = 2;
             label3.Text = "TÌNH TRẠNG";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkCyan;
             label2.Location = new Point(633, 32);
             label2.Name = "label2";
-            label2.Size = new Size(71, 15);
+            label2.Size = new Size(72, 14);
             label2.TabIndex = 1;
             label2.Text = "ĐIỂM DỪNG";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 32);
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(24, 28);
             label1.Name = "label1";
-            label1.Size = new Size(134, 15);
+            label1.Size = new Size(201, 19);
             label1.TabIndex = 0;
             label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
