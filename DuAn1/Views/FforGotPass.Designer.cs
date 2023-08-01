@@ -28,347 +28,355 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FforGotPass));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_errorCode = new System.Windows.Forms.Label();
-            this.lb_errorPass = new System.Windows.Forms.Label();
-            this.lb_errorEmail = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lb_Seconds = new System.Windows.Forms.Label();
-            this.lb_Minutes = new System.Windows.Forms.Label();
-            this.btn_sendCode = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.tbx_pass2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.txb_pass1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbx_ma = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tbx_email = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_success = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.countDown = new System.Windows.Forms.Timer(this.components);
-            this.lb_ErrorPassNew = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.time.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            lb_ErrorPassNew = new Label();
+            lb_errorCode = new Label();
+            lb_errorPass = new Label();
+            lb_errorEmail = new Label();
+            time = new Panel();
+            label3 = new Label();
+            lb_Seconds = new Label();
+            lb_Minutes = new Label();
+            btn_sendCode = new Button();
+            pictureBox2 = new PictureBox();
+            label2 = new Label();
+            pictureBox8 = new PictureBox();
+            tbx_pass2 = new TextBox();
+            label8 = new Label();
+            pictureBox7 = new PictureBox();
+            txb_pass1 = new TextBox();
+            label7 = new Label();
+            tbx_ma = new TextBox();
+            pictureBox4 = new PictureBox();
+            tbx_email = new TextBox();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
+            btn_success = new Button();
+            label1 = new Label();
+            countDown = new System.Windows.Forms.Timer(components);
+            panel1.SuspendLayout();
+            time.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lb_ErrorPassNew);
-            this.panel1.Controls.Add(this.lb_errorCode);
-            this.panel1.Controls.Add(this.lb_errorPass);
-            this.panel1.Controls.Add(this.lb_errorEmail);
-            this.panel1.Controls.Add(this.time);
-            this.panel1.Controls.Add(this.btn_sendCode);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.tbx_pass2);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.txb_pass1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.tbx_ma);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.tbx_email);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btn_success);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(555, 131);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 509);
-            this.panel1.TabIndex = 3;
-            // 
-            // lb_errorCode
-            // 
-            this.lb_errorCode.AutoSize = true;
-            this.lb_errorCode.Location = new System.Drawing.Point(129, 246);
-            this.lb_errorCode.Name = "lb_errorCode";
-            this.lb_errorCode.Size = new System.Drawing.Size(38, 15);
-            this.lb_errorCode.TabIndex = 40;
-            this.lb_errorCode.Text = "label9";
-            this.lb_errorCode.Visible = false;
-            // 
-            // lb_errorPass
-            // 
-            this.lb_errorPass.AutoSize = true;
-            this.lb_errorPass.Location = new System.Drawing.Point(129, 403);
-            this.lb_errorPass.Name = "lb_errorPass";
-            this.lb_errorPass.Size = new System.Drawing.Size(38, 15);
-            this.lb_errorPass.TabIndex = 39;
-            this.lb_errorPass.Text = "label6";
-            this.lb_errorPass.Visible = false;
-            // 
-            // lb_errorEmail
-            // 
-            this.lb_errorEmail.AutoSize = true;
-            this.lb_errorEmail.Location = new System.Drawing.Point(129, 162);
-            this.lb_errorEmail.Name = "lb_errorEmail";
-            this.lb_errorEmail.Size = new System.Drawing.Size(38, 15);
-            this.lb_errorEmail.TabIndex = 38;
-            this.lb_errorEmail.Text = "label5";
-            this.lb_errorEmail.Visible = false;
-            // 
-            // time
-            // 
-            this.time.Controls.Add(this.label3);
-            this.time.Controls.Add(this.lb_Seconds);
-            this.time.Controls.Add(this.lb_Minutes);
-            this.time.Location = new System.Drawing.Point(251, 215);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(87, 31);
-            this.time.TabIndex = 4;
-            this.time.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = ":";
-            // 
-            // lb_Seconds
-            // 
-            this.lb_Seconds.AutoSize = true;
-            this.lb_Seconds.Location = new System.Drawing.Point(44, 9);
-            this.lb_Seconds.Name = "lb_Seconds";
-            this.lb_Seconds.Size = new System.Drawing.Size(19, 15);
-            this.lb_Seconds.TabIndex = 1;
-            this.lb_Seconds.Text = "00";
-            // 
-            // lb_Minutes
-            // 
-            this.lb_Minutes.AutoSize = true;
-            this.lb_Minutes.Location = new System.Drawing.Point(3, 9);
-            this.lb_Minutes.Name = "lb_Minutes";
-            this.lb_Minutes.Size = new System.Drawing.Size(19, 15);
-            this.lb_Minutes.TabIndex = 0;
-            this.lb_Minutes.Text = "00";
-            // 
-            // btn_sendCode
-            // 
-            this.btn_sendCode.BackColor = System.Drawing.Color.White;
-            this.btn_sendCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sendCode.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_sendCode.Location = new System.Drawing.Point(253, 215);
-            this.btn_sendCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_sendCode.Name = "btn_sendCode";
-            this.btn_sendCode.Size = new System.Drawing.Size(79, 31);
-            this.btn_sendCode.TabIndex = 36;
-            this.btn_sendCode.Text = "Gửi mã";
-            this.btn_sendCode.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_password_64;
-            this.pictureBox2.Location = new System.Drawing.Point(129, 187);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 35;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(174, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 18);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Mã";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox8.Image = global::GUI.Properties.Resources.icons8_password_50;
-            this.pictureBox8.Location = new System.Drawing.Point(129, 346);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 29;
-            this.pictureBox8.TabStop = false;
-            // 
-            // tbx_pass2
-            // 
-            this.tbx_pass2.Location = new System.Drawing.Point(129, 378);
-            this.tbx_pass2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbx_pass2.Name = "tbx_pass2";
-            this.tbx_pass2.Size = new System.Drawing.Size(200, 23);
-            this.tbx_pass2.TabIndex = 28;
-            this.tbx_pass2.UseSystemPasswordChar = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label8.Location = new System.Drawing.Point(174, 351);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 18);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Nhập lại mật khẩu";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox7.Image = global::GUI.Properties.Resources.icons8_password_50;
-            this.pictureBox7.Location = new System.Drawing.Point(129, 266);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 26;
-            this.pictureBox7.TabStop = false;
-            // 
-            // txb_pass1
-            // 
-            this.txb_pass1.Location = new System.Drawing.Point(129, 298);
-            this.txb_pass1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_pass1.Name = "txb_pass1";
-            this.txb_pass1.Size = new System.Drawing.Size(203, 23);
-            this.txb_pass1.TabIndex = 25;
-            this.txb_pass1.UseSystemPasswordChar = true;
-            this.txb_pass1.TextChanged += new System.EventHandler(this.txb_pass1_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(171, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 18);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Mật khẩu mới";
-            // 
-            // tbx_ma
-            // 
-            this.tbx_ma.Location = new System.Drawing.Point(129, 219);
-            this.tbx_ma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbx_ma.Name = "tbx_ma";
-            this.tbx_ma.Size = new System.Drawing.Size(118, 23);
-            this.tbx_ma.TabIndex = 16;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.ErrorImage = global::GUI.Properties.Resources.icons8_name_50;
-            this.pictureBox4.Image = global::GUI.Properties.Resources.icons8_email_50;
-            this.pictureBox4.Location = new System.Drawing.Point(129, 105);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            // 
-            // tbx_email
-            // 
-            this.tbx_email.Location = new System.Drawing.Point(129, 137);
-            this.tbx_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbx_email.Name = "tbx_email";
-            this.tbx_email.Size = new System.Drawing.Size(200, 23);
-            this.tbx_email.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(174, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 18);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Email";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_airline_50;
-            this.pictureBox1.Location = new System.Drawing.Point(313, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_success
-            // 
-            this.btn_success.BackColor = System.Drawing.Color.White;
-            this.btn_success.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_success.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_success.Location = new System.Drawing.Point(171, 423);
-            this.btn_success.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_success.Name = "btn_success";
-            this.btn_success.Size = new System.Drawing.Size(116, 30);
-            this.btn_success.TabIndex = 8;
-            this.btn_success.Text = "Xác nhận";
-            this.btn_success.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(126, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "QUÊN MẬT KHẨU";
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lb_ErrorPassNew);
+            panel1.Controls.Add(lb_errorCode);
+            panel1.Controls.Add(lb_errorPass);
+            panel1.Controls.Add(lb_errorEmail);
+            panel1.Controls.Add(time);
+            panel1.Controls.Add(btn_sendCode);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(tbx_pass2);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(txb_pass1);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(tbx_ma);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(tbx_email);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btn_success);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(555, 131);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(461, 509);
+            panel1.TabIndex = 3;
             // 
             // lb_ErrorPassNew
             // 
-            this.lb_ErrorPassNew.AutoSize = true;
-            this.lb_ErrorPassNew.Location = new System.Drawing.Point(131, 324);
-            this.lb_ErrorPassNew.Name = "lb_ErrorPassNew";
-            this.lb_ErrorPassNew.Size = new System.Drawing.Size(38, 15);
-            this.lb_ErrorPassNew.TabIndex = 41;
-            this.lb_ErrorPassNew.Text = "label5";
+            lb_ErrorPassNew.AutoSize = true;
+            lb_ErrorPassNew.Location = new Point(131, 324);
+            lb_ErrorPassNew.Name = "lb_ErrorPassNew";
+            lb_ErrorPassNew.Size = new Size(38, 15);
+            lb_ErrorPassNew.TabIndex = 41;
+            lb_ErrorPassNew.Text = "label5";
+            // 
+            // lb_errorCode
+            // 
+            lb_errorCode.AutoSize = true;
+            lb_errorCode.Location = new Point(129, 246);
+            lb_errorCode.Name = "lb_errorCode";
+            lb_errorCode.Size = new Size(38, 15);
+            lb_errorCode.TabIndex = 40;
+            lb_errorCode.Text = "label9";
+            lb_errorCode.Visible = false;
+            // 
+            // lb_errorPass
+            // 
+            lb_errorPass.AutoSize = true;
+            lb_errorPass.Location = new Point(129, 403);
+            lb_errorPass.Name = "lb_errorPass";
+            lb_errorPass.Size = new Size(38, 15);
+            lb_errorPass.TabIndex = 39;
+            lb_errorPass.Text = "label6";
+            lb_errorPass.Visible = false;
+            // 
+            // lb_errorEmail
+            // 
+            lb_errorEmail.AutoSize = true;
+            lb_errorEmail.Location = new Point(129, 162);
+            lb_errorEmail.Name = "lb_errorEmail";
+            lb_errorEmail.Size = new Size(38, 15);
+            lb_errorEmail.TabIndex = 38;
+            lb_errorEmail.Text = "label5";
+            lb_errorEmail.Visible = false;
+            // 
+            // time
+            // 
+            time.Controls.Add(label3);
+            time.Controls.Add(lb_Seconds);
+            time.Controls.Add(lb_Minutes);
+            time.Location = new Point(253, 215);
+            time.Name = "time";
+            time.Size = new Size(87, 31);
+            time.TabIndex = 4;
+            time.Visible = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(28, 8);
+            label3.Name = "label3";
+            label3.Size = new Size(10, 15);
+            label3.TabIndex = 2;
+            label3.Text = ":";
+            // 
+            // lb_Seconds
+            // 
+            lb_Seconds.AutoSize = true;
+            lb_Seconds.Location = new Point(44, 9);
+            lb_Seconds.Name = "lb_Seconds";
+            lb_Seconds.Size = new Size(19, 15);
+            lb_Seconds.TabIndex = 1;
+            lb_Seconds.Text = "00";
+            // 
+            // lb_Minutes
+            // 
+            lb_Minutes.AutoSize = true;
+            lb_Minutes.Location = new Point(3, 9);
+            lb_Minutes.Name = "lb_Minutes";
+            lb_Minutes.Size = new Size(19, 15);
+            lb_Minutes.TabIndex = 0;
+            lb_Minutes.Text = "00";
+            // 
+            // btn_sendCode
+            // 
+            btn_sendCode.BackColor = Color.White;
+            btn_sendCode.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_sendCode.ForeColor = Color.RoyalBlue;
+            btn_sendCode.Location = new Point(253, 215);
+            btn_sendCode.Margin = new Padding(3, 2, 3, 2);
+            btn_sendCode.Name = "btn_sendCode";
+            btn_sendCode.Size = new Size(79, 31);
+            btn_sendCode.TabIndex = 36;
+            btn_sendCode.Text = "Gửi mã";
+            btn_sendCode.UseVisualStyleBackColor = false;
+            btn_sendCode.Click += btn_sendCode_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox2.Image = GUI.Properties.Resources.icons8_password_64;
+            pictureBox2.Location = new Point(129, 187);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 35;
+            pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(174, 192);
+            label2.Name = "label2";
+            label2.Size = new Size(30, 18);
+            label2.TabIndex = 34;
+            label2.Text = "Mã";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox8.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox8.Location = new Point(129, 346);
+            pictureBox8.Margin = new Padding(3, 2, 3, 2);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(39, 28);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 29;
+            pictureBox8.TabStop = false;
+            // 
+            // tbx_pass2
+            // 
+            tbx_pass2.Location = new Point(129, 378);
+            tbx_pass2.Margin = new Padding(3, 2, 3, 2);
+            tbx_pass2.Name = "tbx_pass2";
+            tbx_pass2.Size = new Size(200, 23);
+            tbx_pass2.TabIndex = 28;
+            tbx_pass2.UseSystemPasswordChar = true;
+            tbx_pass2.TextChanged += txb_pass1_TextChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.RoyalBlue;
+            label8.Location = new Point(174, 351);
+            label8.Name = "label8";
+            label8.Size = new Size(132, 18);
+            label8.TabIndex = 27;
+            label8.Text = "Nhập lại mật khẩu";
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox7.Image = GUI.Properties.Resources.icons8_password_50;
+            pictureBox7.Location = new Point(129, 266);
+            pictureBox7.Margin = new Padding(3, 2, 3, 2);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(39, 28);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 26;
+            pictureBox7.TabStop = false;
+            // 
+            // txb_pass1
+            // 
+            txb_pass1.Location = new Point(129, 298);
+            txb_pass1.Margin = new Padding(3, 2, 3, 2);
+            txb_pass1.Name = "txb_pass1";
+            txb_pass1.Size = new Size(203, 23);
+            txb_pass1.TabIndex = 25;
+            txb_pass1.UseSystemPasswordChar = true;
+            txb_pass1.TextChanged += txb_pass1_TextChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.RoyalBlue;
+            label7.Location = new Point(171, 271);
+            label7.Name = "label7";
+            label7.Size = new Size(103, 18);
+            label7.TabIndex = 24;
+            label7.Text = "Mật khẩu mới";
+            // 
+            // tbx_ma
+            // 
+            tbx_ma.Location = new Point(129, 219);
+            tbx_ma.Margin = new Padding(3, 2, 3, 2);
+            tbx_ma.Name = "tbx_ma";
+            tbx_ma.Size = new Size(118, 23);
+            tbx_ma.TabIndex = 16;
+            tbx_ma.TextChanged += tbx_ma_TextChanged;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.ErrorImage = GUI.Properties.Resources.icons8_name_50;
+            pictureBox4.Image = GUI.Properties.Resources.icons8_email_50;
+            pictureBox4.Location = new Point(129, 105);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(39, 28);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 14;
+            pictureBox4.TabStop = false;
+            // 
+            // tbx_email
+            // 
+            tbx_email.Location = new Point(129, 137);
+            tbx_email.Margin = new Padding(3, 2, 3, 2);
+            tbx_email.Name = "tbx_email";
+            tbx_email.Size = new Size(200, 23);
+            tbx_email.TabIndex = 13;
+            tbx_email.TextChanged += tbx_email_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.RoyalBlue;
+            label4.Location = new Point(174, 110);
+            label4.Name = "label4";
+            label4.Size = new Size(48, 18);
+            label4.TabIndex = 12;
+            label4.Text = "Email";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = GUI.Properties.Resources.icons8_airline_50;
+            pictureBox1.Location = new Point(313, 21);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // btn_success
+            // 
+            btn_success.BackColor = Color.White;
+            btn_success.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_success.ForeColor = Color.RoyalBlue;
+            btn_success.Location = new Point(171, 423);
+            btn_success.Margin = new Padding(3, 2, 3, 2);
+            btn_success.Name = "btn_success";
+            btn_success.Size = new Size(116, 30);
+            btn_success.TabIndex = 8;
+            btn_success.Text = "Xác nhận";
+            btn_success.UseVisualStyleBackColor = false;
+            btn_success.Click += btn_success_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Location = new Point(126, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(181, 24);
+            label1.TabIndex = 0;
+            label1.Text = "QUÊN MẬT KHẨU";
+            // 
+            // countDown
+            // 
+            countDown.Tick += countDown_Tick;
             // 
             // FforGotPass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GUI.Properties.Resources.Rectangle_2;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FforGotPass";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quên mật khẩu";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.time.ResumeLayout(false);
-            this.time.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = GUI.Properties.Resources.Rectangle_2;
+            ClientSize = new Size(1064, 681);
+            Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FforGotPass";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Quên mật khẩu";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            time.ResumeLayout(false);
+            time.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

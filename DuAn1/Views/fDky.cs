@@ -227,7 +227,7 @@ namespace DuAn1.Views
                 }
             }
 
-            if (txb_email.Text != "" && check&& _check_mail)
+            if (txb_email.Text != "" && check && _check_mail)
             {
                 CountDown.Interval = 1000;
                 CountDown.Start();
@@ -317,7 +317,7 @@ namespace DuAn1.Views
             if (_validate.checkpass(tbx_pass1.Text))
             {
                 lb_ErrorPass1.Visible = false;
-                _check_matkhau1= true;
+                _check_matkhau1 = true;
             }
             else
             {
