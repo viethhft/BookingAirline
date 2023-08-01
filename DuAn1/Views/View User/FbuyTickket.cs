@@ -95,78 +95,6 @@ namespace GUI.Views.View_User
             btn_discount.Visible = false;
         }
 
-        private void FbuyTickket_Click(object sender, EventArgs e)
-        {
-            if (check_button)
-            {
-                if (check_place())
-                {
-                    //if (check_dateFrom() == 1 || check_dateFrom() == 0)
-                    //{
-                    DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
-                    var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTo == cbb_To.Text && c.DateFlight == date).ToList();
-                    if (search.Count > 0)
-                    {
-                        FBuyTicketChild a = new FBuyTicketChild(search);
-                        this.Hide();
-                        a.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm được chuyến bay phù hợp");
-                    }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
-                    //}
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến");
-                }
-            }
-            else
-            {
-                if (check_place())
-                {
-                    if (check_date() == 1 || check_date() == 0)
-                    {
-                        if (check_dateFrom() == 1 || check_dateFrom() == 0)
-                        {
-                            DateTime date1 = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
-                            DateTime date2 = new DateTime(date_To.Value.Year, date_To.Value.Month, date_To.Value.Day);
-                            var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
-                            if (search.Count > 0)
-                            {
-                                FBuyTicketChild a = new FBuyTicketChild(search);
-                                this.Hide();
-                                a.ShowDialog();
-                                this.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không tìm được chuyến bay phù hợp");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ngày đi chọn phải nhỏ hơn ngày đến");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến");
-                }
-            }
-        }
-
         private void btn_oneWay_Click(object sender, EventArgs e)
         {
             check_button = true;
@@ -251,5 +179,76 @@ namespace GUI.Views.View_User
             }
         }
 
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            if (check_button)
+            {
+                if (check_place())
+                {
+                    //if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                    //{
+                    DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+                    var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
+                    if (search.Count > 0)
+                    {
+                        FBuyTicketChild a = new FBuyTicketChild(search);
+                        this.Hide();
+                        a.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến");
+                }
+            }
+            else
+            {
+                if (check_place())
+                {
+                    if (check_date() == 1 || check_date() == 0)
+                    {
+                        if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                        {
+                            DateTime date1 = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+                            DateTime date2 = new DateTime(date_To.Value.Year, date_To.Value.Month, date_To.Value.Day);
+                            var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
+                            if (search.Count > 0)
+                            {
+                                FBuyTicketChild a = new FBuyTicketChild(search);
+                                this.Hide();
+                                a.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ngày đi chọn phải nhỏ hơn ngày đến");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến");
+                }
+            }
+        }
     }
 }

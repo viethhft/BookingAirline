@@ -55,7 +55,7 @@ namespace GUI.Views.View_User
                 namePlane.Location = pointPlane;
                 codeFlight.Text = item.FlightCode.ToString();
                 codeFlight.Location = pointFlight;
-                place.Text = $"{item.GoFrom} - {item.GoTo}";
+                place.Text = $"{item.GoFrom} - {item.GoTom}";
                 place.Location = pointPlace;
                 place.Size = new Size(300, 20);
                 stopPoint.Text = "Bay thẳng";

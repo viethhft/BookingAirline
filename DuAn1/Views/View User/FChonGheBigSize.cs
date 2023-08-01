@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,7 @@ namespace GUI.Views.View_User
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
         IClassServices _classServices;
+        SeatFlightSer _sfServices;
         public string mabay = "";
         public List<string> maghe;
         public FChonGheBigSize()
@@ -29,6 +31,7 @@ namespace GUI.Views.View_User
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
             maghe = new List<string>();
+            _sfServices = new();
             InitializeComponent();
             btn_pay.Enabled = false;
         }
@@ -74,14 +77,14 @@ namespace GUI.Views.View_User
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
                     var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
-                    if (check.Status==1)
-                    {
-                        chair.Enabled = true;
-                    }
-                    else
-                    {
-                        chair.Enabled = false;
-                    }
+                    //if (check.Status==1)
+                    //{
+                    //    chair.Enabled = true;
+                    //}
+                    //else
+                    //{
+                    //    chair.Enabled = false;
+                    //}
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 35)
                     {
@@ -120,7 +123,6 @@ namespace GUI.Views.View_User
                 }
                 dem++;
             }
-
         }
         public FChonGheBigSize(string code) : this()
         {
@@ -157,14 +159,14 @@ namespace GUI.Views.View_User
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
                     var check = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == item.SeatCode).FirstOrDefault();
-                    if (check.Status == 1)
-                    {
-                        chair.Enabled = true;
-                    }
-                    else
-                    {
-                        chair.Enabled = false;
-                    }
+                    //if (check.Status == 1)
+                    //{
+                    //    chair.Enabled = true;
+                    //}
+                    //else
+                    //{
+                    //    chair.Enabled = false;
+                    //}
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 35)
                     {
@@ -222,12 +224,13 @@ namespace GUI.Views.View_User
             }
             lb_amount.Text = amount.ToString();
             lb_price.Text = price.ToString();
-            if(a.Checked)
+            if (a.Checked)
             {
                 maghe.Add(a.Text);
             }
         }
 
+        
         private void cb_checkacp_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_checkacp.Checked)
@@ -251,13 +254,13 @@ namespace GUI.Views.View_User
                 {
                     if (item.SeatCode == item1)
                     {
-                        SeatDetail seatupdate = _seatDetailServices.get(item.Id,item1);
+                        SeatDetail seatupdate = _seatDetailServices.get(item.Id, item1);
                         //seatupdate.Status = 0;
                         _seatDetailServices.Update(seatupdate);
                     }
                 }
-                MessageBox.Show("Đặt vé ok"); 
-                AfterSeat af = new AfterSeat(_code,_listcode);
+                MessageBox.Show("Đặt vé ok");
+                AfterSeat af = new AfterSeat(_code, _listcode);
                 this.Hide();
                 af.ShowDialog();
                 this.Show();

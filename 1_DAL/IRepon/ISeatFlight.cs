@@ -9,6 +9,7 @@ namespace _1_DAL.IRepon
 {
     public interface ISeatFlight
     {
+        public List<SeatFlight> Get();
         public bool Create(SeatFlight sf);
     }
 }

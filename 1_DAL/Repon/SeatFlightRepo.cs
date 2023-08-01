@@ -28,5 +28,10 @@ namespace _1_DAL.Repon
                 return false;
             }
         }
+
+        public List<SeatFlight> Get()
+        {
+            return _context.SeatFlights.ToList();
+        }
     }
 }

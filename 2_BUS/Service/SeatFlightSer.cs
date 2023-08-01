@@ -24,5 +24,10 @@ namespace _2_BUS.Service
             }
             return "false";
         }
+
+        public List<SeatFlight> Get()
+        {
+            return _repo.Get();
+        }
     }
 }

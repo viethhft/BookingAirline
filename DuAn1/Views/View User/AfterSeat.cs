@@ -23,20 +23,22 @@ namespace GUI.Views.View_User
         List<int> lst;
         long idmb;
         string macb;
+
         public AfterSeat()
         {
             _fsm = new FChonGheSmallSize();
             _ser = new SeatFlightSer();
             _f = new();
             _sd = new SeatDetailServices();
-            _plane = new PlaneTypeServices();   
+            _plane = new PlaneTypeServices();
             InitializeComponent();
         }
+
         public AfterSeat(string machuyenbay, List<string> maghe) : this()
         {
             macb = machuyenbay;
             id = _f.get_list().FirstOrDefault(c => c.FlightCode == machuyenbay).Id;
-            foreach(var i in _f.get_list().Where(c => c.FlightCode == machuyenbay))
+            foreach (var i in _f.get_list().Where(c => c.FlightCode == machuyenbay))
             {
                 idmb = i.PlaneTypeId;
             }

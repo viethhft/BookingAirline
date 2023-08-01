@@ -9,6 +9,7 @@ namespace _2_BUS.IService
 {
     public interface ISeatFlighSer
     {
+        public List<SeatFlight> Get();
         public string Create(SeatFlight sf);
     }
 }
