@@ -268,6 +268,7 @@ namespace GUI.Views.View_User
             this.Hide();
             af.ShowDialog();
             this.Show();
+
         }
     }
 }

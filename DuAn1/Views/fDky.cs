@@ -350,5 +350,10 @@ namespace DuAn1.Views
                 lb_ErrorDate.Visible = false;
             }
         }
+
+        private void fDky_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            reset();
+        }
     }
 }
