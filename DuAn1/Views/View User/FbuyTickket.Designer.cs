@@ -119,10 +119,10 @@
             // 
             // txt_Discount
             // 
-            txt_Discount.Location = new Point(58, 381);
-            txt_Discount.Name = "txt_Discount";
-            txt_Discount.Size = new Size(276, 23);
-            txt_Discount.TabIndex = 61;
+            this.txt_Discount.Location = new System.Drawing.Point(58, 381);
+            this.txt_Discount.Name = "txt_Discount";
+            this.txt_Discount.Size = new System.Drawing.Size(276, 23);
+            this.txt_Discount.TabIndex = 61;
             // 
             // lb_ErrorTo
             // 
@@ -161,6 +161,7 @@
             this.btn_Search.Size = new System.Drawing.Size(180, 45);
             this.btn_Search.TabIndex = 50;
             this.btn_Search.Text = "TÌM KIẾM";
+            this.btn_Search.Click += new System.EventHandler(this.FbuyTickket_Click);
             // 
             // date_From
             // 
@@ -261,23 +262,22 @@
             // 
             // btn_discount
             // 
-            btn_discount.BorderColor = Color.FromArgb(0, 95, 110);
-            btn_discount.BorderRadius = 10;
-            btn_discount.BorderThickness = 1;
-            btn_discount.DisabledState.BorderColor = Color.DarkGray;
-            btn_discount.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_discount.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_discount.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_discount.FillColor = Color.Empty;
-            btn_discount.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_discount.ForeColor = Color.FromArgb(0, 95, 110);
-            btn_discount.Image = Properties.Resources.icons8_gift_box_401;
-            btn_discount.Location = new Point(58, 368);
-            btn_discount.Name = "btn_discount";
-            btn_discount.Size = new Size(157, 36);
-            btn_discount.TabIndex = 67;
-            btn_discount.Text = "MÃ KHUYẾN MÃI";
-            btn_discount.Click += btn_Discount_Click;
+            this.btn_discount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(110)))));
+            this.btn_discount.BorderRadius = 10;
+            this.btn_discount.BorderThickness = 1;
+            this.btn_discount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_discount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_discount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_discount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_discount.FillColor = System.Drawing.Color.Empty;
+            this.btn_discount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_discount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(110)))));
+            this.btn_discount.Image = global::GUI.Properties.Resources.icons8_gift_box_401;
+            this.btn_discount.Location = new System.Drawing.Point(58, 368);
+            this.btn_discount.Name = "btn_discount";
+            this.btn_discount.Size = new System.Drawing.Size(157, 36);
+            this.btn_discount.TabIndex = 67;
+            this.btn_discount.Text = "MÃ KHUYẾN MÃI";
             // 
             // lb_dateFrom
             // 

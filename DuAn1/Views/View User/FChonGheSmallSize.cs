@@ -121,34 +121,6 @@ namespace GUI.Views.View_User
                 dem++;
             }
         }
-
-        private void Chair_CheckedChanged(object? sender, EventArgs e)
-        {
-            Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
-            if (_loaighe == "PT")
-            {
-                priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
-            }
-            else
-            {
-                priceClass = _classServices.get_list().Where(c => c.Id == 1).FirstOrDefault().Price;
-            }
-            if (a.Checked)
-            {
-                _listcode.Add(a.Name);
-                amount++;
-                price += priceClass;
-            }
-            else
-            {
-                _listcode.Remove(a.Name);
-                amount--;
-                price -= priceClass;
-            }
-            lb_amount.Text = amount.ToString();
-            lb_price.Text = price.ToString();
-        }
-
         public FChonGheSmallSize(string code) : this()
         {
 
@@ -223,6 +195,34 @@ namespace GUI.Views.View_User
                 dem++;
             }
         }
+
+        private void Chair_CheckedChanged(object? sender, EventArgs e)
+        {
+            Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
+            if (_loaighe == "PT")
+            {
+                priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
+            }
+            else
+            {
+                priceClass = _classServices.get_list().Where(c => c.Id == 1).FirstOrDefault().Price;
+            }
+            if (a.Checked)
+            {
+                _listcode.Add(a.Name);
+                amount++;
+                price += priceClass;
+            }
+            else
+            {
+                _listcode.Remove(a.Name);
+                amount--;
+                price -= priceClass;
+            }
+            lb_amount.Text = amount.ToString();
+            lb_price.Text = price.ToString();
+        }
+
 
         private void cb_checkacp_CheckedChanged(object sender, EventArgs e)
         {

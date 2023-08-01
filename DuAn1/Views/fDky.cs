@@ -319,7 +319,7 @@ namespace DuAn1.Views
             }
             else
             {
-                lb_ErrorPass1.Text = "Mật khẩu nhập phải từ 6 ký tự";
+                lb_ErrorPass1.Text = "Mật khẩu nhập phải ít nhất 6 ký tự và có ít nhất 1 ký tự đặc biệt như @,!,#,$,...";
                 lb_ErrorPass1.Visible = true;
                 _check_matkhau1 = false;
                 lb_ErrorPass1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);

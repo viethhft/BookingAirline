@@ -20,26 +20,31 @@ namespace GUI.Views.View_User
 
         ICustomerServices _service;
         Validate _validate;
-        bool _check_information = true;
+        bool _check_Name = true;
+        bool _check_Email = true;
+        bool _check_Phone = true;
+        bool _check_date = true;
         public FthongTinNguoiDung()
         {
-            _service = new CustomerServices();
             InitializeComponent();
-            cbx_gt.Items.Add("Nam");
-            cbx_gt.Items.Add("Nữ");
-            _validate = new Validate();
-            load();
-            Unelable();
-
         }
 
 
         public FthongTinNguoiDung(string message) : this()
         {
+            _service = new CustomerServices();
+            cbx_gt.Items.Add("Nam");
+            cbx_gt.Items.Add("Nữ");
+            _validate = new Validate();
+            load();
+            Unelable();
             _message = message;
             _service = new CustomerServices();
             load();
-
+            lb_ErrorDate.Visible = false;
+            lb_ErrorEmail.Visible = false;
+            lb_ErrorPhone.Visible = false;
+            llb_ErrorName.Visible = false;
         }
 
         public void load()
@@ -73,7 +78,6 @@ namespace GUI.Views.View_User
             date_bird.Enabled = true;
             tbx_sdt.Enabled = true;
             btn_update.Enabled = true;
-
             btn_sua.Enabled = false;
         }
 
@@ -81,25 +85,32 @@ namespace GUI.Views.View_User
         {
             if (tbx_email.Text != "" || tbx_diaChi.Text != "" || tbx_hoTen.Text != "" || cbx_gt.Text != "" || date_bird.Text != "" || tbx_sdt.Text != "")
             {
-                Customer custom = _service.GetCustomers().Where(c => c.Email == _message).FirstOrDefault();
-                custom.Address = tbx_diaChi.Text;
-                string[] name = _validate.cutName(tbx_hoTen.Text);
-                custom.FirstName = name[0];
-                custom.MiddleName = name[1];
-                custom.LastName = name[2];
-                custom.Phone = tbx_sdt.Text;
-                if (cbx_gt.Text == "Nam")
+                if (_check_date && _check_Email && _check_Name && _check_Phone)
                 {
-                    custom.Gender = "Nam";
+                    Customer custom = _service.GetCustomers().Where(c => c.Email == _message).FirstOrDefault();
+                    custom.Address = tbx_diaChi.Text;
+                    string[] name = _validate.cutName(tbx_hoTen.Text);
+                    custom.FirstName = name[0];
+                    custom.MiddleName = name[1];
+                    custom.LastName = name[2];
+                    custom.Phone = tbx_sdt.Text;
+                    if (cbx_gt.Text == "Nam")
+                    {
+                        custom.Gender = "Nam";
+                    }
+                    else
+                    {
+                        custom.Gender = "Nữ";
+                    }
+                    date_bird.Value = (DateTime)(custom.Dob);
+                    MessageBox.Show(_service.Update(custom));
+                    Unelable();
+                    load();
                 }
                 else
                 {
-                    custom.Gender = "Nữ";
+                    MessageBox.Show("Thông tin bạn nhập chưa đúng yêu cầu");
                 }
-                date_bird.Value = (DateTime)(custom.Dob);
-                MessageBox.Show(_service.Update(custom));
-                Unelable();
-                load();
             }
             else
             {
@@ -125,17 +136,17 @@ namespace GUI.Views.View_User
         {
             if (_validate.checkName(tbx_hoTen.Text))
             {
-                label1.Text = "";
-                label1.Visible = false;
-                _check_information = true;
+                llb_ErrorName.Text = "";
+                llb_ErrorName.Visible = false;
+                _check_Name = true;
             }
             else
             {
-                _check_information = false;
-                label1.Text = "Không đúng định dạng tên";
-                label1.Visible = true;
-                label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-                label1.ForeColor = System.Drawing.Color.Red;
+                _check_Name = false;
+                llb_ErrorName.Text = "Không đúng định dạng tên";
+                llb_ErrorName.Visible = true;
+                llb_ErrorName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                llb_ErrorName.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -143,23 +154,56 @@ namespace GUI.Views.View_User
         {
             if (_validate.checkPhoneNumber(tbx_sdt.Text))
             {
-                label3.Text = "";
-                label3.Visible = false;
-                _check_information = true;
+                lb_ErrorPhone.Text = "";
+                lb_ErrorPhone.Visible = false;
+                _check_Phone = true;
             }
             else
             {
-                _check_information = false;
-                label3.Text = "Không đúng định dạng số điện thoại";
-                label3.Visible = true;
-                label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
-                label3.ForeColor = System.Drawing.Color.Red;
+                _check_Phone = false;
+                lb_ErrorPhone.Text = "Không đúng định dạng số điện thoại";
+                lb_ErrorPhone.Visible = true;
+                lb_ErrorPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorPhone.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void tbx_diaChi_TextChanged(object sender, EventArgs e)
+        private void tbx_email_TextChanged(object sender, EventArgs e)
         {
+            if (_validate.checkEmail(tbx_email.Text))
+            {
+                lb_ErrorEmail.Text = "";
+                lb_ErrorEmail.Visible = false;
+                _check_Phone = true;
+            }
+            else
+            {
+                _check_Phone = false;
+                lb_ErrorEmail.Text = "Không đúng định dạng số điện thoại";
+                lb_ErrorEmail.Visible = true;
+                lb_ErrorEmail.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorEmail.ForeColor = System.Drawing.Color.Red;
+            }
+        }
 
+        private void date_bird_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            TimeSpan time = now - date_bird.Value;
+            double year = Math.Round(time.TotalDays / 365);
+            if (year < 18)
+            {
+                _check_date = false;
+                lb_ErrorDate.Text = "Ngày tháng năm sinh chọn không phù hợp";
+                lb_ErrorDate.Visible = true;
+                lb_ErrorDate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorDate.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                _check_date = true;
+                lb_ErrorDate.Visible = false;
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace DuAn1.Views
         bool _check_email = true;
         bool _check_ma = true;
         bool _check_pass = true;
-
+        bool _check_passNew = true;
         ICustomerServices _services;
         Validate _validate;
         string code_otp = "";
@@ -197,6 +197,23 @@ namespace DuAn1.Views
                 lb_errorPass.ForeColor = System.Drawing.Color.Red;
             }
 
+        }
+
+        private void txb_pass1_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkpass(txb_pass1.Text))
+            {
+                lb_ErrorPassNew.Visible = false;
+                _check_passNew = true;
+            }
+            else
+            {
+                _check_passNew = false;
+                lb_ErrorPassNew.Text = "Mật khẩu nhập phải ít nhất 6 ký tự và có ít nhất 1 ký tự đặc biệt như @,!,#,$,...";
+                lb_ErrorPassNew.Visible = true;
+                lb_ErrorPassNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorPassNew.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }
