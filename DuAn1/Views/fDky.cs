@@ -25,6 +25,7 @@ namespace DuAn1.Views
         bool _check_sdt = false;
         bool _check_matkhau = false;
         bool _check_matkhau1 = false;
+        bool _check_date = false;
         ICustomerServices _dangKyService;
         IStaffServices _staffServices;
         Validate _validate;
@@ -325,6 +326,26 @@ namespace DuAn1.Views
                 _check_matkhau1 = false;
                 lb_ErrorPass1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
                 lb_ErrorPass1.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void Date_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            TimeSpan time = now - Date.Value;
+            double year = Math.Round(time.TotalDays / 365);
+            if (year < 18)
+            {
+                _check_date = false;
+                lb_ErrorDate.Text = "Ngày tháng năm sinh chọn không phù hợp";
+                lb_ErrorDate.Visible = true;
+                lb_ErrorDate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lb_ErrorDate.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                _check_date = true;
+                lb_ErrorDate.Visible = false;
             }
         }
     }
