@@ -227,7 +227,7 @@ namespace DuAn1.Views
                 }
             }
 
-            if (txb_email.Text != "" && check&& _check_mail)
+            if (txb_email.Text != "" && check && _check_mail)
             {
                 CountDown.Interval = 1000;
                 CountDown.Start();
