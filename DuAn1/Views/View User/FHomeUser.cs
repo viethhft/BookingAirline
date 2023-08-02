@@ -19,7 +19,7 @@ namespace GUI.Views
         FbuyTickket _buyticket;
         public FHomeUser()
         {
-            _buyticket = new FbuyTickket();
+            _buyticket = new FbuyTickket(_message);
             InitializeComponent();
             label1.Visible = false;
             load();
@@ -58,7 +58,7 @@ namespace GUI.Views
 
         private void guna2Button1_Click(object sender, EventArgs e) //button mua ve truc tuyen
         {
-            FbuyTickket child = new();
+            FbuyTickket child = new FbuyTickket(_message);
             ChildForm(child);
             if (guna2Button1.Enabled == true)
             {
@@ -77,7 +77,7 @@ namespace GUI.Views
 
         private void guna2Button3_Click(object sender, EventArgs e)//button tinh trang chuyen bay
         {
-            FtinhTrangChuyenBay child = new();
+            FtinhTrangChuyenBay child = new ();
             ChildForm(child);
             if (guna2Button3.Enabled == true)
             {
@@ -97,7 +97,7 @@ namespace GUI.Views
 
         private void guna2Button4_Click(object sender, EventArgs e)//button lich bay
         {
-            FlichBay child = new();
+            FlichBay child = new FlichBay(_message);
             ChildForm(child);
             if (guna2Button4.Enabled == true)
             {

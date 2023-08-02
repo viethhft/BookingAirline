@@ -14,11 +14,13 @@ namespace GUI.Views.View_User
 {
     public partial class FlichBay : Form
     {
+        string _email = "";
         IFlightServices _flightServices;
         ILocationServices _locationServices;
         bool check_date = true;
-        public FlichBay()
+        public FlichBay(string email)
         {
+            _email = email;
             _locationServices = new LocationService();
             _flightServices = new FlightServices();
             InitializeComponent();
@@ -72,7 +74,7 @@ namespace GUI.Views.View_User
                     DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(-1);
                     DateTime date1 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(4);
                     var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight > date && c.DateFlight < date1).ToList();
-                    FLichBayChild fLichBayChild = new FLichBayChild(list_search, date);
+                    FLichBayChild fLichBayChild = new FLichBayChild(list_search, date,_email);
                     this.Hide();
                     fLichBayChild.ShowDialog();
                     this.Show();

@@ -17,6 +17,7 @@ namespace GUI.Views.View_User
 {
     public partial class FChonGheBigSize : Form
     {
+        string _email = "";
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
@@ -42,8 +43,9 @@ namespace GUI.Views.View_User
         int price = 0;
         int priceFlight = 0;
         int priceClass = 0;
-        public FChonGheBigSize(string code, string loaighe) : this()
+        public FChonGheBigSize(string code, string loaighe, string email) : this()
         {
+            _email = email;
             _code = code;
             _loaighe = loaighe;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
@@ -87,6 +89,7 @@ namespace GUI.Views.View_User
                             {
                                 chair.Enabled = false;
                             }
+                            chair.Tag = "PT";
                             chair.BackColor = Color.DarkCyan;
                         }
                         else
@@ -95,6 +98,7 @@ namespace GUI.Views.View_User
                             {
                                 chair.Enabled = false;
                             }
+                            chair.Tag = "TG";
                             chair.BackColor = Color.Goldenrod;
                         }
                     }
@@ -125,8 +129,9 @@ namespace GUI.Views.View_User
                 }
             }
         }
-        public FChonGheBigSize(string code) : this()
+        public FChonGheBigSize(string code, string email) : this()
         {
+            _email = email;
             _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
@@ -163,10 +168,12 @@ namespace GUI.Views.View_User
                     if (dem < 35)
                     {
                         chair.BackColor = Color.DarkCyan;
+                        chair.Tag = "PT";
                     }
                     else
                     {
                         chair.BackColor = Color.Goldenrod;
+                        chair.Tag = "TG";
                     }
 
                     var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
@@ -205,7 +212,7 @@ namespace GUI.Views.View_User
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
-            if (_loaighe == "PT")
+            if (a.Tag== "PT")
             {
                 priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
             }
@@ -248,25 +255,11 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
-            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
-            var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id).ToList();
-            foreach (var item in seat)
-            {
-                foreach (var item1 in _listcode)
-                {
-                    if (item.SeatCode == item1)
-                    {
-                        //SeatFlight 
-                        //_sfServices.Create()
-                    }
-                }
-            }
-            FAfterSeat af = new FAfterSeat(_code, _listcode);
+            FAfterSeat af = new FAfterSeat(_code, _listcode,_email);
             this.Hide();
             af.ShowDialog();
+            this.Refresh();
             this.Show();
-
         }
     }
 }

@@ -23,6 +23,7 @@ namespace GUI.Views.View_User
         List<int> lst;
         long idmb;
         string macb;
+        string _email = "";
 
         public FAfterSeat()
         {
@@ -34,8 +35,10 @@ namespace GUI.Views.View_User
             InitializeComponent();
         }
 
-        public FAfterSeat(string machuyenbay, List<string> maghe) : this()
+        public FAfterSeat(string machuyenbay, List<string> maghe,string email) : this()
         {
+            _email = email;
+
             //macb = machuyenbay;
             //id = _f.get_list().FirstOrDefault(c => c.FlightCode == machuyenbay).Id;
             //foreach (var i in _f.get_list().Where(c => c.FlightCode == machuyenbay))

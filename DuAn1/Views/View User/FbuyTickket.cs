@@ -17,12 +17,14 @@ namespace GUI.Views.View_User
 {
     public partial class FbuyTickket : Form
     {
+        string _email = "";
         bool check_button = true;
         IClassServices _classServices;
         ILocationServices _locationServices;
         IFlightServices _flightServices;
-        public FbuyTickket()
+        public FbuyTickket(string email)
         {
+            _email = email;
             _flightServices = new FlightServices();
             _classServices = new ClassServices();
             _locationServices = new LocationService();
@@ -191,7 +193,7 @@ namespace GUI.Views.View_User
                     var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
                     if (search.Count > 0)
                     {
-                        FBuyTicketChild a = new FBuyTicketChild(search);
+                        FBuyTicketChild a = new FBuyTicketChild(search,_email);
                         this.Hide();
                         a.ShowDialog();
                         this.Show();
@@ -224,7 +226,7 @@ namespace GUI.Views.View_User
                             var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
                             if (search.Count > 0)
                             {
-                                FBuyTicketChild a = new FBuyTicketChild(search);
+                                FBuyTicketChild a = new FBuyTicketChild(search,_email);
                                 this.Hide();
                                 a.ShowDialog();
                                 this.Show();
