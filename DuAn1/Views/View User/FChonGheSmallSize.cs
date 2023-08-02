@@ -254,11 +254,18 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            FAfterSeat af = new FAfterSeat(_code, _listcode, _email);
-            this.Hide();
-            af.ShowDialog();
-            this.Refresh();
-            this.Show();
+            if (amount > 0)
+            {
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email);
+                this.Hide();
+                af.ShowDialog();
+                this.Refresh();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ghế!");
+            }
         }
     }
 }

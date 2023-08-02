@@ -40,15 +40,17 @@ namespace GUI.Views.View_User
         public FAfterSeat(string machuyenbay, List<string> maghe,string email) : this()
         {
             _email = email;
-            MessageBox.Show(email);
             lb_CodeFlight.Text = machuyenbay;
             var fl=_f.get_list().Where(c=>c.FlightCode== machuyenbay).FirstOrDefault();
+            var cus = _cus.GetCustomers().Where(c => c.Email == email).FirstOrDefault();
+            lb_name.Text = $"{cus.FirstName} {cus.MiddleName} {cus.LastName}";
             lb_date.Text = fl.DateFlight.ToShortDateString();
             lb_from.Text = fl.GoFrom;
             lb_tom.Text = fl.GoTom;
-            for (int i = 0; i < maghe.Count; i++)
+            lb_seat.Text = maghe[0];
+            for (int i = 1; i < maghe.Count; i++)
             {
-                lb_seat.Text += maghe[i];
+                lb_seat.Text += ", "+maghe[i];
             }
             lb_totalSeats.Text = maghe.Count.ToString();
             
