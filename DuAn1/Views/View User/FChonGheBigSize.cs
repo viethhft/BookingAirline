@@ -59,7 +59,7 @@ namespace GUI.Views.View_User
             Point locaSTT = new Point(738, 95);
             string[] hang = { "A", "B", "C", "D" };
             int dem = 0;
-            foreach (var item in seatdetail)
+            foreach (var item in seatdetail.Where(c=>c.PlaneTypeId==plane.Id))
             {
                 if (tt == 4)
                 {
@@ -105,6 +105,7 @@ namespace GUI.Views.View_User
                     }
                     else
                     {
+                        MessageBox.Show("ok");
                         chair.BackColor = Color.Orange;
                         chair.Enabled = false;
                     }
