@@ -132,6 +132,7 @@ namespace GUI.Views.View_User
         }
         public FChonGheBigSize(string code, string email) : this()
         {
+            price = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault().Price;
             _email = email;
             _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();

@@ -25,7 +25,7 @@ namespace GUI.Views.View_User
         string _code = "";
         string _loaighe = "";
         int amount = 0;
-        int price = 0;
+        int _price = 0;
         int priceFlight = 0;
         int priceClass = 0;
         long _macb;
@@ -45,6 +45,7 @@ namespace GUI.Views.View_User
         }
         public FChonGheSmallSize(string code, string loaighe,string email) : this()
         {
+            _price = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault().Price;
             _email = email;
             _loaighe = loaighe;
             _code = code;
@@ -147,20 +148,21 @@ namespace GUI.Views.View_User
             {
                 _listcode.Add(a.Name);
                 amount++;
-                price += priceClass;
+                _price += priceClass;
             }
             else
             {
                 _listcode.Remove(a.Name);
                 amount--;
-                price -= priceClass;
+                _price -= priceClass;
             }
             lb_amount.Text = amount.ToString();
-            lb_price.Text = price.ToString();
+            lb_price.Text = _price.ToString();
         }
 
         public FChonGheSmallSize(string code,string email) : this()
         {
+            _price = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault().Price;
             _email = email;
             _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
@@ -256,7 +258,7 @@ namespace GUI.Views.View_User
         {
             if (amount > 0)
             {
-                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,price);
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,_price);
                 this.Hide();
                 af.ShowDialog();
                 this.Refresh();
