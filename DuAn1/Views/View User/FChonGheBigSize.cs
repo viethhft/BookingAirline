@@ -45,6 +45,7 @@ namespace GUI.Views.View_User
         int priceClass = 0;
         public FChonGheBigSize(string code, string loaighe, string email) : this()
         {
+
             _email = email;
             _code = code;
             _loaighe = loaighe;
@@ -255,6 +256,8 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(_email);
+
             FAfterSeat af = new FAfterSeat(_code, _listcode,_email);
             this.Hide();
             af.ShowDialog();

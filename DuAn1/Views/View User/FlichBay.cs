@@ -18,12 +18,16 @@ namespace GUI.Views.View_User
         IFlightServices _flightServices;
         ILocationServices _locationServices;
         bool check_date = true;
-        public FlichBay(string email)
+        public FlichBay()
+        {
+            InitializeComponent();
+
+        }
+        public FlichBay(string email):this()
         {
             _email = email;
             _locationServices = new LocationService();
             _flightServices = new FlightServices();
-            InitializeComponent();
             load();
         }
         void load()

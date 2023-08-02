@@ -27,6 +27,7 @@ namespace GUI.Views.View_User
         public FLichBayChild(List<Flight> list, DateTime date,string email) : this()
         {
             _email = email;
+
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();

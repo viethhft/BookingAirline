@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI.Views.View_User
 {
@@ -22,19 +23,23 @@ namespace GUI.Views.View_User
         IClassServices _classServices;
         ILocationServices _locationServices;
         IFlightServices _flightServices;
-        public FbuyTickket(string email)
+        public FbuyTickket()
+        {
+            
+            InitializeComponent();
+         
+        }
+        public FbuyTickket(string email):this()
         {
             _email = email;
             _flightServices = new FlightServices();
             _classServices = new ClassServices();
             _locationServices = new LocationService();
-            InitializeComponent();
             load();
             lb_ErrorFrom.Visible = false;
             lb_ErrorTo.Visible = false;
             lb_dateTo.Visible = false;
             lb_dateFrom.Visible = false;
-
         }
         void load()
         {

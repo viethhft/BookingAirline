@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI.Views
 {
@@ -19,10 +20,16 @@ namespace GUI.Views
         FbuyTickket _buyticket;
         public FHomeUser()
         {
-            _buyticket = new FbuyTickket(_message);
             InitializeComponent();
+        }
+        public FHomeUser(string Message) : this()
+        {
+            _message = Message;
+            _buyticket = new FbuyTickket(_message);
+            label1.Text = _message;
             label1.Visible = false;
             load();
+
         }
         void load()
         {
@@ -40,11 +47,6 @@ namespace GUI.Views
             ChildForm(_buyticket);
 
         }
-        public FHomeUser(string Message) : this()
-        {
-            _message = Message;
-            label1.Text = _message;
-        }
 
         private void ChildForm(Form child)
         {
@@ -58,6 +60,7 @@ namespace GUI.Views
 
         private void guna2Button1_Click(object sender, EventArgs e) //button mua ve truc tuyen
         {
+
             FbuyTickket child = new FbuyTickket(_message);
             ChildForm(child);
             if (guna2Button1.Enabled == true)
@@ -151,11 +154,6 @@ namespace GUI.Views
         {
             FthongTinNguoiDung fthongTinNguoiDung = new FthongTinNguoiDung(label1.Text);
             fthongTinNguoiDung.ShowDialog();
-        }
-
-        private void FHomeUser_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)

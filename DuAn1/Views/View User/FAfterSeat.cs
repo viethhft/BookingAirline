@@ -19,6 +19,7 @@ namespace GUI.Views.View_User
         FlightServices _f;
         SeatDetailServices _sd;
         PlaneTypeServices _plane;
+        CustomerServices _cus;
         long id;
         List<int> lst;
         long idmb;
@@ -27,6 +28,7 @@ namespace GUI.Views.View_User
 
         public FAfterSeat()
         {
+            _cus=new CustomerServices();
             _fsm = new FChonGheSmallSize();
             _ser = new SeatFlightSer();
             _f = new();
@@ -38,29 +40,18 @@ namespace GUI.Views.View_User
         public FAfterSeat(string machuyenbay, List<string> maghe,string email) : this()
         {
             _email = email;
-
-            //macb = machuyenbay;
-            //id = _f.get_list().FirstOrDefault(c => c.FlightCode == machuyenbay).Id;
-            //foreach (var i in _f.get_list().Where(c => c.FlightCode == machuyenbay))
-            //{
-            //    idmb = i.PlaneTypeId;
-            //}
-            //lst = new List<int>();
-            //for (int i = 0; i < maghe.Count; i++)
-            //{
-            //    RichTextBox rich = new();
-            //    flowLayoutPanel1.Controls.Add(rich);
-            //    rich.Width = 150;
-            //    rich.Height = 100;
-            //    rich.ReadOnly = true;
-            //    rich.BackColor = Color.FromArgb(227, 145, 57);
-            //    rich.Text = $"Mã chuyến bay của bạn là {machuyenbay} và ghế bạn đặt là {maghe[i]}";
-            //    foreach (var item in _sd.list().Where(c => c.SeatCode == maghe[i] && c.PlaneTypeId == idmb))
-            //    {
-            //        lst.Add(item.Id);
-            //    }
-
-            //}
+            MessageBox.Show(email);
+            lb_CodeFlight.Text = machuyenbay;
+            var fl=_f.get_list().Where(c=>c.FlightCode== machuyenbay).FirstOrDefault();
+            lb_date.Text = fl.DateFlight.ToShortDateString();
+            lb_from.Text = fl.GoFrom;
+            lb_tom.Text = fl.GoTom;
+            for (int i = 0; i < maghe.Count; i++)
+            {
+                lb_seat.Text += maghe[i];
+            }
+            lb_totalSeats.Text = maghe.Count.ToString();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
