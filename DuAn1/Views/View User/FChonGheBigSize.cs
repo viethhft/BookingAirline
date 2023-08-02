@@ -45,7 +45,7 @@ namespace GUI.Views.View_User
         int priceClass = 0;
         public FChonGheBigSize(string code, string loaighe, string email) : this()
         {
-
+            price = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault().Price;
             _email = email;
             _code = code;
             _loaighe = loaighe;
@@ -105,7 +105,6 @@ namespace GUI.Views.View_User
                     }
                     else
                     {
-                        MessageBox.Show("ok");
                         chair.BackColor = Color.Orange;
                         chair.Enabled = false;
                     }
@@ -259,7 +258,7 @@ namespace GUI.Views.View_User
         {
             if (amount>0)
             {
-                FAfterSeat af = new FAfterSeat(_code, _listcode, _email);
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,price);
                 this.Hide();
                 af.ShowDialog();
                 this.Refresh();

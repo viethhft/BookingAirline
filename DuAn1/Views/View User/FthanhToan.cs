@@ -13,9 +13,14 @@ namespace GUI.Views.View_User
     public partial class FthanhToan : Form
     {
         public string status = "";
+        
         public FthanhToan()
         {
             InitializeComponent();
+        }
+        public FthanhToan(int price):this()
+        {
+            label1.Text = price.ToString();
         }
 
         private void btn_acp_Click(object sender, EventArgs e)

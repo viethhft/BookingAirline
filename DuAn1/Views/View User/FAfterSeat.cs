@@ -20,14 +20,19 @@ namespace GUI.Views.View_User
         SeatDetailServices _sd;
         PlaneTypeServices _plane;
         CustomerServices _cus;
+        TicketServices _ticketServices;
+        ClassServices _classServices;
         long id;
         List<int> lst;
+        List<string> lst_ma;
         long idmb;
         string macb;
         string _email = "";
-
+        int _price = 0;
         public FAfterSeat()
         {
+            _classServices = new ClassServices();
+            _ticketServices = new TicketServices();
             _cus = new CustomerServices();
             _fsm = new FChonGheSmallSize();
             _ser = new SeatFlightSer();
@@ -37,10 +42,13 @@ namespace GUI.Views.View_User
             InitializeComponent();
         }
 
-        public FAfterSeat(string machuyenbay, List<string> maghe, string email) : this()
+        public FAfterSeat(string machuyenbay, List<string> maghe, string email,int price) : this()
         {
             lst = new List<int>();
+            lst_ma = new List<string>();
+            lst_ma = maghe;
             _email = email;
+            _price = price;
             lb_CodeFlight.Text = machuyenbay;
             var fl = _f.get_list().Where(c => c.FlightCode == machuyenbay).FirstOrDefault();
             id = fl.Id;
@@ -67,7 +75,7 @@ namespace GUI.Views.View_User
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FthanhToan f = new FthanhToan();
+            FthanhToan f = new FthanhToan(_price);
             SeatFlight sf;
             if (MessageBox.Show("Thanh toán nhé", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
@@ -76,6 +84,22 @@ namespace GUI.Views.View_User
                 this.Show();
                 if (f.status == "Thanh toán")
                 {
+                    foreach (var item in lst_ma)
+                    {
+                        Ticket creatticket = new Ticket();
+                        creatticket.CustomerId = _cus.GetCustomers().Where(c => c.Email == _email).FirstOrDefault().Id;
+                        creatticket.FlightId = id;
+                        creatticket.CreateDate = DateTime.Now;
+                        creatticket.TwoWay = 1;
+                        creatticket.TotalTicket = 1;
+                        var seat_book = _sd.list().Where(c => c.PlaneTypeId == _f.get_list().Where(c => c.Id == id).FirstOrDefault().PlaneTypeId && c.SeatCode == item).FirstOrDefault();
+                        int price = seat_book.ClassId == 1 ? 1000000 : 500000;
+                        creatticket.TotalPrice = _f.get_list().Where(c => c.Id == id).FirstOrDefault().Price+price;
+                        creatticket.SeatCode = item;
+                        creatticket.NameTicket = _f.get_list().Where(c => c.Id == id).FirstOrDefault().FlightCode+"_"+item;
+                        creatticket.Status = 1;
+                        _ticketServices.add(creatticket);
+                    }
                     foreach (var item in lst)
                     {
                         sf = new SeatFlight()

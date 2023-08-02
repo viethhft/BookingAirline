@@ -32,6 +32,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_acp = new Guna.UI2.WinForms.Guna2Button();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,11 +88,21 @@
             this.btn_cancel.Text = "Hủy";
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(223, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
             // FthanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_acp);
             this.Controls.Add(this.checkBox1);
@@ -110,5 +121,6 @@
         private CheckBox checkBox1;
         private Guna.UI2.WinForms.Guna2Button btn_acp;
         private Guna.UI2.WinForms.Guna2Button btn_cancel;
+        private Label label1;
     }
 }
