@@ -42,6 +42,7 @@
             trợGiúpToolStripMenuItem = new ToolStripMenuItem();
             hướngDẫnSửDụngToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
+            quảnLýVéĐặtToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -135,7 +136,7 @@
             // 
             // hệThốngToolStripMenuItem
             // 
-            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
+            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, quảnLýVéĐặtToolStripMenuItem, đăngXuấtToolStripMenuItem });
             hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
             hệThốngToolStripMenuItem.Size = new Size(83, 20);
             hệThốngToolStripMenuItem.Text = "Người dùng";
@@ -183,6 +184,13 @@
             label1.TabIndex = 6;
             label1.Text = "label1";
             // 
+            // quảnLýVéĐặtToolStripMenuItem
+            // 
+            quảnLýVéĐặtToolStripMenuItem.Name = "quảnLýVéĐặtToolStripMenuItem";
+            quảnLýVéĐặtToolStripMenuItem.Size = new Size(180, 22);
+            quảnLýVéĐặtToolStripMenuItem.Text = "Quản lý vé đặt";
+            quảnLýVéĐặtToolStripMenuItem.Click += quảnLýVéĐặtToolStripMenuItem_Click;
+            // 
             // FHomeUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -223,5 +231,6 @@
         private ToolStripMenuItem trợGiúpToolStripMenuItem;
         private ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
         private Label label1;
+        private ToolStripMenuItem quảnLýVéĐặtToolStripMenuItem;
     }
 }

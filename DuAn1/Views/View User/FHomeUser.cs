@@ -80,7 +80,7 @@ namespace GUI.Views
 
         private void guna2Button3_Click(object sender, EventArgs e)//button tinh trang chuyen bay
         {
-            FtinhTrangChuyenBay child = new ();
+            FtinhTrangChuyenBay child = new();
             ChildForm(child);
             if (guna2Button3.Enabled == true)
             {
@@ -161,6 +161,12 @@ namespace GUI.Views
             FHuongDanUs fhuongdan = new FHuongDanUs();
             fhuongdan.ShowDialog();
 
+        }
+
+        private void quảnLýVéĐặtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FQuanLyVeDat f = new FQuanLyVeDat();
+            f.ShowDialog();
         }
     }
 }
