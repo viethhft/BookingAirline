@@ -22,7 +22,7 @@ namespace _2_BUS.Validate
         }
         public bool checkEmail(string email)
         {
-            Regex regex = new Regex(@"([a-z0-9]{5})+@[a-z]+\.([a-z]{2,3}|[a-z]{2,3}.[a-z]{2,3})$");
+            Regex regex = new Regex(@"^([a-z0-9]{5})+@[a-z]+\.([a-z]{2,3}|[a-z]{2,3}.[a-z]{2,3})$");
             Match match = regex.Match(email);
             if (match != Match.Empty)
             {
