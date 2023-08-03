@@ -12,27 +12,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI.Views.View_User
 {
     public partial class FbuyTickket : Form
     {
+        string _email = "";
         bool check_button = true;
         IClassServices _classServices;
         ILocationServices _locationServices;
         IFlightServices _flightServices;
         public FbuyTickket()
         {
+            
+            InitializeComponent();
+         
+        }
+        public FbuyTickket(string email):this()
+        {
+            _email = email;
             _flightServices = new FlightServices();
             _classServices = new ClassServices();
             _locationServices = new LocationService();
-            InitializeComponent();
             load();
             lb_ErrorFrom.Visible = false;
             lb_ErrorTo.Visible = false;
             lb_dateTo.Visible = false;
             lb_dateFrom.Visible = false;
-
         }
         void load()
         {
@@ -191,7 +198,7 @@ namespace GUI.Views.View_User
                     var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
                     if (search.Count > 0)
                     {
-                        FBuyTicketChild a = new FBuyTicketChild(search);
+                        FBuyTicketChild a = new FBuyTicketChild(search,_email);
                         this.Hide();
                         a.ShowDialog();
                         this.Show();
@@ -224,7 +231,7 @@ namespace GUI.Views.View_User
                             var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
                             if (search.Count > 0)
                             {
-                                FBuyTicketChild a = new FBuyTicketChild(search);
+                                FBuyTicketChild a = new FBuyTicketChild(search,_email);
                                 this.Hide();
                                 a.ShowDialog();
                                 this.Show();

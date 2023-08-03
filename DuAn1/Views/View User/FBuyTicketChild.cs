@@ -16,6 +16,7 @@ namespace GUI.Views.View_User
 {
     public partial class FBuyTicketChild : Form
     {
+        string _email = "";
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
@@ -26,8 +27,9 @@ namespace GUI.Views.View_User
         {
             InitializeComponent();
         }
-        public FBuyTicketChild(List<Flight> list) : this()
+        public FBuyTicketChild(List<Flight> list,string email) : this()
         {
+            _email = email;
             _test = list;
             _classServices = new ClassServices();
             _flightServices = new FlightServices();
@@ -103,14 +105,14 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             if (seatdetail.Count() == 50)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(),_email);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(),_email);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
@@ -125,14 +127,14 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             if (seatdetail.Count() == 50)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(),_email);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString());
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(),_email);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();

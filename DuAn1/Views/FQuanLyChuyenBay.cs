@@ -16,6 +16,7 @@ namespace DuAn1.Views
 {
     public partial class FQuanLyChuyenBay : Form
     {
+
         bool checkInfo;
         IFlightServices _flight;
         ILocationServices _location;

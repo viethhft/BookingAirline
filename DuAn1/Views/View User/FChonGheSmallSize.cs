@@ -25,12 +25,13 @@ namespace GUI.Views.View_User
         string _code = "";
         string _loaighe = "";
         int amount = 0;
-        int price = 0;
+        int _price = 0;
         int priceFlight = 0;
         int priceClass = 0;
         long _macb;
         List<int> _lstGhe = new();
         List<string> _listcode = new List<string>();
+        string _email = "";
 
         public FChonGheSmallSize()
         {
@@ -42,8 +43,10 @@ namespace GUI.Views.View_User
             InitializeComponent();
             btn_pay.Enabled = false;
         }
-        public FChonGheSmallSize(string code, string loaighe) : this()
+        public FChonGheSmallSize(string code, string loaighe,string email) : this()
         {
+            _price = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault().Price;
+            _email = email;
             _loaighe = loaighe;
             _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
@@ -87,6 +90,7 @@ namespace GUI.Views.View_User
                             {
                                 chair.Enabled = false;
                             }
+                            chair.Tag = "PT";
                             chair.BackColor = Color.DarkCyan;
                         }
                         else
@@ -95,6 +99,7 @@ namespace GUI.Views.View_User
                             {
                                 chair.Enabled = false;
                             }
+                            chair.Tag = "TG";
                             chair.BackColor = Color.Goldenrod;
                         }
                     }
@@ -131,7 +136,7 @@ namespace GUI.Views.View_User
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
-            if (_loaighe == "PT")
+            if (a.Tag == "PT")
             {
                 priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
             }
@@ -143,20 +148,22 @@ namespace GUI.Views.View_User
             {
                 _listcode.Add(a.Name);
                 amount++;
-                price += priceClass;
+                _price += priceClass;
             }
             else
             {
                 _listcode.Remove(a.Name);
                 amount--;
-                price -= priceClass;
+                _price -= priceClass;
             }
             lb_amount.Text = amount.ToString();
-            lb_price.Text = price.ToString();
+            lb_price.Text = _price.ToString();
         }
 
-        public FChonGheSmallSize(string code) : this()
+        public FChonGheSmallSize(string code,string email) : this()
         {
+            _price = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault().Price;
+            _email = email;
             _code = code;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
@@ -192,10 +199,12 @@ namespace GUI.Views.View_User
                     chair.CheckedChanged += Chair_CheckedChanged;
                     if (dem < 20)
                     {
+                        chair.Tag = "PT";
                         chair.BackColor = Color.DarkCyan;
                     }
                     else
                     {
+                        chair.Tag = "TG";
                         chair.BackColor = Color.Goldenrod;
                     }
                     var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
@@ -247,23 +256,17 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            var flight = _flightServices.get_list().Where(c => c.FlightCode == _code).FirstOrDefault();
-            var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
-            var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id).ToList();
-            foreach (var item in seat)
+            if (amount > 0)
             {
-                foreach (var item1 in _listcode)
-                {
-                    if (item.SeatCode == item1)
-                    {
-
-                    }
-                }
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,_price);
+                this.Hide();
+                af.ShowDialog();
+                this.Show();
             }
-            FAfterSeat af = new FAfterSeat(_code, _listcode);
-            this.Hide();
-            af.ShowDialog();
-            this.Show();
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ghế!");
+            }
         }
     }
 }

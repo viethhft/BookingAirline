@@ -16,6 +16,7 @@ namespace GUI.Views.View_User
 {
     public partial class FLichBayChild : Form
     {
+        string _email = "";
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
@@ -23,8 +24,10 @@ namespace GUI.Views.View_User
         {
             InitializeComponent();
         }
-        public FLichBayChild(List<Flight> list, DateTime date) : this()
+        public FLichBayChild(List<Flight> list, DateTime date,string email) : this()
         {
+            _email = email;
+
             _flightServices = new FlightServices();
             _planeTypeServices = new PlaneTypeServices();
             _seatDetailServices = new SeatDetailServices();
@@ -134,14 +137,14 @@ namespace GUI.Views.View_User
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
             if (seatdetail.Count() == 50)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(pic.Name);
+                FChonGheBigSize fChonGhe = new FChonGheBigSize(pic.Name,_email);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(pic.Name);
+                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(pic.Name,_email);
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
