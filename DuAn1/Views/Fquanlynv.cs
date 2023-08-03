@@ -120,6 +120,10 @@ namespace DuAn1
                             MessageBox.Show("Email hoặc số điện thoại đã được sử dụng để đăng kí!");
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Nhập thông tin đúng định dạng");
+                    }
                 }
                 else
                 {
