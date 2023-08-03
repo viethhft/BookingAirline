@@ -49,10 +49,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(9, 219);
+            dataGridView1.Location = new Point(12, 235);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(787, 219);
+            dataGridView1.Size = new Size(775, 229);
             dataGridView1.TabIndex = 0;
             // 
             // guna2Button2
@@ -193,7 +193,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(786, 429);
             Controls.Add(guna2Button1);
             Controls.Add(textBox2);
             Controls.Add(guna2HtmlLabel3);

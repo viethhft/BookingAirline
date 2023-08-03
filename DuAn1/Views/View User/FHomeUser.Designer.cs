@@ -42,7 +42,6 @@
             trợGiúpToolStripMenuItem = new ToolStripMenuItem();
             hướngDẫnSửDụngToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
-            quảnLýVéĐặtToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,7 +78,7 @@
             guna2Button2.Name = "guna2Button2";
             guna2Button2.Size = new Size(192, 45);
             guna2Button2.TabIndex = 1;
-            guna2Button2.Text = "QUẢN LÝ CHUYẾN BAY";
+            guna2Button2.Text = "QUẢN LÝ VÉ ĐẶT";
             guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button3
@@ -136,7 +135,7 @@
             // 
             // hệThốngToolStripMenuItem
             // 
-            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, quảnLýVéĐặtToolStripMenuItem, đăngXuấtToolStripMenuItem });
+            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
             hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
             hệThốngToolStripMenuItem.Size = new Size(83, 20);
             hệThốngToolStripMenuItem.Text = "Người dùng";
@@ -184,13 +183,6 @@
             label1.TabIndex = 6;
             label1.Text = "label1";
             // 
-            // quảnLýVéĐặtToolStripMenuItem
-            // 
-            quảnLýVéĐặtToolStripMenuItem.Name = "quảnLýVéĐặtToolStripMenuItem";
-            quảnLýVéĐặtToolStripMenuItem.Size = new Size(180, 22);
-            quảnLýVéĐặtToolStripMenuItem.Text = "Quản lý vé đặt";
-            quảnLýVéĐặtToolStripMenuItem.Click += quảnLýVéĐặtToolStripMenuItem_Click;
-            // 
             // FHomeUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -231,6 +223,5 @@
         private ToolStripMenuItem trợGiúpToolStripMenuItem;
         private ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
         private Label label1;
-        private ToolStripMenuItem quảnLýVéĐặtToolStripMenuItem;
     }
 }
