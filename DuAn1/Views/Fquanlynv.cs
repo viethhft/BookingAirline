@@ -179,7 +179,6 @@ namespace DuAn1
 
         private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            check = true;
             txt_Ten.Enabled = false;
             txt_Email.Enabled = false;
             txt_Pass.Enabled = false;
