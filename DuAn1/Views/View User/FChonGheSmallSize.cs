@@ -17,6 +17,7 @@ namespace GUI.Views.View_User
 {
     public partial class FChonGheSmallSize : Form
     {
+        public string status;
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
         ISeatDetailServices _seatDetailServices;
@@ -262,6 +263,11 @@ namespace GUI.Views.View_User
                 this.Hide();
                 af.ShowDialog();
                 this.Show();
+                if (af.Status == "True")
+                {
+                    status = "True";
+                    this.Close();
+                }
             }
             else
             {

@@ -17,6 +17,7 @@ namespace GUI.Views.View_User
 {
     public partial class FChonGheBigSize : Form
     {
+        public string status;
         string _email = "";
         IFlightServices _flightServices;
         IPlaneTypeServices _planeTypeServices;
@@ -262,8 +263,12 @@ namespace GUI.Views.View_User
                 FAfterSeat af = new FAfterSeat(_code, _listcode, _email,price);
                 this.Hide();
                 af.ShowDialog();
-                this.Refresh();
                 this.Show();
+                if (af.Status=="True")
+                {
+                    status = "True";
+                    this.Close();
+                }
             }
             else
             {

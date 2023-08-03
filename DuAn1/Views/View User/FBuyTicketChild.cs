@@ -109,6 +109,10 @@ namespace GUI.Views.View_User
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
+                if (fChonGhe.status=="True")
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -116,6 +120,10 @@ namespace GUI.Views.View_User
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
+                if (fChonGhe.status == "True")
+                {
+                    this.Close();
+                }
             }
         }
 
@@ -131,6 +139,10 @@ namespace GUI.Views.View_User
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
+                if (fChonGhe.status == "True")
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -138,6 +150,10 @@ namespace GUI.Views.View_User
                 this.Hide();
                 fChonGhe.ShowDialog();
                 this.Show();
+                if (fChonGhe.status == "True")
+                {
+                    this.Close();
+                }
             }
         }
 

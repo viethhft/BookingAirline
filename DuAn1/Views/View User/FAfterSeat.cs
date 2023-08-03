@@ -29,6 +29,7 @@ namespace GUI.Views.View_User
         string macb;
         string _email = "";
         int _price = 0;
+        public string Status;
         public FAfterSeat()
         {
             _classServices = new ClassServices();
@@ -111,6 +112,7 @@ namespace GUI.Views.View_User
                         _ser.Create(sf);
                     }
                 }
+                Status = "True";
                 this.Close();
             }
             else
