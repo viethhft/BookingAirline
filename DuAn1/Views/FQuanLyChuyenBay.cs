@@ -245,7 +245,7 @@ namespace DuAn1.Views
                                     break;
                                 }
                             }
-                            flight.FlightCode = txb_codeflight.Text;
+                            flight.FlightCode = ReverseCodeFlight();
                             flight.GoFrom = cmb_From.Text;
                             flight.GoTom = cmb_To.Text;
                             foreach (var item in _location.get_list())
@@ -314,7 +314,7 @@ namespace DuAn1.Views
                             break;
                         }
                     }
-                    flight.FlightCode = ReverseCodeFlight();
+                    flight.FlightCode = txb_codeflight.Text;
                     flight.GoFrom = cmb_From.Text;
                     flight.GoTom = cmb_To.Text;
                     foreach (var item in _location.get_list())
