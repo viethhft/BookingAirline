@@ -16,7 +16,7 @@ namespace GUI.Views.View_User
     {
         IFlightServices _flightServices;
         ILocationServices _locationServices;
-        bool check_button = true;
+        string check_button;
         bool check_code = true;
         public FtinhTrangChuyenBay()
         {
@@ -65,7 +65,7 @@ namespace GUI.Views.View_User
 
         private void guna2Button1_Click(object sender, EventArgs e) // dđây là button hành trình
         {
-            check_button = true;
+            check_button = "Hành trình";
             guna2Button2.FillColor = Color.White;
             guna2Button1.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = false;
@@ -74,7 +74,7 @@ namespace GUI.Views.View_User
 
         private void guna2Button2_Click(object sender, EventArgs e)//đây là button số hiệu chuyến bay
         {
-            check_button = false;
+            check_button = "Số hiệu";
             guna2Button1.FillColor = Color.White;
             guna2Button2.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = true;
@@ -165,7 +165,7 @@ namespace GUI.Views.View_User
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if (check_button)
+            if (check_button == "Hành trình")
             {
                 if (check())
                 {
@@ -205,11 +205,28 @@ namespace GUI.Views.View_User
                     {
                         try
                         {
-                            var list_search = _flightServices.get_list().Where(c => c.FlightCode == txt_CodeFlight.Text).ToList();
-                            FTinhTrangChuyenBaySoHieuChil hanhtrinh = new FTinhTrangChuyenBaySoHieuChil(list_search);
-                            this.Hide();
-                            hanhtrinh.ShowDialog();
-                            this.Show();
+                            string code = "";
+                            foreach (var item in _flightServices.get_list())
+                            {
+                                string[] ma = item.FlightCode.Split("VN");
+                                if (ma[1] == txt_CodeFlight.Text)
+                                {
+                                    code = item.FlightCode;
+                                }
+                            }
+                            if (code!="")
+                            {
+                                var list_search = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
+                                FTinhTrangChuyenBaySoHieuChil hanhtrinh = new FTinhTrangChuyenBaySoHieuChil(list_search);
+                                this.Hide();
+                                hanhtrinh.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không có số hiệu chuyến bay bạn cần tìm");
+                            }
+
                         }
                         catch (Exception)
                         {
