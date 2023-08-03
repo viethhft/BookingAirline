@@ -195,7 +195,7 @@ namespace GUI.Views.View_User
                     //if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     //{
                     DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
-                    var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
+                    var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date&& c.DateTo==date).ToList();
                     if (search.Count > 0)
                     {
                         FBuyTicketChild a = new FBuyTicketChild(search,_email);
