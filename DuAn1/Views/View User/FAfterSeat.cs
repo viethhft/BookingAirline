@@ -79,7 +79,7 @@ namespace GUI.Views.View_User
         {
             FthanhToan f = new FthanhToan(_price);
             SeatFlight sf;
-            if (MessageBox.Show("Thanh toán nhé", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Xác nhận mua vé?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 this.Hide();
                 f.ShowDialog();
