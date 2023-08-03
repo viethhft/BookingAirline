@@ -87,11 +87,10 @@ namespace DuAn1
                 return false;
             return true;
         }
-        bool check = true;
+        int check = 0;
         private void button1_Click(object sender, EventArgs e)
         {
-            check = !check;
-            if (check)
+            if (check > 0)
             {
                 staff staff = new staff();
                 if (checknhap())
@@ -114,6 +113,7 @@ namespace DuAn1
                             staff.Password = _validate.ReversePass(txt_Pass.Text);
                             MessageBox.Show(_inhanVienServices.addNhanVien(staff));
                             loadData();
+                            check = 0;
                         }
                         else
                         {
@@ -157,8 +157,8 @@ namespace DuAn1
                 lb_ErrorEmail.Visible = false;
                 lb_ErrorName.Visible = false;
                 lb_ErrorPhone.Visible = false;
-
             }
+            check++;
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
