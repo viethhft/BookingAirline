@@ -55,7 +55,8 @@ namespace GUI.Views.View_User
             id = fl.Id;
             var cus = _cus.GetCustomers().Where(c => c.Email == email).FirstOrDefault();
             lb_name.Text = $"{cus.FirstName} {cus.MiddleName} {cus.LastName}";
-            lb_date.Text = fl.DateFlight.ToShortDateString();
+            DateTime datetime = new DateTime(fl.DateTo.Value.Year, fl.DateTo.Value.Month, fl.DateTo.Value.Day);
+            lb_date.Text = fl.DateFlight==fl.DateTo?fl.DateFlight.ToShortDateString() :fl.DateFlight.ToShortDateString()+" - "+datetime.ToShortDateString();
             lb_from.Text = fl.GoFrom;
             lb_tom.Text = fl.GoTom;
             lb_seat.Text = maghe[0];
