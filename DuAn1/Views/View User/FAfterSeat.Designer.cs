@@ -227,6 +227,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(924, 572);
             Controls.Add(lb_CodeFlight);
             Controls.Add(lb_from);
