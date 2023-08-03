@@ -78,7 +78,7 @@
             guna2Button2.Name = "guna2Button2";
             guna2Button2.Size = new Size(192, 45);
             guna2Button2.TabIndex = 1;
-            guna2Button2.Text = "QUẢN LÝ CHUYẾN BAY";
+            guna2Button2.Text = "QUẢN LÝ VÉ ĐẶT";
             guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button3
