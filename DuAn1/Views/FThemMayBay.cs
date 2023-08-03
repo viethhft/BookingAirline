@@ -99,9 +99,8 @@ namespace GUI.Views
                 {
                     PlaneType planeType = _planeTypeServices.get_list().Where(c=>c.PlaneCode==txt_PlaneCode.Text).FirstOrDefault();
                     planeType.DisplayName = txt_NamePlane.Text;
-                    planeType.PlaneCode = txt_PlaneCode.Text;
                     planeType.TotalSeat = Convert.ToInt32(cmb_totalSeats.Text);
-                    MessageBox.Show(_planeTypeServices.create(planeType));
+                    MessageBox.Show(_planeTypeServices.update(planeType));
                     load();
                 }
                 else
