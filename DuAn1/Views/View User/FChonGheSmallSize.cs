@@ -261,7 +261,6 @@ namespace GUI.Views.View_User
                 FAfterSeat af = new FAfterSeat(_code, _listcode, _email,_price);
                 this.Hide();
                 af.ShowDialog();
-                this.Refresh();
                 this.Show();
             }
             else
