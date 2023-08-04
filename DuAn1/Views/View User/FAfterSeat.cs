@@ -93,14 +93,14 @@ namespace GUI.Views.View_User
                         creatticket.CustomerId = _cus.GetCustomers().Where(c => c.Email == _email).FirstOrDefault().Id;
                         creatticket.FlightId = id;
                         creatticket.CreateDate = DateTime.Now;
-                        creatticket.TwoWay = 1;
+                        creatticket.TwoWay = flterm.DateFlight == flterm.DateTo ? 1 : 0;
                         creatticket.TotalTicket = 1;
                         var seat_book = _sd.list().Where(c => c.PlaneTypeId == flterm.PlaneTypeId && c.SeatCode == item).FirstOrDefault();
                         int price = seat_book.ClassId == 1 ? 1000000 : 500000;
                         creatticket.TotalPrice = flterm.Price + price;
                         creatticket.SeatCode = item;
                         creatticket.NameTicket = flterm.FlightCode + "_" + item;
-                        creatticket.Status = flterm.DateFlight == flterm.DateTo ? 1 : 0;
+                        creatticket.Status = 1;
                         _ticketServices.add(creatticket);
                     }
                     foreach (var item in lst)
