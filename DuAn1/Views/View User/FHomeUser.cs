@@ -120,7 +120,7 @@ namespace GUI.Views
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            FQuanLyVeDat child = new();
+            FQuanLyVeDat child = new FQuanLyVeDat(_message);
             ChildForm(child);
             if (guna2Button2.Enabled == true)
             {
@@ -161,12 +161,6 @@ namespace GUI.Views
             FHuongDanUs fhuongdan = new FHuongDanUs();
             fhuongdan.ShowDialog();
 
-        }
-
-        private void quảnLýVéĐặtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FQuanLyVeDat f = new FQuanLyVeDat();
-            f.ShowDialog();
         }
     }
 }

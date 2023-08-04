@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _2_BUS.IService;
+using _2_BUS.Service;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +10,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI.Views.View_User
 {
     public partial class FQuanLyVeDat : Form
     {
+        ICustomerServices _customerServices;
+        ITicketServices _ticketServices;
+        IFlightServices _flightServices;
         public FQuanLyVeDat()
         {
+            _customerServices = new CustomerServices();
+            _flightServices = new FlightServices();
+            _ticketServices = new TicketServices();
             InitializeComponent();
+        }
+        string _email = "";
+        public FQuanLyVeDat(string email) : this()
+        {
+            _email=email;
+            load();
+        }
+        void load()
+        {
+            var cus = _customerServices.GetCustomers().Where(c => c.Email == _email).FirstOrDefault();
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var item in _ticketServices.list_Ticket().Where(c => c.Status == 1 && c.CustomerId == cus.Id))
+            {
+                Point pointMa = new Point(14, 17);
+                Point pointFrom = new Point(14, 67);
+                Point pointTo = new Point(133, 67);
+                Point pointSeat = new Point(210, 37);
+                Point pointBtnCancel = new Point(595, 28);
+                var fl = _flightServices.get_list().Where(c => c.Id == item.FlightId).FirstOrDefault();
+                Panel pan = new Panel();
+                pan.BorderStyle= BorderStyle.FixedSingle;
+                pan.Size = new Size(785, 100);
+                Label machuyenbay = new Label();
+                machuyenbay.Location = pointMa;
+                machuyenbay.Text = fl.FlightCode;
+                machuyenbay.Size = new Size(200, 15);
+                Label from = new Label();
+                from.Location = pointFrom;
+                from.Text = fl.GoFrom;
+                from.Size = new Size(100, 15);
+                Label to = new Label();
+                to.Location = pointTo;
+                to.Size = new Size(100, 15);
+                to.Text = fl.GoTom;
+                Label seat = new Label();
+                seat.Location = pointSeat;
+                seat.Text = item.SeatCode;
+                Guna2Button btn_Cancel = new Guna2Button();
+                btn_Cancel.Location = pointBtnCancel;
+                btn_Cancel.Text = "Hủy vé";
+                btn_Cancel.Click += Btn_Cancel_Click;
+                btn_Cancel.Name = item.Id.ToString();
+                pan.Controls.Add(machuyenbay);
+                pan.Controls.Add(from);
+                pan.Controls.Add(to);
+                pan.Controls.Add(seat);
+                pan.Controls.Add(btn_Cancel);
+                flowLayoutPanel1.Controls.Add(pan);
+            }
+        }
+        private void Btn_Cancel_Click(object? sender, EventArgs e)
+        {
+            Guna2Button btn = (Guna2Button)(sender);
+            if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                var ticket=_ticketServices.list_Ticket().Where(c=>c.Id==Convert.ToInt32(btn.Name)).FirstOrDefault();
+                ticket.Status = 0;
+                _ticketServices.update(ticket);
+                MessageBox.Show("Hủy vé thành công");
+                load();
+            }
         }
     }
 }

@@ -22,7 +22,12 @@ namespace DuAn1.Views
             _ticketServices = new TicketServices();
             _flightServices = new FlightServices();
             InitializeComponent();
+            load();
+        }
+        void load()
+        {
             dgv_Revenue.ColumnCount = 4;
+            dgv_Revenue.Rows.Clear();
             dgv_Revenue.Columns[0].Name = "STT";
             dgv_Revenue.Columns[1].Name = "Mã chuyến bay";
             dgv_Revenue.Columns[2].Name = "Ngay bay";
@@ -45,7 +50,7 @@ namespace DuAn1.Views
             for (int i = 0; i < ticket.Count; i++)
             {
                 total = ticket[i].TotalPrice;
-                for (int j = i+1; j < ticket.Count; j++)
+                for (int j = i + 1; j < ticket.Count; j++)
                 {
                     if (ticket[i].FlightId == ticket[j].FlightId)
                     {
@@ -59,7 +64,55 @@ namespace DuAn1.Views
                         break;
                     }
                 }
-                if (i+1==ticket.Count)
+                if (i + 1 == ticket.Count)
+                {
+                    var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                }
+                stt++;
+            }
+        }
+        private void btn_fill_Click(object sender, EventArgs e)
+        {
+            dgv_Revenue.ColumnCount = 4;
+            dgv_Revenue.Rows.Clear();
+            dgv_Revenue.Columns[0].Name = "STT";
+            dgv_Revenue.Columns[1].Name = "Mã chuyến bay";
+            dgv_Revenue.Columns[2].Name = "Ngay bay";
+            dgv_Revenue.Columns[3].Name = "Tổng doanh thu";
+            var ticket = _ticketServices.list_Ticket().Where(c=>c.CreateDate>=date_From.Value.AddDays(-1)&&c.CreateDate<=date_To.Value).ToList();
+            for (int i = 0; i < ticket.Count; i++)
+            {
+                for (int j = 0; j < ticket.Count; j++)
+                {
+                    if (ticket[i].FlightId > ticket[j].FlightId)
+                    {
+                        Ticket term = ticket[i];
+                        ticket[i] = ticket[j];
+                        ticket[j] = term;
+                    }
+                }
+            }
+            int total = 0;
+            int stt = 1;
+            for (int i = 0; i < ticket.Count; i++)
+            {
+                total = ticket[i].TotalPrice;
+                for (int j = i + 1; j < ticket.Count; j++)
+                {
+                    if (ticket[i].FlightId == ticket[j].FlightId)
+                    {
+                        total += ticket[j].TotalPrice;
+                    }
+                    else
+                    {
+                        var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                        i = j - 1;
+                        break;
+                    }
+                }
+                if (i + 1 == ticket.Count)
                 {
                     var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
                     dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
@@ -68,14 +121,13 @@ namespace DuAn1.Views
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void date_To_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_fill_Click(object sender, EventArgs e)
-        {
-
+            if (DateTime.Compare(date_From.Value,date_To.Value)==1)
+            {
+                MessageBox.Show("Ngày sau không thể nhỏ hơn ngày trước");
+                date_To.Value = date_From.Value;
+            }
         }
     }
 }

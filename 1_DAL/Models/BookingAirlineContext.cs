@@ -308,6 +308,10 @@ namespace _1_DAL.Models
                     .HasColumnType("datetime")
                     .HasColumnName("createDate");
 
+                entity.Property(e => e.LastUpdate)
+                   .HasColumnType("datetime")
+                   .HasColumnName("lastUpdate");
+
                 entity.Property(e => e.CustomerId).HasColumnName("customerId");
 
                 entity.Property(e => e.FlightId).HasColumnName("flightId");

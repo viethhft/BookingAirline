@@ -88,6 +88,7 @@
             this.date_To.Size = new System.Drawing.Size(200, 36);
             this.date_To.TabIndex = 41;
             this.date_To.Value = new System.DateTime(2023, 7, 22, 21, 54, 15, 137);
+            this.date_To.ValueChanged += new System.EventHandler(this.date_To_ValueChanged);
             // 
             // date_From
             // 
