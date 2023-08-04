@@ -40,13 +40,12 @@ namespace DuAn1.Views
                     }
                 }
             }
-            int count = 0;
             int total = 0;
             int stt = 1;
-            for (int i = count; i < ticket.Count; i++)
+            for (int i = 0; i < ticket.Count; i++)
             {
-                total += ticket[i].TotalPrice;
-                for (int j = i + 1; j < ticket.Count; j++)
+                total = ticket[i].TotalPrice;
+                for (int j = i+1; j < ticket.Count; j++)
                 {
                     if (ticket[i].FlightId == ticket[j].FlightId)
                     {
@@ -54,12 +53,17 @@ namespace DuAn1.Views
                     }
                     else
                     {
-                        count = j;
+                        var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                        i = j - 1;
                         break;
                     }
                 }
-                var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
-                dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                if (i+1==ticket.Count)
+                {
+                    var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                }
                 stt++;
             }
         }
