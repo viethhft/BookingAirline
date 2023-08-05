@@ -78,13 +78,22 @@ namespace GUI.Views.View_User
         private void Btn_Cancel_Click(object? sender, EventArgs e)
         {
             Guna2Button btn = (Guna2Button)(sender);
-            if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            var ticket = _ticketServices.list_Ticket().Where(c => c.Id == Convert.ToInt32(btn.Name)).FirstOrDefault();
+
+            if (DateTime.Now.Day-ticket.CreateDate.Day<1)
             {
-                var ticket=_ticketServices.list_Ticket().Where(c=>c.Id==Convert.ToInt32(btn.Name)).FirstOrDefault();
-                ticket.Status = 0;
-                _ticketServices.update(ticket);
-                MessageBox.Show("Hủy vé thành công");
-                load();
+                if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ticket.Status = 0;
+                    ticket.LastUpdate = DateTime.Now;
+                    _ticketServices.update(ticket);
+                    MessageBox.Show("Hủy vé thành công");
+                    load();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Quá thời hạn hủy vé");
             }
         }
     }
