@@ -27,7 +27,7 @@ namespace GUI.Views
         {
             foreach (var item in _planeTypeServices.get_list())
             {
-                if (item.PlaneCode==txt_PlaneCode.Text)
+                if (item.PlaneCode == txt_PlaneCode.Text)
                 {
                     return false;
                 }
@@ -36,7 +36,7 @@ namespace GUI.Views
         }
         bool checkEmpty()
         {
-            if (txt_NamePlane.Text==""||txt_PlaneCode.Text=="")
+            if (txt_NamePlane.Text == "" || txt_PlaneCode.Text == "")
             {
                 return false;
             }
@@ -95,18 +95,13 @@ namespace GUI.Views
         {
             if (checkEmpty())
             {
-                if (checkDuplicate())
-                {
-                    PlaneType planeType = _planeTypeServices.get_list().Where(c=>c.PlaneCode==txt_PlaneCode.Text).FirstOrDefault();
-                    planeType.DisplayName = txt_NamePlane.Text;
-                    planeType.TotalSeat = Convert.ToInt32(cmb_totalSeats.Text);
-                    MessageBox.Show(_planeTypeServices.update(planeType));
-                    load();
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng nhập mã máy bay khác mã đã nhập trùng máy bay đã có sẵn");
-                }
+
+                PlaneType planeType = _planeTypeServices.get_list().Where(c => c.PlaneCode == txt_PlaneCode.Text).FirstOrDefault();
+                planeType.DisplayName = txt_NamePlane.Text;
+                planeType.TotalSeat = Convert.ToInt32(cmb_totalSeats.Text);
+                MessageBox.Show(_planeTypeServices.update(planeType));
+                load();
+
             }
             else
             {
