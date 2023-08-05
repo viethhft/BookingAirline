@@ -82,6 +82,7 @@ namespace GUI.Views.View_User
             {
                 var ticket=_ticketServices.list_Ticket().Where(c=>c.Id==Convert.ToInt32(btn.Name)).FirstOrDefault();
                 ticket.Status = 0;
+                ticket.LastUpdate= DateTime.Now;
                 _ticketServices.update(ticket);
                 MessageBox.Show("Hủy vé thành công");
                 load();
