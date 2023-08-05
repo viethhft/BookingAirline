@@ -20,8 +20,8 @@ namespace GUI.Views.View_User
     public partial class FDoimk : Form
     {
         private string _message = "";
-        bool _check_info = true;
-
+        bool _check_info = false;
+        bool _check_passnew = false;
         ICustomerServices _services;
         Validate _validate;
         IStaffServices _staffServices;
@@ -31,6 +31,9 @@ namespace GUI.Views.View_User
             _services = new CustomerServices();
             _staffServices = new StaffServices();
             _validate = new Validate();
+            lbl_passOld.Visible = false;
+            lbl_passNew.Visible = false;
+            lbl_passReNew.Visible = false;
 
         }
         public FDoimk(string messege) : this()
@@ -38,14 +41,28 @@ namespace GUI.Views.View_User
             _message = messege;
             lblWell.Text = "Chào mừng thượng đế: " + _message;
         }
-
+        bool checkpassold()
+        {
+            try
+            {
+                if (_services.GetCustomers().Where(c => c.Password == _validate.ReversePass(tbx_passOld.Text) && c.Email == _message).FirstOrDefault() != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (tbx_passOld.Text != "" && tbx_passNew.Text != "" && tbx_passReNew.Text != "")
             {
-                try
+                if (_check_info && _check_passnew)
                 {
-                    if (_validate.ReversePass(tbx_passOld.Text) == _services.GetCustomers().Where(c => c.Email == _message).FirstOrDefault().Password && tbx_passNew.Text == tbx_passReNew.Text)
+                    if (checkpassold())
                     {
                         Customer customer = _services.Get(_message);
                         customer.Password = _validate.ReversePass(tbx_passReNew.Text);
@@ -57,32 +74,17 @@ namespace GUI.Views.View_User
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng xem lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Mật khẩu cũ không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception)
+                else
                 {
-                    //MessageBox.Show("Vui lòng xem lại thông tin 2!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //throw;
-                    if (_validate.ReversePass(tbx_passOld.Text) == _staffServices.list_staff().Where(c => c.Email == _message).FirstOrDefault().Password && tbx_passNew.Text == tbx_passReNew.Text)
-                    {
-                        staff staff = _staffServices.getEmail(_message);
-                        staff.Password = _validate.ReversePass(tbx_passReNew.Text);
-                        if (MessageBox.Show(_staffServices.update(staff), "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
-                        {
-                            this.Close();
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mật khẩu không trùng nhau vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Vui lòng nhập thông tin đúng yêu cầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -108,6 +110,24 @@ namespace GUI.Views.View_User
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbx_passNew_TextChanged(object sender, EventArgs e)
+        {
+            if (_validate.checkpass(tbx_passNew.Text))
+            {
+                lbl_passNew.Text = "";
+                lbl_passNew.Visible = false;
+                _check_passnew = true;
+            }
+            else
+            {
+                _check_passnew = false;
+                lbl_passNew.Text = "Mật khẩu nhập phải từ 6 kí tự và có ít nhất 1 ký tự đặc biệt!";
+                lbl_passNew.Visible = true;
+                lbl_passNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                lbl_passNew.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }

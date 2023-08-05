@@ -43,7 +43,7 @@ namespace GUI.Views.View_User
             InitializeComponent();
         }
 
-        public FAfterSeat(string machuyenbay, List<string> maghe, string email,int price) : this()
+        public FAfterSeat(string machuyenbay, List<string> maghe, string email, int price) : this()
         {
             lst = new List<int>();
             lst_ma = new List<string>();
@@ -56,7 +56,7 @@ namespace GUI.Views.View_User
             var cus = _cus.GetCustomers().Where(c => c.Email == email).FirstOrDefault();
             lb_name.Text = $"{cus.FirstName} {cus.MiddleName} {cus.LastName}";
             DateTime datetime = new DateTime(fl.DateTo.Value.Year, fl.DateTo.Value.Month, fl.DateTo.Value.Day);
-            lb_date.Text = fl.DateFlight==fl.DateTo?fl.DateFlight.ToShortDateString() :fl.DateFlight.ToShortDateString()+" - "+datetime.ToShortDateString();
+            lb_date.Text = fl.DateFlight == fl.DateTo ? fl.DateFlight.ToShortDateString() : fl.DateFlight.ToShortDateString() + " - " + datetime.ToShortDateString();
             lb_from.Text = fl.GoFrom;
             lb_tom.Text = fl.GoTom;
             lb_seat.Text = maghe[0];
@@ -89,16 +89,17 @@ namespace GUI.Views.View_User
                     foreach (var item in lst_ma)
                     {
                         Ticket creatticket = new Ticket();
+                        var flterm = _f.get_list().Where(c => c.Id == id).FirstOrDefault();
                         creatticket.CustomerId = _cus.GetCustomers().Where(c => c.Email == _email).FirstOrDefault().Id;
                         creatticket.FlightId = id;
                         creatticket.CreateDate = DateTime.Now;
-                        creatticket.TwoWay = 1;
+                        creatticket.TwoWay = flterm.DateFlight == flterm.DateTo ? 1 : 0;
                         creatticket.TotalTicket = 1;
-                        var seat_book = _sd.list().Where(c => c.PlaneTypeId == _f.get_list().Where(c => c.Id == id).FirstOrDefault().PlaneTypeId && c.SeatCode == item).FirstOrDefault();
+                        var seat_book = _sd.list().Where(c => c.PlaneTypeId == flterm.PlaneTypeId && c.SeatCode == item).FirstOrDefault();
                         int price = seat_book.ClassId == 1 ? 1000000 : 500000;
-                        creatticket.TotalPrice = _f.get_list().Where(c => c.Id == id).FirstOrDefault().Price+price;
+                        creatticket.TotalPrice = flterm.Price + price;
                         creatticket.SeatCode = item;
-                        creatticket.NameTicket = _f.get_list().Where(c => c.Id == id).FirstOrDefault().FlightCode+"_"+item;
+                        creatticket.NameTicket = flterm.FlightCode + "_" + item;
                         creatticket.Status = 1;
                         _ticketServices.add(creatticket);
                     }
@@ -120,7 +121,7 @@ namespace GUI.Views.View_User
             {
                 MessageBox.Show("Mua vé thất bại");
             }
-            
+
         }
     }
 }

@@ -28,159 +28,161 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            groupBox2 = new GroupBox();
-            guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            label2 = new Label();
-            label1 = new Label();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox2.SuspendLayout();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_Revenue = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.date_To = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.date_From = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btn_Export = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_fill = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Revenue)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(12, 77);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1031, 394);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.dgv_Revenue);
+            this.groupBox1.Location = new System.Drawing.Point(12, 77);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1031, 394);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgv_Revenue
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 22);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1019, 366);
-            dataGridView1.TabIndex = 0;
+            this.dgv_Revenue.AllowUserToAddRows = false;
+            this.dgv_Revenue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Revenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Revenue.Location = new System.Drawing.Point(6, 22);
+            this.dgv_Revenue.Name = "dgv_Revenue";
+            this.dgv_Revenue.RowTemplate.Height = 25;
+            this.dgv_Revenue.Size = new System.Drawing.Size(1019, 366);
+            this.dgv_Revenue.TabIndex = 0;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(guna2DateTimePicker2);
-            groupBox2.Controls.Add(guna2DateTimePicker1);
-            groupBox2.Controls.Add(guna2Button1);
-            groupBox2.Controls.Add(guna2Button2);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Location = new Point(12, 12);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1025, 59);
-            groupBox2.TabIndex = 3;
-            groupBox2.TabStop = false;
-            groupBox2.Enter += groupBox2_Enter;
+            this.groupBox2.Controls.Add(this.date_To);
+            this.groupBox2.Controls.Add(this.date_From);
+            this.groupBox2.Controls.Add(this.btn_Export);
+            this.groupBox2.Controls.Add(this.btn_fill);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1025, 59);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
             // 
-            // guna2DateTimePicker2
+            // date_To
             // 
-            guna2DateTimePicker2.Checked = true;
-            guna2DateTimePicker2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker2.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker2.Location = new Point(424, 17);
-            guna2DateTimePicker2.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker2.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            guna2DateTimePicker2.Size = new Size(200, 36);
-            guna2DateTimePicker2.TabIndex = 41;
-            guna2DateTimePicker2.Value = new DateTime(2023, 7, 22, 21, 54, 15, 137);
+            this.date_To.Checked = true;
+            this.date_To.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date_To.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.date_To.Location = new System.Drawing.Point(424, 17);
+            this.date_To.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date_To.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date_To.Name = "date_To";
+            this.date_To.Size = new System.Drawing.Size(200, 36);
+            this.date_To.TabIndex = 41;
+            this.date_To.Value = new System.DateTime(2023, 7, 22, 21, 54, 15, 137);
+            this.date_To.ValueChanged += new System.EventHandler(this.date_To_ValueChanged);
             // 
-            // guna2DateTimePicker1
+            // date_From
             // 
-            guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(100, 17);
-            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.Size = new Size(200, 36);
-            guna2DateTimePicker1.TabIndex = 40;
-            guna2DateTimePicker1.Value = new DateTime(2023, 7, 22, 21, 54, 15, 137);
+            this.date_From.Checked = true;
+            this.date_From.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date_From.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.date_From.Location = new System.Drawing.Point(100, 17);
+            this.date_From.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date_From.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date_From.Name = "date_From";
+            this.date_From.Size = new System.Drawing.Size(200, 36);
+            this.date_From.TabIndex = 40;
+            this.date_From.Value = new System.DateTime(2023, 7, 22, 21, 54, 15, 137);
             // 
-            // guna2Button1
+            // btn_Export
             // 
-            guna2Button1.BorderRadius = 2;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.DarkCyan;
-            guna2Button1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(927, 17);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.Size = new Size(92, 36);
-            guna2Button1.TabIndex = 39;
-            guna2Button1.Text = "Xuất";
+            this.btn_Export.BorderRadius = 2;
+            this.btn_Export.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Export.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Export.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Export.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Export.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Export.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Export.ForeColor = System.Drawing.Color.White;
+            this.btn_Export.Location = new System.Drawing.Point(927, 17);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(92, 36);
+            this.btn_Export.TabIndex = 39;
+            this.btn_Export.Text = "Xuất";
             // 
-            // guna2Button2
+            // btn_fill
             // 
-            guna2Button2.BorderRadius = 2;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.DarkCyan;
-            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(668, 17);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.Size = new Size(92, 36);
-            guna2Button2.TabIndex = 38;
-            guna2Button2.Text = "Lọc";
+            this.btn_fill.BorderRadius = 2;
+            this.btn_fill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_fill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_fill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_fill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_fill.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_fill.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_fill.ForeColor = System.Drawing.Color.White;
+            this.btn_fill.Location = new System.Drawing.Point(668, 17);
+            this.btn_fill.Name = "btn_fill";
+            this.btn_fill.Size = new System.Drawing.Size(92, 36);
+            this.btn_fill.TabIndex = 38;
+            this.btn_fill.Text = "Lọc";
+            this.btn_fill.Click += new System.EventHandler(this.btn_fill_Click);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(344, 26);
-            label2.Name = "label2";
-            label2.Size = new Size(74, 18);
-            label2.TabIndex = 4;
-            label2.Text = "Đến ngày";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(344, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Đến ngày";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(28, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 18);
-            label1.TabIndex = 3;
-            label1.Text = "Từ ngày";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(28, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 18);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Từ ngày";
             // 
             // FquanLyDoanhThu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1055, 483);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Name = "FquanLyDoanhThu";
-            Text = "FquanLyDoanhThu";
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1055, 483);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FquanLyDoanhThu";
+            this.Text = "FquanLyDoanhThu";
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Revenue)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_Revenue;
         private GroupBox groupBox2;
         private Label label2;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_fill;
+        private Guna.UI2.WinForms.Guna2DateTimePicker date_To;
+        private Guna.UI2.WinForms.Guna2DateTimePicker date_From;
+        private Guna.UI2.WinForms.Guna2Button btn_Export;
     }
 }

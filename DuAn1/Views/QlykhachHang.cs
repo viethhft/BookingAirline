@@ -74,7 +74,7 @@ namespace DuAn1.Views
                 dtgv_kh.Columns[6].Name = "Giới tính";
                 dtgv_kh.Columns[7].Name = "Trạng thái";
 
-                foreach (var i in _cusServices.GetCustomers().Where(c => c.LastName.ToLower() == tb_find.Text))
+                foreach (var i in _cusServices.GetCustomers().Where(c => c.FirstName.Contains(tb_find.Text) || c.MiddleName.Contains(tb_find.Text) || c.LastName.Contains(tb_find.Text)||c.Email.Contains(tb_find.Text)||c.Phone.Contains(tb_find.Text)))
                 {
                     dtgv_kh.Rows.Add(i.Id, i.FirstName + " " + i.MiddleName + " " + i.LastName, i.Email, i.Dob.Value.Date.ToString(), i.Phone, i.Address, i.Gender,
                         i.Status == 1 ? "Hoạt động" : "Vô hiệu hóa");

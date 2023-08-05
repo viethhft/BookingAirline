@@ -15,6 +15,7 @@ namespace _1_DAL.Models
         public string SeatCode { get; set; } = null!;
         public string NameTicket { get; set; } = null!;
         public int Status { get; set; }
+        public DateTime? LastUpdate { get; set; }
 
         public virtual Customer Customer { get; set; } = null!;
         public virtual Flight Flight { get; set; } = null!;

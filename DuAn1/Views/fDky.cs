@@ -228,6 +228,13 @@ namespace DuAn1.Views
                     check = false;
                 }
             }
+            foreach (var item in _staffServices.list_staff())
+            {
+                if (item.Email == txb_email.Text)
+                {
+                    check = false;
+                }
+            }
 
             if (txb_email.Text != "" && check && _check_mail)
             {
@@ -255,6 +262,10 @@ namespace DuAn1.Views
             else if (txb_email.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập email");
+            }
+            else if (!_check_mail)
+            {
+                MessageBox.Show("Email bạn nhập không đúng định dạng");
             }
             else
             {
