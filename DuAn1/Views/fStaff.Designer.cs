@@ -79,9 +79,9 @@
             // btn_addPlane
             // 
             btn_addPlane.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_addPlane.Location = new Point(2, 449);
+            btn_addPlane.Location = new Point(2, 377);
             btn_addPlane.Name = "btn_addPlane";
-            btn_addPlane.Size = new Size(194, 48);
+            btn_addPlane.Size = new Size(193, 48);
             btn_addPlane.TabIndex = 8;
             btn_addPlane.Text = "Thêm máy bay";
             btn_addPlane.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             // btn_qlykh
             // 
             btn_qlykh.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlykh.Location = new Point(2, 281);
+            btn_qlykh.Location = new Point(1, 293);
             btn_qlykh.Name = "btn_qlykh";
             btn_qlykh.Size = new Size(194, 48);
             btn_qlykh.TabIndex = 7;
@@ -101,7 +101,7 @@
             // btn_qlyflight
             // 
             btn_qlyflight.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_qlyflight.Location = new Point(2, 195);
+            btn_qlyflight.Location = new Point(1, 200);
             btn_qlyflight.Name = "btn_qlyflight";
             btn_qlyflight.Size = new Size(194, 48);
             btn_qlyflight.TabIndex = 6;
@@ -123,7 +123,7 @@
             // btn_dthu
             // 
             btn_dthu.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_dthu.Location = new Point(2, 368);
+            btn_dthu.Location = new Point(1, 465);
             btn_dthu.Name = "btn_dthu";
             btn_dthu.Size = new Size(194, 48);
             btn_dthu.TabIndex = 1;

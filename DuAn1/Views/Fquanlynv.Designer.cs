@@ -132,7 +132,7 @@
             btn_Sua.Name = "btn_Sua";
             btn_Sua.Size = new Size(130, 45);
             btn_Sua.TabIndex = 21;
-            btn_Sua.Text = "Sửa";
+            btn_Sua.Text = "Cập nhật trạng thái";
             btn_Sua.Click += btn_Sua_Click;
             // 
             // lb_ErrorEmail
