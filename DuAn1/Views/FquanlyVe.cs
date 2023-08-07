@@ -1,5 +1,6 @@
 ﻿using _2_BUS.IService;
 using _2_BUS.Service;
+using GUI.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,7 @@ namespace DuAn1.Views
             cbb_DiemDi.DisplayMember = "locationFly";
 
             dgv_data.Rows.Clear();
-            dgv_data.ColumnCount = 11;
+            dgv_data.ColumnCount = 12;
             dgv_data.Columns[0].Name = "Tên vé";
             dgv_data.Columns[1].Name = "Người mua";
             dgv_data.Columns[2].Name = "Mã chuyến bay";
@@ -56,6 +57,8 @@ namespace DuAn1.Views
             dgv_data.Columns[8].Name = "Điểm đến";
             dgv_data.Columns[9].Name = "Giá vé";
             dgv_data.Columns[10].Name = "Mã ghế";
+            dgv_data.Columns[11].Name = "ID";
+            dgv_data.Columns[11].Visible=false;
             foreach (var item in _ticketServices.list_Ticket())
             {
                 var cus = _customerServices.GetCustomers().Where(c => c.Id == item.CustomerId).FirstOrDefault();
@@ -66,7 +69,7 @@ namespace DuAn1.Views
 
                 var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == "").FirstOrDefault();
                 int tong = item.TotalPrice + flight.Price;
-                dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate,item.TwoWay ,flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTom, tong, item.SeatCode);
+                dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate,item.TwoWay ,flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTom, tong, item.SeatCode,item.Id);
             }
             if (dgv_data.RowCount > 0)
             {
@@ -83,6 +86,13 @@ namespace DuAn1.Views
             date_NgayVe.Value = (DateTime)(dgv_data.CurrentRow.Cells[6].Value);
             cbb_DiemDen.Text = dgv_data.CurrentRow.Cells[8].Value.ToString();
             cbb_DiemDi.Text = dgv_data.CurrentRow.Cells[7].Value.ToString();
+            string emailcus = dgv_data.CurrentRow.Cells[1].Value.ToString();
+            int idticket = Convert.ToInt32(dgv_data.CurrentRow.Cells[11].Value.ToString());
+            FthongTinKh fthongTinKh = new FthongTinKh(emailcus,idticket);
+            this.Hide();
+            fthongTinKh.ShowDialog();
+            this.Show();
+            
         }
     }
 }

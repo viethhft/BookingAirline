@@ -58,7 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeEnd_minute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEnd_hour)).BeginInit();
@@ -70,7 +69,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmb_status);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label14);
@@ -484,16 +482,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Loại máy bay";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(231, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FQuanLyChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -547,6 +535,5 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_minute;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_status;
         private Label label12;
-        private Button button1;
     }
 }

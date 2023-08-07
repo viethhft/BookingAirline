@@ -247,7 +247,7 @@ namespace DuAn1.Views
                 string body = "Mã xác thực để xác minh tài khoản đăng ký của bạn là: ";
                 int role_id = 99;
                 code_otp = _validate.randomCode();
-                if (await _validate.SendEmail(email, subject, body, code_otp, role_id))
+                if (await _validate.SendEmailVerify(email, subject, body, code_otp, role_id))
                 {
                     time.Visible = true;
                     MessageBox.Show("Mã xác thực đã được gửi đến email của bạn!");

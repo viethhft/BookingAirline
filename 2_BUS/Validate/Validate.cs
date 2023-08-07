@@ -93,7 +93,7 @@ namespace _2_BUS.Validate
             }
             return false;
         }
-        public async Task<bool> SendEmail(string _email, string _subject, string _body, string code_otp,int role)
+        public async Task<bool> SendEmailVerify(string _email, string _subject, string _body, string code_otp,int role)
         {
             try
             {
@@ -106,6 +106,45 @@ namespace _2_BUS.Validate
 
                 SmtpClient smtp = new SmtpClient();
                 body += code_otp;
+                try
+                {
+                    mail.To.Add(_email);//đến mail ng dùng nào
+                    mail.From = new MailAddress(senderID);//mail admin dùng để gửi
+                    mail.Subject = _subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = true;
+                    mail.Priority = MailPriority.High;
+                    smtp.Host = "smtp.gmail.com"; //host hỗ trợ gmail của smtp
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);//sử dụng mail nào gửi thì add đây nài
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    await smtp.SendMailAsync(mail);//gửi mail này
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public async Task<bool> SendEmailInfoTiket(string _email, string _subject, string _body, int role)
+        {
+            try
+            {
+                //staff là mail của admin để gửi
+                staff staff = _staffServices.get(role);
+                string senderID = staff.Email;
+                string senderPassword = staff.Password;
+                string body = _body;
+                MailMessage mail = new MailMessage();
+
+                SmtpClient smtp = new SmtpClient();
                 try
                 {
                     mail.To.Add(_email);//đến mail ng dùng nào

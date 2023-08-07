@@ -1,6 +1,7 @@
 ﻿using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
+using GUI.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -369,11 +370,6 @@ namespace DuAn1.Views
             DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
             dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
             cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(check_timeDup().ToString());
         }
     }
 }

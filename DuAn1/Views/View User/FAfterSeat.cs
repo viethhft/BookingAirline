@@ -1,5 +1,6 @@
 ﻿using _1_DAL.Models;
 using _2_BUS.Service;
+using _2_BUS.Validate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,11 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace GUI.Views.View_User
 {
     public partial class FAfterSeat : Form
     {
+        Validate _validate;
         FChonGheSmallSize _fsm;
         SeatFlightSer _ser;
         FlightServices _f;
@@ -32,6 +35,7 @@ namespace GUI.Views.View_User
         public string Status;
         public FAfterSeat()
         {
+            _validate = new Validate();
             _classServices = new ClassServices();
             _ticketServices = new TicketServices();
             _cus = new CustomerServices();
@@ -75,7 +79,7 @@ namespace GUI.Views.View_User
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             FthanhToan f = new FthanhToan(_price);
             SeatFlight sf;
@@ -114,7 +118,22 @@ namespace GUI.Views.View_User
                         _ser.Create(sf);
                     }
                 }
+
                 Status = "True";
+                var flight = _f.get_list().Where(c => c.FlightCode == lb_CodeFlight.Text).FirstOrDefault();
+                string email = lb_name.Text;
+                string subject = "THÔNG TIN NHỮNG VÉ MÁY BAY ĐÃ MUA";
+                string body = $"Mã chuyến bay của quý khách là: {lb_CodeFlight.Text}." +
+                              $"Địa điểm bay: {lb_from.Text}." +
+                              $"Địa điếm đến: {lb_tom.Text}." +
+                              $"Ngày bay: {lb_date.Text}." +
+                              $"Tổng số ghế đã đặt: {lb_totalSeats.Text}." +
+                              $"Các mã ghế đã đặt: {lb_seat.Text}." +
+                              $"Thời gia bay: {flight.TimeStart}." +
+                              $"Thời gian đến: {flight.TimeEnd}." +
+                              $"Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi!";
+                string code = lb_CodeFlight.Text;
+                await _validate.SendEmailInfoTiket(email, subject, body, 99);
                 this.Close();
             }
             else

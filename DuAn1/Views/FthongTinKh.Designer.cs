@@ -28,125 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_seat = new System.Windows.Forms.TextBox();
+            this.txt_address = new System.Windows.Forms.TextBox();
+            this.txt_phonenumber = new System.Windows.Forms.TextBox();
+            this.txt_gender = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
             // 
-            // dataGridView1
+            // txt_Email
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 199);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(842, 301);
-            dataGridView1.TabIndex = 0;
+            this.txt_Email.Location = new System.Drawing.Point(57, 24);
+            this.txt_Email.Multiline = true;
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(163, 35);
+            this.txt_Email.TabIndex = 1;
+            this.txt_Email.Text = "Ho ten";
             // 
-            // textBox1
+            // txt_seat
             // 
-            textBox1.Location = new Point(57, 24);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 35);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Ho ten";
+            this.txt_seat.Location = new System.Drawing.Point(277, 24);
+            this.txt_seat.Multiline = true;
+            this.txt_seat.Name = "txt_seat";
+            this.txt_seat.Size = new System.Drawing.Size(163, 35);
+            this.txt_seat.TabIndex = 2;
+            this.txt_seat.Text = "Ghe ngoi";
             // 
-            // textBox2
+            // txt_address
             // 
-            textBox2.Location = new Point(267, 24);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(163, 35);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "Ghe ngoi";
+            this.txt_address.Location = new System.Drawing.Point(57, 156);
+            this.txt_address.Multiline = true;
+            this.txt_address.Name = "txt_address";
+            this.txt_address.Size = new System.Drawing.Size(163, 83);
+            this.txt_address.TabIndex = 3;
+            this.txt_address.Text = "dia chi";
             // 
-            // textBox3
+            // txt_phonenumber
             // 
-            textBox3.Location = new Point(57, 89);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(163, 83);
-            textBox3.TabIndex = 3;
-            textBox3.Text = "dia chi";
+            this.txt_phonenumber.Location = new System.Drawing.Point(277, 156);
+            this.txt_phonenumber.Multiline = true;
+            this.txt_phonenumber.Name = "txt_phonenumber";
+            this.txt_phonenumber.Size = new System.Drawing.Size(163, 35);
+            this.txt_phonenumber.TabIndex = 4;
+            this.txt_phonenumber.Text = "sdt";
             // 
-            // textBox4
+            // txt_gender
             // 
-            textBox4.Location = new Point(267, 89);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(163, 35);
-            textBox4.TabIndex = 4;
-            textBox4.Text = "sdt";
+            this.txt_gender.Location = new System.Drawing.Point(493, 38);
+            this.txt_gender.Multiline = true;
+            this.txt_gender.Name = "txt_gender";
+            this.txt_gender.Size = new System.Drawing.Size(163, 35);
+            this.txt_gender.TabIndex = 5;
+            this.txt_gender.Text = "gioi tinh";
             // 
-            // textBox5
+            // txt_name
             // 
-            textBox5.Location = new Point(493, 24);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(163, 35);
-            textBox5.TabIndex = 5;
-            textBox5.Text = "gioi tinh";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(493, 89);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(163, 35);
-            textBox6.TabIndex = 6;
-            textBox6.Text = "tim kiem";
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.DarkCyan;
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(684, 89);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.Size = new Size(106, 35);
-            guna2Button1.TabIndex = 7;
-            guna2Button1.Text = "Tìm kiếm";
+            this.txt_name.Location = new System.Drawing.Point(57, 81);
+            this.txt_name.Multiline = true;
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(163, 35);
+            this.txt_name.TabIndex = 6;
+            this.txt_name.Text = "Ho ten";
             // 
             // FthongTinKh
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(866, 512);
-            Controls.Add(guna2Button1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
-            Name = "FthongTinKh";
-            Text = "FthongTinKh";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(668, 350);
+            this.Controls.Add(this.txt_name);
+            this.Controls.Add(this.txt_gender);
+            this.Controls.Add(this.txt_phonenumber);
+            this.Controls.Add(this.txt_address);
+            this.Controls.Add(this.txt_seat);
+            this.Controls.Add(this.txt_Email);
+            this.Name = "FthongTinKh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FthongTinKh";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private TextBox txt_Email;
+        private TextBox txt_seat;
+        private TextBox txt_address;
+        private TextBox txt_phonenumber;
+        private TextBox txt_gender;
+        private TextBox txt_name;
     }
 }
