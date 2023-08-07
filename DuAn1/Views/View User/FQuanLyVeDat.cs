@@ -63,6 +63,8 @@ namespace GUI.Views.View_User
                 seat.Location = pointSeat;
                 seat.Text = item.SeatCode;
                 Guna2Button btn_Cancel = new Guna2Button();
+                btn_Cancel.BorderRadius = 10;
+                btn_Cancel.FillColor = Color.FromArgb(235, 64, 52);
                 btn_Cancel.Location = pointBtnCancel;
                 btn_Cancel.Text = "Hủy vé";
                 btn_Cancel.Click += Btn_Cancel_Click;
@@ -87,13 +89,13 @@ namespace GUI.Views.View_User
                     ticket.Status = 0;
                     ticket.LastUpdate = DateTime.Now;
                     _ticketServices.update(ticket);
-                    MessageBox.Show("Hủy vé thành công");
+                    MessageBox.Show("Hủy vé thành công","Thông báo!");
                     load();
                 }
             }
             else
             {
-                MessageBox.Show("Quá thời hạn hủy vé");
+                MessageBox.Show("Quá thời hạn hủy vé","Thông báo!");
             }
         }
     }
