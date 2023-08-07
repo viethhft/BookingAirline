@@ -156,7 +156,7 @@ namespace DuAn1.Views
             {
                 if (item.DateFlight == DateFrom.Value)
                 {
-                    if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0||TimeSpan.Compare(timeEnd,item.TimeStart)>-1)
+                    if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0)
                     {
                         return false;
                     }
