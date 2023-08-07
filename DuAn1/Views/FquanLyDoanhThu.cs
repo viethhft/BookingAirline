@@ -17,8 +17,10 @@ namespace DuAn1.Views
     {
         ITicketServices _ticketServices;
         IFlightServices _flightServices;
+        IPlaneTypeServices _planeTypeServices;
         public FquanLyDoanhThu()
         {
+            _planeTypeServices = new PlaneTypeServices();
             _ticketServices = new TicketServices();
             _flightServices = new FlightServices();
             InitializeComponent();
@@ -26,12 +28,14 @@ namespace DuAn1.Views
         }
         void load()
         {
-            dgv_Revenue.ColumnCount = 4;
+            dgv_Revenue.ColumnCount = 6;
             dgv_Revenue.Rows.Clear();
             dgv_Revenue.Columns[0].Name = "STT";
             dgv_Revenue.Columns[1].Name = "Mã chuyến bay";
             dgv_Revenue.Columns[2].Name = "Ngay bay";
-            dgv_Revenue.Columns[3].Name = "Tổng doanh thu";
+            dgv_Revenue.Columns[3].Name = "Số vé đã bán";
+            dgv_Revenue.Columns[4].Name = "Tổng số vé";
+            dgv_Revenue.Columns[5].Name = "Tổng doanh thu";
             var ticket = _ticketServices.list_Ticket().ToList();
             for (int i = 0; i < ticket.Count; i++)
             {
@@ -49,17 +53,20 @@ namespace DuAn1.Views
             int stt = 1;
             for (int i = 0; i < ticket.Count; i++)
             {
+                int soveban = 1;
                 total = ticket[i].TotalPrice;
                 for (int j = i + 1; j < ticket.Count; j++)
                 {
                     if (ticket[i].FlightId == ticket[j].FlightId)
                     {
+                        soveban++;
                         total += ticket[j].TotalPrice;
                     }
                     else
                     {
                         var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
-                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                        var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
+                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight,soveban,plane.TotalSeat, total);
                         i = j - 1;
                         break;
                     }
@@ -67,7 +74,8 @@ namespace DuAn1.Views
                 if (i + 1 == ticket.Count)
                 {
                     var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
-                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, total);
+                    var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
+                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight,1,plane.TotalSeat, total);
                 }
                 stt++;
             }

@@ -32,8 +32,8 @@ namespace DuAn1.Views
             _location = new LocationService();
             _plantype = new PlaneTypeServices();
             InitializeComponent();
-            cmb_status.Items.Add("Delay");
             cmb_status.Items.Add("Đúng giờ");
+            cmb_status.Items.Add("Delay");
             load();
         }
         void check_price()
@@ -103,7 +103,7 @@ namespace DuAn1.Views
                 cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
                 DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
                 dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
-                cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.Rows[0].Cells[11].Value.ToString());
+                cmb_status.Text = dgv_chuyenbay.Rows[0].Cells[11].Value.ToString() == "1" ? "Đúng giờ" : "Delay";
                 txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
             }
             txb_codeflight.Enabled = false;
@@ -111,49 +111,36 @@ namespace DuAn1.Views
         string ReverseCodeFlight()
         {
             string code = "";
-            int count = 0;
+            int max = 0;
             foreach (var item in _flight.get_list())
             {
-                for (int i = 0; i < _flight.get_list().Count; i++)
+                foreach (var item1 in _flight.get_list())
                 {
-                    if (count < 9)
+                    if (item1 == item)
                     {
-                        if (item.FlightCode == $"VN00{count + 1}")
+                        string[] cut = item.FlightCode.Split("VN");
+                        if (cut.Count() > 1)
                         {
-                            count++;
-                        }
-                        else
-                        {
-                            code = $"VN00{count + 1}";
-                            break;
-                        }
-                    }
-                    else if (count < 98)
-                    {
-                        if (item.FlightCode == $"VN0{count + 1}")
-                        {
-                            count++;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        if (item.FlightCode == $"VN{count + 1}")
-                        {
-                            count++;
-                        }
-                        else
-                        {
-                            code = $"VN{count + 1}";
-                            break;
+                            if (max < Convert.ToInt32(cut[1]))
+                            {
+                                max = Convert.ToInt32(cut[1]);
+                            }
                         }
                     }
                 }
             }
-
+            if (max < 10)
+            {
+                code = $"VN00{max + 1}";
+            }
+            else if (max < 100)
+            {
+                code = $"VN0{max + 1}";
+            }
+            else
+            {
+                code = $"VN{max + 1}";
+            }
             return code;
         }
         bool check_timeDup()
@@ -165,11 +152,14 @@ namespace DuAn1.Views
             TimeSpan timestart = new TimeSpan(hourStart, minuteStart, 0);
             TimeSpan timeEnd = new TimeSpan(hourEnd, minuteEnd, 0);
             var plane = _plantype.get_list().Where(c => c.PlaneCode == cmb_PlaneType.SelectedValue).FirstOrDefault();
-            foreach (var item in _flight.get_list())
+            foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id))
             {
-                if (item.PlaneTypeId == plane.Id && item.DateFlight == DateFrom.Value && item.TimeStart == timestart)
+                if (item.DateFlight == DateFrom.Value)
                 {
-                    return false;
+                    if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0||TimeSpan.Compare(timeEnd,item.TimeStart)>-1)
+                    {
+                        return false;
+                    }
                 }
             }
             return true;
@@ -269,7 +259,8 @@ namespace DuAn1.Views
                             TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
                             flight.TimeStart = timestart;
                             flight.TimeEnd = timeend;
-                            flight.Status = cmb_status.SelectedIndex;//trạng thái của chuyến bay
+
+                            flight.Status = cmb_status.SelectedIndex == 0 ? 1 : 0;//trạng thái của chuyến bay
                             MessageBox.Show(_flight.create(flight));
                             load();
                         }
@@ -387,5 +378,9 @@ namespace DuAn1.Views
             cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString());
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(check_timeDup().ToString());
+        }
     }
 }

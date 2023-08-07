@@ -28,455 +28,490 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            cmb_status = new Guna.UI2.WinForms.Guna2ComboBox();
-            label12 = new Label();
-            label14 = new Label();
-            timeEnd_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            timeEnd_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            label11 = new Label();
-            timeStart_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            timeStart_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            label10 = new Label();
-            label2 = new Label();
-            cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
-            label5 = new Label();
-            nbr_Price = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            btn_Update = new Guna.UI2.WinForms.Guna2Button();
-            btn_Add = new Guna.UI2.WinForms.Guna2Button();
-            txb_Search = new TextBox();
-            label9 = new Label();
-            dateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            DateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
-            cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
-            dgv_chuyenbay = new DataGridView();
-            txb_codeflight = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label1 = new Label();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)timeEnd_minute).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)timeEnd_hour).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)timeStart_minute).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)timeStart_hour).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nbr_Price).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgv_chuyenbay).BeginInit();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_status = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.timeEnd_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.timeEnd_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.timeStart_minute = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.timeStart_hour = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmb_To = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nbr_Price = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.btn_Update = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Add = new Guna.UI2.WinForms.Guna2Button();
+            this.txb_Search = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
+            this.txb_codeflight = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_hour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_hour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(cmb_status);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(label14);
-            groupBox1.Controls.Add(timeEnd_minute);
-            groupBox1.Controls.Add(timeEnd_hour);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(timeStart_minute);
-            groupBox1.Controls.Add(timeStart_hour);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(cmb_To);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(nbr_Price);
-            groupBox1.Controls.Add(btn_Update);
-            groupBox1.Controls.Add(btn_Add);
-            groupBox1.Controls.Add(txb_Search);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(dateTo);
-            groupBox1.Controls.Add(DateFrom);
-            groupBox1.Controls.Add(cmb_PlaneType);
-            groupBox1.Controls.Add(cmb_From);
-            groupBox1.Controls.Add(dgv_chuyenbay);
-            groupBox1.Controls.Add(txb_codeflight);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(1030, 461);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.cmb_status);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.timeEnd_minute);
+            this.groupBox1.Controls.Add(this.timeEnd_hour);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.timeStart_minute);
+            this.groupBox1.Controls.Add(this.timeStart_hour);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cmb_To);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.nbr_Price);
+            this.groupBox1.Controls.Add(this.btn_Update);
+            this.groupBox1.Controls.Add(this.btn_Add);
+            this.groupBox1.Controls.Add(this.txb_Search);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dateTo);
+            this.groupBox1.Controls.Add(this.DateFrom);
+            this.groupBox1.Controls.Add(this.cmb_PlaneType);
+            this.groupBox1.Controls.Add(this.cmb_From);
+            this.groupBox1.Controls.Add(this.dgv_chuyenbay);
+            this.groupBox1.Controls.Add(this.txb_codeflight);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(10, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 461);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
             // cmb_status
             // 
-            cmb_status.BackColor = Color.Transparent;
-            cmb_status.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_status.DropDownHeight = 175;
-            cmb_status.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_status.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_status.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_status.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_status.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_status.IntegralHeight = false;
-            cmb_status.ItemHeight = 30;
-            cmb_status.Location = new Point(568, 154);
-            cmb_status.Name = "cmb_status";
-            cmb_status.Size = new Size(211, 36);
-            cmb_status.TabIndex = 49;
+            this.cmb_status.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_status.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_status.DropDownHeight = 175;
+            this.cmb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_status.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_status.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_status.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_status.IntegralHeight = false;
+            this.cmb_status.ItemHeight = 30;
+            this.cmb_status.Location = new System.Drawing.Point(568, 154);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(211, 36);
+            this.cmb_status.TabIndex = 49;
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(568, 135);
-            label12.Name = "label12";
-            label12.Size = new Size(76, 18);
-            label12.TabIndex = 48;
-            label12.Text = "Trạng thái";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(568, 135);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 18);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Trạng thái";
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(719, 32);
-            label14.Name = "label14";
-            label14.Size = new Size(16, 25);
-            label14.TabIndex = 47;
-            label14.Text = ":";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(719, 32);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 25);
+            this.label14.TabIndex = 47;
+            this.label14.Text = ":";
             // 
             // timeEnd_minute
             // 
-            timeEnd_minute.BackColor = Color.Transparent;
-            timeEnd_minute.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            timeEnd_minute.Location = new Point(738, 34);
-            timeEnd_minute.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
-            timeEnd_minute.Name = "timeEnd_minute";
-            timeEnd_minute.Size = new Size(41, 25);
-            timeEnd_minute.TabIndex = 45;
+            this.timeEnd_minute.BackColor = System.Drawing.Color.Transparent;
+            this.timeEnd_minute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeEnd_minute.Location = new System.Drawing.Point(738, 34);
+            this.timeEnd_minute.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.timeEnd_minute.Name = "timeEnd_minute";
+            this.timeEnd_minute.Size = new System.Drawing.Size(41, 25);
+            this.timeEnd_minute.TabIndex = 45;
             // 
             // timeEnd_hour
             // 
-            timeEnd_hour.BackColor = Color.Transparent;
-            timeEnd_hour.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            timeEnd_hour.Location = new Point(676, 34);
-            timeEnd_hour.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
-            timeEnd_hour.Name = "timeEnd_hour";
-            timeEnd_hour.Size = new Size(41, 25);
-            timeEnd_hour.TabIndex = 44;
+            this.timeEnd_hour.BackColor = System.Drawing.Color.Transparent;
+            this.timeEnd_hour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeEnd_hour.Location = new System.Drawing.Point(676, 34);
+            this.timeEnd_hour.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeEnd_hour.Name = "timeEnd_hour";
+            this.timeEnd_hour.Size = new System.Drawing.Size(41, 25);
+            this.timeEnd_hour.TabIndex = 44;
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(610, 32);
-            label11.Name = "label11";
-            label11.Size = new Size(16, 25);
-            label11.TabIndex = 42;
-            label11.Text = ":";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(610, 32);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 25);
+            this.label11.TabIndex = 42;
+            this.label11.Text = ":";
             // 
             // timeStart_minute
             // 
-            timeStart_minute.BackColor = Color.Transparent;
-            timeStart_minute.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            timeStart_minute.Location = new Point(622, 34);
-            timeStart_minute.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
-            timeStart_minute.Name = "timeStart_minute";
-            timeStart_minute.Size = new Size(41, 25);
-            timeStart_minute.TabIndex = 37;
+            this.timeStart_minute.BackColor = System.Drawing.Color.Transparent;
+            this.timeStart_minute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeStart_minute.Location = new System.Drawing.Point(622, 34);
+            this.timeStart_minute.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.timeStart_minute.Name = "timeStart_minute";
+            this.timeStart_minute.Size = new System.Drawing.Size(41, 25);
+            this.timeStart_minute.TabIndex = 37;
             // 
             // timeStart_hour
             // 
-            timeStart_hour.BackColor = Color.Transparent;
-            timeStart_hour.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            timeStart_hour.Location = new Point(569, 34);
-            timeStart_hour.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
-            timeStart_hour.Name = "timeStart_hour";
-            timeStart_hour.Size = new Size(41, 25);
-            timeStart_hour.TabIndex = 36;
+            this.timeStart_hour.BackColor = System.Drawing.Color.Transparent;
+            this.timeStart_hour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeStart_hour.Location = new System.Drawing.Point(569, 34);
+            this.timeStart_hour.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeStart_hour.Name = "timeStart_hour";
+            this.timeStart_hour.Size = new System.Drawing.Size(41, 25);
+            this.timeStart_hour.TabIndex = 36;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(676, 12);
-            label10.Name = "label10";
-            label10.Size = new Size(64, 18);
-            label10.TabIndex = 35;
-            label10.Text = "Kết thúc";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(676, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 18);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Kết thúc";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(568, 13);
-            label2.Name = "label2";
-            label2.Size = new Size(79, 18);
-            label2.TabIndex = 33;
-            label2.Text = "Khởi hành";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(568, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 18);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Khởi hành";
             // 
             // cmb_To
             // 
-            cmb_To.BackColor = Color.Transparent;
-            cmb_To.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_To.DropDownHeight = 175;
-            cmb_To.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_To.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_To.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_To.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_To.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_To.IntegralHeight = false;
-            cmb_To.ItemHeight = 30;
-            cmb_To.Location = new Point(300, 95);
-            cmb_To.Margin = new Padding(3, 2, 3, 2);
-            cmb_To.Name = "cmb_To";
-            cmb_To.Size = new Size(212, 36);
-            cmb_To.TabIndex = 32;
-            cmb_To.SelectedIndexChanged += cmb_To_SelectedValueChanged;
+            this.cmb_To.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_To.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_To.DropDownHeight = 175;
+            this.cmb_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_To.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_To.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_To.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_To.IntegralHeight = false;
+            this.cmb_To.ItemHeight = 30;
+            this.cmb_To.Location = new System.Drawing.Point(300, 95);
+            this.cmb_To.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_To.Name = "cmb_To";
+            this.cmb_To.Size = new System.Drawing.Size(212, 36);
+            this.cmb_To.TabIndex = 32;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(298, 78);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 18);
-            label5.TabIndex = 31;
-            label5.Text = "Điểm đến";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(298, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 18);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Điểm đến";
             // 
             // nbr_Price
             // 
-            nbr_Price.BackColor = Color.Transparent;
-            nbr_Price.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nbr_Price.Increment = new decimal(new int[] { 1000000, 0, 0, 0 });
-            nbr_Price.Location = new Point(569, 96);
-            nbr_Price.Maximum = new decimal(new int[] { -1981284353, -1966660860, 0, 0 });
-            nbr_Price.Name = "nbr_Price";
-            nbr_Price.Size = new Size(210, 36);
-            nbr_Price.TabIndex = 30;
-            nbr_Price.Value = new decimal(new int[] { 1000000, 0, 0, 0 });
+            this.nbr_Price.BackColor = System.Drawing.Color.Transparent;
+            this.nbr_Price.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nbr_Price.Increment = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nbr_Price.Location = new System.Drawing.Point(569, 96);
+            this.nbr_Price.Maximum = new decimal(new int[] {
+            -1981284353,
+            -1966660860,
+            0,
+            0});
+            this.nbr_Price.Name = "nbr_Price";
+            this.nbr_Price.Size = new System.Drawing.Size(210, 36);
+            this.nbr_Price.TabIndex = 30;
+            this.nbr_Price.Value = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             // 
             // btn_Update
             // 
-            btn_Update.BorderRadius = 10;
-            btn_Update.DisabledState.BorderColor = Color.DarkGray;
-            btn_Update.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Update.FillColor = Color.DarkCyan;
-            btn_Update.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(912, 19);
-            btn_Update.Margin = new Padding(3, 2, 3, 2);
-            btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(112, 48);
-            btn_Update.TabIndex = 29;
-            btn_Update.Text = "Sửa";
-            btn_Update.Click += btn_Update_Click;
+            this.btn_Update.BorderRadius = 10;
+            this.btn_Update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Update.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Update.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Update.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Update.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Location = new System.Drawing.Point(912, 19);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(112, 48);
+            this.btn_Update.TabIndex = 29;
+            this.btn_Update.Text = "Sửa";
             // 
             // btn_Add
             // 
-            btn_Add.BorderRadius = 10;
-            btn_Add.DisabledState.BorderColor = Color.DarkGray;
-            btn_Add.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Add.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Add.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Add.FillColor = Color.DarkCyan;
-            btn_Add.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Add.ForeColor = Color.White;
-            btn_Add.Location = new Point(798, 20);
-            btn_Add.Margin = new Padding(3, 2, 3, 2);
-            btn_Add.Name = "btn_Add";
-            btn_Add.Size = new Size(112, 47);
-            btn_Add.TabIndex = 28;
-            btn_Add.Text = "Thêm";
-            btn_Add.Click += btn_Add_Click;
+            this.btn_Add.BorderRadius = 10;
+            this.btn_Add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Add.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Add.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
+            this.btn_Add.Location = new System.Drawing.Point(798, 20);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(112, 47);
+            this.btn_Add.TabIndex = 28;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txb_Search
             // 
-            txb_Search.Location = new Point(798, 153);
-            txb_Search.Margin = new Padding(3, 2, 3, 2);
-            txb_Search.Multiline = true;
-            txb_Search.Name = "txb_Search";
-            txb_Search.Size = new Size(223, 37);
-            txb_Search.TabIndex = 27;
+            this.txb_Search.Location = new System.Drawing.Point(798, 153);
+            this.txb_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_Search.Multiline = true;
+            this.txb_Search.Name = "txb_Search";
+            this.txb_Search.Size = new System.Drawing.Size(223, 37);
+            this.txb_Search.TabIndex = 27;
+            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(798, 133);
-            label9.Name = "label9";
-            label9.Size = new Size(71, 18);
-            label9.TabIndex = 26;
-            label9.Text = "Tìm kiếm";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(798, 133);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 18);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Tìm kiếm";
             // 
             // dateTo
             // 
-            dateTo.Checked = true;
-            dateTo.FillColor = Color.FromArgb(224, 224, 224);
-            dateTo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTo.Format = DateTimePickerFormat.Long;
-            dateTo.Location = new Point(300, 155);
-            dateTo.Margin = new Padding(3, 2, 3, 2);
-            dateTo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dateTo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dateTo.Name = "dateTo";
-            dateTo.Size = new Size(212, 36);
-            dateTo.TabIndex = 24;
-            dateTo.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
-            dateTo.ValueChanged += dateTo_ValueChanged;
+            this.dateTo.Checked = true;
+            this.dateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dateTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTo.Location = new System.Drawing.Point(300, 155);
+            this.dateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(212, 36);
+            this.dateTo.TabIndex = 24;
+            this.dateTo.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
             // DateFrom
             // 
-            DateFrom.Checked = true;
-            DateFrom.FillColor = Color.FromArgb(224, 224, 224);
-            DateFrom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DateFrom.Format = DateTimePickerFormat.Long;
-            DateFrom.Location = new Point(23, 156);
-            DateFrom.Margin = new Padding(3, 2, 3, 2);
-            DateFrom.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateFrom.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateFrom.Name = "DateFrom";
-            DateFrom.Size = new Size(212, 36);
-            DateFrom.TabIndex = 23;
-            DateFrom.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
-            DateFrom.ValueChanged += DateFrom_ValueChanged;
+            this.DateFrom.Checked = true;
+            this.DateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DateFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateFrom.Location = new System.Drawing.Point(23, 156);
+            this.DateFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.Size = new System.Drawing.Size(212, 36);
+            this.DateFrom.TabIndex = 23;
+            this.DateFrom.Value = new System.DateTime(2023, 7, 22, 22, 13, 14, 18);
             // 
             // cmb_PlaneType
             // 
-            cmb_PlaneType.BackColor = Color.Transparent;
-            cmb_PlaneType.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_PlaneType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_PlaneType.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_PlaneType.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_PlaneType.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_PlaneType.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_PlaneType.ItemHeight = 30;
-            cmb_PlaneType.Location = new Point(26, 31);
-            cmb_PlaneType.Margin = new Padding(3, 2, 3, 2);
-            cmb_PlaneType.Name = "cmb_PlaneType";
-            cmb_PlaneType.Size = new Size(211, 36);
-            cmb_PlaneType.TabIndex = 21;
-            cmb_PlaneType.SelectedIndexChanged += cmb_PlaneType_SelectedValueChanged;
+            this.cmb_PlaneType.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_PlaneType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_PlaneType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_PlaneType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_PlaneType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_PlaneType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_PlaneType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_PlaneType.ItemHeight = 30;
+            this.cmb_PlaneType.Location = new System.Drawing.Point(26, 31);
+            this.cmb_PlaneType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_PlaneType.Name = "cmb_PlaneType";
+            this.cmb_PlaneType.Size = new System.Drawing.Size(211, 36);
+            this.cmb_PlaneType.TabIndex = 21;
             // 
             // cmb_From
             // 
-            cmb_From.BackColor = Color.Transparent;
-            cmb_From.DrawMode = DrawMode.OwnerDrawFixed;
-            cmb_From.DropDownHeight = 175;
-            cmb_From.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_From.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmb_From.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmb_From.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmb_From.ForeColor = Color.FromArgb(68, 88, 112);
-            cmb_From.IntegralHeight = false;
-            cmb_From.ItemHeight = 30;
-            cmb_From.Location = new Point(24, 96);
-            cmb_From.Margin = new Padding(3, 2, 3, 2);
-            cmb_From.Name = "cmb_From";
-            cmb_From.Size = new Size(211, 36);
-            cmb_From.TabIndex = 19;
-            cmb_From.SelectedIndexChanged += cmb_From_SelectedValueChanged;
+            this.cmb_From.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_From.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_From.DropDownHeight = 175;
+            this.cmb_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_From.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_From.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_From.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_From.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_From.IntegralHeight = false;
+            this.cmb_From.ItemHeight = 30;
+            this.cmb_From.Location = new System.Drawing.Point(24, 96);
+            this.cmb_From.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_From.Name = "cmb_From";
+            this.cmb_From.Size = new System.Drawing.Size(211, 36);
+            this.cmb_From.TabIndex = 19;
             // 
             // dgv_chuyenbay
             // 
-            dgv_chuyenbay.AllowUserToAddRows = false;
-            dgv_chuyenbay.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_chuyenbay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_chuyenbay.Location = new Point(4, 195);
-            dgv_chuyenbay.Margin = new Padding(3, 2, 3, 2);
-            dgv_chuyenbay.Name = "dgv_chuyenbay";
-            dgv_chuyenbay.RowHeadersWidth = 51;
-            dgv_chuyenbay.RowTemplate.Height = 25;
-            dgv_chuyenbay.Size = new Size(1020, 262);
-            dgv_chuyenbay.TabIndex = 0;
-            dgv_chuyenbay.CellClick += dgv_chuyenbay_CellClick;
+            this.dgv_chuyenbay.AllowUserToAddRows = false;
+            this.dgv_chuyenbay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_chuyenbay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_chuyenbay.Location = new System.Drawing.Point(4, 195);
+            this.dgv_chuyenbay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_chuyenbay.Name = "dgv_chuyenbay";
+            this.dgv_chuyenbay.RowHeadersWidth = 51;
+            this.dgv_chuyenbay.RowTemplate.Height = 25;
+            this.dgv_chuyenbay.Size = new System.Drawing.Size(1020, 262);
+            this.dgv_chuyenbay.TabIndex = 0;
             // 
             // txb_codeflight
             // 
-            txb_codeflight.Location = new Point(300, 30);
-            txb_codeflight.Margin = new Padding(3, 2, 3, 2);
-            txb_codeflight.Multiline = true;
-            txb_codeflight.Name = "txb_codeflight";
-            txb_codeflight.Size = new Size(212, 37);
-            txb_codeflight.TabIndex = 8;
+            this.txb_codeflight.Location = new System.Drawing.Point(300, 30);
+            this.txb_codeflight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_codeflight.Multiline = true;
+            this.txb_codeflight.Name = "txb_codeflight";
+            this.txb_codeflight.Size = new System.Drawing.Size(212, 37);
+            this.txb_codeflight.TabIndex = 8;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(569, 75);
-            label8.Name = "label8";
-            label8.Size = new Size(62, 18);
-            label8.TabIndex = 18;
-            label8.Text = "Giá tiền";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(569, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 18);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Giá tiền";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(298, 133);
-            label7.Name = "label7";
-            label7.Size = new Size(64, 18);
-            label7.TabIndex = 15;
-            label7.Text = "Ngày về";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(298, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 18);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Ngày về";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(26, 135);
-            label6.Name = "label6";
-            label6.Size = new Size(61, 18);
-            label6.TabIndex = 13;
-            label6.Text = "Ngày đi";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(26, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Ngày đi";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(26, 78);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 18);
-            label4.TabIndex = 9;
-            label4.Text = "Điểm đi";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(26, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Điểm đi";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(300, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(111, 18);
-            label3.TabIndex = 7;
-            label3.Text = "Mã chuyến bay";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(300, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 18);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Mã chuyến bay";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(27, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 18);
-            label1.TabIndex = 1;
-            label1.Text = "Loại máy bay";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(27, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Loại máy bay";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(231, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FQuanLyChuyenBay
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1052, 481);
-            Controls.Add(groupBox1);
-            Name = "FQuanLyChuyenBay";
-            Text = "FQuanLyChuyenBay";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)timeEnd_minute).EndInit();
-            ((System.ComponentModel.ISupportInitialize)timeEnd_hour).EndInit();
-            ((System.ComponentModel.ISupportInitialize)timeStart_minute).EndInit();
-            ((System.ComponentModel.ISupportInitialize)timeStart_hour).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nbr_Price).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgv_chuyenbay).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1052, 481);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FQuanLyChuyenBay";
+            this.Text = "FQuanLyChuyenBay";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEnd_hour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_hour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbr_Price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -512,5 +547,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_minute;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_status;
         private Label label12;
+        private Button button1;
     }
 }
