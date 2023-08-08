@@ -169,7 +169,7 @@
             Controls.Add(txt_Email);
             Name = "FthongTinKh";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FthongTinKh";
+            Text = "Thông tin khách hàng";
             ResumeLayout(false);
             PerformLayout();
         }
