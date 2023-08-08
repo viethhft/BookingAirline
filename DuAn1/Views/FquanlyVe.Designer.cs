@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Search = new Guna.UI2.WinForms.Guna2Button();
             this.date_NgayVe = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbb_DiemDen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbb_DiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -47,10 +47,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.guna2Button1);
+            this.groupBox1.Controls.Add(this.btn_Search);
+            this.groupBox1.Controls.Add(this.cbb_DiemDi);
             this.groupBox1.Controls.Add(this.date_NgayVe);
             this.groupBox1.Controls.Add(this.cbb_DiemDen);
-            this.groupBox1.Controls.Add(this.cbb_DiemDi);
             this.groupBox1.Controls.Add(this.date_NgayDi);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -62,21 +62,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // guna2Button1
+            // btn_Search
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(894, 41);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(112, 33);
-            this.guna2Button1.TabIndex = 31;
-            this.guna2Button1.Text = "Tìm";
+            this.btn_Search.BorderRadius = 10;
+            this.btn_Search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Search.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Search.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Search.ForeColor = System.Drawing.Color.White;
+            this.btn_Search.Location = new System.Drawing.Point(894, 41);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(112, 33);
+            this.btn_Search.TabIndex = 31;
+            this.btn_Search.Text = "Tìm";
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // date_NgayVe
             // 
@@ -104,7 +105,7 @@
             this.cbb_DiemDen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbb_DiemDen.IntegralHeight = false;
             this.cbb_DiemDen.ItemHeight = 30;
-            this.cbb_DiemDen.Location = new System.Drawing.Point(444, 41);
+            this.cbb_DiemDen.Location = new System.Drawing.Point(669, 41);
             this.cbb_DiemDen.Name = "cbb_DiemDen";
             this.cbb_DiemDen.Size = new System.Drawing.Size(200, 36);
             this.cbb_DiemDen.TabIndex = 29;
@@ -121,7 +122,7 @@
             this.cbb_DiemDi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbb_DiemDi.IntegralHeight = false;
             this.cbb_DiemDi.ItemHeight = 30;
-            this.cbb_DiemDi.Location = new System.Drawing.Point(669, 41);
+            this.cbb_DiemDi.Location = new System.Drawing.Point(444, 39);
             this.cbb_DiemDi.Name = "cbb_DiemDi";
             this.cbb_DiemDi.Size = new System.Drawing.Size(200, 36);
             this.cbb_DiemDi.TabIndex = 28;
@@ -194,10 +195,10 @@
             this.dgv_data.AllowUserToAddRows = false;
             this.dgv_data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_data.Location = new System.Drawing.Point(6, 22);
+            this.dgv_data.Location = new System.Drawing.Point(6, 13);
             this.dgv_data.Name = "dgv_data";
             this.dgv_data.RowTemplate.Height = 25;
-            this.dgv_data.Size = new System.Drawing.Size(1019, 332);
+            this.dgv_data.Size = new System.Drawing.Size(1019, 341);
             this.dgv_data.TabIndex = 0;
             this.dgv_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellClick);
             // 
@@ -231,6 +232,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDen;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_DiemDi;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_NgayDi;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_Search;
     }
 }
