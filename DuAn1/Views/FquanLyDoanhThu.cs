@@ -1,6 +1,7 @@
 ﻿using _1_DAL.Models;
 using _2_BUS.IService;
 using _2_BUS.Service;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace DuAn1.Views
 {
     public partial class FquanLyDoanhThu : Form
@@ -66,7 +66,7 @@ namespace DuAn1.Views
                     {
                         var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
                         var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
-                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight,soveban,plane.TotalSeat, total);
+                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, soveban, plane.TotalSeat, total);
                         i = j - 1;
                         break;
                     }
@@ -75,7 +75,7 @@ namespace DuAn1.Views
                 {
                     var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
                     var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
-                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight,1,plane.TotalSeat, total);
+                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, 1, plane.TotalSeat, total);
                 }
                 stt++;
             }
@@ -88,7 +88,7 @@ namespace DuAn1.Views
             dgv_Revenue.Columns[1].Name = "Mã chuyến bay";
             dgv_Revenue.Columns[2].Name = "Ngay bay";
             dgv_Revenue.Columns[3].Name = "Tổng doanh thu";
-            var ticket = _ticketServices.list_Ticket().Where(c=>c.CreateDate>=date_From.Value.AddDays(-1)&&c.CreateDate<=date_To.Value).ToList();
+            var ticket = _ticketServices.list_Ticket().Where(c => c.CreateDate >= date_From.Value.AddDays(-1) && c.CreateDate <= date_To.Value).ToList();
             for (int i = 0; i < ticket.Count; i++)
             {
                 for (int j = 0; j < ticket.Count; j++)
@@ -131,10 +131,41 @@ namespace DuAn1.Views
 
         private void date_To_ValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(date_From.Value,date_To.Value)==1)
+            if (DateTime.Compare(date_From.Value, date_To.Value) == 1)
             {
                 MessageBox.Show("Ngày sau không thể nhỏ hơn ngày trước");
                 date_To.Value = date_From.Value;
+            }
+        }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            Export();
+        }
+        void Export()
+        {
+            //try
+            //{
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(Type.Missing);
+            for (int i = 0; i < dgv_Revenue.Columns.Count; i++)
+            {
+                excel.Cells[1, i + 1] = dgv_Revenue.Columns[i].HeaderText;
+            }
+            for (int i = 0; i < dgv_Revenue.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgv_Revenue.Columns.Count; j++)
+                {
+                    excel.Cells[i + 2, j + 1] = dgv_Revenue.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            excel.Columns.AutoFit();
+            excel.Visible = false;
+            SaveFileDialog save = new SaveFileDialog();
+            if (save.ShowDialog()==DialogResult.OK)
+            {
+                excel.GetSaveAsFilename();
+
             }
         }
     }

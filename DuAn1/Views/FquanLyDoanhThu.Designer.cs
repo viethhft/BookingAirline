@@ -118,6 +118,7 @@
             this.btn_Export.Size = new System.Drawing.Size(92, 36);
             this.btn_Export.TabIndex = 39;
             this.btn_Export.Text = "Xuất";
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // btn_fill
             // 
