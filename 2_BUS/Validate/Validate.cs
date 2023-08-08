@@ -222,5 +222,6 @@ namespace _2_BUS.Validate
 
             return new_char;
         }
+
     }
 }
