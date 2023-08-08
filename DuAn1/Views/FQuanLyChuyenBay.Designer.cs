@@ -263,12 +263,12 @@
             btn_Update.FillColor = Color.DarkCyan;
             btn_Update.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(912, 19);
+            btn_Update.Location = new Point(916, 20);
             btn_Update.Margin = new Padding(3, 2, 3, 2);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(112, 48);
             btn_Update.TabIndex = 29;
-            btn_Update.Text = "Sửa";
+            btn_Update.Text = "Cập nhật trạng thái";
             btn_Update.Click += btn_Update_Click;
             // 
             // btn_Add
