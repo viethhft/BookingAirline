@@ -37,6 +37,8 @@ namespace DuAn1.Views
             dgv_Revenue.Columns[4].Name = "Tổng số vé";
             dgv_Revenue.Columns[5].Name = "Tổng doanh thu";
             var ticket = _ticketServices.list_Ticket().ToList();
+            int dem=0;
+            int thu = 0;
             for (int i = 0; i < ticket.Count; i++)
             {
                 for (int j = 0; j < ticket.Count; j++)
@@ -47,37 +49,66 @@ namespace DuAn1.Views
                         ticket[i] = ticket[j];
                         ticket[j] = term;
                     }
+                    if (ticket[i].FlightId == ticket[j].FlightId)
+                    {
+                        if (thu==0)
+                        {
+                            dem++;
+                        }
+                    }
                 }
+                thu++;
             }
             int total = 0;
             int stt = 1;
             for (int i = 0; i < ticket.Count; i++)
             {
-                int soveban = 1;
-                total = ticket[i].TotalPrice;
-                for (int j = i + 1; j < ticket.Count; j++)
+                if (dem==ticket.Count)
                 {
-                    if (ticket[i].FlightId == ticket[j].FlightId)
+                    int soveban = 1;
+                    total = ticket[i].TotalPrice;
+                    for (int j = i + 1; j < ticket.Count; j++)
                     {
-                        soveban++;
-                        total += ticket[j].TotalPrice;
+                        if (ticket[i].FlightId == ticket[j].FlightId)
+                        {
+                            soveban++;
+                            total += ticket[j].TotalPrice;
+                        }
                     }
-                    else
+                    var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                    var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
+                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, soveban, plane.TotalSeat, total);
+                    break;
+                }
+                else
+                {
+                    int soveban = 1;
+                    total = ticket[i].TotalPrice;
+                    for (int j = i + 1; j < ticket.Count; j++)
+                    {
+                        if (ticket[i].FlightId == ticket[j].FlightId)
+                        {
+                            soveban++;
+                            total += ticket[j].TotalPrice;
+                        }
+                        else
+                        {
+                            var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                            var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
+                            dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, soveban, plane.TotalSeat, total);
+                            stt++;
+                            i = j - 1;
+                            break;
+                        }
+                    }
+                    if (i + 1 == ticket.Count)
                     {
                         var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
                         var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
-                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, soveban, plane.TotalSeat, total);
-                        i = j - 1;
-                        break;
+                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, 1, plane.TotalSeat, total);
+                        stt++;
                     }
                 }
-                if (i + 1 == ticket.Count)
-                {
-                    var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
-                    var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
-                    dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, 1, plane.TotalSeat, total);
-                }
-                stt++;
             }
         }
         private void btn_fill_Click(object sender, EventArgs e)
