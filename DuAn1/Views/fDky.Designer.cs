@@ -152,7 +152,7 @@
             time.Controls.Add(label10);
             time.Controls.Add(lb_Seconds);
             time.Controls.Add(lb_Minutes);
-            time.Location = new Point(334, 209);
+            time.Location = new Point(334, 210);
             time.Margin = new Padding(3, 4, 3, 4);
             time.Name = "time";
             time.Size = new Size(101, 30);

@@ -129,5 +129,6 @@ namespace GUI.Views.View_User
                 lbl_passNew.ForeColor = System.Drawing.Color.Red;
             }
         }
+
     }
 }
