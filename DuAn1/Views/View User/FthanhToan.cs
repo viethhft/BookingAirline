@@ -17,7 +17,7 @@ namespace GUI.Views.View_User
         public FthanhToan()
         {
             InitializeComponent();
-            btn_acp.Enabled = true;
+            btn_acp.Enabled = false;
 
         }
         public FthanhToan(int price):this()
@@ -45,7 +45,7 @@ namespace GUI.Views.View_User
             }
             else
             {
-                btn_acp.Enabled = true;
+                btn_acp.Enabled = false;
             }
         }
     }
