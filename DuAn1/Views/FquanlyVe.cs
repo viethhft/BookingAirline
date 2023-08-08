@@ -68,8 +68,7 @@ namespace DuAn1.Views
                 var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
 
                 var seat = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id && c.SeatCode == "").FirstOrDefault();
-                int tong = item.TotalPrice + flight.Price;
-                dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate, item.TwoWay, flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTom, tong, item.SeatCode, item.Id);
+                dgv_data.Rows.Add(item.NameTicket, cus.Email, flight.FlightCode, item.CreateDate, item.TwoWay, flight.DateFlight, flight.DateTo, flight.GoFrom, flight.GoTom, item.TotalPrice, item.SeatCode, item.Id);
             }
             if (dgv_data.RowCount > 0)
             {
