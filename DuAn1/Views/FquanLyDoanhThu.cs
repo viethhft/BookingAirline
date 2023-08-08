@@ -161,12 +161,7 @@ namespace DuAn1.Views
             }
             excel.Columns.AutoFit();
             excel.Visible = false;
-            SaveFileDialog save = new SaveFileDialog();
-            if (save.ShowDialog()==DialogResult.OK)
-            {
-                excel.GetSaveAsFilename();
-
-            }
+            excel.GetSaveAsFilename();
         }
     }
 }
