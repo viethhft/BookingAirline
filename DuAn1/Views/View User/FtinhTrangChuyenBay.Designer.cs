@@ -224,7 +224,7 @@
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(48, 136);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(210, 190);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(114, 17);
             this.guna2HtmlLabel9.TabIndex = 24;
@@ -262,7 +262,7 @@
             // 
             // txt_CodeFlight
             // 
-            this.txt_CodeFlight.Location = new System.Drawing.Point(48, 162);
+            this.txt_CodeFlight.Location = new System.Drawing.Point(210, 216);
             this.txt_CodeFlight.Multiline = true;
             this.txt_CodeFlight.Name = "txt_CodeFlight";
             this.txt_CodeFlight.Size = new System.Drawing.Size(314, 36);
