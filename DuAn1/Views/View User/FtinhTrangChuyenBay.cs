@@ -28,6 +28,8 @@ namespace GUI.Views.View_User
             lb_ErrorFrom1.Visible = false;
             lb_ErrorTo1.Visible = false;
             lb_ErrorNum.Visible = false;
+            guna2HtmlLabel9.Visible = false;
+            txt_CodeFlight.Visible = false;
         }
         void load()
         {
@@ -69,6 +71,9 @@ namespace GUI.Views.View_User
             guna2Button2.FillColor = Color.White;
             guna2Button1.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = false;
+            guna2HtmlLabel4.Visible = true;
+            date_Start.Visible = true;
+            guna2HtmlLabel2.Visible = true;
             HienThiHanhTrinh();
         }
 
@@ -78,6 +83,11 @@ namespace GUI.Views.View_User
             guna2Button1.FillColor = Color.White;
             guna2Button2.FillColor = Color.DarkCyan;
             txt_CodeFlight.Visible = true;
+            guna2HtmlLabel4.Visible = false;
+            date_Start.Visible = false;
+            guna2HtmlLabel9.Visible = true;
+            txt_CodeFlight.Visible = true;
+            guna2HtmlLabel2.Visible = false;
             HienThiSoHieuChuyenBay();
         }
 
@@ -172,19 +182,19 @@ namespace GUI.Views.View_User
                     if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     {
                         try
-                    {
-                        DateTime date = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day);
-                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
-                        FTinhTrangChuyenBayHanhTrinhChild hanhtrinh = new FTinhTrangChuyenBayHanhTrinhChild(list_search);
-                        this.Hide();
-                        hanhtrinh.ShowDialog();
-                        this.Show();
+                        {
+                            DateTime date = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day);
+                            var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
+                            FTinhTrangChuyenBayHanhTrinhChild hanhtrinh = new FTinhTrangChuyenBayHanhTrinhChild(list_search);
+                            this.Hide();
+                            hanhtrinh.ShowDialog();
+                            this.Show();
 
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
@@ -201,43 +211,35 @@ namespace GUI.Views.View_User
             {
                 if (checkcode())
                 {
-                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                    try
                     {
-                        try
+                        string code = "";
+                        foreach (var item in _flightServices.get_list())
                         {
-                            string code = "";
-                            foreach (var item in _flightServices.get_list())
+                            string[] ma = item.FlightCode.Split("VN");
+                            if (ma[1] == txt_CodeFlight.Text)
                             {
-                                string[] ma = item.FlightCode.Split("VN");
-                                if (ma[1] == txt_CodeFlight.Text)
-                                {
-                                    code = item.FlightCode;
-                                }
+                                code = item.FlightCode;
                             }
-                            if (code!="")
-                            {
-                                var list_search = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
-                                FTinhTrangChuyenBaySoHieuChil hanhtrinh = new FTinhTrangChuyenBaySoHieuChil(list_search);
-                                this.Hide();
-                                hanhtrinh.ShowDialog();
-                                this.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không có số hiệu chuyến bay bạn cần tìm");
-                            }
+                        }
+                        if (code != "")
+                        {
+                            var list_search = _flightServices.get_list().Where(c => c.FlightCode == code).FirstOrDefault();
+                            FTinhTrangChuyenBaySoHieuChil hanhtrinh = new FTinhTrangChuyenBaySoHieuChil(list_search);
+                            this.Hide();
+                            hanhtrinh.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có số hiệu chuyến bay bạn cần tìm");
+                        }
 
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
                     }
-                    else
+                    catch (Exception)
                     {
-                        MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
                 }
                 else
                 {
