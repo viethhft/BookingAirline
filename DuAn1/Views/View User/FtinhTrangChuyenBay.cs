@@ -38,7 +38,7 @@ namespace GUI.Views.View_User
             lb_ErrorTo1.Visible = false;
             lb_ErrorNum.Visible = false;
             guna2HtmlLabel9.Visible = false;
-
+            check_button = "Hành trình";
             cbb_From.DataSource = _locationServices.get_list();
             cbb_From.DisplayMember = "locationFly";
 

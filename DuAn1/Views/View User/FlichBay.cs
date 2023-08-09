@@ -86,7 +86,7 @@ namespace GUI.Views.View_User
                 catch (Exception)
                 {
                     MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    }
                 }
                 else
                 {

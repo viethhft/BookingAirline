@@ -35,6 +35,7 @@ namespace DuAn1.Views
             InitializeComponent();
             cmb_status.Items.Add("Đúng giờ");
             cmb_status.Items.Add("Delay");
+            cmb_status.SelectedIndex = 0;
             load();
         }
         void check_price()
@@ -93,7 +94,7 @@ namespace DuAn1.Views
             {
                 string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                 string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status);
+                dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status == 0 ? "Đúng giờ" : "Delay");
             }
             if (dgv_chuyenbay.RowCount > 0)
             {
@@ -104,9 +105,16 @@ namespace DuAn1.Views
                 cmb_From.Text = dgv_chuyenbay.Rows[0].Cells[4].Value.ToString();
                 DateFrom.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[5].Value);
                 dateTo.Value = (DateTime)(dgv_chuyenbay.Rows[0].Cells[6].Value);
-                cmb_status.Text = dgv_chuyenbay.Rows[0].Cells[11].Value.ToString() == "1" ? "Đúng giờ" : "Delay";
+                cmb_status.Text = dgv_chuyenbay.Rows[0].Cells[11].Value.ToString();
                 txb_codeflight.Text = dgv_chuyenbay.Rows[0].Cells[2].Value.ToString();
+                TimeSpan timestart = (TimeSpan)(dgv_chuyenbay.Rows[0].Cells[9].Value);
+                TimeSpan timeEnd = (TimeSpan)(dgv_chuyenbay.Rows[0].Cells[10].Value);
+                timeStart_hour.Value = timestart.Hours;
+                timeStart_minute.Value = timestart.Minutes;
+                timeEnd_hour.Value = timeEnd.Hours;
+                timeEnd_minute.Value = timeEnd.Minutes;
             }
+
             txb_codeflight.Enabled = false;
         }
         string ReverseCodeFlight()
@@ -147,11 +155,25 @@ namespace DuAn1.Views
         bool check_date()
         {
             DateTime date = DateTime.Now;
-            if (DateTime.Compare(DateFrom.Value,date)>=0)
+            DateTime dateTimefrom = new DateTime(DateFrom.Value.Year, DateFrom.Value.Month, DateFrom.Value.Day);
+            DateTime dateTimeNow = new DateTime(date.Year, date.Month, date.Day);
+            if (DateTime.Compare(dateTimefrom, dateTimeNow) == -1)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
+
+        }
+        bool check_dateTo()
+        {
+            DateTime dateTimefrom = new DateTime(DateFrom.Value.Year, DateFrom.Value.Month, DateFrom.Value.Day);
+            DateTime dateTimeTo = new DateTime(dateTo.Value.Year, dateTo.Value.Month, dateTo.Value.Day);
+            if (DateTime.Compare(dateTimeTo, dateTimefrom) == -1)
+            {
+                return false;
+            }
+            return true;
+
         }
         bool check_timeDup()
         {
@@ -205,74 +227,81 @@ namespace DuAn1.Views
             check_price();
             if (check_date())
             {
-                if (check_timeDup())
+                if (check_dateTo())
                 {
-                    if (check_timeFlight() == 1)
+                    if (check_timeDup())
                     {
-                        if (checklocation())
+                        if (check_timeFlight() == 1)
                         {
-                            if (checkInfo)
+                            if (checklocation())
                             {
-                                Flight flight = new Flight();
-                                foreach (var item in _plantype.get_list())
+                                if (checkInfo)
                                 {
-                                    if (item.DisplayName == cmb_PlaneType.Text)
+                                    Flight flight = new Flight();
+                                    foreach (var item in _plantype.get_list())
                                     {
-                                        flight.PlaneTypeId = item.Id;
-                                        break;
+                                        if (item.DisplayName == cmb_PlaneType.Text)
+                                        {
+                                            flight.PlaneTypeId = item.Id;
+                                            break;
+                                        }
                                     }
+                                    flight.FlightCode = ReverseCodeFlight();
+                                    flight.GoFrom = cmb_From.Text;
+                                    flight.GoTom = cmb_To.Text;
+                                    foreach (var item in _location.get_list())
+                                    {
+                                        if (item.LocationFly == cmb_From.Text)
+                                        {
+                                            flight.LocationId = item.Id;
+                                            break;
+                                        }
+                                    }
+                                    flight.DateFlight = DateFrom.Value;
+                                    flight.DateTo = dateTo.Value;
+                                    flight.Price = Convert.ToInt32(nbr_Price.Value);
+
+                                    int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
+                                    int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
+
+                                    int hours_e = Convert.ToInt32(timeEnd_hour.Value);
+                                    int minute_e = Convert.ToInt32(timeEnd_minute.Value);
+                                    TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
+                                    TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
+                                    flight.TimeStart = timestart;
+                                    flight.TimeEnd = timeend;
+
+                                    flight.Status = cmb_status.SelectedIndex == 0 ? 1 : 0;//trạng thái của chuyến bay
+                                    MessageBox.Show(_flight.create(flight));
+                                    load();
                                 }
-                                flight.FlightCode = ReverseCodeFlight();
-                                flight.GoFrom = cmb_From.Text;
-                                flight.GoTom = cmb_To.Text;
-                                foreach (var item in _location.get_list())
+                                else
                                 {
-                                    if (item.LocationFly == cmb_From.Text)
-                                    {
-                                        flight.LocationId = item.Id;
-                                        break;
-                                    }
+                                    MessageBox.Show("Hãy nhập đúng giá!");
                                 }
-                                flight.DateFlight = DateFrom.Value;
-                                flight.DateTo = dateTo.Value;
-                                flight.Price = Convert.ToInt32(nbr_Price.Value);
-
-                                int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
-                                int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
-
-                                int hours_e = Convert.ToInt32(timeEnd_hour.Value);
-                                int minute_e = Convert.ToInt32(timeEnd_minute.Value);
-                                TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
-                                TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
-                                flight.TimeStart = timestart;
-                                flight.TimeEnd = timeend;
-
-                                flight.Status = cmb_status.SelectedIndex == 0 ? 1 : 0;//trạng thái của chuyến bay
-                                MessageBox.Show(_flight.create(flight));
-                                load();
                             }
                             else
                             {
-                                MessageBox.Show("Hãy nhập đúng giá!");
+                                MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
+                            MessageBox.Show("Thời gian đi phải lớn hơn thời gian đến!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Thời gian đi phải lớn hơn thời gian đến!");
+                        int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
+                        int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
+                        TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
+
+                        MessageBox.Show($"Máy bay {cmb_PlaneType.Text} vào ngày đang chọn đã có chuyến bay vào lúc {timestart} xin vui lòng chọn giờ bay khác!");
                     }
                 }
                 else
                 {
-                    int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
-                    int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
-                    TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
-
-                    MessageBox.Show($"Máy bay {cmb_PlaneType.Text} vào ngày đang chọn đã có chuyến bay vào lúc {timestart} xin vui lòng chọn giờ bay khác!");
+                    MessageBox.Show("Ngày về phải lớn hơn hoặc bằng ngày đi");
                 }
             }
             else
@@ -283,73 +312,10 @@ namespace DuAn1.Views
         }
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            check_price();
-            if (check_timeDup())
-            {
-                if (check_timeFlight() == 1)
-                {
-                    if (checklocation())
-                    {
-                        if (checkInfo)
-                        {
-                            Flight flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
-                            foreach (var item in _plantype.get_list())
-                            {
-                                if (item.DisplayName == cmb_PlaneType.Text)
-                                {
-                                    flight.PlaneTypeId = item.Id;
-                                    break;
-                                }
-                            }
-                            flight.FlightCode = txb_codeflight.Text;
-                            flight.GoFrom = cmb_From.Text;
-                            flight.GoTom = cmb_To.Text;
-                            foreach (var item in _location.get_list())
-                            {
-                                if (item.LocationFly == cmb_From.Text)
-                                {
-                                    flight.LocationId = item.Id;
-                                    break;
-                                }
-                            }
-                            flight.DateFlight = DateFrom.Value;
-                            flight.DateTo = dateTo.Value;
-                            flight.Price = Convert.ToInt32(nbr_Price.Value);
-                            int hours_st = Convert.ToInt32(timeStart_hour.Value);
-                            int minute_st = Convert.ToInt32(timeStart_hour.Value);
-                            int hours_e = Convert.ToInt32(timeEnd_hour.Value);
-                            int minute_e = Convert.ToInt32(timeEnd_hour.Value);
-                            TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
-                            TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
-                            flight.TimeStart = timestart;
-                            flight.TimeEnd = timeend;
-                            flight.Status = cmb_status.SelectedIndex; // trạng thái của chuyến bay
-                            MessageBox.Show(_flight.update(flight));
-                            load();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hãy nhập đúng giá!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Thời gian đi phải lớn hơn thời gian đến!");
-                }
-            }
-            else
-            {
-                int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
-                int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
-                TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
-
-                MessageBox.Show($"Máy bay {cmb_PlaneType.Text} vào ngày đang chọn đã có chuyến bay vào lúc {timestart} xin vui lòng chọn giờ bay khác!");
-            }
+            var flight = _flight.get_list().Where(c => c.Id == Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString())).FirstOrDefault();
+            flight.Status = flight.Status == 1 ? 0 : 1; // trạng thái của chuyến bay
+            MessageBox.Show(_flight.update(flight));
+            load();
         }
 
         private void txb_Search_TextChanged(object sender, EventArgs e)
@@ -361,7 +327,7 @@ namespace DuAn1.Views
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                     string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.Status);
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.Status == 0 ? "Đúng giờ" : "Delay");
                 }
             }
             else
@@ -371,7 +337,7 @@ namespace DuAn1.Views
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                     string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
-                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status);
+                    dgv_chuyenbay.Rows.Add(namePlane, nameLoca, item.FlightCode, item.GoTom, item.GoFrom, item.DateFlight, item.DateTo, item.Price, item.Id, item.TimeStart, item.TimeEnd, item.Status == 0 ? "Đúng giờ" : "Delay");
                 }
             }
         }
@@ -385,14 +351,14 @@ namespace DuAn1.Views
             cmb_From.Text = dgv_chuyenbay.CurrentRow.Cells[4].Value.ToString();
             DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
             dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
-            cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString());
-
-            //string[] _start = dgv_chuyenbay.CurrentRow.Cells[9].Value.ToString().Split(':');
-            //string[] _end = dgv_chuyenbay.CurrentRow.Cells[10].Value.ToString().Split(':');
-            //timeStart_hour.Value = Convert.ToInt32(_start[0].ToString());
-            //timeStart_minute.Value = Convert.ToInt32(_start[1].ToString());
-            //timeEnd_hour.Value = Convert.ToInt32(_end[0].ToString());
-            //timeEnd_minute.Value = Convert.ToInt32(_end[1].ToString());
+            cmb_status.Text = dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString();
+            TimeSpan timestart = (TimeSpan)(dgv_chuyenbay.CurrentRow.Cells[9].Value);
+            TimeSpan timeEnd = (TimeSpan)(dgv_chuyenbay.CurrentRow.Cells[10].Value);
+            timeStart_hour.Value = timestart.Hours;
+            timeStart_minute.Value = timestart.Minutes;
+            timeEnd_hour.Value = timeEnd.Hours;
+            timeEnd_minute.Value = timeEnd.Minutes;
         }
+
     }
 }
