@@ -38,7 +38,7 @@ namespace GUI.Views.View_User
             lb_ErrorTo1.Visible = false;
             lb_ErrorNum.Visible = false;
             guna2HtmlLabel9.Visible = false;
-
+            check_button = "Hành trình";
             cbb_From.DataSource = _locationServices.get_list();
             cbb_From.DisplayMember = "locationFly";
 
@@ -169,9 +169,9 @@ namespace GUI.Views.View_User
             {
                 if (check())
                 {
-                    //if (check_dateFrom() == 1 || check_dateFrom() == 0)
-                    //{
-                    try
+                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                    {
+                        try
                     {
                         DateTime date = new DateTime(date_Start.Value.Year, date_Start.Value.Month, date_Start.Value.Day);
                         var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date).ToList();
@@ -185,11 +185,11 @@ namespace GUI.Views.View_User
                     {
                         MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
-                    //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                    }
 
                 }
                 else

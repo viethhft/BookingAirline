@@ -71,9 +71,9 @@ namespace GUI.Views.View_User
         {
             if (check())
             {
-                //if (check_dateFrom() == 1 || check_dateFrom() == 0)
-                //{
-                try
+                if (check_dateFrom() == 1 || check_dateFrom() == 0)
+                {
+                    try
                 {
                     DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(-1);
                     DateTime date1 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(4);
@@ -86,12 +86,12 @@ namespace GUI.Views.View_User
                 catch (Exception)
                 {
                     MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
-                //}
+                else
+                {
+                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                }
             }
             else
             {

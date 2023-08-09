@@ -25,11 +25,11 @@ namespace GUI.Views.View_User
         IFlightServices _flightServices;
         public FbuyTickket()
         {
-            
+
             InitializeComponent();
-         
+
         }
-        public FbuyTickket(string email):this()
+        public FbuyTickket(string email) : this()
         {
             _email = email;
             _flightServices = new FlightServices();
@@ -192,26 +192,26 @@ namespace GUI.Views.View_User
             {
                 if (check_place())
                 {
-                    //if (check_dateFrom() == 1 || check_dateFrom() == 0)
-                    //{
-                    DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
-                    var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date&& c.DateTo==date).ToList();
-                    if (search.Count > 0)
+                    if (check_dateFrom() == 1 || check_dateFrom() == 0)
                     {
-                        FBuyTicketChild a = new FBuyTicketChild(search,_email);
-                        this.Hide();
-                        a.ShowDialog();
-                        this.Show();
+                        DateTime date = new DateTime(date_From.Value.Year, date_From.Value.Month, date_From.Value.Day);
+                        var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date && c.DateTo == date).ToList();
+                        if (search.Count > 0)
+                        {
+                            FBuyTicketChild a = new FBuyTicketChild(search, _email);
+                            this.Hide();
+                            a.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                        MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
                     }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
-                    //}
                 }
                 else
                 {
@@ -231,7 +231,7 @@ namespace GUI.Views.View_User
                             var search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight == date1 && c.DateTo == date2).ToList();
                             if (search.Count > 0)
                             {
-                                FBuyTicketChild a = new FBuyTicketChild(search,_email);
+                                FBuyTicketChild a = new FBuyTicketChild(search, _email);
                                 this.Hide();
                                 a.ShowDialog();
                                 this.Show();
