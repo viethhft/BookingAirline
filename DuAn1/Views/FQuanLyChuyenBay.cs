@@ -386,6 +386,13 @@ namespace DuAn1.Views
             DateFrom.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[5].Value);
             dateTo.Value = (DateTime)(dgv_chuyenbay.CurrentRow.Cells[6].Value);
             cmb_status.SelectedIndex = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[11].Value.ToString());
+
+            //string[] _start = dgv_chuyenbay.CurrentRow.Cells[9].Value.ToString().Split(':');
+            //string[] _end = dgv_chuyenbay.CurrentRow.Cells[10].Value.ToString().Split(':');
+            //timeStart_hour.Value = Convert.ToInt32(_start[0].ToString());
+            //timeStart_minute.Value = Convert.ToInt32(_start[1].ToString());
+            //timeEnd_hour.Value = Convert.ToInt32(_end[0].ToString());
+            //timeEnd_minute.Value = Convert.ToInt32(_end[1].ToString());
         }
     }
 }
