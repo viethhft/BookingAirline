@@ -35,6 +35,7 @@ namespace GUI.Views
             txt_address.Text = cus.Address;
             txt_gender.Text = cus.Gender;
             txt_phonenumber.Text = cus.Phone;
+            txt_CodeFlight.Text = flight.FlightCode;
         }
     }
 }
