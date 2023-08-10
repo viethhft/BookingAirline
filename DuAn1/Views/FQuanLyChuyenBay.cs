@@ -358,6 +358,7 @@ namespace DuAn1.Views
             timeStart_minute.Value = timestart.Minutes;
             timeEnd_hour.Value = timeEnd.Hours;
             timeEnd_minute.Value = timeEnd.Minutes;
+
         }
 
     }
