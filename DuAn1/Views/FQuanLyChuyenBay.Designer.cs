@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            txb_codeflight = new TextBox();
+            label3 = new Label();
             cmb_status = new Guna.UI2.WinForms.Guna2ComboBox();
             label12 = new Label();
             label14 = new Label();
@@ -58,8 +60,6 @@
             label6 = new Label();
             label4 = new Label();
             label1 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)timeEnd_minute).BeginInit();
             ((System.ComponentModel.ISupportInitialize)timeEnd_hour).BeginInit();
@@ -71,7 +71,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txb_codeflight);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(cmb_status);
             groupBox1.Controls.Add(label12);
@@ -109,6 +109,24 @@
             groupBox1.Size = new Size(1030, 461);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // txb_codeflight
+            // 
+            txb_codeflight.Location = new Point(298, 35);
+            txb_codeflight.Multiline = true;
+            txb_codeflight.Name = "txb_codeflight";
+            txb_codeflight.Size = new Size(214, 31);
+            txb_codeflight.TabIndex = 51;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(298, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 18);
+            label3.TabIndex = 50;
+            label3.Text = "Mã chuyến bay";
             // 
             // cmb_status
             // 
@@ -466,24 +484,6 @@
             label1.TabIndex = 1;
             label1.Text = "Loại máy bay";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(298, 17);
-            label3.Name = "label3";
-            label3.Size = new Size(111, 18);
-            label3.TabIndex = 50;
-            label3.Text = "Mã chuyến bay";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(298, 35);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 31);
-            textBox1.TabIndex = 51;
-            // 
             // FQuanLyChuyenBay
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -536,7 +536,7 @@
         private Label label12;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Label label13;
-        private TextBox textBox1;
+        private TextBox txb_codeflight;
         private Label label3;
     }
 }
