@@ -30,7 +30,7 @@ namespace DuAn1.Views
         string ngayve = "";
         public FQuanLyChuyenBay()
         {
-            _ticketServices=new TicketServices();
+            _ticketServices = new TicketServices();
             _flight = new FlightServices();
             _location = new LocationService();
             _plantype = new PlaneTypeServices();
@@ -362,7 +362,7 @@ namespace DuAn1.Views
             timeEnd_minute.Value = timeEnd.Minutes;
             int idfl = Convert.ToInt32(dgv_chuyenbay.CurrentRow.Cells[8].Value.ToString());
             var ticket = _ticketServices.list_Ticket().Where(c => c.FlightId == idfl).FirstOrDefault();
-            if (ticket!=null)
+            if (ticket != null)
             {
                 FkhqlChuyenBay fkhqlChuyenBay = new FkhqlChuyenBay(idfl);
                 this.Hide();
@@ -373,8 +373,12 @@ namespace DuAn1.Views
             {
                 MessageBox.Show("Chuyến bay không có khách hàng sử dụng");
             }
-            
+
         }
 
+        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace GUI.Views
         IFlightServices _flightServices;
         public FkhqlChuyenBay()
         {
-            this.StartPosition= FormStartPosition.CenterScreen;
+            this.StartPosition = FormStartPosition.CenterScreen;
             _flightServices = new FlightServices();
             _ticketServices = new TicketServices();
             _customerServices = new CustomerServices();
@@ -37,7 +37,7 @@ namespace GUI.Views
             dgv_InforCus.Columns[4].Name = "Ghế ngồi";
             dgv_InforCus.Columns[5].Name = "Mã chuyến bay";
             dgv_InforCus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_InforCus.AllowUserToAddRows= false;
+            dgv_InforCus.AllowUserToAddRows = false;
             foreach (var item in _ticketServices.list_Ticket().Where(c => c.FlightId == idFlight))
             {
                 var cus = _customerServices.GetCustomers().Where(c => c.Id == item.CustomerId).FirstOrDefault();
@@ -61,5 +61,7 @@ namespace GUI.Views
             txt_SeatCode.Text = dgv_InforCus.CurrentRow.Cells[4].Value.ToString();
             txt_FlightCode.Text = dgv_InforCus.CurrentRow.Cells[5].Value.ToString();
         }
+
+ 
     }
 }
