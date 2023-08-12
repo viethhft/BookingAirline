@@ -129,6 +129,7 @@ namespace GUI.Views.View_User
                               $"Các mã ghế đã đặt: {lb_seat.Text}.\n" +
                               $"Thời gia bay: {flight.TimeStart}.\n" +
                               $"Thời gian đến: {flight.TimeEnd}.\n" +
+                              $"Tông số tiền quý khách đã thanh toán là: {_price}.\n" +
                               $"Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi!\n";
                 string code = lb_CodeFlight.Text;
                 await _validate.SendEmailInfoTiket(email, subject, body, 99);
