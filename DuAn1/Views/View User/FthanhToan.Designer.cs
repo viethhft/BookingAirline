@@ -109,6 +109,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FthanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh Toán";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

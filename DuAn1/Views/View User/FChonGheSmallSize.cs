@@ -133,7 +133,7 @@ namespace GUI.Views.View_User
             }
 
         }
-
+        int total = 0;
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
@@ -149,16 +149,16 @@ namespace GUI.Views.View_User
             {
                 _listcode.Add(a.Name);
                 amount++;
-                _price += priceClass;
+                total += priceClass + _price;
             }
             else
             {
                 _listcode.Remove(a.Name);
                 amount--;
-                _price -= priceClass;
+                total += priceClass + _price;
             }
             lb_amount.Text = amount.ToString();
-            lb_price.Text = _price.ToString();
+            lb_price.Text = total.ToString();
         }
 
         public FChonGheSmallSize(string code,string email) : this()
@@ -259,7 +259,7 @@ namespace GUI.Views.View_User
         {
             if (amount > 0)
             {
-                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,_price);
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,total);
                 this.Hide();
                 af.ShowDialog();
                 this.Show();

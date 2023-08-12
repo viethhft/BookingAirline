@@ -217,9 +217,12 @@ namespace GUI.Views.View_User
                         foreach (var item in _flightServices.get_list())
                         {
                             string[] ma = item.FlightCode.Split("VN");
-                            if (ma[1] == txt_CodeFlight.Text)
+                            if (ma.Length==2)
                             {
-                                code = item.FlightCode;
+                                if (ma[1] == txt_CodeFlight.Text)
+                                {
+                                    code = item.FlightCode;
+                                }
                             }
                         }
                         if (code != "")

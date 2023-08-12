@@ -212,6 +212,7 @@ namespace GUI.Views.View_User
             }
         }
         List<string> _listcode = new List<string>();
+        int total = 0;
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
@@ -227,16 +228,16 @@ namespace GUI.Views.View_User
             {
                 _listcode.Add(a.Name);
                 amount++;
-                price += priceClass;
+                total += priceClass+price;
             }
             else
             {
                 _listcode.Remove(a.Name);
                 amount--;
-                price -= priceClass;
+                total -= priceClass + price;
             }
             lb_amount.Text = amount.ToString();
-            lb_price.Text = price.ToString();
+            lb_price.Text = total.ToString();
             if (a.Checked)
             {
                 maghe.Add(a.Text);
@@ -260,7 +261,7 @@ namespace GUI.Views.View_User
         {
             if (amount>0)
             {
-                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,price);
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,total);
                 this.Hide();
                 af.ShowDialog();
                 this.Show();

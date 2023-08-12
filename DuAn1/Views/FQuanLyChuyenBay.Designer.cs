@@ -295,21 +295,21 @@
             // 
             // btn_Add
             // 
-            btn_Add.BorderRadius = 10;
-            btn_Add.DisabledState.BorderColor = Color.DarkGray;
-            btn_Add.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_Add.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_Add.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_Add.FillColor = Color.DarkCyan;
-            btn_Add.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Add.ForeColor = Color.White;
-            btn_Add.Location = new Point(794, 78);
-            btn_Add.Margin = new Padding(3, 2, 3, 2);
-            btn_Add.Name = "btn_Add";
-            btn_Add.Size = new Size(112, 47);
-            btn_Add.TabIndex = 28;
-            btn_Add.Text = "Thêm";
-            btn_Add.Click += btn_Add_Click;
+            this.btn_Add.BorderRadius = 10;
+            this.btn_Add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Add.FillColor = System.Drawing.Color.DarkCyan;
+            this.btn_Add.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
+            this.btn_Add.Location = new System.Drawing.Point(794, 78);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(112, 47);
+            this.btn_Add.TabIndex = 28;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txb_Search
             // 
