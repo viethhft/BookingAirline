@@ -118,22 +118,22 @@ namespace GUI.Views.View_User
                         _ser.Create(sf);
                     }
                 }
-
-                Status = "True";
                 var flight = _f.get_list().Where(c => c.FlightCode == lb_CodeFlight.Text).FirstOrDefault();
-                string email = lb_name.Text;
+                string email = _email;
                 string subject = "THÔNG TIN NHỮNG VÉ MÁY BAY ĐÃ MUA";
-                string body = $"Mã chuyến bay của quý khách là: {lb_CodeFlight.Text}." +
-                              $"Địa điểm bay: {lb_from.Text}." +
-                              $"Địa điếm đến: {lb_tom.Text}." +
-                              $"Ngày bay: {lb_date.Text}." +
-                              $"Tổng số ghế đã đặt: {lb_totalSeats.Text}." +
-                              $"Các mã ghế đã đặt: {lb_seat.Text}." +
-                              $"Thời gia bay: {flight.TimeStart}." +
-                              $"Thời gian đến: {flight.TimeEnd}." +
-                              $"Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi!";
+                string body = $"Mã chuyến bay của quý khách là: {lb_CodeFlight.Text}.\n" +
+                              $"Địa điểm bay: {lb_from.Text}.\n" +
+                              $"Địa điếm đến: {lb_tom.Text}.\n" +
+                              $"Ngày bay: {lb_date.Text}.\n" +
+                              $"Tổng số ghế đã đặt: {lb_totalSeats.Text}.\n" +
+                              $"Các mã ghế đã đặt: {lb_seat.Text}.\n" +
+                              $"Thời gia bay: {flight.TimeStart}.\n" +
+                              $"Thời gian đến: {flight.TimeEnd}.\n" +
+                              $"Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi!\n";
                 string code = lb_CodeFlight.Text;
                 await _validate.SendEmailInfoTiket(email, subject, body, 99);
+
+                Status = "True";
                 this.Close();
             }
             else

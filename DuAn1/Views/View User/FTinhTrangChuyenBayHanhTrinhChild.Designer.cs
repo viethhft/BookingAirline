@@ -28,79 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            groupBox1.SuspendLayout();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(17, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1052, 72);
-            groupBox1.TabIndex = 4;
-            groupBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(17, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1052, 72);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.DarkCyan;
-            label3.Location = new Point(926, 32);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 14);
-            label3.TabIndex = 2;
-            label3.Text = "TÌNH TRẠNG";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.Location = new System.Drawing.Point(926, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 14);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "TÌNH TRẠNG";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(633, 32);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 14);
-            label2.TabIndex = 1;
-            label2.Text = "ĐIỂM DỪNG";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(633, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ĐIỂM DỪNG";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.DarkCyan;
-            label1.Location = new Point(24, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(201, 19);
-            label1.TabIndex = 0;
-            label1.Text = "THỜI GIAN KHỞI HÀNH";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.Location = new System.Drawing.Point(24, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(15, 93);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1069, 516);
-            flowLayoutPanel1.TabIndex = 5;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 93);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1069, 516);
+            this.flowLayoutPanel1.TabIndex = 5;
             // 
             // FTinhTrangChuyenBayHanhTrinhChild
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1085, 621);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(groupBox1);
-            Name = "FTinhTrangChuyenBayHanhTrinhChild";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Tình trạng chuyến bay theo hành trình";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1085, 621);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FTinhTrangChuyenBayHanhTrinhChild";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tình trạng chuyến bay theo hành trình";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
