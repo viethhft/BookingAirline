@@ -336,6 +336,7 @@
             this.btn_Add.Size = new System.Drawing.Size(112, 47);
             this.btn_Add.TabIndex = 28;
             this.btn_Add.Text = "Thêm";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txb_Search
             // 

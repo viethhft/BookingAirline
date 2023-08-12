@@ -206,13 +206,20 @@ namespace DuAn1.Views
             int minuteEnd = Convert.ToInt32(timeEnd_minute.Value);
             TimeSpan timestart = new TimeSpan(hourStart, minuteStart, 0);
             TimeSpan timeEnd = new TimeSpan(hourEnd, minuteEnd, 0);
-            if (TimeSpan.Compare(timestart, timeEnd) == -1)
+            if (timestart.Hours>=21&&timeEnd.Hours<=4)
             {
                 return 1;
             }
             else
             {
-                return 0;
+                if (TimeSpan.Compare(timestart, timeEnd) == -1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -273,7 +280,7 @@ namespace DuAn1.Views
                                     flight.TimeStart = timestart;
                                     flight.TimeEnd = timeend;
 
-                                    flight.Status = cmb_status.SelectedIndex == 0 ? 1 : 0;//trạng thái của chuyến bay
+                                    flight.Status = cmb_status.SelectedIndex == 0 ? 0 : 1;//trạng thái của chuyến bay
                                     MessageBox.Show(_flight.create(flight));
                                     load();
                                 }

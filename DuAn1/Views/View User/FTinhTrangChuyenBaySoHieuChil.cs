@@ -27,9 +27,9 @@ namespace GUI.Views.View_User
             lb_NamePlane.Text = _planeTypeServices.get_list().Where(c => c.Id == flights.PlaneTypeId).FirstOrDefault().DisplayName;
             lb_FiightCode.Text = flights.FlightCode;
             lb_place.Text = $"{flights.GoFrom} - {flights.GoTom}";
-            lb_StatusFlight.Text = flights.Status == 1 ? "Đúng giờ" : "Delay";
-            lb_StatusFlight1.Text = flights.Status == 1 ? "Đúng giờ" : "Delay";
-            lb_StatusFlight2.Text = flights.Status == 1 ? "Đúng giờ" : "Delay";
+            lb_StatusFlight.Text = flights.Status == 0 ? "Đúng giờ" : "Delay";
+            lb_StatusFlight1.Text = flights.Status == 0 ? "Đúng giờ" : "Delay";
+            lb_StatusFlight2.Text = flights.Status == 0 ? "Đúng giờ" : "Delay";
             lb_timeStart1.Text = flights.TimeStart.ToString();
             lb_timeEnd1.Text = flights.TimeEnd.ToString();
         }
