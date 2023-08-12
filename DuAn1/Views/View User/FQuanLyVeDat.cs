@@ -29,7 +29,7 @@ namespace GUI.Views.View_User
         string _email = "";
         public FQuanLyVeDat(string email) : this()
         {
-            _email=email;
+            _email = email;
             load();
         }
         void load()
@@ -45,7 +45,7 @@ namespace GUI.Views.View_User
                 Point pointBtnCancel = new Point(595, 28);
                 var fl = _flightServices.get_list().Where(c => c.Id == item.FlightId).FirstOrDefault();
                 Panel pan = new Panel();
-                pan.BorderStyle= BorderStyle.FixedSingle;
+                pan.BorderStyle = BorderStyle.FixedSingle;
                 pan.Size = new Size(785, 100);
                 Label machuyenbay = new Label();
                 machuyenbay.Location = pointMa;
@@ -81,21 +81,21 @@ namespace GUI.Views.View_User
         {
             Guna2Button btn = (Guna2Button)(sender);
             var ticket = _ticketServices.list_Ticket().Where(c => c.Id == Convert.ToInt32(btn.Name)).FirstOrDefault();
-
-            if (DateTime.Now.Day-ticket.CreateDate.Day<1)
+            var flight = _flightServices.get_list().Where(c => c.Id == ticket.FlightId).FirstOrDefault();
+            if (Math.Abs(flight.DateFlight.Day - ticket.CreateDate.Day) < 1)
             {
                 if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ticket.Status = 0;
                     ticket.LastUpdate = DateTime.Now;
                     _ticketServices.update(ticket);
-                    MessageBox.Show("Hủy vé thành công","Thông báo!");
+                    MessageBox.Show("Hủy vé thành công", "Thông báo!");
                     load();
                 }
             }
             else
             {
-                MessageBox.Show("Quá thời hạn hủy vé","Thông báo!");
+                MessageBox.Show("Quá thời hạn hủy vé", "Thông báo!");
             }
         }
     }
