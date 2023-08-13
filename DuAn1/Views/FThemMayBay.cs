@@ -23,6 +23,8 @@ namespace GUI.Views
             _seatDetailServices = new SeatDetailServices();
             _planeTypeServices = new PlaneTypeServices();
             InitializeComponent();
+            cmb_totalSeats.Items.Add(30);
+            cmb_totalSeats.Items.Add(50);
             load();
         }
         bool checkDuplicate()
@@ -46,8 +48,7 @@ namespace GUI.Views
         }
         void load()
         {
-            cmb_totalSeats.Items.Add(30);
-            cmb_totalSeats.Items.Add(50);
+           
             dgv_dataPlane.Rows.Clear();
             dgv_dataPlane.ColumnCount = 3;
             dgv_dataPlane.Columns[0].Name = "Mã máy bay";
