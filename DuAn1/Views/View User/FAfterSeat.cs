@@ -133,7 +133,6 @@ namespace GUI.Views.View_User
                               $"Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi!\n";
                 string code = lb_CodeFlight.Text;
                 await _validate.SendEmailInfoTiket(email, subject, body, 99);
-
                 Status = "True";
                 this.Close();
             }

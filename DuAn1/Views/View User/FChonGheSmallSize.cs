@@ -82,7 +82,7 @@ namespace GUI.Views.View_User
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id && c.Status == 1).FirstOrDefault();
                     if (check == null)
                     {
                         if (dem < 20)
@@ -208,7 +208,7 @@ namespace GUI.Views.View_User
                         chair.Tag = "TG";
                         chair.BackColor = Color.Goldenrod;
                     }
-                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id&& c.Status==1).FirstOrDefault();
                     if (check == null)
                     {
                         chair.Enabled = true;

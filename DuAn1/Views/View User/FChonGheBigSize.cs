@@ -60,7 +60,7 @@ namespace GUI.Views.View_User
             Point locaSTT = new Point(738, 95);
             string[] hang = { "A", "B", "C", "D" };
             int dem = 0;
-            foreach (var item in seatdetail.Where(c=>c.PlaneTypeId==plane.Id))
+            foreach (var item in seatdetail.Where(c => c.PlaneTypeId == plane.Id))
             {
                 if (tt == 4)
                 {
@@ -82,7 +82,7 @@ namespace GUI.Views.View_User
                     chair.Location = locaChair;
                     chair.Name = item.SeatCode;
                     chair.CheckedChanged += Chair_CheckedChanged;
-                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id && c.Status == 1).FirstOrDefault();
                     if (check == null)
                     {
                         if (dem < 35)
@@ -179,7 +179,7 @@ namespace GUI.Views.View_User
                         chair.Tag = "TG";
                     }
 
-                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id).FirstOrDefault();
+                    var check = _sfServices.Get().Where(c => c.Flightid == flight.Id && c.Seatid == item.Id && c.Status == 1).FirstOrDefault();
                     if (check == null)
                     {
                         chair.Enabled = true;
@@ -216,7 +216,7 @@ namespace GUI.Views.View_User
         private void Chair_CheckedChanged(object? sender, EventArgs e)
         {
             Guna2ImageCheckBox a = (Guna2ImageCheckBox)(sender);
-            if (a.Tag== "PT")
+            if (a.Tag == "PT")
             {
                 priceClass = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price;
             }
@@ -228,7 +228,7 @@ namespace GUI.Views.View_User
             {
                 _listcode.Add(a.Name);
                 amount++;
-                total += priceClass+price;
+                total += priceClass + price;
             }
             else
             {
@@ -259,13 +259,13 @@ namespace GUI.Views.View_User
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            if (amount>0)
+            if (amount > 0)
             {
-                FAfterSeat af = new FAfterSeat(_code, _listcode, _email,total);
+                FAfterSeat af = new FAfterSeat(_code, _listcode, _email, total);
                 this.Hide();
                 af.ShowDialog();
                 this.Show();
-                if (af.Status=="True")
+                if (af.Status == "True")
                 {
                     status = "True";
                     this.Close();
