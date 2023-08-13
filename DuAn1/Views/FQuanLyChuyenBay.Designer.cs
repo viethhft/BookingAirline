@@ -48,13 +48,11 @@
             btn_Add = new Guna.UI2.WinForms.Guna2Button();
             txb_Search = new TextBox();
             label9 = new Label();
-            guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             dateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             DateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             cmb_PlaneType = new Guna.UI2.WinForms.Guna2ComboBox();
             cmb_From = new Guna.UI2.WinForms.Guna2ComboBox();
             dgv_chuyenbay = new DataGridView();
-            label13 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -90,13 +88,11 @@
             groupBox1.Controls.Add(btn_Add);
             groupBox1.Controls.Add(txb_Search);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(guna2DateTimePicker2);
             groupBox1.Controls.Add(dateTo);
             groupBox1.Controls.Add(DateFrom);
             groupBox1.Controls.Add(cmb_PlaneType);
             groupBox1.Controls.Add(cmb_From);
             groupBox1.Controls.Add(dgv_chuyenbay);
-            groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
@@ -295,21 +291,21 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.BorderRadius = 10;
-            this.btn_Add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Add.FillColor = System.Drawing.Color.DarkCyan;
-            this.btn_Add.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(794, 78);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(112, 47);
-            this.btn_Add.TabIndex = 28;
-            this.btn_Add.Text = "Thêm";
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            btn_Add.BorderRadius = 10;
+            btn_Add.DisabledState.BorderColor = Color.DarkGray;
+            btn_Add.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_Add.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_Add.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_Add.FillColor = Color.DarkCyan;
+            btn_Add.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Add.ForeColor = Color.White;
+            btn_Add.Location = new Point(794, 78);
+            btn_Add.Margin = new Padding(3, 2, 3, 2);
+            btn_Add.Name = "btn_Add";
+            btn_Add.Size = new Size(112, 47);
+            btn_Add.TabIndex = 28;
+            btn_Add.Text = "Thêm";
+            btn_Add.Click += btn_Add_Click;
             // 
             // txb_Search
             // 
@@ -330,22 +326,6 @@
             label9.Size = new Size(71, 18);
             label9.TabIndex = 26;
             label9.Text = "Tìm kiếm";
-            // 
-            // guna2DateTimePicker2
-            // 
-            guna2DateTimePicker2.Checked = true;
-            guna2DateTimePicker2.FillColor = Color.FromArgb(224, 224, 224);
-            guna2DateTimePicker2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker2.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker2.Location = new Point(800, 33);
-            guna2DateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            guna2DateTimePicker2.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker2.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            guna2DateTimePicker2.Size = new Size(212, 36);
-            guna2DateTimePicker2.TabIndex = 24;
-            guna2DateTimePicker2.Value = new DateTime(2023, 7, 22, 22, 13, 14, 18);
-            guna2DateTimePicker2.ValueChanged += guna2DateTimePicker2_ValueChanged;
             // 
             // dateTo
             // 
@@ -424,16 +404,6 @@
             dgv_chuyenbay.Size = new Size(1020, 262);
             dgv_chuyenbay.TabIndex = 0;
             dgv_chuyenbay.CellClick += dgv_chuyenbay_CellClick;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(798, 11);
-            label13.Name = "label13";
-            label13.Size = new Size(101, 18);
-            label13.TabIndex = 15;
-            label13.Text = "Ngày kết thúc";
             // 
             // label8
             // 
@@ -535,8 +505,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown timeStart_minute;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_status;
         private Label label12;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Label label13;
         private TextBox txb_codeflight;
         private Label label3;
     }

@@ -206,7 +206,7 @@ namespace DuAn1.Views
             int minuteEnd = Convert.ToInt32(timeEnd_minute.Value);
             TimeSpan timestart = new TimeSpan(hourStart, minuteStart, 0);
             TimeSpan timeEnd = new TimeSpan(hourEnd, minuteEnd, 0);
-            if (timestart.Hours>=21&&timeEnd.Hours<=4)
+            if (timestart.Hours >= 21 && timeEnd.Hours <= 4)
             {
                 return 1;
             }
@@ -383,9 +383,5 @@ namespace DuAn1.Views
 
         }
 
-        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
