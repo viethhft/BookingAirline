@@ -42,6 +42,7 @@
             trợGiúpToolStripMenuItem = new ToolStripMenuItem();
             hướngDẫnSửDụngToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
+            thêmTàiKhoảnNgânHàngToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -123,10 +124,11 @@
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.Size = new Size(802, 468);
             guna2Panel1.TabIndex = 4;
+            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, trợGiúpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, trợGiúpToolStripMenuItem, thêmTàiKhoảnNgânHàngToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(824, 24);
@@ -143,21 +145,21 @@
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(180, 22);
+            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(177, 22);
             thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             thôngTinTàiKhoảnToolStripMenuItem.Click += thôngTinTàiKhoảnToolStripMenuItem_Click;
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(180, 22);
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(177, 22);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(180, 22);
+            đăngXuấtToolStripMenuItem.Size = new Size(177, 22);
             đăngXuấtToolStripMenuItem.Text = "Thoát";
             đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
@@ -183,6 +185,12 @@
             label1.Size = new Size(38, 15);
             label1.TabIndex = 6;
             label1.Text = "label1";
+            // 
+            // thêmTàiKhoảnNgânHàngToolStripMenuItem
+            // 
+            thêmTàiKhoảnNgânHàngToolStripMenuItem.Name = "thêmTàiKhoảnNgânHàngToolStripMenuItem";
+            thêmTàiKhoảnNgânHàngToolStripMenuItem.Size = new Size(161, 20);
+            thêmTàiKhoảnNgânHàngToolStripMenuItem.Text = "Thêm tài khoản ngân hàng";
             // 
             // FHomeUser
             // 
@@ -224,5 +232,6 @@
         private ToolStripMenuItem trợGiúpToolStripMenuItem;
         private ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
         private Label label1;
+        private ToolStripMenuItem thêmTàiKhoảnNgânHàngToolStripMenuItem;
     }
 }
