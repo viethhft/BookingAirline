@@ -57,36 +57,36 @@ namespace GUI.Views.View_User
             {
                 MessageBox.Show("Số tài khoản đã được sử dụng");
             }
-            }
+        }
 
-            private void txt_BankNumber_TextChanged(object sender, EventArgs e)
+        private void txt_BankNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_BankNumber.Text != "")
             {
-                if (txt_BankNumber.Text != "")
+                char[] number = txt_BankNumber.Text.ToCharArray();
+                int index = 0;
+                try
                 {
-                    char[] number = txt_BankNumber.Text.ToCharArray();
-                    int index = 0;
-                    try
+                    for (int i = 0; i < number.Length; i++)
                     {
-                        for (int i = 0; i < number.Length; i++)
-                        {
-                            index = i;
-                            Convert.ToInt32(number[i].ToString());
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        string term = "";
-                        for (int i = 0; i < number.Length; i++)
-                        {
-                            if (i != index)
-                            {
-                                term += number[i].ToString();
-                            }
-                        }
-                        txt_BankNumber.Text = term;
+                        index = i;
+                        Convert.ToInt32(number[i].ToString());
                     }
                 }
-
+                catch (Exception)
+                {
+                    string term = "";
+                    for (int i = 0; i < number.Length; i++)
+                    {
+                        if (i != index)
+                        {
+                            term += number[i].ToString();
+                        }
+                    }
+                    txt_BankNumber.Text = term;
+                }
             }
+
         }
     }
+}
