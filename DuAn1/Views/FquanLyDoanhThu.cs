@@ -220,7 +220,7 @@ namespace DuAn1.Views
             for (int i = 0; i < dataGridView.Columns.Count; i++)
             {
                 sheet.Cells[1, i + 1] = dataGridView.Columns[i].HeaderText;
-                sheet.StandardWidth = dataGridView.Columns[i].Width - 170;
+                sheet.StandardWidth = dataGridView.Columns[i].Width - 150;
             }
             for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
@@ -238,7 +238,7 @@ namespace DuAn1.Views
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 workbook.SaveAs(saveFileDialog1.FileName);
-                MessageBox.Show("Export to excel successfully");
+                MessageBox.Show("Xuất file thành công!");
                 workbook.Close();
             }
         }
