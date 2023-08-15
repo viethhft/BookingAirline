@@ -167,5 +167,11 @@ namespace GUI.Views
         {
 
         }
+
+        private void thêmTàiKhoảnNgânHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FtaikhoanNh ftaikhoanNh = new FtaikhoanNh(_message);
+            ftaikhoanNh.ShowDialog();
+        }
     }
 }

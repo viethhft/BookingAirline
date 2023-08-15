@@ -23,10 +23,10 @@ namespace GUI.Views.View_User
             _bankServices = new BankServices();
             InitializeComponent();
         }
-        long _id = 0;
-        public FtaikhoanNh(int id) : this()
+        string _email = "";
+        public FtaikhoanNh(string emai) : this()
         {
-            _id = id;
+            _email = emai;
         }
         bool checkDup()
         {
@@ -43,7 +43,7 @@ namespace GUI.Views.View_User
         {
             if (checkDup())
             {
-                var cus = _customerServices.GetCustomers().Where(c => c.Id == _id).FirstOrDefault();
+                var cus = _customerServices.GetCustomers().Where(c => c.Email == _email).FirstOrDefault();
                 if (cus != null)
                 {
                     Bank bank = new Bank();

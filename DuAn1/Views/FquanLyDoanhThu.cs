@@ -37,7 +37,7 @@ namespace DuAn1.Views
             dgv_Revenue.Columns[4].Name = "Tổng số vé";
             dgv_Revenue.Columns[5].Name = "Tổng doanh thu";
             var ticket = _ticketServices.list_Ticket().ToList();
-            int dem=0;
+            int dem = 0;
             int thu = 0;
             for (int i = 0; i < ticket.Count; i++)
             {
@@ -51,7 +51,7 @@ namespace DuAn1.Views
                     }
                     if (ticket[i].FlightId == ticket[j].FlightId)
                     {
-                        if (thu==0)
+                        if (thu == 0)
                         {
                             dem++;
                         }
@@ -63,7 +63,7 @@ namespace DuAn1.Views
             int stt = 1;
             for (int i = 0; i < ticket.Count; i++)
             {
-                if (dem==ticket.Count)
+                if (dem == ticket.Count)
                 {
                     int soveban = 1;
                     total = ticket[i].TotalPrice;
@@ -208,28 +208,39 @@ namespace DuAn1.Views
 
         private void btn_Export_Click(object sender, EventArgs e)
         {
-            Export();
+            ExportToExcel(dgv_Revenue);
         }
-        void Export()
+        private void ExportToExcel(DataGridView dataGridView)
         {
-            //try
-            //{
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            excel.Application.Workbooks.Add(Type.Missing);
-            for (int i = 0; i < dgv_Revenue.Columns.Count; i++)
+            excel.Visible = false;
+            Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+            Microsoft.Office.Interop.Excel.Worksheet sheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+            sheet.Name = "Exported from gridview";
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
             {
-                excel.Cells[1, i + 1] = dgv_Revenue.Columns[i].HeaderText;
+                sheet.Cells[1, i + 1] = dataGridView.Columns[i].HeaderText;
+                sheet.StandardWidth = dataGridView.Columns[i].Width - 170;
             }
-            for (int i = 0; i < dgv_Revenue.Rows.Count; i++)
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
-                for (int j = 0; j < dgv_Revenue.Columns.Count; j++)
+                for (int j = 0; j < dataGridView.Columns.Count; j++)
                 {
-                    excel.Cells[i + 2, j + 1] = dgv_Revenue.Rows[i].Cells[j].Value.ToString();
+                    sheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
                 }
             }
-            excel.Columns.AutoFit();
-            excel.Visible = false;
-            excel.GetSaveAsFilename();
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialog1.FileName);
+                MessageBox.Show("Export to excel successfully");
+                workbook.Close();
+            }
         }
     }
 }
