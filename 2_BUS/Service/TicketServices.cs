@@ -35,9 +35,9 @@ namespace _2_BUS.Service
         {
             if (_repo.UpdateTicket(ticket))
             {
-                return "Thêm thành công";
+                return "Sửa thành công";
             }
-            return "Thêm không thành công";
+            return "Sửa không thành công";
         }
     }
 }
