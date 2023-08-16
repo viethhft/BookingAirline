@@ -26,7 +26,7 @@ namespace GUI.Views.View_User
             _customerServices = new CustomerServices();
             _bankServices = new BankServices();
             InitializeComponent();
-            lb_ErrorName.Visible=false;
+            lb_ErrorName.Visible = false;
             cbb_BankName.Items.Add("BIDV");
             cbb_BankName.Items.Add("AGRIBANK");
         }

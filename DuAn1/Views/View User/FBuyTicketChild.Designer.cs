@@ -116,7 +116,7 @@
             Controls.Add(groupBox6);
             Name = "FBuyTicketChild";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FBuyTicketChild";
+            Text = "Đặt vé";
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             ResumeLayout(false);
