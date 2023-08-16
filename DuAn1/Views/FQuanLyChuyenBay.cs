@@ -175,7 +175,23 @@ namespace DuAn1.Views
                 return false;
             }
             return true;
-
+        }
+        bool checkTimeNow()
+        {
+            DateTime dateNow = DateTime.Now;
+            DateTime from = new DateTime(DateFrom.Value.Year, DateFrom.Value.Month, DateFrom.Value.Day);
+            TimeSpan timeNow = new TimeSpan(dateNow.Hour,dateNow.Minute,dateNow.Second);
+            int hourStart = Convert.ToInt32(timeStart_hour.Value);
+            int minuteStart = Convert.ToInt32(timeStart_minute.Value);
+            TimeSpan timeflight = new TimeSpan(hourStart,minuteStart,0);
+            if (DateTime.Compare(dateNow,from)==0)
+            {
+                if (TimeSpan.Compare(timeNow,timeflight)==1)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         bool check_timeDup()
         {
@@ -186,23 +202,38 @@ namespace DuAn1.Views
             TimeSpan timestart = new TimeSpan(hourStart, minuteStart, 0);
             TimeSpan timeEnd = new TimeSpan(hourEnd, minuteEnd, 0);
             var plane = _plantype.get_list().Where(c => c.PlaneCode == cmb_PlaneType.SelectedValue).FirstOrDefault();
+            int min = _flight.get_list().Where(c => c.PlaneTypeId == plane.Id).FirstOrDefault().TimeStart.Hours;
+            foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id))
+            {
+                if (item.TimeEnd.Hours < min)
+                {
+                    min = item.TimeStart.Hours;
+                }
+            }
             foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id))
             {
                 if (item.DateFlight == DateFrom.Value)
                 {
-                    if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0)
+                    if (timeEnd.Hours<min)
                     {
                         return false;
                     }
                     else
                     {
-                        if (timestart.Hours==item.TimeStart.Hours)
+                        if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0)
                         {
                             return false;
                         }
                         else
                         {
-                            return true;
+                            if (timestart.Hours == item.TimeStart.Hours)
+                            {
+                                return false;
+                            }
+                            else
+                            {
+                                return true;
+                            }
                         }
                     }
                 }
@@ -245,88 +276,95 @@ namespace DuAn1.Views
         private void btn_Add_Click(object sender, EventArgs e)
         {
             check_price();
-            if (check_date())
+            if (checkTimeNow())
             {
-                if (check_dateTo())
+                if (check_date())
                 {
-                    if (check_timeDup())
+                    if (check_dateTo())
                     {
-                        if (check_timeFlight() == 1)
+                        if (check_timeDup())
                         {
-                            if (checklocation())
+                            if (check_timeFlight() == 1)
                             {
-                                if (checkInfo)
+                                if (checklocation())
                                 {
-                                    Flight flight = new Flight();
-                                    foreach (var item in _plantype.get_list())
+                                    if (checkInfo)
                                     {
-                                        if (item.DisplayName == cmb_PlaneType.Text)
+                                        Flight flight = new Flight();
+                                        foreach (var item in _plantype.get_list())
                                         {
-                                            flight.PlaneTypeId = item.Id;
-                                            break;
+                                            if (item.DisplayName == cmb_PlaneType.Text)
+                                            {
+                                                flight.PlaneTypeId = item.Id;
+                                                break;
+                                            }
                                         }
+                                        flight.FlightCode = ReverseCodeFlight();
+                                        flight.GoFrom = cmb_From.Text;
+                                        flight.GoTom = cmb_To.Text;
+                                        foreach (var item in _location.get_list())
+                                        {
+                                            if (item.LocationFly == cmb_From.Text)
+                                            {
+                                                flight.LocationId = item.Id;
+                                                break;
+                                            }
+                                        }
+                                        flight.DateFlight = DateFrom.Value;
+                                        flight.DateTo = dateTo.Value;
+                                        flight.Price = Convert.ToInt32(nbr_Price.Value);
+
+                                        int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
+                                        int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
+
+                                        int hours_e = Convert.ToInt32(timeEnd_hour.Value);
+                                        int minute_e = Convert.ToInt32(timeEnd_minute.Value);
+                                        TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
+                                        TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
+                                        flight.TimeStart = timestart;
+                                        flight.TimeEnd = timeend;
+
+                                        flight.Status = cmb_status.SelectedIndex == 0 ? 0 : 1;//trạng thái của chuyến bay
+                                        MessageBox.Show(_flight.create(flight));
+                                        load();
                                     }
-                                    flight.FlightCode = ReverseCodeFlight();
-                                    flight.GoFrom = cmb_From.Text;
-                                    flight.GoTom = cmb_To.Text;
-                                    foreach (var item in _location.get_list())
+                                    else
                                     {
-                                        if (item.LocationFly == cmb_From.Text)
-                                        {
-                                            flight.LocationId = item.Id;
-                                            break;
-                                        }
+                                        MessageBox.Show("Hãy nhập đúng giá!");
                                     }
-                                    flight.DateFlight = DateFrom.Value;
-                                    flight.DateTo = dateTo.Value;
-                                    flight.Price = Convert.ToInt32(nbr_Price.Value);
-
-                                    int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
-                                    int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
-
-                                    int hours_e = Convert.ToInt32(timeEnd_hour.Value);
-                                    int minute_e = Convert.ToInt32(timeEnd_minute.Value);
-                                    TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
-                                    TimeSpan timeend = new TimeSpan(hours_e, minute_e, 0);
-                                    flight.TimeStart = timestart;
-                                    flight.TimeEnd = timeend;
-
-                                    flight.Status = cmb_status.SelectedIndex == 0 ? 0 : 1;//trạng thái của chuyến bay
-                                    MessageBox.Show(_flight.create(flight));
-                                    load();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Hãy nhập đúng giá!");
+                                    MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Hãy chọn điểm đi và điểm đến khác nhau!");
+                                MessageBox.Show("Thời gian đi phải lớn hơn thời gian đến!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Thời gian đi phải lớn hơn thời gian đến!");
+                            int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
+                            int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
+                            TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
+
+                            MessageBox.Show($"Máy bay {cmb_PlaneType.Text} vào ngày đang chọn đã có chuyến bay vào lúc {timestart} xin vui lòng chọn giờ bay khác!");
                         }
                     }
                     else
                     {
-                        int hours_st = Convert.ToInt32(timeStart_hour.Value.ToString());
-                        int minute_st = Convert.ToInt32(timeStart_minute.Value.ToString());
-                        TimeSpan timestart = new TimeSpan(hours_st, minute_st, 0);
-
-                        MessageBox.Show($"Máy bay {cmb_PlaneType.Text} vào ngày đang chọn đã có chuyến bay vào lúc {timestart} xin vui lòng chọn giờ bay khác!");
+                        MessageBox.Show("Ngày về phải lớn hơn hoặc bằng ngày đi");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ngày về phải lớn hơn hoặc bằng ngày đi");
+                    MessageBox.Show("Ngay bay phải lớn hơn hoặc bằng ngày hiện tại.");
                 }
             }
             else
             {
-                MessageBox.Show("Ngay bay phải lớn hơn hoặc bằng ngày hiện tại.");
+                MessageBox.Show("Giờ bay phải lớn hơn giờ hiện tại");
             }
 
         }
