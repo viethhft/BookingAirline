@@ -193,12 +193,23 @@ namespace DuAn1.Views
                             break;
                         }
                     }
-                    if (i + 1 == ticket.Count)
+                    if (soveban > 1)
+                    {
+                        var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
+                        var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
+                        dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, soveban, plane.TotalSeat, total);
+                        stt++;
+                    }
+                    if (soveban == 1)
                     {
                         var fl = _flightServices.get_list().Where(c => c.Id == ticket[i].FlightId).FirstOrDefault();
                         var plane = _planeTypeServices.get_list().Where(c => c.Id == fl.PlaneTypeId).FirstOrDefault();
                         dgv_Revenue.Rows.Add(stt, fl.FlightCode, fl.DateFlight, 1, plane.TotalSeat, total);
                         stt++;
+                    }
+                    if (i + soveban == ticket.Count)
+                    {
+                        break;
                     }
                 }
             }
