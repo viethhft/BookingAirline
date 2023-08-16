@@ -54,28 +54,35 @@ namespace GUI.Views.View_User
         }
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            if (check())
+            if (_checkName)
             {
-                if (checkDup())
+                if (check())
                 {
-                    var cus = _customerServices.GetCustomers().Where(c => c.Email == _email).FirstOrDefault();
-                    if (cus != null)
+                    if (checkDup())
                     {
-                        Bank bank = new Bank();
-                        bank.DisplayName = txt_Name.Text;
-                        bank.CustomerId = cus.Id;
-                        bank.BankAccountNum = Convert.ToInt32(txt_BankNumber.Text);
-                        MessageBox.Show(_bankServices.create(bank));
+                        var cus = _customerServices.GetCustomers().Where(c => c.Email == _email).FirstOrDefault();
+                        if (cus != null)
+                        {
+                            Bank bank = new Bank();
+                            bank.DisplayName = txt_Name.Text;
+                            bank.CustomerId = cus.Id;
+                            bank.BankAccountNum = Convert.ToInt32(txt_BankNumber.Text);
+                            MessageBox.Show(_bankServices.create(bank));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số tài khoản đã được sử dụng");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Số tài khoản đã được sử dụng");
+                    MessageBox.Show("Vui lòng nhập các trường còn thiếu");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập các trường còn thiếu");
+                MessageBox.Show("Tên chưa đúng định dạng");
             }
         }
 
