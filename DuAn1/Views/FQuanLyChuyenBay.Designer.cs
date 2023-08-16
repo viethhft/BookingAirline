@@ -341,7 +341,7 @@
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.Size = new System.Drawing.Size(223, 37);
             this.txb_Search.TabIndex = 27;
-            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged_1);
+            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
             // 
             // label9
             // 
