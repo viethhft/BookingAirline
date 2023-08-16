@@ -187,7 +187,7 @@ namespace DuAn1.Views
             TimeSpan timeflight = new TimeSpan(hourStart, minuteStart, 0);
             if (DateTime.Compare(now, from) == 0)
             {
-                if (TimeSpan.Compare(timeNow, timeflight) <= 0)
+                if (TimeSpan.Compare(timeflight, timeNow) <= 0)
                 {
                     return false;
                 }
