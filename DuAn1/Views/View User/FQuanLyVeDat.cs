@@ -41,8 +41,8 @@ namespace GUI.Views.View_User
                 Point pointMa = new Point(14, 17);
                 Point pointFrom = new Point(14, 67);
                 Point pointTo = new Point(133, 67);
-                Point pointDateFrom = new Point(133, 67);
-                Point pointDateTo = new Point(133, 67);
+                Point pointDateFrom = new Point(210, 67);
+                Point pointDateTo = new Point(320, 67);
                 Point pointSeat = new Point(210, 37);
                 Point pointTimeStart = new Point(14, 37);
                 Point pointTimeEnd = new Point(133, 37);
