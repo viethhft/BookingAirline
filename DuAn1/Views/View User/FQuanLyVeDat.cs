@@ -120,7 +120,25 @@ namespace GUI.Views.View_User
             Guna2Button btn = (Guna2Button)(sender);
             var ticket = _ticketServices.list_Ticket().Where(c => c.Id == Convert.ToInt32(btn.Name)).FirstOrDefault();
             var flight = _flightServices.get_list().Where(c => c.Id == ticket.FlightId).FirstOrDefault();
-            if (Math.Abs(flight.DateFlight.Day - ticket.CreateDate.Day) < 1)
+            if (flight.DateFlight==DateTime.Now)
+            {
+                if (flight.DateFlight.Day - ticket.CreateDate.Day < 1)
+                {
+                    if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ticket.Status = 0;
+                        ticket.LastUpdate = DateTime.Now;
+                        _ticketServices.update(ticket);
+                        MessageBox.Show("Hủy vé thành công", "Thông báo!");
+                        load();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Quá thời hạn hủy vé", "Thông báo!");
+                }
+            }
+            else
             {
                 if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -131,10 +149,7 @@ namespace GUI.Views.View_User
                     load();
                 }
             }
-            else
-            {
-                MessageBox.Show("Quá thời hạn hủy vé", "Thông báo!");
-            }
+           
         }
     }
 }
