@@ -89,73 +89,24 @@ namespace GUI.Views.View_User
                     var fl = list.Where(c => c.PlaneTypeId == item.Id && c.DateFlight == date1).FirstOrDefault();
                     if (fl != null)
                     {
-                        if (DateTime.Compare(fl.DateFlight, DateTime.Now) == 0)
-                        {
-                            TimeSpan now = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                            if (fl.TimeStart.Hours - now.Hours > 6)
-                            {
-                                PictureBox pic = new PictureBox();
-                                Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
-                                pic.Image = image;
-                                pic.Size = new Size(64, 47);
-                                pic.Location = loca_pic;
-                                pic.Click += Pic_Click;
-                                pic.MouseHover += Pic_MouseHover;
-                                pic.MouseLeave += Pic_MouseLeave;
-                                pic.Name = fl.FlightCode;
-                                pic.BackColor = SystemColors.Control;
-                                pic.SizeMode = PictureBoxSizeMode.CenterImage;
+                        PictureBox pic = new PictureBox();
+                        Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
+                        pic.Image = image;
+                        pic.Size = new Size(64, 47);
+                        pic.Location = loca_pic;
+                        pic.Click += Pic_Click;
+                        pic.MouseHover += Pic_MouseHover;
+                        pic.MouseLeave += Pic_MouseLeave;
+                        pic.Name = fl.FlightCode;
+                        pic.BackColor = SystemColors.Control;
+                        pic.SizeMode = PictureBoxSizeMode.CenterImage;
 
-                                Label lb_select = new Label();
-                                lb_select.Text = "Chọn";
-                                lb_select.ForeColor = Color.DarkCyan;
-                                lb_select.Location = loca_textPic;
-                                group.Controls.Add(pic);
-                                group.Controls.Add(lb_select);
-                            }
-                            else
-                            {
-                                PictureBox pic = new PictureBox();
-                                Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
-                                pic.Image = image;
-                                pic.Size = new Size(64, 47);
-                                pic.Location = loca_pic;
-                                pic.Click += Pic_Click;
-                                pic.MouseHover += Pic_MouseHover;
-                                pic.MouseLeave += Pic_MouseLeave;
-                                pic.Name = fl.FlightCode;
-                                pic.BackColor = SystemColors.Control;
-                                pic.SizeMode = PictureBoxSizeMode.CenterImage;
-                                pic.Enabled = false;
-                                Label lb_select = new Label();
-                                lb_select.Text = "Chọn";
-                                lb_select.ForeColor = Color.DarkCyan;
-                                lb_select.Location = loca_textPic;
-                                group.Controls.Add(pic);
-                                group.Controls.Add(lb_select);
-                            }
-                        }
-                        else
-                        {
-                            PictureBox pic = new PictureBox();
-                            Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
-                            pic.Image = image;
-                            pic.Size = new Size(64, 47);
-                            pic.Location = loca_pic;
-                            pic.Click += Pic_Click;
-                            pic.MouseHover += Pic_MouseHover;
-                            pic.MouseLeave += Pic_MouseLeave;
-                            pic.Name = fl.FlightCode;
-                            pic.BackColor = SystemColors.Control;
-                            pic.SizeMode = PictureBoxSizeMode.CenterImage;
-
-                            Label lb_select = new Label();
-                            lb_select.Text = "Chọn";
-                            lb_select.ForeColor = Color.DarkCyan;
-                            lb_select.Location = loca_textPic;
-                            group.Controls.Add(pic);
-                            group.Controls.Add(lb_select);
-                        }
+                        Label lb_select = new Label();
+                        lb_select.Text = "Chọn";
+                        lb_select.ForeColor = Color.DarkCyan;
+                        lb_select.Location = loca_textPic;
+                        group.Controls.Add(pic);
+                        group.Controls.Add(lb_select);
                     }
                     date1 = date1.AddDays(1);
                     loca_pic.X += 135;
@@ -188,26 +139,62 @@ namespace GUI.Views.View_User
             var flight = _flightServices.get_list().Where(c => c.FlightCode == pic.Name).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
-            if (seatdetail.Count() == 50)
+            if (DateTime.Compare(flight.DateFlight, DateTime.Now) == 1)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(pic.Name, _email);
-                this.Hide();
-                fChonGhe.ShowDialog();
-                this.Show();
-                if (fChonGhe.status == "True")
+                if (seatdetail.Count() == 50)
                 {
-                    this.Close();
+                    FChonGheBigSize fChonGhe = new FChonGheBigSize(pic.Name, _email);
+                    this.Hide();
+                    fChonGhe.ShowDialog();
+                    this.Show();
+                    if (fChonGhe.status == "True")
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    FChonGheSmallSize fChonGhe = new FChonGheSmallSize(pic.Name, _email);
+                    this.Hide();
+                    fChonGhe.ShowDialog();
+                    this.Show();
+                    if (fChonGhe.status == "True")
+                    {
+                        this.Close();
+                    }
                 }
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(pic.Name, _email);
-                this.Hide();
-                fChonGhe.ShowDialog();
-                this.Show();
-                if (fChonGhe.status == "True")
+                TimeSpan timeNow = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                if (flight.TimeStart.Hours - timeNow.Hours > 6)
                 {
-                    this.Close();
+                    if (seatdetail.Count() == 50)
+                    {
+                        FChonGheBigSize fChonGhe = new FChonGheBigSize(pic.Name, _email);
+                        this.Hide();
+                        fChonGhe.ShowDialog();
+                        this.Show();
+                        if (fChonGhe.status == "True")
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        FChonGheSmallSize fChonGhe = new FChonGheSmallSize(pic.Name, _email);
+                        this.Hide();
+                        fChonGhe.ShowDialog();
+                        this.Show();
+                        if (fChonGhe.status == "True")
+                        {
+                            this.Close();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chuyến bay quá thời gian đặt vé");
                 }
             }
         }
