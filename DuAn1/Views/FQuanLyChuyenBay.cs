@@ -181,18 +181,18 @@ namespace DuAn1.Views
             DateTime date = DateTime.Now;
             DateTime now = new DateTime(date.Year, date.Month, date.Day);
             DateTime from = new DateTime(DateFrom.Value.Year, DateFrom.Value.Month, DateFrom.Value.Day);
-            TimeSpan timeNow = new TimeSpan(date.Hour,date.Minute,date.Second);
+            TimeSpan timeNow = new TimeSpan(date.Hour, date.Minute, date.Second);
             int hourStart = Convert.ToInt32(timeStart_hour.Value);
             int minuteStart = Convert.ToInt32(timeStart_minute.Value);
-            TimeSpan timeflight = new TimeSpan(hourStart,minuteStart,0);
-            if (DateTime.Compare(now,from)==0)
+            TimeSpan timeflight = new TimeSpan(hourStart, minuteStart, 0);
+            if (DateTime.Compare(now, from) == 0)
             {
-                if (TimeSpan.Compare(timeNow,timeflight)==1)
+                if (TimeSpan.Compare(timeNow, timeflight) <= 0)
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
         bool check_timeDup()
         {
@@ -215,7 +215,7 @@ namespace DuAn1.Views
             {
                 if (item.DateFlight == DateFrom.Value)
                 {
-                    if (timeEnd.Hours<min)
+                    if (timeEnd.Hours < min)
                     {
                         return false;
                     }
