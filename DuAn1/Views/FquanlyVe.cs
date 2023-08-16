@@ -59,7 +59,7 @@ namespace DuAn1.Views
             dgv_data.Columns[10].Name = "Mã ghế";
             dgv_data.Columns[11].Name = "ID";
             dgv_data.Columns[11].Visible = false;
-            foreach (var item in _ticketServices.list_Ticket())
+            foreach (var item in _ticketServices.list_Ticket().Where(c=>c.Status==1))
             {
                 var cus = _customerServices.GetCustomers().Where(c => c.Id == item.CustomerId).FirstOrDefault();
 
@@ -111,7 +111,7 @@ namespace DuAn1.Views
             dgv_data.Columns[10].Name = "Mã ghế";
             dgv_data.Columns[11].Name = "ID";
             dgv_data.Columns[11].Visible = false;
-            foreach (var item in _ticketServices.list_Ticket())
+            foreach (var item in _ticketServices.list_Ticket().Where(c => c.Status == 1))
             {
                 var cus = _customerServices.GetCustomers().Where(c => c.Id == item.CustomerId).FirstOrDefault();
 
@@ -130,11 +130,6 @@ namespace DuAn1.Views
                 cbb_DiemDen.Text = dgv_data.Rows[0].Cells[8].Value.ToString();
                 cbb_DiemDi.Text = dgv_data.Rows[0].Cells[7].Value.ToString();
             }
-        }
-
-        private void FquanlyVe_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
