@@ -27,7 +27,7 @@ namespace GUI.Views.View_User
         {
             InitializeComponent();
         }
-        public FBuyTicketChild(List<Flight> list,string email) : this()
+        public FBuyTicketChild(List<Flight> list, string email) : this()
         {
             _email = email;
             _test = list;
@@ -61,7 +61,7 @@ namespace GUI.Views.View_User
                 name.Tag = plane.Id;
                 name.Location = new Point(149, 62);
                 Guna2Button pt = new Guna2Button();
-                pt.Text = _classServices.get_list().Where(c=>c.Id==2).FirstOrDefault().Price.ToString();
+                pt.Text = _classServices.get_list().Where(c => c.Id == 2).FirstOrDefault().Price.ToString();
                 pt.BorderRadius = 10;
                 pt.BorderThickness = 1;
                 pt.FillColor = Color.White;
@@ -101,30 +101,40 @@ namespace GUI.Views.View_User
         {
             Guna2Button btn_current = (Guna2Button)sender;
             var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
+
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
-            if (seatdetail.Count() == 50)
+            TimeSpan timeNow = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            if (flight.TimeStart.Hours - timeNow.Hours > 6)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(),_email);
-                this.Hide();
-                fChonGhe.ShowDialog();
-                this.Show();
-                if (fChonGhe.status=="True")
+                if (seatdetail.Count() == 50)
                 {
-                    this.Close();
+                    FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(), _email);
+                    this.Hide();
+                    fChonGhe.ShowDialog();
+                    this.Show();
+                    if (fChonGhe.status == "True")
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(), _email);
+                    this.Hide();
+                    fChonGhe.ShowDialog();
+                    this.Show();
+                    if (fChonGhe.status == "True")
+                    {
+                        this.Close();
+                    }
                 }
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(),_email);
-                this.Hide();
-                fChonGhe.ShowDialog();
-                this.Show();
-                if (fChonGhe.status == "True")
-                {
-                    this.Close();
-                }
+                MessageBox.Show("Không thể đặt vé chuyến bay này");
             }
+
         }
 
         private void Pt_Click(object? sender, EventArgs e)
@@ -133,27 +143,35 @@ namespace GUI.Views.View_User
             var flight = _flightServices.get_list().Where(c => c.FlightCode == btn_current.Name).FirstOrDefault();
             var plane = _planeTypeServices.get_list().Where(c => c.Id == flight.PlaneTypeId).FirstOrDefault();
             var seatdetail = _seatDetailServices.list().Where(c => c.PlaneTypeId == plane.Id);
-            if (seatdetail.Count() == 50)
+            TimeSpan timeNow = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            if (flight.TimeStart.Hours - timeNow.Hours > 6)
             {
-                FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(),_email);
-                this.Hide();
-                fChonGhe.ShowDialog();
-                this.Show();
-                if (fChonGhe.status == "True")
+                if (seatdetail.Count() == 50)
                 {
-                    this.Close();
+                    FChonGheBigSize fChonGhe = new FChonGheBigSize(btn_current.Name, btn_current.Tag.ToString(), _email);
+                    this.Hide();
+                    fChonGhe.ShowDialog();
+                    this.Show();
+                    if (fChonGhe.status == "True")
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(), _email);
+                    this.Hide();
+                    fChonGhe.ShowDialog();
+                    this.Show();
+                    if (fChonGhe.status == "True")
+                    {
+                        this.Close();
+                    }
                 }
             }
             else
             {
-                FChonGheSmallSize fChonGhe = new FChonGheSmallSize(btn_current.Name, btn_current.Tag.ToString(),_email);
-                this.Hide();
-                fChonGhe.ShowDialog();
-                this.Show();
-                if (fChonGhe.status == "True")
-                {
-                    this.Close();
-                }
+                MessageBox.Show("Không thể đặt vé chuyến bay này");
             }
         }
 
