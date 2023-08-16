@@ -47,9 +47,9 @@ namespace GUI.Views.View_User
             flowLayoutPanel1.Controls.Clear();
             foreach (var item in _planeTypeServices.get_list())
             {
-                Point loca_timeStart = new Point(25, 35);
-                Point loca_timeEnd = new Point(147, 35);
-                Point loca_code = new Point(25, 63);
+                //Point loca_timeStart = new Point(25, 35);
+                //Point loca_timeEnd = new Point(147, 35);
+                Point loca_code = new Point(25, 45);
                 Point loca_StopPoint = new Point(453, 45);
                 Point loca_pic = new Point(635, 22);
                 Point loca_textPic = new Point(650, 72);
@@ -60,24 +60,27 @@ namespace GUI.Views.View_User
                 var info = list.Where(c => c.PlaneTypeId == item.Id).FirstOrDefault();
                 if (info != null)
                 {
-                    Label lb_timeStart = new Label();
-                    lb_timeStart.Text = info.TimeStart.ToString();
-                    lb_timeStart.Location = loca_timeStart;
-                    lb_timeStart.ForeColor = Color.DarkCyan;
-                    lb_timeStart.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-                    Label lb_timeEnd = new Label();
-                    lb_timeEnd.Text = info.TimeEnd.ToString();
-                    lb_timeEnd.Location = loca_timeEnd;
-                    lb_timeEnd.ForeColor = Color.DarkCyan;
-                    lb_timeEnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+                    //Label lb_timeStart = new Label();
+                    //lb_timeStart.Text = info.TimeStart.ToString();
+                    ////lb_timeStart.Location = loca_timeStart;
+                    //lb_timeStart.ForeColor = Color.DarkCyan;
+                    //lb_timeStart.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+                    //Label lb_timeEnd = new Label();
+                    //lb_timeEnd.Text = info.TimeEnd.ToString();
+                    //lb_timeEnd.Location = loca_timeEnd;
+                    //lb_timeEnd.ForeColor = Color.DarkCyan;
+                    //lb_timeEnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                     Label lb_code = new Label();
                     lb_code.Text = item.PlaneCode;
                     lb_code.Location = loca_code;
+                    lb_code.ForeColor = Color.DarkCyan;
+                    lb_code.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                     Label lb_stopPoint = new Label();
                     lb_stopPoint.Text = "Bay thẳng";
                     lb_stopPoint.Location = loca_StopPoint;
-                    group.Controls.Add(lb_timeStart);
-                    group.Controls.Add(lb_timeEnd);
+                
+                    //group.Controls.Add(lb_timeStart);
+                    //group.Controls.Add(lb_timeEnd);
                     group.Controls.Add(lb_code);
                     group.Controls.Add(lb_stopPoint);
                 }
