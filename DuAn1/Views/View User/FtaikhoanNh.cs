@@ -30,6 +30,7 @@ namespace GUI.Views.View_User
             cbb_BankName.Items.Add("BIDV");
             cbb_BankName.Items.Add("AGRIBANK");
         }
+
         string _email = "";
         public FtaikhoanNh(string emai) : this()
         {
