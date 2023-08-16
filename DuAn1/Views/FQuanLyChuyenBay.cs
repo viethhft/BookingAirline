@@ -202,19 +202,24 @@ namespace DuAn1.Views
             int minuteEnd = Convert.ToInt32(timeEnd_minute.Value);
             TimeSpan timestart = new TimeSpan(hourStart, minuteStart, 0);
             TimeSpan timeEnd = new TimeSpan(hourEnd, minuteEnd, 0);
+            int min = 0;
             var plane = _plantype.get_list().Where(c => c.PlaneCode == cmb_PlaneType.SelectedValue).FirstOrDefault();
-            var min = _flight.get_list().Where(c => c.PlaneTypeId == plane.Id && c.DateFlight == DateFrom.Value).FirstOrDefault().TimeStart.Hours;
-            if (min!=null)
+            try
             {
-                foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id && c.DateFlight == DateFrom.Value))
+                min = _flight.get_list().Where(c => c.PlaneTypeId == plane.Id && c.DateFlight == DateFrom.Value).FirstOrDefault().TimeStart.Hours;
+
+            }
+            catch (Exception)
+            {
+                min = 24;
+            }
+            foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id && c.DateFlight == DateFrom.Value))
+            {
+                if (item.TimeStart.Hours < min)
                 {
-                    if (item.TimeStart.Hours < min)
-                    {
-                        min = item.TimeStart.Hours;
-                    }
+                    min = item.TimeStart.Hours;
                 }
             }
-            min = 24;
             foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id))
             {
                 if (item.DateFlight == DateFrom.Value)
