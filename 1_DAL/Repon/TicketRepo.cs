@@ -38,7 +38,9 @@ namespace _1_DAL.Repon
         {
             try
             {
-                _context.Tickets.Update(ticket);
+                var up = _context.Tickets.ToList().FirstOrDefault(c => c.Id == ticket.Id);
+                up.Status = ticket.Status;
+                _context.Tickets.Update(up);
                 _context.SaveChanges();
                 return true;
             }
