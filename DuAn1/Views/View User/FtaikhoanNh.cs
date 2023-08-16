@@ -27,6 +27,8 @@ namespace GUI.Views.View_User
             _bankServices = new BankServices();
             InitializeComponent();
             lb_ErrorName.Visible=false;
+            cbb_BankName.Items.Add("BIDV");
+            cbb_BankName.Items.Add("AGRIBANK");
         }
         string _email = "";
         public FtaikhoanNh(string emai) : this()

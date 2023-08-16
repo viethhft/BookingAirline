@@ -273,7 +273,7 @@ namespace GUI.Views.View_User
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn ghế!");
+                MessageBox.Show("Vui lòng chọn ghế!","Thông báo!");
             }
         }
     }

@@ -90,12 +90,12 @@ namespace GUI.Views.View_User
                 }
                 else
                 {
-                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!","Thông báo!");
                 }
             }
             else
             {
-                MessageBox.Show("Điểm đến điểm đi chọn không phù hợp yêu cầu!");
+                MessageBox.Show("Điểm đến điểm đi chọn không phù hợp yêu cầu!","Thông báo!");
             }
         }
 
