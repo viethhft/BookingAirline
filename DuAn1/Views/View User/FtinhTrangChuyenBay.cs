@@ -198,13 +198,13 @@ namespace GUI.Views.View_User
                     }
                     else
                     {
-                        MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!");
+                        MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!","Thông báo!");
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng thay đổi điểm đi hoặc điểm đến!");
+                    MessageBox.Show("Vui lòng thay đổi điểm đi hoặc điểm đến!","Thông báo!");
                 }
             }
             else
@@ -235,7 +235,7 @@ namespace GUI.Views.View_User
                         }
                         else
                         {
-                            MessageBox.Show("Không có số hiệu chuyến bay bạn cần tìm");
+                            MessageBox.Show("Không có số hiệu chuyến bay bạn cần tìm","Thông báo!");
                         }
 
                     }
@@ -246,7 +246,7 @@ namespace GUI.Views.View_User
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập số hiệu chuyến bay!");
+                    MessageBox.Show("Vui lòng nhập số hiệu chuyến bay!","Thông báo!");
                 }
             }
         }

@@ -22,6 +22,8 @@ namespace GUI.Views.View_User
             _customerServices = new CustomerServices();
             _bankServices = new BankServices();
             InitializeComponent();
+            cbb_BankName.Items.Add("BIDV");
+            cbb_BankName.Items.Add("AGRIBANK");
         }
         string _email = "";
         public FtaikhoanNh(string emai) : this()
@@ -55,7 +57,7 @@ namespace GUI.Views.View_User
             }
             else
             {
-                MessageBox.Show("Số tài khoản đã được sử dụng");
+                MessageBox.Show("Số tài khoản đã được sử dụng","Thông báo!");
             }
         }
 

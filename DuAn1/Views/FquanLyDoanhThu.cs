@@ -32,7 +32,7 @@ namespace DuAn1.Views
             dgv_Revenue.Rows.Clear();
             dgv_Revenue.Columns[0].Name = "STT";
             dgv_Revenue.Columns[1].Name = "Mã chuyến bay";
-            dgv_Revenue.Columns[2].Name = "Ngay bay";
+            dgv_Revenue.Columns[2].Name = "Ngày bay";
             dgv_Revenue.Columns[3].Name = "Số vé đã bán";
             dgv_Revenue.Columns[4].Name = "Tổng số vé";
             dgv_Revenue.Columns[5].Name = "Tổng doanh thu";
@@ -117,7 +117,7 @@ namespace DuAn1.Views
             dgv_Revenue.Rows.Clear();
             dgv_Revenue.Columns[0].Name = "STT";
             dgv_Revenue.Columns[1].Name = "Mã chuyến bay";
-            dgv_Revenue.Columns[2].Name = "Ngay bay";
+            dgv_Revenue.Columns[2].Name = "Ngày bay";
             dgv_Revenue.Columns[3].Name = "Số vé đã bán";
             dgv_Revenue.Columns[4].Name = "Tổng số vé";
             dgv_Revenue.Columns[5].Name = "Tổng doanh thu";

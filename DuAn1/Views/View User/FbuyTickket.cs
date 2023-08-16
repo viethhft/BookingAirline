@@ -205,17 +205,17 @@ namespace GUI.Views.View_User
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                            MessageBox.Show("Không tìm được chuyến bay phù hợp","Thông báo!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
+                        MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại","Thông báo!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến");
+                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến","Thông báo!");
                 }
             }
             else
@@ -238,22 +238,22 @@ namespace GUI.Views.View_User
                             }
                             else
                             {
-                                MessageBox.Show("Không tìm được chuyến bay phù hợp");
+                                MessageBox.Show("Không tìm được chuyến bay phù hợp","Thông báo!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại");
+                            MessageBox.Show("Ngày đi nhỏ hơn ngày hiện tại", "Thông báo!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ngày đi chọn phải nhỏ hơn ngày đến");
+                        MessageBox.Show("Ngày đi chọn phải nhỏ hơn ngày đến", "Thông báo!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến");
+                    MessageBox.Show("Vui lòng chọn lại điểm đi hoặc điểm đến", "Thông báo!");
                 }
             }
         }
