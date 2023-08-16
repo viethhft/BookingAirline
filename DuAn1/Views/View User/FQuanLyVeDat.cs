@@ -66,7 +66,7 @@ namespace GUI.Views.View_User
                 seat.Text = term=="PT"?$"Phổ Thông {item.SeatCode.Substring(2)}": $"Thương Gia {item.SeatCode.Substring(2)}";
                 Label status = new Label();
                 status.Location = pointStatus;
-                status.Text = item.Status == 1 ? "Một chiều" : "Khứ hồi";
+                status.Text = item.TwoWay == 1 ? "Một chiều" : "Khứ hồi";
                 Guna2Button btn_Cancel = new Guna2Button();
                 btn_Cancel.BorderRadius = 10;
                 btn_Cancel.FillColor = Color.FromArgb(235, 64, 52);
