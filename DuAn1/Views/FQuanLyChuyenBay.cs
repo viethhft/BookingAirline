@@ -206,7 +206,7 @@ namespace DuAn1.Views
             int min = _flight.get_list().Where(c => c.PlaneTypeId == plane.Id).FirstOrDefault().TimeStart.Hours;
             foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id))
             {
-                if (item.TimeEnd.Hours < min)
+                if (item.TimeStart.Hours < min)
                 {
                     min = item.TimeStart.Hours;
                 }
@@ -215,28 +215,26 @@ namespace DuAn1.Views
             {
                 if (item.DateFlight == DateFrom.Value)
                 {
-                    if (timeEnd.Hours < min)
+                    if (timestart.Hours == item.TimeStart.Hours)
                     {
                         return false;
                     }
                     else
                     {
-                        if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0)
+                        if (timeEnd.Hours < min)
                         {
                             return false;
                         }
                         else
                         {
-                            if (timestart.Hours == item.TimeStart.Hours)
+                            if (TimeSpan.Compare(timestart, item.TimeEnd) <= 0)
                             {
                                 return false;
                             }
-                            else
-                            {
-                                return true;
-                            }
+
                         }
                     }
+
                 }
             }
             return true;
