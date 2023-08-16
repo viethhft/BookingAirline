@@ -155,7 +155,7 @@ namespace GUI.Views.View_User
             {
                 _listcode.Remove(a.Name);
                 amount--;
-                total += priceClass + _price;
+                total -= priceClass + _price;
             }
             lb_amount.Text = amount.ToString();
             lb_price.Text = total.ToString();

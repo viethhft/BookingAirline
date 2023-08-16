@@ -131,5 +131,10 @@ namespace DuAn1.Views
                 cbb_DiemDi.Text = dgv_data.Rows[0].Cells[7].Value.ToString();
             }
         }
+
+        private void FquanlyVe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
