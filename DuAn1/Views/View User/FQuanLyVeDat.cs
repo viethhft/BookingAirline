@@ -41,12 +41,12 @@ namespace GUI.Views.View_User
                 Point pointMa = new Point(14, 17);
                 Point pointFrom = new Point(14, 67);
                 Point pointTo = new Point(133, 67);
-                Point pointDateFrom = new Point(210, 67);
-                Point pointDateTo = new Point(320, 67);
-                Point pointSeat = new Point(210, 37);
+                Point pointDateFrom = new Point(230, 67);
+                Point pointDateTo = new Point(340, 67);
+                Point pointSeat = new Point(230, 37);
                 Point pointTimeStart = new Point(14, 37);
                 Point pointTimeEnd = new Point(133, 37);
-                Point pointStatus = new Point(320, 37);
+                Point pointStatus = new Point(340, 37);
                 Point pointBtnCancel = new Point(595, 28);
                 var fl = _flightServices.get_list().Where(c => c.Id == item.FlightId).FirstOrDefault();
 
