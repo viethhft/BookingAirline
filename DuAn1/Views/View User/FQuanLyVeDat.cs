@@ -122,7 +122,7 @@ namespace GUI.Views.View_User
             var flight = _flightServices.get_list().Where(c => c.Id == ticket.FlightId).FirstOrDefault();
             if (flight.DateFlight==DateTime.Now)
             {
-                if (Math.Abs(flight.DateFlight.Day - ticket.CreateDate.Day) < 1)
+                if (flight.DateFlight.Day - ticket.CreateDate.Day < 1)
                 {
                     if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -136,6 +136,17 @@ namespace GUI.Views.View_User
                 else
                 {
                     MessageBox.Show("Quá thời hạn hủy vé", "Thông báo!");
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ticket.Status = 0;
+                    ticket.LastUpdate = DateTime.Now;
+                    _ticketServices.update(ticket);
+                    MessageBox.Show("Hủy vé thành công", "Thông báo!");
+                    load();
                 }
             }
            
