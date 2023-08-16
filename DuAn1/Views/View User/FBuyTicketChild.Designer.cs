@@ -31,12 +31,10 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             groupBox6 = new GroupBox();
-            menuStrip1 = new MenuStrip();
-            lọcToolStripMenuItem = new ToolStripMenuItem();
-            hIỂNTHỊBỘLỌCToolStripMenuItem = new ToolStripMenuItem();
+            label2 = new Label();
+            label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             groupBox6.SuspendLayout();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Button1
@@ -73,36 +71,33 @@
             // 
             // groupBox6
             // 
+            groupBox6.Controls.Add(label2);
+            groupBox6.Controls.Add(label1);
             groupBox6.Controls.Add(guna2Button2);
             groupBox6.Controls.Add(guna2Button1);
-            groupBox6.Controls.Add(menuStrip1);
             groupBox6.Location = new Point(21, 12);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(1064, 90);
             groupBox6.TabIndex = 1;
             groupBox6.TabStop = false;
             // 
-            // menuStrip1
+            // label2
             // 
-            menuStrip1.Dock = DockStyle.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { lọcToolStripMenuItem, hIỂNTHỊBỘLỌCToolStripMenuItem });
-            menuStrip1.Location = new Point(18, 35);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(216, 24);
-            menuStrip1.TabIndex = 5;
-            menuStrip1.Text = "menuStrip1";
+            label2.AutoSize = true;
+            label2.Location = new Point(154, 45);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 15);
+            label2.TabIndex = 6;
+            label2.Text = "GIỜ KẾT THÚC";
             // 
-            // lọcToolStripMenuItem
+            // label1
             // 
-            lọcToolStripMenuItem.Name = "lọcToolStripMenuItem";
-            lọcToolStripMenuItem.Size = new Size(96, 20);
-            lọcToolStripMenuItem.Text = "SẮP XẾP THEO";
-            // 
-            // hIỂNTHỊBỘLỌCToolStripMenuItem
-            // 
-            hIỂNTHỊBỘLỌCToolStripMenuItem.Name = "hIỂNTHỊBỘLỌCToolStripMenuItem";
-            hIỂNTHỊBỘLỌCToolStripMenuItem.Size = new Size(112, 20);
-            hIỂNTHỊBỘLỌCToolStripMenuItem.Text = "HIỂN THỊ BỘ LỌC";
+            label1.AutoSize = true;
+            label1.Location = new Point(29, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 15);
+            label1.TabIndex = 5;
+            label1.Text = "GIỜ KHỞI HÀNH";
             // 
             // flowLayoutPanel1
             // 
@@ -119,14 +114,11 @@
             ClientSize = new Size(1131, 590);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(groupBox6);
-            MainMenuStrip = menuStrip1;
             Name = "FBuyTicketChild";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FBuyTicketChild";
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -134,9 +126,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private GroupBox groupBox6;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem lọcToolStripMenuItem;
-        private ToolStripMenuItem hIỂNTHỊBỘLỌCToolStripMenuItem;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label2;
+        private Label label1;
     }
 }
