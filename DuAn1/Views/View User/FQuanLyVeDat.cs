@@ -88,7 +88,7 @@ namespace GUI.Views.View_User
                 {
                     ticket.Status = 0;
                     ticket.LastUpdate = DateTime.Now;
-                    MessageBox.Show(_ticketServices.update(ticket));
+                    _ticketServices.update(ticket);
                     MessageBox.Show("Hủy vé thành công", "Thông báo!");
                     load();
                 }
