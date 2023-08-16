@@ -28,225 +28,225 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lb_timeEnd1 = new System.Windows.Forms.Label();
-            this.lb_timeStart1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lb_StatusFlight1 = new System.Windows.Forms.Label();
-            this.lb_StatusFlight = new System.Windows.Forms.Label();
-            this.lb_place = new System.Windows.Forms.Label();
-            this.lb_FiightCode = new System.Windows.Forms.Label();
-            this.lb_NamePlane = new System.Windows.Forms.Label();
-            this.lb_TimeEnd = new System.Windows.Forms.Label();
-            this.lb_StatusFlight2 = new System.Windows.Forms.Label();
-            this.lb_PointStop = new System.Windows.Forms.Label();
-            this.lb_TimeStart = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            groupBox2 = new GroupBox();
+            lb_timeEnd1 = new Label();
+            lb_timeStart1 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            lb_StatusFlight1 = new Label();
+            lb_StatusFlight = new Label();
+            lb_place = new Label();
+            lb_FiightCode = new Label();
+            lb_NamePlane = new Label();
+            lb_TimeEnd = new Label();
+            lb_StatusFlight2 = new Label();
+            lb_PointStop = new Label();
+            lb_TimeStart = new Label();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1052, 72);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1052, 72);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(941, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 14);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "TÌNH TRẠNG";
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkCyan;
+            label3.Location = new Point(941, 32);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 14);
+            label3.TabIndex = 2;
+            label3.Text = "TÌNH TRẠNG";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(633, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ĐIỂM DỪNG";
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkCyan;
+            label2.Location = new Point(633, 32);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 14);
+            label2.TabIndex = 1;
+            label2.Text = "ĐIỂM DỪNG";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(24, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THỜI GIAN KHỞI HÀNH";
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(24, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 19);
+            label1.TabIndex = 0;
+            label1.Text = "THỜI GIAN KHỞI HÀNH";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lb_timeEnd1);
-            this.groupBox2.Controls.Add(this.lb_timeStart1);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.lb_StatusFlight1);
-            this.groupBox2.Controls.Add(this.lb_StatusFlight);
-            this.groupBox2.Controls.Add(this.lb_place);
-            this.groupBox2.Controls.Add(this.lb_FiightCode);
-            this.groupBox2.Controls.Add(this.lb_NamePlane);
-            this.groupBox2.Controls.Add(this.lb_TimeEnd);
-            this.groupBox2.Controls.Add(this.lb_StatusFlight2);
-            this.groupBox2.Controls.Add(this.lb_PointStop);
-            this.groupBox2.Controls.Add(this.lb_TimeStart);
-            this.groupBox2.Location = new System.Drawing.Point(13, 123);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1052, 234);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(lb_timeEnd1);
+            groupBox2.Controls.Add(lb_timeStart1);
+            groupBox2.Controls.Add(label14);
+            groupBox2.Controls.Add(label13);
+            groupBox2.Controls.Add(lb_StatusFlight1);
+            groupBox2.Controls.Add(lb_StatusFlight);
+            groupBox2.Controls.Add(lb_place);
+            groupBox2.Controls.Add(lb_FiightCode);
+            groupBox2.Controls.Add(lb_NamePlane);
+            groupBox2.Controls.Add(lb_TimeEnd);
+            groupBox2.Controls.Add(lb_StatusFlight2);
+            groupBox2.Controls.Add(lb_PointStop);
+            groupBox2.Controls.Add(lb_TimeStart);
+            groupBox2.Location = new Point(13, 123);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1052, 234);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
             // 
             // lb_timeEnd1
             // 
-            this.lb_timeEnd1.AutoSize = true;
-            this.lb_timeEnd1.Location = new System.Drawing.Point(952, 182);
-            this.lb_timeEnd1.Name = "lb_timeEnd1";
-            this.lb_timeEnd1.Size = new System.Drawing.Size(34, 15);
-            this.lb_timeEnd1.TabIndex = 12;
-            this.lb_timeEnd1.Text = "07:15";
+            lb_timeEnd1.AutoSize = true;
+            lb_timeEnd1.Location = new Point(952, 182);
+            lb_timeEnd1.Name = "lb_timeEnd1";
+            lb_timeEnd1.Size = new Size(34, 15);
+            lb_timeEnd1.TabIndex = 12;
+            lb_timeEnd1.Text = "07:15";
             // 
             // lb_timeStart1
             // 
-            this.lb_timeStart1.AutoSize = true;
-            this.lb_timeStart1.Location = new System.Drawing.Point(642, 182);
-            this.lb_timeStart1.Name = "lb_timeStart1";
-            this.lb_timeStart1.Size = new System.Drawing.Size(34, 15);
-            this.lb_timeStart1.TabIndex = 11;
-            this.lb_timeStart1.Text = "05:00";
+            lb_timeStart1.AutoSize = true;
+            lb_timeStart1.Location = new Point(642, 182);
+            lb_timeStart1.Name = "lb_timeStart1";
+            lb_timeStart1.Size = new Size(34, 15);
+            lb_timeStart1.TabIndex = 11;
+            lb_timeStart1.Text = "05:00";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(952, 134);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 15);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Đến";
+            label14.AutoSize = true;
+            label14.Location = new Point(952, 134);
+            label14.Name = "label14";
+            label14.Size = new Size(28, 15);
+            label14.TabIndex = 10;
+            label14.Text = "Đến";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(633, 134);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 15);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Khởi hành";
+            label13.AutoSize = true;
+            label13.Location = new Point(633, 134);
+            label13.Name = "label13";
+            label13.Size = new Size(61, 15);
+            label13.TabIndex = 9;
+            label13.Text = "Khởi hành";
             // 
             // lb_StatusFlight1
             // 
-            this.lb_StatusFlight1.AutoSize = true;
-            this.lb_StatusFlight1.Location = new System.Drawing.Point(940, 93);
-            this.lb_StatusFlight1.Name = "lb_StatusFlight1";
-            this.lb_StatusFlight1.Size = new System.Drawing.Size(56, 15);
-            this.lb_StatusFlight1.TabIndex = 8;
-            this.lb_StatusFlight1.Text = "Đúng giờ";
+            lb_StatusFlight1.AutoSize = true;
+            lb_StatusFlight1.Location = new Point(940, 93);
+            lb_StatusFlight1.Name = "lb_StatusFlight1";
+            lb_StatusFlight1.Size = new Size(56, 15);
+            lb_StatusFlight1.TabIndex = 8;
+            lb_StatusFlight1.Text = "Đúng giờ";
             // 
             // lb_StatusFlight
             // 
-            this.lb_StatusFlight.AutoSize = true;
-            this.lb_StatusFlight.Location = new System.Drawing.Point(633, 93);
-            this.lb_StatusFlight.Name = "lb_StatusFlight";
-            this.lb_StatusFlight.Size = new System.Drawing.Size(56, 15);
-            this.lb_StatusFlight.TabIndex = 7;
-            this.lb_StatusFlight.Text = "Đúng giờ";
+            lb_StatusFlight.AutoSize = true;
+            lb_StatusFlight.Location = new Point(633, 93);
+            lb_StatusFlight.Name = "lb_StatusFlight";
+            lb_StatusFlight.Size = new Size(56, 15);
+            lb_StatusFlight.TabIndex = 7;
+            lb_StatusFlight.Text = "Đúng giờ";
             // 
             // lb_place
             // 
-            this.lb_place.AutoSize = true;
-            this.lb_place.Location = new System.Drawing.Point(24, 182);
-            this.lb_place.Name = "lb_place";
-            this.lb_place.Size = new System.Drawing.Size(114, 15);
-            this.lb_place.TabIndex = 6;
-            this.lb_place.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
+            lb_place.AutoSize = true;
+            lb_place.Location = new Point(24, 182);
+            lb_place.Name = "lb_place";
+            lb_place.Size = new Size(114, 15);
+            lb_place.TabIndex = 6;
+            lb_place.Text = "ĐIỂM ĐI - ĐIỂM ĐẾN";
             // 
             // lb_FiightCode
             // 
-            this.lb_FiightCode.AutoSize = true;
-            this.lb_FiightCode.Location = new System.Drawing.Point(24, 134);
-            this.lb_FiightCode.Name = "lb_FiightCode";
-            this.lb_FiightCode.Size = new System.Drawing.Size(88, 15);
-            this.lb_FiightCode.TabIndex = 5;
-            this.lb_FiightCode.Text = "Mã chuyến bay";
+            lb_FiightCode.AutoSize = true;
+            lb_FiightCode.Location = new Point(24, 134);
+            lb_FiightCode.Name = "lb_FiightCode";
+            lb_FiightCode.Size = new Size(88, 15);
+            lb_FiightCode.TabIndex = 5;
+            lb_FiightCode.Text = "Mã chuyến bay";
             // 
             // lb_NamePlane
             // 
-            this.lb_NamePlane.AutoSize = true;
-            this.lb_NamePlane.Location = new System.Drawing.Point(24, 93);
-            this.lb_NamePlane.Name = "lb_NamePlane";
-            this.lb_NamePlane.Size = new System.Drawing.Size(72, 15);
-            this.lb_NamePlane.TabIndex = 4;
-            this.lb_NamePlane.Text = "tên máy bay";
+            lb_NamePlane.AutoSize = true;
+            lb_NamePlane.Location = new Point(24, 93);
+            lb_NamePlane.Name = "lb_NamePlane";
+            lb_NamePlane.Size = new Size(72, 15);
+            lb_NamePlane.TabIndex = 4;
+            lb_NamePlane.Text = "tên máy bay";
             // 
             // lb_TimeEnd
             // 
-            this.lb_TimeEnd.AutoSize = true;
-            this.lb_TimeEnd.Location = new System.Drawing.Point(156, 46);
-            this.lb_TimeEnd.Name = "lb_TimeEnd";
-            this.lb_TimeEnd.Size = new System.Drawing.Size(77, 15);
-            this.lb_TimeEnd.TabIndex = 3;
-            this.lb_TimeEnd.Text = "thời gian đến";
+            lb_TimeEnd.AutoSize = true;
+            lb_TimeEnd.Location = new Point(156, 46);
+            lb_TimeEnd.Name = "lb_TimeEnd";
+            lb_TimeEnd.Size = new Size(77, 15);
+            lb_TimeEnd.TabIndex = 3;
+            lb_TimeEnd.Text = "thời gian đến";
             // 
             // lb_StatusFlight2
             // 
-            this.lb_StatusFlight2.AutoSize = true;
-            this.lb_StatusFlight2.Location = new System.Drawing.Point(940, 46);
-            this.lb_StatusFlight2.Name = "lb_StatusFlight2";
-            this.lb_StatusFlight2.Size = new System.Drawing.Size(56, 15);
-            this.lb_StatusFlight2.TabIndex = 2;
-            this.lb_StatusFlight2.Text = "Đúng giờ";
+            lb_StatusFlight2.AutoSize = true;
+            lb_StatusFlight2.Location = new Point(940, 46);
+            lb_StatusFlight2.Name = "lb_StatusFlight2";
+            lb_StatusFlight2.Size = new Size(56, 15);
+            lb_StatusFlight2.TabIndex = 2;
+            lb_StatusFlight2.Text = "Đúng giờ";
             // 
             // lb_PointStop
             // 
-            this.lb_PointStop.AutoSize = true;
-            this.lb_PointStop.Location = new System.Drawing.Point(633, 46);
-            this.lb_PointStop.Name = "lb_PointStop";
-            this.lb_PointStop.Size = new System.Drawing.Size(71, 15);
-            this.lb_PointStop.TabIndex = 1;
-            this.lb_PointStop.Text = "BAY THẲNG";
+            lb_PointStop.AutoSize = true;
+            lb_PointStop.Location = new Point(633, 46);
+            lb_PointStop.Name = "lb_PointStop";
+            lb_PointStop.Size = new Size(71, 15);
+            lb_PointStop.TabIndex = 1;
+            lb_PointStop.Text = "BAY THẲNG";
             // 
             // lb_TimeStart
             // 
-            this.lb_TimeStart.AutoSize = true;
-            this.lb_TimeStart.Location = new System.Drawing.Point(29, 46);
-            this.lb_TimeStart.Name = "lb_TimeStart";
-            this.lb_TimeStart.Size = new System.Drawing.Size(67, 15);
-            this.lb_TimeStart.TabIndex = 0;
-            this.lb_TimeStart.Text = "thời gian đi";
+            lb_TimeStart.AutoSize = true;
+            lb_TimeStart.Location = new Point(29, 46);
+            lb_TimeStart.Name = "lb_TimeStart";
+            lb_TimeStart.Size = new Size(67, 15);
+            lb_TimeStart.TabIndex = 0;
+            lb_TimeStart.Text = "thời gian đi";
             // 
             // FTinhTrangChuyenBaySoHieuChil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 374);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "FTinhTrangChuyenBaySoHieuChil";
-            this.Text = "Tình trạng chuyến bay theo số hiệu";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1076, 374);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Name = "FTinhTrangChuyenBaySoHieuChil";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Tình trạng chuyến bay theo số hiệu";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -403,6 +403,7 @@
             dgv_chuyenbay.RowTemplate.Height = 25;
             dgv_chuyenbay.Size = new Size(1020, 262);
             dgv_chuyenbay.TabIndex = 0;
+            dgv_chuyenbay.CellClick += dgv_chuyenbay_CellClick;
             // 
             // label8
             // 
