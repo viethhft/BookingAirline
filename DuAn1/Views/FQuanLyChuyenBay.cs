@@ -223,7 +223,7 @@ namespace DuAn1.Views
                     {
                         if (timeEnd.Hours < min)
                         {
-                            return false;
+                            return true;
                         }
                         else
                         {
@@ -234,7 +234,6 @@ namespace DuAn1.Views
 
                         }
                     }
-
                 }
             }
             return true;
