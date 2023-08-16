@@ -120,7 +120,7 @@ namespace GUI.Views.View_User
             Guna2Button btn = (Guna2Button)(sender);
             var ticket = _ticketServices.list_Ticket().Where(c => c.Id == Convert.ToInt32(btn.Name)).FirstOrDefault();
             var flight = _flightServices.get_list().Where(c => c.Id == ticket.FlightId).FirstOrDefault();
-            if (Math.Abs(flight.DateFlight.Day - ticket.CreateDate.Day) > 1)
+            if (Math.Abs(flight.DateFlight.Day - DateTime.Now.Day) > 1)
             {
                 if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
