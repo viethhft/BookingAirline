@@ -96,6 +96,8 @@ namespace GUI.Views.View_User
                 pan.Controls.Add(to);
                 pan.Controls.Add(seat);
                 pan.Controls.Add(status);
+                pan.Controls.Add(timeEnd);
+                pan.Controls.Add(timeStart);
                 pan.Controls.Add(btn_Cancel);
                 flowLayoutPanel1.Controls.Add(pan);
             }
