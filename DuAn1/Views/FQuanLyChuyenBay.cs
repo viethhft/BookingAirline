@@ -211,6 +211,7 @@ namespace DuAn1.Views
                     min = item.TimeStart.Hours;
                 }
             }
+            MessageBox.Show(min.ToString());
             foreach (var item in _flight.get_list().Where(c => c.PlaneTypeId == plane.Id))
             {
                 if (item.DateFlight == DateFrom.Value)
