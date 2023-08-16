@@ -97,6 +97,7 @@ namespace GUI.Views.View_User
                         pic.Name = fl.FlightCode;
                         pic.BackColor = SystemColors.Control;
                         pic.SizeMode = PictureBoxSizeMode.CenterImage;
+
                         Label lb_select = new Label();
                         lb_select.Text = "Chọn";
                         lb_select.ForeColor = Color.DarkCyan;

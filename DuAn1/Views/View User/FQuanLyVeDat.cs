@@ -41,8 +41,8 @@ namespace GUI.Views.View_User
                 Point pointMa = new Point(14, 17);
                 Point pointFrom = new Point(14, 67);
                 Point pointTo = new Point(133, 67);
-                Point pointDateFrom = new Point(210, 67);
-                Point pointDateTo = new Point(320, 67);
+                Point pointDateFrom = new Point(210, 17);
+                Point pointDateTo = new Point(320, 17);
                 Point pointSeat = new Point(210, 37);
                 Point pointTimeStart = new Point(14, 37);
                 Point pointTimeEnd = new Point(133, 37);
@@ -120,21 +120,25 @@ namespace GUI.Views.View_User
             Guna2Button btn = (Guna2Button)(sender);
             var ticket = _ticketServices.list_Ticket().Where(c => c.Id == Convert.ToInt32(btn.Name)).FirstOrDefault();
             var flight = _flightServices.get_list().Where(c => c.Id == ticket.FlightId).FirstOrDefault();
-            if (Math.Abs(flight.DateFlight.Day - ticket.CreateDate.Day) < 1)
+            if (flight.DateFlight==DateTime.Now)
             {
-                if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (Math.Abs(flight.DateFlight.Day - ticket.CreateDate.Day) < 1)
                 {
-                    ticket.Status = 0;
-                    ticket.LastUpdate = DateTime.Now;
-                    _ticketServices.update(ticket);
-                    MessageBox.Show("Hủy vé thành công", "Thông báo!");
-                    load();
+                    if (MessageBox.Show("Bạn chắc chắn muốn hủy vé?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ticket.Status = 0;
+                        ticket.LastUpdate = DateTime.Now;
+                        _ticketServices.update(ticket);
+                        MessageBox.Show("Hủy vé thành công", "Thông báo!");
+                        load();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Quá thời hạn hủy vé", "Thông báo!");
                 }
             }
-            else
-            {
-                MessageBox.Show("Quá thời hạn hủy vé", "Thông báo!");
-            }
+           
         }
     }
 }
