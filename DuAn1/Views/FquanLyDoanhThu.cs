@@ -36,7 +36,7 @@ namespace DuAn1.Views
             dgv_Revenue.Columns[3].Name = "Số vé đã bán";
             dgv_Revenue.Columns[4].Name = "Tổng số vé";
             dgv_Revenue.Columns[5].Name = "Tổng doanh thu";
-            var ticket = _ticketServices.list_Ticket().ToList();
+            var ticket = _ticketServices.list_Ticket().Where(c => c.Status == 1).ToList();
             int dem = 0;
             int thu = 0;
             for (int i = 0; i < ticket.Count; i++)
@@ -121,7 +121,7 @@ namespace DuAn1.Views
             dgv_Revenue.Columns[3].Name = "Số vé đã bán";
             dgv_Revenue.Columns[4].Name = "Tổng số vé";
             dgv_Revenue.Columns[5].Name = "Tổng doanh thu";
-            var ticket = _ticketServices.list_Ticket().Where(c => c.CreateDate >= date_From.Value.AddDays(-1) && c.CreateDate <= date_To.Value).ToList();
+            var ticket = _ticketServices.list_Ticket().Where(c => c.CreateDate >= date_From.Value.AddDays(-1) && c.CreateDate <= date_To.Value && c.Status == 1).ToList();
             int dem = 0;
             int thu = 0;
             for (int i = 0; i < ticket.Count; i++)

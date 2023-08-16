@@ -78,7 +78,7 @@ namespace GUI.Views.View_User
                     Label lb_stopPoint = new Label();
                     lb_stopPoint.Text = "Bay thẳng";
                     lb_stopPoint.Location = loca_StopPoint;
-                
+
                     //group.Controls.Add(lb_timeStart);
                     //group.Controls.Add(lb_timeEnd);
                     group.Controls.Add(lb_code);
@@ -89,24 +89,73 @@ namespace GUI.Views.View_User
                     var fl = list.Where(c => c.PlaneTypeId == item.Id && c.DateFlight == date1).FirstOrDefault();
                     if (fl != null)
                     {
-                        PictureBox pic = new PictureBox();
-                        Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
-                        pic.Image = image;
-                        pic.Size = new Size(64, 47);
-                        pic.Location = loca_pic;
-                        pic.Click += Pic_Click;
-                        pic.MouseHover += Pic_MouseHover;
-                        pic.MouseLeave += Pic_MouseLeave;
-                        pic.Name = fl.FlightCode;
-                        pic.BackColor = SystemColors.Control;
-                        pic.SizeMode = PictureBoxSizeMode.CenterImage;
+                        if (DateTime.Compare(fl.DateFlight, DateTime.Now) == 0)
+                        {
+                            TimeSpan now = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                            if (fl.TimeStart.Hours - now.Hours > 6)
+                            {
+                                PictureBox pic = new PictureBox();
+                                Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
+                                pic.Image = image;
+                                pic.Size = new Size(64, 47);
+                                pic.Location = loca_pic;
+                                pic.Click += Pic_Click;
+                                pic.MouseHover += Pic_MouseHover;
+                                pic.MouseLeave += Pic_MouseLeave;
+                                pic.Name = fl.FlightCode;
+                                pic.BackColor = SystemColors.Control;
+                                pic.SizeMode = PictureBoxSizeMode.CenterImage;
 
-                        Label lb_select = new Label();
-                        lb_select.Text = "Chọn";
-                        lb_select.ForeColor = Color.DarkCyan;
-                        lb_select.Location = loca_textPic;
-                        group.Controls.Add(pic);
-                        group.Controls.Add(lb_select);
+                                Label lb_select = new Label();
+                                lb_select.Text = "Chọn";
+                                lb_select.ForeColor = Color.DarkCyan;
+                                lb_select.Location = loca_textPic;
+                                group.Controls.Add(pic);
+                                group.Controls.Add(lb_select);
+                            }
+                            else
+                            {
+                                PictureBox pic = new PictureBox();
+                                Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
+                                pic.Image = image;
+                                pic.Size = new Size(64, 47);
+                                pic.Location = loca_pic;
+                                pic.Click += Pic_Click;
+                                pic.MouseHover += Pic_MouseHover;
+                                pic.MouseLeave += Pic_MouseLeave;
+                                pic.Name = fl.FlightCode;
+                                pic.BackColor = SystemColors.Control;
+                                pic.SizeMode = PictureBoxSizeMode.CenterImage;
+                                pic.Enabled = false;
+                                Label lb_select = new Label();
+                                lb_select.Text = "Chọn";
+                                lb_select.ForeColor = Color.DarkCyan;
+                                lb_select.Location = loca_textPic;
+                                group.Controls.Add(pic);
+                                group.Controls.Add(lb_select);
+                            }
+                        }
+                        else
+                        {
+                            PictureBox pic = new PictureBox();
+                            Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
+                            pic.Image = image;
+                            pic.Size = new Size(64, 47);
+                            pic.Location = loca_pic;
+                            pic.Click += Pic_Click;
+                            pic.MouseHover += Pic_MouseHover;
+                            pic.MouseLeave += Pic_MouseLeave;
+                            pic.Name = fl.FlightCode;
+                            pic.BackColor = SystemColors.Control;
+                            pic.SizeMode = PictureBoxSizeMode.CenterImage;
+
+                            Label lb_select = new Label();
+                            lb_select.Text = "Chọn";
+                            lb_select.ForeColor = Color.DarkCyan;
+                            lb_select.Location = loca_textPic;
+                            group.Controls.Add(pic);
+                            group.Controls.Add(lb_select);
+                        }
                     }
                     date1 = date1.AddDays(1);
                     loca_pic.X += 135;

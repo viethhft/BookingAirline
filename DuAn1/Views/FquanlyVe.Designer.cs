@@ -30,9 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Search = new Guna.UI2.WinForms.Guna2Button();
+            this.cbb_DiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
             this.date_NgayVe = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbb_DiemDen = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbb_DiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
             this.date_NgayDi = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -79,6 +79,23 @@
             this.btn_Search.Text = "Tìm";
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
+            // cbb_DiemDi
+            // 
+            this.cbb_DiemDi.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_DiemDi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_DiemDi.DropDownHeight = 150;
+            this.cbb_DiemDi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_DiemDi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_DiemDi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_DiemDi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_DiemDi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbb_DiemDi.IntegralHeight = false;
+            this.cbb_DiemDi.ItemHeight = 30;
+            this.cbb_DiemDi.Location = new System.Drawing.Point(444, 39);
+            this.cbb_DiemDi.Name = "cbb_DiemDi";
+            this.cbb_DiemDi.Size = new System.Drawing.Size(200, 36);
+            this.cbb_DiemDi.TabIndex = 28;
+            // 
             // date_NgayVe
             // 
             this.date_NgayVe.Checked = true;
@@ -109,23 +126,6 @@
             this.cbb_DiemDen.Name = "cbb_DiemDen";
             this.cbb_DiemDen.Size = new System.Drawing.Size(200, 36);
             this.cbb_DiemDen.TabIndex = 29;
-            // 
-            // cbb_DiemDi
-            // 
-            this.cbb_DiemDi.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_DiemDi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_DiemDi.DropDownHeight = 150;
-            this.cbb_DiemDi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_DiemDi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_DiemDi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_DiemDi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_DiemDi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbb_DiemDi.IntegralHeight = false;
-            this.cbb_DiemDi.ItemHeight = 30;
-            this.cbb_DiemDi.Location = new System.Drawing.Point(444, 39);
-            this.cbb_DiemDi.Name = "cbb_DiemDi";
-            this.cbb_DiemDi.Size = new System.Drawing.Size(200, 36);
-            this.cbb_DiemDi.TabIndex = 28;
             // 
             // date_NgayDi
             // 
@@ -211,6 +211,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FquanlyVe";
             this.Text = "FquanlyVe";
+            this.Load += new System.EventHandler(this.FquanlyVe_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

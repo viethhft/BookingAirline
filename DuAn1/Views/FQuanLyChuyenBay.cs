@@ -140,11 +140,11 @@ namespace DuAn1.Views
                     }
                 }
             }
-            if (max < 10)
+            if (max < 9)
             {
                 code = $"VN00{max + 1}";
             }
-            else if (max < 100)
+            else if (max < 99)
             {
                 code = $"VN0{max + 1}";
             }
