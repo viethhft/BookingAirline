@@ -41,49 +41,60 @@ namespace GUI.Views.View_User
                 Point pointMa = new Point(14, 17);
                 Point pointFrom = new Point(14, 67);
                 Point pointTo = new Point(133, 67);
+                Point pointDateFrom = new Point(133, 67);
+                Point pointDateTo = new Point(133, 67);
                 Point pointSeat = new Point(210, 37);
                 Point pointTimeStart = new Point(14, 37);
                 Point pointTimeEnd = new Point(133, 37);
                 Point pointStatus = new Point(320, 37);
                 Point pointBtnCancel = new Point(595, 28);
                 var fl = _flightServices.get_list().Where(c => c.Id == item.FlightId).FirstOrDefault();
-               
+
                 Panel pan = new Panel();
                 pan.BorderStyle = BorderStyle.FixedSingle;
                 pan.Size = new Size(785, 100);
-               
+
                 Label machuyenbay = new Label();
                 machuyenbay.Location = pointMa;
                 machuyenbay.Text = fl.FlightCode;
                 machuyenbay.Size = new Size(200, 15);
-                
+
                 Label from = new Label();
                 from.Location = pointFrom;
                 from.Text = fl.GoFrom;
                 from.Size = new Size(100, 15);
-               
+
                 Label to = new Label();
                 to.Location = pointTo;
                 to.Size = new Size(100, 15);
                 to.Text = fl.GoTom;
-               
+
                 Label seat = new Label();
                 seat.Location = pointSeat;
-                string term = item.SeatCode.Substring(0,2);
-                seat.Text = term=="PT"?$"Phổ Thông {item.SeatCode.Substring(2)}": $"Thương Gia {item.SeatCode.Substring(2)}";
-                
+                string term = item.SeatCode.Substring(0, 2);
+                seat.Text = term == "PT" ? $"Phổ Thông {item.SeatCode.Substring(2)}" : $"Thương Gia {item.SeatCode.Substring(2)}";
+
                 Label status = new Label();
                 status.Location = pointStatus;
                 status.Text = item.TwoWay == 1 ? "Một chiều" : "Khứ hồi";
 
                 Label timeStart = new Label();
                 timeStart.Location = pointTimeStart;
-                timeStart.Text =fl.TimeStart.ToString() ;
-               
+                timeStart.Text = fl.TimeStart.ToString();
+
                 Label timeEnd = new Label();
                 timeEnd.Location = pointTimeEnd;
                 timeEnd.Text = fl.TimeEnd.ToString();
-               
+
+                Label dateFrom = new Label();
+                dateFrom.Location = pointDateFrom;
+                dateFrom.Text = fl.DateFlight.ToShortDateString();
+
+                Label dateTo = new Label();
+                dateTo.Location = pointDateTo;
+                DateTime date = new DateTime(fl.DateTo.Value.Year, fl.DateTo.Value.Month, fl.DateTo.Value.Day);
+                dateTo.Text = date.ToShortDateString();
+
                 Guna2Button btn_Cancel = new Guna2Button();
                 btn_Cancel.BorderRadius = 10;
                 btn_Cancel.FillColor = Color.FromArgb(235, 64, 52);
@@ -98,6 +109,8 @@ namespace GUI.Views.View_User
                 pan.Controls.Add(status);
                 pan.Controls.Add(timeEnd);
                 pan.Controls.Add(timeStart);
+                pan.Controls.Add(dateFrom);
+                pan.Controls.Add(dateTo);
                 pan.Controls.Add(btn_Cancel);
                 flowLayoutPanel1.Controls.Add(pan);
             }
