@@ -194,6 +194,17 @@ namespace DuAn1.Views
                     {
                         return false;
                     }
+                    else
+                    {
+                        if (timestart.Hours==item.TimeStart.Hours)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
                 }
             }
             return true;

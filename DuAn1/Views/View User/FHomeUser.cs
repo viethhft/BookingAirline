@@ -163,11 +163,6 @@ namespace GUI.Views
 
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void thêmTàiKhoảnNgânHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FtaikhoanNh ftaikhoanNh = new FtaikhoanNh(_message);

@@ -36,6 +36,7 @@
             this.btn_Add = new Guna.UI2.WinForms.Guna2Button();
             this.cbb_BankName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lb_ErrorName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -72,6 +73,7 @@
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(191, 23);
             this.txt_Name.TabIndex = 3;
+            this.txt_Name.TextChanged += new System.EventHandler(this.txt_Name_TextChanged);
             // 
             // txt_BankNumber
             // 
@@ -115,11 +117,21 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Tên ngân hàng";
             // 
+            // lb_ErrorName
+            // 
+            this.lb_ErrorName.BackColor = System.Drawing.Color.Transparent;
+            this.lb_ErrorName.Location = new System.Drawing.Point(148, 144);
+            this.lb_ErrorName.Name = "lb_ErrorName";
+            this.lb_ErrorName.Size = new System.Drawing.Size(97, 17);
+            this.lb_ErrorName.TabIndex = 8;
+            this.lb_ErrorName.Text = "guna2HtmlLabel1";
+            // 
             // FtaikhoanNh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 329);
+            this.Controls.Add(this.lb_ErrorName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbb_BankName);
             this.Controls.Add(this.btn_Add);
@@ -146,5 +158,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_Add;
         private ComboBox cbb_BankName;
         private Label label4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_ErrorName;
     }
 }
