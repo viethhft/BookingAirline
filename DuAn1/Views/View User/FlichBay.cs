@@ -23,7 +23,7 @@ namespace GUI.Views.View_User
             InitializeComponent();
 
         }
-        public FlichBay(string email):this()
+        public FlichBay(string email) : this()
         {
             _email = email;
             _locationServices = new LocationService();
@@ -74,28 +74,35 @@ namespace GUI.Views.View_User
                 if (check_dateFrom() == 1 || check_dateFrom() == 0)
                 {
                     try
-                {
-                    DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(-1);
-                    DateTime date1 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(4);
-                    var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight > date && c.DateFlight < date1).ToList();
-                    FLichBayChild fLichBayChild = new FLichBayChild(list_search, date,_email);
-                    this.Hide();
-                    fLichBayChild.ShowDialog();
-                    this.Show();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    {
+                        DateTime date = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(-1);
+                        DateTime date1 = new DateTime(date_nkh.Value.Year, date_nkh.Value.Month, date_nkh.Value.Day).AddDays(4);
+                        var list_search = _flightServices.get_list().Where(c => c.GoFrom == cbb_From.Text && c.GoTom == cbb_To.Text && c.DateFlight > date && c.DateFlight < date1).ToList();
+                        if (list_search.Count > 0)
+                        {
+                            FLichBayChild fLichBayChild = new FLichBayChild(list_search, date, _email);
+                            this.Hide();
+                            fLichBayChild.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Không có chuyến bay nào trùng với những thông tin bạn tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!","Thông báo!");
+                    MessageBox.Show("Ngày bay bạn chọn không phù hợp yêu cầu!", "Thông báo!");
                 }
             }
             else
             {
-                MessageBox.Show("Điểm đến điểm đi chọn không phù hợp yêu cầu!","Thông báo!");
+                MessageBox.Show("Điểm đến điểm đi chọn không phù hợp yêu cầu!", "Thông báo!");
             }
         }
 
