@@ -382,7 +382,7 @@ namespace DuAn1.Views
             if (txb_Search.Text != "")
             {
                 dgv_chuyenbay.Rows.Clear();
-                foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTom.Contains(txb_Search.Text)||c.FlightCode.Contains(txb_codeflight.Text)))
+                foreach (var item in _flight.get_list().Where(c => c.GoFrom.Contains(txb_Search.Text) || c.GoTom.Contains(txb_Search.Text) || c.FlightCode.Contains(txb_codeflight.Text)))
                 {
                     string namePlane = _plantype.get_list().Where(c => c.Id == item.PlaneTypeId).FirstOrDefault().DisplayName;
                     string nameLoca = _location.get_list().Where(c => c.Id == item.LocationId).FirstOrDefault().LocationFly;
