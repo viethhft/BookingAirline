@@ -77,11 +77,11 @@ namespace GUI.Views.View_User
                 status.Text = item.TwoWay == 1 ? "Một chiều" : "Khứ hồi";
 
                 Label timeStart = new Label();
-                timeStart.Location = pointStatus;
+                timeStart.Location = pointTimeStart;
                 timeStart.Text =fl.TimeStart.ToString() ;
                
                 Label timeEnd = new Label();
-                timeEnd.Location = pointStatus;
+                timeEnd.Location = pointTimeEnd;
                 timeEnd.Text = fl.TimeEnd.ToString();
                
                 Guna2Button btn_Cancel = new Guna2Button();
