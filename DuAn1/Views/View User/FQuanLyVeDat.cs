@@ -42,6 +42,7 @@ namespace GUI.Views.View_User
                 Point pointFrom = new Point(14, 67);
                 Point pointTo = new Point(133, 67);
                 Point pointSeat = new Point(210, 37);
+                Point pointStatus = new Point(320, 37);
                 Point pointBtnCancel = new Point(595, 28);
                 var fl = _flightServices.get_list().Where(c => c.Id == item.FlightId).FirstOrDefault();
                 Panel pan = new Panel();
@@ -61,7 +62,11 @@ namespace GUI.Views.View_User
                 to.Text = fl.GoTom;
                 Label seat = new Label();
                 seat.Location = pointSeat;
-                seat.Text = item.SeatCode;
+                string term = item.SeatCode.Substring(0,2);
+                seat.Text = term=="PT"?$"Phổ Thông {item.SeatCode.Substring(2)}": $"Thương Gia {item.SeatCode.Substring(2)}";
+                Label status = new Label();
+                status.Location = pointStatus;
+                status.Text = item.Status == 1 ? "Một chiều" : "Khứ hồi";
                 Guna2Button btn_Cancel = new Guna2Button();
                 btn_Cancel.BorderRadius = 10;
                 btn_Cancel.FillColor = Color.FromArgb(235, 64, 52);
@@ -73,6 +78,7 @@ namespace GUI.Views.View_User
                 pan.Controls.Add(from);
                 pan.Controls.Add(to);
                 pan.Controls.Add(seat);
+                pan.Controls.Add(status);
                 pan.Controls.Add(btn_Cancel);
                 flowLayoutPanel1.Controls.Add(pan);
             }
