@@ -12,7 +12,6 @@ namespace DuAn1
 
     public partial class Form1 : Form
     {
-
         Validate _validate;
         CheckAccountType _checkAccountType;
         QlykhachHang _f;
