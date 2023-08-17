@@ -28,93 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btn_acp = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FthanhToan));
+            pictureBox1 = new PictureBox();
+            checkBox1 = new CheckBox();
+            btn_acp = new Guna.UI2.WinForms.Guna2Button();
+            btn_cancel = new Guna.UI2.WinForms.Guna2Button();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(153, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 211);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(153, 31);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 211);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(153, 285);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 19);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Tôi đã thanh toán";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(153, 285);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(118, 19);
+            checkBox1.TabIndex = 1;
+            checkBox1.Text = "Tôi đã thanh toán";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // btn_acp
             // 
-            this.btn_acp.BorderRadius = 10;
-            this.btn_acp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_acp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_acp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_acp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_acp.FillColor = System.Drawing.Color.DarkCyan;
-            this.btn_acp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_acp.ForeColor = System.Drawing.Color.White;
-            this.btn_acp.Location = new System.Drawing.Point(153, 328);
-            this.btn_acp.Name = "btn_acp";
-            this.btn_acp.Size = new System.Drawing.Size(180, 45);
-            this.btn_acp.TabIndex = 2;
-            this.btn_acp.Text = "Xác nhận";
-            this.btn_acp.Click += new System.EventHandler(this.btn_acp_Click);
+            btn_acp.BorderRadius = 10;
+            btn_acp.DisabledState.BorderColor = Color.DarkGray;
+            btn_acp.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_acp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_acp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_acp.FillColor = Color.DarkCyan;
+            btn_acp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_acp.ForeColor = Color.White;
+            btn_acp.Location = new Point(153, 328);
+            btn_acp.Name = "btn_acp";
+            btn_acp.Size = new Size(180, 45);
+            btn_acp.TabIndex = 2;
+            btn_acp.Text = "Xác nhận";
+            btn_acp.Click += btn_acp_Click;
             // 
             // btn_cancel
             // 
-            this.btn_cancel.BorderRadius = 10;
-            this.btn_cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_cancel.FillColor = System.Drawing.Color.DarkCyan;
-            this.btn_cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(153, 393);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(180, 45);
-            this.btn_cancel.TabIndex = 3;
-            this.btn_cancel.Text = "Hủy";
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            btn_cancel.BorderRadius = 10;
+            btn_cancel.DisabledState.BorderColor = Color.DarkGray;
+            btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_cancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_cancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_cancel.FillColor = Color.DarkCyan;
+            btn_cancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_cancel.ForeColor = Color.White;
+            btn_cancel.Location = new Point(153, 393);
+            btn_cancel.Name = "btn_cancel";
+            btn_cancel.Size = new Size(180, 45);
+            btn_cancel.TabIndex = 3;
+            btn_cancel.Text = "Hủy";
+            btn_cancel.Click += btn_cancel_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            label1.AutoSize = true;
+            label1.Location = new Point(223, 250);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 4;
+            label1.Text = "label1";
             // 
             // FthanhToan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_acp);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "FthanhToan";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thanh Toán";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(520, 450);
+            Controls.Add(label1);
+            Controls.Add(btn_cancel);
+            Controls.Add(btn_acp);
+            Controls.Add(checkBox1);
+            Controls.Add(pictureBox1);
+            Name = "FthanhToan";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Thanh Toán";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
