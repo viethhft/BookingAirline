@@ -76,7 +76,7 @@ namespace GUI.Views.View_User
                 if (tt >= 0 && tt < 4)
                 {
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
-                    Image image = Image.FromFile(@"..\\..\\Setup1\\Resources\\chair.png");
+                    Image image = Image.FromFile(@"..\\..\\..\\Resources\\chair.png");
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;
@@ -162,7 +162,7 @@ namespace GUI.Views.View_User
                 if (tt >= 0 && tt < 4)
                 {
                     Guna2ImageCheckBox chair = new Guna2ImageCheckBox();
-                    Image image = Image.FromFile(@"..\\..\\Setup1\\Resources\\chair.png");
+                    Image image = Image.FromFile(@"..\\..\\Resources\\chair.png");
                     chair.Image = image;
                     chair.Size = new Size(34, 30);
                     chair.Location = locaChair;

@@ -92,6 +92,7 @@ namespace GUI.Views
                         seat.PlaneTypeId = plane.Id;
                         seat.SeatCode = "TG" + (a + 1);
                         _seatDetailServices.Create(seat);
+                        a++;
                     }
                 }
                 else
@@ -111,6 +112,7 @@ namespace GUI.Views
                         seat.PlaneTypeId = plane.Id;
                         seat.SeatCode = "TG" + (a + 1);
                         _seatDetailServices.Create(seat);
+                        a++;
                     }
                 }
             }
