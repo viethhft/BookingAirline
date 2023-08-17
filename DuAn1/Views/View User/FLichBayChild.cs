@@ -90,7 +90,7 @@ namespace GUI.Views.View_User
                     {
                         PictureBox pic = new PictureBox();
 
-                        Image image = Image.FromFile(@$"..\\..\\Resources\\icons8-plane-30 (2).png");
+                        Image image = Image.FromFile(@"..\\..\\Setup1\\Resources\\icons8-plane-30 (2).png");
                         pic.Image = image;
                         pic.Size = new Size(64, 47);
                         pic.Location = loca_pic;
