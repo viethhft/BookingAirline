@@ -11,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace GUI.Views.View_User
 {
     public partial class FLichBayChild : Form
@@ -90,7 +89,8 @@ namespace GUI.Views.View_User
                     if (fl != null)
                     {
                         PictureBox pic = new PictureBox();
-                        Image image = Image.FromFile(@"..\\..\\..\\Resources\\icons8-plane-30 (2).png");
+
+                        Image image = Image.FromFile(@$"..\\..\\Resources\\icons8-plane-30 (2).png");
                         pic.Image = image;
                         pic.Size = new Size(64, 47);
                         pic.Location = loca_pic;
